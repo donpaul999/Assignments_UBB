@@ -92,5 +92,26 @@ class TestAdd(unittest.TestCase):
 
 
 
+class TestRemove(unittest.TestCase):
+    def test_remove(self):
+        s = Service()
+        s.addStudent(Student(1,"name"))
+        s.addDiscipline(Discipline(1,"name"))
+        s.addGrade(Grade(1,1,2))
+        s.remove_student(1)
+        s.remove_discipline(1)
+        assert len(s._students) == 0
+        assert len(s._disciplines) == 0
+        assert len(s._grades) == 0
 
 
+class TestUpdate(unittest.TestCase):
+    def test_update(self):
+        s = Service()
+        s.addStudent(Student(1,"name"))
+        s.addDiscipline(Discipline(1,"name"))
+        s.update_student(1, "Andrei")
+        s.update_discipline(1, "Mate")
+        assert s._students[0].Name == "Andrei"
+        assert s._disciplines[0].Name == "Mate"
+        
