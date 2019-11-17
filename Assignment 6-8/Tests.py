@@ -1,7 +1,6 @@
 import unittest
-from domain import Student
-from domain import Discipline
-from domain import Grade
+from domain import *
+from service import *
 
 class TestStudents(unittest.TestCase):
     def test_student(self):
@@ -73,9 +72,25 @@ class TestGrades(unittest.TestCase):
             assert False
         except:
             assert True
+            
+            
         
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        s = Service()
+        s.addStudent(Student(1,"name"))
+        assert len(s._students) == 1
+        s.addDiscipline(Discipline(1,"name"))
+        assert len(s._disciplines) == 1
+        s.addGrade(Grade(1,1, 2))
+        assert len(s._grades) == 1
+        try:
+            s.addGrade(Grade(2,1,2))
+            assert False
+        except:
+            assert True
 
-        
+
 
 
 
