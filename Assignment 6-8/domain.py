@@ -146,33 +146,3 @@ class Grade:
         except:
             raise("The grade must be a positive integer between 1 and 10!")
 
-
-
-
-
-def test_discipline():
-        d = Discipline(1,"test")
-        assert d.Name == "test"
-        assert d.disciplineId == 1
-        d.Name = "Chemistry"
-        assert d.Name == "Chemistry"
-
-
-def test_student():
-        st = Student(1,"test")
-        assert st.Name == "test"
-        assert st.studentId == 1
-        st.Name = "Ana"
-        assert st.Name == "Ana"
-
-def test_grade():
-        gr = Grade(2,1,7)
-        assert gr.Value == 7
-        assert gr.studentId == 1
-        gr.Value = 10
-        assert gr.Value == 10
-
-
-test_grade()
-test_student()
-test_discipline()
