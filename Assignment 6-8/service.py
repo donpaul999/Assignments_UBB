@@ -11,7 +11,7 @@ class Service:
 
     def addStudent(self, student):
         '''
-        Appends to the list a new student
+        Appends to the list a new student, if the student is valid, otherwise there will be an error
         '''
         ok = 1
         for i in self._students:
@@ -21,11 +21,12 @@ class Service:
         if ok == 1:
             self._students.append(student)
         else:
-            raise ValueError("ID already used!")
-
+            e = Exception()
+            e.IDUsed()
+            
     def addDiscipline(self, discipline):
         '''
-        Appends to the list a new discipline
+        Appends to the list a new discipline, if the discipline is valid, otherwise there will be an error
         '''
         ok = 1
         for i in self._disciplines:
@@ -35,14 +36,17 @@ class Service:
         if ok == 1:
             self._disciplines.append(discipline)
         else:
-            raise ValueError("ID already used!")
-
+            e = Exception()
+            e.IDUsed()
 
     def addGrade(self, grade):
         self._grades.append(grade)
        
 
     def update_student(self, id, name):
+        '''
+        Appends to a students with a given ID a new name
+        '''
         ok = 0
         for i in self._students:
             if int(i.studentId) == int(id):
@@ -50,9 +54,13 @@ class Service:
                 ok = 1
                 break
         if ok == 0:
-            raise ValueError("ID is not in the list!")
-
+            e = Exception()
+            e.IDNotFound()
+            
     def update_discipline(self, id, name):
+        '''
+        Appends to a discipline with a given ID a new name
+        '''
         ok = 0
         for i in self._disciplines:
             if int(i.disciplineId) == int(id):
@@ -60,9 +68,13 @@ class Service:
                 ok = 1
                 break
         if ok == 0:
-            raise ValueError("ID is not in the list!")
-    
+            e = Exception()
+            e.IDNotFound()    
+            
     def remove_student(self, id):
+        '''
+        Remove a student and all the grades associated
+        '''
         ok = 0
         for i in self._students:
             if i.studentId == int(id):
@@ -71,9 +83,13 @@ class Service:
                 ok = 1
                 break
         if ok == 0:
-            raise ValueError("ID is not in the list!")
+            e = Exception()
+            e.IDNotFound()
 
     def remove_discipline(self, id):
+        '''
+        Remove a discipline and all the grades associated
+        '''
         ok = 0
         for i in self._disciplines:
             if i.disciplineId == int(id):
@@ -82,15 +98,22 @@ class Service:
                 ok = 1
                 break
         if ok == 0:
-            raise ValueError("ID is not in the list!")
+            e = Exception()
+            e.IDNotFound()
 
     def remove_grades_student(self, ID):
+        '''
+        Remove all grades associated to a student with a given ID
+        '''
         for i in self._grades:
             if i.studentId == ID:
                 self._grades.remove(i)
                 break
             
     def remove_grades_discipline(self, ID):
+        '''
+        Remove all grades associated to a discipline with a given ID
+        '''
         for i in self._grades:
             if i.disciplineId == ID:
                 self._grades.remove(i)

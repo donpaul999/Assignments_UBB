@@ -17,13 +17,14 @@ class Student:
     
     @studentId.setter
     def studentId(self, value):
+        e = Exception()
         try:
             value = int(value)
             if value <= 0:
-                raise ValueError("The id must be a positive integer!")
+                e.PositiveID()
             self._sId = value
         except:
-            raise ValueError("The id must be a positive integer!")
+                e.PositiveID()
 
 
     @property
@@ -32,6 +33,7 @@ class Student:
     
     @Name.setter
     def Name(self, value):
+        e = Exception()
         ok = 1
         try:
             value = int(value)
@@ -44,7 +46,7 @@ class Student:
             if len(value) < 2:
                 ok = 0
         if ok == 0:
-            raise ValueError("The name must be a valid string!")
+            e.ValidName()
         else:
             self._name = value
     
@@ -66,13 +68,14 @@ class Discipline:
     
     @disciplineId.setter
     def disciplineId(self, value):
+        e = Exception()
         try:
             value = int(value)
             if value <= 0:
-                raise ValueError("The id must be a positive integer!")
+                e.PositiveID()
             self._dId = value
         except:
-            raise ValueError("The id must be a positive integer!")
+                e.PositiveID()
 
     
     @property
@@ -82,13 +85,14 @@ class Discipline:
     @Name.setter
     def Name(self, value):
         ok = 1
+        e = Exception()
         try:
             value = int(value)
             ok = 0
         except:
             self._name = value
         if ok == 0:
-            raise ValueError("The name must be a valid string!")
+            e.ValidName()
     
 
 class Grade:
@@ -109,13 +113,14 @@ class Grade:
     
     @disciplineId.setter
     def disciplineId(self, value):
+        e = Exception()
         try:
             value = int(value)
             if value <= 0:
-                raise ValueError("The id must be a positive integer!")
+                e.PositiveID()
             self._dId = value
         except:
-            raise ValueError("The id must be a positive integer!")
+                e.PositiveID()
 
 
     @property
@@ -124,13 +129,14 @@ class Grade:
     
     @studentId.setter
     def studentId(self, value):
+        e = Exception()
         try:
             value = int(value)
             if value <= 0:
-                raise ValueError("The id must be a positive integer!")
+                e.PositiveID()
             self._sId = value
         except:
-            raise ValueError("The id must be a positive integer!")
+                e.PositiveID()
 
     
     @property
@@ -139,13 +145,29 @@ class Grade:
     
     @Value.setter
     def Value(self, value):
+        e = Exception()
         try:
             value = int(value)
             if value < 0 or value > 10:
-                raise("The grade must be a positive integer between 1 and 10!")
+                e.GradeValue()
             else:
                 self._value = value
         except:
-            raise("The grade must be a positive integer between 1 and 10!")
+                e.GradeValue()()
+        
 
+class Exception():
+    def IDNotFound(self):
+        raise ValueError("ID is not in the list")
+    def IDUsed(self):
+        raise ValueError("ID already used!")
+    def PositiveID(self):
+        raise ValueError("The id must be a positive integer!")
+    
+    def GradeValue(self):
+        raise ValueError("The grade must be a positive integer between 1 and 10!")
+    
+    def ValidName(self):
+        raise ValueError("The name must be a valid string!")
 
+    
