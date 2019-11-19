@@ -169,5 +169,7 @@ class Exception():
     
     def ValidName(self):
         raise ValueError("The name must be a valid string!")
-
+    
+    def GradeNotValid(self):
+        raise ValueError("The ids are not valid for inserting the grade!")
     

@@ -40,8 +40,22 @@ class Service:
             e.IDUsed()
 
     def addGrade(self, grade):
-        self._grades.append(grade)
-       
+        ok1 = 0
+        ok2 = 0
+        e = Exception()
+        for i in self._disciplines:
+            if grade.disciplineId == i.disciplineId:
+                ok1 = 1
+                break
+
+        for i in self._students:
+            if grade.studentId == i.studentId:
+                ok2 = 1
+                break
+        if ok1 == ok2 and ok1 == 1:
+            self._grades.append(grade)
+        else:
+            e.GradeNotValid()
 
     def update_student(self, id, name):
         '''

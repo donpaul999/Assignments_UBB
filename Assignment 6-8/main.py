@@ -11,25 +11,31 @@ ui = UI(s)
 
 def GenerateStudents():
     for i in range(0, 10):
-        id_nr = random.randint(0, 99999)
-        name_nr = random.randint(100, 999999)
-        name = chr((name_nr % 10) % (ord('z') - ord('a')) + ord('A'))
-        name_nr //= 10
-        while name_nr != 0:
-            name = name + chr((name_nr % 10) % (ord('z') - ord('a')) + ord('a'))
-            name_nr //= 10
-        s.addStudent(Student(id_nr, name))   
+        id_nr = random.randint(0, 100)
+        length = random.randint(4,15)
+        number = random.randint(0,25)
+        name = chr(number + ord('A'))
+        for j in range (0, length):
+             number = random.randint(0,25)
+             name = name + chr(number + ord('a'))
+        try:
+            s.addStudent(Student(id_nr, name))   
+        except:
+            i -= 1
 
 def GenerateDisciplines():
     for i in range(0, 10):
-     id_nr = random.randint(0, 99999)
-     name_nr = random.randint(100, 999999)
-     name = chr((name_nr % 10) % (ord('z') - ord('a')) + ord('A'))
-     name_nr //= 10
-     while name_nr != 0:
-        name = name + chr((name_nr % 10) % (ord('z') - ord('a')) + ord('a'))
-        name_nr //= 10
-     s.addDiscipline(Discipline(id_nr, name))   
+     id_nr = random.randint(0, 100)
+     length = random.randint(4,15)
+     number = random.randint(0,25)
+     name = chr(number + ord('A'))
+     for j in range (0, length):
+          number = random.randint(0,25)
+          name = name + chr(number + ord('a'))
+     try:
+         s.addDiscipline(Discipline(id_nr, name))   
+     except:
+         i -= 1
 
 def GenerateGrades():
     for i in range(0, 10):
