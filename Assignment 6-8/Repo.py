@@ -35,7 +35,6 @@ class Repository:
         ok = 0
         for i in self._data:
             if i.ID == int(id):
-                self._service.remove_grades(int(id))
                 self._data.remove(i)
                 ok = 1
                 break
@@ -65,6 +64,24 @@ class Repository:
     def getAll(self):
       return self._data
 
+    def search_using_id(self,id):
+        e = Exception()
+        for i in self._data:
+            if i.ID == id:
+                return i
+        e.IDNotFound()
+
+    def search_using_name(self,name):
+        e = Exception()
+        list = []
+        for i in self._data:
+            text = i.Name.upper()
+            if text.find(name.upper()) != -1:
+                list.append(i)
+        if len(list) != 0:
+            return list
+        else:
+            e.NameNotFound()
 
 class GradesRepository():
     def __init__(self):
@@ -89,3 +106,20 @@ class GradesRepository():
 
     def getAll(self):
         return self._data
+
+    def remove(self, id, type):
+        try:
+            if type != "s" and type != "d":
+                raise ValueError()
+            id = int(id)
+            if type == "s":
+                for i in self._data:
+                    if i.studentId == id:
+                        self._data.remove(i)
+            else:
+                for i in self._data:
+                    if i.disciplineId == id:
+                        self._data.remove(i)
+        except:
+            e = Exception()
+            e.PositiveID()

@@ -19,6 +19,20 @@ class StudentService:
             e.PositiveID()
         self._studentRepo.update(id, name)
 
+    def remove(self, id):
+        try:
+            id = int(id)
+        except:
+            e = Exception()
+            e.PositiveID
+        self._studentRepo.remove(id)
+
+    def search_using_id(self, id):
+       return self._studentRepo.search_using_id(id)
+
+    def search_using_name(self, text):
+            return self._studentRepo.search_using_name(text)
+
 
 class DisciplineService:
         def __init__(self, disciplineRepo):
@@ -38,6 +52,19 @@ class DisciplineService:
                 e.PositiveID()
             self._disciplineRepo.update(id, name)
 
+        def remove(self, id):
+            try:
+                id = int(id)
+            except:
+                e = Exception()
+                e.PositiveID
+            self._disciplineRepo.remove(id)
+
+        def search_using_id(self, id):
+            return self._disciplineRepo.search_using_id(id)
+
+        def search_using_name(self, text):
+            return self._disciplineRepo.search_using_name(text)
 
 class GradeService:
         def __init__(self, gradeRepo):
@@ -45,6 +72,10 @@ class GradeService:
 
         def getAll(self):
             return self._gradeRepo.getAll()
+
+        def remove(self, id, type):
+            self._gradeRepo.remove(id, type)
+
 
 class Service:
     def addStudent(self, student):
@@ -161,7 +192,7 @@ class Service:
             if i.studentId == ID:
                 self._grades.remove(i)
                 break
-            
+
     def remove_grades(self, ID):
         '''
         Remove all grades associated to a discipline with a given ID

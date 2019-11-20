@@ -15,17 +15,20 @@ gradeService = GradeService(gradesRepo)
 
 ui = UI(studentService, disciplineService, gradeService)
 
+
+
+
+
+last_name_list = [ 'Ciupe', 'Comsa', 'Curila', 'Colta', 'Curbat', 'Craciun', 'Comanac', 'Cheran', 'Chis', 'Chis', 'Copindean', 'Cimpean', 'Demian', 'Custura', 'Creta', 'Cioroga', 'Cosma', 'Condrea', 'Craiu', 'Ciorba', 'Capra', 'David', 'Caravia', 'Cirtorosan', 'Deiac', 'Clapou', 'Carare' ]
+first_name_list = [ 'Sergiu', 'Filip', 'Sebastian', 'Paul', 'Alexandra', 'Flaviu', 'Dragos', 'Bianca', 'Sergiu', 'Matei', 'Alex', 'Andreea', 'Ana', 'Octavian', 'Florin', 'Rares', 'Eduard', 'Adrian', 'Tiberiu', 'Rares', 'Paul', 'Catalin', 'Andrei', 'Dragos', 'David', 'Alexandru', 'Claudiu' ]
+
+
 def GenerateStudents():
     for i in range(0, 10):
         id_nr = random.randint(0, 100)
-        length = random.randint(4,15)
-        number = random.randint(0,25)
-        name = chr(number + ord('A'))
-        for j in range (0, length):
-             number = random.randint(0,25)
-             name = name + chr(number + ord('a'))
+        pos = random.randint(0,len(last_name_list) - 1)
         try:
-            studentRepo.add(Student(id_nr, name))
+            studentRepo.add(Student(id_nr, last_name_list[pos] + " " +first_name_list[pos]))
         except:
             i -= 1
 
