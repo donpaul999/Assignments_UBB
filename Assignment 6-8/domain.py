@@ -2,21 +2,21 @@ import unittest
 
 class Student:
     def __init__(self, sId, name):
-        self.studentId = sId
+        self.ID = sId
         self.Name = name
 
     def __repr__(self):
-        return "Student ID: " + str(self.studentId) + " Name: " + self.Name
+        return "Student ID: " + str(self.ID) + " Name: " + self.Name
     
     def __eq__(self, other):
-        return self.studentId == other.studentId
+        return self._sId == other._sId
 
     @property
-    def studentId(self):
+    def ID(self):
         return self._sId
     
-    @studentId.setter
-    def studentId(self, value):
+    @ID.setter
+    def ID(self, value):
         e = Exception()
         try:
             value = int(value)
@@ -25,7 +25,6 @@ class Student:
             self._sId = value
         except:
                 e.PositiveID()
-
 
     @property
     def Name(self):
@@ -53,21 +52,21 @@ class Student:
 
 class Discipline:
     def __init__(self, dId, name):
-        self.disciplineId = dId
+        self.ID = dId
         self.Name = name
 
     def __repr__(self):
-        return "Discipline ID: " + str(self.disciplineId) + " Name: " + self.Name
+        return "Discipline ID: " + str(self.ID) + " Name: " + self.Name
 
     def __eq__(self, other):
-        return self.disciplineId == other.disciplineId
+        return self.ID == other.ID
 
     @property
-    def disciplineId(self):
+    def ID(self):
         return self._dId
     
-    @disciplineId.setter
-    def disciplineId(self, value):
+    @ID.setter
+    def ID(self, value):
         e = Exception()
         try:
             value = int(value)
@@ -105,7 +104,7 @@ class Grade:
         return self.studentId == other.studentId
      
     def __repr__(self):
-        return "Discipline ID: " + str(self.disciplineId) + "Student ID: " + str(self.studentId) + " Grade: " + self.Value
+        return "Discipline ID: " + str(self.disciplineId) + " Student ID: " + str(self.studentId) + " Grade: " + str(self.Value)
     
     @property
     def disciplineId(self):
@@ -172,4 +171,6 @@ class Exception():
     
     def GradeNotValid(self):
         raise ValueError("The ids are not valid for inserting the grade!")
-    
+
+    def NameNotFound(self):
+        raise ValueError("Name is not in the list!")

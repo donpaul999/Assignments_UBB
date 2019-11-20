@@ -1,13 +1,19 @@
 #STUDENTS REGISTER MANAGEMENT
-
-from ui import UI
-from service import *
 import random
+from domain import *
+from Repo import *
+from ui import *
+from service import *
 
+studentRepo = Repository()
+disciplineRepo = Repository()
+gradesRepo = GradesRepository()
 
-s = Service()
-ui = UI(s)
+studentService = StudentService(studentRepo)
+disciplineService = DisciplineService(disciplineRepo)
+gradeService = GradeService(gradesRepo)
 
+ui = UI(studentService, disciplineService, gradeService)
 
 def GenerateStudents():
     for i in range(0, 10):
@@ -19,7 +25,7 @@ def GenerateStudents():
              number = random.randint(0,25)
              name = name + chr(number + ord('a'))
         try:
-            s.addStudent(Student(id_nr, name))   
+            studentRepo.add(Student(id_nr, name))
         except:
             i -= 1
 
@@ -33,16 +39,17 @@ def GenerateDisciplines():
           number = random.randint(0,25)
           name = name + chr(number + ord('a'))
      try:
-         s.addDiscipline(Discipline(id_nr, name))   
+         disciplineRepo.add(Discipline(id_nr, name))
      except:
          i -= 1
 
 def GenerateGrades():
     for i in range(0, 10):
-        discipline = random.choice(s._disciplines)
-        student = random.choice(s._students)
+        discipline = random.choice(disciplineRepo._data)
+        student = random.choice(studentRepo._data)
         grade = random.randint(1,10)
-        s.addGrade(Grade(discipline.disciplineId, student.studentId, grade))
+        gradesRepo.add(Grade(discipline.ID, student.ID, grade),studentRepo._data ,disciplineRepo._data)
+    print(gradesRepo._data)
 
 
 GenerateStudents()

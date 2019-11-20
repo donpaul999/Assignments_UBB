@@ -2,14 +2,16 @@ from service import Service
 from domain import *
 
 class UI:
-    def __init__(self, service):
-        self._service = service
+    def __init__(self, studentService, disciplineService, gradeService):
+        self._studentService = studentService
+        self._disciplineService = disciplineService
+        self._gradeService = gradeService
 
     def addStudent(self):
         id = input("Input id: ")
         name = input("Input name: ")
         try:
-            self._service.addStudent(Student(id, name))
+            self._studentService.add(Student(id, name))
         except ValueError as e:
             self.print_stars()
             print(e)
@@ -21,7 +23,7 @@ class UI:
         id = input("Input id: ")
         name = input("Input name: ")
         try:
-            self._service.addDiscipline(Discipline(id, name))
+            self._disciplineService.add(Discipline(id, name))
         except ValueError as e:
             self.print_stars()
             print(e)
@@ -34,7 +36,7 @@ class UI:
         idS = input("Input id of discipline: ")
         value = input("Input grade: ")
         try:
-            self._service.addGrade(Grade(idD,idS, value))
+            self._gradeService.add(idD,idS, value)
         except ValueError as e:
             self.print_stars()
             print(e)
@@ -45,7 +47,8 @@ class UI:
     def printStudents(self):
         self.print_stars()
         ok = 0
-        for i in self._service._students:
+        list = self._studentService.getAll()
+        for i in list:
             print(i)
             print("")
             ok = 1
@@ -56,7 +59,8 @@ class UI:
     def printDisciplines(self):
         self.print_stars()
         ok = 0
-        for i in self._service._disciplines:
+        list = self._disciplineService.getAll()
+        for i in list:
             print(i)
             print("")
             ok = 1
@@ -67,13 +71,16 @@ class UI:
     def printGrades(self):
         self.print_stars()
         ok = 0
-        for i in self._service._grades:
-            for j in self._service._students:
-                if j.studentId == i.studentId:
+        grades = self._gradeService.getAll()
+        disciplines = self._disciplineService.getAll()
+        students = self._studentService.getAll()
+        for i in grades:
+            for j in students:
+                if j.ID == i.studentId:
                     print("Student: " + j.Name, end=", ")
                     break
-            for j in self._service._disciplines:
-                if j.disciplineId == i.disciplineId:
+            for j in disciplines:
+                if j.ID == i.disciplineId:
                     print("Discipline: " + j.Name, end=", ")
                     break
             print("Grade: " + str(i.Value))
@@ -88,7 +95,7 @@ class UI:
         id = input("Input id: ")
         name = input("Input the new name: ")
         try:
-            self._service.update_student(id, name)
+            self._studentService.update(id, name)
         except ValueError as e:
             self.print_stars()
             print(e)
@@ -98,7 +105,7 @@ class UI:
         id = input("Input id: ")
         name = input("Input the new name: ")
         try:
-            self._service.update_discipline(id, name)
+            self._disciplineService.update(id, name)
         except ValueError as e:
             self.print_stars()
             print(e)
@@ -123,7 +130,27 @@ class UI:
             print(e)
             self.print_stars()
 
-    
+    def search_for_discipline(self):
+        self.print_stars()
+        text = input("Input ID or name: ")
+        try:
+            text = int(text)
+            try:
+                discipline = self._service.search_using_ID_discipline(text)
+                print(discipline)
+            except ValueError as e:
+                print(e)
+        except:
+            try:
+                disciplines = self._service.search_using_name_disciplines(text)
+                for i in disciplines:
+                    print(i)
+            except ValueError as e:
+                print(e)
+        self.print_stars()
+
+
+
     def print_menu(self):
         print("1. Add a new student")
         print("2. Show the list of students")
@@ -137,7 +164,8 @@ class UI:
         print("10. Show the list of grades")
         print("11. Undo the last operation")
         print("12. Redo the last operation")
-        print("13. Exit")
+        print("13. Search for a discipline")
+        print("14. Exit")
 
     def print_stars(self):
         print("***************************")
@@ -171,7 +199,7 @@ class UI:
                 self.undo()
             elif choice == "12":
                 self.redo()
-            elif choice == "13":
+            elif choice == "14":
                 return
             elif choice == "3":
                 self.update_student()
@@ -180,7 +208,9 @@ class UI:
             elif choice == "4":
                 self.remove_student()
             elif choice == "8":
-                self.remove_discipline()            
+                self.remove_discipline()
+            elif choice == "13":
+                self.search_for_discipline()
             else:
                 self.print_invalid()
 
