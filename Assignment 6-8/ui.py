@@ -1,10 +1,12 @@
 from domain import *
 
 class UI:
-    def __init__(self, studentService, disciplineService, gradeService):
+    def __init__(self, studentService, disciplineService, gradeService, Service):
         self._studentService = studentService
         self._disciplineService = disciplineService
         self._gradeService = gradeService
+        self._Service = Service
+
 
     def addStudent(self):
         id = input("Input id: ")
@@ -153,8 +155,8 @@ class UI:
         self.print_stars()
 
     def search_for_student(self):
-        self.print_stars()
         text = input("Input ID or name: ")
+        self.print_stars()
         try:
             text = int(text)
             try:
@@ -169,6 +171,43 @@ class UI:
                     print(i)
             except ValueError as e:
                 print(e)
+        self.print_stars()
+
+    def failing_students(self):
+        self.print_stars()
+        try:
+            id = 0
+            list = self._Service.failing_students(self._gradeService._gradeRepo._data, self._studentService._studentRepo._data,self._disciplineService._disciplineRepo._data)
+            for i in list:
+                id += 1
+                print(str(id) + " Name: " + i["Name"] +", Discipline: " + i["Disc"] + ", Average: " + str(i["Avg"]))
+        except ValueError as e:
+            print(e)
+        self.print_stars()
+
+
+    def best_students(self):
+        self.print_stars()
+        try:
+            id = 0
+            list = self._Service.best_students(self._gradeService._gradeRepo._data, self._studentService._studentRepo._data,self._disciplineService._disciplineRepo._data)
+            for i in list:
+                id += 1
+                print(str(id) + " Name: " + i["Name"] + " Average: " + str(i["Avg"]))
+        except ValueError as e:
+            print(e)
+        self.print_stars()
+
+    def descending_classes(self):
+        self.print_stars()
+        try:
+            id = 0
+            list = self._Service.best_classes(self._gradeService._gradeRepo._data, self._studentService._studentRepo._data,self._disciplineService._disciplineRepo._data)
+            for i in list:
+                id += 1
+                print(str(id) + " Name: " + i["Name"] + " Average: " + str(i["Avg"]))
+        except ValueError as e:
+            print(e)
         self.print_stars()
 
     def print_menu(self):
@@ -186,7 +225,10 @@ class UI:
         print("12. Redo the last operation")
         print("13. Search for a discipline")
         print("14. Search for a student")
-        print("15. Exit")
+        print("15. Failing students")
+        print("16. Best students")
+        print("17. Disciplines printend in a descending order by the grades average")
+        print("18. Exit")
 
     def print_stars(self):
         print("***************************")
@@ -220,7 +262,7 @@ class UI:
                 self.undo()
             elif choice == "12":
                 self.redo()
-            elif choice == "15":
+            elif choice == "18":
                 return
             elif choice == "3":
                 self.update_student()
@@ -234,6 +276,12 @@ class UI:
                 self.search_for_discipline()
             elif choice == "14":
                 self.search_for_student()
+            elif choice == "15":
+                self.failing_students()
+            elif choice == "16":
+                self.best_students()
+            elif choice == "17":
+                self.descending_classes()
             else:
                 self.print_invalid()
 

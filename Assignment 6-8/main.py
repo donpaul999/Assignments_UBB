@@ -12,8 +12,10 @@ gradesRepo = GradesRepository()
 studentService = StudentService(studentRepo)
 disciplineService = DisciplineService(disciplineRepo)
 gradeService = GradeService(gradesRepo)
+service = Service()
 
-ui = UI(studentService, disciplineService, gradeService)
+
+ui = UI(studentService, disciplineService, gradeService, service)
 
 
 

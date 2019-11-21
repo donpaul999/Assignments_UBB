@@ -78,3 +78,88 @@ class GradeService:
 
         def remove(self, id, type):
             self._gradeRepo.remove(id, type)
+
+class Service:
+    def __init__(self):
+        self._data = []
+
+    def failing_students(self, grades, students, disciplines):
+        '''
+
+        :param grades: list of grades
+        :param students: list of students
+        :param disciplines: list of disciplines
+        :return: list of failed students
+        '''
+        list = []
+        for s in students:
+            for d in disciplines:
+                count = 0
+                sum = 0
+                for g in grades:
+                    if s.ID == g.studentId and d.ID == g.disciplineId:
+                        sum += g.Value
+                        count += 1
+                if count != 0:
+                    sum /= count
+                    if sum < 5:
+                        list.append({"Name":s.Name,"Disc":d.Name ,"Avg":sum})
+        if len(list) == 0:
+            e = Exception()
+            e.EmptyList()
+        else:
+         return list
+
+    def best_students(self, grades, students, disciplines):
+            list = []
+            for s in students:
+                avg = 0
+                count2 = 0
+                for d in disciplines:
+                    count = 0
+                    sum = 0
+                    for g in grades:
+                        if s.ID == g.studentId and d.ID == g.disciplineId:
+                            sum += g.Value
+                            count += 1
+                    if count != 0:
+                        sum /= count
+                        avg += sum
+                        count2 += 1
+                if count2 != 0:
+                    avg /= count2
+                if avg >= 5:
+                    list.append({"Name": s.Name, "Avg": avg})
+            list = sorted(list, key=lambda i: i["Avg"], reverse=True)
+            if len(list) == 0:
+                e = Exception()
+                e.EmptyList()
+            else:
+                return list
+
+    def best_classes(self, grades, students, disciplines):
+        '''
+
+        :param grades: list of grades
+        :param students: list of students
+        :param disciplines: list of disciplines
+        :return: list of the disciplines descending ordered by the average of grades
+        '''
+        list = []
+        for d in disciplines:
+            for s in students:
+                count = 0
+                sum = 0
+                for g in grades:
+                    if s.ID == g.studentId and d.ID == g.disciplineId:
+                        sum += g.Value
+                        count += 1
+                if count != 0:
+                    sum /= count
+                    list.append({"Name": d.Name, "Avg": sum})
+        list = sorted(list, key=lambda i: i["Avg"], reverse=True)
+        if len(list) == 0:
+            e = Exception()
+            e.EmptyList()
+        else:
+            return list

@@ -4,12 +4,14 @@ class Student:
     def __init__(self, sId, name):
         self.ID = sId
         self.Name = name
+        self.data = []
 
     def __repr__(self):
         return "Student ID: " + str(self.ID) + " Name: " + self.Name
     
     def __eq__(self, other):
         return self._sId == other._sId
+
 
     @property
     def ID(self):
@@ -177,3 +179,6 @@ class Exception():
 
     def GradeValue(self):
         raise  ValueError("Grade's value is not valid")
+
+    def EmptyList(self):
+        raise ValueError("There are no elements with this property!")
