@@ -6,11 +6,11 @@ class TestStudents(unittest.TestCase):
     def test_student(self):
         st = Student(1,"test")
         assert st.Name == "test"
-        assert st.studentId == 1
+        assert st.ID == 1
         st.Name = "Ana"
         assert st.Name == "Ana"
         try:
-            st.studentID = -1
+            st.ID = -1
             assert False
         except:
             assert True
@@ -25,11 +25,11 @@ class TestDisciplines(unittest.TestCase):
     def test_discipline(self):
         d = Discipline(1,"test")
         assert d.Name == "test"
-        assert d.disciplineId == 1
+        assert d.ID == 1
         d.Name = "Chemistry"
         assert d.Name == "Chemistry"
         try:
-            d.disciplineId = -1
+            d.ID = -1
             assert False
         except:
             assert True
@@ -77,15 +77,20 @@ class TestGrades(unittest.TestCase):
         
 class TestAdd(unittest.TestCase):
     def test_add(self):
-        s = Service()
-        s.addStudent(Student(1,"name"))
-        assert len(s._students) == 1
-        s.addDiscipline(Discipline(1,"name"))
-        assert len(s._disciplines) == 1
-        s.addGrade(Grade(1,1, 2))
-        assert len(s._grades) == 1
+        studentRepo = Repository()
+        disciplineRepo = Repository()
+        gradesRepo = GradesRepository()
+        s = StudentService(studentRepo)
+        s.add(Student(1,"name"))
+        assert len(s._studentRepo._data) == 1
+        d = DisciplineService(disciplineRepo)
+        d.add(Discipline(1,"name"))
+        assert len(d._disciplineRepo._data) == 1
+        g = GradeService(gradesRepo)
+        g.add(Grade(1,1, 2), s._studentRepo._data, d._disciplineRepo._data)
+        assert len(g._gradeRepo._data) == 1
         try:
-            s.addGrade(Grade(2,1,2))
+            g.add(Grade(2,1,2), s._studentRepo._data, d._disciplineRepo._data)
             assert False
         except:
             assert True
@@ -94,24 +99,31 @@ class TestAdd(unittest.TestCase):
 
 class TestRemove(unittest.TestCase):
     def test_remove(self):
-        s = Service()
-        s.addStudent(Student(1,"name"))
-        s.addDiscipline(Discipline(1,"name"))
-        s.addGrade(Grade(1,1,2))
-        s.remove_student(1)
-        s.remove_discipline(1)
-        assert len(s._students) == 0
-        assert len(s._disciplines) == 0
-        assert len(s._grades) == 0
-
+        studentRepo = Repository()
+        disciplineRepo = Repository()
+        gradesRepo = GradesRepository()
+        s = StudentService(studentRepo)
+        d = DisciplineService(disciplineRepo)
+        g = GradeService(gradesRepo)
+        s.add(Student(1,"name"))
+        d.add(Discipline(1,"name"))
+        g.add(Grade(1,1, 2), s._studentRepo._data, d._disciplineRepo._data)
+        s.remove(1)
+        d.remove(1)
+        g.remove(1,"s")
+        assert len(s._studentRepo._data) == 0
+        assert len(d._disciplineRepo._data) == 0
+        assert len(g._gradeRepo._data) == 0
 
 class TestUpdate(unittest.TestCase):
     def test_update(self):
-        s = Service()
-        s.addStudent(Student(1,"name"))
-        s.addDiscipline(Discipline(1,"name"))
-        s.update_student(1, "Andrei")
-        s.update_discipline(1, "Mate")
-        assert s._students[0].Name == "Andrei"
-        assert s._disciplines[0].Name == "Mate"
-        
+        studentRepo = Repository()
+        disciplineRepo = Repository()
+        s = StudentService(studentRepo)
+        d = DisciplineService(disciplineRepo)
+        s.add(Student(1,"name"))
+        d.add(Discipline(1,"name"))
+        s.update(1, "Andrei")
+        d.update(1, "Mate")
+        assert s._studentRepo._data[0].Name == "Andrei"
+        assert d._disciplineRepo._data[0].Name == "Mate"

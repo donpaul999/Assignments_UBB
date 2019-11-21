@@ -174,3 +174,6 @@ class Exception():
 
     def NameNotFound(self):
         raise ValueError("Name is not in the list!")
+
+    def GradeValue(self):
+        raise  ValueError("Grade's value is not valid")

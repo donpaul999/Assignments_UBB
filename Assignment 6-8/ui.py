@@ -1,4 +1,3 @@
-from service import Service
 from domain import *
 
 class UI:
@@ -32,11 +31,11 @@ class UI:
         
 
     def addGrade(self):
-        idD = input("Input id of student: ")
-        idS = input("Input id of discipline: ")
+        sId = input("Input id of student: ")
+        dId = input("Input id of discipline: ")
         value = input("Input grade: ")
         try:
-            self._gradeService.add(idD,idS, value)
+            self._gradeService.add(Grade(dId,sId, value),self._studentService._studentRepo._data,self._disciplineService._disciplineRepo._data)
         except ValueError as e:
             self.print_stars()
             print(e)
