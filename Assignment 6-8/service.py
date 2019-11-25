@@ -147,16 +147,16 @@ class Service:
         '''
         list = []
         for d in disciplines:
+            count = 0
+            sum = 0
             for s in students:
-                count = 0
-                sum = 0
                 for g in grades:
                     if s.ID == g.studentId and d.ID == g.disciplineId:
                         sum += g.Value
                         count += 1
-                if count != 0:
-                    sum /= count
-                    list.append({"Name": d.Name, "Avg": sum})
+            if count != 0:
+                sum /= count
+                list.append({"Name": d.Name, "Avg": sum})
         list = sorted(list, key=lambda i: i["Avg"], reverse=True)
         if len(list) == 0:
             e = Exception()
