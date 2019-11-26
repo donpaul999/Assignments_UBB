@@ -154,7 +154,7 @@ class Grade:
             else:
                 self._value = value
         except:
-                e.GradeValue()()
+                e.GradeValue()
         
 
 class Exception():
