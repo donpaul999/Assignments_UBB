@@ -55,7 +55,17 @@ class Operation:
         self._redo.call()
 
 class CascadeOperation:
+    def __init__(self, op1, op2):
+        self._op1 = op1
+        self._op2 = op2
 
+    def undo(self):
+        self._op2._undo.call()
+        self._op1._undo.call()
+
+    def redo(self):
+        self._op2._redo.call()
+        self._op1._redo.call()
 
 
 

@@ -1,4 +1,5 @@
 from domain import *
+from undo import *
 
 class UI:
     def __init__(self, studentService, disciplineService, gradeService, Service, undoController):
@@ -119,6 +120,7 @@ class UI:
         try:
             list = []
             list = self._gradeService.remove(id, "s")
+            self._undoController.undo
             self._studentService.remove(id)
         except ValueError as e:
             self.print_stars()
@@ -129,8 +131,30 @@ class UI:
     def remove_discipline(self):
         id = input("Input id: ")
         try:
-            list = CascadeOperation
+            id = int(id)
+        except:
+            self.print_stars()
+            print("ID is not valid!")
+            self.print_stars()
+        try:
             list = self._gradeService.remove(id, "d")
+            undo1 = FunctionCall(self._gradeService.add_grades, list)
+            redo1 = FunctionCall(self._gradeService.remove, (id, "d"))
+            operation1 = Operation(undo1, redo1)
+            ok = 0
+            for i in self._disciplineService._disciplineRepo._data:
+                if i.ID == id:
+                    name = i.Name
+                    ok = 1
+                    break
+            if ok == 0:
+                e = Exception()
+                e.IDNotFound()
+            undo2 = FunctionCall(self._disciplineService.add, Discipline(id, name))
+            redo2 = FunctionCall(self._disciplineService.remove, id)
+            operation2 = Operation(undo2, redo2)
+            cascade = CascadeOperation(operation1, operation2)
+            self._undoController.recordOperation(cascade)
             self._disciplineService.remove(id)
         except ValueError as e:
             self.print_stars()

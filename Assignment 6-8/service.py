@@ -81,6 +81,10 @@ class GradeService:
         def remove(self, id, type):
             return self._gradeRepo.remove(id, type)
 
+        def add_grades(self, grades):
+           for i in grades:
+                self._gradeRepo._data.append(i)
+
 class Service:
 
     def failing_students(self, grades, students, disciplines):
