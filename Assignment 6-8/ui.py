@@ -76,21 +76,26 @@ class UI:
         grades = self._gradeService.getAll()
         disciplines = self._disciplineService.getAll()
         students = self._studentService.getAll()
+        okf = 0
         for i in grades:
             for j in students:
                 if j.ID == i.studentId:
-                    print("Student: " + j.Name, end=", ")
+                    student = j.Name
                     ok = 1
                     break
             if ok == 1:
               for j in disciplines:
                 if j.ID == i.disciplineId:
-                    print("Discipline: " + j.Name, end=", ")
+                    discipline = j.Name
+                    ok2 = 0
                     break
-              print("Grade: " + str(i.Value))
               print("")
-            ok = 1
-        if ok == 0:
+            if ok == 1 and ok2 == 0:
+                print("Student: " + student, end=", ")
+                print("Discipline: " + discipline, end=", ")
+                print("Grade: " + str(i.Value))
+                okf = 1
+        if okf == 0:
             print("There are no grades in the list!")
         self.print_stars()
 
@@ -118,9 +123,30 @@ class UI:
     def remove_student(self):
         id = input("Input id: ")
         try:
-            list = []
+            id = int(id)
+        except:
+            self.print_stars()
+            print("ID is not valid!")
+            self.print_stars()
+        try:
             list = self._gradeService.remove(id, "s")
-            self._undoController.undo
+            undo1 = FunctionCall(self._gradeService.add_grades, list)
+            redo1 = FunctionCall(self._gradeService.remove, *(id, "s"))
+            operation1 = Operation(undo1, redo1)
+            ok = 0
+            for i in self._studentService._studentRepo._data:
+                if i.ID == id:
+                    name = i.Name
+                    ok = 1
+                    break
+            if ok == 0:
+                e = Exception()
+                e.IDNotFound()
+            undo2 = FunctionCall(self._studentService.add, Student(id, name))
+            redo2 = FunctionCall(self._studentService.remove, id)
+            operation2 = Operation(undo2, redo2)
+            cascade = CascadeOperation(operation1, operation2)
+            self._undoController.recordOperation(cascade)
             self._studentService.remove(id)
         except ValueError as e:
             self.print_stars()
@@ -139,7 +165,7 @@ class UI:
         try:
             list = self._gradeService.remove(id, "d")
             undo1 = FunctionCall(self._gradeService.add_grades, list)
-            redo1 = FunctionCall(self._gradeService.remove, (id, "d"))
+            redo1 = FunctionCall(self._gradeService.remove, *(id, "d"))
             operation1 = Operation(undo1, redo1)
             ok = 0
             for i in self._disciplineService._disciplineRepo._data:
