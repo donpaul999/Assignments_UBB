@@ -55,6 +55,7 @@ class Operation:
         self._redo.call()
 
 class CascadeOperation:
-    pass
+
+
 
 

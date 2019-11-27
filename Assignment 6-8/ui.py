@@ -129,7 +129,7 @@ class UI:
     def remove_discipline(self):
         id = input("Input id: ")
         try:
-            list = []
+            list = CascadeOperation
             list = self._gradeService.remove(id, "d")
             self._disciplineService.remove(id)
         except ValueError as e:
