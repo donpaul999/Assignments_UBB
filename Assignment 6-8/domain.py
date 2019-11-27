@@ -103,7 +103,7 @@ class Grade:
         self.Value = value
 
     def __eq__(self, other):
-        return self.studentId == other.studentId
+        return self.studentId == other.studentId and self.disciplineId == other.disciplineId and self.Value == other.Value
      
     def __repr__(self):
         return "Discipline ID: " + str(self.disciplineId) + " Student ID: " + str(self.studentId) + " Grade: " + str(self.Value)
@@ -182,3 +182,9 @@ class Exception():
 
     def EmptyList(self):
         raise ValueError("There are no elements with this property!")
+
+    def Undo(self):
+        raise ValueError("No more undos!")
+
+    def Redo(self):
+        raise ValueError("No more redos!")

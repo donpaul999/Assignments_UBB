@@ -8,6 +8,8 @@ class StudentService:
     def add(self, object):
         self._studentRepo.add(object)
 
+
+
     def getAll(self):
         return self._studentRepo.getAll()
 
@@ -24,7 +26,7 @@ class StudentService:
             id = int(id)
         except:
             e = Exception()
-            e.PositiveID
+            e.PositiveID()
         self._studentRepo.remove(id)
 
     def search_using_id(self, id):
@@ -77,11 +79,9 @@ class GradeService:
             return self._gradeRepo.getAll()
 
         def remove(self, id, type):
-            self._gradeRepo.remove(id, type)
+            return self._gradeRepo.remove(id, type)
 
 class Service:
-    def __init__(self):
-        self._data = []
 
     def failing_students(self, grades, students, disciplines):
         '''

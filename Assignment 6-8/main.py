@@ -4,10 +4,13 @@ from domain import *
 from Repo import *
 from ui import *
 from service import *
+from undo import *
 
-studentRepo = Repository()
-disciplineRepo = Repository()
-gradesRepo = GradesRepository()
+undoController = UndoController()
+
+studentRepo = Repository(undoController)
+disciplineRepo = Repository(undoController)
+gradesRepo = GradesRepository(undoController)
 
 studentService = StudentService(studentRepo)
 disciplineService = DisciplineService(disciplineRepo)
@@ -15,7 +18,7 @@ gradeService = GradeService(gradesRepo)
 service = Service()
 
 
-ui = UI(studentService, disciplineService, gradeService, service)
+ui = UI(studentService, disciplineService, gradeService, service, undoController)
 
 
 

@@ -1,12 +1,12 @@
 from domain import *
 
 class UI:
-    def __init__(self, studentService, disciplineService, gradeService, Service):
+    def __init__(self, studentService, disciplineService, gradeService, Service, undoController):
         self._studentService = studentService
         self._disciplineService = disciplineService
         self._gradeService = gradeService
         self._Service = Service
-
+        self._undoController = undoController
 
     def addStudent(self):
         id = input("Input id: ")
@@ -117,7 +117,8 @@ class UI:
     def remove_student(self):
         id = input("Input id: ")
         try:
-            self._gradeService.remove(id, "s")
+            list = []
+            list = self._gradeService.remove(id, "s")
             self._studentService.remove(id)
         except ValueError as e:
             self.print_stars()
@@ -128,7 +129,8 @@ class UI:
     def remove_discipline(self):
         id = input("Input id: ")
         try:
-            self._gradeService.remove(id, "d")
+            list = []
+            list = self._gradeService.remove(id, "d")
             self._disciplineService.remove(id)
         except ValueError as e:
             self.print_stars()
@@ -136,8 +138,8 @@ class UI:
             self.print_stars()
 
     def search_for_discipline(self):
-        self.print_stars()
         text = input("Input ID or name: ")
+        self.print_stars()
         try:
             text = int(text)
             try:
@@ -210,6 +212,23 @@ class UI:
             print(e)
         self.print_stars()
 
+    def undo(self):
+        try:
+            self._undoController.undo()
+        except ValueError as e:
+            self.print_stars()
+            print(e)
+            self.print_stars()
+
+    def redo(self):
+        try:
+            self._undoController.redo()
+        except ValueError as e:
+            self.print_stars()
+            print(e)
+            self.print_stars()
+
+
     def print_menu(self):
         print("1. Add a new student")
         print("2. Show the list of students")
@@ -235,12 +254,6 @@ class UI:
 
     def print_invalid(self):
         print("Invalid command!")
-    
-    def undo(self):
-        pass
-
-    def redo(self):
-        pass
 
     def start(self):
         while True:

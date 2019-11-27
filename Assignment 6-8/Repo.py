@@ -1,9 +1,10 @@
 from domain import *
-
+from undo import *
 
 class Repository:
-    def __init__(self):
+    def __init__(self, undoController):
         self._data = []
+        self._undoController = undoController
 
     def add(self, object):
         ok = 1
@@ -13,6 +14,10 @@ class Repository:
                 break
         if ok == 1:
             self._data.append(object)
+            undo = FunctionCall(self.remove, object.ID)
+            redo = FunctionCall(self.add, object)
+            op = Operation(undo, redo)
+            self._undoController.recordOperation(op)
         else:
             e = Exception()
             e.IDUsed()
@@ -21,6 +26,10 @@ class Repository:
         ok = 0
         for i in self._data:
             if int(i.ID) == int(ID):
+                undo = FunctionCall(self.update, ID, i.Name)
+                redo = FunctionCall(self.update, ID, name)
+                op = Operation(undo, redo)
+                self._undoController.recordOperation(op)
                 i.Name = name
                 ok = 1
                 break
@@ -30,7 +39,7 @@ class Repository:
 
     def remove(self, id):
         '''
-        Remove a student and all the grades associated
+        Remove a student/discipline and all the grades associated
         '''
         ok = 0
         for i in self._data:
@@ -84,8 +93,9 @@ class Repository:
             e.NameNotFound()
 
 class GradesRepository():
-    def __init__(self):
+    def __init__(self, undoController):
         self._data = []
+        self._undoController = undoController
 
     def add(self, grade, students, disciplines):
         ok1 = 0
@@ -101,25 +111,39 @@ class GradesRepository():
                 break
         if ok1 == ok2 and ok1 == 1:
             self._data.append(grade)
+            undo = FunctionCall(self.specific_remove, grade)
+            redo = FunctionCall(self.add, grade, students, disciplines)
+            op = Operation(undo, redo)
+            self._undoController.recordOperation(op)
         else:
             e.GradeNotValid()
 
     def getAll(self):
         return self._data
 
+    def specific_remove(self, grade):
+        for i in self._data:
+            if i == grade:
+                self._data.remove(i)
+                break
+
     def remove(self, id, type):
         try:
             if type != "s" and type != "d":
                 raise ValueError()
             id = int(id)
+            list = []
             if type == "s":
                 for i in self._data:
                     if i.studentId == id:
+                        list.append(i)
                         self._data.remove(i)
             else:
                 for i in self._data:
                     if i.disciplineId == id:
+                        list.append(i)
                         self._data.remove(i)
+            return list
         except:
             e = Exception()
             e.PositiveID()
