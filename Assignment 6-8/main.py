@@ -29,7 +29,8 @@ first_name_list = [ 'Sergiu', 'Filip', 'Sebastian', 'Paul', 'Alexandra', 'Flaviu
 classes = ['Maths', 'History', 'Chemistry', 'English', 'Fundamentals', 'ASC', 'French', 'Geometry', 'German', 'Logic']
 
 def GenerateStudents():
-    for i in range(0, 10):
+    i = 0
+    while i < 10 :
         id_nr = random.randint(0, 100)
         pos = random.randint(0,len(last_name_list) - 1)
         try:
@@ -38,9 +39,11 @@ def GenerateStudents():
             first_name_list.pop(pos)
         except:
             i -= 1
+        i += 1
 
 def GenerateDisciplines():
-    for i in range(0, 10):
+    i = 0
+    while i < 10 :
      id_nr = random.randint(0, 100)
      pos = random.randint(0, len(classes) - 1)
      try:
@@ -48,6 +51,7 @@ def GenerateDisciplines():
          classes.pop(pos)
      except:
          i -= 1
+     i += 1
 
 def GenerateGrades():
     for i in range(0, 10):

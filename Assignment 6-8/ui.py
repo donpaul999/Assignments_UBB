@@ -49,8 +49,11 @@ class UI:
     def printStudents(self):
         self.print_stars()
         ok = 0
+        id = 0
         list = self._studentService.getAll()
         for i in list:
+            id += 1
+            print(str(id) + ".", end= " ")
             print(i)
             print("")
             ok = 1
@@ -61,8 +64,11 @@ class UI:
     def printDisciplines(self):
         self.print_stars()
         ok = 0
+        id = 0
         list = self._disciplineService.getAll()
         for i in list:
+            id += 1
+            print(str(id) + ".", end=" ")
             print(i)
             print("")
             ok = 1
@@ -72,18 +78,20 @@ class UI:
 
     def printGrades(self):
         self.print_stars()
-        ok = 0
         grades = self._gradeService.getAll()
         disciplines = self._disciplineService.getAll()
         students = self._studentService.getAll()
         okf = 0
+        id = 1
         for i in grades:
+            ok = 0
             for j in students:
                 if j.ID == i.studentId:
                     student = j.Name
                     ok = 1
                     break
             if ok == 1:
+              ok2 = 0
               for j in disciplines:
                 if j.ID == i.disciplineId:
                     discipline = j.Name
@@ -91,10 +99,11 @@ class UI:
                     break
               print("")
             if ok == 1 and ok2 == 0:
-                print("Student: " + student, end=", ")
+                print(str(id) + ". Student: " + student, end=", ")
                 print("Discipline: " + discipline, end=", ")
                 print("Grade: " + str(i.Value))
                 okf = 1
+                id += 1
         if okf == 0:
             print("There are no grades in the list!")
         self.print_stars()
@@ -232,7 +241,7 @@ class UI:
             list = self._Service.failing_students(self._gradeService._gradeRepo._data, self._studentService._studentRepo._data,self._disciplineService._disciplineRepo._data)
             for i in list:
                 id += 1
-                print(str(id) + " Name: " + i["Name"] +", Discipline: " + i["Disc"] + ", Average: " + str(i["Avg"]))
+                print(str(id) + ". Name: " + i["Name"] +", Discipline: " + i["Disc"] + ", Average: " + str(i["Avg"]))
         except ValueError as e:
             print(e)
         self.print_stars()
@@ -245,7 +254,7 @@ class UI:
             list = self._Service.best_students(self._gradeService._gradeRepo._data, self._studentService._studentRepo._data,self._disciplineService._disciplineRepo._data)
             for i in list:
                 id += 1
-                print(str(id) + " Name: " + i["Name"] + " Average: " + str(i["Avg"]))
+                print(str(id) + ". Name: " + i["Name"] + " Average: " + str(i["Avg"]))
         except ValueError as e:
             print(e)
         self.print_stars()
@@ -257,7 +266,7 @@ class UI:
             list = self._Service.best_classes(self._gradeService._gradeRepo._data, self._studentService._studentRepo._data,self._disciplineService._disciplineRepo._data)
             for i in list:
                 id += 1
-                print(str(id) + " Name: " + i["Name"] + " Average: " + str(i["Avg"]))
+                print(str(id) + ". Name: " + i["Name"] + " Average: " + str(i["Avg"]))
         except ValueError as e:
             print(e)
         self.print_stars()
