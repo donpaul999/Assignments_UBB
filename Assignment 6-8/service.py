@@ -8,8 +8,6 @@ class StudentService:
     def add(self, object):
         self._studentRepo.add(object)
 
-
-
     def getAll(self):
         return self._studentRepo.getAll()
 
@@ -46,6 +44,14 @@ class DisciplineService:
         def getAll(self):
             return self._disciplineRepo.getAll()
 
+        def remove(self, id):
+            try:
+                id = int(id)
+            except:
+                e = Exception()
+                e.PositiveID()
+            self._disciplineRepo.remove(id)
+
         def update(self, id, name):
             try:
                 id = int(id)
@@ -54,14 +60,6 @@ class DisciplineService:
                 e.PositiveID()
             self._disciplineRepo.update(id, name)
 
-        def remove(self, id):
-            try:
-                id = int(id)
-            except:
-                e = Exception()
-                e.PositiveID
-            self._disciplineRepo.remove(id)
-
         def search_using_id(self, id):
             return self._disciplineRepo.search_using_id(id)
 
@@ -69,8 +67,11 @@ class DisciplineService:
             return self._disciplineRepo.search_using_name(text)
 
 class GradeService:
-        def __init__(self, gradeRepo):
+        def __init__(self, gradeRepo, studentRepo, disciplineRepo, undoController):
             self._gradeRepo = gradeRepo
+            self._studentRepo = studentRepo
+            self._disciplineRepo = disciplineRepo
+            self._undoController = undoController
 
         def add(self, grade ,studentList, disciplineList):
                 self._gradeRepo.add(grade, studentList, disciplineList)
@@ -80,6 +81,38 @@ class GradeService:
 
         def remove(self, id, type):
             return self._gradeRepo.remove(id, type)
+
+        def removeStudent(self, type, id):
+            s = self._studentRepo.find(id)
+            if s is None:
+                e = Exception()
+                e.IDNotFound()
+            list = self._gradeRepo.remove(id, type)
+            undo1 = FunctionCall(self.add_grades, list)
+            redo1 = FunctionCall(self.remove, *(id, type))
+            op1 = Operation(undo1, redo1)
+            undo2 = FunctionCall(self._studentRepo.add, s)
+            redo2 = FunctionCall(self._studentRepo.remove, id)
+            op2 = Operation(undo2, redo2)
+            cascade = CascadeOperation(op1, op2)
+            self._undoController.recordOperation(cascade)
+            self._studentRepo.remove(id)
+
+        def removeDiscipline(self, type, id):
+            d = self._disciplineRepo.find(id)
+            if d is None:
+                e = Exception()
+                e.IDNotFound()
+            list = self._gradeRepo.remove(id, type)
+            undo1 = FunctionCall(self.add_grades, list)
+            redo1 = FunctionCall(self.remove, *(id, type))
+            op1 = Operation(undo1, redo1)
+            undo2 = FunctionCall(self._disciplineRepo.add, d)
+            redo2 = FunctionCall(self._disciplineRepo.remove, id)
+            op2 = Operation(undo2, redo2)
+            cascade = CascadeOperation(op1, op2)
+            self._undoController.recordOperation(cascade)
+            self._disciplineRepo.remove(id)
 
         def add_grades(self, grades):
            for i in grades:

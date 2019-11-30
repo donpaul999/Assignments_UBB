@@ -138,25 +138,7 @@ class UI:
             print("ID is not valid!")
             self.print_stars()
         try:
-            list = self._gradeService.remove(id, "s")
-            undo1 = FunctionCall(self._gradeService.add_grades, list)
-            redo1 = FunctionCall(self._gradeService.remove, *(id, "s"))
-            operation1 = Operation(undo1, redo1)
-            ok = 0
-            for i in self._studentService._studentRepo._data:
-                if i.ID == id:
-                    name = i.Name
-                    ok = 1
-                    break
-            if ok == 0:
-                e = Exception()
-                e.IDNotFound()
-            undo2 = FunctionCall(self._studentService.add, Student(id, name))
-            redo2 = FunctionCall(self._studentService.remove, id)
-            operation2 = Operation(undo2, redo2)
-            cascade = CascadeOperation(operation1, operation2)
-            self._undoController.recordOperation(cascade)
-            self._studentService.remove(id)
+            self._gradeService.removeStudent("s",id)
         except ValueError as e:
             self.print_stars()
             print(e)
@@ -172,29 +154,12 @@ class UI:
             print("ID is not valid!")
             self.print_stars()
         try:
-            list = self._gradeService.remove(id, "d")
-            undo1 = FunctionCall(self._gradeService.add_grades, list)
-            redo1 = FunctionCall(self._gradeService.remove, *(id, "d"))
-            operation1 = Operation(undo1, redo1)
-            ok = 0
-            for i in self._disciplineService._disciplineRepo._data:
-                if i.ID == id:
-                    name = i.Name
-                    ok = 1
-                    break
-            if ok == 0:
-                e = Exception()
-                e.IDNotFound()
-            undo2 = FunctionCall(self._disciplineService.add, Discipline(id, name))
-            redo2 = FunctionCall(self._disciplineService.remove, id)
-            operation2 = Operation(undo2, redo2)
-            cascade = CascadeOperation(operation1, operation2)
-            self._undoController.recordOperation(cascade)
-            self._disciplineService.remove(id)
+            self._gradeService.removeDiscipline("d", id)
         except ValueError as e:
             self.print_stars()
             print(e)
             self.print_stars()
+
 
     def search_for_discipline(self):
         text = input("Input ID or name: ")

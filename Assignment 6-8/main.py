@@ -14,7 +14,7 @@ gradesRepo = GradesRepository(undoController)
 
 studentService = StudentService(studentRepo)
 disciplineService = DisciplineService(disciplineRepo)
-gradeService = GradeService(gradesRepo)
+gradeService = GradeService(gradesRepo, studentRepo, disciplineRepo, undoController)
 service = Service()
 
 

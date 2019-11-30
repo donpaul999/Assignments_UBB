@@ -22,6 +22,19 @@ class Repository:
             e = Exception()
             e.IDUsed()
 
+
+    def find(self,id): #search
+        '''
+        finds an object in the list based on its ID
+        :param id: the given id
+        :return: the object if found, raises error otherwise
+        '''
+        for s in self._data:
+            if int(s.ID) == int(id):
+                return s
+        return None
+
+
     def update(self, ID, name):
         ok = 0
         for i in self._data:
