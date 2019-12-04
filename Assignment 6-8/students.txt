@@ -2,9 +2,9 @@
 78,Caravia Andrei
 8,Cimpean Andreea
 98,Chis Matei
-59,Custura Octavian
 43,Craciun Flaviu
 19,Cirtorosan Dragos
 55,Comsa Filip
 2,Colta Paul
 41,Ciupe Sergiu
+59,Custura Octavian

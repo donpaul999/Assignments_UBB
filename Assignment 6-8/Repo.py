@@ -147,16 +147,21 @@ class GradesRepository():
             id = int(id)
             list = []
             if type == "s":
-                for i in self._data:
-                    if i.studentId == id:
-                        list.append(i)
-                        self._data.remove(i)
+                i = 0
+                while i < len(self._data):
+                    if int(self._data[i].studentId) == id:
+                        list.append(self._data[i])
+                        del self._data[i]
+                        i = 0
+                    i += 1
             else:
-                for i in self._data:
-                    if i.disciplineId == id:
-                        list.append(i)
-                        self._data.remove(i)
-            print(list)
+                i = 0
+                while i < len(self._data):
+                    if int(self._data[i].disciplineId) == id:
+                        list.append(self._data[i])
+                        del self._data[i]
+                        i = 0
+                    i += 1
             return list
         except:
             e = Exception()
