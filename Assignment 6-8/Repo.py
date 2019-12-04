@@ -156,6 +156,7 @@ class GradesRepository():
                     if i.disciplineId == id:
                         list.append(i)
                         self._data.remove(i)
+            print(list)
             return list
         except:
             e = Exception()
