@@ -74,7 +74,7 @@ class GradeService:
             self._undoController = undoController
 
         def add(self, grade ,studentList, disciplineList):
-                self._gradeRepo.add(grade, studentList, disciplineList)
+                self._gradeRepo.add(grade)
 
         def getAll(self):
             return self._gradeRepo.getAll()

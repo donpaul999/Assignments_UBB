@@ -64,12 +64,13 @@ def GenerateGrades():
         discipline = random.choice(disciplineRepo._data)
         student = random.choice(studentRepo._data)
         grade = random.randint(1,10)
-        gradesRepo.add(Grade(discipline.ID, student.ID, grade),studentRepo._data ,disciplineRepo._data)
+        gradesRepo.add(Grade(discipline.ID, student.ID, grade))
     print(gradesRepo._data)
 
-'''
-GenerateStudents()
-GenerateDisciplines()
-GenerateGrades()
-'''
+
+#GenerateStudents()
+#GenerateDisciplines()
+#GenerateGrades()
+
+
 ui.start()

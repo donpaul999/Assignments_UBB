@@ -1,10 +1,9 @@
 72,Capra Paul
 78,Caravia Andrei
 8,Cimpean Andreea
-2,Colta Paul
 98,Chis Matei
 59,Custura Octavian
 43,Craciun Flaviu
 19,Cirtorosan Dragos
 55,Comsa Filip
-58,Curbat Alexandra
+2,Colta Paul

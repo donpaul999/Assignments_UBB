@@ -35,6 +35,17 @@ class TextRepository(Repository):
         f.write(s)
         f.close()
 
+    def remove(self, ID):
+        Repository.remove(self, ID)
+        self._rewriteFile()
+
+    def _rewriteFile(self):
+        f = open(self._fileName, 'w')
+        list = Repository.getAll(self)
+        for object in list:
+          s = str(object.ID) + "," + str(object.Name) + '\n'
+          f.write(s)
+        f.close()
 
 class GradesTextRepository(GradesRepository):
     def __init__(self, fileName, undoController, studentList, disciplineList):
@@ -56,7 +67,7 @@ class GradesTextRepository(GradesRepository):
         f.close()
 
     def store(self, object):
-        GradesRepository.add(self, object, self._stud, self._disc)
+        GradesRepository.add(self,object,self._stud, self._disc)
 
     def add(self, object):
         GradesRepository.add(self, object, self._stud, self._disc)
@@ -66,5 +77,19 @@ class GradesTextRepository(GradesRepository):
         f = open(self._fileName, 'a')
         s = str(object.studentId) + "," + str(object.disciplineId) + "," + str(object.Value) + '\n'
         f.write(s)
+        f.close()
+
+    def remove(self, ID, type):
+        GradesRepository.remove(self, ID, type)
+        self._rewriteFile()
+        list = GradesRepository.getAll(self)
+        return list///
+
+    def _rewriteFile(self):
+        f = open(self._fileName, 'w')
+        list = GradesRepository.getAll(self)
+        for object in list:
+            s = str(object.studentId) + "," + str(object.disciplineId) + "," + str(object.Value) + '\n'
+            f.write(s)
         f.close()
 
