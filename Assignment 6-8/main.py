@@ -5,12 +5,18 @@ from Repo import *
 from ui import *
 from service import *
 from undo import *
+from TextRepository import *
+
 
 undoController = UndoController()
 
-studentRepo = Repository(undoController)
-disciplineRepo = Repository(undoController)
-gradesRepo = GradesRepository(undoController)
+studentRepo = TextRepository('students.txt', 's', undoController)
+disciplineRepo = TextRepository('disciplines.txt', 'd', undoController)
+gradesRepo = GradesTextRepository('grades.txt', undoController,  studentRepo._data ,disciplineRepo._data)
+
+#studentRepo = Repository(undoController)
+#disciplineRepo = Repository(undoController)
+#gradesRepo = GradesRepository(undoController)
 
 studentService = StudentService(studentRepo)
 disciplineService = DisciplineService(disciplineRepo)
@@ -61,9 +67,9 @@ def GenerateGrades():
         gradesRepo.add(Grade(discipline.ID, student.ID, grade),studentRepo._data ,disciplineRepo._data)
     print(gradesRepo._data)
 
-
+'''
 GenerateStudents()
 GenerateDisciplines()
 GenerateGrades()
-
+'''
 ui.start()

@@ -13,7 +13,7 @@ class UndoController:
         self._index += 1
 
     def undo(self):
-        if self._index  <= 30:
+        if self._index  < 30:
             e = Exception()
             e.Undo()
 
