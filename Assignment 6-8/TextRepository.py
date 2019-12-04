@@ -39,6 +39,10 @@ class TextRepository(Repository):
         Repository.remove(self, ID)
         self._rewriteFile()
 
+    def update(self, id, name):
+        Repository.update(self, id, name)
+        self._rewriteFile()
+
     def _rewriteFile(self):
         f = open(self._fileName, 'w')
         list = Repository.getAll(self)

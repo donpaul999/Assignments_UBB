@@ -7,3 +7,4 @@
 19,Cirtorosan Dragos
 55,Comsa Filip
 2,Colta Paul
+41,Ciupe Sergiu
