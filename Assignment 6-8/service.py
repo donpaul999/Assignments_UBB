@@ -104,8 +104,8 @@ class GradeService:
                 e = Exception()
                 e.IDNotFound()
             list = self._gradeRepo.remove(id, type)
-            undo1 = FunctionCall(self.add_grades, list)
-            redo1 = FunctionCall(self.remove, *(id, type))
+            undo1 = FunctionCall(self._gradeRepo.add_grades, list)
+            redo1 = FunctionCall(self._gradeRepo.remove, *(id, type))
             op1 = Operation(undo1, redo1)
             undo2 = FunctionCall(self._disciplineRepo.add, d)
             redo2 = FunctionCall(self._disciplineRepo.remove, id)
@@ -115,8 +115,7 @@ class GradeService:
             self._disciplineRepo.remove(id)
 
         def add_grades(self, grades):
-           for i in grades:
-                self._gradeRepo._data.append(i)
+            self._gradeRepo.add_grades(grades)
 
 class Service:
 

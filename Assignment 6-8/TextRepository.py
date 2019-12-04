@@ -80,10 +80,13 @@ class GradesTextRepository(GradesRepository):
         f.close()
 
     def remove(self, ID, type):
-        GradesRepository.remove(self, ID, type)
+        list = GradesRepository.remove(self, ID, type)
         self._rewriteFile()
-        list = GradesRepository.getAll(self)
-        return list///
+        return list
+
+    def specific_remove(self, grade):
+        GradesRepository.specific_remove(self, grade)
+        self._rewriteFile()
 
     def _rewriteFile(self):
         f = open(self._fileName, 'w')
@@ -93,3 +96,6 @@ class GradesTextRepository(GradesRepository):
             f.write(s)
         f.close()
 
+    def add_grades(self, grades):
+        GradesRepository.add_grades(self, grades)
+        self._rewriteFile()

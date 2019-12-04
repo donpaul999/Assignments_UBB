@@ -125,7 +125,7 @@ class GradesRepository():
         if ok1 == ok2 and ok1 == 1:
             self._data.append(grade)
             undo = FunctionCall(self.specific_remove, grade)
-            redo = FunctionCall(self.add, grade, students, disciplines)
+            redo = FunctionCall(self.add, grade)
             op = Operation(undo, redo)
             self._undoController.recordOperation(op)
         else:
@@ -160,3 +160,7 @@ class GradesRepository():
         except:
             e = Exception()
             e.PositiveID()
+
+    def add_grades(self, grades):
+        for i in grades:
+            self._data.append(i)
