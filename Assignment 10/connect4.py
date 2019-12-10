@@ -108,6 +108,7 @@ class UI:
         playerMove = True
         move = -1
         while b.isWon(move) == False and b.isTie(move) == False:
+            print("******************")
             print(b)
             if playerMove == True:
                 try:
