@@ -1,13 +1,85 @@
 from texttable import Texttable
 import random
+from copy import deepcopy
 
 class RandomMoveComputer:
     def calculateMove(self, board):
         candidates = []
         for i in range(7):
-            if board.get(i) == True:
+            if board[5 * 7 + i] == 0:
                     candidates.append(i)
         return random.choice(candidates)
+
+
+class NotPerfectAI():
+    def calculateMove(self, board):
+        board2 = board
+        move = self.calculateBestMove(board2)
+        return move
+
+    def calculateBestMove(self, board):
+        for i in range(7):
+            list = deepcopy(board)
+            try:
+                self.move(list,i, 'Y')
+                if self.isAlmostWon(list,i) == True:
+                    return i
+            except:
+                pass
+        for i in range(7):
+            list = deepcopy(board)
+            try:
+                self.move(list,i, 'B')
+                if self.isAlmostWon(list,i) == True:
+                    return i
+            except:
+                pass
+
+        r = RandomMoveComputer()
+        return r.calculateMove(board)
+
+    def move(self, board, x, color):
+        d = {'B': 1, ' ': 0, 'Y': -1}
+        if board[5 * 7 + x] != 0:
+            raise ValueError("Move not inside the board!")
+        i = 0
+        while i < 6:
+            if board[x + 7 * i] == 0:
+                break
+            i += 1
+        board[x + 7 * i] = d[color]
+
+    def isAlmostWon(self, board, last_move):
+        if last_move == -1:
+            return False
+        poz = 5
+        print(poz)
+        print(last_move)
+        while board[poz * 7 + last_move] == 0:
+            poz -= 1
+        symbol = board[poz * 7 + last_move]
+        dlin = [1, 0, -1, 0, 1, -1 , -1, 1]
+        dcol = [0, 1, 0, -1, 1, 1, -1, -1]
+        for i in range(8):
+            count = 0
+            xnou = poz + dlin[i]
+            ynou = last_move + dcol[i]
+            xstart = xnou
+            ystart = ynou
+            while xnou > -1 and ynou > -1 and xnou < 6 and ynou < 7 and symbol == board[xnou * 7 + ynou]:
+                count += 1
+                xnou += dlin[i]
+                ynou += dcol[i]
+            xnou = xstart
+            ynou = ystart
+            count -= 1
+            while xnou > -1 and ynou > -1 and xnou < 6 and ynou < 7 and symbol == board[xnou * 7 + ynou]:
+                count += 1
+                xnou -= dlin[i]
+                ynou -= dcol[i]
+            if count > 3:
+                return True
+        return False
 
 
 class Game:
@@ -21,8 +93,8 @@ class Game:
     def getBoard(self):
         self._board
 
-    def computerMove(self):
-        move = self._computerPlayer.calculateMove(self._board)
+    def computerMove(self, list):
+        move = self._computerPlayer.calculateMove(list)
         self._board.move(move, 'Y')
         return move
 
@@ -58,13 +130,22 @@ class Board:
         dlin = [1, 0, -1, 0, 1, -1 , -1, 1]
         dcol = [0, 1, 0, -1, 1, 1, -1, -1]
         for i in range(8):
-            count = 1
+            count = 0
             xnou = poz + dlin[i]
             ynou = last_move + dcol[i]
-            while xnou > -1 and ynou > -1 and xnou < 6 and ynou < 6 and symbol == self._data[xnou * 7 + ynou]:
+            xstart = xnou
+            ystart = ynou
+            while xnou > -1 and ynou > -1 and xnou < 6 and ynou < 7 and symbol == self._data[xnou * 7 + ynou]:
                 count += 1
                 xnou += dlin[i]
                 ynou += dcol[i]
+            xnou = xstart
+            ynou = ystart
+            count -= 1
+            while xnou > -1 and ynou > -1 and xnou < 6 and ynou < 7 and symbol == self._data[xnou * 7 + ynou]:
+                count += 1
+                xnou -= dlin[i]
+                ynou -= dcol[i]
             if count > 3:
                 return True
         return False
@@ -99,12 +180,17 @@ class UI:
         while True:
             try:
                 cmd = input("Input move:").capitalize()
-                return(int(cmd))
+                cmd = int(cmd)
+                if cmd > -1 and cmd < 7:
+                    return cmd
+                else:
+                    raise ValueError("")
             except Exception:
                 print("Invalid move!")
 
     def start(self):
         b = self._game._board
+        l = self._game._board._data
         playerMove = True
         move = -1
         while b.isWon(move) == False and b.isTie(move) == False:
@@ -118,7 +204,7 @@ class UI:
                     print(e)
                     continue
             else:
-                move = self._game.computerMove()
+                move = self._game.computerMove(l)
             playerMove = not playerMove
         if b.isTie(move):
             print("It's a draw!")
@@ -150,7 +236,7 @@ print(b)
 '''
 
 b = Board()
-ai = RandomMoveComputer()
+ai = NotPerfectAI()
 g = Game(b, ai)
 ui = UI(g)
 ui.start()
