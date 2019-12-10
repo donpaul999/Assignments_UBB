@@ -4,10 +4,9 @@ import random
 class RandomMoveComputer:
     def calculateMove(self, board):
         candidates = []
-        for i in range(6):
-            for j in range(7):
-                if board.get(i, j) == 0:
-                    candidates.append((i, j))
+        for i in range(7):
+            if board.get(i) == True:
+                    candidates.append(i)
         return random.choice(candidates)
 
 
@@ -25,6 +24,7 @@ class Game:
     def computerMove(self):
         move = self._computerPlayer.calculateMove(self._board)
         self._board.move(move, 'Y')
+        return move
 
 class Board:
     def __init__(self):
@@ -32,37 +32,46 @@ class Board:
         self._moves = 0
 
 
-    def get(self, x, y):
-        return self._data[7 * x + y]
+    def get(self, x):
+        return self._data[7 * 5 + x] == 0
 
 
     def move(self, x, color):
         d = {'B': 1, 'Y': -1}
-        if x > 6 or x < 0 or self._data[x * 7 + 5] != 0:
+        if x > 6 or x < 0 or self._data[5 * 7 + x] != 0:
             raise ValueError("Move not inside the board!")
         i = 0
         while i < 6:
-            if self._data[x * 7 + i] == 0:
+            if self._data[x + 7 * i] == 0:
                 break
             i += 1
-
-        self._data[x * 6 + i] = d[color]
+        self._data[x + 7 * i] = d[color]
         self._moves += 1
 
-    def isWon(self):
-        print("XXX")
-        for i in range(7):
-            row = self._data[7 * i:7 * i + 7]
-            col = self._data[i:i + 5]
-            if abs(sum(row)) == 4 or abs(sum(col)) == 4:
+    def isWon(self, last_move):
+        if last_move == -1:
+            return False
+        poz = 5
+        while self._data[poz * 7 + last_move] == 0:
+            poz -= 1
+        symbol = self._data[poz * 7 + last_move]
+        dlin = [1, 0, -1, 0, 1, -1 , -1, 1]
+        dcol = [0, 1, 0, -1, 1, 1, -1, -1]
+        for i in range(8):
+            count = 1
+            xnou = poz + dlin[i]
+            ynou = last_move + dcol[i]
+            while xnou > -1 and ynou > -1 and xnou < 6 and ynou < 6 and symbol == self._data[xnou * 7 + ynou]:
+                count += 1
+                xnou += dlin[i]
+                ynou += dcol[i]
+            if count > 3:
                 return True
-        '''
-        diagonal
-        '''
         return False
 
-    def isTie(self):
-        return self.isWon() == False and self._moves  == 42
+
+    def isTie(self, last_move):
+        return self.isWon(last_move) == False and self._moves  == 42
 
 
 
@@ -95,9 +104,10 @@ class UI:
                 print("Invalid move!")
 
     def start(self):
-        b = self._game.getBoard()
+        b = self._game._board
         playerMove = True
-        while b.isWon() == False and b.isTie() == False:
+        move = -1
+        while b.isWon(move) == False and b.isTie(move) == False:
             print(b)
             if playerMove == True:
                 try:
@@ -107,9 +117,9 @@ class UI:
                     print(e)
                     continue
             else:
-                self._game.computerMove()
+                move = self._game.computerMove()
             playerMove = not playerMove
-        if b.isTie():
+        if b.isTie(move):
             print("It's a draw!")
         elif playerMove == False:
             print("Congrats! You won!")
@@ -119,16 +129,27 @@ class UI:
 
 
 b = Board()
+'''
+b.move(0,'B')
+b.move(1,'B')
+b.move(1,'B')
+b.move(1,'B')
+b.move(1,'B')
+b.move(1,'B')
 b.move(1,'B')
 b.move(2, 'B')
-b.move(2, 'B')
+b.move(3, 'B')
+b.move(4, 'B')
+b.move(5, 'B')
+b.move(6, 'B')
+b.move(6, 'B')
+
 print(b.isWon())
 print(b)
-
 '''
+
 b = Board()
 ai = RandomMoveComputer()
 g = Game(b, ai)
 ui = UI(g)
 ui.start()
-'''
