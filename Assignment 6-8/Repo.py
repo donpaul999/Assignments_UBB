@@ -6,6 +6,7 @@ class Repository:
         self._data = []
         self._undoController = undoController
 
+
     def add(self, object):
         ok = 1
         for i in self._data:
