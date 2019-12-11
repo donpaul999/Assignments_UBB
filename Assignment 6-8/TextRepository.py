@@ -103,3 +103,26 @@ class GradesTextRepository(GradesRepository):
     def add_grades(self, grades):
         GradesRepository.add_grades(self, grades)
         self._rewriteFile()
+
+class PickleRepo(TextRepository):
+    def _saveFile(self, object):
+        with open(self.file, 'wb') as f:
+            pickle.dump(self._data, f)
+            f.close()
+
+    def _loadFile(self):
+        with open(self.file, 'rb') as f:
+            self._data = pickle.load(f)
+            f.close()
+
+    def add(self, object):
+        super().add(object)
+        self._saveFile()
+
+    def remove(self, ID):
+        super().remove(ID)
+        self._saveFile()
+
+    def update(self, id, name):
+        super().update(self, id, name):
+        self._saveFile()

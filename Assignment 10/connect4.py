@@ -53,8 +53,6 @@ class NotPerfectAI():
         if last_move == -1:
             return False
         poz = 5
-        print(poz)
-        print(last_move)
         while board[poz * 7 + last_move] == 0:
             poz -= 1
         symbol = board[poz * 7 + last_move]
