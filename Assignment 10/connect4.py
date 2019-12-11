@@ -117,8 +117,9 @@ class UI:
         playerMove = True
         move = -1
         while b.isWon(move) == False and b.isTie(move) == False:
-            print("******************")
-            print(b)
+            if playerMove == True:
+                print("******************")
+                print(b)
             if playerMove == True:
                 try:
                     move = self._readPlayerMove()
@@ -134,8 +135,9 @@ class UI:
         elif playerMove == False:
             print("Congrats! You won!")
         else:
+            print("******************")
             print("You were defeated!")
-        print(b)
+            print(b)
 
 
 b = Board()
@@ -159,7 +161,7 @@ print(b)
 '''
 
 b = Board()
-ai = NotPerfectAI()
+ai = BestAI()
 g = Game(b, ai)
 ui = UI(g)
 ui.start()
