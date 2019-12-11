@@ -89,8 +89,8 @@ class BestAI():
 
     def best_move(self, board, depth):
         col, score = self.minmax(board, depth, True)
-        if col is None:
-            a = NotPerfectAI()
+        if col is None: #THIS IS NOT FOR A RANDOM MOVE - when user is almost close to win, minmax
+            a = NotPerfectAI() #return none instead of column
             col = a.calculateMove(board)
         return col
 
@@ -102,7 +102,7 @@ class BestAI():
         return candidates
 
     def calculateMove(self, board):
-        col = self.best_move(board, 5)
+        col = self.best_move(board, 3)
         return col
 
     def minmax(self, board, depth, maximizingPlayer):
@@ -117,7 +117,7 @@ class BestAI():
                 else:
                     return (None, 0)
             else:
-                return (None, self.score_position(board, 'Y'))
+                return (None, self.score_position(board, -1 ))
         if maximizingPlayer:
             value = -math.inf
             col = random.choice(valid)
@@ -129,88 +129,74 @@ class BestAI():
                 if new_score > value:
                     value = new_score
                     col = column
-                return col, value
+            return col, value
         else:
             value = math.inf
             for column in valid:
                 row = self.get_next_open_row(board, column)
                 b_copy = board.copy()
                 b_copy[row * 7 + column] = 1
-                new_score = self.minmax(b_copy, depth - 1, False)[1]
+                new_score = self.minmax(b_copy, depth - 1, True)[1]
                 if new_score < value:
                     value = new_score
                     col = column
-                return col, value
+            return col, value
+
+    def ev_window(self, window, piece):
+        score = 0
+        if window.count(piece) == 4:
+            score += 100
+        elif window.count(piece) == 3 and window.count(0) == 1:
+            score += 5
+        elif window.count(piece) == 2 and window.count(0) == 2:
+            score += 2
+
+        op = (-1) * piece
+        if window.count(op) == 3 and window.count(0) == 1:
+            score -= 6
+        return score
+
+        
 
     def score_position(self, board, piece):
         score = 0
-        for i in range(6):
-            for j in range(7):
-                if board[i * 7 + j] == 0:
-                    score += self.scoreOfCoordinate(board, i, j, 1, -1)
-        return score
+        center = []
+        window = []
+        row = []
+        col = []
+        #center
+        for r in range(6):
+            center.append(board[r * 7 + 3])
+        center_piece = center.count(piece)
+        score += 3 * center_piece
+        #horizontal
+        for r in range(0, 42, 7):
+            row = board[r: r + 7]
+            for c in range(4): #col -3
+                window = row[c: c + 4]
+                score += self.ev_window(window, piece)
 
-    def scoreOfCoordinate(self, board, i ,j, player, opponent):
-        score = 0
-        score += self.scoreOfLine(board, i, j,-1, 0, -1, 6,  None, None, player, opponent)
-        score += self.scoreOfLine(board, i, j, 0, -1, None, None, -1, 6, player, opponent)
-        score += self.scoreOfLine(board, i, j, -1, 1, -1, 6, 7, -1, player, opponent)
-        score += self.scoreOfLine(board, i, j, -1, -1, -1, 6, -1, 7, player, opponent)
-        return score
+        #Vertical
+        for c in range(7):
+            for i in range(6):
+                col.append(board[i * 7 + c])
+            for r in range(3):
+                window = col[r: r + 4]
+                score += self.ev_window(window, piece)
 
-    def scoreOfLine(self, board, i ,j, rowInc, colInc,firstRowCond,secRowCond, firstColCond, secondColCond, player, opponent):
-        score = 0
-        currentInLine = 0
-        valInARow = 0
-        valInARowPrev = 0
-        row = i + rowInc
-        col = j + colInc
-        firstLoop = True
-        while row != firstRowCond and col != firstColCond and board[row * 7 + col] != 0:
-            if firstLoop == True:
-                currentInLine = board[row * 7 + col]
-                firstLoop = False
-            if currentInLine == board[row * 7 + col]:
-                valInARow += 1
-            else:
-                break
-            row += rowInc
-            col += colInc
+        #Diag
+        for r in range(3):
+            for c in range(4):
+                 window = [board[(r + i)* 7 + c + i] for i in range(4)]
+                 score += self.ev_window(window, piece)
 
-        row = i - rowInc
-        col = j - colInc
-        firstLoop = True
-        try:
-            while row != secRowCond and col != secondColCond and board[row * 7 + col] != 0:
-                if firstLoop == True:
-                    firstLoop = False
-                    if currentInLine != board[row * 7 + col]:
-                        if valInARow == 3 and currentInLine == player:
-                            score += 1
-                        elif valInARow == 3 and currentInLine == opponent:
-                            score -= 1
-                    else:
-                        valInARowPrev = valInARow
-
-                    valInARow = 0
-                    currentInLine = board[row * 7 + col]
-
-                if currentInLine == board[row * 7 + col]:
-                    valInARow += 1
-                else:
-                    break
-                row -= rowInc
-                col -= colInc
-
-            if valInARowPrev + valInARow >= 3 and currentInLine == player:
-                score += 1
-            elif valInARowPrev + valInARow >= 3 and currentInLine == opponent:
-                score -= 1
-        except:
-            pass
+                
+        for r in range(3):
+            for c in range(4):
+                window = [board[(r + 3 - i) * 7 + c + i] for i in range(4)]
+                score += self.ev_window(window, piece)
 
         return score
-
 
 
     def is_terminal(self, board, valid):
