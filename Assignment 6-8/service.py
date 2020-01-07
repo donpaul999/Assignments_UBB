@@ -21,8 +21,8 @@ class StudentService:
 
 
 
-    def sort(self, sign):
-        self._studentRepo.sort(sign)
+    def sort(self, sign, type):
+        self._studentRepo.sort(sign, type)
 
 
     def remove(self, id):
@@ -49,6 +49,9 @@ class DisciplineService:
 
         def getAll(self):
             return self._disciplineRepo.getAll()
+
+        def sort(self, sign, type):
+            self._disciplineRepo2.sort(sign, type)
 
         def remove(self, id):
             try:

@@ -242,7 +242,31 @@ class UI:
             if text == "ascending" or text == "descending":
                 break
             print("Invalid choice!")
-        self._studentService.sort(text)
+        self._studentService.sort(text, 'id')
+
+    def sort_students_name(self):
+        while True:
+            text = input("Input ascending or descending: ")
+            if text == "ascending" or text == "descending":
+                break
+            print("Invalid choice!")
+        self._studentService.sort(text, 'name')
+
+    def sort_disciplines_id(self):
+        while True:
+            text = input("Input ascending or descending: ")
+            if text == "ascending" or text == "descending":
+                break
+            print("Invalid choice!")
+        self._disciplineService.sort(text, 'id')
+
+    def sort_disciplines_name(self):
+        while True:
+            text = input("Input ascending or descending: ")
+            if text == "ascending" or text == "descending":
+                break
+            print("Invalid choice!")
+        self._disciplineService.sort(text, 'name')
 
     def undo(self):
         try:

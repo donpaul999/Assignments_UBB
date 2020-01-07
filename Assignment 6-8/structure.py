@@ -21,20 +21,30 @@ class Structure:
     def __delitem__(self, key):
         self._data.remove(self._data[key])
 
-    def cmp(self, x1, x2, sign):
-        if sign == 'ascending':
-            if x1.ID < x2.ID:
-                return 0
-            return 1
+    def cmp(self, x1, x2, sign, type):
+        if type == 'ID':
+            if sign == 'ascending':
+                if x1.ID < x2.ID:
+                    return 0
+                return 1
+            else:
+                if x1.ID > x2.ID:
+                    return 0
+                return 1
         else:
-            if x1.ID > x2.ID:
-                return 0
-            return 1
+            if sign == 'ascending':
+                if x1.Name < x2.Name:
+                    return 0
+                return 1
+            else:
+                if x1.Name > x2.Name:
+                    return 0
+                return 1
 
-    def sort(self,sign):
+    def sort(self,sign, type):
         pos = 0
         while pos < len(self._data):
-            if pos == 0 or self.cmp(self._data[pos], self._data[pos - 1], sign) ==  1:
+            if pos == 0 or self.cmp(self._data[pos], self._data[pos - 1], sign ,type) ==  1:
                 pos += 1
             else:
                 aux = self._data[pos]
