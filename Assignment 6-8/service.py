@@ -19,6 +19,12 @@ class StudentService:
             e.PositiveID()
         self._studentRepo.update(id, name)
 
+
+
+    def sort(self, sign):
+        self._studentRepo.sort(sign)
+
+
     def remove(self, id):
         try:
             id = int(id)

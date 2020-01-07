@@ -236,6 +236,14 @@ class UI:
             print(e)
         self.print_stars()
 
+    def sort_students_id(self):
+        while True:
+            text = input("Input ascending or descending: ")
+            if text == "ascending" or text == "descending":
+                break
+            print("Invalid choice!")
+        self._studentService.sort(text)
+
     def undo(self):
         try:
             self._undoController.undo()
@@ -271,7 +279,13 @@ class UI:
         print("15. Failing students")
         print("16. Best students")
         print("17. Disciplines printend in a descending order by the grades average")
-        print("18. Exit")
+        print("18. Sort students by ID")
+        print("19. Sort students by Name")
+        print("20. Sort disciplines by ID")
+        print("21. Sort disciplines by Name")
+        print("22. Filter students by ID")
+        print("23. Filter disciplines by ID")
+        print("24. Exit")
 
     def print_stars(self):
         print("***************************")
@@ -299,7 +313,7 @@ class UI:
                 self.undo()
             elif choice == "12":
                 self.redo()
-            elif choice == "18":
+            elif choice == "24":
                 return
             elif choice == "3":
                 self.update_student()
@@ -319,6 +333,18 @@ class UI:
                 self.best_students()
             elif choice == "17":
                 self.descending_classes()
+            elif choice == "18":
+                self.sort_students_id()
+            elif choice == "19":
+                self.sort_students_name()
+            elif choice == "20":
+                self.sort_disciplines_id()
+            elif choice == "21":
+                self.sort_disciplines_name()
+            elif choice == "22":
+                self.filter_students_id()
+            elif choice == "23":
+                self.filter_disciplines_id()
             else:
                 self.print_invalid()
 

@@ -1,11 +1,12 @@
 from domain import *
 from undo import *
+from structure import *
 
-class Repository:
+class Repository(Structure):
     def __init__(self, undoController):
+        super().__init__()
         self._data = []
         self._undoController = undoController
-
 
     def add(self, object):
         ok = 1
@@ -22,7 +23,6 @@ class Repository:
         else:
             e = Exception()
             e.IDUsed()
-
 
     def find(self,id): #search
         '''

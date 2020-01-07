@@ -5,9 +5,6 @@ class Structure:
     def __iter__(self):
         return StructureIterator(self)
 
-    def __next__(self):
-        pass
-
     def add(self, object):
         self._data.append(object)
 
@@ -23,6 +20,7 @@ class StructureIterator:
             self._index += 1
             return result
         raise  StopIteration
+
 
 
 s = Structure()

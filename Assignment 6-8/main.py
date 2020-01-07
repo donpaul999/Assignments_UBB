@@ -30,9 +30,9 @@ def load_properties(filepath, sep= "="):
 def start_program():
     props = load_properties("settings.properties")
     if props['repository'] == 'inmemory':
-        studentRepo = Repository()
-        disciplineRepo = Repository()
-        gradeRepo = GradeRepository()
+        studentRepo = Repository(undoController)
+        disciplineRepo = Repository(undoController)
+        gradeRepo = GradesRepository(undoController)
     elif props['repository'] == 'CSV':
         studentRepo = TextRepository(props['students'], 's',undoController)
         disciplineRepo = TextRepository(props['disciplines'], 'd', undoController)

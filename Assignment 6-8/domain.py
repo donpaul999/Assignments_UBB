@@ -10,7 +10,7 @@ class Student:
         return "Student ID: " + str(self.ID) + " Name: " + self.Name
     
     def __eq__(self, other):
-        return self._sId == other._sId
+        return self.ID == other.ID
 
 
     @property
