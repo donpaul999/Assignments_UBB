@@ -19,7 +19,8 @@ class StudentService:
             e.PositiveID()
         self._studentRepo.update(id, name)
 
-
+    def filter(self, sign, value):
+        self._studentRepo.filter(sign, value)
 
     def sort(self, sign, type):
         self._studentRepo.sort(sign, type)
@@ -50,8 +51,11 @@ class DisciplineService:
         def getAll(self):
             return self._disciplineRepo.getAll()
 
+        def filter(self, sign, value):
+            self._disciplineRepo.filter(sign, value)
+
         def sort(self, sign, type):
-            self._disciplineRepo2.sort(sign, type)
+            self._disciplineRepo.sort(sign, type)
 
         def remove(self, id):
             try:

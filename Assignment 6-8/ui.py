@@ -268,6 +268,35 @@ class UI:
             print("Invalid choice!")
         self._disciplineService.sort(text, 'name')
 
+
+    def filter_students_id(self):
+        while True:
+            sign = input("Enter '<' or '>': ")
+            value = input("Enter a value: ")
+            try:
+                value = int(value)
+                if sign != '>' and sign != '<':
+                    print("Invalid choice!")
+                else:
+                    self._studentService.filter(sign, value)
+                    break
+            except:
+                print("Invalid choice!")
+
+    def filter_disciplines_id(self):
+        while True:
+            sign = input("Enter '<' or '>': ")
+            value = input("Enter a value: ")
+            try:
+                value = int(value)
+                if sign != '>' and sign != '<':
+                    print("Invalid choice!")
+                else:
+                    self._disciplineService.filter(sign, value)
+                    break
+            except:
+                print("Invalid choice!")
+
     def undo(self):
         try:
             self._undoController.undo()

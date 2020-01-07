@@ -22,7 +22,7 @@ class Structure:
         self._data.remove(self._data[key])
 
     def cmp(self, x1, x2, sign, type):
-        if type == 'ID':
+        if type == 'id':
             if sign == 'ascending':
                 if x1.ID < x2.ID:
                     return 0
@@ -52,9 +52,19 @@ class Structure:
                 self._data[pos - 1] = aux
                 pos -= 1
 
-    def filterBy(self, FilterBy):
+    def FilterBy(self,x,sign, value):
+        if sign == '<':
+            if x.ID < value:
+                return True
+            return False
+        else:
+            if x.ID > value:
+                return True
+            return False
+
+    def filter(self, sign, value):
         for i in range(len(self._data) - 1, -1, -1):
-            if FilterBy(self._data[i]) == False:
+            if self.FilterBy(self._data[i], sign, value) == False:
                 self.__delitem__(i)
 
 class StructureIterator:
@@ -70,7 +80,3 @@ class StructureIterator:
         raise  StopIteration
 
 
-def Filter(x):
-    if x.ID < 2:
-        return False
-    return True
