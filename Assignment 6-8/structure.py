@@ -67,6 +67,7 @@ class Structure:
             if self.FilterBy(self._data[i], sign, value) == False:
                 self.__delitem__(i)
 
+
 class StructureIterator:
     def __init__(self, structure):
         self._structure = structure
@@ -77,6 +78,6 @@ class StructureIterator:
             result = self._structure._data[self._index]
             self._index += 1
             return result
-        raise  StopIteration
+        raise StopIteration
 
 

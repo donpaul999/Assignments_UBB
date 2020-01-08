@@ -22,11 +22,13 @@ class StructureIterator:
         raise  StopIteration
 
 
-
+ --> 'FIND MORE IN ASSIGNMENT 6-8'
 s = Structure()
 s.add("mar")
 s.add("par")
 for i in s:
     print(i)
+
+
 
 
