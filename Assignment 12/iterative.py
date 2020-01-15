@@ -17,16 +17,28 @@ def solution(s, index, n):
 
 
 def backtracking(list, n):
-    s = deepcopy(list)
+    s = [0] * len(list)
+    rank = [0] * len(list)
     k = 0
-    while k < len(list):
-        for i in range(len(list)):
-            s[k] = list[i]
-            if valid(s, k) == True:
-                if solution(s, k + 1, n) == True:
-                    printing(s, k + 1)
-                if k + 1 < len(list):
-                    k += 1
+    i = 0
+    while k != -1:
+        s[k] = list[i]
+        if valid(s, k) == True:
+            if solution(s, k + 1, n) == True:
+                printing(s, k + 1)
+            rank[k] = i
+            k += 1
+            i = 0
+        elif i < len(list) - 1 and k < len(list) - 1:
+            i += 1
+        else:
+            k -= 1
+            if k != -1:
+                k -= 1
+                i = rank[k] + 1
+                while k > - 1 and i == len(list):
+                    i = rank[k] + 1
+                    k -= 1
 
 
 def printing(list, n):
