@@ -13,6 +13,7 @@ private:
 	TElem min_num;
 	int length;
 	int capacity;
+	int bagsize;
 	TElem* b;
 
 		

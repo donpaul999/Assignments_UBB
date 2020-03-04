@@ -1,4 +1,5 @@
 #include <exception>
+#include <iostream>
 #include "BagIterator.h"
 #include "Bag.h"
 
@@ -7,20 +8,28 @@ using namespace std;
 
 BagIterator::BagIterator(const Bag& c): bag(c)
 {
-	//TODO - Implementation
+	cout << 1;
+	index = 0;
 }
 
 void BagIterator::first() {
-	//TODO - Implementation
+	cout << 1;
+	index = 0;
 }
 
 
 void BagIterator::next() {
-	//TODO - Implementation
+	cout << 1;
+
+	if (valid()) {
+		index++;
+	}
 }
 
 
 bool BagIterator::valid() const {
+	cout << 1;
+
 	//TODO - Implementation
 	return false;
 }
@@ -29,6 +38,7 @@ bool BagIterator::valid() const {
 
 TElem BagIterator::getCurrent() const
 {
-	//TODO - Implementation
-	return NULL_TELEM 
+	cout << 1;
+
+	return 0 <= index && index < bag.length;
 }
