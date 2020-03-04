@@ -4,30 +4,29 @@
 
 using namespace std;
 
-bool lived(char person[]) {
-    char* p;
-    int number, i, pos = 0, total = 0;
+bool lived_Less_Than_TenThousand_Days(char person[]) {
+    char* partOfDate;
+    int number, i, section = 0, totalDays = 0;
     int day = 27, month = 2, year = 2020;
-    p = strtok(person, "-");
-    while (p != NULL) {
+    partOfDate = strtok(person, "-");
+    while (partOfDate != NULL) {
         number = 0;
-        pos++;
-        for (i = 0; i < strlen(p); ++i) {
-            number = number * 10 + p[i] - '0';
+        section++;
+        for (i = 0; i < strlen(partOfDate); ++i) {
+            number = number * 10 + partOfDate[i] - '0';
         }
-        if (pos == 1){
-            total += day - number;
+        if (section == 1){
+            totalDays += day - number;
         }
-        if (pos == 2) {
-            total = total + (month - number) * 30;
+        if (section == 2) {
+            totalDays = totalDays + (month - number) * 30;
         }
-        if (pos == 3) {
-            total = total + (year - number) * 365;
+        if (section == 3) {
+            totalDays = totalDays + (year - number) * 365;
         }
-        p = strtok(NULL, "-");
+        partOfDate = strtok(NULL, "-");
     }
-    //printf("%d\n", total);
-    if (total <= 10000)
+    if (totalDays <= 10000)
         return 1;
     return 0;
 }  
@@ -35,16 +34,15 @@ bool lived(char person[]) {
 
 int main()
 {   
-    char word[101],test[101];
+    char input[101],copyOfInput[101];
     char* t;
     do {
-        scanf("%s", word);
-        if (!strcmp(word, "exit"))
+        scanf("%s", input);
+        if (!strcmp(input, "exit"))
             break;
-        strcpy(test, word);
-        if (lived(word)) {
-            //printf("%s", "123");
-            printf("%s\n", test);
+        strcpy(copyOfInput, input);
+        if (lived_Less_Than_TenThousand_Days(input)) {
+            printf("%s\n", copyOfInput);
         }
     } while (1);
     return 0;
