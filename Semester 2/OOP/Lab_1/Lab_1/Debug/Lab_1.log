@@ -1,0 +1,12 @@
+﻿  Lab_1.cpp
+\\Mac\Home\Desktop\GitHub\OOP\Lab_1\Lab_1\Lab_1.cpp(15,23): warning C4018: '<': signed/unsigned mismatch
+\\Mac\Home\Desktop\GitHub\OOP\Lab_1\Lab_1\Lab_1.cpp(11,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+\\Mac\Home\Desktop\GitHub\OOP\Lab_1\Lab_1\Lab_1.cpp(27,1): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(440): message : see declaration of 'strtok'
+\\Mac\Home\Desktop\GitHub\OOP\Lab_1\Lab_1\Lab_1.cpp(41,1): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message : see declaration of 'scanf'
+\\Mac\Home\Desktop\GitHub\OOP\Lab_1\Lab_1\Lab_1.cpp(44,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
+\\Mac\Home\Desktop\GitHub\OOP\Lab_1\Lab_1\Lab_1.cpp(39,11): warning C4101: 't': unreferenced local variable
+  Lab_1.vcxproj -> \\Mac\Home\Desktop\GitHub\OOP\Lab_1\Debug\Lab_1.exe
