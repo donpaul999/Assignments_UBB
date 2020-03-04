@@ -299,7 +299,7 @@ void testIterator() {
 
 	assert(elements.size() == b4.size());
 	for (unsigned int i = 0; i < elements.size(); i++) { 
-		TElem lastElem = elements.at(elements.size() - i - 1);
+		TElem lastElem = elements.at(elements.size() - i - 1);		
 		assert(b4.search(lastElem) == true);
 		b4.remove(lastElem);
 	}

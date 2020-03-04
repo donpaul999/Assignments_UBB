@@ -7,9 +7,9 @@ using namespace std;
 
 
 Bag::Bag() {
-	capacity = 100;
+	capacity = 3;
 	length = 0;
-	this->bagsize = 0;
+	bagsize = 0;
 	b = new TElem[capacity];
 	max_num = INT_MIN;
 	min_num = INT_MAX;
@@ -19,83 +19,84 @@ Bag::Bag() {
 
 
 void Bag::add(TElem elem) {
-	if (this->length == this->capacity) {
-		this->capacity = this->capacity + 5;
+	if (length == capacity) {
+		capacity = capacity + 5;
 		TElem* newb = new TElem[this->capacity];
 		for (int i = 0; i < this->length; ++i) {
 			newb[i] = this->b[i];
 		}
 		delete[] this->b;
-		this->b = newb;
+		b = newb;
 	}
 
-	if (this->min_num = INT_MAX && this->max_num == INT_MIN) {
-		cout << "1";
-		this->min_num = elem;
-		this->max_num = elem;
-		this->b[0] = 1;
-		this->length++;
-		this->bagsize++;
+	if (min_num == INT_MAX) {
+		min_num = elem;
+		max_num = elem;
+		b[0] = 1;
+		length++;
+		bagsize++;
 	}
 	else if (elem > max_num) {
-		cout << "2";
 		int dif = elem - min_num;
 		int dif2 = elem - max_num;
-		this->max_num = elem;
-		if (this->max_num - this->min_num + 1 >= this->capacity) {
-			this->capacity = this->capacity + dif2 + 1;
-			TElem* newb = new TElem[this->capacity];
-			for (int i = 0; i < this->length; ++i) {
-				newb[i] = this->b[i];
+		max_num = elem;
+		if (max_num - min_num + 1 >= capacity) {
+			capacity = dif + 5;
+			TElem* newb = new TElem[capacity];
+			for (int i = 0; i < length; ++i) {
+				newb[i] = b[i];
 			}
-			delete[] this->b;
-			this->b = newb;
-			for (int i = this->length; i < this->capacity; ++i)
-				this->b = 0;
+			delete[]  b;
+			b = newb;
+			for (int i = length; i < capacity; ++i)
+				b[i] = 0;
 		}
-		this->b[dif] = 1;
-		this->bagsize++;
-		this->length += dif2;
+		b[dif] = 1;
+		bagsize++;
+		length += dif2;
 	}
-	else if(elem < this->min_num){
-		cout << "3";
-		int dif = this->min_num - elem;
-		this->min_num = elem;
-		if (this->max_num - this->min_num + 1 >= this->capacity) {
-			this->capacity = this->capacity + dif + 1;
-			TElem* newb = new TElem[this->capacity];
-			for (int i = 0; i < this->length; ++i) {
-				newb[i] = this->b[i];
+	else if (elem < min_num) {
+		int dif = min_num - elem;
+		min_num = elem;
+		if (max_num - min_num + 1 >= capacity) {
+			capacity = max_num - min_num + 5;
+			TElem* newb = new TElem[capacity];
+			for (int i = 0; i < length; ++i) {
+				newb[i] = b[i];
 			}
-			delete[] this->b;
-			this->b = newb;
-			for (int i = this->length; i < this->capacity; ++i)
-				this->b = 0;
+			delete[]  b;
+			b = newb;
+			for (int i = length; i < capacity; ++i)
+				b[i] = 0;
 		}
 		for (int i = 0; i < dif; ++i) {
-			this->length++;
-			for (int j = this->length; j > 0; j--)
-				this->b[j] = this->b[j - 1];
+			length++;
+			for (int j = length; j > 0; j--)
+				b[j] = b[j - 1];
 		}
-		this->b[0] = 1;
-		this->bagsize++;
+		for (int i = 1; i < dif; ++i)
+			b[i] = 0;
+		b[0] = 1;
+		bagsize++;
 	}
-	else{
-		cout << "4";
-		int dif = elem - this->min_num;
-		this->b[dif]++;
-		this->bagsize++;
+	else {
+		int dif = elem - min_num;
+		b[dif]++;
+		bagsize++;
 	}
-	cout << this->min_num << " max: " << this->max_num << '\n';
-	cout << elem<<": ";
-	for (int i = 0; i < this->length; ++i)
-		cout << this->b[i] << " ";
-	cout << '\n';
+	/*
+	if (bagsize == 500){
+		cout << "MINIM: " << min_num << " " << "MAXIM: " << max_num << '\n';
+		for (int i = 0; i < length; ++i)
+			cout << b[i] << " ";
+		cout << '\n';
+	}
+	*/
+	
 }
 
 
 bool Bag::remove(TElem elem) {
-	cout << 2;
 	if (search(elem) == false)
 		return false;		
 	this->b[elem - min_num]--;
@@ -104,11 +105,23 @@ bool Bag::remove(TElem elem) {
 		for (int i = 0; i < this->length; ++i)
 			this->b[i] = this->b[i + 1];
 		this->length--;
+		min_num++;
 	}
 	else
 		if (elem == max_num && this->b[elem - min_num] == 0) {
 			this->length--;
+			max_num--;
 		}
+	while (b[0] == 0 && this->length > 0) {
+		for (int i = 0; i < this->length; ++i)
+			this->b[i] = this->b[i + 1];
+		this->length--;
+		min_num++;
+	}
+	while (b[this->length - 1] == 0 && this->length > 0) {
+		this->length--;
+		max_num--;
+	}
 	return true;
 }
 
@@ -130,6 +143,7 @@ int Bag::nrOccurrences(TElem elem) const {
 int Bag::size() const {
 	if(this->bagsize == 0)
 		return 0;
+	//cout << "SIZE: " << this->bagsize << '\n';
 	return this->bagsize;
 }
 

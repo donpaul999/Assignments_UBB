@@ -8,6 +8,8 @@ class BagIterator
 private:
 	const Bag& bag;
 	int index;
+	int poz;
+	int frec;
 
 	BagIterator(const Bag& c);
 public:

@@ -8,37 +8,49 @@ using namespace std;
 
 BagIterator::BagIterator(const Bag& c): bag(c)
 {
-	cout << 1;
 	index = 0;
+	frec = bag.b[0];
+	poz = 0;
 }
 
 void BagIterator::first() {
-	cout << 1;
 	index = 0;
+	frec = bag.b[0];
+	poz = 0;
 }
 
 
 void BagIterator::next() {
-	cout << 1;
-
-	if (valid()) {
+	if (!valid()) {
+		throw runtime_error{ "" };
+	}
+	else {
 		index++;
+		//cout << "FREq " << frec << '\n';
+		frec--;
+		if (frec <= 0) {
+			poz++;
+			while(bag.b[poz] == 0 && poz < bag.length)
+				poz++;
+			frec = bag.b[poz];
+		}
 	}
 }
 
 
 bool BagIterator::valid() const {
-	cout << 1;
-
-	//TODO - Implementation
-	return false;
+	return 0 <= index && index < bag.bagsize;
 }
 
 
 
 TElem BagIterator::getCurrent() const
 {
-	cout << 1;
-
-	return 0 <= index && index < bag.length;
+	if (!valid()) {
+		throw runtime_error{ "" };
+	}
+	else {
+		//cout << "VAL " << bag.min_num + poz << '\n';
+		return bag.min_num + poz;
+	}
 }
