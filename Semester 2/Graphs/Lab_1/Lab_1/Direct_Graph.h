@@ -7,6 +7,7 @@
 using namespace std;
 
 class DIRECT_GRAPH {
+
 private:
     int numberOfEdges, numberOfVertices;
     map <int, vector<int>> edgesIn;
@@ -31,5 +32,6 @@ public:
     void addEdge(int source, int target, int value);
     void removeVertex(int vertex);
     void removeEdge(int source, int target);
+
 
 };

@@ -1,18 +1,2 @@
-﻿  Direct_Graph.cpp
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\Graphs\Lab_1\Lab_1\Direct_Graph.cpp(29,32): error C2143: syntax error: missing ')' before ']'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\Graphs\Lab_1\Lab_1\Direct_Graph.cpp(49,97): error C2679: binary '!=': no operator found which takes a right-hand operand of type 'std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<int,std::allocator<int>>>>>>' (or there is no acceptable conversion)
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\vector(152,21): message : could be 'bool std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>::operator !=(const std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<_Ty>>> &) const'
-          with
-          [
-              _Ty=int
-          ]
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\Graphs\Lab_1\Lab_1\Direct_Graph.cpp(49,97): message : while trying to match the argument list '(_InIt, std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const int,std::vector<int,std::allocator<int>>>>>>)'
-          with
-          [
-              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>
-          ]
-  Lab_1.cpp
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\Graphs\Lab_1\Lab_1\Lab_1.cpp(13,5): error C2065: 'DIRECT_GRAPH': undeclared identifier
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\Graphs\Lab_1\Lab_1\Lab_1.cpp(13,18): error C2146: syntax error: missing ';' before identifier 'Graph'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\Graphs\Lab_1\Lab_1\Lab_1.cpp(13,18): error C2065: 'Graph': undeclared identifier
-  Generating Code...
+﻿  UIDirectGraph.cpp
+  Lab_1.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\Graphs\Lab_1\Debug\Lab_1.exe

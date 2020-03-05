@@ -149,9 +149,14 @@
   <ItemGroup>
     <ClCompile Include="Direct_Graph.cpp" />
     <ClCompile Include="Lab_1.cpp" />
+    <ClCompile Include="UIDirectGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Direct_Graph.h" />
+    <ClInclude Include="UIDirectGraph.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="input.in" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

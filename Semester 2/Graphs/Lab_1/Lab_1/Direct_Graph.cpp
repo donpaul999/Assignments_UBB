@@ -119,5 +119,26 @@ void DIRECT_GRAPH::removeVertex(int vertex)
 {
     if (!existsVertex(vertex))
         throw runtime_error("vertex not in graph");
-    
+    for (int& sources : edgesOut[vertex]) {
+        edgesIn[sources].erase(find(edgesIn[sources].begin(), edgesIn[sources].end(), vertex));
+        costs.erase(costs.find(mp(vertex, sources)));
+    }
+
+    for (int& sources : edgesIn[vertex]) {
+        edgesOut[sources].erase(find(edgesOut[sources].begin(), edgesOut[sources].end(), vertex));
+        costs.erase(costs.find(mp(sources, vertex)));
+    }
+    edgesOut.erase(edgesOut.find(vertex));
+    edgesIn.erase(edgesIn.find(vertex));
+    vertices.erase(find(vertices.begin(), vertices.end(), vertex));
+
+}
+
+void DIRECT_GRAPH::removeEdge(int source, int target)
+{
+    if (!existsEdge(source, target))
+        throw runtime_error{ "invalid edge" };
+    edgesOut[source].erase(find(edgesOut[source].begin(), edgesOut[source].end(), source));
+    edgesIn[target].erase(find(edgesIn[target].begin(), edgesIn[target].end(), source));
+    costs.erase(costs.find(mp(source, target)));
 }

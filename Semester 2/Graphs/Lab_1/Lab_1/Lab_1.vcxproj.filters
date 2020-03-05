@@ -21,10 +21,21 @@
     <ClCompile Include="Direct_Graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UIDirectGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Direct_Graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UIDirectGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="input.in">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
