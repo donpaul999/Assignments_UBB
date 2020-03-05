@@ -8,7 +8,8 @@ typedef struct {
 
 Service* createService(Repository* repo);
 void destroyService(Service* service);
-void removeMaterialService(Service* service, int id);
-void findMaterialService(Service* service, int id);
-void updateMaterialService(Service* service, int id, char name[], char supplier, double quantity);
-void addMaterialService(Service* service, int id, char name[], char supplier, double quantity);
+int removeMaterialService(Service* service, int id);
+int findMaterialService(Service* service, int id);
+int updateMaterialService(Service* service, int id, char supplier[], char name[], double quantity);
+int addMaterialService(Service* service, int id, char supplier[], char name[], double quantity);
+Material* returnMaterialsWithNameService(Service* service, int* length, char name[]);

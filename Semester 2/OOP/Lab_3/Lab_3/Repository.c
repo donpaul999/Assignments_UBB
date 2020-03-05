@@ -1,6 +1,4 @@
 #include "Repository.h"
-#include <stdlib.h>
-#include <assert.h>
 #pragma once
 
 Repository* createRepository()
@@ -19,11 +17,11 @@ void destroyRepository(Repository* repo)
 
 int updateMaterial(Repository* repo, Material m)
 {
-	int position_where_material_was_find = findMaterial(repo, m);
+	int position_where_material_was_find = findMaterial(repo, m.id);
 	if(position_where_material_was_find == -1)
 		return -1;
 	strcpy(repo->list_of_materials[position_where_material_was_find].name, m.name);
-	strcpy(repo->list_of_materials[position_where_material_was_find].suplier, m.suplier);
+	strcpy(repo->list_of_materials[position_where_material_was_find].supplier, m.supplier);
 	repo->list_of_materials[position_where_material_was_find].quantity = m.quantity;
 	return 1;
 }
@@ -53,4 +51,18 @@ int removeMaterial(Repository* repo, int id)
 		repo->list_of_materials[i] = repo->list_of_materials[i + 1];
 	repo->materials_counter--;
 	return 1;
+}
+
+Material* returnMaterialsWithName(Repository* repo, int* length, char name[]) {
+	int i = 0;
+	*length = 0;
+	Material list_of_materials[200];
+	if (strcmp(name, "") == 0) {
+		*length = repo->materials_counter;
+		return repo->list_of_materials;
+	}
+	for (i = 0; i < repo->materials_counter; ++i)
+		if (strcmp(repo->list_of_materials[i].name, name) == 0)
+			list_of_materials[*length++] = repo->list_of_materials[i];
+	return list_of_materials;
 }

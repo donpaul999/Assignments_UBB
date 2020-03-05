@@ -1,0 +1,4 @@
+﻿  Main.c
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Main.c(10,28): warning C4133: 'function': incompatible types - from 'BakeryUI *' to 'Service *'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Main.c(10): warning C4700: uninitialized local variable 'ui' used
+  LAB_3FINAL.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\LAB_3FINAL\Debug\LAB_3FINAL.exe
