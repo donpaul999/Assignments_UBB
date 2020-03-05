@@ -283,6 +283,7 @@ class UI:
             except:
                 print("Invalid choice!")
 
+
     def filter_disciplines_id(self):
         while True:
             sign = input("Enter '<' or '>': ")
@@ -313,6 +314,8 @@ class UI:
             print(e)
             self.print_stars()
 
+    def delete_substring(self):
+        word = input("Enter the substring to be removed ")
 
     def print_menu(self):
         print("1. Add a new student")
@@ -339,6 +342,7 @@ class UI:
         print("22. Filter students by ID")
         print("23. Filter disciplines by ID")
         print("24. Exit")
+        print("25. Delete substring")
 
     def print_stars(self):
         print("***************************")
@@ -398,6 +402,8 @@ class UI:
                 self.filter_students_id()
             elif choice == "23":
                 self.filter_disciplines_id()
+            elif choice == "25":
+                self.delete_substring()
             else:
                 self.print_invalid()
 

@@ -38,7 +38,12 @@ class StudentService:
        return self._studentRepo.search_using_id(id)
 
     def search_using_name(self, text):
-            return self._studentRepo.search_using_name(text)
+        return self._studentRepo.search_using_name(text)
+
+    def delete_substring(self, substring):
+        self._studentRepo.delete_substring(substring)
+
+
 
 
 class DisciplineService:

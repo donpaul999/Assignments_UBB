@@ -84,6 +84,11 @@ class Repository(Structure):
         else:
             e.NameNotFound()
 
+    def remove_substring(self,substring):
+        for i in self._data:
+            if str(substring) in str(i.Name):
+                i.Name = i.Name.replace(substring, " ")
+
     def getAll(self):
       return self._data
 

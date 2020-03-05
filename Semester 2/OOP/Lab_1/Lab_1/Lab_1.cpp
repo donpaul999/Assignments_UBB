@@ -4,25 +4,27 @@
 
 using namespace std;
 
-bool lived_Less_Than_TenThousand_Days(char person[]) {
+bool lived_Less_Than_TenThousand_Days(char person_birthdate[]) {
     char* partOfDate;
-    int number, i, section = 0, totalDays = 0;
+    int i, totalDays = 0;
+    int dateSection = 0; // The 1st section contains the day, the 2nd contains the month, the 3rd contains the year
+    int dateValueInTheSection; //Compute the number from the section given
     int day = 27, month = 2, year = 2020;
-    partOfDate = strtok(person, "-");
+    partOfDate = strtok(person_birthdate, "-");
     while (partOfDate != NULL) {
-        number = 0;
-        section++;
+        dateValueInTheSection = 0;
+        dateSection++;
         for (i = 0; i < strlen(partOfDate); ++i) {
-            number = number * 10 + partOfDate[i] - '0';
+            dateValueInTheSection = dateValueInTheSection * 10 + partOfDate[i] - '0';
         }
-        if (section == 1){
-            totalDays += day - number;
+        if (dateSection == 1){
+            totalDays += day - dateValueInTheSection;
         }
-        if (section == 2) {
-            totalDays = totalDays + (month - number) * 30;
+        if (dateSection == 2) {
+            totalDays = totalDays + (month - dateValueInTheSection) * 30;
         }
-        if (section == 3) {
-            totalDays = totalDays + (year - number) * 365;
+        if (dateSection == 3) {
+            totalDays = totalDays + (year - dateValueInTheSection) * 365;
         }
         partOfDate = strtok(NULL, "-");
     }
@@ -34,14 +36,13 @@ bool lived_Less_Than_TenThousand_Days(char person[]) {
 
 int main()
 {   
-    char input[101],copyOfInput[101];
-    char* t;
+    char consoleInput[101],copyOfInput[101];
     do {
-        scanf("%s", input);
-        if (!strcmp(input, "exit"))
+        scanf("%s", consoleInput);
+        if (!strcmp(consoleInput, "exit"))
             break;
-        strcpy(copyOfInput, input);
-        if (lived_Less_Than_TenThousand_Days(input)) {
+        strcpy(copyOfInput, consoleInput);
+        if (lived_Less_Than_TenThousand_Days(consoleInput)) {
             printf("%s\n", copyOfInput);
         }
     } while (1);
