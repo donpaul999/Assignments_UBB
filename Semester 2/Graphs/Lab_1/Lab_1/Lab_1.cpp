@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    UI u("input.in");
+    UI u("graph1m.txt");
     u.start_app();
     cout << "Hello World!\n";
 }

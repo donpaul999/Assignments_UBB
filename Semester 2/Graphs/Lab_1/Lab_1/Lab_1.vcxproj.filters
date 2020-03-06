@@ -38,4 +38,12 @@
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="graph1m.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="graph10k.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

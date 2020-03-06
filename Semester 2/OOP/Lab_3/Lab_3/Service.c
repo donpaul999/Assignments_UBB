@@ -25,8 +25,7 @@ int findMaterialService(Service* service, int id)
 	return findMaterial(service->repo, id);
 }
 
-int addMaterialService(Service* service, int id, char supplier[], char name[], double quantity)
-{
+int addMaterialService(Service* service, int id, char supplier[], char name[], double quantity){
 	Material m = createMaterial(id, supplier, name, quantity);
 	return addMaterial(service->repo, m);
 }

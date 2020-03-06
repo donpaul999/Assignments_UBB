@@ -8,7 +8,7 @@ Material createMaterial(int id, char supplier[], char name[], double quantity)
 	strcpy(object.supplier, supplier);
 	strcpy(object.name, name);
 	object.quantity = quantity;
-
+	return object;
 }
 
 double getQuantity(Material p)

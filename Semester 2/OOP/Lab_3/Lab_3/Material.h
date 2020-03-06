@@ -5,7 +5,7 @@ typedef struct
 	int id;
 	char supplier[100];
 	char name[100];
-	double quantity;
+	int quantity;
 }Material;
 
 Material createMaterial(int id, char supplier[], char name[], double quantity);
