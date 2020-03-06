@@ -83,10 +83,12 @@ void uiDeleteMaterial(BakeryUI* bakeryUI)
 void uiListMaterials(BakeryUI* bakeryUI)
 {	
 	int length = 0;
-	char name[50] = "";
-	int resultOfRead = scanf("%s", name);
-	if (resultOfRead != 1)
-		strcpy(name, "\n");
+	char name[50] = "", aux[50];
+	gets(name);
+	if (strlen(name) != 0){
+		strcpy(aux, name + 1);
+		strcpy(name, aux);
+	}
 	printf("%s", name);
 	Material* listOfMaterials = returnMaterialsWithNameService(bakeryUI->bakeryService, &length, name);
 	for (int i = 0; i < length; ++i)

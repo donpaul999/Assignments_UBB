@@ -56,15 +56,18 @@ int removeMaterial(Repository* repo, int id)
 Material* returnMaterialsWithName(Repository* repo, int* length, char name[]) {
 	int i = 0;
 	*length = 0;
-	Material list_of_materials[200];
-	if (strcmp(name, "\n") == 0) {
+	Material *list_of_materials = (Material*)malloc(sizeof(Material) * 200);
+	if (strlen(name) == 0) {
 		*length = repo->materials_counter;
 		return repo->list_of_materials;
 	}
 	for (i = 0; i < repo->materials_counter; ++i)
 		if (strcmp(repo->list_of_materials[i].name, name) == 0) {
-			list_of_materials[*length++] = repo->list_of_materials[i];
-			printf("%s", list_of_materials[*length].name);
+			printf("SALOT!");
+			list_of_materials[*length++].id = repo->list_of_materials[i].id;
+			strcpy(list_of_materials[*length].name, repo->list_of_materials[i].name);
+			strcpy(list_of_materials[*length].supplier, repo->list_of_materials[i].supplier);
+			list_of_materials[*length].quantity = repo->list_of_materials[i].quantity;
 		}
 	return list_of_materials;
 }
