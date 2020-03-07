@@ -59,7 +59,7 @@ void uiUpdateMaterial(BakeryUI* bakeryUI)
 {
 	int id;
 	char supplier[50], name[50];
-	double quantity;
+	int quantity;
 	scanf("%d, ", &id);
 	scanf("%s, ", supplier);
 	supplier[strlen(supplier) - 1] = '\0';
@@ -89,7 +89,6 @@ void uiListMaterials(BakeryUI* bakeryUI)
 		strcpy(aux, name + 1);
 		strcpy(name, aux);
 	}
-	printf("%s", name);
 	Material* listOfMaterials = returnMaterialsWithNameService(bakeryUI->bakeryService, &length, name);
 	for (int i = 0; i < length; ++i)
 		printf("ID: %d Supplier: %s Name: %s Quantity: %d\n", listOfMaterials[i].id, listOfMaterials[i].supplier, listOfMaterials[i].name, listOfMaterials[i].quantity);
