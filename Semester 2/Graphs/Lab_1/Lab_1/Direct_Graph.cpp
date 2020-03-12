@@ -1,6 +1,7 @@
 #include "Direct_Graph.h"
 #define mp make_pair
 #define pb push_back
+#include <iostream>
 using namespace std;
 
 DIRECT_GRAPH::DIRECT_GRAPH()
@@ -16,7 +17,7 @@ void DIRECT_GRAPH::readFromFile(string filename)
     fin >> numberOfVertices >> numberOfEdges;
     for (int i = 0; i < numberOfVertices; ++i)
     {
-
+        cout << i <<'\n';
         vertices.pb(i);
         edgesIn[i] = vector <int>();    //initialize the edges empty for every vertice
         edgesOut[i] = vector <int>();

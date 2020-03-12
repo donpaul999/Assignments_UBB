@@ -21,8 +21,10 @@ void startAppUI(BakeryUI* bakeryUI)
 	while (1) {
 		printf("Input: ");
 		scanf("%s", consoleInput);
-		if (strcmp(consoleInput, "exit") == 0)
+		if (strcmp(consoleInput, "exit") == 0) {
+			destroyUI(bakeryUI);
 			break;
+		}
 		else if (strcmp(consoleInput, "add") == 0)
 			uiAddMaterial(bakeryUI);
 		else if (strcmp(consoleInput, "delete") == 0)
@@ -45,12 +47,12 @@ void uiAddMaterial(BakeryUI* bakeryUI)
 	//scanf("%d, %s, %s, %d", &id, supplier, name, &quantity);
 	scanf("%d, ", &id);
 	scanf("%s, ", supplier);
-	supplier[strlen(supplier) - 1] = '\0';
+	supplier[strlen(supplier) - 1] = '\0';	//remove the ","
 	scanf("%s, ", name);
-	name[strlen(name) - 1] = '\0';
+	name[strlen(name) - 1] = '\0';	//remove the ","
 	scanf("%d", &quantity);
-	int answerOfFunction = addMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity);
-	if (answerOfFunction == -1)
+	int answerOfTheFunction = addMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity);
+	if (answerOfTheFunction == -1)
 		printf("NO!\n");
 
 }
@@ -62,12 +64,12 @@ void uiUpdateMaterial(BakeryUI* bakeryUI)
 	int quantity;
 	scanf("%d, ", &id);
 	scanf("%s, ", supplier);
-	supplier[strlen(supplier) - 1] = '\0';
+	supplier[strlen(supplier) - 1] = '\0'; //remove the ","
 	scanf("%s, ", name);
-	name[strlen(name) - 1] = '\0';
+	name[strlen(name) - 1] = '\0';	//remove the ","
 	scanf("%d", &quantity);
-	int answerOfFunction = updateMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity);
-	if (answerOfFunction == -1)
+	int answerofTheFunction = updateMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity);
+	if (answerofTheFunction == -1)
 		printf("NO!\n");
 }
 
@@ -75,8 +77,8 @@ void uiDeleteMaterial(BakeryUI* bakeryUI)
 {
 	int id;
 	scanf("%d", &id);
-	int answerOfFunction = removeMaterialService(bakeryUI->bakeryService, id);
-	if (answerOfFunction == -1)
+	int answerofTheFunction = removeMaterialService(bakeryUI->bakeryService, id);
+	if (answerofTheFunction == -1)
 		printf("NO!\n");
 }
 
