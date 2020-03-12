@@ -8,9 +8,9 @@ typedef struct
 	int quantity;
 }Material;
 
-Material createMaterial(int id, char supplier[], char name[], double quantity);
-double getQuantity(Material p);
-char* getName(Material* p);
-int getID(Material p);
-char* getSupplier(Material* p);
-void testMaterial();
+Material* createMaterial(int id, char supplier[], char name[], int quantity);
+void destroyMaterial(Material* materialUsed);
+int getQuantity(Material* materialUsed);
+char* getName(Material* materialUsed);
+int getID(Material* materialUsed);
+char* getSupplier(Material* materialUsed);

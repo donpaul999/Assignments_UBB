@@ -1,2 +1,8 @@
-﻿  Main.c
+﻿  Material.c
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Material.c(6,38): warning C4013: 'malloc' undefined; assuming extern returning int
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Material.c(8,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Material.c(9,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Material.c(15,6): warning C4013: 'free' undefined; assuming extern returning int
   LAB_3FINAL.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\LAB_3FINAL\Debug\LAB_3FINAL.exe

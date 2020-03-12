@@ -3,14 +3,14 @@
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
 #include <crtdbg.h>
-//#include <crtdbg.h>
 
 int main(){
-	_CrtDumpMemoryLeaks();
-	Repository* repository = createRepository();
+	Repository* repository = createRepository(10);
 	Service* service = createService(repository);
 	BakeryUI* ui = createUI(service);
 	startAppUI(ui);
-	return 0;
+	addMaterialService(service, 123, "test", "est", 123, 0);
 	//_CrtDumpMemoryLeaks();
+	return 0;
+
 }

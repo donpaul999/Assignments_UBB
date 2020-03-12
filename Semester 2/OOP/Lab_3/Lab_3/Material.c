@@ -1,41 +1,43 @@
 #include "Material.h"
 #include <string.h>
 #include <assert.h>
-Material createMaterial(int id, char supplier[], char name[], double quantity)
+Material* createMaterial(int id, char supplier[], char name[], int quantity)
 {
-	Material object;
-	object.id = id;
-	strcpy(object.supplier, supplier);
-	strcpy(object.name, name);
-	object.quantity = quantity;
+	Material* object = (Material*)malloc(sizeof(Material));
+	object->id = id;
+	strcpy(object->supplier, supplier);
+	strcpy(object->name, name);
+	object->quantity = quantity;
 	return object;
 }
 
-double getQuantity(Material p)
-{
-	return p.quantity;
+void destroyMaterial(Material* materialUsed) {
+	free(materialUsed->id);
+	free(materialUsed->supplier);
+	free(materialUsed->name);
+	free(materialUsed->quantity);
+	free(materialUsed);
+
 }
 
-char* getName(Material* p)
+
+int getQuantity(Material* materialUsed)
 {
-	return p->name;
+	return materialUsed->quantity;
 }
 
-int getID(Material p)
+char* getName(Material* materialUsed)
 {
-	return p.id;
+	return materialUsed->name;
 }
 
-char* getSupplier(Material* p)
+int getID(Material* materialUsed)
 {
-	return p->supplier;
+	return materialUsed->id;
 }
 
-void testMaterial()
+char* getSupplier(Material* materialUsed)
 {
-	Material p;
-	p = createMaterial(1,"grain", "test", 123254.2);
-	assert(getQuantity(p) == 123254.2);
-	assert(!strcmp(getName(&p), "grain"));
-	assert(!strcmp(getSupplier(&p), "test"));
+	return materialUsed->supplier;
 }
+

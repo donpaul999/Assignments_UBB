@@ -138,12 +138,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Lab_3\Lab_3\DynamicallyVector.h" />
     <ClInclude Include="..\..\Lab_3\Lab_3\Material.h" />
     <ClInclude Include="..\..\Lab_3\Lab_3\Repository.h" />
     <ClInclude Include="..\..\Lab_3\Lab_3\Service.h" />
     <ClInclude Include="..\..\Lab_3\Lab_3\UIBakery.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Lab_3\Lab_3\DynamicallyVector.c" />
     <ClCompile Include="..\..\Lab_3\Lab_3\Main.c" />
     <ClCompile Include="..\..\Lab_3\Lab_3\Material.c" />
     <ClCompile Include="..\..\Lab_3\Lab_3\Repository.c" />

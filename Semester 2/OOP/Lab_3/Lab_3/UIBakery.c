@@ -33,6 +33,10 @@ void startAppUI(BakeryUI* bakeryUI)
 			uiUpdateMaterial(bakeryUI);
 		else if (strcmp(consoleInput, "list") == 0)
 			uiListMaterials(bakeryUI);
+		else if (strcmp(consoleInput, "undo") == 0)
+			uiUndo(bakeryUI);
+		else if (strcmp(consoleInput, "redo") == 0)
+			uiRedo(bakeryUI);
 		else
 			printf("Invalid command!\n");
 	}
@@ -51,8 +55,8 @@ void uiAddMaterial(BakeryUI* bakeryUI)
 	scanf("%s, ", name);
 	name[strlen(name) - 1] = '\0';	//remove the ","
 	scanf("%d", &quantity);
-	int answerOfTheFunction = addMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity);
-	if (answerOfTheFunction == -1)
+	int isTheFunctionSuccesful = addMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 0);
+	if (isTheFunctionSuccesful == -1)
 		printf("NO!\n");
 
 }
@@ -68,8 +72,8 @@ void uiUpdateMaterial(BakeryUI* bakeryUI)
 	scanf("%s, ", name);
 	name[strlen(name) - 1] = '\0';	//remove the ","
 	scanf("%d", &quantity);
-	int answerofTheFunction = updateMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity);
-	if (answerofTheFunction == -1)
+	int isTheFunctionSuccesful = updateMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 0);
+	if (isTheFunctionSuccesful == -1)
 		printf("NO!\n");
 }
 
@@ -77,21 +81,52 @@ void uiDeleteMaterial(BakeryUI* bakeryUI)
 {
 	int id;
 	scanf("%d", &id);
-	int answerofTheFunction = removeMaterialService(bakeryUI->bakeryService, id);
-	if (answerofTheFunction == -1)
+	int isTheFunctionSuccesful = removeMaterialService(bakeryUI->bakeryService, id, 0);
+	if (isTheFunctionSuccesful == -1)
 		printf("NO!\n");
 }
 
 void uiListMaterials(BakeryUI* bakeryUI)
 {	
 	int length = 0;
-	char name[50] = "", aux[50];
-	gets(name);
-	if (strlen(name) != 0){
-		strcpy(aux, name + 1);
-		strcpy(name, aux);
+	DynamicallyVector* listOfMaterials;
+	Material* materialToPrint;
+	char nameOrQuantity[50] = "", transitionString[50];
+
+	gets(nameOrQuantity);
+	if (strlen(nameOrQuantity) != 0){
+		strcpy(transitionString, nameOrQuantity + 1);
+		strcpy(nameOrQuantity, transitionString);
 	}
-	Material* listOfMaterials = returnMaterialsWithNameService(bakeryUI->bakeryService, &length, name);
-	for (int i = 0; i < length; ++i)
-		printf("ID: %d Supplier: %s Name: %s Quantity: %d\n", listOfMaterials[i].id, listOfMaterials[i].supplier, listOfMaterials[i].name, listOfMaterials[i].quantity);
+	//Verify if what we got from console is a quantity or a name
+	int lengthOfString = strlen(nameOrQuantity);
+	int quantity = 0, isQuantity = 1;
+	for (int i = 0; i < lengthOfString && isQuantity == 1; ++i)
+		if (nameOrQuantity[i] < '0' || nameOrQuantity[i] > '9')
+			isQuantity;
+		else
+			quantity = quantity * 10 + nameOrQuantity[i] - '0';
+
+	if(isQuantity == 1)
+		listOfMaterials = returnMaterialsWithQuantityService(bakeryUI->bakeryService, &length, quantity);
+	else
+		listOfMaterials = returnMaterialsWithNameService(bakeryUI->bakeryService, &length, nameOrQuantity);
+	for (int i = 0; i < length; ++i) {
+		materialToPrint = getElementByPosition(listOfMaterials, i);
+		printf("ID: %d Supplier: %s Name: %s Quantity: %d\n", materialToPrint->id, materialToPrint->supplier, materialToPrint->name, materialToPrint->quantity);
+	}
+}
+
+void uiUndo(BakeryUI* bakeryUI)
+{
+	int isSuccesful = undoService(bakeryUI->bakeryService);
+	if (isSuccesful == -1)
+		printf("No more undo!\n");
+}
+
+void uiRedo(BakeryUI* bakeryUI)
+{
+	int isSuccesful = redoService(bakeryUI->bakeryService);
+	if (isSuccesful == -1)
+		printf("No more redo!\n");
 }

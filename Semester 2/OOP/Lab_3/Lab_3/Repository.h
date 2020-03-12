@@ -1,18 +1,25 @@
 #pragma once
 #include "Material.h"
-#define MAX_DIM 1001 
+#include "DynamicallyVector.h"
 
 typedef struct {
-	Material list_of_materials[MAX_DIM];
-	int materials_counter;
+	DynamicallyVector* historyList;
+	DynamicallyVector* materialsList;
+	int indexOfHistory;
 }Repository;
 
-Repository* createRepository();
-void destroyRepository(Repository* repo);
-int updateMaterial(Repository* repo, Material m);
-int addMaterial(Repository* repo, Material m);
+Repository* createRepository(int capacity);
+void destroyMaterialsList(DynamicallyVector* materialsList);
+void destroyHistoryList(DynamicallyVector* commandList); 
+void destroyRepository(Repository* repository);
+void appendRepositoryInHistory(Repository* repository);
+void removeEverythingAfterThisState(Repository* repository);
+int addMaterial(Repository* repo, Material* materialUsed, int currentInUndo);
+int updateMaterial(Repository* repo, Material* materialUsed, int currentInUndo);
 int findMaterial(Repository* repo, int id);
-int removeMaterial(Repository* repo, int id);
-Material* returnMaterialsWithName(Repository* repo, int*length, char name[]);
-
-
+int removeMaterial(Repository* repo, int id, int currentInUndo);
+DynamicallyVector* returnMaterialsWithName(Repository* repo, int* length, char name[]);
+DynamicallyVector* returnMaterialsWithQuantity(Repository* repo, int* length, int quantity);
+int undo(Repository* repository);
+int redo(Repository* repository);
+DynamicallyVector* getMaterialsListCopy(Repository* repo, DynamicallyVector* materialsList);
