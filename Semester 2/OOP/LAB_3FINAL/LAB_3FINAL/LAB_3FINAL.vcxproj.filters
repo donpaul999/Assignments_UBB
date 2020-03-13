@@ -30,6 +30,9 @@
     <ClInclude Include="..\..\Lab_3\Lab_3\DynamicallyVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Lab_3\Lab_3\Tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Lab_3\Lab_3\Main.c">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Lab_3\Lab_3\DynamicallyVector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Lab_3\Lab_3\Tests.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

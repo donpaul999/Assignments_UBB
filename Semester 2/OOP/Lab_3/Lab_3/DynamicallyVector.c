@@ -6,6 +6,7 @@ DynamicallyVector* createDynamicallyVector(int capacity)
     dynamicVector->length = 0;
     dynamicVector->capacity = capacity;
     dynamicVector->elements = (TElem*)malloc(sizeof(TElem) * capacity);
+    return dynamicVector;
 }
 
 void destroyDynamicallyVector(DynamicallyVector** dynamicVectorPointer)
@@ -23,7 +24,7 @@ DynamicallyVector* getCopy(DynamicallyVector* dynamicVector)
     return copyOfTheVector;
 }
 
-int size(DynamicallyVector* dynamicVector)
+int sizeOfVector(DynamicallyVector* dynamicVector)
 {
     return dynamicVector->length;
 }
@@ -71,16 +72,6 @@ TElem getElementByPosition(DynamicallyVector* dynamicVector, int position)
     return dynamicVector->elements[position];
 }
 
-void swapElements(DynamicallyVector* dynamicVector, int position1, int position2)
-{
-    if (position1 < 0 || position1 >= dynamicVector->length || dynamicVector->length == 0)
-        return -1;
-    if (position2 < 0 || position2 >= dynamicVector->length)
-        return -1;
-    TElem transitionElement = dynamicVector->elements[position1];
-    dynamicVector->elements[position1] = dynamicVector->elements[position2];
-    dynamicVector->elements[position2] = transitionElement;
-}
 
 int almostFullCapacityUsed(DynamicallyVector* dynamicVector)
 {

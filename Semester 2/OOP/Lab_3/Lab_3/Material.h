@@ -3,8 +3,8 @@
 typedef struct
 {
 	int id;
-	char supplier[100];
-	char name[100];
+	char *supplier;
+	char *name;
 	int quantity;
 }Material;
 

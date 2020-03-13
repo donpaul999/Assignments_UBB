@@ -55,7 +55,7 @@ void uiAddMaterial(BakeryUI* bakeryUI)
 	scanf("%s, ", name);
 	name[strlen(name) - 1] = '\0';	//remove the ","
 	scanf("%d", &quantity);
-	int isTheFunctionSuccesful = addMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 0);
+	int isTheFunctionSuccesful = addMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 1);
 	if (isTheFunctionSuccesful == -1)
 		printf("NO!\n");
 
@@ -72,7 +72,7 @@ void uiUpdateMaterial(BakeryUI* bakeryUI)
 	scanf("%s, ", name);
 	name[strlen(name) - 1] = '\0';	//remove the ","
 	scanf("%d", &quantity);
-	int isTheFunctionSuccesful = updateMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 0);
+	int isTheFunctionSuccesful = updateMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 1);
 	if (isTheFunctionSuccesful == -1)
 		printf("NO!\n");
 }
@@ -81,7 +81,7 @@ void uiDeleteMaterial(BakeryUI* bakeryUI)
 {
 	int id;
 	scanf("%d", &id);
-	int isTheFunctionSuccesful = removeMaterialService(bakeryUI->bakeryService, id, 0);
+	int isTheFunctionSuccesful = removeMaterialService(bakeryUI->bakeryService, id, 1);
 	if (isTheFunctionSuccesful == -1)
 		printf("NO!\n");
 }
@@ -101,12 +101,15 @@ void uiListMaterials(BakeryUI* bakeryUI)
 	//Verify if what we got from console is a quantity or a name
 	int lengthOfString = strlen(nameOrQuantity);
 	int quantity = 0, isQuantity = 1;
+	if(lengthOfString == 0)
+	{
+		isQuantity = 0;
+	}
 	for (int i = 0; i < lengthOfString && isQuantity == 1; ++i)
 		if (nameOrQuantity[i] < '0' || nameOrQuantity[i] > '9')
-			isQuantity;
+			isQuantity = 0;
 		else
 			quantity = quantity * 10 + nameOrQuantity[i] - '0';
-
 	if(isQuantity == 1)
 		listOfMaterials = returnMaterialsWithQuantityService(bakeryUI->bakeryService, &length, quantity);
 	else

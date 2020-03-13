@@ -5,6 +5,8 @@ Material* createMaterial(int id, char supplier[], char name[], int quantity)
 {
 	Material* object = (Material*)malloc(sizeof(Material));
 	object->id = id;
+	object->name = (char*)malloc(sizeof(char) * (strlen(name) + 1));
+	object->supplier = (char*)malloc(sizeof(char) * (strlen(supplier) + 1));
 	strcpy(object->supplier, supplier);
 	strcpy(object->name, name);
 	object->quantity = quantity;
@@ -12,22 +14,17 @@ Material* createMaterial(int id, char supplier[], char name[], int quantity)
 }
 
 void destroyMaterial(Material* materialUsed) {
-	free(materialUsed->id);
 	free(materialUsed->supplier);
 	free(materialUsed->name);
-	free(materialUsed->quantity);
 	free(materialUsed);
-
 }
 
 
-int getQuantity(Material* materialUsed)
-{
+int getQuantity(Material* materialUsed){
 	return materialUsed->quantity;
 }
 
-char* getName(Material* materialUsed)
-{
+char* getName(Material* materialUsed){
 	return materialUsed->name;
 }
 
