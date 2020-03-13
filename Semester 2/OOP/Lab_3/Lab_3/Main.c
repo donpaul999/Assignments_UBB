@@ -10,8 +10,8 @@ int main(){
 	Service* service = createService(repository);
 	BakeryUI* ui = createUI(service);
 	runTests();
-	startAppUI(ui);
 	//_CrtDumpMemoryLeaks();
+	startAppUI(ui);
 	return 0;
 
 }

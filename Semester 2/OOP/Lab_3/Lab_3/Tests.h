@@ -49,3 +49,5 @@ void testFindMaterial();
 void testRemoveMaterial();
 void testReturnMaterialsWithName();
 void testReturnMaterialsWithQuantity();
+void testUndo();
+void testRedo();

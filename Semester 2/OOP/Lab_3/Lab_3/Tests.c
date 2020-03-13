@@ -239,7 +239,7 @@ void testUpdateMaterialService()
 	addMaterialService(serviceTest, 1, "Ana", "mere", 123, 0);
 	updateMaterialService(serviceTest, 1, "Maria", "mere", 123, 0);
 	Material* materialUsed = getElementByPosition(serviceTest->repo->materialsList, 0);
-	assert(strcmp(materialUsed->supplier), "Maria" == 0);
+	assert(strcmp(materialUsed->supplier, "Maria") == 0);
 	destroyService(serviceTest);
 }
 
@@ -285,13 +285,14 @@ void testRepository()
 	testDestroyMaterialsList();
 	testDestroyHistoryList();
 	testDestroyRepository();
-	//testAddMaterial();
-	//testUpdateMaterial();
-	//testFindMaterial();
-	//testRemoveMaterial();
-	//testReturnMaterialsWithName();
-	//testReturnMaterialsWithQuantity();
-
+	testAddMaterial();
+	testUpdateMaterial();
+	testFindMaterial();
+	testRemoveMaterial();
+	testReturnMaterialsWithName();
+	testReturnMaterialsWithQuantity();
+	testUndo();
+	testRedo();
 }
 
 void testCreateRepository()
@@ -330,7 +331,6 @@ void testAddMaterial()
 	int isFunctionSuccesful;
 	isFunctionSuccesful = addMaterial(repositoryTest, materialUsed, 0);
 	assert(sizeOfVector(repositoryTest->materialsList) == 1 && isFunctionSuccesful);
-	destroyMaterial(materialUsed);
 	destroyRepository(repositoryTest);
 }
 
@@ -344,8 +344,6 @@ void testUpdateMaterial()
 	Material* elementReturned = getElementByPosition(repositoryTest->materialsList, 0);
 	assert(strcmp(elementReturned->name, "pere") == 0);
 	destroyRepository(repositoryTest);
-	destroyMaterial(firstMaterialUsed);
-	destroyMaterial(secondMaterialUsed);
 
 }
 
@@ -359,7 +357,6 @@ void testFindMaterial()
 	int secondPositionFound = findMaterial(repositoryTest, 2);
 	assert(secondPositionFound == -1);
 	destroyRepository(repositoryTest);
-	destroyMaterial(materialUsed);
 }
 
 void testRemoveMaterial()
@@ -372,8 +369,6 @@ void testRemoveMaterial()
 	removeMaterial(repositoryTest, 1, 0);
 	assert(sizeOfVector(repositoryTest->materialsList) == 1);
 	destroyRepository(repositoryTest);
-	destroyMaterial(firstMaterialUsed);
-	destroyMaterial(secondMaterialUsed);
 
 }
 
@@ -388,12 +383,9 @@ void testReturnMaterialsWithName()
 	addMaterial(repoTest, thirdMaterialUsed, 0);
 	int* lengthOfFiltered = 0;
 	DynamicallyVector* vectorTest = returnMaterialsWithName(repoTest, &lengthOfFiltered, "mere");
-	Material* fourthMaterialUsed = getElementByPosition(vectorTest, 1);
-	assert(strcmp(fourthMaterialUsed->name, "Ana") == 0);	destroyRepository(repoTest);
-	destroyMaterial(firstMaterialUsed);
-	destroyMaterial(secondMaterialUsed);
-	destroyMaterial(thirdMaterialUsed);
-	destroyMaterial(fourthMaterialUsed);
+	Material* fourthMaterialUsed = getElementByPosition(vectorTest, 0);
+	assert(strcmp(fourthMaterialUsed->supplier, "Ana") == 0);
+	destroyRepository(repoTest);
 
 }
 
@@ -408,12 +400,47 @@ void testReturnMaterialsWithQuantity()
 	addMaterial(repoTest, thirdMaterialUsed, 0);
 	int* lengthOfFiltered = 0;
 	DynamicallyVector* vectorTest = returnMaterialsWithQuantity(repoTest, &lengthOfFiltered, 125);
-	Material* fourthMaterialUsed = getElementByPosition(vectorTest, 1);
-	assert(strcmp(fourthMaterialUsed->name, "Ana") == 0);
+	Material* fourthMaterialUsed = getElementByPosition(vectorTest, 0);
+	assert(strcmp(fourthMaterialUsed->supplier, "Ana") == 0);
 	destroyRepository(repoTest);
-	destroyMaterial(firstMaterialUsed);
-	destroyMaterial(secondMaterialUsed);
-	destroyMaterial(thirdMaterialUsed);
-	destroyMaterial(fourthMaterialUsed);
 }
 
+void testUndo()
+{
+	Repository* repoTest = createRepository(10);
+	Material* firstMaterialUsed = createMaterial(1, "Ana", "mere", 123);
+	Material* secondMaterialUsed = createMaterial(2, "Maria", "mere", 124);
+	Material* thirdMaterialUsed = createMaterial(3, "Ioana", "pere", 523);
+	addMaterial(repoTest, firstMaterialUsed, 0);
+	addMaterial(repoTest, secondMaterialUsed, 0);
+	addMaterial(repoTest, thirdMaterialUsed, 0);
+	undo(repoTest);
+	assert(sizeOfVector(repoTest->materialsList) == 2);
+	undo(repoTest);
+	assert(sizeOfVector(repoTest->materialsList) == 1);
+	undo(repoTest);
+	assert(sizeOfVector(repoTest->materialsList) == 0);
+	destroyRepository(repoTest);
+}
+
+void testRedo()
+{
+	Repository* repoTest = createRepository(10);
+	Material* firstMaterialUsed = createMaterial(1, "Ana", "mere", 123);
+	Material* secondMaterialUsed = createMaterial(2, "Maria", "mere", 124);
+	Material* thirdMaterialUsed = createMaterial(3, "Ioana", "pere", 523);
+	addMaterial(repoTest, firstMaterialUsed, 0);
+	addMaterial(repoTest, secondMaterialUsed, 0);
+	addMaterial(repoTest, thirdMaterialUsed, 0);
+	undo(repoTest);
+	undo(repoTest);
+	undo(repoTest);
+	assert(sizeOfVector(repoTest->materialsList) == 0);
+	redo(repoTest);
+	assert(sizeOfVector(repoTest->materialsList) == 1);
+	redo(repoTest);
+	assert(sizeOfVector(repoTest->materialsList) == 2);
+	redo(repoTest);
+	assert(sizeOfVector(repoTest->materialsList) == 3);
+	destroyRepository(repoTest);
+}

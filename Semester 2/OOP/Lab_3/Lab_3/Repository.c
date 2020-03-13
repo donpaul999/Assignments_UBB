@@ -7,7 +7,7 @@ Repository* createRepository(int capacity)
 {
 	Repository* repo = (Repository*)malloc(sizeof(Repository));
 	repo->materialsList = createDynamicallyVector(capacity);
-	repo->historyList = createDynamicallyVector(1);
+	repo->historyList = createDynamicallyVector(2);
 	repo->indexOfHistory = -1;
 	return repo;
 }
@@ -76,7 +76,7 @@ int updateMaterial(Repository* repo, Material* materialUsed, int currentInUndo)
 int addMaterial(Repository* repo, Material* materialUsed, int currentInUndo)
 {
 	if (findMaterial(repo, materialUsed->id) != -1) {
-		//destroyMaterial(materialUsed);
+		destroyMaterial(materialUsed);
 		return -1;
 	}
 	if (currentInUndo == 1)
@@ -170,11 +170,15 @@ DynamicallyVector* returnMaterialsWithQuantity(Repository* repo, int* length, in
 
 int undo(Repository* repository)
 {
-	if (repository->indexOfHistory == 0)
+	if (repository->indexOfHistory == -1)
 		return -1;
+
 	destroyMaterialsList(repository->materialsList);
 	destroyDynamicallyVector(&repository->materialsList);
-	repository->materialsList = getMaterialsListCopy(repository, (DynamicallyVector*)getElementByPosition(repository->historyList, repository->indexOfHistory - 1));
+	if (repository->indexOfHistory == 0)
+		repository->materialsList = createDynamicallyVector(2);
+	else 
+		repository->materialsList = getMaterialsListCopy(repository, (DynamicallyVector*)getElementByPosition(repository->historyList, repository->indexOfHistory - 1));
 	repository->indexOfHistory--;
 	return 1;
 }

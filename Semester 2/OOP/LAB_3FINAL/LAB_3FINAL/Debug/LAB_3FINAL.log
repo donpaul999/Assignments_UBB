@@ -1,24 +1,16 @@
-﻿  Material.c
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Material.c(6,38): warning C4013: 'malloc' undefined; assuming extern returning int
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Material.c(12,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Material.c(13,1): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133): message : see declaration of 'strcpy'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Material.c(19,6): warning C4013: 'free' undefined; assuming extern returning int
+﻿  Main.c
   Tests.c
 \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(27,2): warning C4013: 'strcmp' undefined; assuming extern returning int
 \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(164,1): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(242,2): warning C4002: too many arguments for function-like macro invocation 'assert'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(243,31): error C2440: 'function': cannot convert from 'Material' to 'Material *'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(243,31): warning C4024: 'destroyMaterial': different types for formal and actual parameter 1
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(265,95): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(265,95): warning C4024: 'returnMaterialsWithNameService': different types for formal and actual parameter 2
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(266,2): warning C4047: '==': 'int *' differs in levels of indirection from 'int'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(278,99): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(278,99): warning C4024: 'returnMaterialsWithQuantityService': different types for formal and actual parameter 2
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(279,2): warning C4047: '==': 'int *' differs in levels of indirection from 'int'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(391,85): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(391,85): warning C4024: 'returnMaterialsWithName': different types for formal and actual parameter 2
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(411,89): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(411,89): warning C4024: 'returnMaterialsWithQuantity': different types for formal and actual parameter 2
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(264,95): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(264,95): warning C4024: 'returnMaterialsWithNameService': different types for formal and actual parameter 2
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(265,2): warning C4047: '==': 'int *' differs in levels of indirection from 'int'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(277,99): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(277,99): warning C4024: 'returnMaterialsWithQuantityService': different types for formal and actual parameter 2
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(278,2): warning C4047: '==': 'int *' differs in levels of indirection from 'int'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(385,85): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(385,85): warning C4024: 'returnMaterialsWithName': different types for formal and actual parameter 2
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(402,89): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(402,89): warning C4024: 'returnMaterialsWithQuantity': different types for formal and actual parameter 2
   Generating Code...
+  LAB_3FINAL.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\LAB_3FINAL\Debug\LAB_3FINAL.exe
