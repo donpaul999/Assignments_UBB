@@ -132,7 +132,7 @@ DynamicallyVector* returnMaterialsWithName(Repository* repo, int* length, char n
 	}
 
 	DynamicallyVector* listOfMaterials = createDynamicallyVector(lengthOfTheList);
-	for (int i = 0; i < size(repo->materialsList); ++i) {
+	for (int i = 0; i < sizeOfVector(repo->materialsList); ++i) {
 		materialToCheck = getElementByPosition(repo->materialsList, i);
 		if (strcmp(materialToCheck->name, name) == 0) {
 			materialToBeAppend = createMaterial(materialToCheck->id, materialToCheck->supplier, materialToCheck->name, materialToCheck->quantity);
@@ -149,14 +149,14 @@ DynamicallyVector* returnMaterialsWithQuantity(Repository* repo, int* length, in
 	int lengthOfTheList = 0;
 	Material* materialToCheck;
 	Material* materialToBeAppend;
-	for (int i = 0; i < size(repo->materialsList); ++i) {
+	for (int i = 0; i < sizeOfVector(repo->materialsList); ++i) {
 		materialToCheck = getElementByPosition(repo->materialsList, i);
 		if (materialToCheck->quantity < quantity)
 			lengthOfTheList++;
 	}
 
 	DynamicallyVector* listOfMaterials = createDynamicallyVector(lengthOfTheList);
-	for (int i = 0; i < size(repo->materialsList); ++i) {
+	for (int i = 0; i < sizeOfVector(repo->materialsList); ++i) {
 		materialToCheck = getElementByPosition(repo->materialsList, i);
 		if (materialToCheck->quantity < quantity) {
 			materialToBeAppend = createMaterial(materialToCheck->id, materialToCheck->supplier, materialToCheck->name, materialToCheck->quantity);
