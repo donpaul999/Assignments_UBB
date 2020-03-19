@@ -1,0 +1,318 @@
+#include "Tests.h"
+
+void Tests::runAllTests()
+{
+	runMovieTests();
+	runDynamicArrayTests();
+	runRepositoryTests();
+	runAdminServiceTests();
+	runUserServiceTests();
+}
+
+void Tests::runMovieTests()
+{
+	Movie_AnyMovie_MovieCreated();
+}
+
+void Tests::runDynamicArrayTests()
+{
+	 DynamicVector_AnyVector_VectorCreated();
+	 resizeElementsList_AnyVector_VectorResized();
+	 needsResize_VectorWithSizehNotEqualToCapacity_ReturnsFalse();
+	 searchElementInList_ElementInList_ReturnsTrue();
+	 searchElementInList_ElementNotInList_ReturnsFalse();
+	 append_ElementNotInList_ElementAppended();
+	 append_AnyElement_ElementAppended();
+	 remove_ElementInTheList_ElementRemoved();
+	 remove_ElementNotInTheList_SizeRemainsTheSame();
+	 update_ElementInTheList_ElementUpdated();
+	 operatorPosition_ValidPosition_ElementReturned();
+	 operatorPosition_InvalidPosition_ExceptionReturned();
+	 size_AnyVector_CorrectSize();
+	 operatorEqual_AnyVector_CorrectAssignment();
+
+}
+
+void Tests::runRepositoryTests()
+{
+	 Repository_AnyRepository_RepositoryCreated();
+	 addMovie_MovieNotInTheList_ReturnsOne();
+	 addMovie_MovieInTheList_ReturnsMinusOne();
+	 deleteMovie_MovieInTheList_ReturnsOne();
+	 deleteMovie_MovieNotInTheList_ReturnsMinusOne();
+	 update_MovieInTheList_ReturnsOne();
+	 update_MovieNotInTheList_ReturnsMinusOne();
+	 getMovieAtPosition_ValidPosition_ReturnsMovie();
+	 getMovieAtPosition_InValidPosition_ReturnsException();
+	 getNumberOfMovies_AnyRepository_CorrectNumberOfMovies();
+}
+
+void Tests::runAdminServiceTests()
+{
+	 AdminService_AnyAdminService_AdminServiceCreated();
+	 adminAddMovie_MovieNotInTheList_ReturnsOne();
+	 adminAddMovie_MovieInTheList_ReturnsMinusOne();
+	 adminDeleteMovie_MovieInTheList_ReturnsOne();
+	 adminDeleteMovie_MovieNotInTheList_ReturnsMinusOne();
+	 adminUpdate_MovieInTheList_ReturnsOne();
+	 adminUpdate_MovieNotInTheList_ReturnsMinusOne();
+	 adminGetMovieList_AnyAdminService_CorrectMovies();
+}
+
+void Tests::runUserServiceTests()
+{
+	 UserService_AnyUserService_UserServiceCreated();
+	 userGetMovieList_AnyUserService_CorrectMovies();
+}
+
+void Tests::Movie_AnyMovie_MovieCreated()
+{
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	assert(movieUsed.getTitle() == "Test");
+	assert(movieUsed.getGenre() == "CategoryTest");
+	assert(movieUsed.getYearOfRelease() == 123);
+	assert(movieUsed.getNumberOfLikes() == 456);
+	assert(movieUsed.getTrailer() == "Test");
+
+}
+
+void Tests::DynamicVector_AnyVector_VectorCreated()
+{
+	DynamicVector<int> vectorUsed( 5 );
+	assert(vectorUsed.capacity() == 5);
+
+}
+
+void Tests::resizeElementsList_AnyVector_VectorResized()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.resizeElementsList();
+	assert(vectorUsed.capacity() == 4);
+}
+
+
+void Tests::needsResize_VectorWithSizehNotEqualToCapacity_ReturnsFalse()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	assert(vectorUsed.needsResize() == 0);
+}
+
+void Tests::searchElementInList_ElementInList_ReturnsTrue()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	vectorUsed.append(5);
+	assert(vectorUsed.searchElementInList(5) == 1);
+}
+
+void Tests::searchElementInList_ElementNotInList_ReturnsFalse()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	vectorUsed.append(5);
+	assert(vectorUsed.searchElementInList(4) == 1);
+}
+
+void Tests::append_ElementNotInList_ElementAppended()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	assert(vectorUsed.searchElementInList(5) == 0);
+	vectorUsed.append(5);
+	assert(vectorUsed.searchElementInList(5) == 1);
+}
+
+void Tests::append_AnyElement_ElementAppended()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	assert(vectorUsed.searchElementInList(1) == 1);
+	vectorUsed.append(1);
+
+}
+
+void Tests::remove_ElementInTheList_ElementRemoved()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	assert(vectorUsed.searchElementInList(1) == 1);
+	vectorUsed.remove(1);
+	assert(vectorUsed.searchElementInList(1) == 0);
+
+}
+
+void Tests::remove_ElementNotInTheList_SizeRemainsTheSame()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	assert(vectorUsed.searchElementInList(1) == 1);
+	vectorUsed.remove(2);
+	assert(vectorUsed.size() == 1);
+}
+
+void Tests::update_ElementInTheList_ElementUpdated()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	assert(vectorUsed.searchElementInList(1) == 1);
+	vectorUsed.update(1, 2);
+	assert(vectorUsed.searchElementInList(1) == 0);
+	assert(vectorUsed.searchElementInList(2) == 1);
+}
+
+void Tests::operatorPosition_ValidPosition_ElementReturned()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(5);
+	assert(vectorUsed[0] == 5);
+}
+
+void Tests::operatorPosition_InvalidPosition_ExceptionReturned()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(5);
+	try {
+		int x = vectorUsed[1];
+		assert(false);
+	}
+	catch(std::string Exception){
+		assert(true);
+	}
+}
+
+void Tests::size_AnyVector_CorrectSize()
+{
+	DynamicVector<int> vectorUsed = { 2 };
+	vectorUsed.append(1);
+	vectorUsed.append(2);
+	assert(vectorUsed.size() == 2);
+}
+
+void Tests::operatorEqual_AnyVector_CorrectAssignment()
+{
+	DynamicVector<int> firstVectorUsed = { 2 };
+	firstVectorUsed.append(1);
+	firstVectorUsed.remove(2);
+	DynamicVector<int> secondVectorUsed = { 2 };
+	secondVectorUsed = firstVectorUsed;
+	assert(secondVectorUsed.searchElementInList(2) == 1);
+	assert(secondVectorUsed.searchElementInList(1) == 1);
+}
+
+void Tests::Repository_AnyRepository_RepositoryCreated()
+{
+	Repository* repositoryUsed = new Repository();
+}
+
+void Tests::addMovie_MovieNotInTheList_ReturnsOne()
+{
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	assert(repositoryUsed->addMovie(movieUsed) == 1);
+}
+
+void Tests::addMovie_MovieInTheList_ReturnsMinusOne()
+{
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed->addMovie(movieUsed);
+	assert(repositoryUsed->addMovie(movieUsed) == -1);
+}
+
+void Tests::deleteMovie_MovieInTheList_ReturnsOne()
+{
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed->addMovie(movieUsed);
+	assert(repositoryUsed->deleteMovie(movieUsed) == 1);
+}
+
+void Tests::deleteMovie_MovieNotInTheList_ReturnsMinusOne()
+{
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	assert(repositoryUsed->deleteMovie(movieUsed) == 1);
+}
+
+void Tests::update_MovieInTheList_ReturnsOne()
+{
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed->addMovie(movieUsed);
+	assert(repositoryUsed->updateMovie(movieUsed) == 1);
+}
+
+void Tests::update_MovieNotInTheList_ReturnsMinusOne()
+{
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed->addMovie(movieUsed);
+	assert(repositoryUsed->updateMovie(movieUsed) == -1);
+}
+
+void Tests::getMovieAtPosition_ValidPosition_ReturnsMovie()
+{
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed->addMovie(movieUsed);
+	assert(repositoryUsed->getMovieAtPosition(0) == movieUsed);
+}
+
+void Tests::getMovieAtPosition_InValidPosition_ReturnsException()
+{
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	try {
+		repositoryUsed->getMovieAtPosition(0);
+		assert(false);
+	}
+	catch(std::string Exception){
+		assert(true);
+	}
+}
+
+void Tests::getNumberOfMovies_AnyRepository_CorrectNumberOfMovies()
+{
+
+}
+
+void Tests::AdminService_AnyAdminService_AdminServiceCreated()
+{
+}
+
+void Tests::adminAddMovie_MovieNotInTheList_ReturnsOne()
+{
+}
+
+void Tests::adminAddMovie_MovieInTheList_ReturnsMinusOne()
+{
+}
+
+void Tests::adminDeleteMovie_MovieInTheList_ReturnsOne()
+{
+}
+
+void Tests::adminDeleteMovie_MovieNotInTheList_ReturnsMinusOne()
+{
+}
+
+void Tests::adminUpdate_MovieInTheList_ReturnsOne()
+{
+}
+
+void Tests::adminUpdate_MovieNotInTheList_ReturnsMinusOne()
+{
+}
+
+void Tests::adminGetMovieList_AnyAdminService_CorrectMovies()
+{
+}
+
+void Tests::UserService_AnyUserService_UserServiceCreated()
+{
+}
+
+void Tests::userGetMovieList_AnyUserService_CorrectMovies()
+{
+}

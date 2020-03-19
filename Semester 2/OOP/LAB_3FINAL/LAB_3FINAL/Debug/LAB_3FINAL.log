@@ -1,16 +1,2 @@
 ﻿  Main.c
-  Tests.c
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(27,2): warning C4013: 'strcmp' undefined; assuming extern returning int
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(164,1): warning C4047: 'initializing': 'int *' differs in levels of indirection from 'int'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(264,95): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(264,95): warning C4024: 'returnMaterialsWithNameService': different types for formal and actual parameter 2
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(265,2): warning C4047: '==': 'int *' differs in levels of indirection from 'int'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(277,99): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(277,99): warning C4024: 'returnMaterialsWithQuantityService': different types for formal and actual parameter 2
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(278,2): warning C4047: '==': 'int *' differs in levels of indirection from 'int'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(385,85): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(385,85): warning C4024: 'returnMaterialsWithName': different types for formal and actual parameter 2
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(402,89): warning C4047: 'function': 'int *' differs in levels of indirection from 'int **'
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_3\Lab_3\Tests.c(402,89): warning C4024: 'returnMaterialsWithQuantity': different types for formal and actual parameter 2
-  Generating Code...
   LAB_3FINAL.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\LAB_3FINAL\Debug\LAB_3FINAL.exe

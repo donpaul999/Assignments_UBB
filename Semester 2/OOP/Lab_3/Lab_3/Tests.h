@@ -1,11 +1,11 @@
 #pragma once
 #include "Service.h"
 #include <assert.h>
-
+// NAME OF THE TESTS SHOULD BE CHANGED ---
 void runTests();
 
 void testMaterial();
-void testCreateMaterial();
+void CreateMaterial_AnyMaterial_MaterialCreated();
 void testDestroyMaterial();
 void testGetQuantity();
 void testGetName();

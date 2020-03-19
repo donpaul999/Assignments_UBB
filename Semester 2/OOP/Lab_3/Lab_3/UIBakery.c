@@ -55,8 +55,8 @@ void uiAddMaterial(BakeryUI* bakeryUI)
 	scanf("%s, ", name);
 	name[strlen(name) - 1] = '\0';	//remove the ","
 	scanf("%d", &quantity);
-	int isTheFunctionSuccesful = addMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 1);
-	if (isTheFunctionSuccesful == -1)
+	int isTheFunctionSuccessful = addMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 1);
+	if (isTheFunctionSuccessful == -1)
 		printf("NO!\n");
 
 }
@@ -72,8 +72,8 @@ void uiUpdateMaterial(BakeryUI* bakeryUI)
 	scanf("%s, ", name);
 	name[strlen(name) - 1] = '\0';	//remove the ","
 	scanf("%d", &quantity);
-	int isTheFunctionSuccesful = updateMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 1);
-	if (isTheFunctionSuccesful == -1)
+	int isTheFunctionSuccessful = updateMaterialService(bakeryUI->bakeryService, id, supplier, name, quantity, 1);
+	if (isTheFunctionSuccessful == -1)
 		printf("NO!\n");
 }
 
@@ -81,8 +81,8 @@ void uiDeleteMaterial(BakeryUI* bakeryUI)
 {
 	int id;
 	scanf("%d", &id);
-	int isTheFunctionSuccesful = removeMaterialService(bakeryUI->bakeryService, id, 1);
-	if (isTheFunctionSuccesful == -1)
+	int isTheFunctionSuccessful = removeMaterialService(bakeryUI->bakeryService, id, 1);
+	if (isTheFunctionSuccessful == -1)
 		printf("NO!\n");
 }
 
@@ -122,14 +122,14 @@ void uiListMaterials(BakeryUI* bakeryUI)
 
 void uiUndo(BakeryUI* bakeryUI)
 {
-	int isSuccesful = undoService(bakeryUI->bakeryService);
-	if (isSuccesful == -1)
+	int isTheFunctionSuccessful = undoService(bakeryUI->bakeryService);
+	if (isTheFunctionSuccessful == -1)
 		printf("No more undo!\n");
 }
 
 void uiRedo(BakeryUI* bakeryUI)
 {
-	int isSuccesful = redoService(bakeryUI->bakeryService);
-	if (isSuccesful == -1)
+	int isTheFunctionSuccessful = redoService(bakeryUI->bakeryService);
+	if (isTheFunctionSuccessful == -1)
 		printf("No more redo!\n");
 }

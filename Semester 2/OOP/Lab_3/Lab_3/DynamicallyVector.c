@@ -1,79 +1,79 @@
 #include "DynamicallyVector.h"
 
-DynamicallyVector* createDynamicallyVector(int capacity)
+DynamicallyVector* createDynamicallyVector(int capacityOfTheVector)
 {
     DynamicallyVector* dynamicVector = (DynamicallyVector*)malloc(sizeof(DynamicallyVector));
-    dynamicVector->length = 0;
-    dynamicVector->capacity = capacity;
-    dynamicVector->elements = (TElem*)malloc(sizeof(TElem) * capacity);
+    dynamicVector->lengthOfTheVector = 0;
+    dynamicVector->capacityOfTheVector = capacityOfTheVector;
+    dynamicVector->elementsList = (TElem*)malloc(sizeof(TElem) * capacityOfTheVector);
     return dynamicVector;
 }
 
 void destroyDynamicallyVector(DynamicallyVector** dynamicVectorPointer)
 {
-    free((*dynamicVectorPointer)->elements);
+    free((*dynamicVectorPointer)->elementsList);
     free(*dynamicVectorPointer);
 }
 
 DynamicallyVector* getCopy(DynamicallyVector* dynamicVector)
 {
-    DynamicallyVector* copyOfTheVector = createDynamicallyVector(dynamicVector->capacity);
-    copyOfTheVector->length = dynamicVector-> length;
-    for (int i = 0; i < copyOfTheVector->length; ++i)
+    DynamicallyVector* copyOfTheVector = createDynamicallyVector(dynamicVector->capacityOfTheVector);
+    copyOfTheVector->lengthOfTheVector = dynamicVector->lengthOfTheVector;
+    for (int i = 0; i < copyOfTheVector->lengthOfTheVector; ++i)
         copyOfTheVector[i] = dynamicVector[i];
     return copyOfTheVector;
 }
 
 int sizeOfVector(DynamicallyVector* dynamicVector)
 {
-    return dynamicVector->length;
+    return dynamicVector->lengthOfTheVector;
 }
 
 void resizeDynamicallyVector(DynamicallyVector* dynamicVector)
 {
-    TElem* resizedList = (TElem*)malloc(sizeof(TElem) * dynamicVector->capacity * 2);
-    for (int i = 0; i < dynamicVector->length; ++i) 
-        resizedList[i] = dynamicVector->elements[i];
-    free(dynamicVector->elements);
-    dynamicVector->capacity *= 2;
-    dynamicVector->elements = resizedList;
+    TElem* resizedList = (TElem*)malloc(sizeof(TElem) * dynamicVector->capacityOfTheVector * 2);
+    for (int i = 0; i < dynamicVector->lengthOfTheVector; ++i)
+        resizedList[i] = dynamicVector->elementsLists[i];
+    free(dynamicVector->elementsList);
+    dynamicVector->capacityOfTheVector *= 2;
+    dynamicVector->elementsOfTheVector = resizedList;
 }
 
-void appendDynamicallyVector(DynamicallyVector* dynamicVector, TElem element)
+void appendDynamicallyVector(DynamicallyVector* dynamicVector, TElem elementToAppend)
 {
     if (almostFullCapacityUsed(dynamicVector))
         resizeDynamicallyVector(dynamicVector);
-    dynamicVector->elements[dynamicVector->length] = element;
-    dynamicVector->length++;
+    dynamicVector->elementsList[dynamicVector->length] = elementToAppend;
+    dynamicVector->lengthOfTheVector++;
 }
 
-int deleteByPosition(DynamicallyVector* dynamicVector, int position)
+int deleteByPosition(DynamicallyVector* dynamicVector, int positionToDelete)
 {
-    if (position < 0 || position >= dynamicVector->length || dynamicVector->length == 0)
+    if (positionToDelete < 0 || positionToDelete >= dynamicVector->lengthOfTheVector || dynamicVector->lengthOfTheVector == 0)
         return -1;
-    for (int i = position; i < dynamicVector->length; ++i)
-        dynamicVector->elements[i] = dynamicVector->elements[i + 1];
-    dynamicVector->length--;
+    for (int i = positionToDeleten; i < dynamicVector->lengthOfTheVector; ++i)
+        dynamicVector->elementsList[i] = dynamicVector->elementsList[i + 1];
+    dynamicVector->lengthOfTheVector--;
     return 1;
 }
 
-int updateByPosition(DynamicallyVector* dynamicVector, int position, TElem element)
+int updateByPosition(DynamicallyVector* dynamicVector, int positionToUpdate, TElem elementToUpdateWith)
 {
-    if (position < 0 || position >= dynamicVector->length || dynamicVector->length == 0)
+    if (positionToUpdate < 0 || positionToUpdate >= dynamicVector->lengthOfTheVector || dynamicVector->lengthOfTheVector == 0)
         return -1;
-    dynamicVector->elements[position] = element;
+    dynamicVector->elementsLists[positionToUpdate] = elementToUpdateWitht;
     return 1;
 }
 
-TElem getElementByPosition(DynamicallyVector* dynamicVector, int position)
+TElem getElementByPosition(DynamicallyVector* dynamicVector, int positionToFind)
 {
-    if (position < 0 || position >= dynamicVector->length || dynamicVector->length == 0)
+    if (positionToFind < 0 || positionToFind >= dynamicVector->lengthOfTheVector || dynamicVector->lengthOfTheVector == 0)
         return -1;
-    return dynamicVector->elements[position];
+    return dynamicVector->elementsList[positionToFind];
 }
 
 
 int almostFullCapacityUsed(DynamicallyVector* dynamicVector)
 {
-    return dynamicVector->length == dynamicVector->capacity;
+    return dynamicVector->lengthOfTheVector == dynamicVector->capacityOfTheVector;
 }
