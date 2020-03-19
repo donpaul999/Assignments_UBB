@@ -3,15 +3,10 @@
 void Tests::runAllTests()
 {	
 	runMovieTests();
-	std::cout << 1;
 	runDynamicArrayTests();
-	std::cout << 2;
 	runRepositoryTests();
-	std::cout << 3;
 	runAdminServiceTests();
-	std::cout << 4;
 	runUserServiceTests();
-	std::cout << 5;
 }
 
 void Tests::runMovieTests()
@@ -39,34 +34,15 @@ void Tests::runDynamicArrayTests()
 void Tests::runRepositoryTests()
 {
 	 Repository_AnyRepository_RepositoryCreated();
-	 std::cout << 13;
 	 addMovie_MovieNotInTheList_ReturnsOne();
-	 std::cout << 14;
-
 	 addMovie_MovieInTheList_ReturnsMinusOne();
-	 std::cout << 15;
-
 	 deleteMovie_MovieInTheList_ReturnsOne();
-	 std::cout << 16;
-
 	 deleteMovie_MovieNotInTheList_ReturnsMinusOne();
-	 std::cout << 17;
-
 	 update_MovieInTheList_ReturnsOne();
-	 std::cout << 18;
-
 	 update_MovieNotInTheList_ReturnsMinusOne();
-	 std::cout << 19;
-
-	 getMovieAtPosition_ValidPosition_ReturnsMovie();
-	 std::cout << 20;
-
-	 getMovieAtPosition_InValidPosition_ReturnsException();
-	 std::cout << 21;
-
 	 getNumberOfMovies_AnyRepository_CorrectNumberOfMovies();
-	 std::cout << 22;
-
+	 getMovieAtPosition_ValidPosition_ReturnsMovie();
+	 getMovieAtPosition_InValidPosition_ReturnsException();
 }
 
 void Tests::runAdminServiceTests()
@@ -83,8 +59,8 @@ void Tests::runAdminServiceTests()
 
 void Tests::runUserServiceTests()
 {
-	 UserService_AnyUserService_UserServiceCreated();
-	 userGetMovieList_AnyUserService_CorrectMovies();
+	UserService_AnyUserService_UserServiceCreated();
+	userGetMovieList_AnyUserService_CorrectMovies();
 }
 
 void Tests::Movie_AnyMovie_MovieCreated()
@@ -277,9 +253,11 @@ void Tests::getMovieAtPosition_ValidPosition_ReturnsMovie()
 
 void Tests::getMovieAtPosition_InValidPosition_ReturnsException()
 {
-	Repository* repositoryUsed{};
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed->addMovie(movieUsed);
 	try {
-		Movie movieUsed = repositoryUsed->getMovieAtPosition(0);
+		Movie movieUsed = repositoryUsed->getMovieAtPosition(-1);
 		assert(false);
 	}
 	catch (std::exception Exception) {
@@ -348,10 +326,11 @@ void Tests::adminUpdate_MovieNotInTheList_ReturnsMinusOne()
 
 void Tests::adminGetMovieList_AnyAdminService_CorrectMovies()
 {
-	Repository* repositoryUsed{};
+	Repository* repositoryUsed = new Repository();
 	AdminService adminServiceUsed = {*repositoryUsed};
 	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
-	assert(adminServiceUsed.adminGetMovieList().size() == 1);
+	std::vector<Movie>listOfMovies = adminServiceUsed.adminGetMovieList();
+	assert(listOfMovies.size() == 1);
 }
 
 void Tests::UserService_AnyUserService_UserServiceCreated()
@@ -362,9 +341,10 @@ void Tests::UserService_AnyUserService_UserServiceCreated()
 
 void Tests::userGetMovieList_AnyUserService_CorrectMovies()
 {
-	Repository* repositoryUsed{};
+	Repository* repositoryUsed = new Repository();
 	UserService userServiceUsed = { *repositoryUsed };
 	AdminService adminServiceUsed = { *repositoryUsed };
 	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
-	assert(userServiceUsed.userGetMovieList().size() == 1);
+	std::vector<Movie>listOfMovies = userServiceUsed.userGetMovieList();
+	assert(listOfMovies.size() == 1);
 }

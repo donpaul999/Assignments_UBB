@@ -6,12 +6,16 @@ void UI::runApp()
 {
     std::string aplicationMode = "";
     while (1) {
-        std::cout << "Input app mode: ";
-        std::cin >> aplicationMode;
-        if (aplicationMode == "admin")
-            runAdmin(); 
-        else if (aplicationMode == "user")
-            runUser();
+        std::cout << "Choose mode: ";
+        std::getline(std::cin, aplicationMode);
+        if (aplicationMode == "mode A") {
+            runAdmin();
+            break;
+        }
+        else if (aplicationMode == "mode U") {
+             runUser();
+             break;
+        }
         else if (aplicationMode == "exit")
             break;
          else

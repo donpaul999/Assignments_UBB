@@ -1,5 +1,4 @@
-﻿  Repository.cpp
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Lab_4\Repository.cpp(38,45): warning C4018: '>=': signed/unsigned mismatch
-  Tests.cpp
-  Generating Code...
+﻿  UI.cpp
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Lab_4\UI.cpp(113,23): warning C4018: '<': signed/unsigned mismatch
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Lab_4\UI.cpp(120,23): warning C4018: '<': signed/unsigned mismatch
   Lab_4.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Debug\Lab_4.exe

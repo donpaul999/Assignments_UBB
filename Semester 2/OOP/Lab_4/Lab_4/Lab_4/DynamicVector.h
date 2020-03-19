@@ -108,7 +108,7 @@ void DynamicVector<TElem>::update(const TElem& elementToUpdate, const TElem& upd
 template<typename TElem>
 TElem& DynamicVector<TElem>::operator[](int positionOfTheElement) {
     if (positionOfTheElement < 0 || positionOfTheElement >= sizeOfVector)
-        throw std::runtime_error("invalid index");
+        throw std::runtime_error("Invalid position");
     return elementsList[positionOfTheElement];
 }
 
