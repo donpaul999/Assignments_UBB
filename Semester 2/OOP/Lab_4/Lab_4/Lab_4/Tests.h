@@ -5,7 +5,6 @@ class Tests
 {
 public:
 	void runAllTests();
-
 	void runMovieTests();
 	void runDynamicArrayTests();
 	void runRepositoryTests();
@@ -17,7 +16,6 @@ public:
 
 	void DynamicVector_AnyVector_VectorCreated();
 	void resizeElementsList_AnyVector_VectorResized();
-	void needsResize_VectorWithSizehNotEqualToCapacity_ReturnsFalse();
 	void searchElementInList_ElementInList_ReturnsTrue();
 	void searchElementInList_ElementNotInList_ReturnsFalse();
 	void append_ElementNotInList_ElementAppended();

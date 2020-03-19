@@ -18,7 +18,6 @@ void Tests::runDynamicArrayTests()
 {
 	 DynamicVector_AnyVector_VectorCreated();
 	 resizeElementsList_AnyVector_VectorResized();
-	 needsResize_VectorWithSizehNotEqualToCapacity_ReturnsFalse();
 	 searchElementInList_ElementInList_ReturnsTrue();
 	 searchElementInList_ElementNotInList_ReturnsFalse();
 	 append_ElementNotInList_ElementAppended();
@@ -88,14 +87,6 @@ void Tests::resizeElementsList_AnyVector_VectorResized()
 	DynamicVector<int> vectorUsed = { 2 };
 	vectorUsed.resizeElementsList();
 	assert(vectorUsed.capacity() == 4);
-}
-
-
-void Tests::needsResize_VectorWithSizehNotEqualToCapacity_ReturnsFalse()
-{
-	DynamicVector<int> vectorUsed = { 2 };
-	vectorUsed.append(1);
-	assert(vectorUsed.needsResize() == 0);
 }
 
 void Tests::searchElementInList_ElementInList_ReturnsTrue()
@@ -274,45 +265,82 @@ void Tests::getMovieAtPosition_InValidPosition_ReturnsException()
 
 void Tests::getNumberOfMovies_AnyRepository_CorrectNumberOfMovies()
 {
-
+	Repository* repositoryUsed = new Repository();
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed->addMovie(movieUsed);
+	assert(repositoryUsed->getNumberOfMovies() == 1);
 }
 
 void Tests::AdminService_AnyAdminService_AdminServiceCreated()
 {
+	Repository* repositoryUsed = new Repository();
+	AdminService adminServiceUsed = {*repositoryUsed};
 }
 
 void Tests::adminAddMovie_MovieNotInTheList_ReturnsOne()
 {
+	Repository* repositoryUsed = new Repository();
+	AdminService adminServiceUsed = { *repositoryUsed };
+	assert(adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest") == 1);
 }
 
 void Tests::adminAddMovie_MovieInTheList_ReturnsMinusOne()
 {
+	Repository* repositoryUsed = new Repository();
+	AdminService adminServiceUsed = {*repositoryUsed};
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest") == -1);
 }
 
 void Tests::adminDeleteMovie_MovieInTheList_ReturnsOne()
 {
+	Repository* repositoryUsed = new Repository();
+	AdminService adminServiceUsed = {*repositoryUsed};
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(adminServiceUsed.adminDeleteMovie("Test") == 1);
 }
 
 void Tests::adminDeleteMovie_MovieNotInTheList_ReturnsMinusOne()
 {
+	Repository* repositoryUsed = new Repository();
+	AdminService adminServiceUsed = {*repositoryUsed};
+	assert(adminServiceUsed.adminDeleteMovie("Test") == -1);
 }
 
 void Tests::adminUpdate_MovieInTheList_ReturnsOne()
 {
+	Repository* repositoryUsed = new Repository();
+	AdminService adminServiceUsed = {*repositoryUsed};
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(adminServiceUsed.adminUpdateMovie("Test", "CategoryTest", 123, 456, "TrailerTest") == 1);
 }
 
 void Tests::adminUpdate_MovieNotInTheList_ReturnsMinusOne()
 {
+	Repository* repositoryUsed = new Repository();
+	AdminService adminServiceUsed = {*repositoryUsed};
+	assert(adminServiceUsed.adminUpdateMovie("Test", "CategoryTest", 123, 456, "TrailerTest") == -1);
 }
 
 void Tests::adminGetMovieList_AnyAdminService_CorrectMovies()
 {
+	Repository* repositoryUsed{};
+	AdminService adminServiceUsed = {*repositoryUsed};
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(adminServiceUsed.adminGetMovieList().size() == 1);
 }
 
 void Tests::UserService_AnyUserService_UserServiceCreated()
 {
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = {*repositoryUsed};
 }
 
 void Tests::userGetMovieList_AnyUserService_CorrectMovies()
 {
+	Repository* repositoryUsed{};
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(userServiceUsed.userGetMovieList().size() == 1);
 }

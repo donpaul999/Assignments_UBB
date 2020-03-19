@@ -2,10 +2,6 @@
 
 AdminService::AdminService(Repository& repository):repository{repository}{}
 
-AdminService::~AdminService()
-{
-	//
-}
 
 const std::vector<std::string> AdminService::explode(const std::string& stringToExplode, const char& separatorUsed)
 {

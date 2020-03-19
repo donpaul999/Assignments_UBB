@@ -2,13 +2,8 @@
 
 Repository::Repository()
 {
-	movieList; //?
 }
 
-Repository::~Repository()
-{
-	
-}
 
 int Repository::addMovie(const Movie& movieToAdd)
 {

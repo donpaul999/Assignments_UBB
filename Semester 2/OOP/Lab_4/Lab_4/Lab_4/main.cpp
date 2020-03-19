@@ -1,9 +1,11 @@
 #include <iostream>
-#include "UI.h"
+#include "Tests.h"
 using namespace std;
 int main()
 {
-	Repository* repository = new Repository();
+	Tests testsLists;
+	testsLists.runAllTests();
+	Repository* repository{};
 	AdminService adminservice{ *repository };
 	UserService userservice{ *repository };
 	UI ui{ adminservice, userservice };

@@ -17,6 +17,7 @@ private:
     void choice11();
     void choice12();
     void choice13();
+    void choice14();
 
 public:
     UI(string filename);

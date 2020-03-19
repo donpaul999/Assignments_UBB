@@ -8,7 +8,6 @@ private:
     std::vector<Movie> movieList;
 public:
     Repository();
-    ~Repository();
     int addMovie(const Movie& movieToAdd);
     int deleteMovie(const Movie& movieToDelete);
     int updateMovie(const Movie& ToUpdateWith);

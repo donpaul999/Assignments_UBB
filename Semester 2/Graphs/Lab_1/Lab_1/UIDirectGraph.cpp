@@ -20,7 +20,8 @@ void UI::start_menu()
 	cout << "11. Add a vertex" << '\n';
 	cout << "12. Remove an edge" << '\n';
 	cout << "13. Remove a vertex" << '\n';
-	cout << "14. Exit" << '\n';
+	cout << "14. Find shortest path between 2 vertices" << '\n';
+	cout << "15. Exit" << '\n';
 }
 
 void UI::start_app()
@@ -30,7 +31,7 @@ void UI::start_app()
 		start_menu();
 		cout << "Input choice: ";
 		cin >> input;
-		if (input == 14)
+		if (input == 15)
 			break;
 		if (input == 1)
 			choice1();
@@ -58,6 +59,8 @@ void UI::start_app()
 			choice12();
 		if (input == 13)
 			choice13();
+		if (input == 14)
+			choice14();
 		cout << "********************************\n\n";
 
 	}
@@ -88,9 +91,9 @@ void UI::choice2()
 void UI::choice3()
 {
 	int source, target;
-	cout << "Input first vertix: ";
+	cout << "Input first vertex: ";
 	cin >> source;
-	cout << "Input the second vertix: ";
+	cout << "Input the second vertex: ";
 	cin >> target;
 	cout << '\n';
 	if (graph.existsEdge(source, target))
@@ -160,9 +163,9 @@ void UI::choice8()
 void UI::choice9()
 {
 	int source, target, cost;
-	cout << "Input first vertix: ";
+	cout << "Input first vertex: ";
 	cin >> source;
-	cout << "Input the second vertix: ";
+	cout << "Input the second vertex: ";
 	cin >> target;
 	cout << '\n';
 	cout << "Input new cost: ";
@@ -174,9 +177,9 @@ void UI::choice9()
 void UI::choice10()
 {
 	int source, target, cost;
-	cout << "Input first vertix: ";
+	cout << "Input first vertex: ";
 	cin >> source;
-	cout << "Input the second vertix: ";
+	cout << "Input the second vertex: ";
 	cin >> target;
 	cout << '\n';
 	cout << "Input new cost: ";
@@ -197,9 +200,9 @@ void UI::choice11()
 void UI::choice12()
 {
 	int source, target;
-	cout << "Input first vertix: ";
+	cout << "Input first vertex: ";
 	cin >> source;
-	cout << "Input the second vertix: ";
+	cout << "Input the second vertex: ";
 	cin >> target;
 	cout << '\n';
 	graph.removeEdge(source, target);
@@ -212,4 +215,17 @@ void UI::choice13()
 	cin >> vertex;
 	cout << '\n';
 	graph.removeVertex(vertex);
+}
+
+void UI::choice14()
+{
+	int source, target;
+	cout << "Input first vertex: ";
+	cin >> source;
+	cout << "Input the second vertex: ";
+	cin >> target;
+	cout << '\n';
+	vector<int> listOfVertices = graph.bfsFromEndToStart(source, target);
+	for(int i = 0; i < listOfVertices.size(); ++i)
+		cout << listOfVertices[i] << " ";
 }
