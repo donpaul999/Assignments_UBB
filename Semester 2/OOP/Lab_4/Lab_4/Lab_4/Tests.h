@@ -1,10 +1,11 @@
 #pragma once
+#include "UI.h"// I DON'T TEST UI - I don't have to add every library
 #include <cassert>
-#include "UI.h" // I DON'T TEST UI - I don't have to add every library
 class Tests
 {
 public:
 	void runAllTests();
+private:
 	void runMovieTests();
 	void runDynamicArrayTests();
 	void runRepositoryTests();

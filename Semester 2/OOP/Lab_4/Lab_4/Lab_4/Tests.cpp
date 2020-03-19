@@ -77,46 +77,49 @@ void Tests::Movie_AnyMovie_MovieCreated()
 
 void Tests::DynamicVector_AnyVector_VectorCreated()
 {
-	DynamicVector<int> vectorUsed( 5 );
+	DynamicVector<int> vectorUsed{ 5 };
 	assert(vectorUsed.capacity() == 5);
 
 }
 
 void Tests::resizeElementsList_AnyVector_VectorResized()
 {
-	DynamicVector<int> vectorUsed = { 2 };
+	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.resizeElementsList();
 	assert(vectorUsed.capacity() == 4);
 }
 
 void Tests::searchElementInList_ElementInList_ReturnsTrue()
 {
-	DynamicVector<int> vectorUsed = { 2 };
-	vectorUsed.append(1);
-	vectorUsed.append(5);
+	DynamicVector<int> vectorUsed{ 2 };
+	int firstElementToAdd = 1, secondElementToAdd = 5;
+	vectorUsed.append(firstElementToAdd);
+	vectorUsed.append(secondElementToAdd);
 	assert(vectorUsed.searchElementInList(5) == 1);
 }
 
 void Tests::searchElementInList_ElementNotInList_ReturnsFalse()
 {
-	DynamicVector<int> vectorUsed = { 2 };
-	vectorUsed.append(1);
-	vectorUsed.append(5);
+	DynamicVector<int> vectorUsed{ 2 };
+	int firstElementToAdd = 1, secondElementToAdd = 5;
+	vectorUsed.append(firstElementToAdd);
+	vectorUsed.append(secondElementToAdd);
 	assert(vectorUsed.searchElementInList(4) == 1);
 }
 
 void Tests::append_ElementNotInList_ElementAppended()
 {
-	DynamicVector<int> vectorUsed = { 2 };
-	vectorUsed.append(1);
+	DynamicVector<int> vectorUsed{ 2 };
+	int firstElementToAdd = 1, secondElementToAdd = 5;
+	vectorUsed.append(firstElementToAdd);
 	assert(vectorUsed.searchElementInList(5) == 0);
-	vectorUsed.append(5);
+	vectorUsed.append(secondElementToAdd);	
 	assert(vectorUsed.searchElementInList(5) == 1);
 }
 
 void Tests::append_AnyElement_ElementAppended()
 {
-	DynamicVector<int> vectorUsed = { 2 };
+	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
 	assert(vectorUsed.searchElementInList(1) == 1);
 	vectorUsed.append(1);
@@ -125,7 +128,7 @@ void Tests::append_AnyElement_ElementAppended()
 
 void Tests::remove_ElementInTheList_ElementRemoved()
 {
-	DynamicVector<int> vectorUsed = { 2 };
+	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
 	assert(vectorUsed.searchElementInList(1) == 1);
 	vectorUsed.remove(1);
@@ -135,7 +138,7 @@ void Tests::remove_ElementInTheList_ElementRemoved()
 
 void Tests::remove_ElementNotInTheList_SizeRemainsTheSame()
 {
-	DynamicVector<int> vectorUsed = { 2 };
+	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
 	assert(vectorUsed.searchElementInList(1) == 1);
 	vectorUsed.remove(2);
@@ -144,7 +147,7 @@ void Tests::remove_ElementNotInTheList_SizeRemainsTheSame()
 
 void Tests::update_ElementInTheList_ElementUpdated()
 {
-	DynamicVector<int> vectorUsed = { 2 };
+	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
 	assert(vectorUsed.searchElementInList(1) == 1);
 	vectorUsed.update(1, 2);
@@ -154,14 +157,14 @@ void Tests::update_ElementInTheList_ElementUpdated()
 
 void Tests::operatorPosition_ValidPosition_ElementReturned()
 {
-	DynamicVector<int> vectorUsed = { 2 };
+	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(5);
 	assert(vectorUsed[0] == 5);
 }
 
 void Tests::operatorPosition_InvalidPosition_ExceptionReturned()
 {
-	DynamicVector<int> vectorUsed = { 2 };
+	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(5);
 	try {
 		int x = vectorUsed[1];
@@ -174,7 +177,7 @@ void Tests::operatorPosition_InvalidPosition_ExceptionReturned()
 
 void Tests::size_AnyVector_CorrectSize()
 {
-	DynamicVector<int> vectorUsed = { 2 };
+	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
 	vectorUsed.append(2);
 	assert(vectorUsed.size() == 2);
@@ -182,10 +185,10 @@ void Tests::size_AnyVector_CorrectSize()
 
 void Tests::operatorEqual_AnyVector_CorrectAssignment()
 {
-	DynamicVector<int> firstVectorUsed = { 2 };
+	DynamicVector<int> firstVectorUsed{ 2 };
 	firstVectorUsed.append(1);
 	firstVectorUsed.remove(2);
-	DynamicVector<int> secondVectorUsed = { 2 };
+	DynamicVector<int> secondVectorUsed{ 2 };
 	secondVectorUsed = firstVectorUsed;
 	assert(secondVectorUsed.searchElementInList(2) == 1);
 	assert(secondVectorUsed.searchElementInList(1) == 1);
