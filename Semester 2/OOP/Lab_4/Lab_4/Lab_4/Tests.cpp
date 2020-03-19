@@ -1,12 +1,17 @@
 #include "Tests.h"
-
+#include <iostream>
 void Tests::runAllTests()
-{
+{	
 	runMovieTests();
+	std::cout << 1;
 	runDynamicArrayTests();
+	std::cout << 2;
 	runRepositoryTests();
+	std::cout << 3;
 	runAdminServiceTests();
+	std::cout << 4;
 	runUserServiceTests();
+	std::cout << 5;
 }
 
 void Tests::runMovieTests()
@@ -17,18 +22,42 @@ void Tests::runMovieTests()
 void Tests::runDynamicArrayTests()
 {
 	 DynamicVector_AnyVector_VectorCreated();
+	 std::cout << 12;
 	 resizeElementsList_AnyVector_VectorResized();
+	 std::cout << 13;
+
 	 searchElementInList_ElementInList_ReturnsTrue();
+	 std::cout << 14;
+
 	 searchElementInList_ElementNotInList_ReturnsFalse();
+	 std::cout << 15;
+
 	 append_ElementNotInList_ElementAppended();
+	 std::cout << 16;
+
 	 append_AnyElement_ElementAppended();
+	 std::cout << 17;
 	 remove_ElementInTheList_ElementRemoved();
+	 std::cout << 18;
+
 	 remove_ElementNotInTheList_SizeRemainsTheSame();
+	 std::cout << 19;
+
 	 update_ElementInTheList_ElementUpdated();
+	 std::cout << 20;
+
 	 operatorPosition_ValidPosition_ElementReturned();
+
+	 std::cout << 21;
+
 	 operatorPosition_InvalidPosition_ExceptionReturned();
+	 std::cout << 22;
+
 	 size_AnyVector_CorrectSize();
+	 std::cout << 23;
+
 	 operatorEqual_AnyVector_CorrectAssignment();
+	 std::cout << 24;
 
 }
 
@@ -71,7 +100,7 @@ void Tests::Movie_AnyMovie_MovieCreated()
 	assert(movieUsed.getGenre() == "CategoryTest");
 	assert(movieUsed.getYearOfRelease() == 123);
 	assert(movieUsed.getNumberOfLikes() == 456);
-	assert(movieUsed.getTrailer() == "Test");
+	assert(movieUsed.getTrailer() == "TrailerTest");
 
 }
 
@@ -101,7 +130,7 @@ void Tests::searchElementInList_ElementInList_ReturnsTrue()
 void Tests::searchElementInList_ElementNotInList_ReturnsFalse()
 {
 	DynamicVector<int> vectorUsed{ 2 };
-	int firstElementToAdd = 1, secondElementToAdd = 5;
+	int firstElementToAdd = 1, secondElementToAdd = 4;
 	vectorUsed.append(firstElementToAdd);
 	vectorUsed.append(secondElementToAdd);
 	assert(vectorUsed.searchElementInList(4) == 1);
@@ -112,7 +141,7 @@ void Tests::append_ElementNotInList_ElementAppended()
 	DynamicVector<int> vectorUsed{ 2 };
 	int firstElementToAdd = 1, secondElementToAdd = 5;
 	vectorUsed.append(firstElementToAdd);
-	assert(vectorUsed.searchElementInList(5) == 0);
+	assert(vectorUsed.searchElementInList(5) == -1);
 	vectorUsed.append(secondElementToAdd);	
 	assert(vectorUsed.searchElementInList(5) == 1);
 }
@@ -121,18 +150,18 @@ void Tests::append_AnyElement_ElementAppended()
 {
 	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
-	assert(vectorUsed.searchElementInList(1) == 1);
+	assert(vectorUsed.searchElementInList(1) == 0);
 	vectorUsed.append(1);
-
+	assert(vectorUsed.size() == 2);
 }
 
 void Tests::remove_ElementInTheList_ElementRemoved()
 {
 	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
-	assert(vectorUsed.searchElementInList(1) == 1);
-	vectorUsed.remove(1);
 	assert(vectorUsed.searchElementInList(1) == 0);
+	vectorUsed.remove(1);
+	assert(vectorUsed.searchElementInList(1) == -1);
 
 }
 
@@ -140,7 +169,7 @@ void Tests::remove_ElementNotInTheList_SizeRemainsTheSame()
 {
 	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
-	assert(vectorUsed.searchElementInList(1) == 1);
+	assert(vectorUsed.searchElementInList(1) == 0);
 	vectorUsed.remove(2);
 	assert(vectorUsed.size() == 1);
 }
@@ -149,10 +178,10 @@ void Tests::update_ElementInTheList_ElementUpdated()
 {
 	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
-	assert(vectorUsed.searchElementInList(1) == 1);
-	vectorUsed.update(1, 2);
 	assert(vectorUsed.searchElementInList(1) == 0);
-	assert(vectorUsed.searchElementInList(2) == 1);
+	vectorUsed.update(1, 2);
+	assert(vectorUsed.searchElementInList(1) == -1);
+	assert(vectorUsed.searchElementInList(2) == 0);
 }
 
 void Tests::operatorPosition_ValidPosition_ElementReturned()

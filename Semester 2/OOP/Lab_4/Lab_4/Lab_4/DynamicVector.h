@@ -31,13 +31,15 @@ public:
     DynamicVector& operator=(const  DynamicVector& vectorUsed);
 };
 
-DynamicVector<TElem>::DynamicVector(int capacityGiven) {
+
+template<typename TElem>
+DynamicVector<TElem>::DynamicVector(int capacityGiven){
     this->capacityOfVector = capacityGiven;
     this->sizeOfVector = 0;
     this->elementsList = new TElem[this->capacityOfVector];
 }
-
-DynamicVector<TElem>::DynamicVector(const  DynamicVector& vectorToSet) {
+template<typename TElem>
+DynamicVector<TElem>::DynamicVector(const  DynamicVector& vectorToSet){
     capacityOfVector = vectorToSet.capacityOfVector;
     sizeOfVector = vectorToSet.sizeOfVector;
     elementsList = new TElem[vectorToSet.capacityOfVector];
@@ -46,6 +48,7 @@ DynamicVector<TElem>::DynamicVector(const  DynamicVector& vectorToSet) {
     }
 }
 
+template<typename TElem>
 DynamicVector<TElem>::~DynamicVector()
 {
     delete[] elementsList;
@@ -67,6 +70,7 @@ inline bool DynamicVector<TElem>::needsResize()
     return sizeOfVector == capacityOfVector;
 }
 
+template<typename TElem>
 int DynamicVector<TElem>::searchElementInList(const TElem& elementToSearch) {
     for (int i = 0; i < sizeOfVector; ++i) {
         if (elementsList[i] == elementToSearch)
@@ -75,12 +79,14 @@ int DynamicVector<TElem>::searchElementInList(const TElem& elementToSearch) {
     return -1;
 }
 
+template<typename TElem>
 void DynamicVector<TElem>::append(TElem elementToAppend) {
     if (needsResize())
         resizeElementsList();
     elementsList[sizeOfVector++] = elementToAppend;
 }
 
+template<typename TElem>
 void DynamicVector<TElem>::remove(const TElem& elementToRemove) {
     int positionWhereFound = searchElementInList(elementToRemove);
     if (positionWhereFound != -1) {
@@ -91,6 +97,7 @@ void DynamicVector<TElem>::remove(const TElem& elementToRemove) {
     }
 }
 
+template<typename TElem>
 void DynamicVector<TElem>::update(const TElem& elementToUpdate, const TElem& updatedElement) {
     int positionWhereFound = searchElementInList(elementToUpdate);
     if (positionWhereFound != -1) {
@@ -98,12 +105,14 @@ void DynamicVector<TElem>::update(const TElem& elementToUpdate, const TElem& upd
     }
 }
 
+template<typename TElem>
 TElem& DynamicVector<TElem>::operator[](int positionOfTheElement) {
     if (positionOfTheElement < 0 || positionOfTheElement >= sizeOfVector)
         throw std::runtime_error("invalid index");
     return elementsList[positionOfTheElement];
 }
 
+template<typename TElem>
 int DynamicVector<TElem>::size() {
     return sizeOfVector;
 }
@@ -114,7 +123,8 @@ int DynamicVector<TElem>::capacity()
     return capacityOfVector;
 }
 
-DynamicVector<TElem>& DynamicVector<TElem>::operator=(const  DynamicVector& vectorUsed) {       //For undo, redo, maybe?
+template<typename TElem>
+DynamicVector<TElem>& DynamicVector<TElem>::operator=(const  DynamicVector& vectorUsed){       //For undo, redo, maybe?
     if (this != &vectorUsed) {
         if (capacityOfVector < vectorUsed.sizeOfVector) {
             delete[] elementsList;

@@ -44,7 +44,7 @@ void Movie::setTrailer(const std::string& trailer)
 
 const std::string& Movie::getTitle() const
 {
-	return trailer;
+	return title;
 }
 
 int Movie::getYearOfRelease() const

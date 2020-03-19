@@ -5,6 +5,7 @@ int main()
 {
 	Tests testsLists;
 	testsLists.runAllTests();
+	cout << "Test Passed";
 	Repository* repository{};
 	AdminService adminservice{ *repository };
 	UserService userservice{ *repository };
