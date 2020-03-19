@@ -22,57 +22,51 @@ void Tests::runMovieTests()
 void Tests::runDynamicArrayTests()
 {
 	 DynamicVector_AnyVector_VectorCreated();
-	 std::cout << 12;
 	 resizeElementsList_AnyVector_VectorResized();
-	 std::cout << 13;
-
 	 searchElementInList_ElementInList_ReturnsTrue();
-	 std::cout << 14;
-
 	 searchElementInList_ElementNotInList_ReturnsFalse();
-	 std::cout << 15;
-
 	 append_ElementNotInList_ElementAppended();
-	 std::cout << 16;
-
 	 append_AnyElement_ElementAppended();
-	 std::cout << 17;
 	 remove_ElementInTheList_ElementRemoved();
-	 std::cout << 18;
-
 	 remove_ElementNotInTheList_SizeRemainsTheSame();
-	 std::cout << 19;
-
 	 update_ElementInTheList_ElementUpdated();
-	 std::cout << 20;
-
 	 operatorPosition_ValidPosition_ElementReturned();
-
-	 std::cout << 21;
-
 	 operatorPosition_InvalidPosition_ExceptionReturned();
-	 std::cout << 22;
-
 	 size_AnyVector_CorrectSize();
-	 std::cout << 23;
-
 	 operatorEqual_AnyVector_CorrectAssignment();
-	 std::cout << 24;
-
 }
 
 void Tests::runRepositoryTests()
 {
 	 Repository_AnyRepository_RepositoryCreated();
+	 std::cout << 13;
 	 addMovie_MovieNotInTheList_ReturnsOne();
+	 std::cout << 14;
+
 	 addMovie_MovieInTheList_ReturnsMinusOne();
+	 std::cout << 15;
+
 	 deleteMovie_MovieInTheList_ReturnsOne();
+	 std::cout << 16;
+
 	 deleteMovie_MovieNotInTheList_ReturnsMinusOne();
+	 std::cout << 17;
+
 	 update_MovieInTheList_ReturnsOne();
+	 std::cout << 18;
+
 	 update_MovieNotInTheList_ReturnsMinusOne();
+	 std::cout << 19;
+
 	 getMovieAtPosition_ValidPosition_ReturnsMovie();
+	 std::cout << 20;
+
 	 getMovieAtPosition_InValidPosition_ReturnsException();
+	 std::cout << 21;
+
 	 getNumberOfMovies_AnyRepository_CorrectNumberOfMovies();
+	 std::cout << 22;
+
 }
 
 void Tests::runAdminServiceTests()
@@ -199,7 +193,7 @@ void Tests::operatorPosition_InvalidPosition_ExceptionReturned()
 		int x = vectorUsed[1];
 		assert(false);
 	}
-	catch(std::string Exception){
+	catch(std::exception Exception){
 		assert(true);
 	}
 }
@@ -216,11 +210,11 @@ void Tests::operatorEqual_AnyVector_CorrectAssignment()
 {
 	DynamicVector<int> firstVectorUsed{ 2 };
 	firstVectorUsed.append(1);
-	firstVectorUsed.remove(2);
+	firstVectorUsed.append(2);
 	DynamicVector<int> secondVectorUsed{ 2 };
 	secondVectorUsed = firstVectorUsed;
 	assert(secondVectorUsed.searchElementInList(2) == 1);
-	assert(secondVectorUsed.searchElementInList(1) == 1);
+	assert(secondVectorUsed.searchElementInList(1) == 0);
 }
 
 void Tests::Repository_AnyRepository_RepositoryCreated()
@@ -255,7 +249,7 @@ void Tests::deleteMovie_MovieNotInTheList_ReturnsMinusOne()
 {
 	Repository* repositoryUsed = new Repository();
 	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
-	assert(repositoryUsed->deleteMovie(movieUsed) == 1);
+	assert(repositoryUsed->deleteMovie(movieUsed) == -1);
 }
 
 void Tests::update_MovieInTheList_ReturnsOne()
@@ -270,7 +264,6 @@ void Tests::update_MovieNotInTheList_ReturnsMinusOne()
 {
 	Repository* repositoryUsed = new Repository();
 	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
-	repositoryUsed->addMovie(movieUsed);
 	assert(repositoryUsed->updateMovie(movieUsed) == -1);
 }
 
@@ -284,13 +277,12 @@ void Tests::getMovieAtPosition_ValidPosition_ReturnsMovie()
 
 void Tests::getMovieAtPosition_InValidPosition_ReturnsException()
 {
-	Repository* repositoryUsed = new Repository();
-	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	Repository* repositoryUsed{};
 	try {
-		repositoryUsed->getMovieAtPosition(0);
+		Movie movieUsed = repositoryUsed->getMovieAtPosition(0);
 		assert(false);
 	}
-	catch(std::string Exception){
+	catch (std::exception Exception) {
 		assert(true);
 	}
 }

@@ -1,5 +1,6 @@
 #include "Repository.h"
 
+
 Repository::Repository()
 {
 }
@@ -35,7 +36,7 @@ int Repository::updateMovie(const Movie& movieToUpdateWith)
 Movie Repository::getMovieAtPosition(int positionOfMovie)
 {
 	if (positionOfMovie < 0 || positionOfMovie >= movieList.size())
-		throw "Invalid position";
+		throw std::runtime_error("Invalid position");
 	return movieList[positionOfMovie];
 }
 
