@@ -225,7 +225,14 @@ void UI::choice14()
 	cout << "Input the second vertex: ";
 	cin >> target;
 	cout << '\n';
-	vector<int> listOfVertices = graph.bfsFromEndToStart(source, target);
-	for(int i = 0; i < listOfVertices.size(); ++i)
-		cout << listOfVertices[i] << " ";
+	vector<int> listOfVertices = graph.bfsFromEndToStart(target);
+	int actualVertice = source;
+	int length = 0;
+	while (actualVertice != target) {
+		cout << actualVertice << " ";
+		actualVertice = listOfVertices[actualVertice];
+		length++;
+	}
+	cout << '\n';
+	cout << "Length of the path: " << length << '\n';
 }

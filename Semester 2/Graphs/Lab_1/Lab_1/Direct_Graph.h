@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <queue>
 #include <string>
 #include <map>
 #include <vector>
@@ -27,7 +28,7 @@ public:
     pair <vector <int>::const_iterator, vector <int>::const_iterator> parseEdgesOut(int vertex);
     pair <vector <int>::const_iterator, vector <int>::const_iterator> parseEdgesIn(int vertex);
     int getCost(int source, int target);
-    vector<int> bfsFromEndToStart(int target, int source);
+    vector<int> bfsFromEndToStart(int source);
     void modifyCost(int source, int target, int newValue);
     void addVertex(int vertex);
     void addEdge(int source, int target, int value);

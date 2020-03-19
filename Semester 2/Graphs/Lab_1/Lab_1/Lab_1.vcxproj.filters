@@ -45,5 +45,8 @@
     <Text Include="graph10k.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="testGraph.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

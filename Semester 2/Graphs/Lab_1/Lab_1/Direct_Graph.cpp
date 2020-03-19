@@ -91,6 +91,29 @@ int DIRECT_GRAPH::getCost(int source, int target)
     return costs[mp(source, target)];
 }
 
+vector<int> DIRECT_GRAPH::bfsFromEndToStart(int source)
+{
+    queue<int> q;
+    vector<int>p(numberOfVertices);
+    vector<int>l(numberOfVertices);
+    map<int, bool>visited;
+    q.push(source);
+    visited[source] = 1;
+    l[source] = 0;
+    while (!q.empty()) {
+        int x = q.front();
+        q.pop();
+        for(int y = 0; y < edgesIn[x].size(); ++y)
+            if (visited[edgesIn[x][y]] == 0) {
+                q.push(edgesIn[x][y]);
+                visited[edgesIn[x][y]] = 1;
+                l[edgesIn[x][y]] = l[x] + 1;
+                p[edgesIn[x][y]] = x;
+            }
+    }
+    return p;
+}
+
 void DIRECT_GRAPH::modifyCost(int source, int target, int newValue)
 {
     if (!existsEdge(target, source))
