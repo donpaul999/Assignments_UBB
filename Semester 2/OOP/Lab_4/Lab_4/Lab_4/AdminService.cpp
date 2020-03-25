@@ -5,21 +5,21 @@ AdminService::AdminService(Repository& repository):repository{repository}{}
 
 const std::vector<std::string> AdminService::explode(const std::string& stringToExplode, const char& separatorUsed)
 {
-	std::string buffer{ "" };
+	std::string partialStringObtained{ "" };
 	std::vector<std::string> explodedString;
 
 	for (auto iterator : stringToExplode)
 	{
 		if (iterator != separatorUsed) 
-			buffer += iterator;
+			partialStringObtained += iterator;
 		else
-			if (iterator == separatorUsed && buffer != ""){ 
-				explodedString.push_back(buffer);
-			    buffer = "";
+			if (iterator == separatorUsed && partialStringObtained != ""){ 
+				explodedString.push_back(partialStringObtained);
+			    partialStringObtained = "";
 			}
 	}
-	if (buffer != "") 
-		explodedString.push_back(buffer);
+	if (partialStringObtained != "") 
+		explodedString.push_back(partialStringObtained);
 	return explodedString;
 }
 
