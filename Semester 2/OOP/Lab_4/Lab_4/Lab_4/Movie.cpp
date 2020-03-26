@@ -72,6 +72,15 @@ bool Movie::operator==(const Movie& movieToCheck) const
 	return title == movieToCheck.title; //maybe there can be 2 movies with the same title
 }
 
+void Movie::operator=(const Movie& movieToGetValuesFrom)
+{
+	title = movieToGetValuesFrom.getTitle();
+	genre = movieToGetValuesFrom.getGenre();
+	yearOfRelease = movieToGetValuesFrom.getYearOfRelease();
+	numberOfLikes = movieToGetValuesFrom.getNumberOfLikes();
+	trailer = movieToGetValuesFrom.getTrailer();
+}
+
 bool Movie::operator!=(const Movie& movieToCheck) const
 {
 	return !(movieToCheck == *this);

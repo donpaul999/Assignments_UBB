@@ -103,7 +103,7 @@ void Tests::searchElementInList_ElementNotInList_ReturnsFalse()
 	int firstElementToAdd = 1, secondElementToAdd = 4;
 	vectorUsed.append(firstElementToAdd);
 	vectorUsed.append(secondElementToAdd);
-	assert(vectorUsed.searchElementInList(4) == 1);
+	assert(vectorUsed.searchElementInList(5) == -1);
 }
 
 void Tests::append_ElementNotInList_ElementAppended()
@@ -111,8 +111,7 @@ void Tests::append_ElementNotInList_ElementAppended()
 	DynamicVector<int> vectorUsed{ 2 };
 	int firstElementToAdd = 1, secondElementToAdd = 5;
 	vectorUsed.append(firstElementToAdd);
-	assert(vectorUsed.searchElementInList(5) == -1);
-	vectorUsed.append(secondElementToAdd);	
+	vectorUsed.append(secondElementToAdd);
 	assert(vectorUsed.searchElementInList(5) == 1);
 }
 
@@ -120,7 +119,6 @@ void Tests::append_AnyElement_ElementAppended()
 {
 	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
-	assert(vectorUsed.searchElementInList(1) == 0);
 	vectorUsed.append(1);
 	assert(vectorUsed.size() == 2);
 }
@@ -129,7 +127,6 @@ void Tests::remove_ElementInTheList_ElementRemoved()
 {
 	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
-	assert(vectorUsed.searchElementInList(1) == 0);
 	vectorUsed.remove(1);
 	assert(vectorUsed.searchElementInList(1) == -1);
 
@@ -139,7 +136,6 @@ void Tests::remove_ElementNotInTheList_SizeRemainsTheSame()
 {
 	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
-	assert(vectorUsed.searchElementInList(1) == 0);
 	vectorUsed.remove(2);
 	assert(vectorUsed.size() == 1);
 }
@@ -148,7 +144,6 @@ void Tests::update_ElementInTheList_ElementUpdated()
 {
 	DynamicVector<int> vectorUsed{ 2 };
 	vectorUsed.append(1);
-	assert(vectorUsed.searchElementInList(1) == 0);
 	vectorUsed.update(1, 2);
 	assert(vectorUsed.searchElementInList(1) == -1);
 	assert(vectorUsed.searchElementInList(2) == 0);
@@ -190,7 +185,6 @@ void Tests::operatorEqual_AnyVector_CorrectAssignment()
 	DynamicVector<int> secondVectorUsed{ 2 };
 	secondVectorUsed = firstVectorUsed;
 	assert(secondVectorUsed.searchElementInList(2) == 1);
-	assert(secondVectorUsed.searchElementInList(1) == 0);
 }
 
 void Tests::Repository_AnyRepository_RepositoryCreated()

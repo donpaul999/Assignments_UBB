@@ -43,12 +43,5 @@ int AdminService::adminUpdateMovie(const std::string& title, const std::string& 
 
 std::vector<Movie> AdminService::adminGetMovieList()
 {
-	int sizeOfVector = repository.getNumberOfMovies();
-	std::vector<Movie> listOfMovies;
-	Movie movieUsed;
-	for (int i = 0; i < sizeOfVector; ++i) {
-		movieUsed = repository.getMovieAtPosition(i);
-		listOfMovies.push_back(movieUsed);
-	}
-	return listOfMovies;
+	return repository.getAllMovies();
 }

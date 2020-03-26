@@ -1,13 +1,48 @@
 #include "UserService.h"
-UserService::UserService(Repository& repository) :repository{ repository } {}
+UserService::UserService(Repository& repository, int currentMoviePosition): repository{ repository }, currentMoviePosition{ currentMoviePosition } {}
 std::vector<Movie> UserService::userGetMovieList()
 {
-	int sizeOfVector = repository.getNumberOfMovies();
-	std::vector<Movie> listOfMovies;
-	Movie movieUsed;
-	for (int i = 0; i < sizeOfVector; ++i) {
-		movieUsed = repository.getMovieAtPosition(i);
-		listOfMovies.push_back(movieUsed);
-	}
-	return listOfMovies;
+	return repository.getAllMovies();
 }
+
+std::vector<Movie> UserService::userGetWatchList()
+{
+    return repository.getAllWatchListMovies();
+}
+
+int UserService::listMoviesByGenre(const std::string& genreGiven)
+{
+    currentMoviesByGenre = repository.getMoviesByGenre(genreGiven);
+    if (currentMoviesByGenre.size() == 0)
+        return -1;
+    currentMoviePosition = 0;
+}
+
+int UserService::addMovieToWatchList()
+{
+    return repository.addMovieToWatchlist(currentMoviesByGenre[currentMoviePosition]);
+}
+
+int UserService::addMovieToWatchListByTitle(const std::string& titleOfTheMovieToAdd)
+{
+    return repository.addMovieToWatchListByTitle(titleOfTheMovieToAdd);
+}
+
+
+void UserService::goToNextMovieByGenre()
+{
+    currentMoviePosition++;
+    if(currentMoviePosition == currentMoviesByGenre.size())
+        currentMoviePosition = 0; 
+}
+
+int UserService::getWatchListLength()
+{
+    return repository.getNumberOfMoviesWatchList();
+}
+
+Movie UserService::getCurrentMovie()
+{
+    return currentMoviesByGenre[currentMoviePosition];
+}
+

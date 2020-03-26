@@ -15,6 +15,10 @@ public:
     void uiAdminDelete();
     void uiAdminUpdate();
     void uiAdminList();
+    void uiUserAdd();
+    void uiUserWatchList();
+    void uiUserNext();
+    void uiUserSave();
     void uiUserList();
 };
 

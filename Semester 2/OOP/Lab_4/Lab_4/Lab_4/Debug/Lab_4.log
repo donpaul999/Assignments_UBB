@@ -1,4 +1,7 @@
 ﻿  UI.cpp
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Lab_4\UI.cpp(113,23): warning C4018: '<': signed/unsigned mismatch
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Lab_4\UI.cpp(120,23): warning C4018: '<': signed/unsigned mismatch
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Lab_4\UI.cpp(144,23): warning C4018: '<': signed/unsigned mismatch
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Lab_4\UI.cpp(158,23): warning C4018: '<': signed/unsigned mismatch
+  UserService.cpp
+  Generating Code...
+\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Lab_4\UserService.cpp(19): warning C4715: 'UserService::listMoviesByGenre': not all control paths return a value
   Lab_4.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_4\Lab_4\Debug\Lab_4.exe

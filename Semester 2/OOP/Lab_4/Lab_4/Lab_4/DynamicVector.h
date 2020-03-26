@@ -124,7 +124,7 @@ int DynamicVector<TElem>::capacity()
 }
 
 template<typename TElem>
-DynamicVector<TElem>& DynamicVector<TElem>::operator=(const  DynamicVector& vectorUsed){       //For undo, redo, maybe?
+DynamicVector<TElem>& DynamicVector<TElem>::operator=(const  DynamicVector& vectorUsed){
     if (this != &vectorUsed) {
         if (capacityOfVector < vectorUsed.sizeOfVector) {
             delete[] elementsList;

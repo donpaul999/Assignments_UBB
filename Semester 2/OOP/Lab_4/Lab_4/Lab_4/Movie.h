@@ -24,6 +24,7 @@ public:
     int getNumberOfLikes() const;
     const std::string& getTrailer() const;
     bool operator==(const Movie& movieToCheck) const;
+    void operator=(const Movie& movieToGetValuesFrom);
     bool operator!=(const Movie& movieToCheck) const;
     std::string getOutputForm() const;
     friend std::ostream& operator<< (std::ostream& outStream, const Movie& movieToOutput);
