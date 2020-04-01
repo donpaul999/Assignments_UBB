@@ -195,7 +195,7 @@ void UI::uiUserList()
         if (isFunctionSuccesful == -1)
             std::cout << "No movies with this genre!\n";
 
-        while (1 && isFunctionSuccesful != -1) {
+        while (isFunctionSuccesful != -1) {
             try {
                 currentMovie = userService.getCurrentMovie();
             }
