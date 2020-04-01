@@ -41,7 +41,7 @@ void testAll() {
 	list.addToPosition(it3, 44);
 	assert(list.size() == 5);
 	ListIterator it2 = list.first();
-	std::cout << "CC: "<<it2.getCurrent() << '\n';
+	std::cout << "CC: "<< << '\n';
 	assert(it2.getCurrent() == 1);
 	it2.next();
 	assert(it2.getCurrent() == 77);
