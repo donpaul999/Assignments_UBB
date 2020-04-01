@@ -208,16 +208,21 @@ void testAdd() {
 	int low = 100;
 	int high = 102;
 	while (list5.size() < 500) {
+
 		list5.addToBeginning(low);
 		low--;
 		list5.addToEnd(high);
 		high++;
 	}
-	ListIterator it5 = getIterator(249, list5);
+	ListIterator it5 = getIterator(250, list5); //249
 	list5.addToPosition(it5, 101);
+	/*for (ListIterator it6 = list5.first(); it6.valid(); it6.next())
+		std::cout << it6.getCurrent() << '\n';
+	*/
 	ListIterator it6 = list5.first();
 	int current = -149;
 	while (it6.valid()) {
+		//std::cout <<"Current: "<<current<< "CC: " << it6.getCurrent() << '\n';
 		assert(current == it6.getCurrent());
 		current++;
 		it6.next();

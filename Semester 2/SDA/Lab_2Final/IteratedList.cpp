@@ -1,6 +1,6 @@
 
 #include "IteratedList.h"
-
+#include <iostream>
 IteratedList::IteratedList(){
     head = nullptr;
     tail = nullptr;
