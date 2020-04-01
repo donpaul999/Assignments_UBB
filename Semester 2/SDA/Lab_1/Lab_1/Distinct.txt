@@ -1,0 +1,13 @@
+subalgoirtm distinctCount()
+	distinctNumbers = 0
+	for i = 0, self.length, 1
+		if self.b[i] =/= 0 then
+			distinctNumbers++
+		end_if
+	end_for
+	return distinctNumbers
+end_subalgoritm
+
+
+
+best case = worst case = O(n), n = the length of the bag (distance from max to min element)

@@ -24,6 +24,8 @@ public:
 	//constructor
 	Bag();
 
+	int distinctCount() const;
+
 	//adds an element to the bag
 	void add(TElem e);
 

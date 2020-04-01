@@ -19,6 +19,7 @@ void BagIterator::first() {
 	poz = 0;
 }
 
+//O(1), Theta(poz)
 
 void BagIterator::next() {
 	if (!valid()) {
@@ -26,7 +27,6 @@ void BagIterator::next() {
 	}
 	else {
 		index++;
-		//cout << "FREq " << frec << '\n';
 		frec--;
 		if (frec <= 0) {
 			poz++;
@@ -37,7 +37,7 @@ void BagIterator::next() {
 	}
 }
 
-
+//O(1), Theta(1) 
 bool BagIterator::valid() const {
 	return 0 <= index && index < bag.bagsize;
 }

@@ -17,8 +17,19 @@ Bag::Bag() {
 		b[i] = 0;
 }
 
+int Bag::distinctCount() const
+{
+	int distinctNumbers = 0;
+	for (int i = 0; i < length; ++i)
+		if (b[i] != 0)
+			distinctNumbers++;
+	return distinctNumbers;
+}
 
-void Bag::add(TElem elem) {
+
+//Theta(n), O(n), n is length of the list. 
+
+void Bag::add(TElem elem) {		
 	if (length == capacity) {
 		capacity = capacity + 5;
 		TElem* newb = new TElem[this->capacity];
@@ -95,6 +106,7 @@ void Bag::add(TElem elem) {
 	
 }
 
+//O(n), n = list's length, Theta(1)
 
 bool Bag::remove(TElem elem) {
 	if (search(elem) == false)
@@ -125,7 +137,7 @@ bool Bag::remove(TElem elem) {
 	return true;
 }
 
-
+//Theta(1)
 bool Bag::search(TElem elem) const {
 	if(max_num == INT_MIN || elem < min_num || elem > max_num)
 		return false; 
@@ -133,13 +145,15 @@ bool Bag::search(TElem elem) const {
 	return b[dif] != 0;
 }
 
+
+//Theta(1)
 int Bag::nrOccurrences(TElem elem) const {
 	if (search(elem) == false)
 		return 0;
 	return this->b[elem - min_num];
 }
 
-
+//Theta(1)
 int Bag::size() const {
 	if(this->bagsize == 0)
 		return 0;
@@ -147,7 +161,7 @@ int Bag::size() const {
 	return this->bagsize;
 }
 
-
+//Theta(1)
 bool Bag::isEmpty() const {
 	return bagsize == 0;
 }
