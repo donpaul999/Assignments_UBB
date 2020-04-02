@@ -1,11 +1,13 @@
 #include "UserService.h"
+
 UserService::UserService(Repository& repository, int currentMoviePosition): repository{ repository }, currentMoviePosition{ currentMoviePosition } {}
-std::vector<Movie> UserService::userGetMovieList()
+
+DynamicVector<Movie> UserService::userGetMovieList()
 {
 	return repository.getAllMovies();
 }
 
-std::vector<Movie> UserService::userGetWatchList()
+DynamicVector<Movie> UserService::userGetWatchList()
 {
     return repository.getAllWatchListMovies();
 }

@@ -64,6 +64,7 @@ inline void DynamicVector<TElem>::resizeElementsList()
     delete[] elementsList;
     elementsList = newList;
 }
+
 template<typename TElem>
 inline bool DynamicVector<TElem>::needsResize()
 {

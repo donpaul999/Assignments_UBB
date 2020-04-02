@@ -39,13 +39,16 @@ void testAll() {
 	ListIterator it3 = list.first();
 	list.addToPosition(it3, 77);
 	list.addToPosition(it3, 44);
+	for (ListIterator it = list.first(); it.valid(); it.next())
+		cout <<"tL: "<< it.getCurrent() << '\n';
 	assert(list.size() == 5);
 	ListIterator it2 = list.first();
-	assert(it2.getCurrent() == 77); // 1
+	assert(it2.getCurrent() == 1);
 	it2.next();
-	assert(it2.getCurrent() == 44); // 77
+	std::cout << it2.getCurrent() << '\n';
+	assert(it2.getCurrent() == 77); 
 	it2.next();
-	assert(it2.getCurrent() == 1); // 44
+	assert(it2.getCurrent() == 44); 
 	it2.next();
 	assert(it2.getCurrent() == 3); 
 	it2.next();

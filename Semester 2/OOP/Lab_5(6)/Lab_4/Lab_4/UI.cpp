@@ -143,13 +143,13 @@ void UI::uiAdminUpdate()
 
 void UI::uiAdminList()
 {
-    std::vector<Movie>listOfMovies = adminService.adminGetMovieList();
+    DynamicVector<Movie>listOfMovies = adminService.adminGetMovieList();
     for (int i = 0; i < listOfMovies.size(); ++i)
         std::cout << listOfMovies[i] << '\n';
 }
 
 void UI::uiUserAdd() {
-    int isFunctionSuccesful = userService.addMovieToWatchList();
+    int isFunctionSuccessful = userService.addMovieToWatchList();
     if (isFunctionSuccesful == -1)
         std::cout << "Movie already in the list!\n";
 
@@ -157,7 +157,7 @@ void UI::uiUserAdd() {
 
 void UI::uiUserWatchList()
 {
-    std::vector<Movie>listOfMovies = userService.userGetWatchList();
+    DynamicVector<Movie>listOfMovies = userService.userGetWatchList();
     for (int i = 0; i < listOfMovies.size(); ++i)
         std::cout << listOfMovies[i] << '\n';
 }
@@ -191,7 +191,7 @@ void UI::uiUserList()
             if (consoleInput.size() > 0)
                 genre = consoleInput.substr(1);
 
-        int isFunctionSuccesful = userService.listMoviesByGenre(genre);
+        int isFunctionSuccessful = userService.listMoviesByGenre(genre);
         if (isFunctionSuccesful == -1)
             std::cout << "No movies with this genre!\n";
 

@@ -44,9 +44,9 @@ int Repository::getNumberOfMovies()
 	return movieList.size();
 }
 
-std::vector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
+DynamicVector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
 {
-	 std::vector<Movie> moviesOfGenre;
+    DynamicVector<Movie> moviesOfGenre;
 	 for (int i = 0; i < movieList.size(); ++i)
 		 if (genreGiven == movieList[i].getGenre() || genreGiven == "") {
 			 moviesOfGenre.push_back(movieList[i]);
@@ -54,12 +54,12 @@ std::vector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
 	 return moviesOfGenre;
 }
 
-std::vector<Movie> Repository::getAllMovies()
+DynamicVector<Movie> Repository::getAllMovies()
 {
 	return movieList;
 }
 
-std::vector<Movie> Repository::getAllWatchListMovies()
+DynamicVector<Movie> Repository::getAllWatchListMovies()
 {
 	return userWatchList;
 }

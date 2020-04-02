@@ -5,15 +5,15 @@ class UserService
 {
 private:
     Repository& repository;
-    std::vector<Movie> currentMoviesByGenre;
+    DynamicVector<Movie> currentMoviesByGenre;
     int currentMoviePosition;
 
 
 
 public:
     UserService(Repository& repository, int currentMoviePosition = 0);
-    std::vector<Movie> userGetMovieList();
-    std::vector<Movie> userGetWatchList();
+    DynamicVector<Movie> userGetMovieList();
+    DynamicVector<Movie> userGetWatchList();
     int listMoviesByGenre(const std::string& genreGiven);
     int addMovieToWatchList();
     int addMovieToWatchListByTitle(const std::string& titleOfTheMovieToAdd);
