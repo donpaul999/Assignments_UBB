@@ -77,16 +77,18 @@ TElem IteratedList::setElement(ListIterator pos, TElem e) {
     return oldElement;
 }
 
-void IteratedList::addToPosition(ListIterator& pos, TElem e) { //FIX THIS!!!
+void IteratedList::addToPosition(ListIterator& pos, TElem e) { 
     if (!pos.valid())
         throw std::runtime_error("error");
-    DLLNode *node = new DLLNode{e};
+    DLLNode* node = new DLLNode{ e };
     if (pos.currentNode == tail) {
         node->setPreviousElement(tail);
         node->setNextElement(nullptr);
         tail->setNextElement(node);
+        tail = node;
     }
     else {
+        TElem oldValue = pos.currentNode->getElement();
         node->setPreviousElement(pos.currentNode);
         node->setNextElement(pos.currentNode->getNextElement());
         pos.currentNode->getNextElement()->setPreviousElement(node);

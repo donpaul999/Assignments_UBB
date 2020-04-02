@@ -323,7 +323,7 @@ void Tests::adminGetMovieList_AnyAdminService_CorrectMovies()
 	Repository* repositoryUsed = new Repository();
 	AdminService adminServiceUsed = {*repositoryUsed};
 	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
-	std::vector<Movie>listOfMovies = adminServiceUsed.adminGetMovieList();
+	DynamicVector<Movie>listOfMovies = adminServiceUsed.adminGetMovieList();
 	assert(listOfMovies.size() == 1);
 }
 
@@ -339,6 +339,6 @@ void Tests::userGetMovieList_AnyUserService_CorrectMovies()
 	UserService userServiceUsed = { *repositoryUsed };
 	AdminService adminServiceUsed = { *repositoryUsed };
 	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
-	std::vector<Movie>listOfMovies = userServiceUsed.userGetMovieList();
+	DynamicVector<Movie>listOfMovies = userServiceUsed.userGetMovieList();
 	assert(listOfMovies.size() == 1);
 }

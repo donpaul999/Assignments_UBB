@@ -1,9 +1,10 @@
 #pragma once
 #include "Direct_Graph.h"
-
+#include "Service.h"
 class UI {
 private:
     DIRECT_GRAPH graph;
+    Service service;
     void choice1();
     void choice2();
     void choice3();
@@ -20,7 +21,7 @@ private:
     void choice14();
 
 public:
-    UI(string filename);
+    UI(DIRECT_GRAPH graph, Service service);
     void start_menu();
     void start_app();
 };

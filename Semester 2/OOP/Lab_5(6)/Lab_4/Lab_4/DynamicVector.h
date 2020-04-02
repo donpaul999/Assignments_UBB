@@ -1,5 +1,6 @@
 #pragma once
 #include <stdexcept>
+
 #include "Movie.h"
 typedef Movie TElem;
 
@@ -16,7 +17,7 @@ private:
   
 
 public:
-    DynamicVector(int capacityGiven);
+    DynamicVector(int capacityGiven = 5);
     DynamicVector(const  DynamicVector& vectorToSet);
     ~DynamicVector();
     void resizeElementsList();

@@ -149,10 +149,12 @@
   <ItemGroup>
     <ClCompile Include="Direct_Graph.cpp" />
     <ClCompile Include="Lab_1.cpp" />
+    <ClCompile Include="Service.cpp" />
     <ClCompile Include="UIDirectGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Direct_Graph.h" />
+    <ClInclude Include="Service.h" />
     <ClInclude Include="UIDirectGraph.h" />
   </ItemGroup>
   <ItemGroup>

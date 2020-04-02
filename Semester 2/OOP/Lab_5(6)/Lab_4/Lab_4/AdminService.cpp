@@ -41,7 +41,7 @@ int AdminService::adminUpdateMovie(const std::string& title, const std::string& 
 	return repository.updateMovie(movieUsed);
 }
 
-std::vector<Movie> AdminService::adminGetMovieList()
+DynamicVector<Movie> AdminService::adminGetMovieList()
 {
 	return repository.getAllMovies();
 }

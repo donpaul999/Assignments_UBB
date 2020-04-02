@@ -214,11 +214,10 @@ void testAdd() {
 		list5.addToEnd(high);
 		high++;
 	}
-	ListIterator it5 = getIterator(250, list5); //249
+	ListIterator it5 = getIterator(249, list5); //249
 	list5.addToPosition(it5, 101);
-	/*for (ListIterator it6 = list5.first(); it6.valid(); it6.next())
-		std::cout << it6.getCurrent() << '\n';
-	*/
+	//for (ListIterator it6 = list5.first(); it6.valid(); it6.next())
+		//std::cout << it6.getCurrent() << '\n';
 	ListIterator it6 = list5.first();
 	int current = -149;
 	while (it6.valid()) {

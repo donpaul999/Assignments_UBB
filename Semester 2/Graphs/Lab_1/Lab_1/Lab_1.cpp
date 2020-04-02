@@ -9,7 +9,10 @@ using namespace std;
 
 int main()
 {
-    UI u("graph10k.txt");
+    DIRECT_GRAPH graph;
+    graph.readFromFile("input.in");
+    Service service{ graph };
+    UI u(graph, service);
     u.start_app();
     cout << "Hello World!\n";
 }

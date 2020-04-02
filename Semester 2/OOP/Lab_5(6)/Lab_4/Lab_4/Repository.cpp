@@ -1,5 +1,6 @@
 #include "Repository.h"
 #include <iostream>
+
 Repository::Repository()
 {
 }
@@ -7,28 +8,37 @@ Repository::Repository()
 
 int Repository::addMovie(const Movie& movieToAdd)
 {
-	if (std::find(movieList.begin(), movieList.end(), movieToAdd) != movieList.end())
-		return -1;
-	movieList.push_back(movieToAdd);
-	return 1;
+    int positionWhereMovieIsFound = findMovie(movieList, movieToAdd);
+    if (positionWhereMovieIsFound != -1)
+        return -1;
+    movieList.append(movieToAdd);
+    return 1;
+}
+
+int Repository::findMovie(DynamicVector<Movie> listOfMovies, const Movie& movieToSearch)
+{
+    for (int i = 0; i < listOfMovies.size(); ++i)
+        if (movieToSearch == listOfMovies[i]) {
+            return i;
+        }
+    return -1;
 }
 
 int Repository::deleteMovie(const Movie& movieToDelete)
 {
-	
-	auto movieFound = std::find(movieList.begin(), movieList.end(), movieToDelete);
-	if (movieFound == movieList.end())
-		return -1;
-	movieList.erase(movieFound);
-	return 1;
+    int positionWhereMovieIsFound = findMovie(movieList, movieToDelete);
+    if (positionWhereMovieIsFound == -1)
+        return -1;
+    movieList.remove(movieToDelete);
+    return 1;
 }
 
 int Repository::updateMovie(const Movie& movieToUpdateWith)
 {
-	auto movieFound = std::find(movieList.begin(), movieList.end(), movieToUpdateWith);
-	if (movieFound == movieList.end())
+	int positionWhereMovieIsFound = findMovie(movieList, movieToUpdateWith);
+	if (positionWhereMovieIsFound == -1)
 		return -1;
-	*movieFound = movieToUpdateWith;
+	movieList[positionWhereMovieIsFound] = movieToUpdateWith;
 	return 1;
 }
 
@@ -49,7 +59,7 @@ DynamicVector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
     DynamicVector<Movie> moviesOfGenre;
 	 for (int i = 0; i < movieList.size(); ++i)
 		 if (genreGiven == movieList[i].getGenre() || genreGiven == "") {
-			 moviesOfGenre.push_back(movieList[i]);
+			 moviesOfGenre.append(movieList[i]);
 		 }
 	 return moviesOfGenre;
 }
@@ -66,11 +76,11 @@ DynamicVector<Movie> Repository::getAllWatchListMovies()
 
 int Repository::addMovieToWatchlist(const Movie& movieToAdd)
 {
-	auto it = std::find(userWatchList.begin(), userWatchList.end(), movieToAdd);
-	if (it != userWatchList.end())
-		return -1;
-	userWatchList.push_back(movieToAdd);
-	return 1;
+    int positionWhereMovieIsFound = findMovie(userWatchList, movieToAdd);
+    if (positionWhereMovieIsFound == -1)
+        return -1;
+    userWatchList.append(movieToAdd);
+    return 1;
 }
 
 int Repository::addMovieToWatchListByTitle(const std::string& titleOfTheMovieToAdd)
@@ -82,11 +92,12 @@ int Repository::addMovieToWatchListByTitle(const std::string& titleOfTheMovieToA
 		}
 	if (i == movieList.size())
 		return -1;
-	auto it = std::find(userWatchList.begin(), userWatchList.end(), movieList[i]);
-	if (it != userWatchList.end())
-		return -1;
-	userWatchList.push_back(movieList[i]);
-	return 1;
+
+    int positionWhereMovieIsFound = findMovie(userWatchList, movieList[i]);
+    if (positionWhereMovieIsFound == -1)
+        return -1;
+    userWatchList.append(movieList[i]);
+    return 1;
 }
 
 

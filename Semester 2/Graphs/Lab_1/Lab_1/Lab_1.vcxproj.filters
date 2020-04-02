@@ -24,12 +24,18 @@
     <ClCompile Include="UIDirectGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Direct_Graph.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UIDirectGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Service.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

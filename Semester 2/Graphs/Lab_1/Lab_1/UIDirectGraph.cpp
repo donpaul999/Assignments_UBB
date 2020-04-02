@@ -1,8 +1,9 @@
 #include "UIDirectGraph.h"
 #include <iostream>
-UI::UI(string filename)
+UI::UI(DIRECT_GRAPH graph, Service service)
 {
-	graph.readFromFile(filename);
+	this->graph = graph;
+	this->service = service;
 }
 
 void UI::start_menu()
@@ -31,6 +32,7 @@ void UI::start_app()
 		start_menu();
 		cout << "Input choice: ";
 		cin >> input;
+		cout << '\n';
 		if (input == 15)
 			break;
 		if (input == 1)
@@ -225,7 +227,7 @@ void UI::choice14()
 	cout << "Input the second vertex: ";
 	cin >> target;
 	cout << '\n';
-	vector<int> listOfVertices = graph.bfsFromEndToStart(target);
+	vector<int> listOfVertices = service.bfsFromEndToStart(target);
 	int actualVertice = source;
 	int length = 0;
 	while (actualVertice != target) {

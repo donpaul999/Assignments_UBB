@@ -150,7 +150,7 @@ void UI::uiAdminList()
 
 void UI::uiUserAdd() {
     int isFunctionSuccessful = userService.addMovieToWatchList();
-    if (isFunctionSuccesful == -1)
+    if (isFunctionSuccessful == -1)
         std::cout << "Movie already in the list!\n";
 
 }
@@ -170,8 +170,8 @@ void UI::uiUserSave()
 {
     std::string title;
     std::cin >> title;
-    int isFunctionSuccesful = userService.addMovieToWatchListByTitle(title);
-    if (isFunctionSuccesful == -1)
+    int isFunctionSuccessful = userService.addMovieToWatchListByTitle(title);
+    if (isFunctionSuccessful == -1)
         std::cout << "Invalid movie!\n";
 }
 
@@ -192,10 +192,10 @@ void UI::uiUserList()
                 genre = consoleInput.substr(1);
 
         int isFunctionSuccessful = userService.listMoviesByGenre(genre);
-        if (isFunctionSuccesful == -1)
+        if (isFunctionSuccessful == -1)
             std::cout << "No movies with this genre!\n";
 
-        while (isFunctionSuccesful != -1) {
+        while (isFunctionSuccessful != -1) {
             try {
                 currentMovie = userService.getCurrentMovie();
             }

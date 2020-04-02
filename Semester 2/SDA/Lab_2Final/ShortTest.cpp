@@ -39,8 +39,6 @@ void testAll() {
 	ListIterator it3 = list.first();
 	list.addToPosition(it3, 77);
 	list.addToPosition(it3, 44);
-	for (ListIterator it = list.first(); it.valid(); it.next())
-		cout <<"tL: "<< it.getCurrent() << '\n';
 	assert(list.size() == 5);
 	ListIterator it2 = list.first();
 	assert(it2.getCurrent() == 1);
