@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 class Movie {
 private:
@@ -21,12 +22,14 @@ public:
     int getYearOfRelease() const;
     const std::string& getGenre() const;
     int getNumberOfLikes() const;
+    const std::vector<std::string >explode(const std::string& stringToExplode, const std::string& separatorsUsed);
     const std::string& getTrailer() const;
     bool operator==(const Movie& movieToCheck) const;
     void operator=(const Movie& movieToGetValuesFrom);
     bool operator!=(const Movie& movieToCheck) const;
     std::string getOutputForm() const;
     friend std::ostream& operator<< (std::ostream& outStream, const Movie& movieToOutput);
+    friend std::istream& operator>> (std::istream& inStream, Movie& movie);
 
 };
 

@@ -1,0 +1,22 @@
+[2020-04-09 10:56:42] [info] Start Program:
+Path:"\\\\Mac\\Home\\Desktop\\GitHub\\Assignments_FP\\Semester 2\\OOP\\Lab_5(6)\\Lab_4\\Debug\\Lab_4.exe"
+Arguments:
+Working directory: "\\\\Mac\\Home\\Desktop\\GitHub\\Assignments_FP\\Semester 2\\OOP\\Lab_5(6)\\Lab_4\\Lab_4\\"
+Modules: Selected: \\mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\Debug\Lab_4.exe Excluded: 
+Sources: Selected: \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\Lab_4 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\paulcolta\AppData\Local\Temp\agd4iwti.pxp 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2020-04-09 10:56:42] [info] ----------------------------------------------------
+[2020-04-09 10:56:42] [info] Coverage binary generated in file: C:\Users\paulcolta\AppData\Local\Temp\agd4iwti.pxp
+[2020-04-09 10:56:42] [info] ----------------------------------------------------
+[2020-04-09 10:56:42] [warning] No modules were selected. Please check the values of --modules and --excluded_modules.
+You can try to remove all --modules and --excluded_modules and use --modules=C:\Windows\SysWOW64 instead.

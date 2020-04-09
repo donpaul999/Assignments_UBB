@@ -189,8 +189,23 @@ void Tests::operatorEqual_AnyVector_CorrectAssignment()
 
 void Tests::Repository_AnyRepository_RepositoryCreated()
 {
-	Repository* repositoryUsed = new Repository();
+	Repository repositoryUsed{"TestFile.txt"};
 }
+
+void Tests::writeMoviesToFile_AnyMovie_AddSucessful()
+{
+	Repository repositoryUsed{"TestFile.txt"};
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed.writeMoviesToFile();
+}
+
+void Tests::loadMoviesFromFile_AnyMovie_LoadSucessful()
+{
+	Repository repositoryUsed{"TestFile.txt"};
+	repositoryUsed.loadMoviesFromFile();
+	assert(repositoryUsed.getNumberOfMovies() == 1);
+}
+
 
 void Tests::addMovie_MovieNotInTheList_ReturnsOne()
 {
@@ -323,7 +338,7 @@ void Tests::adminGetMovieList_AnyAdminService_CorrectMovies()
 	Repository* repositoryUsed = new Repository();
 	AdminService adminServiceUsed = {*repositoryUsed};
 	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
-	DynamicVector<Movie>listOfMovies = adminServiceUsed.adminGetMovieList();
+	std::vector<Movie>listOfMovies = adminServiceUsed.adminGetMovieList();
 	assert(listOfMovies.size() == 1);
 }
 
@@ -339,6 +354,85 @@ void Tests::userGetMovieList_AnyUserService_CorrectMovies()
 	UserService userServiceUsed = { *repositoryUsed };
 	AdminService adminServiceUsed = { *repositoryUsed };
 	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
-	DynamicVector<Movie>listOfMovies = userServiceUsed.userGetMovieList();
+	std::vector<Movie>listOfMovies = userServiceUsed.userGetMovieList();
 	assert(listOfMovies.size() == 1);
+}
+
+void Tests::userGetWatchList_AnyUserService_CorrectWatchList()
+{
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	userServiceUsed.addMovieToWatchList();
+	std::vector<Movie>listOfMovies = userServiceUsed.userGetWatchList();
+	assert(listOfMovies.size() == 1);
+}
+
+void Tests::listMoviesByGenre_NoMovieWithGenre_ReturnsMinusOne()
+{
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(userServiceUsed.listMoviesByGenre("Comedy") == -1);
+
+}
+
+void Tests::listMoviesByGenre_ExistsMovieWithGenre_ReturnsOne()
+{
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(userServiceUsed.listMoviesByGenre("CategoryTest") == 1);
+
+}
+
+void Tests::addMovieToWatchList_ExistsMovieInWatchLists_ReturnsMinusOne()
+{
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	userServiceUsed.addMovieToWatchList();
+	assert(userServiceUsed.addMovieToWatchList() == -1);
+
+}
+
+void Tests::addMovieToWatchList_MovieNotInWatchLists_ReturnsOne()
+{
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(userServiceUsed.addMovieToWatchList() == 1);
+}
+
+void Tests::addMovieToWatchListByTitle_NoMovieInMovieLists_ReturnsMinusOne()
+{
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(userServiceUsed.addMovieToWatchListByTitle("Hangover") == -1);	
+}
+
+void Tests::addMovieToWatchListByTitle_MovieInMovieLists_ReturnsOne()
+{
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	assert(userServiceUsed.addMovieToWatchListByTitle("Test") == 1);	
+}
+
+void Tests::getWatchListLength_AnyUserService_CorrectLength()
+{
+	Repository* repositoryUsed = new Repository();
+	UserService userServiceUsed = { *repositoryUsed };
+	AdminService adminServiceUsed = { *repositoryUsed };
+	adminServiceUsed.adminAddMovie("Test", "CategoryTest", 123, 456, "TrailerTest");
+	userServiceUsed.addMovieToWatchListByTitle("Test");
+	assert(userServiceUsed.getWatchListLength() == 1);
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include "AdminService.h"
 #include "UserService.h"
+#include <fstream>
+#include <string>
 class UI
 {
 private:
@@ -14,6 +16,7 @@ public:
     void uiAdminAdd();
     void uiAdminDelete();
     void uiAdminUpdate();
+    void uiAdminChangeFile();
     void uiAdminList();
     void uiUserAdd();
     void uiUserWatchList();

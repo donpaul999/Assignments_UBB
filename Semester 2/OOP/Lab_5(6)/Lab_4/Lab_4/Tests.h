@@ -1,6 +1,7 @@
 #pragma once
 #include "UI.h"// I DON'T TEST UI - I don't have to add every library
 #include <cassert>
+#include "DynamicVector.h"
 class Tests
 {
 public:
@@ -30,6 +31,8 @@ private:
 	void operatorEqual_AnyVector_CorrectAssignment();
 
 	void Repository_AnyRepository_RepositoryCreated();
+	void writeMoviesToFile_AnyMovie_AddSucessful();
+	void loadMoviesFromFile_AnyMovie_LoadSucessful();
 	void addMovie_MovieNotInTheList_ReturnsOne();
 	void addMovie_MovieInTheList_ReturnsMinusOne();
 	void deleteMovie_MovieInTheList_ReturnsOne();
@@ -51,6 +54,13 @@ private:
 
 	void UserService_AnyUserService_UserServiceCreated();
 	void userGetMovieList_AnyUserService_CorrectMovies();
-
+	void userGetWatchList_AnyUserService_CorrectWatchList();
+	void listMoviesByGenre_NoMovieWithGenre_ReturnsMinusOne();
+    void listMoviesByGenre_ExistsMovieWithGenre_ReturnsOne();
+    void addMovieToWatchList_ExistsMovieInWatchLists_ReturnsMinusOne();
+    void addMovieToWatchList_MovieNotInWatchLists_ReturnsOne();
+	void addMovieToWatchListByTitle_NoMovieInMovieLists_ReturnsMinusOne();
+	void addMovieToWatchListByTitle_MovieInMovieLists_ReturnsOne();
+	void getWatchListLength_AnyUserService_CorrectLength();
 };
 

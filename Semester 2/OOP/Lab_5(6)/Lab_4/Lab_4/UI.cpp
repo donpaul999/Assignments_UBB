@@ -7,15 +7,20 @@ void UI::runApp()
     std::string aplicationMode = "";
     while (1) {
         std::cout << "Choose mode: ";
-        std::getline(std::cin, aplicationMode);
-        if (aplicationMode == "mode A") {
-            runAdmin();
+        std::cin >> aplicationMode;
+        if (aplicationMode == "mode") {
+            std::cin >> aplicationMode;
+            if (aplicationMode == "A")
+                runAdmin();
+            else
+                if (aplicationMode == "B")
+                 runUser();
+                else
+                    std::cout << "Invalid option!\n";
             break;
         }
-        else if (aplicationMode == "mode B") {
-             runUser();
-             break;
-        }
+        else if (aplicationMode == "fileLocation")
+            uiAdminChangeFile();
         else if (aplicationMode == "exit")
             break;
          else
@@ -39,6 +44,8 @@ void UI::runAdmin()
             uiAdminDelete();
         else if (consoleInput == "list")
             uiAdminList();
+        else if (consoleInput == "fileLocation")
+            uiAdminChangeFile();
         else if (consoleInput == "mode") {
             std::string modeToChange;
             std::cin >> modeToChange;
@@ -98,6 +105,7 @@ void UI::uiAdminAdd()
 {
     std::string title, genre, trailer, consoleInput;
     int yearOfRelease, numberOfLikes;
+    /*
     getline(std::cin, consoleInput);
     std::vector<std::string>tokenizedInput = adminService.explode(consoleInput, ',');
     title = tokenizedInput[0].substr(1);
@@ -105,6 +113,17 @@ void UI::uiAdminAdd()
     yearOfRelease = stoi(tokenizedInput[2].substr(1));
     numberOfLikes = stoi(tokenizedInput[3].substr(1));
     trailer = tokenizedInput[4].substr(1);
+    */
+    std::cin >> consoleInput;
+    title = consoleInput.substr(0, consoleInput.size() - 1);
+    std::cin >> consoleInput;
+    genre = consoleInput.substr(0, consoleInput.size() - 1);
+    std::cin >> consoleInput;
+    yearOfRelease = stoi(consoleInput.substr(0, consoleInput.size() - 1));
+    std::cin >> consoleInput;
+    numberOfLikes = stoi(consoleInput.substr(0, consoleInput.size() - 1));
+    std::cin >> consoleInput;
+    trailer = consoleInput;
     int isFunctionSuccessful = adminService.adminAddMovie(title, genre, yearOfRelease, numberOfLikes, trailer);
     //int isFunctionSuccessful = adminService.adminAddMovie(movieRead);
     if (isFunctionSuccessful == -1) {
@@ -126,7 +145,7 @@ void UI::uiAdminDelete()
 void UI::uiAdminUpdate()
 {
     std::string title, genre, trailer, consoleInput;
-    int yearOfRelease, numberOfLikes;
+    int yearOfRelease, numberOfLikes;/*
     getline(std::cin, consoleInput);
     std::vector<std::string>tokenizedInput = adminService.explode(consoleInput, ',');
     title = tokenizedInput[0].substr(1);
@@ -134,6 +153,17 @@ void UI::uiAdminUpdate()
     yearOfRelease = stoi(tokenizedInput[2].substr(1));
     numberOfLikes = stoi(tokenizedInput[3].substr(1));
     trailer = tokenizedInput[4].substr(1);
+    */
+    std::cin >> consoleInput;
+    title = consoleInput.substr(0, consoleInput.size() - 1);
+    std::cin >> consoleInput;
+    genre = consoleInput.substr(0, consoleInput.size() - 1);
+    std::cin >> consoleInput;
+    yearOfRelease = stoi(consoleInput.substr(0, consoleInput.size() - 1));
+    std::cin >> consoleInput;
+    numberOfLikes = stoi(consoleInput.substr(0, consoleInput.size() - 1));
+    std::cin >> consoleInput;
+    trailer = consoleInput;
     int isFunctionSuccessful = adminService.adminUpdateMovie(title, genre, yearOfRelease, numberOfLikes, trailer);
     //int isFunctionSuccessful = adminService.adminAddMovie(movieRead);
     if (isFunctionSuccessful == -1) {
@@ -141,9 +171,20 @@ void UI::uiAdminUpdate()
     }
 }
 
+void UI::uiAdminChangeFile()
+{
+    std::string consoleInput, extensionFile;
+    std::getline(std::cin, consoleInput, '.');
+    std::cin >> extensionFile;
+    consoleInput += '.' + extensionFile;
+    int isFunctionSuccesful = adminService.changeRepositoryFileName(consoleInput.substr(1));
+    if(isFunctionSuccesful == -1)
+        std::cout << "Invalid file name provided! \n";
+}
+
 void UI::uiAdminList()
 {
-    DynamicVector<Movie>listOfMovies = adminService.adminGetMovieList();
+    std::vector<Movie>listOfMovies = adminService.adminGetMovieList();
     for (int i = 0; i < listOfMovies.size(); ++i)
         std::cout << listOfMovies[i] << '\n';
 }
@@ -157,7 +198,7 @@ void UI::uiUserAdd() {
 
 void UI::uiUserWatchList()
 {
-    DynamicVector<Movie>listOfMovies = userService.userGetWatchList();
+    std::vector<Movie>listOfMovies = userService.userGetWatchList();
     for (int i = 0; i < listOfMovies.size(); ++i)
         std::cout << listOfMovies[i] << '\n';
 }

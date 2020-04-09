@@ -156,6 +156,10 @@
     <ClInclude Include="UI.h" />
     <ClInclude Include="UserService.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="inputFile.txt" />
+    <Text Include="inputFileTest.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

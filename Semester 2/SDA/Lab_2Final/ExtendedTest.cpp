@@ -302,16 +302,20 @@ void testQuantity() {
 			pos = (pos + 11) % l1.size();
 		}
 	}
+	cout << 1 << '\n';
+
 	testIteratorSteps(l1);
 	assert(l1.size() == 15001);
 	for (int i = 0; i < l1.size(); i = i + 3) {
 		ListIterator it = getIterator(i, l1);
 		l1.remove(it);
 	}
+	cout << 11 << '\n';
 	testIteratorSteps(l1);
 	for (int i = 0; i < 20000; i = i + 5) {
 		l1.addToEnd(i);
 	}
+	cout << 111 << '\n';
 	testIteratorSteps(l1);
 
 	IteratedList l2;
@@ -326,6 +330,8 @@ void testQuantity() {
 			pos = (pos + 7) % l2.size();
 		}
 	}
+	cout << 1111 << '\n';
+
 	ListIterator listIt = l2.first();
 	pos = 0;
 	while (listIt.valid()) {
@@ -336,11 +342,15 @@ void testQuantity() {
 		pos++;
 		listIt.next();
 	}
+	cout << 11111 << '\n';
+
 	for (int i = 0; i < l2.size(); i++) {
 		ListIterator it = getIterator(i, l2);
 		TElem elem = l2.getElement(it);
 		assert(l2.search(elem).getCurrent() == it.getCurrent());
 	}
+	cout << 111111 << '\n';
+
 	testIteratorSteps(l2);
 	for (int i = -30000; i < 300000; i++) {
 		ListIterator pos = l2.search(i);
@@ -348,6 +358,7 @@ void testQuantity() {
 			assert(l2.remove(pos) == i);
 		}
 	}
+	cout << 11111111 << '\n';
 	testIteratorSteps(l2);
 }
 

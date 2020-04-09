@@ -1,47 +1,106 @@
 #include "Repository.h"
 #include <iostream>
+#include <fstream>
 
-Repository::Repository()
+
+
+//Load movies from given file
+void Repository::loadMoviesFromFile()
 {
+    if (movieFileName == "")
+        return;
+    Movie movie;
+    std::ifstream fin(movieFileName);
+    while (fin >> movie) {
+        movieList.push_back(movie);
+    }
+    fin.close();
 }
 
 
+//Write movies to given file
+void Repository::writeMoviesToFile()
+{
+    if (movieFileName == "")
+        return;
+    std::ofstream fout(movieFileName);
+    for (const Movie& movie : movieList) {
+        fout << movie << '\n';
+    }
+    fout.close();
+}
+
+//Repository constructor
+Repository::Repository(const std::string& nameOfTheFileUsed)
+{
+    std::vector<Movie> userWatchList{};
+    std::vector<Movie>{};
+    movieFileName = nameOfTheFileUsed;
+    loadMoviesFromFile();
+
+}
+
+//Repository destructor
+Repository::~Repository()
+{
+    writeMoviesToFile();
+}
+
+
+//Add given movie to list
 int Repository::addMovie(const Movie& movieToAdd)
 {
-    int positionWhereMovieIsFound = findMovie(movieList, movieToAdd);
-    if (positionWhereMovieIsFound != -1)
+    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToAdd);
+    if (iteratorWhereMovieIsFound !=  movieList.end() && movieList.size() != 0)
         return -1;
-    movieList.append(movieToAdd);
+    movieList.push_back(movieToAdd);
+    writeMoviesToFile();
     return 1;
 }
 
-int Repository::findMovie(DynamicVector<Movie> listOfMovies, const Movie& movieToSearch)
+//Find a movie in the given list
+int Repository::findMovie(std::vector<Movie> listOfMovies, const Movie& movieToSearch)
 {
-    for (int i = 0; i < listOfMovies.size(); ++i)
-        if (movieToSearch == listOfMovies[i]) {
-            return i;
-        }
-    return -1;
+    if(std::find(listOfMovies.begin(), listOfMovies.end(),  movieToSearch) != movieList.end())
+        return 1;
+    else
+        return -1;
 }
 
+
+//Delete a movie from the movieList
 int Repository::deleteMovie(const Movie& movieToDelete)
 {
-    int positionWhereMovieIsFound = findMovie(movieList, movieToDelete);
-    if (positionWhereMovieIsFound == -1)
+    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToDelete);
+    if (iteratorWhereMovieIsFound == movieList.end())
         return -1;
-    movieList.remove(movieToDelete);
+    movieList.erase(iteratorWhereMovieIsFound);
+    writeMoviesToFile();
     return 1;
 }
 
+
+//Update a movie from the movieList
 int Repository::updateMovie(const Movie& movieToUpdateWith)
 {
-	int positionWhereMovieIsFound = findMovie(movieList, movieToUpdateWith);
-	if (positionWhereMovieIsFound == -1)
+    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToUpdateWith);
+	if (iteratorWhereMovieIsFound == movieList.end())
 		return -1;
-	movieList[positionWhereMovieIsFound] = movieToUpdateWith;
+	*iteratorWhereMovieIsFound = movieToUpdateWith;
+    writeMoviesToFile();
 	return 1;
 }
 
+//Change the file name of the repository
+void Repository::changeFileName(const std::string& nameOfTheFileUsed)
+{
+
+    movieFileName = nameOfTheFileUsed;
+    writeMoviesToFile();
+}
+
+
+//Get the movie at a certain position
 Movie Repository::getMovieAtPosition(int positionOfMovie)
 {
 	if (positionOfMovie < 0 || positionOfMovie >= movieList.size())
@@ -49,58 +108,56 @@ Movie Repository::getMovieAtPosition(int positionOfMovie)
 	return movieList[positionOfMovie];
 }
 
+//Get the number of movies in the list
 int Repository::getNumberOfMovies()
 {
 	return movieList.size();
 }
 
-DynamicVector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
+//Get all the movies with a given genre
+std::vector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
 {
-    DynamicVector<Movie> moviesOfGenre;
-	 for (int i = 0; i < movieList.size(); ++i)
-		 if (genreGiven == movieList[i].getGenre() || genreGiven == "") {
-			 moviesOfGenre.append(movieList[i]);
-		 }
-	 return moviesOfGenre;
+    std::vector<Movie> moviesWithGenre;
+    std::copy_if(movieList.begin(), movieList.end(), std::back_inserter(moviesWithGenre), [&genreGiven](const Movie& movie) {return movie.getGenre() == genreGiven; });
+	return moviesWithGenre;
 }
 
-DynamicVector<Movie> Repository::getAllMovies()
+//Get all the movies
+std::vector<Movie> Repository::getAllMovies()
 {
 	return movieList;
 }
 
-DynamicVector<Movie> Repository::getAllWatchListMovies()
+
+//Get all the movies in the watch list
+std::vector<Movie> Repository::getAllWatchListMovies()
 {
 	return userWatchList;
 }
 
+
+//Add a certain movie to the watch list
 int Repository::addMovieToWatchlist(const Movie& movieToAdd)
 {
-    int positionWhereMovieIsFound = findMovie(userWatchList, movieToAdd);
-    if (positionWhereMovieIsFound == -1)
+    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(), movieToAdd);
+    if (iteratorWhereMovieIsFound == movieList.end())
         return -1;
-    userWatchList.append(movieToAdd);
+    userWatchList.push_back(movieToAdd);
     return 1;
 }
 
+
+//Add a certain movie to the watch list by the title
 int Repository::addMovieToWatchListByTitle(const std::string& titleOfTheMovieToAdd)
 {
-	int i;
-	for (i = 0; i < movieList.size(); ++i)
-		if (titleOfTheMovieToAdd == movieList[i].getTitle()) {
-			break;
-		}
-	if (i == movieList.size())
-		return -1;
-
-    int positionWhereMovieIsFound = findMovie(userWatchList, movieList[i]);
-    if (positionWhereMovieIsFound == -1)
+    auto iteratorWhereMovieFound = std::find_if(movieList.begin(), movieList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
+    if (iteratorWhereMovieFound == movieList.end())
         return -1;
-    userWatchList.append(movieList[i]);
+    userWatchList.push_back(*iteratorWhereMovieFound);
     return 1;
 }
 
-
+//Get the number of movies in the watch list
 int Repository::getNumberOfMoviesWatchList()
 {
 	return userWatchList.size();
