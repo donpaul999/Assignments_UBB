@@ -1,0 +1,66 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/AdminService.h
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Repository.h
+vector
+-
+fstream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/DynamicVector.h
+stdexcept
+-
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Movie.h
+string
+-
+vector
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Repository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Movie.h
+vector
+-
+algorithm
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Tests.cpp
+Tests.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Tests.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Tests.h
+UI.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/UI.h
+cassert
+-
+fstream
+-
+DynamicVector.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/DynamicVector.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/UI.h
+AdminService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/AdminService.h
+UserService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/UserService.h
+fstream
+-
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/UserService.h
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/Repository.h
+

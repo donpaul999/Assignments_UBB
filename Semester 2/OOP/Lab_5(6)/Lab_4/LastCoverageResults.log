@@ -1,10 +1,10 @@
-[2020-04-09 11:10:29] [info] Start Program:
-Path:"Debug\\Lab_4.exe"
-Arguments:
+[2020-04-11 21:55:52] [info] Start Program:
+Path:"Debug/Lab_4.exe"
+Arguments:--verbose 
 Working directory: not set.
-Modules: Selected: C:\Windows\SysWOW64 Excluded: 
+Modules: Selected: * Excluded: 
 Sources: Selected: * Excluded: 
-Log Level: Verbose
+Log Level: Normal
 Cover Children: 0
 Aggregate by file: 1
 Continue after C++ exception: 0
@@ -15,105 +15,27 @@ Unified diff:
 Excluded line regular expressions: 
 Substitute pdb source paths: 
 
-[2020-04-09 11:10:29] [debug] Create Process:7276
-[2020-04-09 11:10:29] [debug] Module: \Mac\AllFiles\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\Debug\Lab_4.exe is skipped because it matches no selected patterns
-[2020-04-09 11:10:29] [debug] Create Thread:10232
-[2020-04-09 11:10:29] [debug] Module: C:\Windows\System32\ntdll.dll is skipped because it matches no selected patterns
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\ntdll.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\wntdll.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\wntdll.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\wntdll.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\wntdll.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\wntdll.pdb: Failed
-[2020-04-09 11:10:29] [debug] Module: C:\Windows\System32\wow64.dll is skipped because it matches no selected patterns
-[2020-04-09 11:10:29] [debug] Module: C:\Windows\System32\wow64win.dll is skipped because it matches no selected patterns
-[2020-04-09 11:10:29] [debug] Module: C:\Windows\System32\wow64cpu.dll is skipped because it matches no selected patterns
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\kernel32.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\wkernel32.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\wkernel32.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\wkernel32.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\wkernel32.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\wkernel32.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\KernelBase.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\wkernelbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\wkernelbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\wkernelbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\wkernelbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\wkernelbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Create Thread:9224
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\msvcp140d.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\msvcp140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from d:\agent\_work\3\s\binaries\x86ret\bin\i386\msvcp140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\msvcp140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\msvcp140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\msvcp140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Create Thread:10148
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\vcruntime140d.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\vcruntime140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from d:\agent\_work\3\s\binaries\x86ret\bin\i386\vcruntime140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\vcruntime140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\vcruntime140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\vcruntime140d.i386.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\ucrtbased.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\ucrtbased.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\ucrtbased.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\kernel.appcore.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\Kernel.Appcore.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\Kernel.Appcore.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\Kernel.Appcore.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\Kernel.Appcore.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\Kernel.Appcore.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\msvcrt.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\msvcrt.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\msvcrt.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\msvcrt.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\msvcrt.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\msvcrt.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\rpcrt4.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\wrpcrt4.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\wrpcrt4.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\wrpcrt4.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\wrpcrt4.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\wrpcrt4.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\sspicli.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\wsspicli.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\wsspicli.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\wsspicli.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\wsspicli.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\wsspicli.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\cryptbase.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\cryptbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\cryptbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\cryptbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\cryptbase.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\cryptbase.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\bcryptprimitives.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\bcryptprimitives.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\bcryptprimitives.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\bcryptprimitives.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\bcryptprimitives.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\bcryptprimitives.pdb: Failed
-[2020-04-09 11:10:29] [info] Module: C:\Windows\SysWOW64\sechost.dll is selected because it matches selected pattern: C:\Windows\SysWOW64
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\SysWOW64\sechost.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\sechost.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\symbols\dll\sechost.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\dll\sechost.pdb: Failed
-[2020-04-09 11:10:29] [debug] Try to load pdb from C:\Windows\sechost.pdb: Failed
-[2020-04-09 11:10:29] [debug] Exit thread:10232
-[2020-04-09 11:10:29] [debug] Exit thread:10148
-[2020-04-09 11:10:29] [debug] Exit thread:9224
-[2020-04-09 11:10:29] [debug] Exit Process:7276
-[2020-04-09 11:10:30] [info] ----------------------------------------------------
-[2020-04-09 11:10:30] [info] Coverage generated in Folder Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\CoverageReport-2020-04-09-11h10m29s
-[2020-04-09 11:10:30] [info] ----------------------------------------------------
-[2020-04-09 11:10:30] [warning] No modules were selected. Please check the values of --modules and --excluded_modules.
+[2020-04-11 21:55:52] [info] Module: \Mac\AllFiles\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\Debug\Lab_4.exe is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\System32\ntdll.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\ntdll.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\System32\wow64.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\System32\wow64win.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\System32\wow64cpu.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\kernel32.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\KernelBase.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\vcruntime140d.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\msvcp140d.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\ucrtbased.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\ucrtbased.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\kernel.appcore.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\msvcrt.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\rpcrt4.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\sspicli.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\cryptbase.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\bcryptprimitives.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:52] [info] Module: C:\Windows\SysWOW64\sechost.dll is selected because it matches selected pattern: *
+[2020-04-11 21:55:53] [info] ----------------------------------------------------
+[2020-04-11 21:55:53] [info] Coverage generated in Folder Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\Lab_4\CoverageReport-2020-04-11-21h55m52s
+[2020-04-11 21:55:53] [info] ----------------------------------------------------
+[2020-04-11 21:55:53] [warning] No modules were selected. Please check the values of --modules and --excluded_modules.
 You can try to remove all --modules and --excluded_modules and use --modules=C:\Windows\SysWOW64 instead.

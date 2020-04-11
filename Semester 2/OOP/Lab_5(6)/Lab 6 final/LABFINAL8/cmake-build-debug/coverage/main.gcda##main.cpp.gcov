@@ -1,0 +1,23 @@
+        -:    0:Source:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/main.cpp
+        -:    0:Graph:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/cmake-build-debug/CMakeFiles/LABFINAL8.dir/main.gcno
+        -:    0:Data:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/cmake-build-debug/CMakeFiles/LABFINAL8.dir/main.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <iostream>
+        -:    2:#include "Tests.h"
+        -:    3:using namespace std;
+        1:    4:int main()
+        1:    4-block  0
+        -:    5:{
+        -:    6:    Tests testsLists;
+        1:    7:    testsLists.runAllTests();
+        -:    8:    /*
+        -:    9:	Repository repository{"inputFile.txt"};
+        -:   10:	AdminService adminservice{ repository };
+        -:   11:	UserService userservice{ repository };
+        -:   12:	UI ui{ adminservice, userservice };
+        -:   13:	ui.runApp();
+        -:   14:    */
+        1:   15:    return 0;
+        1:   15-block  0
+        -:   16:}

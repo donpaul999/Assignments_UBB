@@ -1,0 +1,132 @@
+        -:    0:Source:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/AdminService.cpp
+        -:    0:Graph:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/cmake-build-debug/CMakeFiles/LABFINAL8.dir/AdminService.gcno
+        -:    0:Data:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/Lab 6 final/LABFINAL8/cmake-build-debug/CMakeFiles/LABFINAL8.dir/AdminService.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "AdminService.h"
+        -:    2:
+        -:    3://AdminService constructor
+       42:    4:AdminService::AdminService(Repository& repository):repository{repository}{}
+       21:    4-block  0
+       21:    4-block  1
+       21:    4-block  2
+       21:    4-block  3
+        -:    5:
+        -:    6:
+        -:    7:/*
+        -:    8:	Explode a string after certain separators - stringToExplode - string to be separated
+        -:    9:											separatorUsed - character used to divide the string
+        -:   10:*/
+        1:   11:const std::vector<std::string> AdminService::explode(const std::string& stringToExplode, const char& separatorUsed)
+        1:   11-block  0
+        -:   12:{
+        1:   13:	std::string partialStringObtained{ "" };
+        1:   14:	std::vector<std::string> explodedString;
+        -:   15:
+       19:   16:	for (auto iterator : stringToExplode)
+        1:   16-block  0
+       19:   16-block  1
+       18:   16-block  2
+       18:   16-block  3
+        -:   17:	{
+       18:   18:		if (iterator != separatorUsed) 
+       18:   18-block  0
+       16:   19:			partialStringObtained += iterator;
+       16:   19-block  0
+       16:   19-block  1
+        -:   20:		else
+        2:   21:			if (iterator == separatorUsed && partialStringObtained != ""){ 
+        2:   21-block  0
+        2:   21-block  1
+        2:   22:				explodedString.push_back(partialStringObtained);
+        2:   22-block  0
+        2:   23:			    partialStringObtained = "";
+        2:   23-block  0
+        2:   24:			}
+        2:   24-block  0
+        -:   25:	}
+        1:   26:	if (partialStringObtained != "") 
+        1:   26-block  0
+        1:   27:		explodedString.push_back(partialStringObtained);
+        1:   27-block  0
+        1:   27-block  1
+        1:   28:	return explodedString;
+        1:   29:}
+    $$$$$:   29-block  0
+        1:   29-block  1
+    $$$$$:   29-block  2
+        1:   29-block  3
+    $$$$$:   29-block  4
+        -:   30:
+        -:   31:/*
+        -:   32:	Add a movie in the list - title - title of the movie
+        -:   33:							genre - genre of the movie
+        -:   34:							yearOfRelease - the year when the movie was released
+        -:   35:							numberOfLikes - trailer's number of likes
+        -:   36:							trailer - link to the movie's trailer
+        -:   37:*/
+       21:   38:int AdminService::adminAddMovie(const std::string& title, const std::string& genre, int yearOfRelease, int numberOfLikes, const std::string& trailer)
+       21:   38-block  0
+        -:   39:{
+       21:   40:	Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
+       21:   41:	return repository.addMovie(movieUsed);
+       21:   41-block  0
+       21:   42:}
+       21:   42-block  0
+    $$$$$:   42-block  1
+    $$$$$:   42-block  2
+        -:   43:
+        -:   44:
+        -:   45:/*
+        -:   46:	Delete a movie from the list, by its title
+        -:   47:*/
+        2:   48:int AdminService::adminDeleteMovie(const std::string& title)
+        2:   48-block  0
+        -:   49:{
+        2:   50:	Movie movieUsed{ title, "fillGenre", 2020, 0, "No trailer" };
+        2:   50-block  0
+        2:   50-block  1
+    $$$$$:   50-block  2
+    $$$$$:   50-block  3
+    $$$$$:   50-block  4
+        2:   51:	return repository.deleteMovie(movieUsed);
+        2:   51-block  0
+        2:   52:}
+        2:   52-block  0
+    $$$$$:   52-block  1
+    $$$$$:   52-block  2
+        -:   53:
+        -:   54:/*
+        -:   55:	Add a movie in the list - title - title of the movie to be updated
+        -:   56:							genre - genre of the movie to update with
+        -:   57:							yearOfRelease - the year when the movie was released to update with
+        -:   58:							numberOfLikes - trailer's number of likes to update with
+        -:   59:							trailer - link to the movie's trailer to update with
+        -:   60:*/
+        2:   61:int AdminService::adminUpdateMovie(const std::string& title, const std::string& genre, int yearOfRelease, int numberOfLikes, const std::string& trailer)
+        2:   61-block  0
+        -:   62:{
+        2:   63:	Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
+        2:   64:	return repository.updateMovie(movieUsed);
+        2:   64-block  0
+        2:   65:}
+        2:   65-block  0
+    $$$$$:   65-block  1
+    $$$$$:   65-block  2
+        -:   66:
+        -:   67://Return the list of movies
+        1:   68:std::vector<Movie> AdminService::adminGetMovieList()
+        1:   68-block  0
+        -:   69:{
+        1:   70:	return repository.getAllMovies();
+        1:   70-block  0
+        -:   71:}
+        -:   72:
+        -:   73://Change the file name used by repository
+        1:   74:int AdminService::changeRepositoryFileName(const std::string& nameOfTheFileUsed)
+        1:   74-block  0
+        -:   75:{
+        1:   76:	repository.changeFileName(nameOfTheFileUsed);
+        1:   77:	return 1;
+        1:   77-block  0
+        -:   78:}
