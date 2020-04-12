@@ -1,8 +1,12 @@
 #pragma once
-#include "UI.h"// I DON'T TEST UI - I don't have to add every library
 #include <cassert>
 #include <fstream>
 #include "DynamicVector.h"
+#include "AdminService.h"
+#include "UserService.h"
+#include "Repository.h"
+#include "Movie.h"
+
 class Tests
 {
 public:

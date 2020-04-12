@@ -21,7 +21,6 @@ CMakeFiles/LABFINAL8.dir/Tests.o: ../Movie.h
 CMakeFiles/LABFINAL8.dir/Tests.o: ../Repository.h
 CMakeFiles/LABFINAL8.dir/Tests.o: ../Tests.cpp
 CMakeFiles/LABFINAL8.dir/Tests.o: ../Tests.h
-CMakeFiles/LABFINAL8.dir/Tests.o: ../UI.h
 CMakeFiles/LABFINAL8.dir/Tests.o: ../UserService.h
 
 CMakeFiles/LABFINAL8.dir/UI.o: ../AdminService.h
