@@ -1,0 +1,68 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/DLLNode.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ExtendedTest.cpp
+assert.h
+-
+exception
+-
+iostream
+-
+ExtendedTest.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ExtendedTest.h
+ListIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ListIterator.h
+IteratedList.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/IteratedList.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ExtendedTest.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/IteratedList.cpp
+IteratedList.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/IteratedList.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/IteratedList.h
+DLLNode.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/DLLNode.h
+stdexcept
+-
+ListIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ListIterator.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ListIterator.cpp
+ListIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ListIterator.h
+IteratedList.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/IteratedList.h
+exception
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ListIterator.h
+DLLNode.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/DLLNode.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ShortTest.cpp
+ShortTest.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ShortTest.h
+assert.h
+-
+exception
+-
+iostream
+-
+IteratedList.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/IteratedList.h
+ListIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ListIterator.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab_2Final/ShortTest.h
+

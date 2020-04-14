@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab3/Set.cpp
+Set.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab3/Set.h
+SetIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab3/SetIterator.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab3/Set.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab3/SetIterator.h
+Set.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab3/Set.h
+

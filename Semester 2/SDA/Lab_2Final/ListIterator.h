@@ -1,6 +1,5 @@
 #pragma once
 #include "DLLNode.h"
-#include "IteratedList.h"
 
 //DO NOT CHANGE THIS PART
 class IteratedList;

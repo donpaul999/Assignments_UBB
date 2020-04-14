@@ -6,976 +6,975 @@
         -:    1:// -*- C++ -*-
         -:    2://===-------------------------- __string ----------------------------------===//
         -:    3://
-        -:    4://                     The LLVM Compiler Infrastructure
-        -:    5://
-        -:    6:// This file is distributed under the University of Illinois Open Source
-        -:    7:// License. See LICENSE.TXT for details.
-        -:    8://
-        -:    9://===----------------------------------------------------------------------===//
-        -:   10:
-        -:   11:#ifndef _LIBCPP___STRING
-        -:   12:#define _LIBCPP___STRING
-        -:   13:
-        -:   14:/*
-        -:   15:    string synopsis
-        -:   16:
-        -:   17:namespace std
-        -:   18:{
-        -:   19:
-        -:   20:template <class charT>
-        -:   21:struct char_traits
-        -:   22:{
-        -:   23:    typedef charT     char_type;
-        -:   24:    typedef ...       int_type;
-        -:   25:    typedef streamoff off_type;
-        -:   26:    typedef streampos pos_type;
-        -:   27:    typedef mbstate_t state_type;
-        -:   28:
-        -:   29:    static constexpr void assign(char_type& c1, const char_type& c2) noexcept;
-        -:   30:    static constexpr bool eq(char_type c1, char_type c2) noexcept;
-        -:   31:    static constexpr bool lt(char_type c1, char_type c2) noexcept;
-        -:   32:
-        -:   33:    static constexpr int    compare(const char_type* s1, const char_type* s2, size_t n);
-        -:   34:    static constexpr size_t length(const char_type* s);
-        -:   35:    static constexpr const char_type* 
-        -:   36:                            find(const char_type* s, size_t n, const char_type& a);
-        -:   37:    static char_type*       move(char_type* s1, const char_type* s2, size_t n);
-        -:   38:    static char_type*       copy(char_type* s1, const char_type* s2, size_t n);
-        -:   39:    static char_type*       assign(char_type* s, size_t n, char_type a);
-        -:   40:
-        -:   41:    static constexpr int_type  not_eof(int_type c) noexcept;
-        -:   42:    static constexpr char_type to_char_type(int_type c) noexcept;
-        -:   43:    static constexpr int_type  to_int_type(char_type c) noexcept;
-        -:   44:    static constexpr bool      eq_int_type(int_type c1, int_type c2) noexcept;
-        -:   45:    static constexpr int_type  eof() noexcept;
-        -:   46:};
-        -:   47:
-        -:   48:template <> struct char_traits<char>;
-        -:   49:template <> struct char_traits<wchar_t>;
-        -:   50:template <> struct char_traits<char8_t>;  // c++20
-        -:   51:
-        -:   52:}  // std
-        -:   53:
-        -:   54:*/
-        -:   55:
-        -:   56:#include <__config>
-        -:   57:#include <algorithm>  // for search and min
-        -:   58:#include <cstdio>     // For EOF.
-        -:   59:#include <memory>     // for __murmur2_or_cityhash
-        -:   60:
-        -:   61:#include <__debug>
-        -:   62:
-        -:   63:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
-        -:   64:#pragma GCC system_header
-        -:   65:#endif
-        -:   66:
-        -:   67:_LIBCPP_PUSH_MACROS
-        -:   68:#include <__undef_macros>
+        -:    4:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    5:// See https://llvm.org/LICENSE.txt for license information.
+        -:    6:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    7://
+        -:    8://===----------------------------------------------------------------------===//
+        -:    9:
+        -:   10:#ifndef _LIBCPP___STRING
+        -:   11:#define _LIBCPP___STRING
+        -:   12:
+        -:   13:/*
+        -:   14:    string synopsis
+        -:   15:
+        -:   16:namespace std
+        -:   17:{
+        -:   18:
+        -:   19:template <class charT>
+        -:   20:struct char_traits
+        -:   21:{
+        -:   22:    typedef charT     char_type;
+        -:   23:    typedef ...       int_type;
+        -:   24:    typedef streamoff off_type;
+        -:   25:    typedef streampos pos_type;
+        -:   26:    typedef mbstate_t state_type;
+        -:   27:
+        -:   28:    static constexpr void assign(char_type& c1, const char_type& c2) noexcept;
+        -:   29:    static constexpr bool eq(char_type c1, char_type c2) noexcept;
+        -:   30:    static constexpr bool lt(char_type c1, char_type c2) noexcept;
+        -:   31:
+        -:   32:    static constexpr int    compare(const char_type* s1, const char_type* s2, size_t n);
+        -:   33:    static constexpr size_t length(const char_type* s);
+        -:   34:    static constexpr const char_type* 
+        -:   35:                            find(const char_type* s, size_t n, const char_type& a);
+        -:   36:    static char_type*       move(char_type* s1, const char_type* s2, size_t n);
+        -:   37:    static char_type*       copy(char_type* s1, const char_type* s2, size_t n);
+        -:   38:    static char_type*       assign(char_type* s, size_t n, char_type a);
+        -:   39:
+        -:   40:    static constexpr int_type  not_eof(int_type c) noexcept;
+        -:   41:    static constexpr char_type to_char_type(int_type c) noexcept;
+        -:   42:    static constexpr int_type  to_int_type(char_type c) noexcept;
+        -:   43:    static constexpr bool      eq_int_type(int_type c1, int_type c2) noexcept;
+        -:   44:    static constexpr int_type  eof() noexcept;
+        -:   45:};
+        -:   46:
+        -:   47:template <> struct char_traits<char>;
+        -:   48:template <> struct char_traits<wchar_t>;
+        -:   49:template <> struct char_traits<char8_t>;  // c++20
+        -:   50:
+        -:   51:}  // std
+        -:   52:
+        -:   53:*/
+        -:   54:
+        -:   55:#include <__config>
+        -:   56:#include <algorithm>  // for search and min
+        -:   57:#include <cstdio>     // For EOF.
+        -:   58:#include <memory>     // for __murmur2_or_cityhash
+        -:   59:
+        -:   60:#include <__debug>
+        -:   61:
+        -:   62:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   63:#pragma GCC system_header
+        -:   64:#endif
+        -:   65:
+        -:   66:_LIBCPP_PUSH_MACROS
+        -:   67:#include <__undef_macros>
+        -:   68:
         -:   69:
-        -:   70:
-        -:   71:_LIBCPP_BEGIN_NAMESPACE_STD
-        -:   72:
-        -:   73:// char_traits
-        -:   74:
-        -:   75:template <class _CharT>
-        -:   76:struct _LIBCPP_TEMPLATE_VIS char_traits
-        -:   77:{
-        -:   78:    typedef _CharT    char_type;
-        -:   79:    typedef int       int_type;
-        -:   80:    typedef streamoff off_type;
-        -:   81:    typedef streampos pos_type;
-        -:   82:    typedef mbstate_t state_type;
-        -:   83:
-        -:   84:    static inline void _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:   85:        assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
-        -:   86:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
-        -:   87:        {return __c1 == __c2;}
-        -:   88:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
-        -:   89:        {return __c1 < __c2;}
-        -:   90:
-        -:   91:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:   92:    int compare(const char_type* __s1, const char_type* __s2, size_t __n);
-        -:   93:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:   94:    size_t length(const char_type* __s);
-        -:   95:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:   96:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a);
-        -:   97:    static char_type*       move(char_type* __s1, const char_type* __s2, size_t __n);
-        -:   98:    _LIBCPP_INLINE_VISIBILITY
-        -:   99:    static char_type*       copy(char_type* __s1, const char_type* __s2, size_t __n);
-        -:  100:    _LIBCPP_INLINE_VISIBILITY
-        -:  101:    static char_type*       assign(char_type* __s, size_t __n, char_type __a);
-        -:  102:
-        -:  103:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
-        -:  104:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
-        -:  105:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
-        -:  106:        {return char_type(__c);}
-        -:  107:    static inline _LIBCPP_CONSTEXPR int_type  to_int_type(char_type __c) _NOEXCEPT
-        -:  108:        {return int_type(__c);}
-        -:  109:    static inline _LIBCPP_CONSTEXPR bool      eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
-        -:  110:        {return __c1 == __c2;}
-        -:  111:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
-        -:  112:        {return int_type(EOF);}
-        -:  113:};
-        -:  114:
-        -:  115:template <class _CharT>
-        -:  116:_LIBCPP_CONSTEXPR_AFTER_CXX14 int
-        -:  117:char_traits<_CharT>::compare(const char_type* __s1, const char_type* __s2, size_t __n)
-        -:  118:{
-        -:  119:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  120:    {
-        -:  121:        if (lt(*__s1, *__s2))
-        -:  122:            return -1;
-        -:  123:        if (lt(*__s2, *__s1))
-        -:  124:            return 1;
-        -:  125:    }
-        -:  126:    return 0;
-        -:  127:}
-        -:  128:
-        -:  129:template <class _CharT>
-        -:  130:inline
-        -:  131:_LIBCPP_CONSTEXPR_AFTER_CXX14 size_t
-        -:  132:char_traits<_CharT>::length(const char_type* __s)
-        -:  133:{
-        -:  134:    size_t __len = 0;
-        -:  135:    for (; !eq(*__s, char_type(0)); ++__s)
-        -:  136:        ++__len;
-        -:  137:    return __len;
-        -:  138:}
-        -:  139:
-        -:  140:template <class _CharT>
-        -:  141:inline
-        -:  142:_LIBCPP_CONSTEXPR_AFTER_CXX14 const _CharT*
-        -:  143:char_traits<_CharT>::find(const char_type* __s, size_t __n, const char_type& __a)
-        -:  144:{
-        -:  145:    for (; __n; --__n)
-        -:  146:    {
-        -:  147:        if (eq(*__s, __a))
-        -:  148:            return __s;
-        -:  149:        ++__s;
-        -:  150:    }
-        -:  151:    return 0;
-        -:  152:}
-        -:  153:
-        -:  154:template <class _CharT>
-        -:  155:_CharT*
-        -:  156:char_traits<_CharT>::move(char_type* __s1, const char_type* __s2, size_t __n)
-        -:  157:{
-        -:  158:    char_type* __r = __s1;
-        -:  159:    if (__s1 < __s2)
-        -:  160:    {
-        -:  161:        for (; __n; --__n, ++__s1, ++__s2)
-        -:  162:            assign(*__s1, *__s2);
-        -:  163:    }
-        -:  164:    else if (__s2 < __s1)
-        -:  165:    {
-        -:  166:        __s1 += __n;
-        -:  167:        __s2 += __n;
-        -:  168:        for (; __n; --__n)
-        -:  169:            assign(*--__s1, *--__s2);
-        -:  170:    }
-        -:  171:    return __r;
-        -:  172:}
-        -:  173:
-        -:  174:template <class _CharT>
-        -:  175:inline
-        -:  176:_CharT*
-        -:  177:char_traits<_CharT>::copy(char_type* __s1, const char_type* __s2, size_t __n)
-        -:  178:{
-        -:  179:    _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
-        -:  180:    char_type* __r = __s1;
-        -:  181:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  182:        assign(*__s1, *__s2);
-        -:  183:    return __r;
-        -:  184:}
-        -:  185:
-        -:  186:template <class _CharT>
-        -:  187:inline
-        -:  188:_CharT*
-        -:  189:char_traits<_CharT>::assign(char_type* __s, size_t __n, char_type __a)
-        -:  190:{
-        -:  191:    char_type* __r = __s;
-        -:  192:    for (; __n; --__n, ++__s)
-        -:  193:        assign(*__s, __a);
-        -:  194:    return __r;
-        -:  195:}
-        -:  196:
-        -:  197:// char_traits<char>
-        -:  198:
-        -:  199:template <>
-        -:  200:struct _LIBCPP_TEMPLATE_VIS char_traits<char>
-        -:  201:{
-        -:  202:    typedef char      char_type;
-        -:  203:    typedef int       int_type;
-        -:  204:    typedef streamoff off_type;
-        -:  205:    typedef streampos pos_type;
-        -:  206:    typedef mbstate_t state_type;
-        -:  207:
-        -:  208:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  209:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
-        -:  210:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
-        -:  211:            {return __c1 == __c2;}
-        -:  212:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
-        -:  213:        {return (unsigned char)__c1 < (unsigned char)__c2;}
-        -:  214:
-        -:  215:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  216:    int compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  217:    static inline size_t _LIBCPP_CONSTEXPR_AFTER_CXX14
-      453:  218:    length(const char_type* __s)  _NOEXCEPT {return __builtin_strlen(__s);}
+        -:   70:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:   71:
+        -:   72:// char_traits
+        -:   73:
+        -:   74:template <class _CharT>
+        -:   75:struct _LIBCPP_TEMPLATE_VIS char_traits
+        -:   76:{
+        -:   77:    typedef _CharT    char_type;
+        -:   78:    typedef int       int_type;
+        -:   79:    typedef streamoff off_type;
+        -:   80:    typedef streampos pos_type;
+        -:   81:    typedef mbstate_t state_type;
+        -:   82:
+        -:   83:    static inline void _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:   84:        assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
+        -:   85:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
+        -:   86:        {return __c1 == __c2;}
+        -:   87:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
+        -:   88:        {return __c1 < __c2;}
+        -:   89:
+        -:   90:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:   91:    int compare(const char_type* __s1, const char_type* __s2, size_t __n);
+        -:   92:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:   93:    size_t length(const char_type* __s);
+        -:   94:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:   95:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a);
+        -:   96:    static char_type*       move(char_type* __s1, const char_type* __s2, size_t __n);
+        -:   97:    _LIBCPP_INLINE_VISIBILITY
+        -:   98:    static char_type*       copy(char_type* __s1, const char_type* __s2, size_t __n);
+        -:   99:    _LIBCPP_INLINE_VISIBILITY
+        -:  100:    static char_type*       assign(char_type* __s, size_t __n, char_type __a);
+        -:  101:
+        -:  102:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
+        -:  103:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
+        -:  104:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
+        -:  105:        {return char_type(__c);}
+        -:  106:    static inline _LIBCPP_CONSTEXPR int_type  to_int_type(char_type __c) _NOEXCEPT
+        -:  107:        {return int_type(__c);}
+        -:  108:    static inline _LIBCPP_CONSTEXPR bool      eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
+        -:  109:        {return __c1 == __c2;}
+        -:  110:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
+        -:  111:        {return int_type(EOF);}
+        -:  112:};
+        -:  113:
+        -:  114:template <class _CharT>
+        -:  115:_LIBCPP_CONSTEXPR_AFTER_CXX14 int
+        -:  116:char_traits<_CharT>::compare(const char_type* __s1, const char_type* __s2, size_t __n)
+        -:  117:{
+        -:  118:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  119:    {
+        -:  120:        if (lt(*__s1, *__s2))
+        -:  121:            return -1;
+        -:  122:        if (lt(*__s2, *__s1))
+        -:  123:            return 1;
+        -:  124:    }
+        -:  125:    return 0;
+        -:  126:}
+        -:  127:
+        -:  128:template <class _CharT>
+        -:  129:inline
+        -:  130:_LIBCPP_CONSTEXPR_AFTER_CXX14 size_t
+        -:  131:char_traits<_CharT>::length(const char_type* __s)
+        -:  132:{
+        -:  133:    size_t __len = 0;
+        -:  134:    for (; !eq(*__s, char_type(0)); ++__s)
+        -:  135:        ++__len;
+        -:  136:    return __len;
+        -:  137:}
+        -:  138:
+        -:  139:template <class _CharT>
+        -:  140:inline
+        -:  141:_LIBCPP_CONSTEXPR_AFTER_CXX14 const _CharT*
+        -:  142:char_traits<_CharT>::find(const char_type* __s, size_t __n, const char_type& __a)
+        -:  143:{
+        -:  144:    for (; __n; --__n)
+        -:  145:    {
+        -:  146:        if (eq(*__s, __a))
+        -:  147:            return __s;
+        -:  148:        ++__s;
+        -:  149:    }
+        -:  150:    return 0;
+        -:  151:}
+        -:  152:
+        -:  153:template <class _CharT>
+        -:  154:_CharT*
+        -:  155:char_traits<_CharT>::move(char_type* __s1, const char_type* __s2, size_t __n)
+        -:  156:{
+        -:  157:    char_type* __r = __s1;
+        -:  158:    if (__s1 < __s2)
+        -:  159:    {
+        -:  160:        for (; __n; --__n, ++__s1, ++__s2)
+        -:  161:            assign(*__s1, *__s2);
+        -:  162:    }
+        -:  163:    else if (__s2 < __s1)
+        -:  164:    {
+        -:  165:        __s1 += __n;
+        -:  166:        __s2 += __n;
+        -:  167:        for (; __n; --__n)
+        -:  168:            assign(*--__s1, *--__s2);
+        -:  169:    }
+        -:  170:    return __r;
+        -:  171:}
+        -:  172:
+        -:  173:template <class _CharT>
+        -:  174:inline
+        -:  175:_CharT*
+        -:  176:char_traits<_CharT>::copy(char_type* __s1, const char_type* __s2, size_t __n)
+        -:  177:{
+        -:  178:    _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
+        -:  179:    char_type* __r = __s1;
+        -:  180:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  181:        assign(*__s1, *__s2);
+        -:  182:    return __r;
+        -:  183:}
+        -:  184:
+        -:  185:template <class _CharT>
+        -:  186:inline
+        -:  187:_CharT*
+        -:  188:char_traits<_CharT>::assign(char_type* __s, size_t __n, char_type __a)
+        -:  189:{
+        -:  190:    char_type* __r = __s;
+        -:  191:    for (; __n; --__n, ++__s)
+        -:  192:        assign(*__s, __a);
+        -:  193:    return __r;
+        -:  194:}
+        -:  195:
+        -:  196:// char_traits<char>
+        -:  197:
+        -:  198:template <>
+        -:  199:struct _LIBCPP_TEMPLATE_VIS char_traits<char>
+        -:  200:{
+        -:  201:    typedef char      char_type;
+        -:  202:    typedef int       int_type;
+        -:  203:    typedef streamoff off_type;
+        -:  204:    typedef streampos pos_type;
+        -:  205:    typedef mbstate_t state_type;
+        -:  206:
+        -:  207:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  208:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
+        -:  209:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
+        -:  210:            {return __c1 == __c2;}
+        -:  211:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
+        -:  212:        {return (unsigned char)__c1 < (unsigned char)__c2;}
+        -:  213:
+        -:  214:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  215:    int compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  216:    static inline size_t _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  217:    length(const char_type* __s)  _NOEXCEPT {return __builtin_strlen(__s);}
+      453:  218:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
       453:  218-block  0
       453:  218-block  1
-        -:  219:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  220:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
-        -:  221:    static inline char_type* move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  222:        {return __n == 0 ? __s1 : (char_type*) memmove(__s1, __s2, __n);}
-        -:  223:    static inline char_type* copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  224:        {
-        -:  225:            _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
-        -:  226:            return __n == 0 ? __s1 : (char_type*)memcpy(__s1, __s2, __n);
-        -:  227:        }
-        -:  228:    static inline char_type* assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
-        -:  229:        {return __n == 0 ? __s : (char_type*)memset(__s, to_int_type(__a), __n);}
-        -:  230:
-        -:  231:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
-        -:  232:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
-        -:  233:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
-        -:  234:        {return char_type(__c);}
-        -:  235:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
-        -:  236:        {return int_type((unsigned char)__c);}
-        -:  237:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
-        -:  238:        {return __c1 == __c2;}
-        -:  239:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
-        -:  240:        {return int_type(EOF);}
-        -:  241:};
-        -:  242:
-        -:  243:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  244:int
-        -:  245:char_traits<char>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  246:{
-        -:  247:    if (__n == 0)
-        -:  248:        return 0;
-        -:  249:#if __has_feature(cxx_constexpr_string_builtins)
-        -:  250:    return __builtin_memcmp(__s1, __s2, __n);
-        -:  251:#elif _LIBCPP_STD_VER <= 14
-        -:  252:    return memcmp(__s1, __s2, __n);
-        -:  253:#else
-        -:  254:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  255:    {
-        -:  256:        if (lt(*__s1, *__s2))
-        -:  257:            return -1;
-        -:  258:        if (lt(*__s2, *__s1))
-        -:  259:            return 1;
-        -:  260:    }
-        -:  261:    return 0;
-        -:  262:#endif
-        -:  263:}
-        -:  264:
-        -:  265:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  266:const char*
-        -:  267:char_traits<char>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
-        -:  268:{
-        -:  269:    if (__n == 0)
-        -:  270:        return nullptr;
-        -:  271:#if __has_feature(cxx_constexpr_string_builtins)
-        -:  272:    return __builtin_char_memchr(__s, to_int_type(__a), __n);
-        -:  273:#elif _LIBCPP_STD_VER <= 14
-        -:  274:    return (const char_type*) memchr(__s, to_int_type(__a), __n);
-        -:  275:#else
-        -:  276:    for (; __n; --__n)
-        -:  277:    {
-        -:  278:        if (eq(*__s, __a))
-        -:  279:            return __s;
-        -:  280:        ++__s;
-        -:  281:    }
-        -:  282:    return nullptr;
-        -:  283:#endif
-        -:  284:}
+        -:  219:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
+        -:  220:    static inline char_type* move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  221:        {return __n == 0 ? __s1 : (char_type*) memmove(__s1, __s2, __n);}
+        -:  222:    static inline char_type* copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  223:        {
+        -:  224:            _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
+        -:  225:            return __n == 0 ? __s1 : (char_type*)memcpy(__s1, __s2, __n);
+        -:  226:        }
+        -:  227:    static inline char_type* assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
+        -:  228:        {return __n == 0 ? __s : (char_type*)memset(__s, to_int_type(__a), __n);}
+        -:  229:
+        -:  230:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
+        -:  231:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
+        -:  232:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
+        -:  233:        {return char_type(__c);}
+        -:  234:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
+        -:  235:        {return int_type((unsigned char)__c);}
+        -:  236:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
+        -:  237:        {return __c1 == __c2;}
+        -:  238:    static inline _LIBCPP_CONSTEXPR int_type  eof() _NOEXCEPT
+        -:  239:        {return int_type(EOF);}
+        -:  240:};
+        -:  241:
+        -:  242:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  243:int
+        -:  244:char_traits<char>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  245:{
+        -:  246:    if (__n == 0)
+        -:  247:        return 0;
+        -:  248:#if __has_feature(cxx_constexpr_string_builtins)
+        -:  249:    return __builtin_memcmp(__s1, __s2, __n);
+        -:  250:#elif _LIBCPP_STD_VER <= 14
+        -:  251:    return memcmp(__s1, __s2, __n);
+        -:  252:#else
+        -:  253:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  254:    {
+        -:  255:        if (lt(*__s1, *__s2))
+        -:  256:            return -1;
+        -:  257:        if (lt(*__s2, *__s1))
+        -:  258:            return 1;
+        -:  259:    }
+        -:  260:    return 0;
+        -:  261:#endif
+        -:  262:}
+        -:  263:
+        -:  264:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  265:const char*
+        -:  266:char_traits<char>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
+        -:  267:{
+        -:  268:    if (__n == 0)
+        -:  269:        return nullptr;
+        -:  270:#if __has_feature(cxx_constexpr_string_builtins)
+        -:  271:    return __builtin_char_memchr(__s, to_int_type(__a), __n);
+        -:  272:#elif _LIBCPP_STD_VER <= 14
+        -:  273:    return (const char_type*) memchr(__s, to_int_type(__a), __n);
+        -:  274:#else
+        -:  275:    for (; __n; --__n)
+        -:  276:    {
+        -:  277:        if (eq(*__s, __a))
+        -:  278:            return __s;
+        -:  279:        ++__s;
+        -:  280:    }
+        -:  281:    return nullptr;
+        -:  282:#endif
+        -:  283:}
+        -:  284:
         -:  285:
-        -:  286:
-        -:  287:// char_traits<wchar_t>
-        -:  288:
-        -:  289:template <>
-        -:  290:struct _LIBCPP_TEMPLATE_VIS char_traits<wchar_t>
-        -:  291:{
-        -:  292:    typedef wchar_t   char_type;
-        -:  293:    typedef wint_t    int_type;
-        -:  294:    typedef streamoff off_type;
-        -:  295:    typedef streampos pos_type;
-        -:  296:    typedef mbstate_t state_type;
-        -:  297:
-        -:  298:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  299:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
-        -:  300:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
-        -:  301:        {return __c1 == __c2;}
-        -:  302:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
-        -:  303:        {return __c1 < __c2;}
-        -:  304:
-        -:  305:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  306:    int compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  307:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  308:    size_t length(const char_type* __s) _NOEXCEPT;
-        -:  309:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  310:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
-        -:  311:    static inline char_type* move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  312:        {return __n == 0 ? __s1 : (char_type*)wmemmove(__s1, __s2, __n);}
-        -:  313:    static inline char_type* copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  314:        {
-        -:  315:            _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
-        -:  316:            return __n == 0 ? __s1 : (char_type*)wmemcpy(__s1, __s2, __n);
-        -:  317:        }
-        -:  318:    static inline char_type* assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
-        -:  319:        {return __n == 0 ? __s : (char_type*)wmemset(__s, __a, __n);}
-        -:  320:
-        -:  321:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
-        -:  322:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
-        -:  323:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
-        -:  324:        {return char_type(__c);}
-        -:  325:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
-        -:  326:        {return int_type(__c);}
-        -:  327:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
-        -:  328:        {return __c1 == __c2;}
-        -:  329:    static inline _LIBCPP_CONSTEXPR int_type eof() _NOEXCEPT
-        -:  330:        {return int_type(WEOF);}
-        -:  331:};
-        -:  332:
-        -:  333:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  334:int
-        -:  335:char_traits<wchar_t>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  336:{
-        -:  337:    if (__n == 0)
-        -:  338:        return 0;
-        -:  339:#if __has_feature(cxx_constexpr_string_builtins)
-        -:  340:    return __builtin_wmemcmp(__s1, __s2, __n);
-        -:  341:#elif _LIBCPP_STD_VER <= 14
-        -:  342:    return wmemcmp(__s1, __s2, __n);
-        -:  343:#else
-        -:  344:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  345:    {
-        -:  346:        if (lt(*__s1, *__s2))
-        -:  347:            return -1;
-        -:  348:        if (lt(*__s2, *__s1))
-        -:  349:            return 1;
-        -:  350:    }
-        -:  351:    return 0;
-        -:  352:#endif
-        -:  353:}
-        -:  354:
-        -:  355:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  356:size_t
-        -:  357:char_traits<wchar_t>::length(const char_type* __s) _NOEXCEPT
-        -:  358:{
-        -:  359:#if __has_feature(cxx_constexpr_string_builtins)
-        -:  360:    return __builtin_wcslen(__s);
-        -:  361:#elif _LIBCPP_STD_VER <= 14
-        -:  362:    return wcslen(__s);
-        -:  363:#else
-        -:  364:    size_t __len = 0;
-        -:  365:    for (; !eq(*__s, char_type(0)); ++__s)
-        -:  366:        ++__len;
-        -:  367:    return __len;
-        -:  368:#endif
-        -:  369:}
-        -:  370:
-        -:  371:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  372:const wchar_t*
-        -:  373:char_traits<wchar_t>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
-        -:  374:{
-        -:  375:    if (__n == 0)
-        -:  376:        return nullptr;
-        -:  377:#if __has_feature(cxx_constexpr_string_builtins)
-        -:  378:    return __builtin_wmemchr(__s, __a, __n);
-        -:  379:#elif _LIBCPP_STD_VER <= 14
-        -:  380:    return wmemchr(__s, __a, __n);
-        -:  381:#else
-        -:  382:    for (; __n; --__n)
-        -:  383:    {
-        -:  384:        if (eq(*__s, __a))
-        -:  385:            return __s;
-        -:  386:        ++__s;
-        -:  387:    }
-        -:  388:    return nullptr;
-        -:  389:#endif
-        -:  390:}
+        -:  286:// char_traits<wchar_t>
+        -:  287:
+        -:  288:template <>
+        -:  289:struct _LIBCPP_TEMPLATE_VIS char_traits<wchar_t>
+        -:  290:{
+        -:  291:    typedef wchar_t   char_type;
+        -:  292:    typedef wint_t    int_type;
+        -:  293:    typedef streamoff off_type;
+        -:  294:    typedef streampos pos_type;
+        -:  295:    typedef mbstate_t state_type;
+        -:  296:
+        -:  297:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  298:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
+        -:  299:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
+        -:  300:        {return __c1 == __c2;}
+        -:  301:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
+        -:  302:        {return __c1 < __c2;}
+        -:  303:
+        -:  304:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  305:    int compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  306:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  307:    size_t length(const char_type* __s) _NOEXCEPT;
+        -:  308:    static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  309:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
+        -:  310:    static inline char_type* move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  311:        {return __n == 0 ? __s1 : (char_type*)wmemmove(__s1, __s2, __n);}
+        -:  312:    static inline char_type* copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  313:        {
+        -:  314:            _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
+        -:  315:            return __n == 0 ? __s1 : (char_type*)wmemcpy(__s1, __s2, __n);
+        -:  316:        }
+        -:  317:    static inline char_type* assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
+        -:  318:        {return __n == 0 ? __s : (char_type*)wmemset(__s, __a, __n);}
+        -:  319:
+        -:  320:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
+        -:  321:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
+        -:  322:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
+        -:  323:        {return char_type(__c);}
+        -:  324:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
+        -:  325:        {return int_type(__c);}
+        -:  326:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
+        -:  327:        {return __c1 == __c2;}
+        -:  328:    static inline _LIBCPP_CONSTEXPR int_type eof() _NOEXCEPT
+        -:  329:        {return int_type(WEOF);}
+        -:  330:};
+        -:  331:
+        -:  332:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  333:int
+        -:  334:char_traits<wchar_t>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  335:{
+        -:  336:    if (__n == 0)
+        -:  337:        return 0;
+        -:  338:#if __has_feature(cxx_constexpr_string_builtins)
+        -:  339:    return __builtin_wmemcmp(__s1, __s2, __n);
+        -:  340:#elif _LIBCPP_STD_VER <= 14
+        -:  341:    return wmemcmp(__s1, __s2, __n);
+        -:  342:#else
+        -:  343:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  344:    {
+        -:  345:        if (lt(*__s1, *__s2))
+        -:  346:            return -1;
+        -:  347:        if (lt(*__s2, *__s1))
+        -:  348:            return 1;
+        -:  349:    }
+        -:  350:    return 0;
+        -:  351:#endif
+        -:  352:}
+        -:  353:
+        -:  354:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  355:size_t
+        -:  356:char_traits<wchar_t>::length(const char_type* __s) _NOEXCEPT
+        -:  357:{
+        -:  358:#if __has_feature(cxx_constexpr_string_builtins)
+        -:  359:    return __builtin_wcslen(__s);
+        -:  360:#elif _LIBCPP_STD_VER <= 14
+        -:  361:    return wcslen(__s);
+        -:  362:#else
+        -:  363:    size_t __len = 0;
+        -:  364:    for (; !eq(*__s, char_type(0)); ++__s)
+        -:  365:        ++__len;
+        -:  366:    return __len;
+        -:  367:#endif
+        -:  368:}
+        -:  369:
+        -:  370:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  371:const wchar_t*
+        -:  372:char_traits<wchar_t>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
+        -:  373:{
+        -:  374:    if (__n == 0)
+        -:  375:        return nullptr;
+        -:  376:#if __has_feature(cxx_constexpr_string_builtins)
+        -:  377:    return __builtin_wmemchr(__s, __a, __n);
+        -:  378:#elif _LIBCPP_STD_VER <= 14
+        -:  379:    return wmemchr(__s, __a, __n);
+        -:  380:#else
+        -:  381:    for (; __n; --__n)
+        -:  382:    {
+        -:  383:        if (eq(*__s, __a))
+        -:  384:            return __s;
+        -:  385:        ++__s;
+        -:  386:    }
+        -:  387:    return nullptr;
+        -:  388:#endif
+        -:  389:}
+        -:  390:
         -:  391:
-        -:  392:
-        -:  393:#ifndef _LIBCPP_NO_HAS_CHAR8_T
-        -:  394:
-        -:  395:template <>
-        -:  396:struct _LIBCPP_TEMPLATE_VIS char_traits<char8_t>
-        -:  397:{
-        -:  398:    typedef char8_t        char_type;
-        -:  399:    typedef unsigned int   int_type;
-        -:  400:    typedef streamoff      off_type;
-        -:  401:    typedef u8streampos    pos_type;
-        -:  402:    typedef mbstate_t      state_type;
-        -:  403:
-        -:  404:    static inline constexpr void assign(char_type& __c1, const char_type& __c2) noexcept
-        -:  405:        {__c1 = __c2;}
-        -:  406:    static inline constexpr bool eq(char_type __c1, char_type __c2) noexcept
-        -:  407:        {return __c1 == __c2;}
-        -:  408:    static inline constexpr bool lt(char_type __c1, char_type __c2) noexcept
-        -:  409:        {return __c1 < __c2;}
-        -:  410:
-        -:  411:    static constexpr
-        -:  412:    int              compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  413:
-        -:  414:    static constexpr
-        -:  415:    size_t           length(const char_type* __s) _NOEXCEPT;
-        -:  416: 
-        -:  417:    _LIBCPP_INLINE_VISIBILITY static constexpr
-        -:  418:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
-        -:  419: 
-        -:  420:    static char_type*       move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  421:        {return __n == 0 ? __s1 : (char_type*) memmove(__s1, __s2, __n);}
-        -:  422: 
-        -:  423:    static char_type*       copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  424:       {
-        -:  425:            _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
-        -:  426:            return __n == 0 ? __s1 : (char_type*)memcpy(__s1, __s2, __n);
-        -:  427:       }
-        -:  428: 
-        -:  429:    static char_type*       assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
-        -:  430:        {return __n == 0 ? __s : (char_type*)memset(__s, to_int_type(__a), __n);}
-        -:  431:
-        -:  432:    static inline constexpr int_type  not_eof(int_type __c) noexcept
-        -:  433:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
-        -:  434:    static inline constexpr char_type to_char_type(int_type __c) noexcept
-        -:  435:        {return char_type(__c);}
-        -:  436:    static inline constexpr int_type to_int_type(char_type __c) noexcept
-        -:  437:        {return int_type(__c);}
-        -:  438:    static inline constexpr bool eq_int_type(int_type __c1, int_type __c2) noexcept
-        -:  439:        {return __c1 == __c2;}
-        -:  440:    static inline constexpr int_type eof() noexcept
-        -:  441:        {return int_type(EOF);}
-        -:  442:};
-        -:  443:
-        -:  444:// TODO use '__builtin_strlen' if it ever supports char8_t ??
-        -:  445:inline constexpr
-        -:  446:size_t
-        -:  447:char_traits<char8_t>::length(const char_type* __s) _NOEXCEPT
-        -:  448:{
-        -:  449:    size_t __len = 0;
-        -:  450:    for (; !eq(*__s, char_type(0)); ++__s)
-        -:  451:        ++__len;
-        -:  452:    return __len;
-        -:  453:}
-        -:  454:
-        -:  455:inline constexpr
-        -:  456:int
-        -:  457:char_traits<char8_t>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  458:{
-        -:  459:#if __has_feature(cxx_constexpr_string_builtins)
-        -:  460:    return __builtin_memcmp(__s1, __s2, __n);
-        -:  461:#else
-        -:  462:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  463:    {
-        -:  464:        if (lt(*__s1, *__s2))
-        -:  465:            return -1;
-        -:  466:        if (lt(*__s2, *__s1))
-        -:  467:            return 1;
-        -:  468:    }
-        -:  469:    return 0;
-        -:  470:#endif
-        -:  471:}
-        -:  472:
-        -:  473:// TODO use '__builtin_char_memchr' if it ever supports char8_t ??
-        -:  474:inline constexpr
-        -:  475:const char8_t*
-        -:  476:char_traits<char8_t>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
-        -:  477:{
-        -:  478:    for (; __n; --__n)
-        -:  479:    {
-        -:  480:        if (eq(*__s, __a))
-        -:  481:            return __s;
-        -:  482:        ++__s;
-        -:  483:    }
-        -:  484:    return 0;
-        -:  485:}
-        -:  486:
-        -:  487:#endif // #_LIBCPP_NO_HAS_CHAR8_T
-        -:  488:
-        -:  489:#ifndef _LIBCPP_HAS_NO_UNICODE_CHARS
-        -:  490:
-        -:  491:template <>
-        -:  492:struct _LIBCPP_TEMPLATE_VIS char_traits<char16_t>
-        -:  493:{
-        -:  494:    typedef char16_t       char_type;
-        -:  495:    typedef uint_least16_t int_type;
-        -:  496:    typedef streamoff      off_type;
-        -:  497:    typedef u16streampos   pos_type;
-        -:  498:    typedef mbstate_t      state_type;
-        -:  499:
-        -:  500:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  501:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
-        -:  502:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
-        -:  503:        {return __c1 == __c2;}
-        -:  504:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
-        -:  505:        {return __c1 < __c2;}
-        -:  506:
-        -:  507:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  508:    int              compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  509:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  510:    size_t           length(const char_type* __s) _NOEXCEPT;
-        -:  511:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  512:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
-        -:  513:    _LIBCPP_INLINE_VISIBILITY
-        -:  514:    static char_type*       move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  515:    _LIBCPP_INLINE_VISIBILITY
-        -:  516:    static char_type*       copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  517:    _LIBCPP_INLINE_VISIBILITY
-        -:  518:    static char_type*       assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT;
-        -:  519:
-        -:  520:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
-        -:  521:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
-        -:  522:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
-        -:  523:        {return char_type(__c);}
-        -:  524:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
-        -:  525:        {return int_type(__c);}
-        -:  526:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
-        -:  527:        {return __c1 == __c2;}
-        -:  528:    static inline _LIBCPP_CONSTEXPR int_type eof() _NOEXCEPT
-        -:  529:        {return int_type(0xFFFF);}
-        -:  530:};
-        -:  531:
-        -:  532:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  533:int
-        -:  534:char_traits<char16_t>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  535:{
-        -:  536:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  537:    {
-        -:  538:        if (lt(*__s1, *__s2))
-        -:  539:            return -1;
-        -:  540:        if (lt(*__s2, *__s1))
-        -:  541:            return 1;
-        -:  542:    }
-        -:  543:    return 0;
-        -:  544:}
-        -:  545:
-        -:  546:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  547:size_t
-        -:  548:char_traits<char16_t>::length(const char_type* __s) _NOEXCEPT
-        -:  549:{
-        -:  550:    size_t __len = 0;
-        -:  551:    for (; !eq(*__s, char_type(0)); ++__s)
-        -:  552:        ++__len;
-        -:  553:    return __len;
-        -:  554:}
-        -:  555:
-        -:  556:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  557:const char16_t*
-        -:  558:char_traits<char16_t>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
-        -:  559:{
-        -:  560:    for (; __n; --__n)
-        -:  561:    {
-        -:  562:        if (eq(*__s, __a))
-        -:  563:            return __s;
-        -:  564:        ++__s;
-        -:  565:    }
-        -:  566:    return 0;
-        -:  567:}
-        -:  568:
-        -:  569:inline
-        -:  570:char16_t*
-        -:  571:char_traits<char16_t>::move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  572:{
-        -:  573:    char_type* __r = __s1;
-        -:  574:    if (__s1 < __s2)
-        -:  575:    {
-        -:  576:        for (; __n; --__n, ++__s1, ++__s2)
-        -:  577:            assign(*__s1, *__s2);
-        -:  578:    }
-        -:  579:    else if (__s2 < __s1)
-        -:  580:    {
-        -:  581:        __s1 += __n;
-        -:  582:        __s2 += __n;
-        -:  583:        for (; __n; --__n)
-        -:  584:            assign(*--__s1, *--__s2);
-        -:  585:    }
-        -:  586:    return __r;
-        -:  587:}
-        -:  588:
-        -:  589:inline
-        -:  590:char16_t*
-        -:  591:char_traits<char16_t>::copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  592:{
-        -:  593:    _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
-        -:  594:    char_type* __r = __s1;
-        -:  595:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  596:        assign(*__s1, *__s2);
-        -:  597:    return __r;
-        -:  598:}
-        -:  599:
-        -:  600:inline
-        -:  601:char16_t*
-        -:  602:char_traits<char16_t>::assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
-        -:  603:{
-        -:  604:    char_type* __r = __s;
-        -:  605:    for (; __n; --__n, ++__s)
-        -:  606:        assign(*__s, __a);
-        -:  607:    return __r;
-        -:  608:}
-        -:  609:
-        -:  610:template <>
-        -:  611:struct _LIBCPP_TEMPLATE_VIS char_traits<char32_t>
-        -:  612:{
-        -:  613:    typedef char32_t       char_type;
-        -:  614:    typedef uint_least32_t int_type;
-        -:  615:    typedef streamoff      off_type;
-        -:  616:    typedef u32streampos   pos_type;
-        -:  617:    typedef mbstate_t      state_type;
-        -:  618:
-        -:  619:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  620:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
-        -:  621:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
-        -:  622:        {return __c1 == __c2;}
-        -:  623:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
-        -:  624:        {return __c1 < __c2;}
-        -:  625:
-        -:  626:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  627:    int              compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  628:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  629:    size_t           length(const char_type* __s) _NOEXCEPT;
-        -:  630:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  631:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
-        -:  632:    _LIBCPP_INLINE_VISIBILITY
-        -:  633:    static char_type*       move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  634:    _LIBCPP_INLINE_VISIBILITY
-        -:  635:    static char_type*       copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
-        -:  636:    _LIBCPP_INLINE_VISIBILITY
-        -:  637:    static char_type*       assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT;
-        -:  638:
-        -:  639:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
-        -:  640:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
-        -:  641:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
-        -:  642:        {return char_type(__c);}
-        -:  643:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
-        -:  644:        {return int_type(__c);}
-        -:  645:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
-        -:  646:        {return __c1 == __c2;}
-        -:  647:    static inline _LIBCPP_CONSTEXPR int_type eof() _NOEXCEPT
-        -:  648:        {return int_type(0xFFFFFFFF);}
-        -:  649:};
-        -:  650:
-        -:  651:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  652:int
-        -:  653:char_traits<char32_t>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  654:{
-        -:  655:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  656:    {
-        -:  657:        if (lt(*__s1, *__s2))
-        -:  658:            return -1;
-        -:  659:        if (lt(*__s2, *__s1))
-        -:  660:            return 1;
-        -:  661:    }
-        -:  662:    return 0;
-        -:  663:}
-        -:  664:
-        -:  665:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  666:size_t
-        -:  667:char_traits<char32_t>::length(const char_type* __s) _NOEXCEPT
-        -:  668:{
-        -:  669:    size_t __len = 0;
-        -:  670:    for (; !eq(*__s, char_type(0)); ++__s)
-        -:  671:        ++__len;
-        -:  672:    return __len;
-        -:  673:}
-        -:  674:
-        -:  675:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
-        -:  676:const char32_t*
-        -:  677:char_traits<char32_t>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
-        -:  678:{
-        -:  679:    for (; __n; --__n)
-        -:  680:    {
-        -:  681:        if (eq(*__s, __a))
-        -:  682:            return __s;
-        -:  683:        ++__s;
-        -:  684:    }
-        -:  685:    return 0;
-        -:  686:}
-        -:  687:
-        -:  688:inline
-        -:  689:char32_t*
-        -:  690:char_traits<char32_t>::move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  691:{
-        -:  692:    char_type* __r = __s1;
-        -:  693:    if (__s1 < __s2)
-        -:  694:    {
-        -:  695:        for (; __n; --__n, ++__s1, ++__s2)
-        -:  696:            assign(*__s1, *__s2);
-        -:  697:    }
-        -:  698:    else if (__s2 < __s1)
-        -:  699:    {
-        -:  700:        __s1 += __n;
-        -:  701:        __s2 += __n;
-        -:  702:        for (; __n; --__n)
-        -:  703:            assign(*--__s1, *--__s2);
-        -:  704:    }
-        -:  705:    return __r;
-        -:  706:}
-        -:  707:
-        -:  708:inline
-        -:  709:char32_t*
-        -:  710:char_traits<char32_t>::copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
-        -:  711:{
-        -:  712:    _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
-        -:  713:    char_type* __r = __s1;
-        -:  714:    for (; __n; --__n, ++__s1, ++__s2)
-        -:  715:        assign(*__s1, *__s2);
-        -:  716:    return __r;
-        -:  717:}
-        -:  718:
-        -:  719:inline
-        -:  720:char32_t*
-        -:  721:char_traits<char32_t>::assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
-        -:  722:{
-        -:  723:    char_type* __r = __s;
-        -:  724:    for (; __n; --__n, ++__s)
-        -:  725:        assign(*__s, __a);
-        -:  726:    return __r;
-        -:  727:}
-        -:  728:
-        -:  729:#endif  // _LIBCPP_HAS_NO_UNICODE_CHARS
-        -:  730:
-        -:  731:// helper fns for basic_string and string_view
-        -:  732:
-        -:  733:// __str_find
-        -:  734:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  735:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  736:__str_find(const _CharT *__p, _SizeT __sz, 
-        -:  737:             _CharT __c, _SizeT __pos) _NOEXCEPT
-        -:  738:{
-        -:  739:    if (__pos >= __sz)
-        -:  740:        return __npos;
-        -:  741:    const _CharT* __r = _Traits::find(__p + __pos, __sz - __pos, __c);
-        -:  742:    if (__r == 0)
-        -:  743:        return __npos;
-        -:  744:    return static_cast<_SizeT>(__r - __p);
-        -:  745:}
-        -:  746:
-        -:  747:template <class _CharT, class _Traits>
-        -:  748:inline _LIBCPP_CONSTEXPR_AFTER_CXX11 const _CharT *
-        -:  749:__search_substring(const _CharT *__first1, const _CharT *__last1,
-        -:  750:                   const _CharT *__first2, const _CharT *__last2) {
-        -:  751:  // Take advantage of knowing source and pattern lengths.
-        -:  752:  // Stop short when source is smaller than pattern.
-        -:  753:  const ptrdiff_t __len2 = __last2 - __first2;
-        -:  754:  if (__len2 == 0)
-        -:  755:    return __first1;
-        -:  756:
-        -:  757:  ptrdiff_t __len1 = __last1 - __first1;
-        -:  758:  if (__len1 < __len2)
-        -:  759:    return __last1;
-        -:  760:
-        -:  761:  // First element of __first2 is loop invariant.
-        -:  762:  _CharT __f2 = *__first2;
-        -:  763:  while (true) {
-        -:  764:    __len1 = __last1 - __first1;
-        -:  765:    // Check whether __first1 still has at least __len2 bytes.
-        -:  766:    if (__len1 < __len2)
-        -:  767:      return __last1;
-        -:  768:
-        -:  769:    // Find __f2 the first byte matching in __first1.
-        -:  770:    __first1 = _Traits::find(__first1, __len1 - __len2 + 1, __f2);
-        -:  771:    if (__first1 == 0)
-        -:  772:      return __last1;
-        -:  773:
-        -:  774:    // It is faster to compare from the first byte of __first1 even if we
-        -:  775:    // already know that it matches the first byte of __first2: this is because
-        -:  776:    // __first2 is most likely aligned, as it is user's "pattern" string, and
-        -:  777:    // __first1 + 1 is most likely not aligned, as the match is in the middle of
-        -:  778:    // the string.
-        -:  779:    if (_Traits::compare(__first1, __first2, __len2) == 0)
-        -:  780:      return __first1;
-        -:  781:
-        -:  782:    ++__first1;
-        -:  783:  }
-        -:  784:}
-        -:  785:
-        -:  786:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  787:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  788:__str_find(const _CharT *__p, _SizeT __sz, 
-        -:  789:       const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
-        -:  790:{
-        -:  791:    if (__pos > __sz)
-        -:  792:        return __npos;
-        -:  793:
-        -:  794:    if (__n == 0) // There is nothing to search, just return __pos.
-        -:  795:        return __pos;
-        -:  796:
-        -:  797:    const _CharT *__r = __search_substring<_CharT, _Traits>(
-        -:  798:        __p + __pos, __p + __sz, __s, __s + __n);
-        -:  799:
-        -:  800:    if (__r == __p + __sz)
-        -:  801:        return __npos;
-        -:  802:    return static_cast<_SizeT>(__r - __p);
-        -:  803:}
+        -:  392:#ifndef _LIBCPP_NO_HAS_CHAR8_T
+        -:  393:
+        -:  394:template <>
+        -:  395:struct _LIBCPP_TEMPLATE_VIS char_traits<char8_t>
+        -:  396:{
+        -:  397:    typedef char8_t        char_type;
+        -:  398:    typedef unsigned int   int_type;
+        -:  399:    typedef streamoff      off_type;
+        -:  400:    typedef u8streampos    pos_type;
+        -:  401:    typedef mbstate_t      state_type;
+        -:  402:
+        -:  403:    static inline constexpr void assign(char_type& __c1, const char_type& __c2) noexcept
+        -:  404:        {__c1 = __c2;}
+        -:  405:    static inline constexpr bool eq(char_type __c1, char_type __c2) noexcept
+        -:  406:        {return __c1 == __c2;}
+        -:  407:    static inline constexpr bool lt(char_type __c1, char_type __c2) noexcept
+        -:  408:        {return __c1 < __c2;}
+        -:  409:
+        -:  410:    static constexpr
+        -:  411:    int              compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  412:
+        -:  413:    static constexpr
+        -:  414:    size_t           length(const char_type* __s) _NOEXCEPT;
+        -:  415: 
+        -:  416:    _LIBCPP_INLINE_VISIBILITY static constexpr
+        -:  417:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
+        -:  418: 
+        -:  419:    static char_type*       move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  420:        {return __n == 0 ? __s1 : (char_type*) memmove(__s1, __s2, __n);}
+        -:  421: 
+        -:  422:    static char_type*       copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  423:       {
+        -:  424:            _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
+        -:  425:            return __n == 0 ? __s1 : (char_type*)memcpy(__s1, __s2, __n);
+        -:  426:       }
+        -:  427: 
+        -:  428:    static char_type*       assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
+        -:  429:        {return __n == 0 ? __s : (char_type*)memset(__s, to_int_type(__a), __n);}
+        -:  430:
+        -:  431:    static inline constexpr int_type  not_eof(int_type __c) noexcept
+        -:  432:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
+        -:  433:    static inline constexpr char_type to_char_type(int_type __c) noexcept
+        -:  434:        {return char_type(__c);}
+        -:  435:    static inline constexpr int_type to_int_type(char_type __c) noexcept
+        -:  436:        {return int_type(__c);}
+        -:  437:    static inline constexpr bool eq_int_type(int_type __c1, int_type __c2) noexcept
+        -:  438:        {return __c1 == __c2;}
+        -:  439:    static inline constexpr int_type eof() noexcept
+        -:  440:        {return int_type(EOF);}
+        -:  441:};
+        -:  442:
+        -:  443:// TODO use '__builtin_strlen' if it ever supports char8_t ??
+        -:  444:inline constexpr
+        -:  445:size_t
+        -:  446:char_traits<char8_t>::length(const char_type* __s) _NOEXCEPT
+        -:  447:{
+        -:  448:    size_t __len = 0;
+        -:  449:    for (; !eq(*__s, char_type(0)); ++__s)
+        -:  450:        ++__len;
+        -:  451:    return __len;
+        -:  452:}
+        -:  453:
+        -:  454:inline constexpr
+        -:  455:int
+        -:  456:char_traits<char8_t>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  457:{
+        -:  458:#if __has_feature(cxx_constexpr_string_builtins)
+        -:  459:    return __builtin_memcmp(__s1, __s2, __n);
+        -:  460:#else
+        -:  461:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  462:    {
+        -:  463:        if (lt(*__s1, *__s2))
+        -:  464:            return -1;
+        -:  465:        if (lt(*__s2, *__s1))
+        -:  466:            return 1;
+        -:  467:    }
+        -:  468:    return 0;
+        -:  469:#endif
+        -:  470:}
+        -:  471:
+        -:  472:// TODO use '__builtin_char_memchr' if it ever supports char8_t ??
+        -:  473:inline constexpr
+        -:  474:const char8_t*
+        -:  475:char_traits<char8_t>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
+        -:  476:{
+        -:  477:    for (; __n; --__n)
+        -:  478:    {
+        -:  479:        if (eq(*__s, __a))
+        -:  480:            return __s;
+        -:  481:        ++__s;
+        -:  482:    }
+        -:  483:    return 0;
+        -:  484:}
+        -:  485:
+        -:  486:#endif // #_LIBCPP_NO_HAS_CHAR8_T
+        -:  487:
+        -:  488:#ifndef _LIBCPP_HAS_NO_UNICODE_CHARS
+        -:  489:
+        -:  490:template <>
+        -:  491:struct _LIBCPP_TEMPLATE_VIS char_traits<char16_t>
+        -:  492:{
+        -:  493:    typedef char16_t       char_type;
+        -:  494:    typedef uint_least16_t int_type;
+        -:  495:    typedef streamoff      off_type;
+        -:  496:    typedef u16streampos   pos_type;
+        -:  497:    typedef mbstate_t      state_type;
+        -:  498:
+        -:  499:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  500:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
+        -:  501:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
+        -:  502:        {return __c1 == __c2;}
+        -:  503:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
+        -:  504:        {return __c1 < __c2;}
+        -:  505:
+        -:  506:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  507:    int              compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  508:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  509:    size_t           length(const char_type* __s) _NOEXCEPT;
+        -:  510:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  511:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
+        -:  512:    _LIBCPP_INLINE_VISIBILITY
+        -:  513:    static char_type*       move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  514:    _LIBCPP_INLINE_VISIBILITY
+        -:  515:    static char_type*       copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  516:    _LIBCPP_INLINE_VISIBILITY
+        -:  517:    static char_type*       assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT;
+        -:  518:
+        -:  519:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
+        -:  520:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
+        -:  521:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
+        -:  522:        {return char_type(__c);}
+        -:  523:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
+        -:  524:        {return int_type(__c);}
+        -:  525:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
+        -:  526:        {return __c1 == __c2;}
+        -:  527:    static inline _LIBCPP_CONSTEXPR int_type eof() _NOEXCEPT
+        -:  528:        {return int_type(0xFFFF);}
+        -:  529:};
+        -:  530:
+        -:  531:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  532:int
+        -:  533:char_traits<char16_t>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  534:{
+        -:  535:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  536:    {
+        -:  537:        if (lt(*__s1, *__s2))
+        -:  538:            return -1;
+        -:  539:        if (lt(*__s2, *__s1))
+        -:  540:            return 1;
+        -:  541:    }
+        -:  542:    return 0;
+        -:  543:}
+        -:  544:
+        -:  545:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  546:size_t
+        -:  547:char_traits<char16_t>::length(const char_type* __s) _NOEXCEPT
+        -:  548:{
+        -:  549:    size_t __len = 0;
+        -:  550:    for (; !eq(*__s, char_type(0)); ++__s)
+        -:  551:        ++__len;
+        -:  552:    return __len;
+        -:  553:}
+        -:  554:
+        -:  555:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  556:const char16_t*
+        -:  557:char_traits<char16_t>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
+        -:  558:{
+        -:  559:    for (; __n; --__n)
+        -:  560:    {
+        -:  561:        if (eq(*__s, __a))
+        -:  562:            return __s;
+        -:  563:        ++__s;
+        -:  564:    }
+        -:  565:    return 0;
+        -:  566:}
+        -:  567:
+        -:  568:inline
+        -:  569:char16_t*
+        -:  570:char_traits<char16_t>::move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  571:{
+        -:  572:    char_type* __r = __s1;
+        -:  573:    if (__s1 < __s2)
+        -:  574:    {
+        -:  575:        for (; __n; --__n, ++__s1, ++__s2)
+        -:  576:            assign(*__s1, *__s2);
+        -:  577:    }
+        -:  578:    else if (__s2 < __s1)
+        -:  579:    {
+        -:  580:        __s1 += __n;
+        -:  581:        __s2 += __n;
+        -:  582:        for (; __n; --__n)
+        -:  583:            assign(*--__s1, *--__s2);
+        -:  584:    }
+        -:  585:    return __r;
+        -:  586:}
+        -:  587:
+        -:  588:inline
+        -:  589:char16_t*
+        -:  590:char_traits<char16_t>::copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  591:{
+        -:  592:    _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
+        -:  593:    char_type* __r = __s1;
+        -:  594:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  595:        assign(*__s1, *__s2);
+        -:  596:    return __r;
+        -:  597:}
+        -:  598:
+        -:  599:inline
+        -:  600:char16_t*
+        -:  601:char_traits<char16_t>::assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
+        -:  602:{
+        -:  603:    char_type* __r = __s;
+        -:  604:    for (; __n; --__n, ++__s)
+        -:  605:        assign(*__s, __a);
+        -:  606:    return __r;
+        -:  607:}
+        -:  608:
+        -:  609:template <>
+        -:  610:struct _LIBCPP_TEMPLATE_VIS char_traits<char32_t>
+        -:  611:{
+        -:  612:    typedef char32_t       char_type;
+        -:  613:    typedef uint_least32_t int_type;
+        -:  614:    typedef streamoff      off_type;
+        -:  615:    typedef u32streampos   pos_type;
+        -:  616:    typedef mbstate_t      state_type;
+        -:  617:
+        -:  618:    static inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  619:    void assign(char_type& __c1, const char_type& __c2) _NOEXCEPT {__c1 = __c2;}
+        -:  620:    static inline _LIBCPP_CONSTEXPR bool eq(char_type __c1, char_type __c2) _NOEXCEPT
+        -:  621:        {return __c1 == __c2;}
+        -:  622:    static inline _LIBCPP_CONSTEXPR bool lt(char_type __c1, char_type __c2) _NOEXCEPT
+        -:  623:        {return __c1 < __c2;}
+        -:  624:
+        -:  625:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  626:    int              compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  627:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  628:    size_t           length(const char_type* __s) _NOEXCEPT;
+        -:  629:    _LIBCPP_INLINE_VISIBILITY static _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  630:    const char_type* find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT;
+        -:  631:    _LIBCPP_INLINE_VISIBILITY
+        -:  632:    static char_type*       move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  633:    _LIBCPP_INLINE_VISIBILITY
+        -:  634:    static char_type*       copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT;
+        -:  635:    _LIBCPP_INLINE_VISIBILITY
+        -:  636:    static char_type*       assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT;
+        -:  637:
+        -:  638:    static inline _LIBCPP_CONSTEXPR int_type  not_eof(int_type __c) _NOEXCEPT
+        -:  639:        {return eq_int_type(__c, eof()) ? ~eof() : __c;}
+        -:  640:    static inline _LIBCPP_CONSTEXPR char_type to_char_type(int_type __c) _NOEXCEPT
+        -:  641:        {return char_type(__c);}
+        -:  642:    static inline _LIBCPP_CONSTEXPR int_type to_int_type(char_type __c) _NOEXCEPT
+        -:  643:        {return int_type(__c);}
+        -:  644:    static inline _LIBCPP_CONSTEXPR bool eq_int_type(int_type __c1, int_type __c2) _NOEXCEPT
+        -:  645:        {return __c1 == __c2;}
+        -:  646:    static inline _LIBCPP_CONSTEXPR int_type eof() _NOEXCEPT
+        -:  647:        {return int_type(0xFFFFFFFF);}
+        -:  648:};
+        -:  649:
+        -:  650:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  651:int
+        -:  652:char_traits<char32_t>::compare(const char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  653:{
+        -:  654:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  655:    {
+        -:  656:        if (lt(*__s1, *__s2))
+        -:  657:            return -1;
+        -:  658:        if (lt(*__s2, *__s1))
+        -:  659:            return 1;
+        -:  660:    }
+        -:  661:    return 0;
+        -:  662:}
+        -:  663:
+        -:  664:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  665:size_t
+        -:  666:char_traits<char32_t>::length(const char_type* __s) _NOEXCEPT
+        -:  667:{
+        -:  668:    size_t __len = 0;
+        -:  669:    for (; !eq(*__s, char_type(0)); ++__s)
+        -:  670:        ++__len;
+        -:  671:    return __len;
+        -:  672:}
+        -:  673:
+        -:  674:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
+        -:  675:const char32_t*
+        -:  676:char_traits<char32_t>::find(const char_type* __s, size_t __n, const char_type& __a) _NOEXCEPT
+        -:  677:{
+        -:  678:    for (; __n; --__n)
+        -:  679:    {
+        -:  680:        if (eq(*__s, __a))
+        -:  681:            return __s;
+        -:  682:        ++__s;
+        -:  683:    }
+        -:  684:    return 0;
+        -:  685:}
+        -:  686:
+        -:  687:inline
+        -:  688:char32_t*
+        -:  689:char_traits<char32_t>::move(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  690:{
+        -:  691:    char_type* __r = __s1;
+        -:  692:    if (__s1 < __s2)
+        -:  693:    {
+        -:  694:        for (; __n; --__n, ++__s1, ++__s2)
+        -:  695:            assign(*__s1, *__s2);
+        -:  696:    }
+        -:  697:    else if (__s2 < __s1)
+        -:  698:    {
+        -:  699:        __s1 += __n;
+        -:  700:        __s2 += __n;
+        -:  701:        for (; __n; --__n)
+        -:  702:            assign(*--__s1, *--__s2);
+        -:  703:    }
+        -:  704:    return __r;
+        -:  705:}
+        -:  706:
+        -:  707:inline
+        -:  708:char32_t*
+        -:  709:char_traits<char32_t>::copy(char_type* __s1, const char_type* __s2, size_t __n) _NOEXCEPT
+        -:  710:{
+        -:  711:    _LIBCPP_ASSERT(__s2 < __s1 || __s2 >= __s1+__n, "char_traits::copy overlapped range");
+        -:  712:    char_type* __r = __s1;
+        -:  713:    for (; __n; --__n, ++__s1, ++__s2)
+        -:  714:        assign(*__s1, *__s2);
+        -:  715:    return __r;
+        -:  716:}
+        -:  717:
+        -:  718:inline
+        -:  719:char32_t*
+        -:  720:char_traits<char32_t>::assign(char_type* __s, size_t __n, char_type __a) _NOEXCEPT
+        -:  721:{
+        -:  722:    char_type* __r = __s;
+        -:  723:    for (; __n; --__n, ++__s)
+        -:  724:        assign(*__s, __a);
+        -:  725:    return __r;
+        -:  726:}
+        -:  727:
+        -:  728:#endif  // _LIBCPP_HAS_NO_UNICODE_CHARS
+        -:  729:
+        -:  730:// helper fns for basic_string and string_view
+        -:  731:
+        -:  732:// __str_find
+        -:  733:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  734:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  735:__str_find(const _CharT *__p, _SizeT __sz, 
+        -:  736:             _CharT __c, _SizeT __pos) _NOEXCEPT
+        -:  737:{
+        -:  738:    if (__pos >= __sz)
+        -:  739:        return __npos;
+        -:  740:    const _CharT* __r = _Traits::find(__p + __pos, __sz - __pos, __c);
+        -:  741:    if (__r == 0)
+        -:  742:        return __npos;
+        -:  743:    return static_cast<_SizeT>(__r - __p);
+        -:  744:}
+        -:  745:
+        -:  746:template <class _CharT, class _Traits>
+        -:  747:inline _LIBCPP_CONSTEXPR_AFTER_CXX11 const _CharT *
+        -:  748:__search_substring(const _CharT *__first1, const _CharT *__last1,
+        -:  749:                   const _CharT *__first2, const _CharT *__last2) {
+        -:  750:  // Take advantage of knowing source and pattern lengths.
+        -:  751:  // Stop short when source is smaller than pattern.
+        -:  752:  const ptrdiff_t __len2 = __last2 - __first2;
+        -:  753:  if (__len2 == 0)
+        -:  754:    return __first1;
+        -:  755:
+        -:  756:  ptrdiff_t __len1 = __last1 - __first1;
+        -:  757:  if (__len1 < __len2)
+        -:  758:    return __last1;
+        -:  759:
+        -:  760:  // First element of __first2 is loop invariant.
+        -:  761:  _CharT __f2 = *__first2;
+        -:  762:  while (true) {
+        -:  763:    __len1 = __last1 - __first1;
+        -:  764:    // Check whether __first1 still has at least __len2 bytes.
+        -:  765:    if (__len1 < __len2)
+        -:  766:      return __last1;
+        -:  767:
+        -:  768:    // Find __f2 the first byte matching in __first1.
+        -:  769:    __first1 = _Traits::find(__first1, __len1 - __len2 + 1, __f2);
+        -:  770:    if (__first1 == 0)
+        -:  771:      return __last1;
+        -:  772:
+        -:  773:    // It is faster to compare from the first byte of __first1 even if we
+        -:  774:    // already know that it matches the first byte of __first2: this is because
+        -:  775:    // __first2 is most likely aligned, as it is user's "pattern" string, and
+        -:  776:    // __first1 + 1 is most likely not aligned, as the match is in the middle of
+        -:  777:    // the string.
+        -:  778:    if (_Traits::compare(__first1, __first2, __len2) == 0)
+        -:  779:      return __first1;
+        -:  780:
+        -:  781:    ++__first1;
+        -:  782:  }
+        -:  783:}
+        -:  784:
+        -:  785:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  786:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  787:__str_find(const _CharT *__p, _SizeT __sz, 
+        -:  788:       const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
+        -:  789:{
+        -:  790:    if (__pos > __sz)
+        -:  791:        return __npos;
+        -:  792:
+        -:  793:    if (__n == 0) // There is nothing to search, just return __pos.
+        -:  794:        return __pos;
+        -:  795:
+        -:  796:    const _CharT *__r = __search_substring<_CharT, _Traits>(
+        -:  797:        __p + __pos, __p + __sz, __s, __s + __n);
+        -:  798:
+        -:  799:    if (__r == __p + __sz)
+        -:  800:        return __npos;
+        -:  801:    return static_cast<_SizeT>(__r - __p);
+        -:  802:}
+        -:  803:
         -:  804:
-        -:  805:
-        -:  806:// __str_rfind
-        -:  807:
-        -:  808:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  809:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  810:__str_rfind(const _CharT *__p, _SizeT __sz, 
-        -:  811:              _CharT __c, _SizeT __pos) _NOEXCEPT
-        -:  812:{
-        -:  813:    if (__sz < 1)
-        -:  814:        return __npos;
-        -:  815:    if (__pos < __sz)
-        -:  816:        ++__pos;
-        -:  817:    else
-        -:  818:        __pos = __sz;
-        -:  819:    for (const _CharT* __ps = __p + __pos; __ps != __p;)
-        -:  820:    {
-        -:  821:        if (_Traits::eq(*--__ps, __c))
-        -:  822:            return static_cast<_SizeT>(__ps - __p);
-        -:  823:    }
-        -:  824:    return __npos;
-        -:  825:}
-        -:  826:
-        -:  827:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  828:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  829:__str_rfind(const _CharT *__p, _SizeT __sz, 
-        -:  830:        const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
-        -:  831:{
-        -:  832:    __pos = _VSTD::min(__pos, __sz);
-        -:  833:    if (__n < __sz - __pos)
-        -:  834:        __pos += __n;
-        -:  835:    else
-        -:  836:        __pos = __sz;
-        -:  837:    const _CharT* __r = _VSTD::__find_end(
-        -:  838:                  __p, __p + __pos, __s, __s + __n, _Traits::eq, 
-        -:  839:                        random_access_iterator_tag(), random_access_iterator_tag());
-        -:  840:    if (__n > 0 && __r == __p + __pos)
-        -:  841:        return __npos;
-        -:  842:    return static_cast<_SizeT>(__r - __p);
-        -:  843:}
-        -:  844:
-        -:  845:// __str_find_first_of
-        -:  846:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  847:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  848:__str_find_first_of(const _CharT *__p, _SizeT __sz,
-        -:  849:                const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
-        -:  850:{
-        -:  851:    if (__pos >= __sz || __n == 0)
-        -:  852:        return __npos;
-        -:  853:    const _CharT* __r = _VSTD::__find_first_of_ce
-        -:  854:        (__p + __pos, __p + __sz, __s, __s + __n, _Traits::eq );
-        -:  855:    if (__r == __p + __sz)
-        -:  856:        return __npos;
-        -:  857:    return static_cast<_SizeT>(__r - __p);
-        -:  858:}
+        -:  805:// __str_rfind
+        -:  806:
+        -:  807:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  808:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  809:__str_rfind(const _CharT *__p, _SizeT __sz, 
+        -:  810:              _CharT __c, _SizeT __pos) _NOEXCEPT
+        -:  811:{
+        -:  812:    if (__sz < 1)
+        -:  813:        return __npos;
+        -:  814:    if (__pos < __sz)
+        -:  815:        ++__pos;
+        -:  816:    else
+        -:  817:        __pos = __sz;
+        -:  818:    for (const _CharT* __ps = __p + __pos; __ps != __p;)
+        -:  819:    {
+        -:  820:        if (_Traits::eq(*--__ps, __c))
+        -:  821:            return static_cast<_SizeT>(__ps - __p);
+        -:  822:    }
+        -:  823:    return __npos;
+        -:  824:}
+        -:  825:
+        -:  826:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  827:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  828:__str_rfind(const _CharT *__p, _SizeT __sz, 
+        -:  829:        const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
+        -:  830:{
+        -:  831:    __pos = _VSTD::min(__pos, __sz);
+        -:  832:    if (__n < __sz - __pos)
+        -:  833:        __pos += __n;
+        -:  834:    else
+        -:  835:        __pos = __sz;
+        -:  836:    const _CharT* __r = _VSTD::__find_end(
+        -:  837:                  __p, __p + __pos, __s, __s + __n, _Traits::eq, 
+        -:  838:                        random_access_iterator_tag(), random_access_iterator_tag());
+        -:  839:    if (__n > 0 && __r == __p + __pos)
+        -:  840:        return __npos;
+        -:  841:    return static_cast<_SizeT>(__r - __p);
+        -:  842:}
+        -:  843:
+        -:  844:// __str_find_first_of
+        -:  845:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  846:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  847:__str_find_first_of(const _CharT *__p, _SizeT __sz,
+        -:  848:                const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
+        -:  849:{
+        -:  850:    if (__pos >= __sz || __n == 0)
+        -:  851:        return __npos;
+        -:  852:    const _CharT* __r = _VSTD::__find_first_of_ce
+        -:  853:        (__p + __pos, __p + __sz, __s, __s + __n, _Traits::eq );
+        -:  854:    if (__r == __p + __sz)
+        -:  855:        return __npos;
+        -:  856:    return static_cast<_SizeT>(__r - __p);
+        -:  857:}
+        -:  858:
         -:  859:
-        -:  860:
-        -:  861:// __str_find_last_of
-        -:  862:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  863:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  864:__str_find_last_of(const _CharT *__p, _SizeT __sz,
-        -:  865:               const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
-        -:  866:    {
-        -:  867:    if (__n != 0)
-        -:  868:    {
-        -:  869:        if (__pos < __sz)
-        -:  870:            ++__pos;
-        -:  871:        else
-        -:  872:            __pos = __sz;
-        -:  873:        for (const _CharT* __ps = __p + __pos; __ps != __p;)
-        -:  874:        {
-        -:  875:            const _CharT* __r = _Traits::find(__s, __n, *--__ps);
-        -:  876:            if (__r)
-        -:  877:                return static_cast<_SizeT>(__ps - __p);
-        -:  878:        }
-        -:  879:    }
-        -:  880:    return __npos;
-        -:  881:}
+        -:  860:// __str_find_last_of
+        -:  861:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  862:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  863:__str_find_last_of(const _CharT *__p, _SizeT __sz,
+        -:  864:               const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
+        -:  865:    {
+        -:  866:    if (__n != 0)
+        -:  867:    {
+        -:  868:        if (__pos < __sz)
+        -:  869:            ++__pos;
+        -:  870:        else
+        -:  871:            __pos = __sz;
+        -:  872:        for (const _CharT* __ps = __p + __pos; __ps != __p;)
+        -:  873:        {
+        -:  874:            const _CharT* __r = _Traits::find(__s, __n, *--__ps);
+        -:  875:            if (__r)
+        -:  876:                return static_cast<_SizeT>(__ps - __p);
+        -:  877:        }
+        -:  878:    }
+        -:  879:    return __npos;
+        -:  880:}
+        -:  881:
         -:  882:
-        -:  883:
-        -:  884:// __str_find_first_not_of
-        -:  885:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  886:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  887:__str_find_first_not_of(const _CharT *__p, _SizeT __sz,
-        -:  888:                    const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
-        -:  889:{
-        -:  890:    if (__pos < __sz)
-        -:  891:    {
-        -:  892:        const _CharT* __pe = __p + __sz;
-        -:  893:        for (const _CharT* __ps = __p + __pos; __ps != __pe; ++__ps)
-        -:  894:            if (_Traits::find(__s, __n, *__ps) == 0)
-        -:  895:                return static_cast<_SizeT>(__ps - __p);
-        -:  896:    }
-        -:  897:    return __npos;
-        -:  898:}
+        -:  883:// __str_find_first_not_of
+        -:  884:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  885:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  886:__str_find_first_not_of(const _CharT *__p, _SizeT __sz,
+        -:  887:                    const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
+        -:  888:{
+        -:  889:    if (__pos < __sz)
+        -:  890:    {
+        -:  891:        const _CharT* __pe = __p + __sz;
+        -:  892:        for (const _CharT* __ps = __p + __pos; __ps != __pe; ++__ps)
+        -:  893:            if (_Traits::find(__s, __n, *__ps) == 0)
+        -:  894:                return static_cast<_SizeT>(__ps - __p);
+        -:  895:    }
+        -:  896:    return __npos;
+        -:  897:}
+        -:  898:
         -:  899:
-        -:  900:
-        -:  901:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  902:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  903:__str_find_first_not_of(const _CharT *__p, _SizeT __sz,
-        -:  904:                          _CharT __c, _SizeT __pos) _NOEXCEPT
-        -:  905:{
-        -:  906:    if (__pos < __sz)
-        -:  907:    {
-        -:  908:        const _CharT* __pe = __p + __sz;
-        -:  909:        for (const _CharT* __ps = __p + __pos; __ps != __pe; ++__ps)
-        -:  910:            if (!_Traits::eq(*__ps, __c))
-        -:  911:                return static_cast<_SizeT>(__ps - __p);
-        -:  912:    }
-        -:  913:    return __npos;
-        -:  914:}
+        -:  900:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  901:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  902:__str_find_first_not_of(const _CharT *__p, _SizeT __sz,
+        -:  903:                          _CharT __c, _SizeT __pos) _NOEXCEPT
+        -:  904:{
+        -:  905:    if (__pos < __sz)
+        -:  906:    {
+        -:  907:        const _CharT* __pe = __p + __sz;
+        -:  908:        for (const _CharT* __ps = __p + __pos; __ps != __pe; ++__ps)
+        -:  909:            if (!_Traits::eq(*__ps, __c))
+        -:  910:                return static_cast<_SizeT>(__ps - __p);
+        -:  911:    }
+        -:  912:    return __npos;
+        -:  913:}
+        -:  914:
         -:  915:
-        -:  916:
-        -:  917:// __str_find_last_not_of
-        -:  918:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  919:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  920:__str_find_last_not_of(const _CharT *__p, _SizeT __sz,
-        -:  921:                   const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
-        -:  922:{
-        -:  923:    if (__pos < __sz)
-        -:  924:        ++__pos;
-        -:  925:    else
-        -:  926:        __pos = __sz;
-        -:  927:    for (const _CharT* __ps = __p + __pos; __ps != __p;)
-        -:  928:        if (_Traits::find(__s, __n, *--__ps) == 0)
-        -:  929:            return static_cast<_SizeT>(__ps - __p);
-        -:  930:    return __npos;
-        -:  931:}
+        -:  916:// __str_find_last_not_of
+        -:  917:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  918:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  919:__str_find_last_not_of(const _CharT *__p, _SizeT __sz,
+        -:  920:                   const _CharT* __s, _SizeT __pos, _SizeT __n) _NOEXCEPT
+        -:  921:{
+        -:  922:    if (__pos < __sz)
+        -:  923:        ++__pos;
+        -:  924:    else
+        -:  925:        __pos = __sz;
+        -:  926:    for (const _CharT* __ps = __p + __pos; __ps != __p;)
+        -:  927:        if (_Traits::find(__s, __n, *--__ps) == 0)
+        -:  928:            return static_cast<_SizeT>(__ps - __p);
+        -:  929:    return __npos;
+        -:  930:}
+        -:  931:
         -:  932:
-        -:  933:
-        -:  934:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
-        -:  935:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
-        -:  936:__str_find_last_not_of(const _CharT *__p, _SizeT __sz,
-        -:  937:                         _CharT __c, _SizeT __pos) _NOEXCEPT
-        -:  938:{
-        -:  939:    if (__pos < __sz)
-        -:  940:        ++__pos;
-        -:  941:    else
-        -:  942:        __pos = __sz;
-        -:  943:    for (const _CharT* __ps = __p + __pos; __ps != __p;)
-        -:  944:        if (!_Traits::eq(*--__ps, __c))
-        -:  945:            return static_cast<_SizeT>(__ps - __p);
-        -:  946:    return __npos;
-        -:  947:}
-        -:  948:
-        -:  949:template<class _Ptr>
-        -:  950:inline _LIBCPP_INLINE_VISIBILITY
-        -:  951:size_t __do_string_hash(_Ptr __p, _Ptr __e)
-        -:  952:{
-        -:  953:    typedef typename iterator_traits<_Ptr>::value_type value_type;
-        -:  954:    return __murmur2_or_cityhash<size_t>()(__p, (__e-__p)*sizeof(value_type));
-        -:  955:}
-        -:  956:
-        -:  957:template <class _CharT, class _Iter, class _Traits=char_traits<_CharT> >
-        -:  958:struct __quoted_output_proxy
-        -:  959:{
-        -:  960:    _Iter  __first;
-        -:  961:    _Iter  __last;
-        -:  962:    _CharT  __delim;
-        -:  963:    _CharT  __escape;
-        -:  964:
-        -:  965:    __quoted_output_proxy(_Iter __f, _Iter __l, _CharT __d, _CharT __e)
-        -:  966:    : __first(__f), __last(__l), __delim(__d), __escape(__e) {}
-        -:  967:    //  This would be a nice place for a string_ref 
-        -:  968:};
-        -:  969:
-        -:  970:_LIBCPP_END_NAMESPACE_STD
-        -:  971:
-        -:  972:_LIBCPP_POP_MACROS
-        -:  973:
-        -:  974:#endif  // _LIBCPP___STRING
+        -:  933:template<class _CharT, class _SizeT, class _Traits, _SizeT __npos>
+        -:  934:inline _SizeT _LIBCPP_CONSTEXPR_AFTER_CXX11 _LIBCPP_INLINE_VISIBILITY
+        -:  935:__str_find_last_not_of(const _CharT *__p, _SizeT __sz,
+        -:  936:                         _CharT __c, _SizeT __pos) _NOEXCEPT
+        -:  937:{
+        -:  938:    if (__pos < __sz)
+        -:  939:        ++__pos;
+        -:  940:    else
+        -:  941:        __pos = __sz;
+        -:  942:    for (const _CharT* __ps = __p + __pos; __ps != __p;)
+        -:  943:        if (!_Traits::eq(*--__ps, __c))
+        -:  944:            return static_cast<_SizeT>(__ps - __p);
+        -:  945:    return __npos;
+        -:  946:}
+        -:  947:
+        -:  948:template<class _Ptr>
+        -:  949:inline _LIBCPP_INLINE_VISIBILITY
+        -:  950:size_t __do_string_hash(_Ptr __p, _Ptr __e)
+        -:  951:{
+        -:  952:    typedef typename iterator_traits<_Ptr>::value_type value_type;
+        -:  953:    return __murmur2_or_cityhash<size_t>()(__p, (__e-__p)*sizeof(value_type));
+        -:  954:}
+        -:  955:
+        -:  956:template <class _CharT, class _Iter, class _Traits=char_traits<_CharT> >
+        -:  957:struct __quoted_output_proxy
+        -:  958:{
+        -:  959:    _Iter  __first;
+        -:  960:    _Iter  __last;
+        -:  961:    _CharT  __delim;
+        -:  962:    _CharT  __escape;
+        -:  963:
+        -:  964:    __quoted_output_proxy(_Iter __f, _Iter __l, _CharT __d, _CharT __e)
+        -:  965:    : __first(__f), __last(__l), __delim(__d), __escape(__e) {}
+        -:  966:    //  This would be a nice place for a string_ref 
+        -:  967:};
+        -:  968:
+        -:  969:_LIBCPP_END_NAMESPACE_STD
+        -:  970:
+        -:  971:_LIBCPP_POP_MACROS
+        -:  972:
+        -:  973:#endif  // _LIBCPP___STRING

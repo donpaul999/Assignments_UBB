@@ -1,31 +1,37 @@
 
 #include "IteratedList.h"
 #include <iostream>
+//Θ(1)
 IteratedList::IteratedList(){
     head = nullptr;
     tail = nullptr;
     listSize = 0;
 }
 
+//Θ(1)
 int IteratedList::size() const {
     return listSize;
 }
 
+//Θ(1)
 bool IteratedList::isEmpty() const {
     return listSize == 0;
 }
 
+//Θ(1)
 ListIterator IteratedList::first() const {
     ListIterator it{*this};
     return it;
 }
 
+//Θ(1)
 TElem IteratedList::getElement(ListIterator pos) const {
     if (!pos.valid())
         throw std::runtime_error("error");
     return pos.getCurrent();
 }
 
+//Θ(1)
 TElem IteratedList::remove(ListIterator& pos) {
     if (!pos.valid())
         throw std::runtime_error("error");
@@ -59,6 +65,7 @@ TElem IteratedList::remove(ListIterator& pos) {
     return oldValue;
 }
 
+//O(n) -  n length of the list
 ListIterator IteratedList::search(TElem e) const{
     auto iterator = first();
     while (iterator.valid()) {
@@ -69,6 +76,7 @@ ListIterator IteratedList::search(TElem e) const{
     return iterator;
 }
 
+//Θ(1)
 TElem IteratedList::setElement(ListIterator pos, TElem e) {
     if (!pos.valid())
         throw std::runtime_error("error");
@@ -77,6 +85,7 @@ TElem IteratedList::setElement(ListIterator pos, TElem e) {
     return oldElement;
 }
 
+//Θ(1)
 void IteratedList::addToPosition(ListIterator& pos, TElem e) { 
     if (!pos.valid())
         throw std::runtime_error("error");
@@ -98,6 +107,7 @@ void IteratedList::addToPosition(ListIterator& pos, TElem e) {
     pos.next();
 }
 
+//Θ(1)
 void IteratedList::addToEnd(TElem e) {
     DLLNode *node = new DLLNode(e);
     if (listSize == 0) {
@@ -112,6 +122,7 @@ void IteratedList::addToEnd(TElem e) {
     ++listSize;
 }
 
+//Θ(1)
 void IteratedList::addToBeginning(TElem e) {
     DLLNode *node = new DLLNode(e);
     if (listSize == 0) {
@@ -127,6 +138,7 @@ void IteratedList::addToBeginning(TElem e) {
 
 }
 
+//O(n) - length of the list
 IteratedList::~IteratedList() {
     DLLNode *currentNode;
     while (head != nullptr) {
