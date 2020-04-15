@@ -21,8 +21,9 @@ void UI::start_menu()
 	cout << "11. Add a vertex" << '\n';
 	cout << "12. Remove an edge" << '\n';
 	cout << "13. Remove a vertex" << '\n';
-	cout << "14. Find shortest path between 2 vertices" << '\n';
-	cout << "15. Exit" << '\n';
+    cout << "14. Find shortest path between 2 vertices" << '\n';
+    cout << "15. Find the lowest cost walk between the given vertices" << '\n';
+	cout << "16. Exit" << '\n';
 }
 
 void UI::start_app()
@@ -33,8 +34,10 @@ void UI::start_app()
 		cout << "Input choice: ";
 		cin >> input;
 		cout << '\n';
-		if (input == 15)
-			break;
+        if (input == 16)
+            break;
+        if (input == 15)
+			choice15();
 		if (input == 1)
 			choice1();
 		if (input == 2)
@@ -237,4 +240,19 @@ void UI::choice14()
 	}
 	cout << '\n';
 	cout << "Length of the path: " << length << '\n';
+}
+
+void UI::choice15()
+{
+    int source, target;
+    cout << "Input first vertex: ";
+    cin >> source;
+    cout << "Input the second vertex: ";
+    cin >> target;
+    cout << '\n';
+    int lowestCost = service.floydWarshall(source, target);
+    if(lowestCost > 0 && lowestCost != INT_MAX)
+        cout << "Lowest cost of the path: " << lowestCost << '\n';
+    else
+        cout << "No path between this vertices"<<'\n';
 }

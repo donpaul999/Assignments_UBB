@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Direct_Graph.h
+vector
+-
+queue
+-
+string
+-
+map
+-
+vector
+-
+fstream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Service.cpp
+Service.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Service.h
+iostream
+-
+exception
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Service.h
+Direct_Graph.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Direct_Graph.h
+

@@ -14,9 +14,9 @@ private:
     map <int, vector<int>> edgesIn;
     map <int, vector<int>> edgesOut;
     map <pair<int, int>, int>costs;
-    vector <int> vertices;
 
 public:
+    vector <int> vertices;
     DIRECT_GRAPH();
     void readFromFile(string filename);
     int getNumberOfVertices();

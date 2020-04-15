@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
     DIRECT_GRAPH graph;
-    graph.readFromFile("input.in");
+    graph.readFromFile("graph1k.txt");
     Service service{ graph };
     UI u(graph, service);
     u.start_app();

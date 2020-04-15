@@ -19,6 +19,7 @@ private:
     void choice12();
     void choice13();
     void choice14();
+    void choice15();
 
 public:
     UI(DIRECT_GRAPH graph, Service service);

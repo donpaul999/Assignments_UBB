@@ -1,5 +1,7 @@
 #include "Service.h"
-
+#include <iostream>
+#include <exception>
+#define INF 1000000
 Service::Service()
 {
 }
@@ -30,4 +32,31 @@ vector<int> Service::bfsFromEndToStart(int source)
             }
     }
     return p;
+}
+
+int Service::floydWarshall(int source, int target) {
+    vector<vector<int>> distances;
+    vector<int> linesDist;
+    int i, j, k, count = 0;
+    for (i = 0; i < graph.vertices.size(); ++i) {
+        linesDist.clear();
+        for (j = 0; j < graph.vertices.size(); ++j) {
+            try {
+                linesDist.push_back(graph.getCost(graph.vertices[i], graph.vertices[j]));
+            }
+            catch (exception e) {
+                linesDist.push_back(INF);
+            }
+            //std::cout << count++<<'\n';
+        }
+        distances.push_back(linesDist);
+    }
+    for (k = 0; k < graph.vertices.size(); ++k)
+        for (i = 0; i < graph.vertices.size(); ++i)
+            for (j = 0; j < graph.vertices.size(); ++j)
+                if(distances[i][k] + distances[k][j] < distances[i][j]) {
+                    //std::cout << count++<<'\n';
+                    distances[i][j] = distances[i][k] + distances[k][j];
+                }
+    return distances[source][target];
 }
