@@ -12,11 +12,13 @@ typedef int TElem;
 class IteratedList {
 
 private:
-    DLLNode *head;
     DLLNode *tail;
     int listSize;
     //DO NOT CHANGE THIS PART
 	friend class ListIterator;
+
+protected:
+    DLLNode *head;
 public:
 
 	// constructor
@@ -29,7 +31,7 @@ public:
 	bool isEmpty() const;
 
 	// returns the first position from the list
-	ListIterator first() const;
+	ListIterator first();
 
 	// returns the element from the given position
 	//throws an exception if the position is not valid
@@ -59,7 +61,7 @@ public:
 
 	// searches for the first occurrance of an element 
 	//returns an iterator that points to the element, if it appear in the list, or an invalid iterator if the element is not in the list
-	ListIterator search(TElem e) const;
+	ListIterator search(TElem e);
 
 	//destructor
 

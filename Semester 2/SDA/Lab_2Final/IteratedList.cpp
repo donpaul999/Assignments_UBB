@@ -19,7 +19,7 @@ bool IteratedList::isEmpty() const {
 }
 
 //Θ(1)
-ListIterator IteratedList::first() const {
+ListIterator IteratedList::first() {
     ListIterator it{*this};
     return it;
 }
@@ -66,7 +66,7 @@ TElem IteratedList::remove(ListIterator& pos) {
 }
 
 //O(n) -  n length of the list
-ListIterator IteratedList::search(TElem e) const{
+ListIterator IteratedList::search(TElem e){
     auto iterator = first();
     while (iterator.valid()) {
         if (iterator.getCurrent() == e)
@@ -97,7 +97,6 @@ void IteratedList::addToPosition(ListIterator& pos, TElem e) {
         tail = node;
     }
     else {
-        TElem oldValue = pos.currentNode->getElement();
         node->setPreviousElement(pos.currentNode);
         node->setNextElement(pos.currentNode->getNextElement());
         pos.currentNode->getNextElement()->setPreviousElement(node);

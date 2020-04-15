@@ -1,6 +1,5 @@
-#pragma once
 #include "DLLNode.h"
-
+#pragma once
 //DO NOT CHANGE THIS PART
 class IteratedList;
 typedef int TElem;
@@ -11,14 +10,15 @@ private:
 	//TODO - Representation 
 
 	//DO NOT CHANGE THIS PART
-	const IteratedList& list;
+    IteratedList &list;
     DLLNode* currentNode;
-    ListIterator(const IteratedList& list);
+    ListIterator(IteratedList& list);
 public:
 	void first();
 	void next();
 	bool valid() const;
     TElem getCurrent() const;
+    TElem remove();
     bool operator==(const ListIterator &elemToCheck) const;
     bool operator!=(const ListIterator &elemToCheck) const;
 
