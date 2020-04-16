@@ -312,11 +312,10 @@
         1:  132-block  4
         1:  133:    assert(tokenizedString[0] == "we");
         1:  133-block  0
-        1:  133-block  1
+    $$$$$:  133-block  1
     $$$$$:  133-block  2
     $$$$$:  133-block  3
-    $$$$$:  133-block  4
-        1:  133-block  5
+        1:  133-block  4
         1:  134:}
     $$$$$:  134-block  0
     $$$$$:  134-block  1
@@ -1281,11 +1280,10 @@
         1:  415-block  4
         1:  416:    assert(tokenizedString[0] == "we");
         1:  416-block  0
-        1:  416-block  1
+    $$$$$:  416-block  1
     $$$$$:  416-block  2
     $$$$$:  416-block  3
-    $$$$$:  416-block  4
-        1:  416-block  5
+        1:  416-block  4
         1:  417:}
     $$$$$:  417-block  0
     $$$$$:  417-block  1

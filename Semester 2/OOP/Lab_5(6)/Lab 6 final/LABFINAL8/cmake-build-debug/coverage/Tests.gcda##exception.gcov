@@ -99,12 +99,12 @@
         -:   94:{
         -:   95:
         -:   96:#if !defined(_LIBCPP_ABI_VCRUNTIME)
-        -:   97:class _LIBCPP_EXCEPTION_ABI exception
-        4:   98:{
-        2:   98-block  0
-        2:   98-block  1
-        2:   98-block  2
-        2:   98-block  3
+        4:   97:class _LIBCPP_EXCEPTION_ABI exception
+        2:   97-block  0
+        2:   97-block  1
+        2:   97-block  2
+        2:   97-block  3
+        -:   98:{
         -:   99:public:
         -:  100:    _LIBCPP_INLINE_VISIBILITY exception() _NOEXCEPT {}
         -:  101:    virtual ~exception() _NOEXCEPT;

@@ -456,13 +456,9 @@
         -:  451:template <bool, class _Tp = void> struct _LIBCPP_TEMPLATE_VIS enable_if {};
         -:  452:template <class _Tp> struct _LIBCPP_TEMPLATE_VIS enable_if<true, _Tp> {typedef _Tp type;};
         -:  453:
-    #####:  454:#if _LIBCPP_STD_VER > 11
-    $$$$$:  454-block  0
-    $$$$$:  454-block  1
+        -:  454:#if _LIBCPP_STD_VER > 11
         -:  455:template <bool _Bp, class _Tp = void> using enable_if_t = typename enable_if<_Bp, _Tp>::type;
-    #####:  456:#endif
-    $$$$$:  456-block  0
-    $$$$$:  456-block  1
+        -:  456:#endif
         -:  457:
         -:  458:// addressof
         -:  459:#ifndef _LIBCPP_HAS_NO_BUILTIN_ADDRESSOF
@@ -471,9 +467,13 @@
         -:  462:inline _LIBCPP_CONSTEXPR_AFTER_CXX14
         -:  463:_LIBCPP_NO_CFI _LIBCPP_INLINE_VISIBILITY
         -:  464:_Tp*
-        -:  465:addressof(_Tp& __x) _NOEXCEPT
+    #####:  465:addressof(_Tp& __x) _NOEXCEPT
+    $$$$$:  465-block  0
+    $$$$$:  465-block  1
         -:  466:{
-        -:  467:    return __builtin_addressof(__x);
+    #####:  467:    return __builtin_addressof(__x);
+    $$$$$:  467-block  0
+    $$$$$:  467-block  1
         -:  468:}
         -:  469:
         -:  470:#else
@@ -2316,22 +2316,18 @@
         -: 2307:template <class _Tp>
         -: 2308:struct __destructible_imp<_Tp, false>
         -: 2309:   : public _VSTD::integral_constant<bool,
-    #####: 2310:        __is_destructor_wellformed<typename _VSTD::remove_all_extents<_Tp>::type>::value> {};
-    $$$$$: 2310-block  0
+        -: 2310:        __is_destructor_wellformed<typename _VSTD::remove_all_extents<_Tp>::type>::value> {};
         -: 2311:
         -: 2312:template <class _Tp>
-    #####: 2313:struct __destructible_imp<_Tp, true>
-    $$$$$: 2313-block  0
+        -: 2313:struct __destructible_imp<_Tp, true>
         -: 2314:    : public _VSTD::true_type {};
         -: 2315:
         -: 2316:template <class _Tp, bool>
         -: 2317:struct __destructible_false;
         -: 2318:
-    #####: 2319:template <class _Tp>
-    $$$$$: 2319-block  0
+        -: 2319:template <class _Tp>
         -: 2320:struct __destructible_false<_Tp, false> : public __destructible_imp<_Tp, _VSTD::is_reference<_Tp>::value> {};
-    #####: 2321:
-    $$$$$: 2321-block  0
+        -: 2321:
         -: 2322:template <class _Tp>
         -: 2323:struct __destructible_false<_Tp, true> : public _VSTD::false_type {};
         -: 2324:
@@ -2360,18 +2356,22 @@
         -: 2347:template <class _Tp>
         -: 2348:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
         -: 2349:typename remove_reference<_Tp>::type&&
-        -: 2350:move(_Tp&& __t) _NOEXCEPT
+    #####: 2350:move(_Tp&& __t) _NOEXCEPT
+    $$$$$: 2350-block  0
         -: 2351:{
         -: 2352:    typedef _LIBCPP_NODEBUG_TYPE typename remove_reference<_Tp>::type _Up;
-        -: 2353:    return static_cast<_Up&&>(__t);
+    #####: 2353:    return static_cast<_Up&&>(__t);
+    $$$$$: 2353-block  0
         -: 2354:}
         -: 2355:
         -: 2356:template <class _Tp>
         -: 2357:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
         -: 2358:_Tp&&
-        -: 2359:forward(typename remove_reference<_Tp>::type& __t) _NOEXCEPT
+    #####: 2359:forward(typename remove_reference<_Tp>::type& __t) _NOEXCEPT
+    $$$$$: 2359-block  0
         -: 2360:{
-        -: 2361:    return static_cast<_Tp&&>(__t);
+    #####: 2361:    return static_cast<_Tp&&>(__t);
+    $$$$$: 2361-block  0
         -: 2362:}
         -: 2363:
         -: 2364:template <class _Tp>

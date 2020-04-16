@@ -308,10 +308,10 @@
         -:  303:
         -:  304:    _LIBCPP_INLINE_VISIBILITY
         -:  305:        _LIBCPP_EXPLICIT
-        -:  306:        operator bool() const {return __ok_;}
-    #####:  307:};
-    $$$$$:  307-block  0
-    $$$$$:  307-block  1
+    #####:  306:        operator bool() const {return __ok_;}
+    $$$$$:  306-block  0
+    $$$$$:  306-block  1
+        -:  307:};
         -:  308:
         -:  309:template <class _CharT, class _Traits>
         -:  310:basic_istream<_CharT, _Traits>::sentry::sentry(basic_istream<_CharT, _Traits>& __is,
@@ -1455,22 +1455,24 @@
         -: 1448:
         -: 1449:template<class _CharT, class _Traits, class _Allocator>
         -: 1450:basic_istream<_CharT, _Traits>&
-        -: 1451:operator>>(basic_istream<_CharT, _Traits>& __is,
+    #####: 1451:operator>>(basic_istream<_CharT, _Traits>& __is,
+    $$$$$: 1451-block  0
         -: 1452:           basic_string<_CharT, _Traits, _Allocator>& __str)
-    #####: 1453:{
-    $$$$$: 1453-block  0
-        -: 1454:    ios_base::iostate __state = ios_base::goodbit;
-        -: 1455:    typename basic_istream<_CharT, _Traits>::sentry __sen(__is);
+        -: 1453:{
+    #####: 1454:    ios_base::iostate __state = ios_base::goodbit;
+    #####: 1455:    typename basic_istream<_CharT, _Traits>::sentry __sen(__is);
     #####: 1456:    if (__sen)
-    #####: 1457:    {
-    #####: 1458:#ifndef _LIBCPP_NO_EXCEPTIONS
-    $$$$$: 1458-block  0
+    $$$$$: 1456-block  0
+        -: 1457:    {
+        -: 1458:#ifndef _LIBCPP_NO_EXCEPTIONS
         -: 1459:        try
         -: 1460:        {
         -: 1461:#endif
-        -: 1462:            __str.clear();
-        -: 1463:            streamsize __n = __is.width();
+    #####: 1462:            __str.clear();
+    #####: 1463:            streamsize __n = __is.width();
+    $$$$$: 1463-block  0
     #####: 1464:            if (__n <= 0)
+    $$$$$: 1464-block  0
     #####: 1465:                __n = __str.max_size();
     $$$$$: 1465-block  0
     #####: 1466:            if (__n <= 0)
@@ -1478,169 +1480,167 @@
     #####: 1467:                __n = numeric_limits<streamsize>::max();
     $$$$$: 1467-block  0
     #####: 1468:            streamsize __c = 0;
-    $$$$$: 1468-block  0
     #####: 1469:            const ctype<_CharT>& __ct = use_facet<ctype<_CharT> >(__is.getloc());
     $$$$$: 1469-block  0
+    $$$$$: 1469-block  1
+    $$$$$: 1469-block  2
     #####: 1470:            while (__c < __n)
-    #####: 1471:            {
-    $$$$$: 1471-block  0
-    $$$$$: 1471-block  1
-    $$$$$: 1471-block  2
+    $$$$$: 1470-block  0
+    $$$$$: 1470-block  1
+    $$$$$: 1470-block  2
+        -: 1471:            {
     #####: 1472:                typename _Traits::int_type __i = __is.rdbuf()->sgetc();
     $$$$$: 1472-block  0
     $$$$$: 1472-block  1
-    $$$$$: 1472-block  2
-        -: 1473:                if (_Traits::eq_int_type(__i, _Traits::eof()))
-    #####: 1474:                {
-    $$$$$: 1474-block  0
-    $$$$$: 1474-block  1
+    #####: 1473:                if (_Traits::eq_int_type(__i, _Traits::eof()))
+    $$$$$: 1473-block  0
+        -: 1474:                {
     #####: 1475:                   __state |= ios_base::eofbit;
-    $$$$$: 1475-block  0
-        -: 1476:                   break;
-    #####: 1477:                }
+    #####: 1476:                   break;
+    $$$$$: 1476-block  0
+        -: 1477:                }
     #####: 1478:                _CharT __ch = _Traits::to_char_type(__i);
-    $$$$$: 1478-block  0
-        -: 1479:                if (__ct.is(__ct.space, __ch))
+    #####: 1479:                if (__ct.is(__ct.space, __ch))
+    $$$$$: 1479-block  0
+    $$$$$: 1479-block  1
     #####: 1480:                    break;
+    $$$$$: 1480-block  0
     #####: 1481:                __str.push_back(__ch);
     $$$$$: 1481-block  0
-    $$$$$: 1481-block  1
     #####: 1482:                ++__c;
-    $$$$$: 1482-block  0
     #####: 1483:                 __is.rdbuf()->sbumpc();
     $$$$$: 1483-block  0
-    #####: 1484:            }
+    $$$$$: 1483-block  1
+        -: 1484:            }
     #####: 1485:            __is.width(0);
     $$$$$: 1485-block  0
-    $$$$$: 1485-block  1
-        -: 1486:            if (__c == 0)
+    #####: 1486:            if (__c == 0)
+    $$$$$: 1486-block  0
     #####: 1487:               __state |= ios_base::failbit;
     $$$$$: 1487-block  0
-    #####: 1488:#ifndef _LIBCPP_NO_EXCEPTIONS
-    $$$$$: 1488-block  0
+        -: 1488:#ifndef _LIBCPP_NO_EXCEPTIONS
     #####: 1489:        }
     $$$$$: 1489-block  0
         -: 1490:        catch (...)
-    #####: 1491:        {
-    $$$$$: 1491-block  0
-        -: 1492:            __state |= ios_base::badbit;
-        -: 1493:            __is.__setstate_nothrow(__state);
+        -: 1491:        {
+    #####: 1492:            __state |= ios_base::badbit;
+    #####: 1493:            __is.__setstate_nothrow(__state);
+    $$$$$: 1493-block  0
     #####: 1494:            if (__is.exceptions() & ios_base::badbit)
-    #####: 1495:            {
-    $$$$$: 1495-block  0
+    $$$$$: 1494-block  0
+    $$$$$: 1494-block  1
+        -: 1495:            {
     #####: 1496:                throw;
     $$$$$: 1496-block  0
-    $$$$$: 1496-block  1
         -: 1497:            }
     #####: 1498:        }
     $$$$$: 1498-block  0
+    $$$$$: 1498-block  1
+    $$$$$: 1498-block  2
+    $$$$$: 1498-block  3
+    $$$$$: 1498-block  4
         -: 1499:#endif
     #####: 1500:        __is.setstate(__state);
-    $$$$$: 1500-block  0
-    $$$$$: 1500-block  1
-    $$$$$: 1500-block  2
-    $$$$$: 1500-block  3
-    $$$$$: 1500-block  4
-        -: 1501:    }
+    #####: 1501:    }
+    $$$$$: 1501-block  0
     #####: 1502:    return __is;
+    $$$$$: 1502-block  0
     #####: 1503:}
     $$$$$: 1503-block  0
-    #####: 1504:
-    $$$$$: 1504-block  0
-    #####: 1505:template<class _CharT, class _Traits, class _Allocator>
-    $$$$$: 1505-block  0
+        -: 1504:
+        -: 1505:template<class _CharT, class _Traits, class _Allocator>
         -: 1506:basic_istream<_CharT, _Traits>&
-        -: 1507:getline(basic_istream<_CharT, _Traits>& __is,
+    #####: 1507:getline(basic_istream<_CharT, _Traits>& __is,
+    $$$$$: 1507-block  0
         -: 1508:        basic_string<_CharT, _Traits, _Allocator>& __str, _CharT __dlm)
-    #####: 1509:{
-    $$$$$: 1509-block  0
-        -: 1510:    ios_base::iostate __state = ios_base::goodbit;
-        -: 1511:    typename basic_istream<_CharT, _Traits>::sentry __sen(__is, true);
+        -: 1509:{
+    #####: 1510:    ios_base::iostate __state = ios_base::goodbit;
+    #####: 1511:    typename basic_istream<_CharT, _Traits>::sentry __sen(__is, true);
     #####: 1512:    if (__sen)
-    #####: 1513:    {
-    #####: 1514:#ifndef _LIBCPP_NO_EXCEPTIONS
-    $$$$$: 1514-block  0
+    $$$$$: 1512-block  0
+        -: 1513:    {
+        -: 1514:#ifndef _LIBCPP_NO_EXCEPTIONS
         -: 1515:        try
         -: 1516:        {
         -: 1517:#endif
-        -: 1518:            __str.clear();
-        -: 1519:            streamsize __extr = 0;
+    #####: 1518:            __str.clear();
+    #####: 1519:            streamsize __extr = 0;
     #####: 1520:            while (true)
-    #####: 1521:            {
+    $$$$$: 1520-block  0
+    $$$$$: 1520-block  1
+    $$$$$: 1520-block  2
+        -: 1521:            {
     #####: 1522:                typename _Traits::int_type __i = __is.rdbuf()->sbumpc();
     $$$$$: 1522-block  0
     $$$$$: 1522-block  1
-    $$$$$: 1522-block  2
-        -: 1523:                if (_Traits::eq_int_type(__i, _Traits::eof()))
-    #####: 1524:                {
-    $$$$$: 1524-block  0
-    $$$$$: 1524-block  1
+    #####: 1523:                if (_Traits::eq_int_type(__i, _Traits::eof()))
+    $$$$$: 1523-block  0
+        -: 1524:                {
     #####: 1525:                   __state |= ios_base::eofbit;
-    $$$$$: 1525-block  0
-        -: 1526:                   break;
-    #####: 1527:                }
+    #####: 1526:                   break;
+    $$$$$: 1526-block  0
+        -: 1527:                }
     #####: 1528:                ++__extr;
-    $$$$$: 1528-block  0
-        -: 1529:                _CharT __ch = _Traits::to_char_type(__i);
+    #####: 1529:                _CharT __ch = _Traits::to_char_type(__i);
     #####: 1530:                if (_Traits::eq(__ch, __dlm))
+    $$$$$: 1530-block  0
     #####: 1531:                    break;
+    $$$$$: 1531-block  0
     #####: 1532:                __str.push_back(__ch);
     $$$$$: 1532-block  0
     #####: 1533:                if (__str.size() == __str.max_size())
     $$$$$: 1533-block  0
-    #####: 1534:                {
-    $$$$$: 1534-block  0
+        -: 1534:                {
     #####: 1535:                    __state |= ios_base::failbit;
-    $$$$$: 1535-block  0
-        -: 1536:                    break;
-    #####: 1537:                }
-    #####: 1538:            }
-    $$$$$: 1538-block  0
-        -: 1539:            if (__extr == 0)
-        -: 1540:               __state |= ios_base::failbit;
-    #####: 1541:#ifndef _LIBCPP_NO_EXCEPTIONS
-    $$$$$: 1541-block  0
+    #####: 1536:                    break;
+    $$$$$: 1536-block  0
+        -: 1537:                }
+        -: 1538:            }
+    #####: 1539:            if (__extr == 0)
+    $$$$$: 1539-block  0
+    #####: 1540:               __state |= ios_base::failbit;
+    $$$$$: 1540-block  0
+        -: 1541:#ifndef _LIBCPP_NO_EXCEPTIONS
     #####: 1542:        }
     $$$$$: 1542-block  0
         -: 1543:        catch (...)
-    #####: 1544:        {
-    $$$$$: 1544-block  0
-        -: 1545:            __state |= ios_base::badbit;
-        -: 1546:            __is.__setstate_nothrow(__state);
+        -: 1544:        {
+    #####: 1545:            __state |= ios_base::badbit;
+    #####: 1546:            __is.__setstate_nothrow(__state);
+    $$$$$: 1546-block  0
     #####: 1547:            if (__is.exceptions() & ios_base::badbit)
-    #####: 1548:            {
-    $$$$$: 1548-block  0
+    $$$$$: 1547-block  0
+    $$$$$: 1547-block  1
+        -: 1548:            {
     #####: 1549:                throw;
     $$$$$: 1549-block  0
-    $$$$$: 1549-block  1
         -: 1550:            }
     #####: 1551:        }
     $$$$$: 1551-block  0
+    $$$$$: 1551-block  1
+    $$$$$: 1551-block  2
+    $$$$$: 1551-block  3
+    $$$$$: 1551-block  4
         -: 1552:#endif
     #####: 1553:        __is.setstate(__state);
-    $$$$$: 1553-block  0
-    $$$$$: 1553-block  1
-    $$$$$: 1553-block  2
-    $$$$$: 1553-block  3
-    $$$$$: 1553-block  4
-        -: 1554:    }
+    #####: 1554:    }
+    $$$$$: 1554-block  0
     #####: 1555:    return __is;
+    $$$$$: 1555-block  0
     #####: 1556:}
     $$$$$: 1556-block  0
-    #####: 1557:
-    $$$$$: 1557-block  0
-    #####: 1558:template<class _CharT, class _Traits, class _Allocator>
-    $$$$$: 1558-block  0
+        -: 1557:
+        -: 1558:template<class _CharT, class _Traits, class _Allocator>
         -: 1559:inline _LIBCPP_INLINE_VISIBILITY
         -: 1560:basic_istream<_CharT, _Traits>&
-        -: 1561:getline(basic_istream<_CharT, _Traits>& __is,
+    #####: 1561:getline(basic_istream<_CharT, _Traits>& __is,
+    $$$$$: 1561-block  0
         -: 1562:        basic_string<_CharT, _Traits, _Allocator>& __str)
-    #####: 1563:{
-    $$$$$: 1563-block  0
-        -: 1564:    return getline(__is, __str, __is.widen('\n'));
+        -: 1563:{
+    #####: 1564:    return getline(__is, __str, __is.widen('\n'));
+    $$$$$: 1564-block  0
         -: 1565:}
-    #####: 1566:
-    $$$$$: 1566-block  0
+        -: 1566:
         -: 1567:#ifndef _LIBCPP_CXX03_LANG
         -: 1568:
         -: 1569:template<class _CharT, class _Traits, class _Allocator>

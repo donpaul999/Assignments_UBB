@@ -1,0 +1,237 @@
+        -:    0:Source:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iosfwd
+        -:    0:Graph:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles/lab8.dir/Repository.gcno
+        -:    0:Data:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles/lab8.dir/Repository.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:// -*- C++ -*-
+        -:    2://===--------------------------- iosfwd -----------------------------------===//
+        -:    3://
+        -:    4:// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+        -:    5:// See https://llvm.org/LICENSE.txt for license information.
+        -:    6:// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+        -:    7://
+        -:    8://===----------------------------------------------------------------------===//
+        -:    9:
+        -:   10:#ifndef _LIBCPP_IOSFWD
+        -:   11:#define _LIBCPP_IOSFWD
+        -:   12:
+        -:   13:/*
+        -:   14:    iosfwd synopsis
+        -:   15:
+        -:   16:namespace std
+        -:   17:{
+        -:   18:
+        -:   19:template<class charT> struct char_traits;
+        -:   20:template<>            struct char_traits<char>;
+        -:   21:template<>            struct char_traits<char8_t>;  // C++20
+        -:   22:template<>            struct char_traits<char16_t>;
+        -:   23:template<>            struct char_traits<char32_t>;
+        -:   24:template<>            struct char_traits<wchar_t>;
+        -:   25:
+        -:   26:template<class T>     class allocator;
+        -:   27:
+        -:   28:class ios_base;
+        -:   29:template <class charT, class traits = char_traits<charT> > class basic_ios;
+        -:   30:
+        -:   31:template <class charT, class traits = char_traits<charT> > class basic_streambuf;
+        -:   32:template <class charT, class traits = char_traits<charT> > class basic_istream;
+        -:   33:template <class charT, class traits = char_traits<charT> > class basic_ostream;
+        -:   34:template <class charT, class traits = char_traits<charT> > class basic_iostream;
+        -:   35:
+        -:   36:template <class charT, class traits = char_traits<charT>, class Allocator = allocator<charT> >
+        -:   37:    class basic_stringbuf;
+        -:   38:template <class charT, class traits = char_traits<charT>, class Allocator = allocator<charT> >
+        -:   39:    class basic_istringstream;
+        -:   40:template <class charT, class traits = char_traits<charT>, class Allocator = allocator<charT> >
+        -:   41:    class basic_ostringstream;
+        -:   42:template <class charT, class traits = char_traits<charT>, class Allocator = allocator<charT> >
+        -:   43:    class basic_stringstream;
+        -:   44:
+        -:   45:template <class charT, class traits = char_traits<charT> > class basic_filebuf;
+        -:   46:template <class charT, class traits = char_traits<charT> > class basic_ifstream;
+        -:   47:template <class charT, class traits = char_traits<charT> > class basic_ofstream;
+        -:   48:template <class charT, class traits = char_traits<charT> > class basic_fstream;
+        -:   49:
+        -:   50:template <class charT, class traits = char_traits<charT> > class istreambuf_iterator;
+        -:   51:template <class charT, class traits = char_traits<charT> > class ostreambuf_iterator;
+        -:   52:
+        -:   53:typedef basic_ios<char>              ios;
+        -:   54:typedef basic_ios<wchar_t>           wios;
+        -:   55:
+        -:   56:typedef basic_streambuf<char>        streambuf;
+        -:   57:typedef basic_istream<char>          istream;
+        -:   58:typedef basic_ostream<char>          ostream;
+        -:   59:typedef basic_iostream<char>         iostream;
+        -:   60:
+        -:   61:typedef basic_stringbuf<char>        stringbuf;
+        -:   62:typedef basic_istringstream<char>    istringstream;
+        -:   63:typedef basic_ostringstream<char>    ostringstream;
+        -:   64:typedef basic_stringstream<char>     stringstream;
+        -:   65:
+        -:   66:typedef basic_filebuf<char>          filebuf;
+        -:   67:typedef basic_ifstream<char>         ifstream;
+        -:   68:typedef basic_ofstream<char>         ofstream;
+        -:   69:typedef basic_fstream<char>          fstream;
+        -:   70:
+        -:   71:typedef basic_streambuf<wchar_t>     wstreambuf;
+        -:   72:typedef basic_istream<wchar_t>       wistream;
+        -:   73:typedef basic_ostream<wchar_t>       wostream;
+        -:   74:typedef basic_iostream<wchar_t>      wiostream;
+        -:   75:
+        -:   76:typedef basic_stringbuf<wchar_t>     wstringbuf;
+        -:   77:typedef basic_istringstream<wchar_t> wistringstream;
+        -:   78:typedef basic_ostringstream<wchar_t> wostringstream;
+        -:   79:typedef basic_stringstream<wchar_t>  wstringstream;
+        -:   80:
+        -:   81:typedef basic_filebuf<wchar_t>       wfilebuf;
+        -:   82:typedef basic_ifstream<wchar_t>      wifstream;
+        -:   83:typedef basic_ofstream<wchar_t>      wofstream;
+        -:   84:typedef basic_fstream<wchar_t>       wfstream;
+        -:   85:
+        -:   86:template <class state> class fpos;
+        -:   87:typedef fpos<char_traits<char>::state_type>    streampos;
+        -:   88:typedef fpos<char_traits<wchar_t>::state_type> wstreampos;
+        -:   89:
+        -:   90:}  // std
+        -:   91:
+        -:   92:*/
+        -:   93:
+        -:   94:#include <__config>
+        -:   95:#include <wchar.h>  // for mbstate_t
+        -:   96:
+        -:   97:#if !defined(_LIBCPP_HAS_NO_PRAGMA_SYSTEM_HEADER)
+        -:   98:#pragma GCC system_header
+        -:   99:#endif
+        -:  100:
+        -:  101:_LIBCPP_BEGIN_NAMESPACE_STD
+        -:  102:
+        -:  103:class _LIBCPP_TYPE_VIS ios_base;
+        -:  104:
+        -:  105:template<class _CharT>  struct _LIBCPP_TEMPLATE_VIS char_traits;
+        -:  106:template<> struct char_traits<char>;
+        -:  107:#ifndef _LIBCPP_NO_HAS_CHAR8_T
+        -:  108:template<> struct char_traits<char8_t>;
+        -:  109:#endif
+        -:  110:template<> struct char_traits<char16_t>;
+        -:  111:template<> struct char_traits<char32_t>;
+        -:  112:template<> struct char_traits<wchar_t>;
+        -:  113:
+        -:  114:template<class _Tp>     class _LIBCPP_TEMPLATE_VIS allocator;
+        -:  115:
+        -:  116:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  117:    class _LIBCPP_TEMPLATE_VIS basic_ios;
+        -:  118:
+        -:  119:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  120:    class _LIBCPP_TEMPLATE_VIS basic_streambuf;
+        -:  121:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  122:    class _LIBCPP_TEMPLATE_VIS basic_istream;
+        -:  123:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  124:    class _LIBCPP_TEMPLATE_VIS basic_ostream;
+        -:  125:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  126:    class _LIBCPP_TEMPLATE_VIS basic_iostream;
+        -:  127:
+        -:  128:template <class _CharT, class _Traits = char_traits<_CharT>,
+        -:  129:          class _Allocator = allocator<_CharT> >
+        -:  130:    class _LIBCPP_TEMPLATE_VIS basic_stringbuf;
+        -:  131:template <class _CharT, class _Traits = char_traits<_CharT>,
+        -:  132:          class _Allocator = allocator<_CharT> >
+        -:  133:    class _LIBCPP_TEMPLATE_VIS basic_istringstream;
+        -:  134:template <class _CharT, class _Traits = char_traits<_CharT>,
+        -:  135:          class _Allocator = allocator<_CharT> >
+        -:  136:    class _LIBCPP_TEMPLATE_VIS basic_ostringstream;
+        -:  137:template <class _CharT, class _Traits = char_traits<_CharT>,
+        -:  138:          class _Allocator = allocator<_CharT> >
+        -:  139:    class _LIBCPP_TEMPLATE_VIS basic_stringstream;
+        -:  140:
+        -:  141:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  142:    class _LIBCPP_TEMPLATE_VIS basic_filebuf;
+        -:  143:template <class _CharT, class _Traits = char_traits<_CharT> >
+    #####:  144:    class _LIBCPP_TEMPLATE_VIS basic_ifstream;
+    $$$$$:  144-block  0
+    $$$$$:  144-block  1
+    $$$$$:  144-block  2
+    $$$$$:  144-block  3
+    $$$$$:  144-block  4
+    $$$$$:  144-block  5
+        -:  145:template <class _CharT, class _Traits = char_traits<_CharT> >
+    #####:  146:    class _LIBCPP_TEMPLATE_VIS basic_ofstream;
+    $$$$$:  146-block  0
+    $$$$$:  146-block  1
+    $$$$$:  146-block  2
+    $$$$$:  146-block  3
+    $$$$$:  146-block  4
+    $$$$$:  146-block  5
+        -:  147:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  148:    class _LIBCPP_TEMPLATE_VIS basic_fstream;
+        -:  149:
+        -:  150:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  151:    class _LIBCPP_TEMPLATE_VIS istreambuf_iterator;
+        -:  152:template <class _CharT, class _Traits = char_traits<_CharT> >
+        -:  153:    class _LIBCPP_TEMPLATE_VIS ostreambuf_iterator;
+        -:  154:
+        -:  155:typedef basic_ios<char>              ios;
+        -:  156:typedef basic_ios<wchar_t>           wios;
+        -:  157:
+        -:  158:typedef basic_streambuf<char>        streambuf;
+        -:  159:typedef basic_istream<char>          istream;
+        -:  160:typedef basic_ostream<char>          ostream;
+        -:  161:typedef basic_iostream<char>         iostream;
+        -:  162:
+        -:  163:typedef basic_stringbuf<char>        stringbuf;
+        -:  164:typedef basic_istringstream<char>    istringstream;
+        -:  165:typedef basic_ostringstream<char>    ostringstream;
+        -:  166:typedef basic_stringstream<char>     stringstream;
+        -:  167:
+        -:  168:typedef basic_filebuf<char>          filebuf;
+        -:  169:typedef basic_ifstream<char>         ifstream;
+        -:  170:typedef basic_ofstream<char>         ofstream;
+        -:  171:typedef basic_fstream<char>          fstream;
+        -:  172:
+        -:  173:typedef basic_streambuf<wchar_t>     wstreambuf;
+        -:  174:typedef basic_istream<wchar_t>       wistream;
+        -:  175:typedef basic_ostream<wchar_t>       wostream;
+        -:  176:typedef basic_iostream<wchar_t>      wiostream;
+        -:  177:
+        -:  178:typedef basic_stringbuf<wchar_t>     wstringbuf;
+        -:  179:typedef basic_istringstream<wchar_t> wistringstream;
+        -:  180:typedef basic_ostringstream<wchar_t> wostringstream;
+        -:  181:typedef basic_stringstream<wchar_t>  wstringstream;
+        -:  182:
+        -:  183:typedef basic_filebuf<wchar_t>       wfilebuf;
+        -:  184:typedef basic_ifstream<wchar_t>      wifstream;
+        -:  185:typedef basic_ofstream<wchar_t>      wofstream;
+        -:  186:typedef basic_fstream<wchar_t>       wfstream;
+        -:  187:
+        -:  188:template <class _State>             class _LIBCPP_TEMPLATE_VIS fpos;
+        -:  189:typedef fpos<mbstate_t>    streampos;
+        -:  190:typedef fpos<mbstate_t>    wstreampos;
+        -:  191:#ifndef _LIBCPP_NO_HAS_CHAR8_T
+        -:  192:typedef fpos<mbstate_t>    u8streampos;
+        -:  193:#endif
+        -:  194:#ifndef _LIBCPP_HAS_NO_UNICODE_CHARS
+        -:  195:typedef fpos<mbstate_t>    u16streampos;
+        -:  196:typedef fpos<mbstate_t>    u32streampos;
+        -:  197:#endif  // _LIBCPP_HAS_NO_UNICODE_CHARS
+        -:  198:
+        -:  199:#if defined(_NEWLIB_VERSION)
+        -:  200:// On newlib, off_t is 'long int'
+        -:  201:typedef long int streamoff;         // for char_traits in <string>
+        -:  202:#else
+        -:  203:typedef long long streamoff;        // for char_traits in <string>
+        -:  204:#endif
+        -:  205:
+        -:  206:template <class _CharT,             // for <stdexcept>
+        -:  207:          class _Traits = char_traits<_CharT>,
+        -:  208:          class _Allocator = allocator<_CharT> >
+        -:  209:    class _LIBCPP_TEMPLATE_VIS basic_string;
+        -:  210:typedef basic_string<char, char_traits<char>, allocator<char> > string;
+        -:  211:typedef basic_string<wchar_t, char_traits<wchar_t>, allocator<wchar_t> > wstring;
+        -:  212:
+        -:  213:
+        -:  214:// Include other forward declarations here
+        -:  215:template <class _Tp, class _Alloc = allocator<_Tp> >
+        -:  216:class _LIBCPP_TEMPLATE_VIS vector;
+        -:  217:
+        -:  218:_LIBCPP_END_NAMESPACE_STD
+        -:  219:
+        -:  220:#endif  // _LIBCPP_IOSFWD

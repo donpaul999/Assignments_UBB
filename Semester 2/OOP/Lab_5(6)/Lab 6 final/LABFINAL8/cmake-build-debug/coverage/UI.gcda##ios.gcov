@@ -336,29 +336,29 @@
         -:  331:    void __set_failbit_and_consider_rethrow();
         -:  332:
         -:  333:    _LIBCPP_INLINE_VISIBILITY
-        -:  334:    void __setstate_nothrow(iostate __state)
-    #####:  335:    {
-    $$$$$:  335-block  0
-        -:  336:        if (__rdbuf_)
+    #####:  334:    void __setstate_nothrow(iostate __state)
+    $$$$$:  334-block  0
+        -:  335:    {
+    #####:  336:        if (__rdbuf_)
+    $$$$$:  336-block  0
     #####:  337:            __rdstate_ |= __state;
     $$$$$:  337-block  0
-    #####:  338:        else
-    $$$$$:  338-block  0
-        -:  339:            __rdstate_ |= __state | ios_base::badbit;
+        -:  338:        else
+    #####:  339:            __rdstate_ |= __state | ios_base::badbit;
+    $$$$$:  339-block  0
     #####:  340:    }
     $$$$$:  340-block  0
-    #####:  341:
-    $$$$$:  341-block  0
+        -:  341:
         -:  342:protected:
         -:  343:    _LIBCPP_INLINE_VISIBILITY
         -:  344:    ios_base() {// purposefully does no initialization
         -:  345:               }
         -:  346:
         -:  347:    void init(void* __sb);
-        -:  348:    _LIBCPP_INLINE_VISIBILITY void* rdbuf() const {return __rdbuf_;}
-    #####:  349:
-    $$$$$:  349-block  0
-    $$$$$:  349-block  1
+    #####:  348:    _LIBCPP_INLINE_VISIBILITY void* rdbuf() const {return __rdbuf_;}
+    $$$$$:  348-block  0
+    $$$$$:  348-block  1
+        -:  349:
         -:  350:    _LIBCPP_INLINE_VISIBILITY
         -:  351:    void rdbuf(void* __sb)
         -:  352:    {
@@ -467,12 +467,12 @@
         -:  455:
         -:  456:inline _LIBCPP_INLINE_VISIBILITY
         -:  457:ios_base::fmtflags
-        -:  458:ios_base::flags() const
-    #####:  459:{
-    $$$$$:  459-block  0
-        -:  460:    return __fmtflags_;
-    #####:  461:}
-    $$$$$:  461-block  0
+    #####:  458:ios_base::flags() const
+    $$$$$:  458-block  0
+        -:  459:{
+    #####:  460:    return __fmtflags_;
+    $$$$$:  460-block  0
+        -:  461:}
         -:  462:
         -:  463:inline _LIBCPP_INLINE_VISIBILITY
         -:  464:ios_base::fmtflags
@@ -531,23 +531,23 @@
         -:  517:
         -:  518:inline _LIBCPP_INLINE_VISIBILITY
         -:  519:streamsize
-        -:  520:ios_base::width() const
-    #####:  521:{
-    $$$$$:  521-block  0
-        -:  522:    return __width_;
-    #####:  523:}
-    $$$$$:  523-block  0
+    #####:  520:ios_base::width() const
+    $$$$$:  520-block  0
+        -:  521:{
+    #####:  522:    return __width_;
+    $$$$$:  522-block  0
+        -:  523:}
         -:  524:
         -:  525:inline _LIBCPP_INLINE_VISIBILITY
         -:  526:streamsize
-        -:  527:ios_base::width(streamsize __wide)
-    #####:  528:{
-    $$$$$:  528-block  0
-        -:  529:    streamsize __r = __width_;
+    #####:  527:ios_base::width(streamsize __wide)
+    $$$$$:  527-block  0
+        -:  528:{
+    #####:  529:    streamsize __r = __width_;
     #####:  530:    __width_ = __wide;
     #####:  531:    return __r;
-    #####:  532:}
-    $$$$$:  532-block  0
+    $$$$$:  531-block  0
+        -:  532:}
         -:  533:
         -:  534:// iostate
         -:  535:
@@ -560,13 +560,13 @@
         -:  542:
         -:  543:inline _LIBCPP_INLINE_VISIBILITY
         -:  544:void
-        -:  545:ios_base::setstate(iostate __state)
-    #####:  546:{
-    $$$$$:  546-block  0
-        -:  547:    clear(__rdstate_ | __state);
+    #####:  545:ios_base::setstate(iostate __state)
+    $$$$$:  545-block  0
+        -:  546:{
+    #####:  547:    clear(__rdstate_ | __state);
     #####:  548:}
-    #####:  549:
-    $$$$$:  549-block  0
+    $$$$$:  548-block  0
+        -:  549:
         -:  550:inline _LIBCPP_INLINE_VISIBILITY
         -:  551:bool
         -:  552:ios_base::good() const
@@ -597,12 +597,12 @@
         -:  577:
         -:  578:inline _LIBCPP_INLINE_VISIBILITY
         -:  579:ios_base::iostate
-        -:  580:ios_base::exceptions() const
-    #####:  581:{
-    $$$$$:  581-block  0
-        -:  582:    return __exceptions_;
-    #####:  583:}
-    $$$$$:  583-block  0
+    #####:  580:ios_base::exceptions() const
+    $$$$$:  580-block  0
+        -:  581:{
+    #####:  582:    return __exceptions_;
+    $$$$$:  582-block  0
+        -:  583:}
         -:  584:
         -:  585:inline _LIBCPP_INLINE_VISIBILITY
         -:  586:void
@@ -651,18 +651,18 @@
         -:  629:    _LIBCPP_INLINE_VISIBILITY bool operator!() const    {return  fail();}
         -:  630:    _LIBCPP_INLINE_VISIBILITY iostate rdstate() const   {return ios_base::rdstate();}
         -:  631:    _LIBCPP_INLINE_VISIBILITY void clear(iostate __state = goodbit) {ios_base::clear(__state);}
-        -:  632:    _LIBCPP_INLINE_VISIBILITY void setstate(iostate __state) {ios_base::setstate(__state);}
-    #####:  633:    _LIBCPP_INLINE_VISIBILITY bool good() const {return ios_base::good();}
-    $$$$$:  633-block  0
-    $$$$$:  633-block  1
+    #####:  632:    _LIBCPP_INLINE_VISIBILITY void setstate(iostate __state) {ios_base::setstate(__state);}
+    $$$$$:  632-block  0
+    $$$$$:  632-block  1
+        -:  633:    _LIBCPP_INLINE_VISIBILITY bool good() const {return ios_base::good();}
         -:  634:    _LIBCPP_INLINE_VISIBILITY bool eof() const  {return ios_base::eof();}
         -:  635:    _LIBCPP_INLINE_VISIBILITY bool fail() const {return ios_base::fail();}
         -:  636:    _LIBCPP_INLINE_VISIBILITY bool bad() const  {return ios_base::bad();}
         -:  637:
-        -:  638:    _LIBCPP_INLINE_VISIBILITY iostate exceptions() const {return ios_base::exceptions();}
-    #####:  639:    _LIBCPP_INLINE_VISIBILITY void exceptions(iostate __iostate) {ios_base::exceptions(__iostate);}
-    $$$$$:  639-block  0
-    $$$$$:  639-block  1
+    #####:  638:    _LIBCPP_INLINE_VISIBILITY iostate exceptions() const {return ios_base::exceptions();}
+    $$$$$:  638-block  0
+    $$$$$:  638-block  1
+        -:  639:    _LIBCPP_INLINE_VISIBILITY void exceptions(iostate __iostate) {ios_base::exceptions(__iostate);}
         -:  640:
         -:  641:    // 27.5.4.1 Constructor/destructor:
         -:  642:    _LIBCPP_INLINE_VISIBILITY
@@ -760,12 +760,12 @@
         -:  734:template <class _CharT, class _Traits>
         -:  735:inline _LIBCPP_INLINE_VISIBILITY
         -:  736:basic_streambuf<_CharT, _Traits>*
-        -:  737:basic_ios<_CharT, _Traits>::rdbuf() const
-    #####:  738:{
-    $$$$$:  738-block  0
-        -:  739:    return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
-    #####:  740:}
-    $$$$$:  740-block  0
+    #####:  737:basic_ios<_CharT, _Traits>::rdbuf() const
+    $$$$$:  737-block  0
+        -:  738:{
+    #####:  739:    return static_cast<basic_streambuf<char_type, traits_type>*>(ios_base::rdbuf());
+    $$$$$:  739-block  0
+        -:  740:}
         -:  741:
         -:  742:template <class _CharT, class _Traits>
         -:  743:inline _LIBCPP_INLINE_VISIBILITY
@@ -800,30 +800,30 @@
         -:  772:template <class _CharT, class _Traits>
         -:  773:inline _LIBCPP_INLINE_VISIBILITY
         -:  774:_CharT
-        -:  775:basic_ios<_CharT, _Traits>::widen(char __c) const
-    #####:  776:{
-    $$$$$:  776-block  0
-        -:  777:    return use_facet<ctype<char_type> >(getloc()).widen(__c);
+    #####:  775:basic_ios<_CharT, _Traits>::widen(char __c) const
+    $$$$$:  775-block  0
+        -:  776:{
+    #####:  777:    return use_facet<ctype<char_type> >(getloc()).widen(__c);
+    $$$$$:  777-block  0
+    $$$$$:  777-block  1
+    $$$$$:  777-block  2
+    $$$$$:  777-block  3
+    $$$$$:  777-block  4
     #####:  778:}
-    $$$$$:  778-block  0
-    $$$$$:  778-block  1
-    $$$$$:  778-block  2
-    $$$$$:  778-block  3
-    $$$$$:  778-block  4
-    #####:  779:
+        -:  779:
         -:  780:template <class _CharT, class _Traits>
         -:  781:inline _LIBCPP_INLINE_VISIBILITY
         -:  782:_CharT
-        -:  783:basic_ios<_CharT, _Traits>::fill() const
-    #####:  784:{
-    $$$$$:  784-block  0
-        -:  785:    if (traits_type::eq_int_type(traits_type::eof(), __fill_))
+    #####:  783:basic_ios<_CharT, _Traits>::fill() const
+    $$$$$:  783-block  0
+        -:  784:{
+    #####:  785:    if (traits_type::eq_int_type(traits_type::eof(), __fill_))
+    $$$$$:  785-block  0
     #####:  786:        __fill_ = widen(' ');
     $$$$$:  786-block  0
     #####:  787:    return __fill_;
     $$$$$:  787-block  0
-    #####:  788:}
-    $$$$$:  788-block  0
+        -:  788:}
         -:  789:
         -:  790:template <class _CharT, class _Traits>
         -:  791:inline _LIBCPP_INLINE_VISIBILITY

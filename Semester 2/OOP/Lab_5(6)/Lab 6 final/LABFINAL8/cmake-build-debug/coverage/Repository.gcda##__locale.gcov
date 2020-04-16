@@ -226,41 +226,41 @@
         -:  221:inline _LIBCPP_INLINE_VISIBILITY
         -:  222:locale::locale(const locale& __other, _Facet* __f)
         -:  223:{
-       15:  224:    __install_ctor(__other, __f, __f ? __f->id.__get() : 0);
-       15:  224-block  0
+        -:  224:    __install_ctor(__other, __f, __f ? __f->id.__get() : 0);
         -:  225:}
-       15:  226:
-       15:  226-block  0
-       15:  226-block  1
-    $$$$$:  226-block  2
+        -:  226:
         -:  227:template <class _Facet>
         -:  228:locale
         -:  229:locale::combine(const locale& __other) const
         -:  230:{
         -:  231:    if (!_VSTD::has_facet<_Facet>(__other))
-       15:  232:        __throw_runtime_error("locale::combine: locale missing facet");
-       15:  232-block  0
-    $$$$$:  232-block  1
+        -:  232:        __throw_runtime_error("locale::combine: locale missing facet");
         -:  233:
-       15:  234:    return locale(*this, &const_cast<_Facet&>(_VSTD::use_facet<_Facet>(__other)));
-       15:  234-block  0
-    $$$$$:  234-block  1
+        -:  234:    return locale(*this, &const_cast<_Facet&>(_VSTD::use_facet<_Facet>(__other)));
         -:  235:}
         -:  236:
         -:  237:template <class _Facet>
         -:  238:inline _LIBCPP_INLINE_VISIBILITY
         -:  239:bool
-        -:  240:has_facet(const locale& __l)  _NOEXCEPT
+       15:  240:has_facet(const locale& __l)  _NOEXCEPT
+       15:  240-block  0
         -:  241:{
-        -:  242:    return __l.has_facet(_Facet::id);
+       15:  242:    return __l.has_facet(_Facet::id);
+       15:  242-block  0
+       15:  242-block  1
+    $$$$$:  242-block  2
         -:  243:}
         -:  244:
         -:  245:template <class _Facet>
         -:  246:inline _LIBCPP_INLINE_VISIBILITY
         -:  247:const _Facet&
-        -:  248:use_facet(const locale& __l)
+       15:  248:use_facet(const locale& __l)
+       15:  248-block  0
+    $$$$$:  248-block  1
         -:  249:{
-        -:  250:    return static_cast<const _Facet&>(*__l.use_facet(_Facet::id));
+       15:  250:    return static_cast<const _Facet&>(*__l.use_facet(_Facet::id));
+       15:  250-block  0
+    $$$$$:  250-block  1
         -:  251:}
         -:  252:
         -:  253:// template <class _CharT> class collate;
@@ -657,11 +657,9 @@
         -:  644:
         -:  645:    _LIBCPP_INLINE_VISIBILITY
         -:  646:    const char_type* scan_not(mask __m, const char_type* __low, const char_type* __high) const
-    #####:  647:    {
-    $$$$$:  647-block  0
+        -:  647:    {
         -:  648:        for (; __low != __high; ++__low)
-    #####:  649:            if (!(isascii(*__low) && (__tab_[static_cast<int>(*__low)] & __m)))
-    $$$$$:  649-block  0
+        -:  649:            if (!(isascii(*__low) && (__tab_[static_cast<int>(*__low)] & __m)))
         -:  650:                break;
         -:  651:        return __low;
         -:  652:    }
@@ -691,9 +689,11 @@
         -:  676:    }
         -:  677:
         -:  678:    _LIBCPP_INLINE_VISIBILITY
-        -:  679:    char_type widen(char __c) const
+    #####:  679:    char_type widen(char __c) const
+    $$$$$:  679-block  0
         -:  680:    {
-        -:  681:        return do_widen(__c);
+    #####:  681:        return do_widen(__c);
+    $$$$$:  681-block  0
         -:  682:    }
         -:  683:
         -:  684:    _LIBCPP_INLINE_VISIBILITY
@@ -894,88 +894,88 @@
         -:  879:tolower(_CharT __c, const locale& __loc)
         -:  880:{
         -:  881:    return use_facet<ctype<_CharT> >(__loc).tolower(__c);
-    #####:  882:}
-    $$$$$:  882-block  0
+        -:  882:}
         -:  883:
         -:  884:// codecvt_base
         -:  885:
-    #####:  886:class _LIBCPP_TYPE_VIS codecvt_base
-    $$$$$:  886-block  0
+        -:  886:class _LIBCPP_TYPE_VIS codecvt_base
         -:  887:{
         -:  888:public:
         -:  889:    _LIBCPP_INLINE_VISIBILITY codecvt_base() {}
-        5:  890:    enum result {ok, partial, error, noconv};
-        5:  890-block  0
+        -:  890:    enum result {ok, partial, error, noconv};
         -:  891:};
         -:  892:
-        5:  893:// template <class internT, class externT, class stateT> class codecvt;
-        5:  893-block  0
+        -:  893:// template <class internT, class externT, class stateT> class codecvt;
         -:  894:
         -:  895:template <class _InternT, class _ExternT, class _StateT> class _LIBCPP_TEMPLATE_VIS codecvt;
         -:  896:
-    #####:  897:// template <> class codecvt<char, char, mbstate_t>
-    $$$$$:  897-block  0
+        -:  897:// template <> class codecvt<char, char, mbstate_t>
         -:  898:
         -:  899:template <>
         -:  900:class _LIBCPP_TYPE_VIS codecvt<char, char, mbstate_t>
-    #####:  901:    : public locale::facet,
-    $$$$$:  901-block  0
+        -:  901:    : public locale::facet,
         -:  902:      public codecvt_base
         -:  903:{
         -:  904:public:
-    #####:  905:    typedef char      intern_type;
-    $$$$$:  905-block  0
+        -:  905:    typedef char      intern_type;
         -:  906:    typedef char      extern_type;
-    #####:  907:    typedef mbstate_t state_type;
-    $$$$$:  907-block  0
+        -:  907:    typedef mbstate_t state_type;
         -:  908:
         -:  909:    _LIBCPP_INLINE_VISIBILITY
         -:  910:    explicit codecvt(size_t __refs = 0)
-       15:  911:        : locale::facet(__refs) {}
-       15:  911-block  0
+        -:  911:        : locale::facet(__refs) {}
         -:  912:
-       15:  913:    _LIBCPP_INLINE_VISIBILITY
-       15:  913-block  0
-        -:  914:    result out(state_type& __st,
+        -:  913:    _LIBCPP_INLINE_VISIBILITY
+    #####:  914:    result out(state_type& __st,
+    $$$$$:  914-block  0
         -:  915:               const intern_type* __frm, const intern_type* __frm_end, const intern_type*& __frm_nxt,
         -:  916:               extern_type* __to, extern_type* __to_end, extern_type*& __to_nxt) const
-    #####:  917:    {
-    $$$$$:  917-block  0
-        -:  918:        return do_out(__st, __frm, __frm_end, __frm_nxt, __to, __to_end, __to_nxt);
-    #####:  919:    }
-    $$$$$:  919-block  0
+        -:  917:    {
+    #####:  918:        return do_out(__st, __frm, __frm_end, __frm_nxt, __to, __to_end, __to_nxt);
+    $$$$$:  918-block  0
+        -:  919:    }
         -:  920:
         -:  921:    _LIBCPP_INLINE_VISIBILITY
-        -:  922:    result unshift(state_type& __st,
+        5:  922:    result unshift(state_type& __st,
+        5:  922-block  0
         -:  923:                   extern_type* __to, extern_type* __to_end, extern_type*& __to_nxt) const
         -:  924:    {
-        -:  925:        return do_unshift(__st, __to, __to_end, __to_nxt);
+        5:  925:        return do_unshift(__st, __to, __to_end, __to_nxt);
+        5:  925-block  0
         -:  926:    }
         -:  927:
         -:  928:    _LIBCPP_INLINE_VISIBILITY
-        -:  929:    result in(state_type& __st,
+    #####:  929:    result in(state_type& __st,
+    $$$$$:  929-block  0
         -:  930:              const extern_type* __frm, const extern_type* __frm_end, const extern_type*& __frm_nxt,
         -:  931:              intern_type* __to, intern_type* __to_end, intern_type*& __to_nxt) const
         -:  932:    {
-        -:  933:        return do_in(__st, __frm, __frm_end, __frm_nxt, __to, __to_end, __to_nxt);
+    #####:  933:        return do_in(__st, __frm, __frm_end, __frm_nxt, __to, __to_end, __to_nxt);
+    $$$$$:  933-block  0
         -:  934:    }
         -:  935:
         -:  936:    _LIBCPP_INLINE_VISIBILITY
-        -:  937:    int encoding() const  _NOEXCEPT
+    #####:  937:    int encoding() const  _NOEXCEPT
+    $$$$$:  937-block  0
         -:  938:    {
-        -:  939:        return do_encoding();
+    #####:  939:        return do_encoding();
+    $$$$$:  939-block  0
         -:  940:    }
         -:  941:
         -:  942:    _LIBCPP_INLINE_VISIBILITY
-        -:  943:    bool always_noconv() const  _NOEXCEPT
+       15:  943:    bool always_noconv() const  _NOEXCEPT
+       15:  943-block  0
         -:  944:    {
-        -:  945:        return do_always_noconv();
+       15:  945:        return do_always_noconv();
+       15:  945-block  0
         -:  946:    }
         -:  947:
         -:  948:    _LIBCPP_INLINE_VISIBILITY
-        -:  949:    int length(state_type& __st, const extern_type* __frm, const extern_type* __end, size_t __mx) const
+    #####:  949:    int length(state_type& __st, const extern_type* __frm, const extern_type* __end, size_t __mx) const
+    $$$$$:  949-block  0
         -:  950:    {
-        -:  951:        return do_length(__st, __frm, __end, __mx);
+    #####:  951:        return do_length(__st, __frm, __end, __mx);
+    $$$$$:  951-block  0
         -:  952:    }
         -:  953:
         -:  954:    _LIBCPP_INLINE_VISIBILITY

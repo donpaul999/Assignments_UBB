@@ -228,17 +228,14 @@
         -:  223:    }
         -:  224:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_ALWAYS_INLINE
         -:  225:    static bool __eq(__type_name_t __lhs, __type_name_t __rhs) _NOEXCEPT {
-    #####:  226:      if (__lhs == __rhs)
+        -:  226:      if (__lhs == __rhs)
         -:  227:        return true;
         -:  228:      if (__is_type_name_unique(__lhs, __rhs))
-    #####:  229:        return false;
-    $$$$$:  229-block  0
-    $$$$$:  229-block  1
+        -:  229:        return false;
         -:  230:      return __builtin_strcmp(__type_name_to_string(__lhs), __type_name_to_string(__rhs)) == 0;
         -:  231:    }
         -:  232:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_ALWAYS_INLINE
-    #####:  233:    static bool __lt(__type_name_t __lhs, __type_name_t __rhs) _NOEXCEPT {
-    $$$$$:  233-block  0
+        -:  233:    static bool __lt(__type_name_t __lhs, __type_name_t __rhs) _NOEXCEPT {
         -:  234:      if (__is_type_name_unique(__lhs, __rhs))
         -:  235:        return __lhs < __rhs;
         -:  236:      return __builtin_strcmp(__type_name_to_string(__lhs), __type_name_to_string(__rhs)) < 0;
@@ -345,10 +342,12 @@
         -:  337:
         -:  338:_LIBCPP_BEGIN_NAMESPACE_STD
         -:  339:_LIBCPP_NORETURN inline _LIBCPP_INLINE_VISIBILITY
-        -:  340:void __throw_bad_cast()
+    #####:  340:void __throw_bad_cast()
         -:  341:{
         -:  342:#ifndef _LIBCPP_NO_EXCEPTIONS
-        -:  343:    throw bad_cast();
+    #####:  343:    throw bad_cast();
+    $$$$$:  343-block  0
+    $$$$$:  343-block  1
         -:  344:#else
         -:  345:    _VSTD::abort();
         -:  346:#endif

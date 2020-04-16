@@ -386,7 +386,6 @@
     $$$$$:  189-block  0
     $$$$$:  189-block  1
     $$$$$:  189-block  2
-    $$$$$:  189-block  3
     #####:  190:}
     $$$$$:  190-block  0
     $$$$$:  190-block  1
@@ -415,7 +414,6 @@
     $$$$$:  203-block  0
     $$$$$:  203-block  1
     $$$$$:  203-block  2
-    $$$$$:  203-block  3
     #####:  204:}
     $$$$$:  204-block  0
     $$$$$:  204-block  1
@@ -471,12 +469,10 @@
     $$$$$:  227-block  0
     #####:  228:            genre = tokenizedInput[0].substr(1);
     $$$$$:  228-block  0
-    $$$$$:  228-block  1
     #####:  229:            int numberOfLikes = stoi(tokenizedInput[1].substr(1));
     $$$$$:  229-block  0
     $$$$$:  229-block  1
     $$$$$:  229-block  2
-    $$$$$:  229-block  3
     #####:  230:        }
     $$$$$:  230-block  0
     $$$$$:  230-block  1

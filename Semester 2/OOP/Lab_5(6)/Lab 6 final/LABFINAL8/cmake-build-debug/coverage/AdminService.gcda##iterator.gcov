@@ -1370,8 +1370,7 @@
         -: 1365:        }
         -: 1366:        return *this;
         -: 1367:    }
-       18: 1368:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG
-       18: 1368-block  0
+        -: 1368:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG
         -: 1369:    ~__wrap_iter()
         -: 1370:    {
         -: 1371:        __get_db()->__erase_i(this);
@@ -1384,26 +1383,27 @@
         -: 1377:        _LIBCPP_ASSERT(__get_const_db()->__dereferenceable(this),
         -: 1378:                       "Attempted to dereference a non-dereferenceable iterator");
         -: 1379:#endif
-        -: 1380:        return *__i;
+       18: 1380:        return *__i;
+       18: 1380-block  0
         -: 1381:    }
         -: 1382:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG pointer  operator->() const _NOEXCEPT
         -: 1383:    {
-       18: 1384:#if _LIBCPP_DEBUG_LEVEL >= 2
-       18: 1384-block  0
+        -: 1384:#if _LIBCPP_DEBUG_LEVEL >= 2
         -: 1385:        _LIBCPP_ASSERT(__get_const_db()->__dereferenceable(this),
         -: 1386:                       "Attempted to dereference a non-dereferenceable iterator");
         -: 1387:#endif
         -: 1388:        return (pointer)_VSTD::addressof(*__i);
         -: 1389:    }
        18: 1390:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG __wrap_iter& operator++() _NOEXCEPT
-       18: 1391:    {
-       18: 1391-block  0
+       18: 1390-block  0
+        -: 1391:    {
         -: 1392:#if _LIBCPP_DEBUG_LEVEL >= 2
         -: 1393:        _LIBCPP_ASSERT(__get_const_db()->__dereferenceable(this),
         -: 1394:                       "Attempted to increment non-incrementable iterator");
         -: 1395:#endif
-        -: 1396:        ++__i;
-        -: 1397:        return *this;
+       18: 1396:        ++__i;
+       18: 1397:        return *this;
+       18: 1397-block  0
         -: 1398:    }
         -: 1399:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG __wrap_iter  operator++(int) _NOEXCEPT
         -: 1400:        {__wrap_iter __tmp(*this); ++(*this); return __tmp;}
@@ -1437,28 +1437,28 @@
         -: 1428:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG reference    operator[](difference_type __n) const _NOEXCEPT
         -: 1429:    {
         -: 1430:#if _LIBCPP_DEBUG_LEVEL >= 2
-       38: 1431:        _LIBCPP_ASSERT(__get_const_db()->__subscriptable(this, __n),
-       38: 1431-block  0
-       38: 1431-block  1
+        -: 1431:        _LIBCPP_ASSERT(__get_const_db()->__subscriptable(this, __n),
         -: 1432:                   "Attempted to subscript iterator outside of valid range");
         -: 1433:#endif
         -: 1434:        return __i[__n];
         -: 1435:    }
         -: 1436:
-        -: 1437:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG iterator_type base() const _NOEXCEPT {return __i;}
+       38: 1437:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG iterator_type base() const _NOEXCEPT {return __i;}
+       38: 1437-block  0
+       38: 1437-block  1
         -: 1438:
         -: 1439:private:
-        4: 1440:#if _LIBCPP_DEBUG_LEVEL >= 2
-        2: 1440-block  0
-        2: 1440-block  1
-        2: 1440-block  2
-        2: 1440-block  3
+        -: 1440:#if _LIBCPP_DEBUG_LEVEL >= 2
         -: 1441:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG __wrap_iter(const void* __p, iterator_type __x) : __i(__x)
         -: 1442:    {
         -: 1443:        __get_db()->__insert_ic(this, __p);
         -: 1444:    }
         -: 1445:#else
-        -: 1446:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG __wrap_iter(iterator_type __x) _NOEXCEPT : __i(__x) {}
+        4: 1446:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG __wrap_iter(iterator_type __x) _NOEXCEPT : __i(__x) {}
+        2: 1446-block  0
+        2: 1446-block  1
+        2: 1446-block  2
+        2: 1446-block  3
         -: 1447:#endif
         -: 1448:
         -: 1449:    template <class _Up> friend class __wrap_iter;
@@ -1537,17 +1537,17 @@
         -: 1522:      __wrap_iter<_Tp*>
         -: 1523:  >::type
         -: 1524:  __unwrap_iter(__wrap_iter<_Tp*> __i);
-       19: 1525:#endif
-       19: 1525-block  0
+        -: 1525:#endif
         -: 1526:};
-       19: 1527:
-       19: 1527-block  0
+        -: 1527:
         -: 1528:template <class _Iter1, class _Iter2>
         -: 1529:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG
         -: 1530:bool
-        -: 1531:operator==(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT
+       19: 1531:operator==(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT
+       19: 1531-block  0
         -: 1532:{
-        -: 1533:    return __x.base() == __y.base();
+       19: 1533:    return __x.base() == __y.base();
+       19: 1533-block  0
         -: 1534:}
         -: 1535:
         -: 1536:template <class _Iter1, class _Iter2>
@@ -1591,17 +1591,17 @@
         -: 1574:bool
         -: 1575:operator<=(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter2>& __y) _NOEXCEPT
         -: 1576:{
-       19: 1577:    return !(__y < __x);
-       19: 1577-block  0
+        -: 1577:    return !(__y < __x);
         -: 1578:}
-       19: 1579:
-       19: 1579-block  0
+        -: 1579:
         -: 1580:template <class _Iter1>
         -: 1581:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_IF_NODEBUG
         -: 1582:bool
-        -: 1583:operator!=(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter1>& __y) _NOEXCEPT
+       19: 1583:operator!=(const __wrap_iter<_Iter1>& __x, const __wrap_iter<_Iter1>& __y) _NOEXCEPT
+       19: 1583-block  0
         -: 1584:{
-        -: 1585:    return !(__x == __y);
+       19: 1585:    return !(__x == __y);
+       19: 1585-block  0
         -: 1586:}
         -: 1587:
         -: 1588:template <class _Iter1>

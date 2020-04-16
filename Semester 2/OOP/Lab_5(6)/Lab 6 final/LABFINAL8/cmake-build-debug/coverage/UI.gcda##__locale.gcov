@@ -234,11 +234,9 @@
         -:  229:locale::combine(const locale& __other) const
         -:  230:{
         -:  231:    if (!_VSTD::has_facet<_Facet>(__other))
-    #####:  232:        __throw_runtime_error("locale::combine: locale missing facet");
-    $$$$$:  232-block  0
+        -:  232:        __throw_runtime_error("locale::combine: locale missing facet");
         -:  233:
-    #####:  234:    return locale(*this, &const_cast<_Facet&>(_VSTD::use_facet<_Facet>(__other)));
-    $$$$$:  234-block  0
+        -:  234:    return locale(*this, &const_cast<_Facet&>(_VSTD::use_facet<_Facet>(__other)));
         -:  235:}
         -:  236:
         -:  237:template <class _Facet>
@@ -252,9 +250,11 @@
         -:  245:template <class _Facet>
         -:  246:inline _LIBCPP_INLINE_VISIBILITY
         -:  247:const _Facet&
-        -:  248:use_facet(const locale& __l)
+    #####:  248:use_facet(const locale& __l)
+    $$$$$:  248-block  0
         -:  249:{
-        -:  250:    return static_cast<const _Facet&>(*__l.use_facet(_Facet::id));
+    #####:  250:    return static_cast<const _Facet&>(*__l.use_facet(_Facet::id));
+    $$$$$:  250-block  0
         -:  251:}
         -:  252:
         -:  253:// template <class _CharT> class collate;
@@ -595,14 +595,9 @@
         -:  588:    const char_type* narrow(const char_type* __low, const char_type* __high, char __dfault, char* __to) const
         -:  589:    {
         -:  590:        return do_narrow(__low, __high, __dfault, __to);
-    #####:  591:    }
-    $$$$$:  591-block  0
+        -:  591:    }
         -:  592:
-    #####:  593:    static locale::id id;
-    $$$$$:  593-block  0
-    $$$$$:  593-block  1
-    $$$$$:  593-block  2
-    $$$$$:  593-block  3
+        -:  593:    static locale::id id;
         -:  594:
         -:  595:protected:
         -:  596:    ~ctype();
@@ -632,9 +627,14 @@
         -:  620:    explicit ctype(const mask* __tab = 0, bool __del = false, size_t __refs = 0);
         -:  621:
         -:  622:    _LIBCPP_INLINE_VISIBILITY
-        -:  623:    bool is(mask __m, char_type __c) const
+    #####:  623:    bool is(mask __m, char_type __c) const
+    $$$$$:  623-block  0
         -:  624:    {
-        -:  625:        return isascii(__c) ? (__tab_[static_cast<int>(__c)] & __m) !=0 : false;
+    #####:  625:        return isascii(__c) ? (__tab_[static_cast<int>(__c)] & __m) !=0 : false;
+    $$$$$:  625-block  0
+    $$$$$:  625-block  1
+    $$$$$:  625-block  2
+    $$$$$:  625-block  3
         -:  626:    }
         -:  627:
         -:  628:    _LIBCPP_INLINE_VISIBILITY
@@ -656,11 +656,9 @@
         -:  644:
         -:  645:    _LIBCPP_INLINE_VISIBILITY
         -:  646:    const char_type* scan_not(mask __m, const char_type* __low, const char_type* __high) const
-    #####:  647:    {
-    $$$$$:  647-block  0
+        -:  647:    {
         -:  648:        for (; __low != __high; ++__low)
-    #####:  649:            if (!(isascii(*__low) && (__tab_[static_cast<int>(*__low)] & __m)))
-    $$$$$:  649-block  0
+        -:  649:            if (!(isascii(*__low) && (__tab_[static_cast<int>(*__low)] & __m)))
         -:  650:                break;
         -:  651:        return __low;
         -:  652:    }
@@ -690,9 +688,11 @@
         -:  676:    }
         -:  677:
         -:  678:    _LIBCPP_INLINE_VISIBILITY
-        -:  679:    char_type widen(char __c) const
+    #####:  679:    char_type widen(char __c) const
+    $$$$$:  679-block  0
         -:  680:    {
-        -:  681:        return do_widen(__c);
+    #####:  681:        return do_widen(__c);
+    $$$$$:  681-block  0
         -:  682:    }
         -:  683:
         -:  684:    _LIBCPP_INLINE_VISIBILITY

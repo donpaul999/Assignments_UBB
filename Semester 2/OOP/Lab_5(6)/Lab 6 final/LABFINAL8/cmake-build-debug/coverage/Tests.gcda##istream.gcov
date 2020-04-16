@@ -192,12 +192,12 @@
         -:  187:
         -:  188:    // 27.7.1.1.1 Constructor/destructor:
         -:  189:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  190:    explicit basic_istream(basic_streambuf<char_type, traits_type>* __sb) : __gc_(0)
-        2:  191:    { this->init(__sb); }
+        2:  190:    explicit basic_istream(basic_streambuf<char_type, traits_type>* __sb) : __gc_(0)
+        2:  190-block  0
+        4:  191:    { this->init(__sb); }
         2:  191-block  0
-        4:  192:    virtual ~basic_istream();
-        2:  192-block  0
-        2:  192-block  1
+        2:  191-block  1
+        -:  192:    virtual ~basic_istream();
         -:  193:protected:
         -:  194:#ifndef _LIBCPP_CXX03_LANG
         -:  195:    inline _LIBCPP_INLINE_VISIBILITY

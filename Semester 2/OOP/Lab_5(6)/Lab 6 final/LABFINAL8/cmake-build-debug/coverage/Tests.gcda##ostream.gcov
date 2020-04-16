@@ -166,11 +166,11 @@
         -:  161:
         -:  162:    // 27.7.2.2 Constructor/destructor:
         -:  163:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  164:    explicit basic_ostream(basic_streambuf<char_type, traits_type>* __sb)
+        1:  164:    explicit basic_ostream(basic_streambuf<char_type, traits_type>* __sb)
+        1:  164-block  0
         1:  165:    { this->init(__sb); }
         1:  165-block  0
-        1:  166:    virtual ~basic_ostream();
-        1:  166-block  0
+        -:  166:    virtual ~basic_ostream();
         -:  167:protected:
         -:  168:#ifndef _LIBCPP_CXX03_LANG
         -:  169:    inline _LIBCPP_INLINE_VISIBILITY

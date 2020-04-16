@@ -346,11 +346,11 @@
         -:  341:
         -:  342:protected:
         -:  343:    _LIBCPP_INLINE_VISIBILITY
-        -:  344:    ios_base() {// purposefully does no initialization
+        3:  344:    ios_base() {// purposefully does no initialization
+        3:  344-block  0
         3:  345:               }
         3:  345-block  0
-        3:  346:
-        3:  346-block  0
+        -:  346:
         -:  347:    void init(void* __sb);
         -:  348:    _LIBCPP_INLINE_VISIBILITY void* rdbuf() const {return __rdbuf_;}
         -:  349:
@@ -549,13 +549,13 @@
         -:  542:
         -:  543:inline _LIBCPP_INLINE_VISIBILITY
         -:  544:void
-        -:  545:ios_base::setstate(iostate __state)
-    #####:  546:{
-    $$$$$:  546-block  0
-        -:  547:    clear(__rdstate_ | __state);
+    #####:  545:ios_base::setstate(iostate __state)
+    $$$$$:  545-block  0
+        -:  546:{
+    #####:  547:    clear(__rdstate_ | __state);
     #####:  548:}
-    #####:  549:
-    $$$$$:  549-block  0
+    $$$$$:  548-block  0
+        -:  549:
         -:  550:inline _LIBCPP_INLINE_VISIBILITY
         -:  551:bool
         -:  552:ios_base::good() const
@@ -638,10 +638,10 @@
         -:  629:    _LIBCPP_INLINE_VISIBILITY bool operator!() const    {return  fail();}
         -:  630:    _LIBCPP_INLINE_VISIBILITY iostate rdstate() const   {return ios_base::rdstate();}
         -:  631:    _LIBCPP_INLINE_VISIBILITY void clear(iostate __state = goodbit) {ios_base::clear(__state);}
-        -:  632:    _LIBCPP_INLINE_VISIBILITY void setstate(iostate __state) {ios_base::setstate(__state);}
-    #####:  633:    _LIBCPP_INLINE_VISIBILITY bool good() const {return ios_base::good();}
-    $$$$$:  633-block  0
-    $$$$$:  633-block  1
+    #####:  632:    _LIBCPP_INLINE_VISIBILITY void setstate(iostate __state) {ios_base::setstate(__state);}
+    $$$$$:  632-block  0
+    $$$$$:  632-block  1
+        -:  633:    _LIBCPP_INLINE_VISIBILITY bool good() const {return ios_base::good();}
         -:  634:    _LIBCPP_INLINE_VISIBILITY bool eof() const  {return ios_base::eof();}
         -:  635:    _LIBCPP_INLINE_VISIBILITY bool fail() const {return ios_base::fail();}
         -:  636:    _LIBCPP_INLINE_VISIBILITY bool bad() const  {return ios_base::bad();}
@@ -682,11 +682,11 @@
         -:  671:
         -:  672:protected:
         -:  673:    _LIBCPP_INLINE_VISIBILITY
-        -:  674:    basic_ios() {// purposefully does no initialization
+        3:  674:    basic_ios() {// purposefully does no initialization
+        3:  674-block  0
         3:  675:                }
         3:  675-block  0
-        3:  676:    _LIBCPP_INLINE_VISIBILITY
-        3:  676-block  0
+        -:  676:    _LIBCPP_INLINE_VISIBILITY
         -:  677:    void init(basic_streambuf<char_type, traits_type>* __sb);
         -:  678:
         -:  679:    _LIBCPP_INLINE_VISIBILITY
@@ -719,15 +719,15 @@
         -:  706:template <class _CharT, class _Traits>
         -:  707:inline _LIBCPP_INLINE_VISIBILITY
         -:  708:void
-        -:  709:basic_ios<_CharT, _Traits>::init(basic_streambuf<char_type, traits_type>* __sb)
-        3:  710:{
-        3:  710-block  0
-        -:  711:    ios_base::init(__sb);
+        3:  709:basic_ios<_CharT, _Traits>::init(basic_streambuf<char_type, traits_type>* __sb)
+        3:  709-block  0
+        -:  710:{
+        3:  711:    ios_base::init(__sb);
         3:  712:    __tie_ = 0;
         3:  713:    __fill_ = traits_type::eof();
         3:  714:}
-        3:  715:
-        3:  715-block  0
+        3:  714-block  0
+        -:  715:
         -:  716:template <class _CharT, class _Traits>
         -:  717:inline _LIBCPP_INLINE_VISIBILITY
         -:  718:basic_ostream<_CharT, _Traits>*

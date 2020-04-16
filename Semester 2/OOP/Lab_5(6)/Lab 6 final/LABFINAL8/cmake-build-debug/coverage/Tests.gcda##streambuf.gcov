@@ -151,10 +151,10 @@
         -:  146:    }
         -:  147:
         -:  148:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  149:    locale getloc() const { return __loc_; }
-    #####:  150:
-    $$$$$:  150-block  0
-    $$$$$:  150-block  1
+    #####:  149:    locale getloc() const { return __loc_; }
+    $$$$$:  149-block  0
+    $$$$$:  149-block  1
+        -:  150:
         -:  151:    // 27.6.2.2.2 buffer and positioning:
         -:  152:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
         -:  153:    basic_streambuf* pubsetbuf(char_type* __s, streamsize __n)
@@ -242,59 +242,59 @@
         -:  235:    void swap(basic_streambuf& __rhs);
         -:  236:
         -:  237:    // 27.6.2.3.2 Get area:
-        -:  238:    _LIBCPP_INLINE_VISIBILITY char_type* eback() const {return __binp_;}
+    #####:  238:    _LIBCPP_INLINE_VISIBILITY char_type* eback() const {return __binp_;}
+    $$$$$:  238-block  0
+    $$$$$:  238-block  1
     #####:  239:    _LIBCPP_INLINE_VISIBILITY char_type* gptr()  const {return __ninp_;}
     $$$$$:  239-block  0
     $$$$$:  239-block  1
     #####:  240:    _LIBCPP_INLINE_VISIBILITY char_type* egptr() const {return __einp_;}
     $$$$$:  240-block  0
     $$$$$:  240-block  1
-    #####:  241:
-    $$$$$:  241-block  0
-    $$$$$:  241-block  1
+        -:  241:
         -:  242:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  243:    void gbump(int __n) { __ninp_ += __n; }
-    #####:  244:
-    $$$$$:  244-block  0
-    $$$$$:  244-block  1
+    #####:  243:    void gbump(int __n) { __ninp_ += __n; }
+    $$$$$:  243-block  0
+    $$$$$:  243-block  1
+        -:  244:
         -:  245:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  246:    void setg(char_type* __gbeg, char_type* __gnext, char_type* __gend) {
+    #####:  246:    void setg(char_type* __gbeg, char_type* __gnext, char_type* __gend) {
+    $$$$$:  246-block  0
     #####:  247:        __binp_ = __gbeg;
-    $$$$$:  247-block  0
     #####:  248:        __ninp_ = __gnext;
     #####:  249:        __einp_ = __gend;
     #####:  250:    }
-    #####:  251:
-    $$$$$:  251-block  0
+    $$$$$:  250-block  0
+        -:  251:
         -:  252:    // 27.6.2.3.3 Put area:
-        -:  253:    _LIBCPP_INLINE_VISIBILITY char_type* pbase() const {return __bout_;}
+    #####:  253:    _LIBCPP_INLINE_VISIBILITY char_type* pbase() const {return __bout_;}
+    $$$$$:  253-block  0
+    $$$$$:  253-block  1
     #####:  254:    _LIBCPP_INLINE_VISIBILITY char_type* pptr()  const {return __nout_;}
     $$$$$:  254-block  0
     $$$$$:  254-block  1
     #####:  255:    _LIBCPP_INLINE_VISIBILITY char_type* epptr() const {return __eout_;}
     $$$$$:  255-block  0
     $$$$$:  255-block  1
-    #####:  256:
-    $$$$$:  256-block  0
-    $$$$$:  256-block  1
+        -:  256:
         -:  257:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  258:    void pbump(int __n) { __nout_ += __n; }
-    #####:  259:
-    $$$$$:  259-block  0
-    $$$$$:  259-block  1
+    #####:  258:    void pbump(int __n) { __nout_ += __n; }
+    $$$$$:  258-block  0
+    $$$$$:  258-block  1
+        -:  259:
         -:  260:    _LIBCPP_INLINE_VISIBILITY
-        -:  261:    void __pbump(streamsize __n) { __nout_ += __n; }
-    #####:  262:
-    $$$$$:  262-block  0
-    $$$$$:  262-block  1
+    #####:  261:    void __pbump(streamsize __n) { __nout_ += __n; }
+    $$$$$:  261-block  0
+    $$$$$:  261-block  1
+        -:  262:
         -:  263:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  264:    void setp(char_type* __pbeg, char_type* __pend) {
+    #####:  264:    void setp(char_type* __pbeg, char_type* __pend) {
+    $$$$$:  264-block  0
     #####:  265:        __bout_ = __nout_ = __pbeg;
-    $$$$$:  265-block  0
     #####:  266:        __eout_ = __pend;
     #####:  267:    }
-    #####:  268:
-    $$$$$:  268-block  0
+    $$$$$:  267-block  0
+        -:  268:
         -:  269:    // 27.6.2.4 virtual functions:
         -:  270:    // 27.6.2.4.1 Locales:
         -:  271:    virtual void imbue(const locale& __loc);

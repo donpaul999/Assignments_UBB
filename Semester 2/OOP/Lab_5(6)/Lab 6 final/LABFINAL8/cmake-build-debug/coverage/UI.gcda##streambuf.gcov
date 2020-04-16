@@ -188,7 +188,8 @@
         -:  183:    }
         -:  184:
         -:  185:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  186:    int_type sbumpc() {
+    #####:  186:    int_type sbumpc() {
+    $$$$$:  186-block  0
     #####:  187:        if (__ninp_ == __einp_)
     $$$$$:  187-block  0
     #####:  188:            return uflow();
@@ -197,10 +198,10 @@
     $$$$$:  189-block  0
     #####:  190:    }
     $$$$$:  190-block  0
-    #####:  191:
-    $$$$$:  191-block  0
+        -:  191:
         -:  192:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  193:    int_type sgetc() {
+    #####:  193:    int_type sgetc() {
+    $$$$$:  193-block  0
     #####:  194:        if (__ninp_ == __einp_)
     $$$$$:  194-block  0
     #####:  195:            return underflow();
@@ -209,8 +210,7 @@
     $$$$$:  196-block  0
     #####:  197:    }
     $$$$$:  197-block  0
-    #####:  198:
-    $$$$$:  198-block  0
+        -:  198:
         -:  199:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
         -:  200:    streamsize sgetn(char_type* __s, streamsize __n)
         -:  201:    { return xsgetn(__s, __n); }
@@ -240,11 +240,11 @@
         -:  225:    }
         -:  226:
         -:  227:    inline _LIBCPP_HIDE_FROM_ABI_AFTER_V1
-        -:  228:    streamsize sputn(const char_type* __s, streamsize __n)
+    #####:  228:    streamsize sputn(const char_type* __s, streamsize __n)
+    $$$$$:  228-block  0
     #####:  229:    { return xsputn(__s, __n); }
     $$$$$:  229-block  0
-    #####:  230:
-    $$$$$:  230-block  0
+        -:  230:
         -:  231:protected:
         -:  232:    basic_streambuf();
         -:  233:    basic_streambuf(const basic_streambuf& __rhs);

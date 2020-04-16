@@ -717,12 +717,12 @@
         -:  712:struct __less<_T1, _T1>
         -:  713:{
         -:  714:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
-        -:  715:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
-    #####:  716:};
-    $$$$$:  716-block  0
-    $$$$$:  716-block  1
-    $$$$$:  716-block  2
-    $$$$$:  716-block  3
+    #####:  715:    bool operator()(const _T1& __x, const _T1& __y) const {return __x < __y;}
+    $$$$$:  715-block  0
+    $$$$$:  715-block  1
+    $$$$$:  715-block  2
+    $$$$$:  715-block  3
+        -:  716:};
         -:  717:
         -:  718:template <class _T1>
         -:  719:struct __less<const _T1, _T1>
@@ -2460,24 +2460,17 @@
         -: 2451:{
         -: 2452:    typedef typename _VSTD::iterator_traits<_RandomAccessIterator>::value_type value_type;
         -: 2453:    if (_VSTD::is_trivially_move_assignable<value_type>::value)
-    #####: 2454:    {
-    $$$$$: 2454-block  0
+        -: 2454:    {
         -: 2455:        if (_VSTD::next(__first) == __middle)
-    #####: 2456:            return _VSTD::__rotate_left(__first, __last);
-    $$$$$: 2456-block  0
-    $$$$$: 2456-block  1
-    $$$$$: 2456-block  2
-    $$$$$: 2456-block  3
+        -: 2456:            return _VSTD::__rotate_left(__first, __last);
         -: 2457:        if (_VSTD::next(__middle) == __last)
         -: 2458:            return _VSTD::__rotate_right(__first, __last);
         -: 2459:        return _VSTD::__rotate_gcd(__first, __middle, __last);
         -: 2460:    }
         -: 2461:    return _VSTD::__rotate_forward(__first, __middle, __last);
-    #####: 2462:}
-    $$$$$: 2462-block  0
+        -: 2462:}
         -: 2463:
-    #####: 2464:template <class _ForwardIterator>
-    $$$$$: 2464-block  0
+        -: 2464:template <class _ForwardIterator>
         -: 2465:inline _LIBCPP_INLINE_VISIBILITY
         -: 2466:_ForwardIterator
         -: 2467:rotate(_ForwardIterator __first, _ForwardIterator __middle, _ForwardIterator __last)
@@ -2534,27 +2527,27 @@
         -: 2518:
         -: 2519:template <class _Tp, class _Compare>
         -: 2520:_LIBCPP_NODISCARD_EXT inline
-    #####: 2521:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
-    $$$$$: 2521-block  0
+        -: 2521:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2522:const _Tp&
     #####: 2523:min(const _Tp& __a, const _Tp& __b, _Compare __comp)
     $$$$$: 2523-block  0
-    $$$$$: 2523-block  1
-    $$$$$: 2523-block  2
-    $$$$$: 2523-block  3
         -: 2524:{
-        -: 2525:    return __comp(__b, __a) ? __b : __a;
+    #####: 2525:    return __comp(__b, __a) ? __b : __a;
+    $$$$$: 2525-block  0
+    $$$$$: 2525-block  1
+    $$$$$: 2525-block  2
+    $$$$$: 2525-block  3
         -: 2526:}
         -: 2527:
         -: 2528:template <class _Tp>
-    #####: 2529:_LIBCPP_NODISCARD_EXT inline
-    $$$$$: 2529-block  0
+        -: 2529:_LIBCPP_NODISCARD_EXT inline
         -: 2530:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
-    #####: 2531:const _Tp&
-    $$$$$: 2531-block  0
-        -: 2532:min(const _Tp& __a, const _Tp& __b)
+        -: 2531:const _Tp&
+    #####: 2532:min(const _Tp& __a, const _Tp& __b)
+    $$$$$: 2532-block  0
         -: 2533:{
-        -: 2534:    return _VSTD::min(__a, __b, __less<_Tp>());
+    #####: 2534:    return _VSTD::min(__a, __b, __less<_Tp>());
+    $$$$$: 2534-block  0
         -: 2535:}
         -: 2536:
         -: 2537:#ifndef _LIBCPP_CXX03_LANG
@@ -2616,18 +2609,25 @@
         -: 2593:_LIBCPP_NODISCARD_EXT inline
         -: 2594:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2595:const _Tp&
-        -: 2596:max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+    #####: 2596:max(const _Tp& __a, const _Tp& __b, _Compare __comp)
+    $$$$$: 2596-block  0
         -: 2597:{
-        -: 2598:    return __comp(__a, __b) ? __b : __a;
+    #####: 2598:    return __comp(__a, __b) ? __b : __a;
+    $$$$$: 2598-block  0
+    $$$$$: 2598-block  1
+    $$$$$: 2598-block  2
+    $$$$$: 2598-block  3
         -: 2599:}
         -: 2600:
         -: 2601:template <class _Tp>
         -: 2602:_LIBCPP_NODISCARD_EXT inline
         -: 2603:_LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX11
         -: 2604:const _Tp&
-        -: 2605:max(const _Tp& __a, const _Tp& __b)
+    #####: 2605:max(const _Tp& __a, const _Tp& __b)
+    $$$$$: 2605-block  0
         -: 2606:{
-        -: 2607:    return _VSTD::max(__a, __b, __less<_Tp>());
+    #####: 2607:    return _VSTD::max(__a, __b, __less<_Tp>());
+    $$$$$: 2607-block  0
         -: 2608:}
         -: 2609:
         -: 2610:#ifndef _LIBCPP_CXX03_LANG

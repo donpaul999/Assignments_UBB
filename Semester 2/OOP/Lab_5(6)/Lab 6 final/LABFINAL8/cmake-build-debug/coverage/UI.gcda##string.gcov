@@ -791,10 +791,10 @@
         -:  786:public:
         -:  787:    static const size_type npos = -1;
         -:  788:
-        -:  789:    _LIBCPP_INLINE_VISIBILITY basic_string()
-    #####:  790:        _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value);
-    $$$$$:  790-block  0
-    $$$$$:  790-block  1
+    #####:  789:    _LIBCPP_INLINE_VISIBILITY basic_string()
+    $$$$$:  789-block  0
+    $$$$$:  789-block  1
+        -:  790:        _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value);
         -:  791:
         -:  792:    _LIBCPP_INLINE_VISIBILITY explicit basic_string(const allocator_type& __a)
         -:  793:#if _LIBCPP_STD_VER <= 14
@@ -821,18 +821,18 @@
         -:  814:
         -:  815:    template <class = typename enable_if<__is_allocator<_Allocator>::value, nullptr_t>::type>
         -:  816:    _LIBCPP_INLINE_VISIBILITY
-        -:  817:    basic_string(const _CharT* __s) {
-    #####:  818:      _LIBCPP_ASSERT(__s != nullptr, "basic_string(const char*) detected nullptr");
-    $$$$$:  818-block  0
-    $$$$$:  818-block  1
-        -:  819:      __init(__s, traits_type::length(__s));
-    #####:  820:#   if _LIBCPP_DEBUG_LEVEL >= 2
+    #####:  817:    basic_string(const _CharT* __s) {
+    $$$$$:  817-block  0
+    $$$$$:  817-block  1
+        -:  818:      _LIBCPP_ASSERT(__s != nullptr, "basic_string(const char*) detected nullptr");
+    #####:  819:      __init(__s, traits_type::length(__s));
+        -:  820:#   if _LIBCPP_DEBUG_LEVEL >= 2
         -:  821:      __get_db()->__insert_c(this);
         -:  822:#   endif
-        -:  823:    }
-    #####:  824:
-    $$$$$:  824-block  0
-    $$$$$:  824-block  1
+    #####:  823:    }
+    $$$$$:  823-block  0
+    $$$$$:  823-block  1
+        -:  824:
         -:  825:    template <class = typename enable_if<__is_allocator<_Allocator>::value, nullptr_t>::type>
         -:  826:        _LIBCPP_INLINE_VISIBILITY
         -:  827:        basic_string(const _CharT* __s, const _Allocator& __a);
@@ -842,8 +842,8 @@
         -:  831:    _LIBCPP_INLINE_VISIBILITY
         -:  832:    basic_string(const _CharT* __s, size_type __n, const _Allocator& __a);
         -:  833:    _LIBCPP_INLINE_VISIBILITY
-        -:  834:    basic_string(size_type __n, _CharT __c);
-    #####:  835:
+    #####:  834:    basic_string(size_type __n, _CharT __c);
+        -:  835:
         -:  836:    template <class = typename enable_if<__is_allocator<_Allocator>::value, nullptr_t>::type>
         -:  837:        _LIBCPP_INLINE_VISIBILITY
         -:  838:        basic_string(size_type __n, _CharT __c, const _Allocator& __a);
@@ -954,25 +954,25 @@
         -:  943:    const_reverse_iterator crend() const _NOEXCEPT
         -:  944:        {return rend();}
         -:  945:
-        -:  946:    _LIBCPP_INLINE_VISIBILITY size_type size() const _NOEXCEPT
+    #####:  946:    _LIBCPP_INLINE_VISIBILITY size_type size() const _NOEXCEPT
+    $$$$$:  946-block  0
     #####:  947:        {return __is_long() ? __get_long_size() : __get_short_size();}
     $$$$$:  947-block  0
-    #####:  948:    _LIBCPP_INLINE_VISIBILITY size_type length() const _NOEXCEPT {return size();}
-    $$$$$:  948-block  0
-    $$$$$:  948-block  1
-    $$$$$:  948-block  2
-    $$$$$:  948-block  3
+    $$$$$:  947-block  1
+    $$$$$:  947-block  2
+    $$$$$:  947-block  3
+        -:  948:    _LIBCPP_INLINE_VISIBILITY size_type length() const _NOEXCEPT {return size();}
         -:  949:    _LIBCPP_INLINE_VISIBILITY size_type max_size() const _NOEXCEPT;
-        -:  950:    _LIBCPP_INLINE_VISIBILITY size_type capacity() const _NOEXCEPT
+    #####:  950:    _LIBCPP_INLINE_VISIBILITY size_type capacity() const _NOEXCEPT
+    $$$$$:  950-block  0
     #####:  951:        {return (__is_long() ? __get_long_cap()
     $$$$$:  951-block  0
+    $$$$$:  951-block  1
+    $$$$$:  951-block  2
+    $$$$$:  951-block  3
+    $$$$$:  951-block  4
     #####:  952:                             : static_cast<size_type>(__min_cap)) - 1;}
-    $$$$$:  952-block  0
-    $$$$$:  952-block  1
-    $$$$$:  952-block  2
-    $$$$$:  952-block  3
-    $$$$$:  952-block  4
-    #####:  953:
+        -:  953:
         -:  954:    void resize(size_type __n, value_type __c);
         -:  955:    _LIBCPP_INLINE_VISIBILITY void resize(size_type __n) {resize(__n, value_type());}
         -:  956:
@@ -994,10 +994,10 @@
         -:  972:    const_reference at(size_type __n) const;
         -:  973:    reference       at(size_type __n);
         -:  974:
-        -:  975:    _LIBCPP_INLINE_VISIBILITY basic_string& operator+=(const basic_string& __str) {return append(__str);}
-    #####:  976:
-    $$$$$:  976-block  0
-    $$$$$:  976-block  1
+    #####:  975:    _LIBCPP_INLINE_VISIBILITY basic_string& operator+=(const basic_string& __str) {return append(__str);}
+    $$$$$:  975-block  0
+    $$$$$:  975-block  1
+        -:  976:
         -:  977:    template <class _Tp>
         -:  978:    _LIBCPP_METHOD_TEMPLATE_IMPLICIT_INSTANTIATION_VIS
         -:  979:    typename enable_if
@@ -1263,19 +1263,19 @@
         -: 1239:    _LIBCPP_INLINE_VISIBILITY
         -: 1240:    const value_type* c_str() const _NOEXCEPT {return data();}
         -: 1241:    _LIBCPP_INLINE_VISIBILITY
-        -: 1242:    const value_type* data() const _NOEXCEPT  {return _VSTD::__to_raw_pointer(__get_pointer());}
-    #####: 1243:#if _LIBCPP_STD_VER > 14 || defined(_LIBCPP_BUILDING_LIBRARY)
-    $$$$$: 1243-block  0
-    $$$$$: 1243-block  1
+    #####: 1242:    const value_type* data() const _NOEXCEPT  {return _VSTD::__to_raw_pointer(__get_pointer());}
+    $$$$$: 1242-block  0
+    $$$$$: 1242-block  1
+        -: 1243:#if _LIBCPP_STD_VER > 14 || defined(_LIBCPP_BUILDING_LIBRARY)
         -: 1244:    _LIBCPP_INLINE_VISIBILITY
         -: 1245:    value_type* data()             _NOEXCEPT  {return _VSTD::__to_raw_pointer(__get_pointer());}
         -: 1246:#endif
         -: 1247:
         -: 1248:    _LIBCPP_INLINE_VISIBILITY
-        -: 1249:    allocator_type get_allocator() const _NOEXCEPT {return __alloc();}
-    #####: 1250:
-    $$$$$: 1250-block  0
-    $$$$$: 1250-block  1
+    #####: 1249:    allocator_type get_allocator() const _NOEXCEPT {return __alloc();}
+    $$$$$: 1249-block  0
+    $$$$$: 1249-block  1
+        -: 1250:
         -: 1251:    _LIBCPP_INLINE_VISIBILITY
         -: 1252:    size_type find(const basic_string& __str, size_type __pos = 0) const _NOEXCEPT;
         -: 1253:
@@ -1444,11 +1444,11 @@
         -: 1416:    _LIBCPP_INLINE_VISIBILITY void __clear_and_shrink() _NOEXCEPT;
         -: 1417:
         -: 1418:    _LIBCPP_INLINE_VISIBILITY
-        -: 1419:    bool __is_long() const _NOEXCEPT
+    #####: 1419:    bool __is_long() const _NOEXCEPT
+    $$$$$: 1419-block  0
     #####: 1420:        {return bool(__r_.first().__s.__size_ & __short_mask);}
     $$$$$: 1420-block  0
-    #####: 1421:
-    $$$$$: 1421-block  0
+        -: 1421:
         -: 1422:#if _LIBCPP_DEBUG_LEVEL >= 2
         -: 1423:
         -: 1424:    bool __dereferenceable(const const_iterator* __i) const;
@@ -1460,16 +1460,16 @@
         -: 1430:
         -: 1431:private:
         -: 1432:    _LIBCPP_INLINE_VISIBILITY
-        -: 1433:    allocator_type& __alloc() _NOEXCEPT
+    #####: 1433:    allocator_type& __alloc() _NOEXCEPT
+    $$$$$: 1433-block  0
     #####: 1434:        {return __r_.second();}
     $$$$$: 1434-block  0
-    #####: 1435:    _LIBCPP_INLINE_VISIBILITY
-    $$$$$: 1435-block  0
-        -: 1436:    const allocator_type& __alloc() const _NOEXCEPT
+        -: 1435:    _LIBCPP_INLINE_VISIBILITY
+    #####: 1436:    const allocator_type& __alloc() const _NOEXCEPT
+    $$$$$: 1436-block  0
     #####: 1437:        {return __r_.second();}
     $$$$$: 1437-block  0
-    #####: 1438:
-    $$$$$: 1438-block  0
+        -: 1438:
         -: 1439:#ifdef _LIBCPP_ABI_ALTERNATE_STRING_LAYOUT
         -: 1440:
         -: 1441:    _LIBCPP_INLINE_VISIBILITY
@@ -1491,101 +1491,101 @@
         -: 1457:#else  // _LIBCPP_ABI_ALTERNATE_STRING_LAYOUT
         -: 1458:
         -: 1459:    _LIBCPP_INLINE_VISIBILITY
-        -: 1460:    void __set_short_size(size_type __s) _NOEXCEPT
-    #####: 1461:#   ifdef _LIBCPP_BIG_ENDIAN
-    $$$$$: 1461-block  0
+    #####: 1460:    void __set_short_size(size_type __s) _NOEXCEPT
+    $$$$$: 1460-block  0
+        -: 1461:#   ifdef _LIBCPP_BIG_ENDIAN
         -: 1462:        {__r_.first().__s.__size_ = (unsigned char)(__s);}
         -: 1463:#   else
-        -: 1464:        {__r_.first().__s.__size_ = (unsigned char)(__s << 1);}
-    #####: 1465:#   endif
-    $$$$$: 1465-block  0
+    #####: 1464:        {__r_.first().__s.__size_ = (unsigned char)(__s << 1);}
+    $$$$$: 1464-block  0
+        -: 1465:#   endif
         -: 1466:
         -: 1467:    _LIBCPP_INLINE_VISIBILITY
-        -: 1468:    size_type __get_short_size() const _NOEXCEPT
-    #####: 1469:#   ifdef _LIBCPP_BIG_ENDIAN
-    $$$$$: 1469-block  0
+    #####: 1468:    size_type __get_short_size() const _NOEXCEPT
+    $$$$$: 1468-block  0
+        -: 1469:#   ifdef _LIBCPP_BIG_ENDIAN
         -: 1470:        {return __r_.first().__s.__size_;}
         -: 1471:#   else
-        -: 1472:        {return __r_.first().__s.__size_ >> 1;}
-    #####: 1473:#   endif
-    $$$$$: 1473-block  0
+    #####: 1472:        {return __r_.first().__s.__size_ >> 1;}
+    $$$$$: 1472-block  0
+        -: 1473:#   endif
         -: 1474:
         -: 1475:#endif  // _LIBCPP_ABI_ALTERNATE_STRING_LAYOUT
         -: 1476:
         -: 1477:    _LIBCPP_INLINE_VISIBILITY
-        -: 1478:    void __set_long_size(size_type __s) _NOEXCEPT
+    #####: 1478:    void __set_long_size(size_type __s) _NOEXCEPT
+    $$$$$: 1478-block  0
     #####: 1479:        {__r_.first().__l.__size_ = __s;}
     $$$$$: 1479-block  0
-    #####: 1480:    _LIBCPP_INLINE_VISIBILITY
-    $$$$$: 1480-block  0
-        -: 1481:    size_type __get_long_size() const _NOEXCEPT
+        -: 1480:    _LIBCPP_INLINE_VISIBILITY
+    #####: 1481:    size_type __get_long_size() const _NOEXCEPT
+    $$$$$: 1481-block  0
     #####: 1482:        {return __r_.first().__l.__size_;}
     $$$$$: 1482-block  0
-    #####: 1483:    _LIBCPP_INLINE_VISIBILITY
-    $$$$$: 1483-block  0
+        -: 1483:    _LIBCPP_INLINE_VISIBILITY
         -: 1484:    void __set_size(size_type __s) _NOEXCEPT
         -: 1485:        {if (__is_long()) __set_long_size(__s); else __set_short_size(__s);}
         -: 1486:
         -: 1487:    _LIBCPP_INLINE_VISIBILITY
-        -: 1488:    void __set_long_cap(size_type __s) _NOEXCEPT
+    #####: 1488:    void __set_long_cap(size_type __s) _NOEXCEPT
+    $$$$$: 1488-block  0
     #####: 1489:        {__r_.first().__l.__cap_  = __long_mask | __s;}
     $$$$$: 1489-block  0
-    #####: 1490:    _LIBCPP_INLINE_VISIBILITY
-    $$$$$: 1490-block  0
-        -: 1491:    size_type __get_long_cap() const _NOEXCEPT
+        -: 1490:    _LIBCPP_INLINE_VISIBILITY
+    #####: 1491:    size_type __get_long_cap() const _NOEXCEPT
+    $$$$$: 1491-block  0
     #####: 1492:        {return __r_.first().__l.__cap_ & size_type(~__long_mask);}
     $$$$$: 1492-block  0
-    #####: 1493:
-    $$$$$: 1493-block  0
+        -: 1493:
         -: 1494:    _LIBCPP_INLINE_VISIBILITY
         -: 1495:    void __set_long_pointer(pointer __p) _NOEXCEPT
         -: 1496:        {__r_.first().__l.__data_ = __p;}
         -: 1497:    _LIBCPP_INLINE_VISIBILITY
-        -: 1498:    pointer __get_long_pointer() _NOEXCEPT
+    #####: 1498:    pointer __get_long_pointer() _NOEXCEPT
+    $$$$$: 1498-block  0
     #####: 1499:        {return __r_.first().__l.__data_;}
     $$$$$: 1499-block  0
-    #####: 1500:    _LIBCPP_INLINE_VISIBILITY
-    $$$$$: 1500-block  0
-        -: 1501:    const_pointer __get_long_pointer() const _NOEXCEPT
+        -: 1500:    _LIBCPP_INLINE_VISIBILITY
+    #####: 1501:    const_pointer __get_long_pointer() const _NOEXCEPT
+    $$$$$: 1501-block  0
     #####: 1502:        {return __r_.first().__l.__data_;}
     $$$$$: 1502-block  0
-    #####: 1503:    _LIBCPP_INLINE_VISIBILITY
-    $$$$$: 1503-block  0
-        -: 1504:    pointer __get_short_pointer() _NOEXCEPT
+        -: 1503:    _LIBCPP_INLINE_VISIBILITY
+    #####: 1504:    pointer __get_short_pointer() _NOEXCEPT
+    $$$$$: 1504-block  0
     #####: 1505:        {return pointer_traits<pointer>::pointer_to(__r_.first().__s.__data_[0]);}
     $$$$$: 1505-block  0
-    #####: 1506:    _LIBCPP_INLINE_VISIBILITY
-    $$$$$: 1506-block  0
-        -: 1507:    const_pointer __get_short_pointer() const _NOEXCEPT
+        -: 1506:    _LIBCPP_INLINE_VISIBILITY
+    #####: 1507:    const_pointer __get_short_pointer() const _NOEXCEPT
+    $$$$$: 1507-block  0
     #####: 1508:        {return pointer_traits<const_pointer>::pointer_to(__r_.first().__s.__data_[0]);}
     $$$$$: 1508-block  0
-    #####: 1509:    _LIBCPP_INLINE_VISIBILITY
-    $$$$$: 1509-block  0
+        -: 1509:    _LIBCPP_INLINE_VISIBILITY
         -: 1510:    pointer __get_pointer() _NOEXCEPT
         -: 1511:        {return __is_long() ? __get_long_pointer() : __get_short_pointer();}
         -: 1512:    _LIBCPP_INLINE_VISIBILITY
-        -: 1513:    const_pointer __get_pointer() const _NOEXCEPT
+    #####: 1513:    const_pointer __get_pointer() const _NOEXCEPT
+    $$$$$: 1513-block  0
     #####: 1514:        {return __is_long() ? __get_long_pointer() : __get_short_pointer();}
     $$$$$: 1514-block  0
-    #####: 1515:
-    $$$$$: 1515-block  0
-    $$$$$: 1515-block  1
-    $$$$$: 1515-block  2
-    $$$$$: 1515-block  3
+    $$$$$: 1514-block  1
+    $$$$$: 1514-block  2
+    $$$$$: 1514-block  3
+        -: 1515:
         -: 1516:    _LIBCPP_INLINE_VISIBILITY
-        -: 1517:    void __zero() _NOEXCEPT
-    #####: 1518:        {
-    $$$$$: 1518-block  0
-        -: 1519:            size_type (&__a)[__n_words] = __r_.first().__r.__words;
+    #####: 1517:    void __zero() _NOEXCEPT
+    $$$$$: 1517-block  0
+        -: 1518:        {
+    #####: 1519:            size_type (&__a)[__n_words] = __r_.first().__r.__words;
     #####: 1520:            for (unsigned __i = 0; __i < __n_words; ++__i)
+    $$$$$: 1520-block  0
+    $$$$$: 1520-block  1
+    $$$$$: 1520-block  2
     #####: 1521:                __a[__i] = 0;
     $$$$$: 1521-block  0
-    $$$$$: 1521-block  1
-    $$$$$: 1521-block  2
     #####: 1522:        }
     $$$$$: 1522-block  0
-    #####: 1523:
-    $$$$$: 1523-block  0
+        -: 1523:
         -: 1524:    template <size_type __a> static
         -: 1525:        _LIBCPP_INLINE_VISIBILITY
         -: 1526:        size_type __align_it(size_type __s) _NOEXCEPT
@@ -1684,24 +1684,24 @@
         -: 1619:
         -: 1620:    _LIBCPP_INLINE_VISIBILITY
         -: 1621:    void
-        -: 1622:    __move_assign_alloc(basic_string& __str)
-    #####: 1623:        _NOEXCEPT_(
-    $$$$$: 1623-block  0
+    #####: 1622:    __move_assign_alloc(basic_string& __str)
+    $$$$$: 1622-block  0
+        -: 1623:        _NOEXCEPT_(
         -: 1624:            !__alloc_traits::propagate_on_container_move_assignment::value ||
         -: 1625:            is_nothrow_move_assignable<allocator_type>::value)
-        -: 1626:    {__move_assign_alloc(__str, integral_constant<bool,
+    #####: 1626:    {__move_assign_alloc(__str, integral_constant<bool,
     #####: 1627:                      __alloc_traits::propagate_on_container_move_assignment::value>());}
-    #####: 1628:
-    $$$$$: 1628-block  0
+    $$$$$: 1627-block  0
+        -: 1628:
         -: 1629:    _LIBCPP_INLINE_VISIBILITY
-        -: 1630:    void __move_assign_alloc(basic_string& __c, true_type)
-    #####: 1631:        _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
-    $$$$$: 1631-block  0
+    #####: 1630:    void __move_assign_alloc(basic_string& __c, true_type)
+    $$$$$: 1630-block  0
+        -: 1631:        _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
         -: 1632:        {
-        -: 1633:            __alloc() = _VSTD::move(__c.__alloc());
+    #####: 1633:            __alloc() = _VSTD::move(__c.__alloc());
     #####: 1634:        }
-    #####: 1635:
-    $$$$$: 1635-block  0
+    $$$$$: 1634-block  0
+        -: 1635:
         -: 1636:    _LIBCPP_INLINE_VISIBILITY
         -: 1637:    void __move_assign_alloc(basic_string&, false_type)
         -: 1638:        _NOEXCEPT
@@ -1749,15 +1749,15 @@
         -: 1680:template <class _CharT, class _Traits, class _Allocator>
         -: 1681:inline
         -: 1682:void
-        -: 1683:basic_string<_CharT, _Traits, _Allocator>::__invalidate_all_iterators()
-    #####: 1684:{
-    $$$$$: 1684-block  0
+    #####: 1683:basic_string<_CharT, _Traits, _Allocator>::__invalidate_all_iterators()
+    $$$$$: 1683-block  0
+        -: 1684:{
         -: 1685:#if _LIBCPP_DEBUG_LEVEL >= 2
         -: 1686:    __get_db()->__invalidate_all(this);
         -: 1687:#endif  // _LIBCPP_DEBUG_LEVEL >= 2
-        -: 1688:}
-    #####: 1689:
-    $$$$$: 1689-block  0
+    #####: 1688:}
+    $$$$$: 1688-block  0
+        -: 1689:
         -: 1690:template <class _CharT, class _Traits, class _Allocator>
         -: 1691:inline
         -: 1692:void
@@ -1790,41 +1790,41 @@
         -: 1719:
         -: 1720:template <class _CharT, class _Traits, class _Allocator>
         -: 1721:inline
-        -: 1722:basic_string<_CharT, _Traits, _Allocator>::basic_string()
-    #####: 1723:    _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value)
-    $$$$$: 1723-block  0
-    $$$$$: 1723-block  1
-        -: 1724:{
-    #####: 1725:#if _LIBCPP_DEBUG_LEVEL >= 2
+    #####: 1722:basic_string<_CharT, _Traits, _Allocator>::basic_string()
+    $$$$$: 1722-block  0
+    $$$$$: 1722-block  1
+        -: 1723:    _NOEXCEPT_(is_nothrow_default_constructible<allocator_type>::value)
+    #####: 1724:{
+        -: 1725:#if _LIBCPP_DEBUG_LEVEL >= 2
         -: 1726:    __get_db()->__insert_c(this);
         -: 1727:#endif
-        -: 1728:    __zero();
+    #####: 1728:    __zero();
     #####: 1729:}
-    #####: 1730:
-    $$$$$: 1730-block  0
-    $$$$$: 1730-block  1
+    $$$$$: 1729-block  0
+    $$$$$: 1729-block  1
+        -: 1730:
         -: 1731:template <class _CharT, class _Traits, class _Allocator>
         -: 1732:inline
-        -: 1733:basic_string<_CharT, _Traits, _Allocator>::basic_string(const allocator_type& __a)
-    #####: 1734:#if _LIBCPP_STD_VER <= 14
-    $$$$$: 1734-block  0
-    $$$$$: 1734-block  1
+    #####: 1733:basic_string<_CharT, _Traits, _Allocator>::basic_string(const allocator_type& __a)
+    $$$$$: 1733-block  0
+    $$$$$: 1733-block  1
+        -: 1734:#if _LIBCPP_STD_VER <= 14
         -: 1735:        _NOEXCEPT_(is_nothrow_copy_constructible<allocator_type>::value)
         -: 1736:#else
         -: 1737:        _NOEXCEPT
         -: 1738:#endif
-        -: 1739:: __r_(__second_tag(), __a)
+    #####: 1739:: __r_(__second_tag(), __a)
+    $$$$$: 1739-block  0
+    $$$$$: 1739-block  1
     #####: 1740:{
-    $$$$$: 1740-block  0
-    $$$$$: 1740-block  1
-    #####: 1741:#if _LIBCPP_DEBUG_LEVEL >= 2
+        -: 1741:#if _LIBCPP_DEBUG_LEVEL >= 2
         -: 1742:    __get_db()->__insert_c(this);
         -: 1743:#endif
-        -: 1744:    __zero();
+    #####: 1744:    __zero();
     #####: 1745:}
-    #####: 1746:
-    $$$$$: 1746-block  0
-    $$$$$: 1746-block  1
+    $$$$$: 1745-block  0
+    $$$$$: 1745-block  1
+        -: 1746:
         -: 1747:template <class _CharT, class _Traits, class _Allocator>
         -: 1748:void basic_string<_CharT, _Traits, _Allocator>::__init(const value_type* __s,
         -: 1749:                                                       size_type __sz,
@@ -2003,18 +2003,18 @@
         -: 1922:
         -: 1923:template <class _CharT, class _Traits, class _Allocator>
         -: 1924:inline
-        -: 1925:basic_string<_CharT, _Traits, _Allocator>::basic_string(size_type __n, _CharT __c)
+    #####: 1925:basic_string<_CharT, _Traits, _Allocator>::basic_string(size_type __n, _CharT __c)
+    $$$$$: 1925-block  0
+    $$$$$: 1925-block  1
     #####: 1926:{
-    $$$$$: 1926-block  0
-    $$$$$: 1926-block  1
     #####: 1927:    __init(__n, __c);
-    #####: 1928:#if _LIBCPP_DEBUG_LEVEL >= 2
+        -: 1928:#if _LIBCPP_DEBUG_LEVEL >= 2
         -: 1929:    __get_db()->__insert_c(this);
         -: 1930:#endif
-        -: 1931:}
-    #####: 1932:
-    $$$$$: 1932-block  0
-    $$$$$: 1932-block  1
+    #####: 1931:}
+    $$$$$: 1931-block  0
+    $$$$$: 1931-block  1
+        -: 1932:
         -: 1933:template <class _CharT, class _Traits, class _Allocator>
         -: 1934:template <class>
         -: 1935:basic_string<_CharT, _Traits, _Allocator>::basic_string(size_type __n, _CharT __c, const _Allocator& __a)
@@ -2367,33 +2367,33 @@
         -: 2282:template <class _CharT, class _Traits, class _Allocator>
         -: 2283:inline
         -: 2284:void
-        -: 2285:basic_string<_CharT, _Traits, _Allocator>::__move_assign(basic_string& __str, true_type)
-    #####: 2286:#if _LIBCPP_STD_VER > 14
-    $$$$$: 2286-block  0
+    #####: 2285:basic_string<_CharT, _Traits, _Allocator>::__move_assign(basic_string& __str, true_type)
+    $$$$$: 2285-block  0
+        -: 2286:#if _LIBCPP_STD_VER > 14
         -: 2287:    _NOEXCEPT
         -: 2288:#else
         -: 2289:    _NOEXCEPT_(is_nothrow_move_assignable<allocator_type>::value)
         -: 2290:#endif
         -: 2291:{
-        -: 2292:    __clear_and_shrink();
+    #####: 2292:    __clear_and_shrink();
     #####: 2293:    __r_.first() = __str.__r_.first();
     #####: 2294:    __move_assign_alloc(__str);
     #####: 2295:    __str.__zero();
     #####: 2296:}
-    #####: 2297:
-    $$$$$: 2297-block  0
+    $$$$$: 2296-block  0
+        -: 2297:
         -: 2298:template <class _CharT, class _Traits, class _Allocator>
         -: 2299:inline
         -: 2300:basic_string<_CharT, _Traits, _Allocator>&
-        -: 2301:basic_string<_CharT, _Traits, _Allocator>::operator=(basic_string&& __str)
-    #####: 2302:    _NOEXCEPT_((__noexcept_move_assign_container<_Allocator, __alloc_traits>::value))
-    $$$$$: 2302-block  0
+    #####: 2301:basic_string<_CharT, _Traits, _Allocator>::operator=(basic_string&& __str)
+    $$$$$: 2301-block  0
+        -: 2302:    _NOEXCEPT_((__noexcept_move_assign_container<_Allocator, __alloc_traits>::value))
         -: 2303:{
-        -: 2304:    __move_assign(__str, integral_constant<bool,
-    #####: 2305:          __alloc_traits::propagate_on_container_move_assignment::value>());
-        -: 2306:    return *this;
-    #####: 2307:}
-    $$$$$: 2307-block  0
+    #####: 2304:    __move_assign(__str, integral_constant<bool,
+        -: 2305:          __alloc_traits::propagate_on_container_move_assignment::value>());
+    #####: 2306:    return *this;
+    $$$$$: 2306-block  0
+        -: 2307:}
         -: 2308:
         -: 2309:#endif
         -: 2310:
@@ -2621,12 +2621,12 @@
         -: 2532:template <class _CharT, class _Traits, class _Allocator>
         -: 2533:inline
         -: 2534:basic_string<_CharT, _Traits, _Allocator>&
-        -: 2535:basic_string<_CharT, _Traits, _Allocator>::append(const basic_string& __str)
-    #####: 2536:{
-    $$$$$: 2536-block  0
-        -: 2537:    return append(__str.data(), __str.size());
-    #####: 2538:}
-    $$$$$: 2538-block  0
+    #####: 2535:basic_string<_CharT, _Traits, _Allocator>::append(const basic_string& __str)
+    $$$$$: 2535-block  0
+        -: 2536:{
+    #####: 2537:    return append(__str.data(), __str.size());
+    $$$$$: 2537-block  0
+        -: 2538:}
         -: 2539:
         -: 2540:template <class _CharT, class _Traits, class _Allocator>
         -: 2541:basic_string<_CharT, _Traits, _Allocator>&
@@ -3148,28 +3148,28 @@
         -: 3057:template <class _CharT, class _Traits, class _Allocator>
         -: 3058:inline
         -: 3059:void
-        -: 3060:basic_string<_CharT, _Traits, _Allocator>::clear() _NOEXCEPT
-    #####: 3061:{
-    $$$$$: 3061-block  0
-        -: 3062:    __invalidate_all_iterators();
+    #####: 3060:basic_string<_CharT, _Traits, _Allocator>::clear() _NOEXCEPT
+    $$$$$: 3060-block  0
+        -: 3061:{
+    #####: 3062:    __invalidate_all_iterators();
+    $$$$$: 3062-block  0
+    $$$$$: 3062-block  1
     #####: 3063:    if (__is_long())
     $$$$$: 3063-block  0
-    $$$$$: 3063-block  1
-    #####: 3064:    {
-    $$$$$: 3064-block  0
-        -: 3065:        traits_type::assign(*__get_long_pointer(), value_type());
+        -: 3064:    {
+    #####: 3065:        traits_type::assign(*__get_long_pointer(), value_type());
     #####: 3066:        __set_long_size(0);
     #####: 3067:    }
-    #####: 3068:    else
-    $$$$$: 3068-block  0
+    $$$$$: 3067-block  0
+        -: 3068:    else
         -: 3069:    {
-        -: 3070:        traits_type::assign(*__get_short_pointer(), value_type());
+    #####: 3070:        traits_type::assign(*__get_short_pointer(), value_type());
     #####: 3071:        __set_short_size(0);
-    #####: 3072:    }
-    $$$$$: 3072-block  0
-        -: 3073:}
-    #####: 3074:
-    $$$$$: 3074-block  0
+    $$$$$: 3071-block  0
+        -: 3072:    }
+    #####: 3073:}
+    $$$$$: 3073-block  0
+        -: 3074:
         -: 3075:template <class _CharT, class _Traits, class _Allocator>
         -: 3076:inline
         -: 3077:void
@@ -3213,16 +3213,16 @@
         -: 3115:template <class _CharT, class _Traits, class _Allocator>
         -: 3116:inline
         -: 3117:typename basic_string<_CharT, _Traits, _Allocator>::size_type
-        -: 3118:basic_string<_CharT, _Traits, _Allocator>::max_size() const _NOEXCEPT
-    #####: 3119:{
-    $$$$$: 3119-block  0
-        -: 3120:    size_type __m = __alloc_traits::max_size(__alloc());
-    #####: 3121:#ifdef _LIBCPP_BIG_ENDIAN
+    #####: 3118:basic_string<_CharT, _Traits, _Allocator>::max_size() const _NOEXCEPT
+    $$$$$: 3118-block  0
+        -: 3119:{
+    #####: 3120:    size_type __m = __alloc_traits::max_size(__alloc());
+        -: 3121:#ifdef _LIBCPP_BIG_ENDIAN
         -: 3122:    return (__m <= ~__long_mask ? __m : __m/2) - __alignment;
         -: 3123:#else
-        -: 3124:    return __m - __alignment;
-    #####: 3125:#endif
-    $$$$$: 3125-block  0
+    #####: 3124:    return __m - __alignment;
+    $$$$$: 3124-block  0
+        -: 3125:#endif
         -: 3126:}
         -: 3127:
         -: 3128:template <class _CharT, class _Traits, class _Allocator>
@@ -3375,12 +3375,12 @@
         -: 3275:template <class _CharT, class _Traits, class _Allocator>
         -: 3276:inline
         -: 3277:basic_string<_CharT, _Traits, _Allocator>
-        -: 3278:basic_string<_CharT, _Traits, _Allocator>::substr(size_type __pos, size_type __n) const
-    #####: 3279:{
-    $$$$$: 3279-block  0
-        -: 3280:    return basic_string(*this, __pos, __n, __alloc());
-    #####: 3281:}
-    $$$$$: 3281-block  0
+    #####: 3278:basic_string<_CharT, _Traits, _Allocator>::substr(size_type __pos, size_type __n) const
+    $$$$$: 3278-block  0
+        -: 3279:{
+    #####: 3280:    return basic_string(*this, __pos, __n, __alloc());
+    $$$$$: 3280-block  0
+        -: 3281:}
         -: 3282:
         -: 3283:template <class _CharT, class _Traits, class _Allocator>
         -: 3284:inline
@@ -3917,21 +3917,21 @@
         -: 3815:template<class _CharT, class _Traits, class _Allocator>
         -: 3816:inline
         -: 3817:void
-        -: 3818:basic_string<_CharT, _Traits, _Allocator>::__clear_and_shrink() _NOEXCEPT
-    #####: 3819:{
-    $$$$$: 3819-block  0
-        -: 3820:    clear();
+    #####: 3818:basic_string<_CharT, _Traits, _Allocator>::__clear_and_shrink() _NOEXCEPT
+    $$$$$: 3818-block  0
+        -: 3819:{
+    #####: 3820:    clear();
     #####: 3821:    if(__is_long())
-    #####: 3822:    {
-    $$$$$: 3822-block  0
-        -: 3823:        __alloc_traits::deallocate(__alloc(), __get_long_pointer(), capacity() + 1);
+    $$$$$: 3821-block  0
+        -: 3822:    {
+    #####: 3823:        __alloc_traits::deallocate(__alloc(), __get_long_pointer(), capacity() + 1);
     #####: 3824:        __set_long_cap(0);
     #####: 3825:        __set_short_size(0);
     #####: 3826:    }
+    $$$$$: 3826-block  0
     #####: 3827:}
     $$$$$: 3827-block  0
-    #####: 3828:
-    $$$$$: 3828-block  0
+        -: 3828:
         -: 3829:// operator==
         -: 3830:
         -: 3831:template<class _CharT, class _Traits, class _Allocator>
@@ -3981,23 +3981,23 @@
         -: 3875:template<class _CharT, class _Traits, class _Allocator>
         -: 3876:inline _LIBCPP_INLINE_VISIBILITY
         -: 3877:bool
-        -: 3878:operator==(const basic_string<_CharT,_Traits,_Allocator>& __lhs,
-    #####: 3879:           const _CharT* __rhs) _NOEXCEPT
-    $$$$$: 3879-block  0
+    #####: 3878:operator==(const basic_string<_CharT,_Traits,_Allocator>& __lhs,
+    $$$$$: 3878-block  0
+        -: 3879:           const _CharT* __rhs) _NOEXCEPT
         -: 3880:{
         -: 3881:    typedef basic_string<_CharT, _Traits, _Allocator> _String;
         -: 3882:    _LIBCPP_ASSERT(__rhs != nullptr, "operator==(basic_string, char*): received nullptr");
-        -: 3883:    size_t __rhs_len = _Traits::length(__rhs);
+    #####: 3883:    size_t __rhs_len = _Traits::length(__rhs);
     #####: 3884:    if (__rhs_len != __lhs.size()) return false;
+    $$$$$: 3884-block  0
+    $$$$$: 3884-block  1
     #####: 3885:    return __lhs.compare(0, _String::npos, __rhs, __rhs_len) == 0;
     $$$$$: 3885-block  0
     $$$$$: 3885-block  1
+    $$$$$: 3885-block  2
     #####: 3886:}
     $$$$$: 3886-block  0
-    $$$$$: 3886-block  1
-    $$$$$: 3886-block  2
-    #####: 3887:
-    $$$$$: 3887-block  0
+        -: 3887:
         -: 3888:template<class _CharT, class _Traits, class _Allocator>
         -: 3889:inline _LIBCPP_INLINE_VISIBILITY
         -: 3890:bool
@@ -4170,23 +4170,23 @@
         -: 4057:
         -: 4058:template<class _CharT, class _Traits, class _Allocator>
         -: 4059:basic_string<_CharT, _Traits, _Allocator>
-        -: 4060:operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
-    #####: 4061:{
-    $$$$$: 4061-block  0
-        -: 4062:    basic_string<_CharT, _Traits, _Allocator> __r(__rhs.get_allocator());
+    #####: 4060:operator+(_CharT __lhs, const basic_string<_CharT,_Traits,_Allocator>& __rhs)
+    $$$$$: 4060-block  0
+        -: 4061:{
+    #####: 4062:    basic_string<_CharT, _Traits, _Allocator> __r(__rhs.get_allocator());
     #####: 4063:    typename basic_string<_CharT, _Traits, _Allocator>::size_type __rhs_sz = __rhs.size();
     #####: 4064:    __r.__init(&__lhs, 1, 1 + __rhs_sz);
+    $$$$$: 4064-block  0
     #####: 4065:    __r.append(__rhs.data(), __rhs_sz);
     $$$$$: 4065-block  0
     #####: 4066:    return __r;
-    $$$$$: 4066-block  0
     #####: 4067:}
-    #####: 4068:
-    $$$$$: 4068-block  0
-    $$$$$: 4068-block  1
-    $$$$$: 4068-block  2
-    $$$$$: 4068-block  3
-    $$$$$: 4068-block  4
+    $$$$$: 4067-block  0
+    $$$$$: 4067-block  1
+    $$$$$: 4067-block  2
+    $$$$$: 4067-block  3
+    $$$$$: 4067-block  4
+        -: 4068:
         -: 4069:template<class _CharT, class _Traits, class _Allocator>
         -: 4070:inline
         -: 4071:basic_string<_CharT, _Traits, _Allocator>

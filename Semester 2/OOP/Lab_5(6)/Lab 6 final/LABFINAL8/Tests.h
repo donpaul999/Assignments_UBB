@@ -5,6 +5,7 @@
 #include "AdminService.h"
 #include "UserService.h"
 #include "Repository.h"
+#include "FileRepository.h"
 #include "Movie.h"
 
 class Tests
@@ -17,6 +18,7 @@ private:
 	void runRepositoryTests();
 	void runAdminServiceTests();
 	void runUserServiceTests();
+    void runFileRepositoryTests();
 
 	void Movie_AnyMovie_MovieCreated();
     void setterGetterTitle_AnyMovie_CorrectTitle();
@@ -80,5 +82,17 @@ private:
     void getWatchListLength_AnyUserService_CorrectLength();
     void goToNextMovieByGenre_AnyUserService_CorrectPosition();
     void goToNextMovieByGenre_AnyUserService_FirstPosition();
-};
+
+    void FileRepository_AnyRepository_FileRepositoryCreated();
+    void writeMoviesToFile_AnyMovie_AddSucessfulFileRepository();
+    void loadMoviesFromFile_AnyMovie_LoadSucessfulFileRepository();
+    void addMovie_MovieNotInTheList_ReturnsOneFileRepository();
+    void addMovie_MovieInTheList_ReturnsMinusOneFileRepository();
+    void deleteMovie_MovieInTheList_ReturnsOneFileRepository();
+    void deleteMovie_MovieNotInTheList_ReturnsMinusOneFileRepository();
+    void update_MovieInTheList_ReturnsOneFileRepository();
+    void update_MovieNotInTheList_ReturnsMinusOneFileRepository();
+    void getMovieAtPosition_ValidPosition_ReturnsMovieFileRepository();
+    void getMovieAtPosition_InValidPosition_ReturnsExceptionFileRepository();
+    void getNumberOfMovies_AnyRepository_CorrectNumberOfMoviesFileRepository();};
 

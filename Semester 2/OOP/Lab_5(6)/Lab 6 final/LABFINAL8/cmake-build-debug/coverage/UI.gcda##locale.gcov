@@ -1380,78 +1380,78 @@
         -: 1375:template <class _CharT, class _Traits>
         -: 1376:_LIBCPP_HIDDEN
         -: 1377:ostreambuf_iterator<_CharT, _Traits>
-        -: 1378:__pad_and_output(ostreambuf_iterator<_CharT, _Traits> __s,
+    #####: 1378:__pad_and_output(ostreambuf_iterator<_CharT, _Traits> __s,
+    $$$$$: 1378-block  0
         -: 1379:                 const _CharT* __ob, const _CharT* __op, const _CharT* __oe,
         -: 1380:                 ios_base& __iob, _CharT __fl)
         -: 1381:{
-        -: 1382:    if (__s.__sbuf_ == nullptr)
+    #####: 1382:    if (__s.__sbuf_ == nullptr)
+    $$$$$: 1382-block  0
     #####: 1383:        return __s;
     $$$$$: 1383-block  0
-        -: 1384:    streamsize __sz = __oe - __ob;
-        -: 1385:    streamsize __ns = __iob.width();
-        -: 1386:    if (__ns > __sz)
+    #####: 1384:    streamsize __sz = __oe - __ob;
+    #####: 1385:    streamsize __ns = __iob.width();
+    #####: 1386:    if (__ns > __sz)
+    $$$$$: 1386-block  0
     #####: 1387:        __ns -= __sz;
     $$$$$: 1387-block  0
-    #####: 1388:    else
-    $$$$$: 1388-block  0
+        -: 1388:    else
     #####: 1389:        __ns = 0;
+    $$$$$: 1389-block  0
     #####: 1390:    streamsize __np = __op - __ob;
     #####: 1391:    if (__np > 0)
     $$$$$: 1391-block  0
-    #####: 1392:    {
-    $$$$$: 1392-block  0
-        -: 1393:        if (__s.__sbuf_->sputn(__ob, __np) != __np)
-    #####: 1394:        {
-    $$$$$: 1394-block  0
+        -: 1392:    {
+    #####: 1393:        if (__s.__sbuf_->sputn(__ob, __np) != __np)
+    $$$$$: 1393-block  0
+        -: 1394:        {
     #####: 1395:            __s.__sbuf_ = nullptr;
     #####: 1396:            return __s;
     $$$$$: 1396-block  0
         -: 1397:        }
     #####: 1398:    }
     $$$$$: 1398-block  0
-        -: 1399:    if (__ns > 0)
-    #####: 1400:    {
+    #####: 1399:    if (__ns > 0)
+    $$$$$: 1399-block  0
+        -: 1400:    {
     #####: 1401:        basic_string<_CharT, _Traits> __sp(__ns, __fl);
-    $$$$$: 1401-block  0
-        -: 1402:        if (__s.__sbuf_->sputn(__sp.data(), __ns) != __ns)
-    #####: 1403:        {
-    $$$$$: 1403-block  0
+    #####: 1402:        if (__s.__sbuf_->sputn(__sp.data(), __ns) != __ns)
+    $$$$$: 1402-block  0
+    $$$$$: 1402-block  1
+        -: 1403:        {
     #####: 1404:            __s.__sbuf_ = nullptr;
-    $$$$$: 1404-block  0
-        -: 1405:            return __s;
-    #####: 1406:        }
+    #####: 1405:            return __s;
+    $$$$$: 1405-block  0
+        -: 1406:        }
     #####: 1407:    }
     $$$$$: 1407-block  0
     $$$$$: 1407-block  1
-        -: 1408:    __np = __oe - __op;
+    $$$$$: 1407-block  2
+    $$$$$: 1407-block  3
+    $$$$$: 1407-block  4
+    #####: 1408:    __np = __oe - __op;
     #####: 1409:    if (__np > 0)
-    #####: 1410:    {
-    $$$$$: 1410-block  0
-        -: 1411:        if (__s.__sbuf_->sputn(__op, __np) != __np)
-    #####: 1412:        {
-    $$$$$: 1412-block  0
-    $$$$$: 1412-block  1
-    $$$$$: 1412-block  2
-    $$$$$: 1412-block  3
-    $$$$$: 1412-block  4
+    $$$$$: 1409-block  0
+        -: 1410:    {
+    #####: 1411:        if (__s.__sbuf_->sputn(__op, __np) != __np)
+    $$$$$: 1411-block  0
+        -: 1412:        {
     #####: 1413:            __s.__sbuf_ = nullptr;
     #####: 1414:            return __s;
     $$$$$: 1414-block  0
         -: 1415:        }
     #####: 1416:    }
     $$$$$: 1416-block  0
-        -: 1417:    __iob.width(0);
+    #####: 1417:    __iob.width(0);
     #####: 1418:    return __s;
+    $$$$$: 1418-block  0
     #####: 1419:}
     $$$$$: 1419-block  0
         -: 1420:
-    #####: 1421:template <class _CharT, class _OutputIterator>
-    $$$$$: 1421-block  0
-    #####: 1422:_OutputIterator
-    #####: 1423:num_put<_CharT, _OutputIterator>::do_put(iter_type __s, ios_base& __iob,
-    $$$$$: 1423-block  0
-    #####: 1424:                                         char_type __fl, bool __v) const
-    $$$$$: 1424-block  0
+        -: 1421:template <class _CharT, class _OutputIterator>
+        -: 1422:_OutputIterator
+        -: 1423:num_put<_CharT, _OutputIterator>::do_put(iter_type __s, ios_base& __iob,
+        -: 1424:                                         char_type __fl, bool __v) const
         -: 1425:{
         -: 1426:    if ((__iob.flags() & ios_base::boolalpha) == 0)
         -: 1427:        return do_put(__s, __iob, __fl, (unsigned long)__v);

@@ -19,7 +19,6 @@ public:
     Repository(const std::string& nameOfTheFileUsed = "");
     ~Repository();
     int addMovie(const Movie& movieToAdd);
-    int findMovie(std::vector<Movie> listOfMovies, const Movie& movieToSearch);
     int deleteMovie(const Movie& movieToDelete);
     int updateMovie(const Movie& ToUpdateWith);
     void changeFileName(const std::string& nameOfTheFileUsed = "");

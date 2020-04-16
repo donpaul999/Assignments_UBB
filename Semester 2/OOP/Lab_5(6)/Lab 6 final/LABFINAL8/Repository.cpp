@@ -34,7 +34,6 @@ void Repository::writeMoviesToFile()
 //Repository constructor
 Repository::Repository(const std::string& nameOfTheFileUsed)
 {
-    std::vector<Movie> userWatchList{};
     std::vector<Movie>{};
     movieFileName = nameOfTheFileUsed;
     loadMoviesFromFile();

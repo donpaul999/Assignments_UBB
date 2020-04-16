@@ -83,197 +83,196 @@
        34:   35-block  0
        34:   35-block  1
        34:   36:{
-       34:   37:    std::vector<Movie> userWatchList{};
-       34:   38:    std::vector<Movie>{};
-       34:   39:    movieFileName = nameOfTheFileUsed;
+       34:   37:    std::vector<Movie>{};
+       34:   38:    movieFileName = nameOfTheFileUsed;
+       34:   38-block  0
+       34:   39:    loadMoviesFromFile();
        34:   39-block  0
-       34:   40:    loadMoviesFromFile();
-       34:   40-block  0
-        -:   41:
-       68:   42:}
-       34:   42-block  0
-    $$$$$:   42-block  1
-    $$$$$:   42-block  2
-       34:   42-block  3
-        -:   43:
-        -:   44://Repository destructor
-       10:   45:Repository::~Repository()
-        5:   45-block  0
-        5:   45-block  1
-        5:   46:{
-        5:   47:    writeMoviesToFile();
+        -:   40:
+       68:   41:}
+       34:   41-block  0
+    $$$$$:   41-block  1
+    $$$$$:   41-block  2
+       34:   41-block  3
+        -:   42:
+        -:   43://Repository destructor
+       10:   44:Repository::~Repository()
+        5:   44-block  0
+        5:   44-block  1
+        5:   45:{
+        5:   46:    writeMoviesToFile();
+        5:   46-block  0
+       10:   47:}
         5:   47-block  0
-       10:   48:}
-        5:   48-block  0
-    $$$$$:   48-block  1
-    $$$$$:   48-block  2
-        5:   48-block  3
+    $$$$$:   47-block  1
+    $$$$$:   47-block  2
+        5:   47-block  3
+        -:   48:
         -:   49:
-        -:   50:
-        -:   51://Add given movie to list
-       30:   52:int Repository::addMovie(const Movie& movieToAdd)
-       30:   52-block  0
-        -:   53:{
-       30:   54:    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToAdd);
-       30:   55:    if (iteratorWhereMovieIsFound !=  movieList.end() && movieList.size() != 0)
-       30:   55-block  0
-        3:   55-block  1
-       30:   55-block  2
-        3:   56:        return -1;
-        3:   56-block  0
-       27:   57:    movieList.push_back(movieToAdd);
-       27:   58:    writeMoviesToFile();
-       27:   59:    return 1;
-       27:   59-block  0
-       30:   60:}
-       30:   60-block  0
+        -:   50://Add given movie to list
+       30:   51:int Repository::addMovie(const Movie& movieToAdd)
+       30:   51-block  0
+        -:   52:{
+       30:   53:    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToAdd);
+       30:   54:    if (iteratorWhereMovieIsFound !=  movieList.end() && movieList.size() != 0)
+       30:   54-block  0
+        3:   54-block  1
+       30:   54-block  2
+        3:   55:        return -1;
+        3:   55-block  0
+       27:   56:    movieList.push_back(movieToAdd);
+       27:   57:    writeMoviesToFile();
+       27:   58:    return 1;
+       27:   58-block  0
+       30:   59:}
+       30:   59-block  0
+        -:   60:
         -:   61:
         -:   62:
-        -:   63:
-        -:   64://Delete a movie from the movieList
-        4:   65:int Repository::deleteMovie(const Movie& movieToDelete)
-        4:   65-block  0
-        -:   66:{
-        4:   67:    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToDelete);
-        4:   68:    if (iteratorWhereMovieIsFound == movieList.end())
-        4:   68-block  0
-        2:   69:        return -1;
-        2:   69-block  0
-        2:   70:    movieList.erase(iteratorWhereMovieIsFound);
-        2:   71:    writeMoviesToFile();
-        2:   72:    return 1;
-        2:   72-block  0
-        4:   73:}
-        4:   73-block  0
+        -:   63://Delete a movie from the movieList
+        4:   64:int Repository::deleteMovie(const Movie& movieToDelete)
+        4:   64-block  0
+        -:   65:{
+        4:   66:    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToDelete);
+        4:   67:    if (iteratorWhereMovieIsFound == movieList.end())
+        4:   67-block  0
+        2:   68:        return -1;
+        2:   68-block  0
+        2:   69:    movieList.erase(iteratorWhereMovieIsFound);
+        2:   70:    writeMoviesToFile();
+        2:   71:    return 1;
+        2:   71-block  0
+        4:   72:}
+        4:   72-block  0
+        -:   73:
         -:   74:
-        -:   75:
-        -:   76://Update a movie from the movieList
-        4:   77:int Repository::updateMovie(const Movie& movieToUpdateWith)
-        4:   77-block  0
-        -:   78:{
-        4:   79:    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToUpdateWith);
-        4:   80:	if (iteratorWhereMovieIsFound == movieList.end())
-        4:   80-block  0
-        2:   81:		return -1;
-        2:   81-block  0
-        2:   82:	*iteratorWhereMovieIsFound = movieToUpdateWith;
-        2:   83:    writeMoviesToFile();
-        2:   84:	return 1;
-        2:   84-block  0
-        4:   85:}
-        4:   85-block  0
-        -:   86:
-        -:   87://Change the file name of the repository
-        1:   88:void Repository::changeFileName(const std::string& nameOfTheFileUsed)
-        1:   88-block  0
-        -:   89:{
-        -:   90:
-        1:   91:    movieFileName = nameOfTheFileUsed;
-        1:   92:    writeMoviesToFile();
-        1:   93:}
-        1:   93-block  0
+        -:   75://Update a movie from the movieList
+        4:   76:int Repository::updateMovie(const Movie& movieToUpdateWith)
+        4:   76-block  0
+        -:   77:{
+        4:   78:    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToUpdateWith);
+        4:   79:	if (iteratorWhereMovieIsFound == movieList.end())
+        4:   79-block  0
+        2:   80:		return -1;
+        2:   80-block  0
+        2:   81:	*iteratorWhereMovieIsFound = movieToUpdateWith;
+        2:   82:    writeMoviesToFile();
+        2:   83:	return 1;
+        2:   83-block  0
+        4:   84:}
+        4:   84-block  0
+        -:   85:
+        -:   86://Change the file name of the repository
+        1:   87:void Repository::changeFileName(const std::string& nameOfTheFileUsed)
+        1:   87-block  0
+        -:   88:{
+        -:   89:
+        1:   90:    movieFileName = nameOfTheFileUsed;
+        1:   91:    writeMoviesToFile();
+        1:   92:}
+        1:   92-block  0
+        -:   93:
         -:   94:
-        -:   95:
-        -:   96://Get the movie at a certain position
-        2:   97:Movie Repository::getMovieAtPosition(int positionOfMovie)
-        2:   97-block  0
-        -:   98:{
-        2:   99:	if (positionOfMovie < 0 || positionOfMovie >= movieList.size())
-        2:   99-block  0
+        -:   95://Get the movie at a certain position
+        2:   96:Movie Repository::getMovieAtPosition(int positionOfMovie)
+        2:   96-block  0
+        -:   97:{
+        2:   98:	if (positionOfMovie < 0 || positionOfMovie >= movieList.size())
+        2:   98-block  0
+        1:   98-block  1
+        1:   99:		throw std::runtime_error("Invalid position");
+        1:   99-block  0
         1:   99-block  1
-        1:  100:		throw std::runtime_error("Invalid position");
+    $$$$$:   99-block  2
+    $$$$$:   99-block  3
+        1:  100:	return movieList[positionOfMovie];}
         1:  100-block  0
-        1:  100-block  1
-    $$$$$:  100-block  2
-    $$$$$:  100-block  3
-        1:  101:	return movieList[positionOfMovie];}
-        1:  101-block  0
-        -:  102:
-        -:  103://Get the number of movies in the list
-        3:  104:int Repository::getNumberOfMovies()
-        3:  104-block  0
-        -:  105:{
-        3:  106:	return movieList.size();
-        3:  106-block  0
-        -:  107:}
-        -:  108:
-        -:  109://Get all the movies with a given genre
-        7:  110:std::vector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
-        7:  110-block  0
-        -:  111:{
-        7:  112:    std::vector<Movie> moviesWithGenre;
-        7:  113:    if (genreGiven == "")
-        7:  113-block  0
-        1:  114:        return movieList;
-        1:  114-block  0
-        1:  114-block  1
-       16:  115:    std::copy_if(movieList.begin(), movieList.end(), std::back_inserter(moviesWithGenre), [&genreGiven](const Movie& movie) {return movie.getGenre() == genreGiven; });
+        -:  101:
+        -:  102://Get the number of movies in the list
+        3:  103:int Repository::getNumberOfMovies()
+        3:  103-block  0
+        -:  104:{
+        3:  105:	return movieList.size();
+        3:  105-block  0
+        -:  106:}
+        -:  107:
+        -:  108://Get all the movies with a given genre
+        7:  109:std::vector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
+        7:  109-block  0
+        -:  110:{
+        7:  111:    std::vector<Movie> moviesWithGenre;
+        7:  112:    if (genreGiven == "")
+        7:  112-block  0
+        1:  113:        return movieList;
+        1:  113-block  0
+        1:  113-block  1
+       16:  114:    std::copy_if(movieList.begin(), movieList.end(), std::back_inserter(moviesWithGenre), [&genreGiven](const Movie& movie) {return movie.getGenre() == genreGiven; });
+        6:  114-block  0
+        6:  114-block  1
+       10:  114-block  2
+       10:  114-block  3
+        6:  115:    return moviesWithGenre;
         6:  115-block  0
-        6:  115-block  1
-       10:  115-block  2
-       10:  115-block  3
-        6:  116:    return moviesWithGenre;
-        6:  116-block  0
-        7:  117:}
-    $$$$$:  117-block  0
-        7:  117-block  1
-    $$$$$:  117-block  2
-        -:  118:
-        -:  119://Get all the movies
-       14:  120:std::vector<Movie> Repository::getAllMovies()
-       14:  120-block  0
-        -:  121:{
-       14:  122:	return movieList;
-       14:  122-block  0
-        -:  123:}
+        7:  116:}
+    $$$$$:  116-block  0
+        7:  116-block  1
+    $$$$$:  116-block  2
+        -:  117:
+        -:  118://Get all the movies
+       14:  119:std::vector<Movie> Repository::getAllMovies()
+       14:  119-block  0
+        -:  120:{
+       14:  121:	return movieList;
+       14:  121-block  0
+        -:  122:}
+        -:  123:
         -:  124:
-        -:  125:
-        -:  126://Get all the movies in the watch list
-        1:  127:std::vector<Movie> Repository::getAllWatchListMovies()
-        1:  127-block  0
-        -:  128:{
-        1:  129:	return userWatchList;
-        1:  129-block  0
-        -:  130:}
+        -:  125://Get all the movies in the watch list
+        1:  126:std::vector<Movie> Repository::getAllWatchListMovies()
+        1:  126-block  0
+        -:  127:{
+        1:  128:	return userWatchList;
+        1:  128-block  0
+        -:  129:}
+        -:  130:
         -:  131:
-        -:  132:
-        -:  133://Add a certain movie to the watch list
-        4:  134:int Repository::addMovieToWatchlist(const Movie& movieToAdd)
-        4:  134-block  0
-        -:  135:{
-        4:  136:    auto iteratorWhereMovieIsFound = std::find(userWatchList.begin(), userWatchList.end(), movieToAdd);
-        4:  137:    if (iteratorWhereMovieIsFound != userWatchList.end())
-        4:  137-block  0
-        1:  138:        return -1;
-        1:  138-block  0
-        3:  139:    userWatchList.push_back(movieToAdd);
-        3:  140:    return 1;
-        3:  140-block  0
-        4:  141:}
-        4:  141-block  0
+        -:  132://Add a certain movie to the watch list
+        4:  133:int Repository::addMovieToWatchlist(const Movie& movieToAdd)
+        4:  133-block  0
+        -:  134:{
+        4:  135:    auto iteratorWhereMovieIsFound = std::find(userWatchList.begin(), userWatchList.end(), movieToAdd);
+        4:  136:    if (iteratorWhereMovieIsFound != userWatchList.end())
+        4:  136-block  0
+        1:  137:        return -1;
+        1:  137-block  0
+        3:  138:    userWatchList.push_back(movieToAdd);
+        3:  139:    return 1;
+        3:  139-block  0
+        4:  140:}
+        4:  140-block  0
+        -:  141:
         -:  142:
-        -:  143:
-        -:  144://Add a certain movie to the watch list by the title
-        3:  145:int Repository::addMovieToWatchListByTitle(const std::string& titleOfTheMovieToAdd)
-        3:  145-block  0
-        -:  146:{
-        6:  147:    auto iteratorWhereMovieFound = std::find_if(movieList.begin(), movieList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
+        -:  143://Add a certain movie to the watch list by the title
+        3:  144:int Repository::addMovieToWatchListByTitle(const std::string& titleOfTheMovieToAdd)
+        3:  144-block  0
+        -:  145:{
+        6:  146:    auto iteratorWhereMovieFound = std::find_if(movieList.begin(), movieList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
+        3:  146-block  0
+        3:  146-block  1
+        3:  147:    if (iteratorWhereMovieFound == movieList.end())
         3:  147-block  0
-        3:  147-block  1
-        3:  148:    if (iteratorWhereMovieFound == movieList.end())
-        3:  148-block  0
-        1:  149:        return -1;
-        1:  149-block  0
-        2:  150:    userWatchList.push_back(*iteratorWhereMovieFound);
-        2:  151:    return 1;
-        2:  151-block  0
-        3:  152:}
-        3:  152-block  0
-        -:  153:
-        -:  154://Get the number of movies in the watch list
-        1:  155:int Repository::getNumberOfMoviesWatchList()
-        1:  155-block  0
-        -:  156:{
-        1:  157:	return userWatchList.size();
-        1:  157-block  0
-        -:  158:}
+        1:  148:        return -1;
+        1:  148-block  0
+        2:  149:    userWatchList.push_back(*iteratorWhereMovieFound);
+        2:  150:    return 1;
+        2:  150-block  0
+        3:  151:}
+        3:  151-block  0
+        -:  152:
+        -:  153://Get the number of movies in the watch list
+        1:  154:int Repository::getNumberOfMoviesWatchList()
+        1:  154-block  0
+        -:  155:{
+        1:  156:	return userWatchList.size();
+        1:  156-block  0
+        -:  157:}

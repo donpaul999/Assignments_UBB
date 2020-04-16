@@ -1,0 +1,554 @@
+        -:    0:Source:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/UI.cpp
+        -:    0:Graph:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles/lab8.dir/UI.gcno
+        -:    0:Data:/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles/lab8.dir/UI.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include "UI.h"
+        -:    2:#include <iostream>
+    #####:    3:UI::UI(AdminService& adminService, UserService& userService): adminService { adminService } , userService{ userService }{}
+    $$$$$:    3-block  0
+    $$$$$:    3-block  1
+    $$$$$:    3-block  2
+    $$$$$:    3-block  3
+        -:    4:
+    #####:    5:void UI::runApp()
+    $$$$$:    5-block  0
+        -:    6:{
+    #####:    7:    std::string aplicationMode = "";
+    #####:    8:    while (1) {
+    $$$$$:    8-block  0
+    $$$$$:    8-block  1
+    $$$$$:    8-block  2
+    #####:    9:        std::cout << "Choose mode: ";
+    $$$$$:    9-block  0
+    #####:   10:        std::cin >> aplicationMode;
+    $$$$$:   10-block  0
+    #####:   11:        if (aplicationMode == "mode") {
+    $$$$$:   11-block  0
+    #####:   12:            std::cin >> aplicationMode;
+    $$$$$:   12-block  0
+    #####:   13:            if (aplicationMode == "A")
+    $$$$$:   13-block  0
+    #####:   14:                runAdmin();
+    $$$$$:   14-block  0
+    $$$$$:   14-block  1
+        -:   15:            else
+    #####:   16:                if (aplicationMode == "B")
+    $$$$$:   16-block  0
+    #####:   17:                 runUser();
+    $$$$$:   17-block  0
+    $$$$$:   17-block  1
+        -:   18:                else
+    #####:   19:                    std::cout << "Invalid option!\n";
+    $$$$$:   19-block  0
+    #####:   20:            break;
+    $$$$$:   20-block  0
+        -:   21:        }
+    #####:   22:        else if (aplicationMode == "fileLocation")
+    $$$$$:   22-block  0
+    #####:   23:            uiAdminChangeFile();
+    $$$$$:   23-block  0
+    $$$$$:   23-block  1
+    #####:   24:        else if (aplicationMode == "exit")
+    $$$$$:   24-block  0
+    #####:   25:            break;
+    $$$$$:   25-block  0
+        -:   26:         else
+    #####:   27:            std::cout << "Invalid option!\n";
+    $$$$$:   27-block  0
+        -:   28:    }
+    #####:   29:}
+    $$$$$:   29-block  0
+    $$$$$:   29-block  1
+    $$$$$:   29-block  2
+        -:   30:
+    #####:   31:void UI::runAdmin()
+    $$$$$:   31-block  0
+        -:   32:{
+    #####:   33:    std::cout << "Mode changed!\n";
+    #####:   34:    std::string consoleInput = "";
+    #####:   35:    int changeMode = 0;
+    #####:   36:    while (1 && !changeMode) {
+    $$$$$:   36-block  0
+    $$$$$:   36-block  1
+    $$$$$:   36-block  2
+    #####:   37:        std::cout << "Input: ";
+    $$$$$:   37-block  0
+    #####:   38:        std::cin >> consoleInput;
+    $$$$$:   38-block  0
+    #####:   39:        if (consoleInput == "add")
+    $$$$$:   39-block  0
+    #####:   40:            uiAdminAdd();
+    $$$$$:   40-block  0
+    $$$$$:   40-block  1
+    #####:   41:        else if (consoleInput == "update")
+    $$$$$:   41-block  0
+    #####:   42:            uiAdminUpdate();
+    $$$$$:   42-block  0
+    $$$$$:   42-block  1
+    #####:   43:        else if (consoleInput == "delete")
+    $$$$$:   43-block  0
+    #####:   44:            uiAdminDelete();
+    $$$$$:   44-block  0
+    $$$$$:   44-block  1
+    #####:   45:        else if (consoleInput == "list")
+    $$$$$:   45-block  0
+    #####:   46:            uiAdminList();
+    $$$$$:   46-block  0
+    $$$$$:   46-block  1
+    #####:   47:        else if (consoleInput == "fileLocation")
+    $$$$$:   47-block  0
+    #####:   48:            uiAdminChangeFile();
+    $$$$$:   48-block  0
+    $$$$$:   48-block  1
+    #####:   49:        else if (consoleInput == "mode") {
+    $$$$$:   49-block  0
+    #####:   50:            std::string modeToChange;
+    #####:   51:            std::cin >> modeToChange;
+    $$$$$:   51-block  0
+    #####:   52:            if (modeToChange == "B") {
+    $$$$$:   52-block  0
+    #####:   53:                changeMode = 1;
+    #####:   54:                runUser();
+    $$$$$:   54-block  0
+    #####:   55:            }
+    $$$$$:   55-block  0
+    #####:   56:        }
+    $$$$$:   56-block  0
+    $$$$$:   56-block  1
+    #####:   57:        else if (consoleInput == "exit")
+    $$$$$:   57-block  0
+    #####:   58:            break;
+    $$$$$:   58-block  0
+        -:   59:        else
+    #####:   60:            std::cout << "Invalid input! \n";
+    $$$$$:   60-block  0
+        -:   61:        }
+        -:   62:
+    #####:   63:}
+    $$$$$:   63-block  0
+    $$$$$:   63-block  1
+    $$$$$:   63-block  2
+    $$$$$:   63-block  3
+        -:   64:
+    #####:   65:void UI::runUser()
+    $$$$$:   65-block  0
+        -:   66:{
+    #####:   67:    std::cout << "Mode changed!\n";
+    #####:   68:    userService.listMoviesByGenre("");
+    $$$$$:   68-block  0
+    $$$$$:   68-block  1
+    $$$$$:   68-block  2
+    #####:   69:    Movie currentMovie;
+    $$$$$:   69-block  0
+    $$$$$:   69-block  1
+    $$$$$:   69-block  2
+    $$$$$:   69-block  3
+    $$$$$:   69-block  4
+    $$$$$:   69-block  5
+    $$$$$:   69-block  6
+    $$$$$:   69-block  7
+    #####:   70:    std::string consoleInput = "";
+    $$$$$:   70-block  0
+    #####:   71:    int changeMode = 0;
+    #####:   72:    int inAListLoop = 0;
+    #####:   73:    while (1 && !changeMode && !inAListLoop) {
+    $$$$$:   73-block  0
+    $$$$$:   73-block  1
+    $$$$$:   73-block  2
+    $$$$$:   73-block  3
+    $$$$$:   73-block  4
+    #####:   74:        std::cout << "Input: ";
+    $$$$$:   74-block  0
+    #####:   75:        std::cin >> consoleInput;
+    $$$$$:   75-block  0
+    #####:   76:        if (consoleInput == "list") {
+    $$$$$:   76-block  0
+    #####:   77:            uiUserList();
+    $$$$$:   77-block  0
+    #####:   78:            inAListLoop = 1;
+    #####:   79:        }
+    $$$$$:   79-block  0
+    #####:   80:        else if (consoleInput == "mode A") {
+    $$$$$:   80-block  0
+    #####:   81:            std::string modeToChange;
+    #####:   82:            std::cin >> modeToChange;
+    $$$$$:   82-block  0
+    #####:   83:            if (modeToChange == "A") {
+    $$$$$:   83-block  0
+    #####:   84:                changeMode = 1;
+    #####:   85:                runUser();
+    $$$$$:   85-block  0
+    #####:   86:            }
+    $$$$$:   86-block  0
+    #####:   87:        }
+    $$$$$:   87-block  0
+    $$$$$:   87-block  1
+    #####:   88:        else if (consoleInput == "next") {
+    $$$$$:   88-block  0
+    #####:   89:            currentMovie = userService.getCurrentMovie();
+    $$$$$:   89-block  0
+    $$$$$:   89-block  1
+    $$$$$:   89-block  2
+    #####:   90:            std::cout << currentMovie;
+    $$$$$:   90-block  0
+    #####:   91:            uiUserNext();
+    $$$$$:   91-block  0
+    #####:   92:        }
+    $$$$$:   92-block  0
+    #####:   93:        else if (consoleInput == "mylist")
+    $$$$$:   93-block  0
+    #####:   94:            uiUserWatchList();
+    $$$$$:   94-block  0
+    $$$$$:   94-block  1
+    #####:   95:        else if (consoleInput == "save")
+    $$$$$:   95-block  0
+    #####:   96:            uiUserSave();
+    $$$$$:   96-block  0
+    $$$$$:   96-block  1
+    #####:   97:        else if (consoleInput == "exit")
+    $$$$$:   97-block  0
+    #####:   98:            break;
+    $$$$$:   98-block  0
+        -:   99:        else
+    #####:  100:            std::cout << "Invalid input! \n";
+    $$$$$:  100-block  0
+        -:  101:    }
+    #####:  102:}
+    $$$$$:  102-block  0
+    $$$$$:  102-block  1
+    $$$$$:  102-block  2
+    $$$$$:  102-block  3
+    $$$$$:  102-block  4
+        -:  103:
+    #####:  104:void UI::uiAdminAdd()
+    $$$$$:  104-block  0
+        -:  105:{
+    #####:  106:    std::string title, genre, trailer, consoleInput;
+        -:  107:    int yearOfRelease, numberOfLikes;
+        -:  108:    /*
+        -:  109:    getline(std::cin, consoleInput);
+        -:  110:    std::vector<std::string>tokenizedInput = adminService.explode(consoleInput, ',');
+        -:  111:    title = tokenizedInput[0].substr(1);
+        -:  112:    genre = tokenizedInput[1].substr(1);
+        -:  113:    yearOfRelease = stoi(tokenizedInput[2].substr(1));
+        -:  114:    numberOfLikes = stoi(tokenizedInput[3].substr(1));
+        -:  115:    trailer = tokenizedInput[4].substr(1);
+        -:  116:    */
+    #####:  117:    std::cin >> consoleInput;
+    $$$$$:  117-block  0
+    #####:  118:    title = consoleInput.substr(0, consoleInput.size() - 1);
+    $$$$$:  118-block  0
+    #####:  119:    std::cin >> consoleInput;
+    $$$$$:  119-block  0
+    #####:  120:    genre = consoleInput.substr(0, consoleInput.size() - 1);
+    $$$$$:  120-block  0
+    #####:  121:    std::cin >> consoleInput;
+    $$$$$:  121-block  0
+    #####:  122:    yearOfRelease = stoi(consoleInput.substr(0, consoleInput.size() - 1));
+    $$$$$:  122-block  0
+    $$$$$:  122-block  1
+    $$$$$:  122-block  2
+    #####:  123:    std::cin >> consoleInput;
+    $$$$$:  123-block  0
+    #####:  124:    numberOfLikes = stoi(consoleInput.substr(0, consoleInput.size() - 1));
+    $$$$$:  124-block  0
+    $$$$$:  124-block  1
+    $$$$$:  124-block  2
+    #####:  125:    std::cin >> consoleInput;
+    $$$$$:  125-block  0
+    #####:  126:    trailer = consoleInput;
+    $$$$$:  126-block  0
+    #####:  127:    int isFunctionSuccessful = adminService.adminAddMovie(title, genre, yearOfRelease, numberOfLikes, trailer);
+    $$$$$:  127-block  0
+        -:  128:    //int isFunctionSuccessful = adminService.adminAddMovie(movieRead);
+    #####:  129:    if (isFunctionSuccessful == -1) {
+    $$$$$:  129-block  0
+    #####:  130:        std::cout << "Movie already in the list!\n";
+    $$$$$:  130-block  0
+    #####:  131:    }
+    $$$$$:  131-block  0
+    #####:  132:}
+    $$$$$:  132-block  0
+    $$$$$:  132-block  1
+    $$$$$:  132-block  2
+    $$$$$:  132-block  3
+        -:  133:
+    #####:  134:void UI::uiAdminDelete()
+    $$$$$:  134-block  0
+        -:  135:{
+    #####:  136:    std::string title, consoleInput;
+    #####:  137:    getline(std::cin, consoleInput);
+    $$$$$:  137-block  0
+    #####:  138:    title = consoleInput.substr(1);
+    $$$$$:  138-block  0
+    #####:  139:    int isFunctionSuccessful = adminService.adminDeleteMovie(title);
+    $$$$$:  139-block  0
+    #####:  140:    if (isFunctionSuccessful == -1) {
+    $$$$$:  140-block  0
+    #####:  141:        std::cout << "Movie is not in the list!\n";
+    $$$$$:  141-block  0
+    #####:  142:    }
+    $$$$$:  142-block  0
+    #####:  143:}
+    $$$$$:  143-block  0
+    $$$$$:  143-block  1
+    $$$$$:  143-block  2
+        -:  144:
+    #####:  145:void UI::uiAdminUpdate()
+    $$$$$:  145-block  0
+        -:  146:{
+    #####:  147:    std::string title, genre, trailer, consoleInput;
+        -:  148:    int yearOfRelease, numberOfLikes;/*
+        -:  149:    getline(std::cin, consoleInput);
+        -:  150:    std::vector<std::string>tokenizedInput = adminService.explode(consoleInput, ',');
+        -:  151:    title = tokenizedInput[0].substr(1);
+        -:  152:    genre = tokenizedInput[1].substr(1);
+        -:  153:    yearOfRelease = stoi(tokenizedInput[2].substr(1));
+        -:  154:    numberOfLikes = stoi(tokenizedInput[3].substr(1));
+        -:  155:    trailer = tokenizedInput[4].substr(1);
+        -:  156:    */
+    #####:  157:    std::cin >> consoleInput;
+    $$$$$:  157-block  0
+    #####:  158:    title = consoleInput.substr(0, consoleInput.size() - 1);
+    $$$$$:  158-block  0
+    #####:  159:    std::cin >> consoleInput;
+    $$$$$:  159-block  0
+    #####:  160:    genre = consoleInput.substr(0, consoleInput.size() - 1);
+    $$$$$:  160-block  0
+    #####:  161:    std::cin >> consoleInput;
+    $$$$$:  161-block  0
+    #####:  162:    yearOfRelease = stoi(consoleInput.substr(0, consoleInput.size() - 1));
+    $$$$$:  162-block  0
+    $$$$$:  162-block  1
+    $$$$$:  162-block  2
+    #####:  163:    std::cin >> consoleInput;
+    $$$$$:  163-block  0
+    #####:  164:    numberOfLikes = stoi(consoleInput.substr(0, consoleInput.size() - 1));
+    $$$$$:  164-block  0
+    $$$$$:  164-block  1
+    $$$$$:  164-block  2
+    #####:  165:    std::cin >> consoleInput;
+    $$$$$:  165-block  0
+    #####:  166:    trailer = consoleInput;
+    $$$$$:  166-block  0
+    #####:  167:    int isFunctionSuccessful = adminService.adminUpdateMovie(title, genre, yearOfRelease, numberOfLikes, trailer);
+    $$$$$:  167-block  0
+        -:  168:    //int isFunctionSuccessful = adminService.adminAddMovie(movieRead);
+    #####:  169:    if (isFunctionSuccessful == -1) {
+    $$$$$:  169-block  0
+    #####:  170:        std::cout << "Movie is not in the list!\n";
+    $$$$$:  170-block  0
+    #####:  171:    }
+    $$$$$:  171-block  0
+    #####:  172:}
+    $$$$$:  172-block  0
+    $$$$$:  172-block  1
+    $$$$$:  172-block  2
+    $$$$$:  172-block  3
+        -:  173:
+    #####:  174:void UI::uiAdminChangeFile()
+    $$$$$:  174-block  0
+        -:  175:{
+    #####:  176:    std::string consoleInput, extensionFile;
+    #####:  177:    std::getline(std::cin, consoleInput, '.');
+    $$$$$:  177-block  0
+    #####:  178:    std::cin >> extensionFile;
+    $$$$$:  178-block  0
+    #####:  179:    consoleInput += '.' + extensionFile;
+    $$$$$:  179-block  0
+    $$$$$:  179-block  1
+    $$$$$:  179-block  2
+    #####:  180:    int isFunctionSuccesful = adminService.changeRepositoryFileName(consoleInput.substr(1));
+    $$$$$:  180-block  0
+    $$$$$:  180-block  1
+    $$$$$:  180-block  2
+    #####:  181:    if(isFunctionSuccesful == -1)
+    $$$$$:  181-block  0
+    #####:  182:        std::cout << "Invalid file name provided! \n";
+    $$$$$:  182-block  0
+    $$$$$:  182-block  1
+    #####:  183:}
+    $$$$$:  183-block  0
+    $$$$$:  183-block  1
+    $$$$$:  183-block  2
+    $$$$$:  183-block  3
+        -:  184:
+    #####:  185:void UI::uiAdminList()
+    $$$$$:  185-block  0
+        -:  186:{
+    #####:  187:    std::vector<Movie>listOfMovies = adminService.adminGetMovieList();
+    #####:  188:    for (int i = 0; i < listOfMovies.size(); ++i)
+    $$$$$:  188-block  0
+    $$$$$:  188-block  1
+    $$$$$:  188-block  2
+    #####:  189:        std::cout << listOfMovies[i] << '\n';
+    $$$$$:  189-block  0
+    $$$$$:  189-block  1
+    $$$$$:  189-block  2
+    #####:  190:}
+    $$$$$:  190-block  0
+    $$$$$:  190-block  1
+    $$$$$:  190-block  2
+        -:  191:
+    #####:  192:void UI::uiUserAdd() {
+    $$$$$:  192-block  0
+    #####:  193:    int isFunctionSuccessful = userService.addMovieToWatchList();
+    #####:  194:    if (isFunctionSuccessful == -1)
+    $$$$$:  194-block  0
+    #####:  195:        std::cout << "Movie already in the list!\n";
+    $$$$$:  195-block  0
+        -:  196:
+    #####:  197:}
+    $$$$$:  197-block  0
+        -:  198:
+    #####:  199:void UI::uiUserWatchList()
+    $$$$$:  199-block  0
+        -:  200:{
+    #####:  201:    std::vector<Movie>listOfMovies = userService.userGetWatchList();
+    #####:  202:    for (int i = 0; i < listOfMovies.size(); ++i)
+    $$$$$:  202-block  0
+    $$$$$:  202-block  1
+    $$$$$:  202-block  2
+    #####:  203:        std::cout << listOfMovies[i] << '\n';
+    $$$$$:  203-block  0
+    $$$$$:  203-block  1
+    $$$$$:  203-block  2
+    #####:  204:}
+    $$$$$:  204-block  0
+    $$$$$:  204-block  1
+    $$$$$:  204-block  2
+        -:  205:
+    #####:  206:void UI::uiUserNext() {
+    $$$$$:  206-block  0
+    #####:  207:    userService.goToNextMovieByGenre();
+    #####:  208:}
+    $$$$$:  208-block  0
+        -:  209:
+    #####:  210:void UI::uiUserSave()
+    $$$$$:  210-block  0
+        -:  211:{
+    #####:  212:    std::string title;
+    #####:  213:    std::cin >> title;
+    $$$$$:  213-block  0
+    #####:  214:    int isFunctionSuccessful = userService.addMovieToWatchListByTitle(title);
+    $$$$$:  214-block  0
+    #####:  215:    if (isFunctionSuccessful == -1)
+    $$$$$:  215-block  0
+    #####:  216:        std::cout << "Invalid movie!\n";
+    $$$$$:  216-block  0
+    $$$$$:  216-block  1
+    #####:  217:}
+    $$$$$:  217-block  0
+    $$$$$:  217-block  1
+    $$$$$:  217-block  2
+        -:  218:
+    #####:  219:void UI::uiUserList()
+    $$$$$:  219-block  0
+        -:  220:{
+        -:  221:
+    #####:  222:        std::string consoleInput,genre = "";
+    $$$$$:  222-block  0
+    #####:  223:        Movie currentMovie;
+    $$$$$:  223-block  0
+    $$$$$:  223-block  1
+    $$$$$:  223-block  2
+    $$$$$:  223-block  3
+    $$$$$:  223-block  4
+    $$$$$:  223-block  5
+    $$$$$:  223-block  6
+    $$$$$:  223-block  7
+    $$$$$:  223-block  8
+    $$$$$:  223-block  9
+    #####:  224:        int numberOfLikes = -1;
+    #####:  225:        getline(std::cin, consoleInput);
+    $$$$$:  225-block  0
+    #####:  226:        if (consoleInput.find(',') != std::string::npos) {
+    $$$$$:  226-block  0
+    #####:  227:            std::vector<std::string>tokenizedInput = adminService.explode(consoleInput, ',');
+    $$$$$:  227-block  0
+    #####:  228:            genre = tokenizedInput[0].substr(1);
+    $$$$$:  228-block  0
+    #####:  229:            int numberOfLikes = stoi(tokenizedInput[1].substr(1));
+    $$$$$:  229-block  0
+    $$$$$:  229-block  1
+    $$$$$:  229-block  2
+    #####:  230:        }
+    $$$$$:  230-block  0
+    $$$$$:  230-block  1
+        -:  231:        else
+    #####:  232:            if (consoleInput.size() > 0)
+    $$$$$:  232-block  0
+    #####:  233:                genre = consoleInput.substr(1);
+    $$$$$:  233-block  0
+    $$$$$:  233-block  1
+        -:  234:
+    #####:  235:        int isFunctionSuccessful = userService.listMoviesByGenre(genre);
+    $$$$$:  235-block  0
+    #####:  236:        if (isFunctionSuccessful == -1)
+    $$$$$:  236-block  0
+    #####:  237:            std::cout << "No movies with this genre!\n";
+    $$$$$:  237-block  0
+    $$$$$:  237-block  1
+        -:  238:
+    #####:  239:        while (isFunctionSuccessful != -1) {
+    $$$$$:  239-block  0
+    $$$$$:  239-block  1
+    $$$$$:  239-block  2
+        -:  240:            try {
+    #####:  241:                currentMovie = userService.getCurrentMovie();
+    $$$$$:  241-block  0
+    $$$$$:  241-block  1
+    $$$$$:  241-block  2
+    #####:  242:            }
+    $$$$$:  242-block  0
+    $$$$$:  242-block  1
+        -:  243:            catch (std::exception &Exception) {
+    #####:  244:                std::cout << Exception.what() << '\n';
+    $$$$$:  244-block  0
+    $$$$$:  244-block  1
+    #####:  245:            }
+    $$$$$:  245-block  0
+    $$$$$:  245-block  1
+    $$$$$:  245-block  2
+    $$$$$:  245-block  3
+    $$$$$:  245-block  4
+    #####:  246:            std::cout << currentMovie << '\n';
+    $$$$$:  246-block  0
+    $$$$$:  246-block  1
+    #####:  247:            std::cout << "Input: ";
+    $$$$$:  247-block  0
+    #####:  248:            std::cin >> consoleInput;
+    $$$$$:  248-block  0
+    #####:  249:            if (consoleInput == "add") {
+    $$$$$:  249-block  0
+    #####:  250:                uiUserAdd();
+    $$$$$:  250-block  0
+    #####:  251:                uiUserNext();
+    $$$$$:  251-block  0
+    #####:  252:            }
+    $$$$$:  252-block  0
+    #####:  253:            else if (consoleInput == "next")
+    $$$$$:  253-block  0
+    #####:  254:                uiUserNext();
+    $$$$$:  254-block  0
+    $$$$$:  254-block  1
+    #####:  255:            else if (consoleInput == "exit")
+    $$$$$:  255-block  0
+    #####:  256:                break;
+    $$$$$:  256-block  0
+        -:  257:            else
+    #####:  258:                std::cout << "Invalid option\n";
+    $$$$$:  258-block  0
+        -:  259:        }
+        -:  260:
+    #####:  261:}
+    $$$$$:  261-block  0
+    $$$$$:  261-block  1
+    $$$$$:  261-block  2
+    $$$$$:  261-block  3
+    $$$$$:  261-block  4
+    $$$$$:  261-block  5
+    $$$$$:  261-block  6
+    $$$$$:  261-block  7
+    $$$$$:  261-block  8

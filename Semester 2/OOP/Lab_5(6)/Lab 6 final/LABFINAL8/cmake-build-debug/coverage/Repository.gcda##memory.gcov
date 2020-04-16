@@ -989,12 +989,12 @@
         -:  984:    struct __nat {};
         -:  985:public:
         -:  986:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
-        -:  987:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
-       34:  988:                                      __nat, element_type>::type& __r) _NOEXCEPT
-       34:  988-block  0
-        -:  989:        {return _VSTD::addressof(__r);}
-       34:  990:};
-       34:  990-block  0
+       34:  987:    static pointer pointer_to(typename conditional<is_void<element_type>::value,
+       34:  987-block  0
+        -:  988:                                      __nat, element_type>::type& __r) _NOEXCEPT
+       34:  989:        {return _VSTD::addressof(__r);}
+       34:  989-block  0
+        -:  990:};
         -:  991:
         -:  992:template <class _From, class _To>
         -:  993:struct __rebind_pointer {
@@ -1109,14 +1109,14 @@
         -: 1102:template <class _Tp>
         -: 1103:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
         -: 1104:_Tp*
-        -: 1105:__to_raw_pointer(_Tp* __p) _NOEXCEPT
-      842: 1106:{
-       34: 1106-block  0
-      808: 1106-block  1
-        -: 1107:    return __p;
-      842: 1108:}
-       34: 1108-block  0
-      808: 1108-block  1
+      706: 1105:__to_raw_pointer(_Tp* __p) _NOEXCEPT
+       34: 1105-block  0
+      672: 1105-block  1
+        -: 1106:{
+      706: 1107:    return __p;
+       34: 1107-block  0
+      672: 1107-block  1
+        -: 1108:}
         -: 1109:
         -: 1110:#if _LIBCPP_STD_VER <= 17
         -: 1111:template <class _Pointer>
@@ -1553,34 +1553,34 @@
         -: 1542:#endif  // _LIBCPP_CXX03_LANG
         -: 1543:
         -: 1544:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
-        -: 1545:    static pointer allocate(allocator_type& __a, size_type __n)
+       48: 1545:    static pointer allocate(allocator_type& __a, size_type __n)
+       48: 1545-block  0
        48: 1546:        {return __a.allocate(__n);}
        48: 1546-block  0
-       48: 1547:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
-       48: 1547-block  0
+        -: 1547:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
         -: 1548:    static pointer allocate(allocator_type& __a, size_type __n, const_void_pointer __hint)
         -: 1549:        {return __allocate(__a, __n, __hint,
         -: 1550:            __has_allocate_hint<allocator_type, size_type, const_void_pointer>());}
         -: 1551:
         -: 1552:    _LIBCPP_INLINE_VISIBILITY
-        -: 1553:    static void deallocate(allocator_type& __a, pointer __p, size_type __n) _NOEXCEPT
+       22: 1553:    static void deallocate(allocator_type& __a, pointer __p, size_type __n) _NOEXCEPT
+       22: 1553-block  0
        22: 1554:        {__a.deallocate(__p, __n);}
        22: 1554-block  0
-       22: 1555:
-       22: 1555-block  0
+        -: 1555:
         -: 1556:#ifndef _LIBCPP_HAS_NO_VARIADICS
         -: 1557:    template <class _Tp, class... _Args>
         -: 1558:        _LIBCPP_INLINE_VISIBILITY
-        -: 1559:        static void construct(allocator_type& __a, _Tp* __p, _Args&&... __args)
-       60: 1560:            {__construct(__has_construct<allocator_type, _Tp*, _Args...>(),
-       56: 1560-block  0
-        4: 1560-block  1
+       60: 1559:        static void construct(allocator_type& __a, _Tp* __p, _Args&&... __args)
+       56: 1559-block  0
+        4: 1559-block  1
+      120: 1560:            {__construct(__has_construct<allocator_type, _Tp*, _Args...>(),
       120: 1561:                         __a, __p, _VSTD::forward<_Args>(__args)...);}
-      120: 1562:#else  // _LIBCPP_HAS_NO_VARIADICS
-       56: 1562-block  0
-       56: 1562-block  1
-        4: 1562-block  2
-        4: 1562-block  3
+       56: 1561-block  0
+       56: 1561-block  1
+        4: 1561-block  2
+        4: 1561-block  3
+        -: 1562:#else  // _LIBCPP_HAS_NO_VARIADICS
         -: 1563:    template <class _Tp>
         -: 1564:        _LIBCPP_INLINE_VISIBILITY
         -: 1565:        static void construct(allocator_type&, _Tp* __p)
@@ -1612,26 +1612,26 @@
         -: 1591:
         -: 1592:    template <class _Tp>
         -: 1593:        _LIBCPP_INLINE_VISIBILITY
-        -: 1594:        static void destroy(allocator_type& __a, _Tp* __p)
+       32: 1594:        static void destroy(allocator_type& __a, _Tp* __p)
+       32: 1594-block  0
        32: 1595:            {__destroy(__has_destroy<allocator_type, _Tp*>(), __a, __p);}
        32: 1595-block  0
-       32: 1596:
-       32: 1596-block  0
+        -: 1596:
         -: 1597:    _LIBCPP_INLINE_VISIBILITY
-        -: 1598:    static size_type max_size(const allocator_type& __a) _NOEXCEPT
+       48: 1598:    static size_type max_size(const allocator_type& __a) _NOEXCEPT
+       48: 1598-block  0
        48: 1599:        {return __max_size(__has_max_size<const allocator_type>(), __a);}
        48: 1599-block  0
-       48: 1600:
-       48: 1600-block  0
+        -: 1600:
         -: 1601:    _LIBCPP_INLINE_VISIBILITY
         -: 1602:    static allocator_type
-        -: 1603:        select_on_container_copy_construction(const allocator_type& __a)
+       16: 1603:        select_on_container_copy_construction(const allocator_type& __a)
+       16: 1603-block  0
        16: 1604:            {return __select_on_container_copy_construction(
        16: 1604-block  0
        16: 1605:                __has_select_on_container_copy_construction<const allocator_type>(),
-       16: 1605-block  0
        16: 1606:                __a);}
-       16: 1607:
+        -: 1607:
         -: 1608:    template <class _Ptr>
         -: 1609:        _LIBCPP_INLINE_VISIBILITY
         -: 1610:        static
@@ -1666,18 +1666,18 @@
         -: 1639:        _LIBCPP_INLINE_VISIBILITY
         -: 1640:        static
         -: 1641:        void
-        -: 1642:        __construct_range_forward(allocator_type& __a, _Iter __begin1, _Iter __end1, _Ptr& __begin2)
-        4: 1643:        {
-        4: 1643-block  0
-        -: 1644:            for (; __begin1 != __end1; ++__begin1, (void) ++__begin2)
-        8: 1645:                construct(__a, _VSTD::__to_raw_pointer(__begin2), *__begin1);
+        4: 1642:        __construct_range_forward(allocator_type& __a, _Iter __begin1, _Iter __end1, _Ptr& __begin2)
+        4: 1642-block  0
+        -: 1643:        {
+        8: 1644:            for (; __begin1 != __end1; ++__begin1, (void) ++__begin2)
+        4: 1644-block  0
+        8: 1644-block  1
+        4: 1644-block  2
+        4: 1645:                construct(__a, _VSTD::__to_raw_pointer(__begin2), *__begin1);
         4: 1645-block  0
-        8: 1645-block  1
-        4: 1645-block  2
         4: 1646:        }
         4: 1646-block  0
-        4: 1647:
-        4: 1647-block  0
+        -: 1647:
         -: 1648:    template <class _SourceTp, class _DestTp,
         -: 1649:              class _RawSourceTp = typename remove_const<_SourceTp>::type,
         -: 1650:              class _RawDestTp = typename remove_const<_DestTp>::type>
@@ -1705,20 +1705,20 @@
         -: 1672:        _LIBCPP_INLINE_VISIBILITY
         -: 1673:        static
         -: 1674:        void
-        -: 1675:        __construct_backward(allocator_type& __a, _Ptr __begin1, _Ptr __end1, _Ptr& __end2)
-       44: 1676:        {
-       44: 1676-block  0
-        -: 1677:            while (__end1 != __begin1)
-       56: 1678:            {
-       44: 1678-block  0
-       56: 1678-block  1
-       12: 1678-block  2
-        -: 1679:                construct(__a, _VSTD::__to_raw_pointer(__end2-1), _VSTD::move_if_noexcept(*--__end1));
+       44: 1675:        __construct_backward(allocator_type& __a, _Ptr __begin1, _Ptr __end1, _Ptr& __end2)
+       44: 1675-block  0
+        -: 1676:        {
+       56: 1677:            while (__end1 != __begin1)
+       44: 1677-block  0
+       56: 1677-block  1
+       12: 1677-block  2
+        -: 1678:            {
+       12: 1679:                construct(__a, _VSTD::__to_raw_pointer(__end2-1), _VSTD::move_if_noexcept(*--__end1));
        12: 1680:                --__end2;
-       12: 1681:            }
-        -: 1682:        }
-       44: 1683:
-       44: 1683-block  0
+        -: 1681:            }
+       44: 1682:        }
+       44: 1682-block  0
+        -: 1683:
         -: 1684:    template <class _Tp>
         -: 1685:        _LIBCPP_INLINE_VISIBILITY
         -: 1686:        static
@@ -1751,13 +1751,13 @@
         -: 1713:#ifndef _LIBCPP_HAS_NO_VARIADICS
         -: 1714:    template <class _Tp, class... _Args>
         -: 1715:        _LIBCPP_INLINE_VISIBILITY
-        -: 1716:        static void __construct(true_type, allocator_type& __a, _Tp* __p, _Args&&... __args)
+       60: 1716:        static void __construct(true_type, allocator_type& __a, _Tp* __p, _Args&&... __args)
+       56: 1716-block  0
+        4: 1716-block  1
        60: 1717:            {__a.construct(__p, _VSTD::forward<_Args>(__args)...);}
        56: 1717-block  0
         4: 1717-block  1
-       60: 1718:    template <class _Tp, class... _Args>
-       56: 1718-block  0
-        4: 1718-block  1
+        -: 1718:    template <class _Tp, class... _Args>
         -: 1719:        _LIBCPP_INLINE_VISIBILITY
         -: 1720:        static void __construct(false_type, allocator_type&, _Tp* __p, _Args&&... __args)
         -: 1721:            {
@@ -1780,11 +1780,11 @@
         -: 1738:
         -: 1739:    template <class _Tp>
         -: 1740:        _LIBCPP_INLINE_VISIBILITY
-        -: 1741:        static void __destroy(true_type, allocator_type& __a, _Tp* __p)
+       32: 1741:        static void __destroy(true_type, allocator_type& __a, _Tp* __p)
+       32: 1741-block  0
        32: 1742:            {__a.destroy(__p);}
        32: 1742-block  0
-       32: 1743:    template <class _Tp>
-       32: 1743-block  0
+        -: 1743:    template <class _Tp>
         -: 1744:        _LIBCPP_INLINE_VISIBILITY
         -: 1745:        static void __destroy(false_type, allocator_type&, _Tp* __p)
         -: 1746:            {
@@ -1792,11 +1792,11 @@
         -: 1748:            }
         -: 1749:
         -: 1750:    _LIBCPP_INLINE_VISIBILITY
-        -: 1751:    static size_type __max_size(true_type, const allocator_type& __a) _NOEXCEPT
+       48: 1751:    static size_type __max_size(true_type, const allocator_type& __a) _NOEXCEPT
+       48: 1751-block  0
        48: 1752:            {return __a.max_size();}
        48: 1752-block  0
-       48: 1753:    _LIBCPP_INLINE_VISIBILITY
-       48: 1753-block  0
+        -: 1753:    _LIBCPP_INLINE_VISIBILITY
         -: 1754:    static size_type __max_size(false_type, const allocator_type&) _NOEXCEPT
         -: 1755:            {return numeric_limits<size_type>::max() / sizeof(value_type);}
         -: 1756:
@@ -1806,11 +1806,11 @@
         -: 1760:            {return __a.select_on_container_copy_construction();}
         -: 1761:    _LIBCPP_INLINE_VISIBILITY
         -: 1762:    static allocator_type
-        -: 1763:        __select_on_container_copy_construction(false_type, const allocator_type& __a)
+       16: 1763:        __select_on_container_copy_construction(false_type, const allocator_type& __a)
+       16: 1763-block  0
        16: 1764:            {return __a;}
        16: 1764-block  0
-       16: 1765:};
-       16: 1765-block  0
+        -: 1765:};
         -: 1766:
         -: 1767:template <class _Traits, class _Tp>
         -: 1768:struct __rebind_alloc_helper
@@ -1842,12 +1842,12 @@
         -: 1794:    template <class _Up> struct rebind {typedef allocator<_Up> other;};
         -: 1795:
         -: 1796:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
-        -: 1797:    allocator() _NOEXCEPT {}
-      195: 1798:
-       52: 1798-block  0
-       52: 1798-block  1
-      143: 1798-block  2
-      143: 1798-block  3
+      161: 1797:    allocator() _NOEXCEPT {}
+       52: 1797-block  0
+       52: 1797-block  1
+      109: 1797-block  2
+      109: 1797-block  3
+        -: 1798:
         -: 1799:    template <class _Up>
         -: 1800:    _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX17
         -: 1801:    allocator(const allocator<_Up>&) _NOEXCEPT {}
@@ -1857,40 +1857,40 @@
         -: 1805:    _LIBCPP_INLINE_VISIBILITY const_pointer address(const_reference __x) const _NOEXCEPT
         -: 1806:        {return _VSTD::addressof(__x);}
         -: 1807:    _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_INLINE_VISIBILITY
-        -: 1808:    pointer allocate(size_type __n, allocator<void>::const_pointer = 0)
-       48: 1809:        {
-       48: 1809-block  0
-        -: 1810:        if (__n > max_size())
-       48: 1811:            __throw_length_error("allocator<T>::allocate(size_t n)"
-       48: 1811-block  0
-    #####: 1812:                                 " 'n' exceeds maximum supported size");
-    $$$$$: 1812-block  0
-        -: 1813:        return static_cast<pointer>(_VSTD::__libcpp_allocate(__n * sizeof(_Tp), _LIBCPP_ALIGNOF(_Tp)));
-       48: 1814:        }
-       48: 1814-block  0
-        -: 1815:    _LIBCPP_INLINE_VISIBILITY void deallocate(pointer __p, size_type __n) _NOEXCEPT
+       48: 1808:    pointer allocate(size_type __n, allocator<void>::const_pointer = 0)
+       48: 1808-block  0
+        -: 1809:        {
+       48: 1810:        if (__n > max_size())
+       48: 1810-block  0
+    #####: 1811:            __throw_length_error("allocator<T>::allocate(size_t n)"
+    $$$$$: 1811-block  0
+        -: 1812:                                 " 'n' exceeds maximum supported size");
+       48: 1813:        return static_cast<pointer>(_VSTD::__libcpp_allocate(__n * sizeof(_Tp), _LIBCPP_ALIGNOF(_Tp)));
+       48: 1813-block  0
+        -: 1814:        }
+       22: 1815:    _LIBCPP_INLINE_VISIBILITY void deallocate(pointer __p, size_type __n) _NOEXCEPT
+       22: 1815-block  0
        22: 1816:        {_VSTD::__libcpp_deallocate((void*)__p, __n * sizeof(_Tp), _LIBCPP_ALIGNOF(_Tp));}
        22: 1816-block  0
-       22: 1817:    _LIBCPP_INLINE_VISIBILITY size_type max_size() const _NOEXCEPT
-       22: 1817-block  0
-       22: 1817-block  1
-    $$$$$: 1817-block  2
+       22: 1816-block  1
+    $$$$$: 1816-block  2
+       96: 1817:    _LIBCPP_INLINE_VISIBILITY size_type max_size() const _NOEXCEPT
+       96: 1817-block  0
        96: 1818:        {return size_type(~0) / sizeof(_Tp);}
        96: 1818-block  0
-       96: 1819:#if !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES) && !defined(_LIBCPP_HAS_NO_VARIADICS)
-       96: 1819-block  0
+        -: 1819:#if !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES) && !defined(_LIBCPP_HAS_NO_VARIADICS)
         -: 1820:    template <class _Up, class... _Args>
         -: 1821:        _LIBCPP_INLINE_VISIBILITY
         -: 1822:        void
-        -: 1823:        construct(_Up* __p, _Args&&... __args)
-       60: 1824:        {
-       56: 1824-block  0
-        4: 1824-block  1
-        -: 1825:            ::new((void*)__p) _Up(_VSTD::forward<_Args>(__args)...);
+       60: 1823:        construct(_Up* __p, _Args&&... __args)
+       56: 1823-block  0
+        4: 1823-block  1
+        -: 1824:        {
+       60: 1825:            ::new((void*)__p) _Up(_VSTD::forward<_Args>(__args)...);
        60: 1826:        }
-       60: 1827:#else  // !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES) && !defined(_LIBCPP_HAS_NO_VARIADICS)
-       56: 1827-block  0
-        4: 1827-block  1
+       56: 1826-block  0
+        4: 1826-block  1
+        -: 1827:#else  // !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES) && !defined(_LIBCPP_HAS_NO_VARIADICS)
         -: 1828:        _LIBCPP_INLINE_VISIBILITY
         -: 1829:        void
         -: 1830:        construct(pointer __p)
@@ -1943,10 +1943,10 @@
         -: 1877:            ::new((void*)__p) _Tp(__a0, __a1);
         -: 1878:        }
         -: 1879:#endif  // !defined(_LIBCPP_HAS_NO_RVALUE_REFERENCES) && !defined(_LIBCPP_HAS_NO_VARIADICS)
-        -: 1880:    _LIBCPP_INLINE_VISIBILITY void destroy(pointer __p) {__p->~_Tp();}
-       32: 1881:};
-       32: 1881-block  0
-       32: 1881-block  1
+       32: 1880:    _LIBCPP_INLINE_VISIBILITY void destroy(pointer __p) {__p->~_Tp();}
+       32: 1880-block  0
+       32: 1880-block  1
+        -: 1881:};
         -: 1882:
         -: 1883:template <class _Tp>
         -: 1884:class _LIBCPP_TEMPLATE_VIS allocator<const _Tp>
@@ -2204,28 +2204,28 @@
         -: 2136:  typedef const _Tp& const_reference;
         -: 2137:
         -: 2138:#ifndef _LIBCPP_CXX03_LANG
-        -: 2139:  _LIBCPP_INLINE_VISIBILITY constexpr __compressed_pair_elem() : __value_() {}
-       52: 2140:
-       52: 2140-block  0
-       52: 2140-block  1
+       52: 2139:  _LIBCPP_INLINE_VISIBILITY constexpr __compressed_pair_elem() : __value_() {}
+       52: 2139-block  0
+       52: 2139-block  1
+        -: 2140:
         -: 2141:  template <class _Up, class = typename enable_if<
         -: 2142:      !is_same<__compressed_pair_elem, typename decay<_Up>::type>::value
         -: 2143:  >::type>
         -: 2144:  _LIBCPP_INLINE_VISIBILITY
         -: 2145:  constexpr explicit
-        -: 2146:  __compressed_pair_elem(_Up&& __u)
-      281: 2147:      : __value_(_VSTD::forward<_Up>(__u))
-       14: 2147-block  0
-       14: 2147-block  1
-      209: 2147-block  2
-       44: 2147-block  3
-      281: 2148:    {
-        -: 2149:    }
-      281: 2150:
-       14: 2150-block  0
-       14: 2150-block  1
-      209: 2150-block  2
-       44: 2150-block  3
+      247: 2146:  __compressed_pair_elem(_Up&& __u)
+       14: 2146-block  0
+       14: 2146-block  1
+      175: 2146-block  2
+       44: 2146-block  3
+      247: 2147:      : __value_(_VSTD::forward<_Up>(__u))
+        -: 2148:    {
+      247: 2149:    }
+       14: 2149-block  0
+       14: 2149-block  1
+      175: 2149-block  2
+       44: 2149-block  3
+        -: 2150:
         -: 2151:  template <class... _Args, size_t... _Indexes>
         -: 2152:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
         -: 2153:  __compressed_pair_elem(piecewise_construct_t, tuple<_Args...> __args,
@@ -2237,24 +2237,24 @@
         -: 2159:  __compressed_pair_elem(_ParamT __p) : __value_(std::forward<_ParamT>(__p)) {}
         -: 2160:#endif
         -: 2161:
-        -: 2162:  _LIBCPP_INLINE_VISIBILITY reference __get() _NOEXCEPT { return __value_; }
-      352: 2163:  _LIBCPP_INLINE_VISIBILITY
-       56: 2163-block  0
-       56: 2163-block  1
-    $$$$$: 2163-block  2
-    $$$$$: 2163-block  3
-       34: 2163-block  4
-       34: 2163-block  5
-      198: 2163-block  6
-      198: 2163-block  7
-       64: 2163-block  8
-       64: 2163-block  9
-        -: 2164:  const_reference __get() const _NOEXCEPT { return __value_; }
-      715: 2165:
-      293: 2165-block  0
-      293: 2165-block  1
-      422: 2165-block  2
-      422: 2165-block  3
+      352: 2162:  _LIBCPP_INLINE_VISIBILITY reference __get() _NOEXCEPT { return __value_; }
+       56: 2162-block  0
+       56: 2162-block  1
+    $$$$$: 2162-block  2
+    $$$$$: 2162-block  3
+       34: 2162-block  4
+       34: 2162-block  5
+      198: 2162-block  6
+      198: 2162-block  7
+       64: 2162-block  8
+       64: 2162-block  9
+        -: 2163:  _LIBCPP_INLINE_VISIBILITY
+      647: 2164:  const_reference __get() const _NOEXCEPT { return __value_; }
+      293: 2164-block  0
+      293: 2164-block  1
+      354: 2164-block  2
+      354: 2164-block  3
+        -: 2165:
         -: 2166:private:
         -: 2167:  _Tp __value_;
         -: 2168:};
@@ -2267,24 +2267,24 @@
         -: 2175:  typedef _Tp __value_type;
         -: 2176:
         -: 2177:#ifndef _LIBCPP_CXX03_LANG
-        -: 2178:  _LIBCPP_INLINE_VISIBILITY constexpr __compressed_pair_elem() = default;
-      195: 2179:
-       52: 2179-block  0
-       52: 2179-block  1
-      143: 2179-block  2
-      143: 2179-block  3
+      161: 2178:  _LIBCPP_INLINE_VISIBILITY constexpr __compressed_pair_elem() = default;
+       52: 2178-block  0
+       52: 2178-block  1
+      109: 2178-block  2
+      109: 2178-block  3
+        -: 2179:
         -: 2180:  template <class _Up, class = typename enable_if<
         -: 2181:        !is_same<__compressed_pair_elem, typename decay<_Up>::type>::value
         -: 2182:  >::type>
         -: 2183:  _LIBCPP_INLINE_VISIBILITY
         -: 2184:  constexpr explicit
-        -: 2185:  __compressed_pair_elem(_Up&& __u)
+       22: 2185:  __compressed_pair_elem(_Up&& __u)
+       22: 2185-block  0
        22: 2186:      : __value_type(_VSTD::forward<_Up>(__u))
-       22: 2186-block  0
-       22: 2187:  {}
-       44: 2188:
-       22: 2188-block  0
-       22: 2188-block  1
+       44: 2187:  {}
+       22: 2187-block  0
+       22: 2187-block  1
+        -: 2188:
         -: 2189:  template <class... _Args, size_t... _Indexes>
         -: 2190:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
         -: 2191:  __compressed_pair_elem(piecewise_construct_t, tuple<_Args...> __args,
@@ -2297,14 +2297,14 @@
         -: 2198:      : __value_type(std::forward<_ParamT>(__p)) {}
         -: 2199:#endif
         -: 2200:
-        -: 2201:  _LIBCPP_INLINE_VISIBILITY reference __get() _NOEXCEPT { return *this; }
-      136: 2202:  _LIBCPP_INLINE_VISIBILITY
-      136: 2202-block  0
-      136: 2202-block  1
-        -: 2203:  const_reference __get() const _NOEXCEPT { return *this; }
-       64: 2204:};
-       64: 2204-block  0
-       64: 2204-block  1
+      136: 2201:  _LIBCPP_INLINE_VISIBILITY reference __get() _NOEXCEPT { return *this; }
+      136: 2201-block  0
+      136: 2201-block  1
+        -: 2202:  _LIBCPP_INLINE_VISIBILITY
+       64: 2203:  const_reference __get() const _NOEXCEPT { return *this; }
+       64: 2203-block  0
+       64: 2203-block  1
+        -: 2204:};
         -: 2205:
         -: 2206:// Tag used to construct the second element of the compressed pair.
         -: 2207:struct __second_tag {};
@@ -2333,23 +2333,23 @@
         -: 2230:      >::type
         -: 2231:  >
         -: 2232:  _LIBCPP_INLINE_VISIBILITY
-        -: 2233:  constexpr __compressed_pair() {}
-      104: 2234:
-       52: 2234-block  0
-       52: 2234-block  1
-       52: 2234-block  2
-       52: 2234-block  3
+      104: 2233:  constexpr __compressed_pair() {}
+       52: 2233-block  0
+       52: 2233-block  1
+       52: 2233-block  2
+       52: 2233-block  3
+        -: 2234:
         -: 2235:  template <class _Tp, typename enable_if<!is_same<typename decay<_Tp>::type,
         -: 2236:                                                   __compressed_pair>::value,
         -: 2237:                                          bool>::type = true>
         -: 2238:  _LIBCPP_INLINE_VISIBILITY constexpr explicit
-        -: 2239:  __compressed_pair(_Tp&& __t)
-      286: 2240:      : _Base1(std::forward<_Tp>(__t)), _Base2() {}
-      143: 2240-block  0
-      143: 2240-block  1
-      286: 2241:
-      143: 2241-block  0
-      143: 2241-block  1
+      218: 2239:  __compressed_pair(_Tp&& __t)
+      109: 2239-block  0
+      109: 2239-block  1
+      218: 2240:      : _Base1(std::forward<_Tp>(__t)), _Base2() {}
+      109: 2240-block  0
+      109: 2240-block  1
+        -: 2241:
         -: 2242:  template <class _Tp>
         -: 2243:  _LIBCPP_INLINE_VISIBILITY constexpr
         -: 2244:  __compressed_pair(__second_tag, _Tp&& __t)
@@ -2357,7 +2357,13 @@
         -: 2246:
         -: 2247:  template <class _U1, class _U2>
         -: 2248:  _LIBCPP_INLINE_VISIBILITY constexpr
-        -: 2249:  __compressed_pair(_U1&& __t1, _U2&& __t2)
+      160: 2249:  __compressed_pair(_U1&& __t1, _U2&& __t2)
+       14: 2249-block  0
+       14: 2249-block  1
+       44: 2249-block  2
+       44: 2249-block  3
+       22: 2249-block  4
+       22: 2249-block  5
       160: 2250:      : _Base1(std::forward<_U1>(__t1)), _Base2(std::forward<_U2>(__t2)) {}
        14: 2250-block  0
        14: 2250-block  1
@@ -2365,13 +2371,7 @@
        44: 2250-block  3
        22: 2250-block  4
        22: 2250-block  5
-      160: 2251:
-       14: 2251-block  0
-       14: 2251-block  1
-       44: 2251-block  2
-       44: 2251-block  3
-       22: 2251-block  4
-       22: 2251-block  5
+        -: 2251:
         -: 2252:  template <class... _Args1, class... _Args2>
         -: 2253:  _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR_AFTER_CXX14
         -: 2254:  __compressed_pair(piecewise_construct_t __pc, tuple<_Args1...> __first_args,
@@ -2398,46 +2398,46 @@
         -: 2275:#endif
         -: 2276:
         -: 2277:  _LIBCPP_INLINE_VISIBILITY
-        -: 2278:  typename _Base1::reference first() _NOEXCEPT {
+      288: 2278:  typename _Base1::reference first() _NOEXCEPT {
+       56: 2278-block  0
+       34: 2278-block  1
+      110: 2278-block  2
+       88: 2278-block  3
       288: 2279:    return static_cast<_Base1&>(*this).__get();
        56: 2279-block  0
        34: 2279-block  1
       110: 2279-block  2
        88: 2279-block  3
-      288: 2280:  }
-       56: 2280-block  0
-       34: 2280-block  1
-      110: 2280-block  2
-       88: 2280-block  3
+        -: 2280:  }
         -: 2281:
         -: 2282:  _LIBCPP_INLINE_VISIBILITY
-        -: 2283:  typename _Base1::const_reference first() const _NOEXCEPT {
-      715: 2284:    return static_cast<_Base1 const&>(*this).__get();
+      647: 2283:  typename _Base1::const_reference first() const _NOEXCEPT {
+      293: 2283-block  0
+      346: 2283-block  1
+        8: 2283-block  2
+      647: 2284:    return static_cast<_Base1 const&>(*this).__get();
       293: 2284-block  0
-      414: 2284-block  1
+      346: 2284-block  1
         8: 2284-block  2
-      715: 2285:  }
-      293: 2285-block  0
-      414: 2285-block  1
-        8: 2285-block  2
+        -: 2285:  }
         -: 2286:
         -: 2287:  _LIBCPP_INLINE_VISIBILITY
-        -: 2288:  typename _Base2::reference second() _NOEXCEPT {
+      200: 2288:  typename _Base2::reference second() _NOEXCEPT {
+    $$$$$: 2288-block  0
+      136: 2288-block  1
+       64: 2288-block  2
       200: 2289:    return static_cast<_Base2&>(*this).__get();
     $$$$$: 2289-block  0
       136: 2289-block  1
        64: 2289-block  2
-      200: 2290:  }
-    $$$$$: 2290-block  0
-      136: 2290-block  1
-       64: 2290-block  2
+        -: 2290:  }
         -: 2291:
         -: 2292:  _LIBCPP_INLINE_VISIBILITY
-        -: 2293:  typename _Base2::const_reference second() const _NOEXCEPT {
+       64: 2293:  typename _Base2::const_reference second() const _NOEXCEPT {
+       64: 2293-block  0
        64: 2294:    return static_cast<_Base2 const&>(*this).__get();
        64: 2294-block  0
-       64: 2295:  }
-       64: 2295-block  0
+        -: 2295:  }
         -: 2296:
         -: 2297:  _LIBCPP_INLINE_VISIBILITY
         -: 2298:  void swap(__compressed_pair& __x)
@@ -2623,18 +2623,18 @@
         -: 2478:  template <bool _Dummy = true,
         -: 2479:            class = _EnableIfDeleterConstructible<_GoodRValRefType<_Dummy>>>
         -: 2480:  _LIBCPP_INLINE_VISIBILITY
-        -: 2481:  unique_ptr(pointer __p, _GoodRValRefType<_Dummy> __d) noexcept
+       28: 2481:  unique_ptr(pointer __p, _GoodRValRefType<_Dummy> __d) noexcept
+       14: 2481-block  0
+       14: 2481-block  1
        28: 2482:      : __ptr_(__p, _VSTD::move(__d)) {
        14: 2482-block  0
-       14: 2482-block  1
-       28: 2483:    static_assert(!is_reference<deleter_type>::value,
-       14: 2483-block  0
-    $$$$$: 2483-block  1
+    $$$$$: 2482-block  1
+        -: 2483:    static_assert(!is_reference<deleter_type>::value,
         -: 2484:                  "rvalue deleter bound to reference");
-        -: 2485:  }
-       28: 2486:
-       14: 2486-block  0
-       14: 2486-block  1
+       28: 2485:  }
+       14: 2485-block  0
+       14: 2485-block  1
+        -: 2486:
         -: 2487:  template <bool _Dummy = true,
         -: 2488:            class = _EnableIfDeleterConstructible<_BadRValRefType<_Dummy>>>
         -: 2489:  _LIBCPP_INLINE_VISIBILITY
@@ -2753,12 +2753,12 @@
         -: 2602:#endif
         -: 2603:
         -: 2604:  _LIBCPP_INLINE_VISIBILITY
-        -: 2605:  ~unique_ptr() { reset(); }
-       28: 2606:
-       14: 2606-block  0
-       14: 2606-block  1
-       14: 2606-block  2
-       14: 2606-block  3
+       28: 2605:  ~unique_ptr() { reset(); }
+       14: 2605-block  0
+       14: 2605-block  1
+       14: 2605-block  2
+       14: 2605-block  3
+        -: 2606:
         -: 2607:  _LIBCPP_INLINE_VISIBILITY
         -: 2608:  unique_ptr& operator=(nullptr_t) _NOEXCEPT {
         -: 2609:    reset();
@@ -2792,28 +2792,28 @@
         -: 2637:  }
         -: 2638:
         -: 2639:  _LIBCPP_INLINE_VISIBILITY
-        -: 2640:  pointer release() _NOEXCEPT {
+       14: 2640:  pointer release() _NOEXCEPT {
+       14: 2640-block  0
        14: 2641:    pointer __t = __ptr_.first();
-       14: 2641-block  0
        14: 2642:    __ptr_.first() = pointer();
        14: 2643:    return __t;
-       14: 2644:  }
-       14: 2644-block  0
+       14: 2643-block  0
+        -: 2644:  }
         -: 2645:
         -: 2646:  _LIBCPP_INLINE_VISIBILITY
-        -: 2647:  void reset(pointer __p = pointer()) _NOEXCEPT {
+       14: 2647:  void reset(pointer __p = pointer()) _NOEXCEPT {
+       14: 2647-block  0
        14: 2648:    pointer __tmp = __ptr_.first();
-       14: 2648-block  0
        14: 2649:    __ptr_.first() = __p;
        14: 2650:    if (__tmp)
-       14: 2651:      __ptr_.second()(__tmp);
-       14: 2651-block  0
-    #####: 2652:  }
-    $$$$$: 2652-block  0
-    $$$$$: 2652-block  1
-    $$$$$: 2652-block  2
-       14: 2653:
-       14: 2653-block  0
+       14: 2650-block  0
+    #####: 2651:      __ptr_.second()(__tmp);
+    $$$$$: 2651-block  0
+    $$$$$: 2651-block  1
+    $$$$$: 2651-block  2
+       14: 2652:  }
+       14: 2652-block  0
+        -: 2653:
         -: 2654:  _LIBCPP_INLINE_VISIBILITY
         -: 2655:  void swap(unique_ptr& __u) _NOEXCEPT {
         -: 2656:    __ptr_.swap(__u.__ptr_);

@@ -2312,12 +2312,10 @@
         -: 2307:template <class _Tp>
         -: 2308:struct __destructible_imp<_Tp, false>
         -: 2309:   : public _VSTD::integral_constant<bool,
-        7: 2310:        __is_destructor_wellformed<typename _VSTD::remove_all_extents<_Tp>::type>::value> {};
-        7: 2310-block  0
+        -: 2310:        __is_destructor_wellformed<typename _VSTD::remove_all_extents<_Tp>::type>::value> {};
         -: 2311:
         -: 2312:template <class _Tp>
-        7: 2313:struct __destructible_imp<_Tp, true>
-        7: 2313-block  0
+        -: 2313:struct __destructible_imp<_Tp, true>
         -: 2314:    : public _VSTD::true_type {};
         -: 2315:
         -: 2316:template <class _Tp, bool>
@@ -2354,10 +2352,12 @@
         -: 2347:template <class _Tp>
         -: 2348:inline _LIBCPP_INLINE_VISIBILITY _LIBCPP_CONSTEXPR
         -: 2349:typename remove_reference<_Tp>::type&&
-        -: 2350:move(_Tp&& __t) _NOEXCEPT
+        7: 2350:move(_Tp&& __t) _NOEXCEPT
+        7: 2350-block  0
         -: 2351:{
         -: 2352:    typedef _LIBCPP_NODEBUG_TYPE typename remove_reference<_Tp>::type _Up;
-        -: 2353:    return static_cast<_Up&&>(__t);
+        7: 2353:    return static_cast<_Up&&>(__t);
+        7: 2353-block  0
         -: 2354:}
         -: 2355:
         -: 2356:template <class _Tp>

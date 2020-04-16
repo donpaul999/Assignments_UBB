@@ -138,11 +138,7 @@
         -:  133:#endif
         -:  134:};
         -:  135:
-    #####:  136:class _LIBCPP_EXCEPTION_ABI invalid_argument
-    $$$$$:  136-block  0
-    $$$$$:  136-block  1
-    $$$$$:  136-block  2
-    $$$$$:  136-block  3
+        -:  136:class _LIBCPP_EXCEPTION_ABI invalid_argument
         -:  137:    : public logic_error
         -:  138:{
         -:  139:public:
@@ -159,7 +155,11 @@
         -:  150:{
         -:  151:public:
         -:  152:    _LIBCPP_INLINE_VISIBILITY explicit length_error(const string& __s) : logic_error(__s) {}
-        -:  153:    _LIBCPP_INLINE_VISIBILITY explicit length_error(const char* __s)   : logic_error(__s) {}
+    #####:  153:    _LIBCPP_INLINE_VISIBILITY explicit length_error(const char* __s)   : logic_error(__s) {}
+    $$$$$:  153-block  0
+    $$$$$:  153-block  1
+    $$$$$:  153-block  2
+    $$$$$:  153-block  3
         -:  154:#ifndef _LIBCPP_ABI_VCRUNTIME
         -:  155:    virtual ~length_error() _NOEXCEPT;
         -:  156:#endif
@@ -228,21 +228,15 @@
         -:  219:#else
         -:  220:    ((void)__msg);
         -:  221:    _VSTD::abort();
-    #####:  222:#endif
-    $$$$$:  222-block  0
+        -:  222:#endif
         -:  223:}
         -:  224:
-    #####:  225:_LIBCPP_NORETURN inline _LIBCPP_INLINE_VISIBILITY
-    $$$$$:  225-block  0
-    $$$$$:  225-block  1
-    $$$$$:  225-block  2
-    $$$$$:  225-block  3
+        -:  225:_LIBCPP_NORETURN inline _LIBCPP_INLINE_VISIBILITY
         -:  226:void __throw_domain_error(const char*__msg)
         -:  227:{
         -:  228:#ifndef _LIBCPP_NO_EXCEPTIONS
         -:  229:    throw domain_error(__msg);
-    #####:  230:#else
-    $$$$$:  230-block  0
+        -:  230:#else
         -:  231:    ((void)__msg);
         -:  232:    _VSTD::abort();
         -:  233:#endif
@@ -260,15 +254,20 @@
         -:  245:}
         -:  246:
         -:  247:_LIBCPP_NORETURN inline _LIBCPP_INLINE_VISIBILITY
-        -:  248:void __throw_length_error(const char*__msg)
+    #####:  248:void __throw_length_error(const char*__msg)
+    $$$$$:  248-block  0
         -:  249:{
         -:  250:#ifndef _LIBCPP_NO_EXCEPTIONS
-        -:  251:    throw length_error(__msg);
+    #####:  251:    throw length_error(__msg);
+    $$$$$:  251-block  0
+    $$$$$:  251-block  1
+    $$$$$:  251-block  2
+    $$$$$:  251-block  3
         -:  252:#else
         -:  253:    ((void)__msg);
         -:  254:    _VSTD::abort();
         -:  255:#endif
-        -:  256:}
+    #####:  256:}
         -:  257:
         -:  258:_LIBCPP_NORETURN inline _LIBCPP_INLINE_VISIBILITY
         -:  259:void __throw_out_of_range(const char*__msg)

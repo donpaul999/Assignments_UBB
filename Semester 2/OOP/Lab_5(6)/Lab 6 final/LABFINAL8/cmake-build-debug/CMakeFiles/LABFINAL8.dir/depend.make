@@ -17,6 +17,7 @@ CMakeFiles/LABFINAL8.dir/Repository.o: ../Repository.h
 
 CMakeFiles/LABFINAL8.dir/Tests.o: ../AdminService.h
 CMakeFiles/LABFINAL8.dir/Tests.o: ../DynamicVector.h
+CMakeFiles/LABFINAL8.dir/Tests.o: ../FileRepository.h
 CMakeFiles/LABFINAL8.dir/Tests.o: ../Movie.h
 CMakeFiles/LABFINAL8.dir/Tests.o: ../Repository.h
 CMakeFiles/LABFINAL8.dir/Tests.o: ../Tests.cpp
@@ -37,6 +38,7 @@ CMakeFiles/LABFINAL8.dir/UserService.o: ../UserService.h
 
 CMakeFiles/LABFINAL8.dir/main.o: ../AdminService.h
 CMakeFiles/LABFINAL8.dir/main.o: ../DynamicVector.h
+CMakeFiles/LABFINAL8.dir/main.o: ../FileRepository.h
 CMakeFiles/LABFINAL8.dir/main.o: ../Movie.h
 CMakeFiles/LABFINAL8.dir/main.o: ../Repository.h
 CMakeFiles/LABFINAL8.dir/main.o: ../Tests.h

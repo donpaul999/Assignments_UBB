@@ -7,6 +7,7 @@ void Tests::runAllTests()
 	runRepositoryTests();
 	runAdminServiceTests();
 	runUserServiceTests();
+    runFileRepositoryTests();
 }
 
 void Tests::runMovieTests()
@@ -86,6 +87,21 @@ void Tests::runUserServiceTests()
     getWatchListLength_AnyUserService_CorrectLength();
     goToNextMovieByGenre_AnyUserService_CorrectPosition();
     goToNextMovieByGenre_AnyUserService_FirstPosition();
+}
+
+void Tests::runFileRepositoryTests(){
+    FileRepository_AnyRepository_FileRepositoryCreated();
+    writeMoviesToFile_AnyMovie_AddSucessfulFileRepository();
+    loadMoviesFromFile_AnyMovie_LoadSucessfulFileRepository();
+    addMovie_MovieNotInTheList_ReturnsOneFileRepository();
+    addMovie_MovieInTheList_ReturnsMinusOneFileRepository();
+    deleteMovie_MovieInTheList_ReturnsOneFileRepository();
+    deleteMovie_MovieNotInTheList_ReturnsMinusOneFileRepository();
+    update_MovieInTheList_ReturnsOneFileRepository();
+    update_MovieNotInTheList_ReturnsMinusOneFileRepository();
+    getMovieAtPosition_ValidPosition_ReturnsMovieFileRepository();
+    getMovieAtPosition_InValidPosition_ReturnsExceptionFileRepository();
+    getNumberOfMovies_AnyRepository_CorrectNumberOfMoviesFileRepository();
 }
 
 void Tests::Movie_AnyMovie_MovieCreated()
@@ -586,4 +602,107 @@ void Tests::goToNextMovieByGenre_AnyUserService_FirstPosition(){
     userServiceUsed.goToNextMovieByGenre();
     Movie movieUsed = userServiceUsed.getCurrentMovie();
     assert(movieUsed.getTitle() == "Test");
+}
+
+
+void Tests::FileRepository_AnyRepository_FileRepositoryCreated()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+}
+
+void Tests::writeMoviesToFile_AnyMovie_AddSucessfulFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    std::vector<Movie> movieList;
+    movieList.push_back(movieUsed);
+    repositoryUsed.writeMoviesToFile(movieList);
+    assert(repositoryUsed.getNumberOfMovies() == 1);
+}
+
+void Tests::loadMoviesFromFile_AnyMovie_LoadSucessfulFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    std::vector<Movie> movieList = repositoryUsed.loadMoviesFromFile();
+    assert(movieList.size() == 1);
+	Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed.deleteMovie(movieUsed);
+}
+
+
+void Tests::addMovie_MovieNotInTheList_ReturnsOneFileRepository()
+{
+    FileRepository repositoryUsed{"testFile.txt"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    assert(repositoryUsed.addMovie(movieUsed) == 1);
+	repositoryUsed.deleteMovie(movieUsed);
+}
+
+void Tests::addMovie_MovieInTheList_ReturnsMinusOneFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+	repositoryUsed.addMovie(movieUsed);
+    assert(repositoryUsed.addMovie(movieUsed) == -1);
+	repositoryUsed.deleteMovie(movieUsed);
+}
+
+void Tests::deleteMovie_MovieInTheList_ReturnsOneFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    repositoryUsed.addMovie(movieUsed);
+    assert(repositoryUsed.deleteMovie(movieUsed) == 1);
+}
+
+void Tests::deleteMovie_MovieNotInTheList_ReturnsMinusOneFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    assert(repositoryUsed.deleteMovie(movieUsed) == -1);
+}
+
+void Tests::update_MovieInTheList_ReturnsOneFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    repositoryUsed.addMovie(movieUsed);
+    assert(repositoryUsed.updateMovie(movieUsed) == 1);
+	repositoryUsed.deleteMovie(movieUsed);
+}
+
+void Tests::update_MovieNotInTheList_ReturnsMinusOneFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    assert(repositoryUsed.updateMovie(movieUsed) == -1);
+}
+
+void Tests::getMovieAtPosition_ValidPosition_ReturnsMovieFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    repositoryUsed.addMovie(movieUsed);
+    assert(repositoryUsed.getMovieAtPosition(0) == movieUsed);
+}
+
+void Tests::getMovieAtPosition_InValidPosition_ReturnsExceptionFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    repositoryUsed.addMovie(movieUsed);
+    try {
+        Movie movieUsed = repositoryUsed.getMovieAtPosition(-1);
+    }
+    catch (std::exception Exception) {
+        assert(true);
+    }
+}
+
+void Tests::getNumberOfMovies_AnyRepository_CorrectNumberOfMoviesFileRepository()
+{
+    FileRepository repositoryUsed{"inputFile.in"};
+    Movie movieUsed = { "Test", "CategoryTest", 123, 456, "TrailerTest" };
+    repositoryUsed.addMovie(movieUsed);
+    assert(repositoryUsed.getNumberOfMovies() == 1);
 }
