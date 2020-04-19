@@ -1,1 +1,1 @@
-Title: Test, Genre: CategoryTest, Year of Release: 123, Likes: 456, Trailer: TrailerTest;
+Title: Test, Genre: CategoryTest, Year of Release: 2015, Likes: 456, Trailer: www.TrailerTest;

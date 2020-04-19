@@ -34,29 +34,33 @@ vector<int> Service::bfsFromEndToStart(int source)
     return p;
 }
 
-int Service::floydWarshall(int source, int target) {
+pair< vector<vector<int>>, int> Service::floydWarshall(int source, int target) {
     vector<vector<int>> distances;
-    vector<int> linesDist;
+    vector<vector<int>> positions;
+    vector<int> linesDist, vectorEmpty;
     int i, j, k, count = 0;
     for (i = 0; i < graph.vertices.size(); ++i) {
         linesDist.clear();
+        vectorEmpty.clear();
         for (j = 0; j < graph.vertices.size(); ++j) {
             try {
                 linesDist.push_back(graph.getCost(graph.vertices[i], graph.vertices[j]));
+                vectorEmpty.push_back(-1);
             }
             catch (exception e) {
                 linesDist.push_back(INF);
+                vectorEmpty.push_back(-1);
             }
-            //std::cout << count++<<'\n';
         }
         distances.push_back(linesDist);
+        positions.push_back(vectorEmpty);
     }
     for (k = 0; k < graph.vertices.size(); ++k)
         for (i = 0; i < graph.vertices.size(); ++i)
             for (j = 0; j < graph.vertices.size(); ++j)
                 if(distances[i][k] + distances[k][j] < distances[i][j]) {
-                    //std::cout << count++<<'\n';
                     distances[i][j] = distances[i][k] + distances[k][j];
+                    positions[i][j] = k;
                 }
-    return distances[source][target];
+    return make_pair(positions, distances[source][target]);
 }

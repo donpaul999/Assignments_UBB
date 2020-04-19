@@ -9,6 +9,6 @@ public:
 	Service();
 	Service(DIRECT_GRAPH graph);
 	vector<int> bfsFromEndToStart(int source);
-	int floydWarshall(int source, int target);
+    pair< vector<vector<int>>, int> floydWarshall(int source, int target);
 };
 

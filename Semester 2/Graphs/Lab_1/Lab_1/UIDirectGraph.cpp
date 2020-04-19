@@ -250,9 +250,41 @@ void UI::choice15()
     cout << "Input the second vertex: ";
     cin >> target;
     cout << '\n';
-    int lowestCost = service.floydWarshall(source, target);
-    if(lowestCost > 0 && lowestCost != INT_MAX)
-        cout << "Lowest cost of the path: " << lowestCost << '\n';
+    pair< vector<vector<int>>, int> lowestCost = service.floydWarshall(source, target);
+    if(lowestCost.second > 0 && lowestCost.second != INT_MAX) {
+        cout << "Lowest cost of the path: " << lowestCost.second << '\n';
+        cout << "Path: \n";
+        vector<int> path;
+        int i = 0, j = 1, k;
+        path.push_back(source);
+        path.push_back(target);
+        bool isAPath = 1;
+        while(isAPath == 1)
+        {
+            isAPath = 0;
+
+            if(i >= j)
+                break;
+            if(lowestCost.first[path[i]][path[j]] != -1 && find(path.begin(), path.end(), lowestCost.first[path[i]][path[j]]) == path.end() && i == j - 1)
+            {
+                isAPath = 1;
+                path.insert(path.begin() + i + 1,lowestCost.first[path[i]][path[j]]);
+            }
+            if(isAPath == 0 && i < path.size() - 1 && j < path.size() - 1 && lowestCost.first[path[i + 1]][path[j + 1]] != -1) {
+                isAPath = 1;
+                i++;
+                j++;
+            }
+            if(isAPath == 0 && j > 0 && i > 0 && lowestCost.first[path[i - 1]][path[j - 1]] != -1) {
+                isAPath = 1;
+                j--;
+                i--;
+            }
+        }
+        for(k = 0; k < path.size(); ++k)
+            cout<<path[k]<<" ";
+        cout << '\n';
+    }
     else
         cout << "No path between this vertices"<<'\n';
 }
