@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include "ValidationException.h"
+#include "MovieValidator.h"
 
 class AdminService {
 private:

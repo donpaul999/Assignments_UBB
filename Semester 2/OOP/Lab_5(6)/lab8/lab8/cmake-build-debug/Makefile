@@ -150,33 +150,6 @@ AdminService.cpp.s:
 	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/AdminService.cpp.s
 .PHONY : AdminService.cpp.s
 
-CSVRepository.o: CSVRepository.cpp.o
-
-.PHONY : CSVRepository.o
-
-# target to build an object file
-CSVRepository.cpp.o:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/CSVRepository.cpp.o
-.PHONY : CSVRepository.cpp.o
-
-CSVRepository.i: CSVRepository.cpp.i
-
-.PHONY : CSVRepository.i
-
-# target to preprocess a source file
-CSVRepository.cpp.i:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/CSVRepository.cpp.i
-.PHONY : CSVRepository.cpp.i
-
-CSVRepository.s: CSVRepository.cpp.s
-
-.PHONY : CSVRepository.s
-
-# target to generate assembly for a file
-CSVRepository.cpp.s:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/CSVRepository.cpp.s
-.PHONY : CSVRepository.cpp.s
-
 DynamicVector.o: DynamicVector.cpp.o
 
 .PHONY : DynamicVector.o
@@ -231,33 +204,6 @@ FileRepository.cpp.s:
 	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/FileRepository.cpp.s
 .PHONY : FileRepository.cpp.s
 
-HTMLRepository.o: HTMLRepository.cpp.o
-
-.PHONY : HTMLRepository.o
-
-# target to build an object file
-HTMLRepository.cpp.o:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/HTMLRepository.cpp.o
-.PHONY : HTMLRepository.cpp.o
-
-HTMLRepository.i: HTMLRepository.cpp.i
-
-.PHONY : HTMLRepository.i
-
-# target to preprocess a source file
-HTMLRepository.cpp.i:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/HTMLRepository.cpp.i
-.PHONY : HTMLRepository.cpp.i
-
-HTMLRepository.s: HTMLRepository.cpp.s
-
-.PHONY : HTMLRepository.s
-
-# target to generate assembly for a file
-HTMLRepository.cpp.s:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/HTMLRepository.cpp.s
-.PHONY : HTMLRepository.cpp.s
-
 Movie.o: Movie.cpp.o
 
 .PHONY : Movie.o
@@ -284,6 +230,33 @@ Movie.s: Movie.cpp.s
 Movie.cpp.s:
 	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/Movie.cpp.s
 .PHONY : Movie.cpp.s
+
+MovieValidator.o: MovieValidator.cpp.o
+
+.PHONY : MovieValidator.o
+
+# target to build an object file
+MovieValidator.cpp.o:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/MovieValidator.cpp.o
+.PHONY : MovieValidator.cpp.o
+
+MovieValidator.i: MovieValidator.cpp.i
+
+.PHONY : MovieValidator.i
+
+# target to preprocess a source file
+MovieValidator.cpp.i:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/MovieValidator.cpp.i
+.PHONY : MovieValidator.cpp.i
+
+MovieValidator.s: MovieValidator.cpp.s
+
+.PHONY : MovieValidator.s
+
+# target to generate assembly for a file
+MovieValidator.cpp.s:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/MovieValidator.cpp.s
+.PHONY : MovieValidator.cpp.s
 
 Repository.o: Repository.cpp.o
 
@@ -486,21 +459,18 @@ help:
 	@echo "... AdminService.o"
 	@echo "... AdminService.i"
 	@echo "... AdminService.s"
-	@echo "... CSVRepository.o"
-	@echo "... CSVRepository.i"
-	@echo "... CSVRepository.s"
 	@echo "... DynamicVector.o"
 	@echo "... DynamicVector.i"
 	@echo "... DynamicVector.s"
 	@echo "... FileRepository.o"
 	@echo "... FileRepository.i"
 	@echo "... FileRepository.s"
-	@echo "... HTMLRepository.o"
-	@echo "... HTMLRepository.i"
-	@echo "... HTMLRepository.s"
 	@echo "... Movie.o"
 	@echo "... Movie.i"
 	@echo "... Movie.s"
+	@echo "... MovieValidator.o"
+	@echo "... MovieValidator.i"
+	@echo "... MovieValidator.s"
 	@echo "... Repository.o"
 	@echo "... Repository.i"
 	@echo "... Repository.s"

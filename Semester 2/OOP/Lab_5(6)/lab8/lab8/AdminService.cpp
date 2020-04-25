@@ -39,19 +39,8 @@ const std::vector<std::string> AdminService::explode(const std::string& stringTo
 */
 int AdminService::adminAddMovie(const std::string& title, const std::string& genre, int yearOfRelease, int numberOfLikes, const std::string& trailer)
 {
-    std::string errorsList = "";
-    if(title.size() < 2)
-        errorsList = "Invalid title ";
-    if(yearOfRelease < 1000 || yearOfRelease > 3000)
-       errorsList += "Invalid year ";
-    if(numberOfLikes < 0)
-        errorsList += "Invalid number of Likes ";
-    /*if (trailer.find("www.") != 0)
-        errorsList += "Invalid trailer ";
-        */
-    if(!errorsList.empty())
-        throw ValidationException(errorsList);
     Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
+    MovieValidator::validateMovie(movieUsed);
 	return repository.addMovie(movieUsed);
 }
 
@@ -75,19 +64,8 @@ int AdminService::adminDeleteMovie(const std::string& title)
 int AdminService::adminUpdateMovie(const std::string& title, const std::string& genre, int yearOfRelease, int numberOfLikes, const std::string& trailer)
 {
 	Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
-    std::string errorsList = "";
-    if(title.size() < 2)
-        errorsList = "Invalid title ";
-    if(yearOfRelease < 1000 || yearOfRelease > 3000)
-        errorsList += "Invalid year ";
-    if(numberOfLikes < 0)
-        errorsList += "Invalid number of Likes ";
-    /*if (trailer.find("www.") != 0)
-        errorsList += "Invalid trailer ";
-        */
-    if(!errorsList.empty())
-        throw ValidationException(errorsList);
-	return repository.updateMovie(movieUsed);
+    MovieValidator::validateMovie(movieUsed);
+    return repository.updateMovie(movieUsed);
 }
 
 //Return the list of movies

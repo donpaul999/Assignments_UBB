@@ -8,14 +8,10 @@ include_directories(.)
 add_executable(lab8
     AdminService.cpp
     AdminService.h
-    CSVRepository.cpp
-    CSVRepository.h
     DynamicVector.cpp
     DynamicVector.h
     FileRepository.cpp
     FileRepository.h
-    HTMLRepository.cpp
-    HTMLRepository.h
     inputFile.in
     main.cpp
     Movie.cpp
@@ -33,4 +29,6 @@ add_executable(lab8
     UserService.cpp
     UserService.h
     ValidationException.cpp
-    ValidationException.h)
+    ValidationException.h
+    MovieValidator.cpp
+    MovieValidator.h)
