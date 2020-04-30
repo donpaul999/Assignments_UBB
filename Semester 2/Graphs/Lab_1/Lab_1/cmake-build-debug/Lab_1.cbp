@@ -82,6 +82,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Activity.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Activity.h">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/DAGUI.cpp">
+			<Option target="Lab_1"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/DAGUI.h">
+			<Option target="Lab_1"/>
+		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Direct_Graph.cpp">
 			<Option target="Lab_1"/>
 		</Unit>

@@ -51,6 +51,9 @@
     <ClInclude Include="ValidationException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MovieValidator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdminService.cpp">
@@ -90,6 +93,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ValidationException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MovieValidator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

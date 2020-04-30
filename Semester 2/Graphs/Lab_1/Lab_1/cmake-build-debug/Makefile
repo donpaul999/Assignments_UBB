@@ -123,6 +123,60 @@ Lab_1/fast:
 	$(MAKE) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/build
 .PHONY : Lab_1/fast
 
+Activity.o: Activity.cpp.o
+
+.PHONY : Activity.o
+
+# target to build an object file
+Activity.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/Activity.cpp.o
+.PHONY : Activity.cpp.o
+
+Activity.i: Activity.cpp.i
+
+.PHONY : Activity.i
+
+# target to preprocess a source file
+Activity.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/Activity.cpp.i
+.PHONY : Activity.cpp.i
+
+Activity.s: Activity.cpp.s
+
+.PHONY : Activity.s
+
+# target to generate assembly for a file
+Activity.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/Activity.cpp.s
+.PHONY : Activity.cpp.s
+
+DAGUI.o: DAGUI.cpp.o
+
+.PHONY : DAGUI.o
+
+# target to build an object file
+DAGUI.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/DAGUI.cpp.o
+.PHONY : DAGUI.cpp.o
+
+DAGUI.i: DAGUI.cpp.i
+
+.PHONY : DAGUI.i
+
+# target to preprocess a source file
+DAGUI.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/DAGUI.cpp.i
+.PHONY : DAGUI.cpp.i
+
+DAGUI.s: DAGUI.cpp.s
+
+.PHONY : DAGUI.s
+
+# target to generate assembly for a file
+DAGUI.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab_1.dir/build.make CMakeFiles/Lab_1.dir/DAGUI.cpp.s
+.PHONY : DAGUI.cpp.s
+
 Direct_Graph.o: Direct_Graph.cpp.o
 
 .PHONY : Direct_Graph.o
@@ -240,6 +294,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lab_1"
+	@echo "... Activity.o"
+	@echo "... Activity.i"
+	@echo "... Activity.s"
+	@echo "... DAGUI.o"
+	@echo "... DAGUI.i"
+	@echo "... DAGUI.s"
 	@echo "... Direct_Graph.o"
 	@echo "... Direct_Graph.i"
 	@echo "... Direct_Graph.s"

@@ -150,6 +150,33 @@ AdminService.cpp.s:
 	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/AdminService.cpp.s
 .PHONY : AdminService.cpp.s
 
+CSVRepository.o: CSVRepository.cpp.o
+
+.PHONY : CSVRepository.o
+
+# target to build an object file
+CSVRepository.cpp.o:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/CSVRepository.cpp.o
+.PHONY : CSVRepository.cpp.o
+
+CSVRepository.i: CSVRepository.cpp.i
+
+.PHONY : CSVRepository.i
+
+# target to preprocess a source file
+CSVRepository.cpp.i:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/CSVRepository.cpp.i
+.PHONY : CSVRepository.cpp.i
+
+CSVRepository.s: CSVRepository.cpp.s
+
+.PHONY : CSVRepository.s
+
+# target to generate assembly for a file
+CSVRepository.cpp.s:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/CSVRepository.cpp.s
+.PHONY : CSVRepository.cpp.s
+
 DynamicVector.o: DynamicVector.cpp.o
 
 .PHONY : DynamicVector.o
@@ -203,6 +230,33 @@ FileRepository.s: FileRepository.cpp.s
 FileRepository.cpp.s:
 	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/FileRepository.cpp.s
 .PHONY : FileRepository.cpp.s
+
+HTMLRepository.o: HTMLRepository.cpp.o
+
+.PHONY : HTMLRepository.o
+
+# target to build an object file
+HTMLRepository.cpp.o:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/HTMLRepository.cpp.o
+.PHONY : HTMLRepository.cpp.o
+
+HTMLRepository.i: HTMLRepository.cpp.i
+
+.PHONY : HTMLRepository.i
+
+# target to preprocess a source file
+HTMLRepository.cpp.i:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/HTMLRepository.cpp.i
+.PHONY : HTMLRepository.cpp.i
+
+HTMLRepository.s: HTMLRepository.cpp.s
+
+.PHONY : HTMLRepository.s
+
+# target to generate assembly for a file
+HTMLRepository.cpp.s:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/HTMLRepository.cpp.s
+.PHONY : HTMLRepository.cpp.s
 
 Movie.o: Movie.cpp.o
 
@@ -311,33 +365,6 @@ RepositoryException.s: RepositoryException.cpp.s
 RepositoryException.cpp.s:
 	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/RepositoryException.cpp.s
 .PHONY : RepositoryException.cpp.s
-
-Tests.o: Tests.cpp.o
-
-.PHONY : Tests.o
-
-# target to build an object file
-Tests.cpp.o:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/Tests.cpp.o
-.PHONY : Tests.cpp.o
-
-Tests.i: Tests.cpp.i
-
-.PHONY : Tests.i
-
-# target to preprocess a source file
-Tests.cpp.i:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/Tests.cpp.i
-.PHONY : Tests.cpp.i
-
-Tests.s: Tests.cpp.s
-
-.PHONY : Tests.s
-
-# target to generate assembly for a file
-Tests.cpp.s:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/Tests.cpp.s
-.PHONY : Tests.cpp.s
 
 UI.o: UI.cpp.o
 
@@ -459,12 +486,18 @@ help:
 	@echo "... AdminService.o"
 	@echo "... AdminService.i"
 	@echo "... AdminService.s"
+	@echo "... CSVRepository.o"
+	@echo "... CSVRepository.i"
+	@echo "... CSVRepository.s"
 	@echo "... DynamicVector.o"
 	@echo "... DynamicVector.i"
 	@echo "... DynamicVector.s"
 	@echo "... FileRepository.o"
 	@echo "... FileRepository.i"
 	@echo "... FileRepository.s"
+	@echo "... HTMLRepository.o"
+	@echo "... HTMLRepository.i"
+	@echo "... HTMLRepository.s"
 	@echo "... Movie.o"
 	@echo "... Movie.i"
 	@echo "... Movie.s"
@@ -477,9 +510,6 @@ help:
 	@echo "... RepositoryException.o"
 	@echo "... RepositoryException.i"
 	@echo "... RepositoryException.s"
-	@echo "... Tests.o"
-	@echo "... Tests.i"
-	@echo "... Tests.s"
 	@echo "... UI.o"
 	@echo "... UI.i"
 	@echo "... UI.s"

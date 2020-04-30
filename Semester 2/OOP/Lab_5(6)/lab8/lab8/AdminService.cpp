@@ -3,7 +3,9 @@
 
 //AdminService constructor
 //AdminService::AdminService(Repository& repository) :repository{ repository } {}
-AdminService::AdminService(FileRepository& repository) : repository{ repository } {}
+AdminService::AdminService(FileRepository* newRepository){
+	this->repository = newRepository;
+}
 
 
 /*
@@ -41,7 +43,7 @@ int AdminService::adminAddMovie(const std::string& title, const std::string& gen
 {
     Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
     MovieValidator::validateMovie(movieUsed);
-	return repository.addMovie(movieUsed);
+	return repository->addMovie(movieUsed);
 }
 
 
@@ -51,7 +53,7 @@ int AdminService::adminAddMovie(const std::string& title, const std::string& gen
 int AdminService::adminDeleteMovie(const std::string& title)
 {
 	Movie movieUsed{ title, "fillGenre", 2020, 0, "No trailer" };
-	return repository.deleteMovie(movieUsed);
+	return repository->deleteMovie(movieUsed);
 }
 
 /*
@@ -65,18 +67,18 @@ int AdminService::adminUpdateMovie(const std::string& title, const std::string& 
 {
 	Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
     MovieValidator::validateMovie(movieUsed);
-    return repository.updateMovie(movieUsed);
+    return repository->updateMovie(movieUsed);
 }
 
 //Return the list of movies
 std::vector<Movie> AdminService::adminGetMovieList()
 {
-	return repository.getAllMovies();
+	return repository->getAllMovies();
 }
 
 //Change the file name used by repository
 int AdminService::changeRepositoryFileName(const std::string& nameOfTheFileUsed)
 {
-	repository.changeFileName(nameOfTheFileUsed);
+	repository->changeFileName(nameOfTheFileUsed);
 	return 1;
 }

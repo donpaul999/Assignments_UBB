@@ -2,13 +2,14 @@
 #include <iostream>
 #include "ValidationException.h"
 #include "RepositoryException.h"
+
 UI::UI(AdminService& adminService, UserService& userService): adminService { adminService } , userService{ userService }{}
 
 void UI::runApp()
 {
     std::string aplicationMode = "";
     while (1) {
-        std::cout << "Choose mode: ";
+        std::cout << "Input: ";
         std::cin >> aplicationMode;
         if (aplicationMode == "mode") {
             std::cin >> aplicationMode;

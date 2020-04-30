@@ -12,4 +12,8 @@ add_executable(Lab_1
     Service.cpp
     Service.h
     UIDirectGraph.cpp
-    UIDirectGraph.h)
+    UIDirectGraph.h
+        DAGUI.cpp
+        DAGUI.h
+        Activity.h
+        Activity.cpp)

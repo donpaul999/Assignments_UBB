@@ -22,8 +22,6 @@ add_executable(lab8
     RepositoryException.h
     testFile.txt
     TestFileJops.txt
-    Tests.cpp
-    Tests.h
     UI.cpp
     UI.h
     UserService.cpp
@@ -31,4 +29,8 @@ add_executable(lab8
     ValidationException.cpp
     ValidationException.h
     MovieValidator.cpp
-    MovieValidator.h)
+    MovieValidator.h
+        CSVRepository.h
+        CSVRepository.cpp
+        HTMLRepository.h
+        HTMLRepository.cpp)

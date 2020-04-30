@@ -23,6 +23,6 @@ private:
 
 public:
     UI(DIRECT_GRAPH graph, Service service);
-    void start_menu();
+    static void start_menu();
     void start_app();
 };

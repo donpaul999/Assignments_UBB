@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Lab_1.dir/Activity.cpp.o"
+  "CMakeFiles/Lab_1.dir/DAGUI.cpp.o"
   "CMakeFiles/Lab_1.dir/Direct_Graph.cpp.o"
   "CMakeFiles/Lab_1.dir/Lab_1.cpp.o"
   "CMakeFiles/Lab_1.dir/Service.cpp.o"

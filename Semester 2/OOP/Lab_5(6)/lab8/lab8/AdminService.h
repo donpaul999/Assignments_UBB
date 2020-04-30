@@ -8,11 +8,11 @@
 
 class AdminService {
 private:
-    FileRepository& repository;
+    FileRepository* repository;
 
 public:
     //AdminService(Repository& repository);
-    AdminService(FileRepository& repository);
+    AdminService(FileRepository* repository);
     const std::vector<std::string> explode(const std::string& stringToExplode, const char& separatorUsed);
     int adminAddMovie(const std::string& title, const std::string& genre, int yearOfRelease, int numberOfLikes, const std::string& trailer);
     int adminDeleteMovie(const std::string& title);

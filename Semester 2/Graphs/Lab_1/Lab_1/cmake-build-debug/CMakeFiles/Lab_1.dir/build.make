@@ -109,12 +109,40 @@ CMakeFiles/Lab_1.dir/UIDirectGraph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/UIDirectGraph.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/UIDirectGraph.cpp" -o CMakeFiles/Lab_1.dir/UIDirectGraph.cpp.s
 
+CMakeFiles/Lab_1.dir/DAGUI.cpp.o: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/DAGUI.cpp.o: ../DAGUI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab_1.dir/DAGUI.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab_1.dir/DAGUI.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/DAGUI.cpp"
+
+CMakeFiles/Lab_1.dir/DAGUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/DAGUI.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/DAGUI.cpp" > CMakeFiles/Lab_1.dir/DAGUI.cpp.i
+
+CMakeFiles/Lab_1.dir/DAGUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/DAGUI.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/DAGUI.cpp" -o CMakeFiles/Lab_1.dir/DAGUI.cpp.s
+
+CMakeFiles/Lab_1.dir/Activity.cpp.o: CMakeFiles/Lab_1.dir/flags.make
+CMakeFiles/Lab_1.dir/Activity.cpp.o: ../Activity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Lab_1.dir/Activity.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab_1.dir/Activity.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Activity.cpp"
+
+CMakeFiles/Lab_1.dir/Activity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_1.dir/Activity.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Activity.cpp" > CMakeFiles/Lab_1.dir/Activity.cpp.i
+
+CMakeFiles/Lab_1.dir/Activity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_1.dir/Activity.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Activity.cpp" -o CMakeFiles/Lab_1.dir/Activity.cpp.s
+
 # Object files for target Lab_1
 Lab_1_OBJECTS = \
 "CMakeFiles/Lab_1.dir/Direct_Graph.cpp.o" \
 "CMakeFiles/Lab_1.dir/Lab_1.cpp.o" \
 "CMakeFiles/Lab_1.dir/Service.cpp.o" \
-"CMakeFiles/Lab_1.dir/UIDirectGraph.cpp.o"
+"CMakeFiles/Lab_1.dir/UIDirectGraph.cpp.o" \
+"CMakeFiles/Lab_1.dir/DAGUI.cpp.o" \
+"CMakeFiles/Lab_1.dir/Activity.cpp.o"
 
 # External object files for target Lab_1
 Lab_1_EXTERNAL_OBJECTS =
@@ -123,9 +151,11 @@ Lab_1: CMakeFiles/Lab_1.dir/Direct_Graph.cpp.o
 Lab_1: CMakeFiles/Lab_1.dir/Lab_1.cpp.o
 Lab_1: CMakeFiles/Lab_1.dir/Service.cpp.o
 Lab_1: CMakeFiles/Lab_1.dir/UIDirectGraph.cpp.o
+Lab_1: CMakeFiles/Lab_1.dir/DAGUI.cpp.o
+Lab_1: CMakeFiles/Lab_1.dir/Activity.cpp.o
 Lab_1: CMakeFiles/Lab_1.dir/build.make
 Lab_1: CMakeFiles/Lab_1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Lab_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Lab_1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lab_1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

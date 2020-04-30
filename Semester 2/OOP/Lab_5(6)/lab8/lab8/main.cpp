@@ -1,13 +1,11 @@
-#include "Tests.h"
 #include "UI.h"
 using namespace std;
 int main()
 {
-    Tests testsLists;
-    testsLists.runAllTests();
-    FileRepository repository{"inputFile.txt"};
-	AdminService adminservice{ repository };
-	UserService userservice{ repository };
+
+    FileRepository* repository = new FileRepository{"inputFile.txt"};
+	AdminService adminservice{repository} ;
+	UserService userservice{repository};
 	UI ui{ adminservice, userservice };
 	ui.runApp();
     

@@ -30,18 +30,11 @@ void FileRepository::changeRepositoryType(std::string repositoryTypeGiven) {
 void FileRepository::writeUserMoviesToFile(std::vector<Movie> movieList, std::string movieFileName)
 {
     //std::cout << repositoryType<<'\n';
-    if(repositoryType == "html")
-        updateHTMLFile();
-    else
-    if(repositoryType == "csv")
-        updateCSVFile();
-    else {
-        std::ofstream fout(movieFileName);
-        //std::cout << movieFileName << '\n';
-        for (const Movie &movieToWrite : movieList)
-            fout << movieToWrite << '\n';
-        fout.close();
-    }
+    std::ofstream fout(movieFileName);
+    //std::cout << movieFileName << '\n';
+    for (const Movie &movieToWrite : movieList)
+         fout << movieToWrite << '\n';
+    fout.close();
 }
 
 void FileRepository::writeMoviesToFile(std::vector<Movie> movieList, std::string movieFileName)
@@ -109,7 +102,6 @@ int FileRepository::updateMovie(const Movie& movieToUpdateWith)
 //Change the file name of the repository
 void FileRepository::changeFileName(const std::string& nameOfTheFileUsed)
 {
-    std::vector<Movie> movieList = loadMoviesFromFile();
     movieFileName = nameOfTheFileUsed;
 }
 
@@ -196,41 +188,42 @@ int FileRepository::getNumberOfMoviesWatchList()
 {
     return userWatchList.size();
 }
+
 void FileRepository::changeUserFileName(const std::string& nameOfTheFileUsed){
     userFileName = nameOfTheFileUsed;
 }
 
+std::string FileRepository::getMovieFileName(){
+    if(movieFileName != "")
+        return movieFileName;
+    return " ";}
+
 std::string FileRepository::getUserFileName(){
-    return userFileName;
+    if(userFileName != "")
+        return userFileName;
+    return " ";
 }
 
-void FileRepository::updateHTMLFile() {
-    std::ofstream fileOutput(userFileName);
-    fileOutput << "<!DOCTYPE html>\n<html><head><title>Watchlist</title></head><body>\n";
-    fileOutput << "<table border=\"1\">\n";
-    fileOutput << "<tr><td>Title</td><td>Genre</td><td>Year of release</td><td>Number of likes</td><td>Link</td></tr>\n";
-    for (const Movie& movieUsed: userWatchList) {
-        fileOutput    << "<tr><td>" << movieUsed.getTitle() << "</td>"
-                      << "<td>" << movieUsed.getGenre() << "</td>"
-                      << "<td>" << movieUsed.getYearOfRelease() << "</td>"
-                      << "<td>" << movieUsed.getNumberOfLikes() << "</td>"
-                      << "<td><a href=\"" << movieUsed.getTrailer() << "\">Link</a></td>" << '\n';
+const std::vector<std::string>FileRepository::explode(const std::string& stringToExplode, const std::string& separatorsUsed)
+{
+    std::vector<std::string>trashValues = { "Title", " Genre", " Year of Release", " Likes", " Trailer" };
+    std::string partialStringObtained{ "" };
+    std::vector<std::string> explodedString;
+
+    for (auto iterator : stringToExplode)
+    {
+        if (iterator != separatorsUsed[0] && iterator != separatorsUsed[1])
+            partialStringObtained += iterator;
+        else
+        if ((iterator == separatorsUsed[0] || iterator == separatorsUsed[1]) && partialStringObtained != "") {
+            if (find(trashValues.begin(), trashValues.end(), partialStringObtained) == trashValues.end()) {
+                explodedString.push_back(partialStringObtained);
+            }
+            partialStringObtained = "";
+        }
     }
-    fileOutput << "</table></body></html>";
-    fileOutput.close();
+    if (partialStringObtained != "")
+        explodedString.push_back(partialStringObtained);
+    return explodedString;
 }
 
-void FileRepository::updateCSVFile() {
-    std::ofstream fileOutput(userFileName);
-    fileOutput << "Title,Genre,Year of release,Number of likes, Trailer link\n";
-    if(userWatchList.empty())
-        return;
-    for (const Movie& movieUsed: userWatchList) {
-        fileOutput << '"' << movieUsed.getTitle() << "\","
-                   << '"' << movieUsed.getGenre() << "\","
-                   << '"' << movieUsed.getYearOfRelease() << "\","
-                   << '"' << movieUsed.getNumberOfLikes() << "\","
-                   << '"' << movieUsed.getTrailer() << '"' << '\n';
-    }
-    fileOutput.close();
-}

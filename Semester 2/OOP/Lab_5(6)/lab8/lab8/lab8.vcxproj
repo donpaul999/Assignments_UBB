@@ -144,6 +144,7 @@
     <ClInclude Include="FileRepository.h" />
     <ClInclude Include="HTMLRepository.h" />
     <ClInclude Include="Movie.h" />
+    <ClInclude Include="MovieValidator.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="RepositoryException.h" />
     <ClInclude Include="Tests.h" />
@@ -159,6 +160,7 @@
     <ClCompile Include="HTMLRepository.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Movie.cpp" />
+    <ClCompile Include="MovieValidator.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="RepositoryException.cpp" />
     <ClCompile Include="Tests.cpp" />

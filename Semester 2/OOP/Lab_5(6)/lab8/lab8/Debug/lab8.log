@@ -1,25 +1,12 @@
 ﻿  AdminService.cpp
   CSVRepository.cpp
   FileRepository.cpp
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\FileRepository.cpp(99,48): warning C4018: '>=': signed/unsigned mismatch
+Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\FileRepository.cpp(113,48): warning C4018: '>=': signed/unsigned mismatch
   HTMLRepository.cpp
-  Tests.cpp
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(348,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(368,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(388,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(445,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(483,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(505,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(561,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(591,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(619,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(727,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(748,27): warning C4101: 'exception': unreferenced local variable
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\Tests.cpp(769,27): warning C4101: 'exception': unreferenced local variable
   UI.cpp
-Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\UI.cpp(204,23): warning C4018: '<': signed/unsigned mismatch
+Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\lab8\UI.cpp(210,23): warning C4018: '<': signed/unsigned mismatch
   UserService.cpp
   main.cpp
   Generating Code...
-UserService.obj : error LNK2019: unresolved external symbol "public: void __thiscall FileRepository::changeUserFileName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?changeUserFileName@FileRepository@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: int __thiscall UserService::changeRepositoryFileName(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?changeRepositoryFileName@UserService@@QAEHABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)
+Tests.obj : error LNK2019: unresolved external symbol "public: __thiscall AdminService::AdminService(class FileRepository &)" (??0AdminService@@QAE@AAVFileRepository@@@Z) referenced in function "private: void __thiscall Tests::AdminService_AnyAdminService_AdminServiceCreated(void)" (?AdminService_AnyAdminService_AdminServiceCreated@Tests@@AAEXXZ)
 Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab_5(6)\lab8\Debug\lab8.exe : fatal error LNK1120: 1 unresolved externals
