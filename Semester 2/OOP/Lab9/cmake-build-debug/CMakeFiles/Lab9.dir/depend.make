@@ -5,5 +5,7 @@ CMakeFiles/Lab9.dir/main.cpp.o: ../main.cpp
 CMakeFiles/Lab9.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/QDebug
 CMakeFiles/Lab9.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qdebug.h
 CMakeFiles/Lab9.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
+CMakeFiles/Lab9.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLineEdit
 CMakeFiles/Lab9.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+CMakeFiles/Lab9.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h
 

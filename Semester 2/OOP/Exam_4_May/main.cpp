@@ -1,6 +1,9 @@
 #include <iostream>
-
+#include "UI.h"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Repository repo{"test.txt"};
+    Service service{repo};
+    UI ui{0,service};
+    ui.runApp();
     return 0;
 }

@@ -123,6 +123,168 @@ Exam_4_May/fast:
 	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/build
 .PHONY : Exam_4_May/fast
 
+HospitalDepartament.o: HospitalDepartament.cpp.o
+
+.PHONY : HospitalDepartament.o
+
+# target to build an object file
+HospitalDepartament.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.o
+.PHONY : HospitalDepartament.cpp.o
+
+HospitalDepartament.i: HospitalDepartament.cpp.i
+
+.PHONY : HospitalDepartament.i
+
+# target to preprocess a source file
+HospitalDepartament.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.i
+.PHONY : HospitalDepartament.cpp.i
+
+HospitalDepartament.s: HospitalDepartament.cpp.s
+
+.PHONY : HospitalDepartament.s
+
+# target to generate assembly for a file
+HospitalDepartament.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.s
+.PHONY : HospitalDepartament.cpp.s
+
+NeonatalUnit.o: NeonatalUnit.cpp.o
+
+.PHONY : NeonatalUnit.o
+
+# target to build an object file
+NeonatalUnit.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.o
+.PHONY : NeonatalUnit.cpp.o
+
+NeonatalUnit.i: NeonatalUnit.cpp.i
+
+.PHONY : NeonatalUnit.i
+
+# target to preprocess a source file
+NeonatalUnit.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.i
+.PHONY : NeonatalUnit.cpp.i
+
+NeonatalUnit.s: NeonatalUnit.cpp.s
+
+.PHONY : NeonatalUnit.s
+
+# target to generate assembly for a file
+NeonatalUnit.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.s
+.PHONY : NeonatalUnit.cpp.s
+
+Repository.o: Repository.cpp.o
+
+.PHONY : Repository.o
+
+# target to build an object file
+Repository.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Repository.cpp.o
+.PHONY : Repository.cpp.o
+
+Repository.i: Repository.cpp.i
+
+.PHONY : Repository.i
+
+# target to preprocess a source file
+Repository.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Repository.cpp.i
+.PHONY : Repository.cpp.i
+
+Repository.s: Repository.cpp.s
+
+.PHONY : Repository.s
+
+# target to generate assembly for a file
+Repository.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Repository.cpp.s
+.PHONY : Repository.cpp.s
+
+Service.o: Service.cpp.o
+
+.PHONY : Service.o
+
+# target to build an object file
+Service.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Service.cpp.o
+.PHONY : Service.cpp.o
+
+Service.i: Service.cpp.i
+
+.PHONY : Service.i
+
+# target to preprocess a source file
+Service.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Service.cpp.i
+.PHONY : Service.cpp.i
+
+Service.s: Service.cpp.s
+
+.PHONY : Service.s
+
+# target to generate assembly for a file
+Service.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Service.cpp.s
+.PHONY : Service.cpp.s
+
+Surgery.o: Surgery.cpp.o
+
+.PHONY : Surgery.o
+
+# target to build an object file
+Surgery.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Surgery.cpp.o
+.PHONY : Surgery.cpp.o
+
+Surgery.i: Surgery.cpp.i
+
+.PHONY : Surgery.i
+
+# target to preprocess a source file
+Surgery.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Surgery.cpp.i
+.PHONY : Surgery.cpp.i
+
+Surgery.s: Surgery.cpp.s
+
+.PHONY : Surgery.s
+
+# target to generate assembly for a file
+Surgery.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/Surgery.cpp.s
+.PHONY : Surgery.cpp.s
+
+UI.o: UI.cpp.o
+
+.PHONY : UI.o
+
+# target to build an object file
+UI.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/UI.cpp.o
+.PHONY : UI.cpp.o
+
+UI.i: UI.cpp.i
+
+.PHONY : UI.i
+
+# target to preprocess a source file
+UI.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/UI.cpp.i
+.PHONY : UI.cpp.i
+
+UI.s: UI.cpp.s
+
+.PHONY : UI.s
+
+# target to generate assembly for a file
+UI.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam_4_May.dir/build.make CMakeFiles/Exam_4_May.dir/UI.cpp.s
+.PHONY : UI.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +321,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Exam_4_May"
+	@echo "... HospitalDepartament.o"
+	@echo "... HospitalDepartament.i"
+	@echo "... HospitalDepartament.s"
+	@echo "... NeonatalUnit.o"
+	@echo "... NeonatalUnit.i"
+	@echo "... NeonatalUnit.s"
+	@echo "... Repository.o"
+	@echo "... Repository.i"
+	@echo "... Repository.s"
+	@echo "... Service.o"
+	@echo "... Service.i"
+	@echo "... Service.s"
+	@echo "... Surgery.o"
+	@echo "... Surgery.i"
+	@echo "... Surgery.s"
+	@echo "... UI.o"
+	@echo "... UI.i"
+	@echo "... UI.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

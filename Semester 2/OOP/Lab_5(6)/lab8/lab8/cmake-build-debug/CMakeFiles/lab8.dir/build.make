@@ -259,6 +259,9 @@ lab8: CMakeFiles/lab8.dir/MovieValidator.cpp.o
 lab8: CMakeFiles/lab8.dir/CSVRepository.cpp.o
 lab8: CMakeFiles/lab8.dir/HTMLRepository.cpp.o
 lab8: CMakeFiles/lab8.dir/build.make
+lab8: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/QtWidgets
+lab8: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework/QtGui
+lab8: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/QtCore
 lab8: CMakeFiles/lab8.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable lab8"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab8.dir/link.txt --verbose=$(VERBOSE)

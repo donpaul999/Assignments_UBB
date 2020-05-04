@@ -80,6 +80,42 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/HospitalDepartament.cpp">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/HospitalDepartament.h">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/NeonatalUnit.cpp">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/NeonatalUnit.h">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Repository.cpp">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Repository.h">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Service.cpp">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Service.h">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Surgery.cpp">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Surgery.h">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/UI.cpp">
+			<Option target="Exam_4_May"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/UI.h">
+			<Option target="Exam_4_May"/>
+		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/main.cpp">
 			<Option target="Exam_4_May"/>
 		</Unit>

@@ -70,17 +70,107 @@ CMakeFiles/Exam_4_May.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam_4_May.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/main.cpp" -o CMakeFiles/Exam_4_May.dir/main.cpp.s
 
+CMakeFiles/Exam_4_May.dir/Repository.cpp.o: CMakeFiles/Exam_4_May.dir/flags.make
+CMakeFiles/Exam_4_May.dir/Repository.cpp.o: ../Repository.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Exam_4_May.dir/Repository.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Exam_4_May.dir/Repository.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Repository.cpp"
+
+CMakeFiles/Exam_4_May.dir/Repository.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Exam_4_May.dir/Repository.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Repository.cpp" > CMakeFiles/Exam_4_May.dir/Repository.cpp.i
+
+CMakeFiles/Exam_4_May.dir/Repository.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam_4_May.dir/Repository.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Repository.cpp" -o CMakeFiles/Exam_4_May.dir/Repository.cpp.s
+
+CMakeFiles/Exam_4_May.dir/Service.cpp.o: CMakeFiles/Exam_4_May.dir/flags.make
+CMakeFiles/Exam_4_May.dir/Service.cpp.o: ../Service.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Exam_4_May.dir/Service.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Exam_4_May.dir/Service.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Service.cpp"
+
+CMakeFiles/Exam_4_May.dir/Service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Exam_4_May.dir/Service.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Service.cpp" > CMakeFiles/Exam_4_May.dir/Service.cpp.i
+
+CMakeFiles/Exam_4_May.dir/Service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam_4_May.dir/Service.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Service.cpp" -o CMakeFiles/Exam_4_May.dir/Service.cpp.s
+
+CMakeFiles/Exam_4_May.dir/UI.cpp.o: CMakeFiles/Exam_4_May.dir/flags.make
+CMakeFiles/Exam_4_May.dir/UI.cpp.o: ../UI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Exam_4_May.dir/UI.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Exam_4_May.dir/UI.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/UI.cpp"
+
+CMakeFiles/Exam_4_May.dir/UI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Exam_4_May.dir/UI.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/UI.cpp" > CMakeFiles/Exam_4_May.dir/UI.cpp.i
+
+CMakeFiles/Exam_4_May.dir/UI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam_4_May.dir/UI.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/UI.cpp" -o CMakeFiles/Exam_4_May.dir/UI.cpp.s
+
+CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.o: CMakeFiles/Exam_4_May.dir/flags.make
+CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.o: ../NeonatalUnit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/NeonatalUnit.cpp"
+
+CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/NeonatalUnit.cpp" > CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.i
+
+CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/NeonatalUnit.cpp" -o CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.s
+
+CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.o: CMakeFiles/Exam_4_May.dir/flags.make
+CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.o: ../HospitalDepartament.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/HospitalDepartament.cpp"
+
+CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/HospitalDepartament.cpp" > CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.i
+
+CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/HospitalDepartament.cpp" -o CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.s
+
+CMakeFiles/Exam_4_May.dir/Surgery.cpp.o: CMakeFiles/Exam_4_May.dir/flags.make
+CMakeFiles/Exam_4_May.dir/Surgery.cpp.o: ../Surgery.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Exam_4_May.dir/Surgery.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Exam_4_May.dir/Surgery.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Surgery.cpp"
+
+CMakeFiles/Exam_4_May.dir/Surgery.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Exam_4_May.dir/Surgery.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Surgery.cpp" > CMakeFiles/Exam_4_May.dir/Surgery.cpp.i
+
+CMakeFiles/Exam_4_May.dir/Surgery.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam_4_May.dir/Surgery.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Surgery.cpp" -o CMakeFiles/Exam_4_May.dir/Surgery.cpp.s
+
 # Object files for target Exam_4_May
 Exam_4_May_OBJECTS = \
-"CMakeFiles/Exam_4_May.dir/main.cpp.o"
+"CMakeFiles/Exam_4_May.dir/main.cpp.o" \
+"CMakeFiles/Exam_4_May.dir/Repository.cpp.o" \
+"CMakeFiles/Exam_4_May.dir/Service.cpp.o" \
+"CMakeFiles/Exam_4_May.dir/UI.cpp.o" \
+"CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.o" \
+"CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.o" \
+"CMakeFiles/Exam_4_May.dir/Surgery.cpp.o"
 
 # External object files for target Exam_4_May
 Exam_4_May_EXTERNAL_OBJECTS =
 
 Exam_4_May: CMakeFiles/Exam_4_May.dir/main.cpp.o
+Exam_4_May: CMakeFiles/Exam_4_May.dir/Repository.cpp.o
+Exam_4_May: CMakeFiles/Exam_4_May.dir/Service.cpp.o
+Exam_4_May: CMakeFiles/Exam_4_May.dir/UI.cpp.o
+Exam_4_May: CMakeFiles/Exam_4_May.dir/NeonatalUnit.cpp.o
+Exam_4_May: CMakeFiles/Exam_4_May.dir/HospitalDepartament.cpp.o
+Exam_4_May: CMakeFiles/Exam_4_May.dir/Surgery.cpp.o
 Exam_4_May: CMakeFiles/Exam_4_May.dir/build.make
 Exam_4_May: CMakeFiles/Exam_4_May.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Exam_4_May"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Exam_4_May"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Exam_4_May.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

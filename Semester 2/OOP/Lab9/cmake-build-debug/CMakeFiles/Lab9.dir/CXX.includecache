@@ -13,6 +13,8 @@ QDebug
 -
 QLabel
 -
+QLineEdit
+-
 
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/QDebug
 qdebug.h
@@ -54,9 +56,25 @@ utility
 qlabel.h
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLineEdit
+qlineedit.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h
+
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 QtWidgets/qtwidgetsglobal.h
 -
 QtWidgets/qframe.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+QtGui/qtextcursor.h
+-
+QtCore/qstring.h
+-
+QtCore/qmargins.h
 -
 

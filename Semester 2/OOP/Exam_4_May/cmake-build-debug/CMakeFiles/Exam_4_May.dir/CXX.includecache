@@ -6,7 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/main.cpp
-iostream
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/HospitalDepartament.h
+string
 -
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/NeonatalUnit.h
+HospitalDepartament.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/HospitalDepartament.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Repository.cpp
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Repository.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Repository.h
+string
+-
+fstream
+-
+vector
+-
+NeonatalUnit.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/NeonatalUnit.h
+Surgery.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Surgery.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/Surgery.h
+HospitalDepartament.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_4_May/HospitalDepartament.h
 
