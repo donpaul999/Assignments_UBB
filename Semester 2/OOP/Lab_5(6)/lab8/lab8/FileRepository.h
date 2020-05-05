@@ -40,5 +40,6 @@ public:
     void changeRepositoryType(std::string repositoryType);
     const std::vector<std::string>explode(const std::string& stringToExplode, const std::string& separatorsUsed);
    // void operator=(FileRepository& repository);
+   Movie findMovie(const std::string& title);
 
 };

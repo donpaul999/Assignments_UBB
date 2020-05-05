@@ -5,6 +5,7 @@
 //AdminService::AdminService(Repository& repository) :repository{ repository } {}
 AdminService::AdminService(FileRepository* newRepository){
 	this->repository = newRepository;
+	this->inUndoRedo = 0;
 }
 
 
@@ -43,6 +44,11 @@ int AdminService::adminAddMovie(const std::string& title, const std::string& gen
 {
     Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
     MovieValidator::validateMovie(movieUsed);
+        std::unique_ptr<Action> addAction = std::make_unique<ActionAdd>(repository, movieUsed);
+        undoSteps.push_back(move(addAction));
+    if(!inUndoRedo) {
+        emptyRedo();
+    }
 	return repository->addMovie(movieUsed);
 }
 
@@ -53,6 +59,12 @@ int AdminService::adminAddMovie(const std::string& title, const std::string& gen
 int AdminService::adminDeleteMovie(const std::string& title)
 {
 	Movie movieUsed{ title, "fillGenre", 2020, 0, "No trailer" };
+	Movie movieFound = repository->findMovie(title);
+        std::unique_ptr<Action> deleteAction = std::make_unique<ActionRemove>(repository, movieFound);
+        undoSteps.push_back(move(deleteAction));
+    if(!inUndoRedo) {
+        emptyRedo();
+    }
 	return repository->deleteMovie(movieUsed);
 }
 
@@ -67,6 +79,12 @@ int AdminService::adminUpdateMovie(const std::string& title, const std::string& 
 {
 	Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
     MovieValidator::validateMovie(movieUsed);
+    Movie movieFound = repository->findMovie(title);
+    std::unique_ptr<Action> updateAction = std::make_unique<ActionUpdate>(repository, movieFound, movieUsed);
+    undoSteps.push_back(move(updateAction));
+    if(!inUndoRedo) {
+        emptyRedo();
+    }
     return repository->updateMovie(movieUsed);
 }
 
@@ -81,4 +99,28 @@ int AdminService::changeRepositoryFileName(const std::string& nameOfTheFileUsed)
 {
 	repository->changeFileName(nameOfTheFileUsed);
 	return 1;
+}
+
+void AdminService::undo(){
+    if(undoSteps.size() == 0)
+        throw ValidationException("No more undos!\n");
+    inUndoRedo = 1;
+    undoSteps[undoSteps.size() - 1]->executeUndo();
+    redoSteps.push_back(move(undoSteps[undoSteps.size() - 1]));
+    undoSteps.pop_back();
+    inUndoRedo = 0;
+}
+
+void AdminService::redo(){
+    if(redoSteps.size() == 0)
+        throw ValidationException("No more redos!\n");
+    inUndoRedo = 1;
+    redoSteps[redoSteps.size() - 1]->executeRedo();
+    undoSteps.push_back(move(redoSteps[redoSteps.size() - 1]));
+    redoSteps.pop_back();
+    inUndoRedo = 0;
+}
+
+void AdminService::emptyRedo(){
+    redoSteps.clear();
 }

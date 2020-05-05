@@ -227,3 +227,13 @@ const std::vector<std::string>FileRepository::explode(const std::string& stringT
     return explodedString;
 }
 
+Movie FileRepository::findMovie(const std::string& titleOfTheMovieToAdd)
+{
+    std::vector<Movie> movieList = loadMoviesFromFile();
+    auto iteratorWhereMovieFound = std::find_if(movieList.begin(), movieList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
+
+    if (iteratorWhereMovieFound == movieList.end())
+        throw std::runtime_error("Invalid title");
+    return *iteratorWhereMovieFound;
+}
+

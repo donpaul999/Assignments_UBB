@@ -35,6 +35,14 @@ add_executable(lab8
         CSVRepository.h
         CSVRepository.cpp
         HTMLRepository.h
-        HTMLRepository.cpp)
+        HTMLRepository.cpp
+        ActionUpdate.cpp
+        ActionUpdate.h
+        ActionRemove.h
+        ActionRemove.cpp
+        ActionAdd.h
+        Action.cpp
+        ActionAdd.cpp
+        Action.h)
 target_link_libraries(lab8 Qt5::Widgets)
 

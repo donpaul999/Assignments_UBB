@@ -226,6 +226,58 @@ CMakeFiles/lab8.dir/HTMLRepository.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab8.dir/HTMLRepository.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/HTMLRepository.cpp" -o CMakeFiles/lab8.dir/HTMLRepository.cpp.s
 
+CMakeFiles/lab8.dir/ActionUpdate.cpp.o: CMakeFiles/lab8.dir/flags.make
+CMakeFiles/lab8.dir/ActionUpdate.cpp.o: ../ActionUpdate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/lab8.dir/ActionUpdate.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab8.dir/ActionUpdate.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionUpdate.cpp"
+
+CMakeFiles/lab8.dir/ActionUpdate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab8.dir/ActionUpdate.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionUpdate.cpp" > CMakeFiles/lab8.dir/ActionUpdate.cpp.i
+
+CMakeFiles/lab8.dir/ActionUpdate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab8.dir/ActionUpdate.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionUpdate.cpp" -o CMakeFiles/lab8.dir/ActionUpdate.cpp.s
+
+CMakeFiles/lab8.dir/ActionRemove.cpp.o: CMakeFiles/lab8.dir/flags.make
+CMakeFiles/lab8.dir/ActionRemove.cpp.o: ../ActionRemove.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/lab8.dir/ActionRemove.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab8.dir/ActionRemove.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionRemove.cpp"
+
+CMakeFiles/lab8.dir/ActionRemove.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab8.dir/ActionRemove.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionRemove.cpp" > CMakeFiles/lab8.dir/ActionRemove.cpp.i
+
+CMakeFiles/lab8.dir/ActionRemove.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab8.dir/ActionRemove.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionRemove.cpp" -o CMakeFiles/lab8.dir/ActionRemove.cpp.s
+
+CMakeFiles/lab8.dir/Action.cpp.o: CMakeFiles/lab8.dir/flags.make
+CMakeFiles/lab8.dir/Action.cpp.o: ../Action.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/lab8.dir/Action.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab8.dir/Action.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/Action.cpp"
+
+CMakeFiles/lab8.dir/Action.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab8.dir/Action.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/Action.cpp" > CMakeFiles/lab8.dir/Action.cpp.i
+
+CMakeFiles/lab8.dir/Action.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab8.dir/Action.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/Action.cpp" -o CMakeFiles/lab8.dir/Action.cpp.s
+
+CMakeFiles/lab8.dir/ActionAdd.cpp.o: CMakeFiles/lab8.dir/flags.make
+CMakeFiles/lab8.dir/ActionAdd.cpp.o: ../ActionAdd.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/lab8.dir/ActionAdd.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lab8.dir/ActionAdd.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionAdd.cpp"
+
+CMakeFiles/lab8.dir/ActionAdd.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lab8.dir/ActionAdd.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionAdd.cpp" > CMakeFiles/lab8.dir/ActionAdd.cpp.i
+
+CMakeFiles/lab8.dir/ActionAdd.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lab8.dir/ActionAdd.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionAdd.cpp" -o CMakeFiles/lab8.dir/ActionAdd.cpp.s
+
 # Object files for target lab8
 lab8_OBJECTS = \
 "CMakeFiles/lab8.dir/AdminService.cpp.o" \
@@ -240,7 +292,11 @@ lab8_OBJECTS = \
 "CMakeFiles/lab8.dir/ValidationException.cpp.o" \
 "CMakeFiles/lab8.dir/MovieValidator.cpp.o" \
 "CMakeFiles/lab8.dir/CSVRepository.cpp.o" \
-"CMakeFiles/lab8.dir/HTMLRepository.cpp.o"
+"CMakeFiles/lab8.dir/HTMLRepository.cpp.o" \
+"CMakeFiles/lab8.dir/ActionUpdate.cpp.o" \
+"CMakeFiles/lab8.dir/ActionRemove.cpp.o" \
+"CMakeFiles/lab8.dir/Action.cpp.o" \
+"CMakeFiles/lab8.dir/ActionAdd.cpp.o"
 
 # External object files for target lab8
 lab8_EXTERNAL_OBJECTS =
@@ -258,12 +314,16 @@ lab8: CMakeFiles/lab8.dir/ValidationException.cpp.o
 lab8: CMakeFiles/lab8.dir/MovieValidator.cpp.o
 lab8: CMakeFiles/lab8.dir/CSVRepository.cpp.o
 lab8: CMakeFiles/lab8.dir/HTMLRepository.cpp.o
+lab8: CMakeFiles/lab8.dir/ActionUpdate.cpp.o
+lab8: CMakeFiles/lab8.dir/ActionRemove.cpp.o
+lab8: CMakeFiles/lab8.dir/Action.cpp.o
+lab8: CMakeFiles/lab8.dir/ActionAdd.cpp.o
 lab8: CMakeFiles/lab8.dir/build.make
 lab8: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/QtWidgets
 lab8: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework/QtGui
 lab8: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/QtCore
 lab8: CMakeFiles/lab8.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable lab8"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable lab8"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab8.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

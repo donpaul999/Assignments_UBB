@@ -30,4 +30,5 @@ public:
     int addMovieToWatchlist(const Movie& movieToAdd);
     int addMovieToWatchListByTitle(const std::string& titleOfTheMovieToAdd);
     int getNumberOfMoviesWatchList();
+    Movie findMovie(const std::string& title);
 };

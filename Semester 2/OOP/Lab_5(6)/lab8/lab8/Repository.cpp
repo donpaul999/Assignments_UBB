@@ -115,6 +115,15 @@ std::vector<Movie> Repository::getMoviesByGenre(const std::string& genreGiven)
     return moviesWithGenre;
 }
 
+Movie Repository::findMovie(const std::string& titleOfTheMovieToAdd)
+{
+    auto iteratorWhereMovieFound = std::find_if(movieList.begin(), movieList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
+
+    if (iteratorWhereMovieFound == movieList.end())
+        throw std::runtime_error("Invalid title");
+    return *iteratorWhereMovieFound;
+}
+
 //Get all the movies
 std::vector<Movie> Repository::getAllMovies()
 {

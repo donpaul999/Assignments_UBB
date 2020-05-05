@@ -9,6 +9,6 @@ int main(int argc, char *argv[])
 	AdminService adminservice{repository} ;
 	UserService userservice{repository};
 	UI ui{ adminservice, userservice };
-	//ui.runApp();
+	ui.runApp();
 	return 0;
 }

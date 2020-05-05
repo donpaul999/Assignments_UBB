@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lab8.dir/Action.cpp.o"
+  "CMakeFiles/lab8.dir/ActionAdd.cpp.o"
+  "CMakeFiles/lab8.dir/ActionRemove.cpp.o"
+  "CMakeFiles/lab8.dir/ActionUpdate.cpp.o"
   "CMakeFiles/lab8.dir/AdminService.cpp.o"
   "CMakeFiles/lab8.dir/CSVRepository.cpp.o"
   "CMakeFiles/lab8.dir/DynamicVector.cpp.o"

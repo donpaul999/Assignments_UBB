@@ -24,5 +24,7 @@ public:
     void uiUserNext();
     void uiUserSave();
     void uiUserList();
+    void uiAdminUndo();
+    void uiAdminRedo();
 };
 

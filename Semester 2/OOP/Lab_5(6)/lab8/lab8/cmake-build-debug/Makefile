@@ -123,6 +123,114 @@ lab8/fast:
 	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/build
 .PHONY : lab8/fast
 
+Action.o: Action.cpp.o
+
+.PHONY : Action.o
+
+# target to build an object file
+Action.cpp.o:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/Action.cpp.o
+.PHONY : Action.cpp.o
+
+Action.i: Action.cpp.i
+
+.PHONY : Action.i
+
+# target to preprocess a source file
+Action.cpp.i:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/Action.cpp.i
+.PHONY : Action.cpp.i
+
+Action.s: Action.cpp.s
+
+.PHONY : Action.s
+
+# target to generate assembly for a file
+Action.cpp.s:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/Action.cpp.s
+.PHONY : Action.cpp.s
+
+ActionAdd.o: ActionAdd.cpp.o
+
+.PHONY : ActionAdd.o
+
+# target to build an object file
+ActionAdd.cpp.o:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionAdd.cpp.o
+.PHONY : ActionAdd.cpp.o
+
+ActionAdd.i: ActionAdd.cpp.i
+
+.PHONY : ActionAdd.i
+
+# target to preprocess a source file
+ActionAdd.cpp.i:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionAdd.cpp.i
+.PHONY : ActionAdd.cpp.i
+
+ActionAdd.s: ActionAdd.cpp.s
+
+.PHONY : ActionAdd.s
+
+# target to generate assembly for a file
+ActionAdd.cpp.s:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionAdd.cpp.s
+.PHONY : ActionAdd.cpp.s
+
+ActionRemove.o: ActionRemove.cpp.o
+
+.PHONY : ActionRemove.o
+
+# target to build an object file
+ActionRemove.cpp.o:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionRemove.cpp.o
+.PHONY : ActionRemove.cpp.o
+
+ActionRemove.i: ActionRemove.cpp.i
+
+.PHONY : ActionRemove.i
+
+# target to preprocess a source file
+ActionRemove.cpp.i:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionRemove.cpp.i
+.PHONY : ActionRemove.cpp.i
+
+ActionRemove.s: ActionRemove.cpp.s
+
+.PHONY : ActionRemove.s
+
+# target to generate assembly for a file
+ActionRemove.cpp.s:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionRemove.cpp.s
+.PHONY : ActionRemove.cpp.s
+
+ActionUpdate.o: ActionUpdate.cpp.o
+
+.PHONY : ActionUpdate.o
+
+# target to build an object file
+ActionUpdate.cpp.o:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionUpdate.cpp.o
+.PHONY : ActionUpdate.cpp.o
+
+ActionUpdate.i: ActionUpdate.cpp.i
+
+.PHONY : ActionUpdate.i
+
+# target to preprocess a source file
+ActionUpdate.cpp.i:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionUpdate.cpp.i
+.PHONY : ActionUpdate.cpp.i
+
+ActionUpdate.s: ActionUpdate.cpp.s
+
+.PHONY : ActionUpdate.s
+
+# target to generate assembly for a file
+ActionUpdate.cpp.s:
+	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/ActionUpdate.cpp.s
+.PHONY : ActionUpdate.cpp.s
+
 AdminService.o: AdminService.cpp.o
 
 .PHONY : AdminService.o
@@ -483,6 +591,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lab8"
+	@echo "... Action.o"
+	@echo "... Action.i"
+	@echo "... Action.s"
+	@echo "... ActionAdd.o"
+	@echo "... ActionAdd.i"
+	@echo "... ActionAdd.s"
+	@echo "... ActionRemove.o"
+	@echo "... ActionRemove.i"
+	@echo "... ActionRemove.s"
+	@echo "... ActionUpdate.o"
+	@echo "... ActionUpdate.i"
+	@echo "... ActionUpdate.s"
 	@echo "... AdminService.o"
 	@echo "... AdminService.i"
 	@echo "... AdminService.s"

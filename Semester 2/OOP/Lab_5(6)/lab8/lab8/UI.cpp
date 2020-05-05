@@ -51,7 +51,11 @@ void UI::runAdmin()
             uiAdminList();
         else if (consoleInput == "fileLocation")
             uiAdminChangeFile();
-        else if (consoleInput == "mode") {
+        else if (consoleInput == "undo")
+            uiAdminUndo();
+        else if (consoleInput == "redo")
+            uiAdminRedo();
+         else if (consoleInput == "mode") {
             std::string modeToChange;
             std::cin >> modeToChange;
             if (modeToChange == "B") {
@@ -311,4 +315,22 @@ void UI::uiUserChangeFile()
         std::cout << exception.what()<<'\n';
     }
 
+}
+
+void UI::uiAdminUndo(){
+    try{
+        adminService.undo();
+    }
+    catch(std::exception& e){
+        std::cout << e.what();
+    }
+}
+
+void UI::uiAdminRedo(){
+    try{
+        adminService.redo();
+    }
+    catch(std::exception& e){
+        std::cout << e.what();
+    }
 }
