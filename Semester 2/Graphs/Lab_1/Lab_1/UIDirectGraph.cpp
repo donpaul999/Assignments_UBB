@@ -6,7 +6,8 @@ UI::UI(DIRECT_GRAPH graph, Service service)
 	this->service = service;
 }
 
-void UI::start_menu()
+void UI::
+start_menu()
 {
 	cout << "1. Print the list of all vertices and edges" << '\n';
 	cout << "2. Print the number of vertices" << '\n';

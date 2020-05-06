@@ -8,7 +8,7 @@ class SetIterator
 private:
     int currentIndexInList;
     //DO NOT CHANGE THIS PART
-	const Set& set;
+    Set set;
 	SetIterator(const Set& s);
 
 	//TODO - Representation
@@ -18,6 +18,7 @@ public:
 	void next();
 	TElem getCurrent();
 	bool valid() const;
+    void jumpBackward(int k);
 };
 
 

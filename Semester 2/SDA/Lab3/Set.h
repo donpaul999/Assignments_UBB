@@ -3,7 +3,7 @@
 
 //DO NOT CHANGE THIS PART
 #define NULL_TELEM -11111
-#define INIT_SIZE 1
+#define INIT_SIZE 5
 typedef int TElem;
 class SetIterator;
 
@@ -46,7 +46,6 @@ class Set {
 
         // destructor
         ~Set();
-
 };
 
 

@@ -8,12 +8,6 @@
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Activity.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Direct_Graph.cpp
-Direct_Graph.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Direct_Graph.h
-iostream
--
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Direct_Graph.h
 vector
 -
@@ -29,4 +23,20 @@ fstream
 -
 Activity.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Activity.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Service.h
+Direct_Graph.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Direct_Graph.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/UIDirectGraph.cpp
+UIDirectGraph.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/UIDirectGraph.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/UIDirectGraph.h
+Direct_Graph.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Direct_Graph.h
+Service.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab_1/Lab_1/Service.h
 

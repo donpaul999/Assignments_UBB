@@ -62,5 +62,19 @@ pair< vector<vector<int>>, int> Service::floydWarshall(int source, int target) {
                     distances[i][j] = distances[i][k] + distances[k][j];
                     positions[i][j] = k;
                 }
+    for (i = 0; i < graph.vertices.size(); ++i){
+        for (j = 0; j < graph.vertices.size(); ++j)
+                cout << distances[i][j]<<" ";
+        cout << '\n';
+        }
+    cout << "******\n";
+
+    for (i = 0; i < graph.vertices.size(); ++i){
+        for (j = 0; j < graph.vertices.size(); ++j)
+            cout << positions[i][j]<<" ";
+        cout << '\n';
+        }
+    cout << "******\n";
+
     return make_pair(positions, distances[source][target]);
 }

@@ -13,7 +13,7 @@ Set::Set() {
     this->next[this->capacity-1] = -1;
 }
 
-
+//O(n)
 bool Set::add(TElem elem) {
     int currentPosition, previousPosition;
 
@@ -43,7 +43,7 @@ bool Set::add(TElem elem) {
     return true;
 }
 
-
+//O(n)
 bool Set::remove(TElem elem) {
     int currentPosition, previousPosition;
     this->findElemInSet(elem, currentPosition, previousPosition);
@@ -63,6 +63,7 @@ bool Set::remove(TElem elem) {
     return true;
 }
 
+//O(n)
 bool Set::search(TElem elem) const {
     int current = this->head;
     while(current != -1)
@@ -72,6 +73,7 @@ bool Set::search(TElem elem) const {
             current = this->next[current];
 	return false;
 }
+
 
 void Set::resize() {
     auto* newElements = new TElem[this->capacity * 2];
@@ -95,6 +97,7 @@ void Set::resize() {
     this->capacity *= 2;
 }
 
+//O(n)
 void Set::findElemInSet(TElem elem, int &currentPos, int &previousPos) {
     int auxiliar = this->head;
     int auxiliarPrevious = -1;
@@ -119,6 +122,7 @@ void Set::findElemInSet(TElem elem, int &currentPos, int &previousPos) {
     }
 }
 
+
 int Set::size() const {
 	return this->sizeOfArray;
 }
@@ -128,15 +132,13 @@ bool Set::isEmpty() const {
 	return this->sizeOfArray == 0;
 }
 
-
-Set::~Set() {
-    delete [] this->elements;
-    delete [] this->next;
-}
-
-
 SetIterator Set::iterator() const {
 	return SetIterator(*this);
 }
 
 
+Set::~Set() {
+
+    //delete[] elements;
+    //delete[] next;
+}

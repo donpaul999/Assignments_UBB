@@ -36,3 +36,11 @@ bool SetIterator::valid() const {
 
 
 
+void SetIterator::jumpBackward(int k){
+    if(k <= 0 || !valid())
+        throw std::exception();
+    int nbOfSteps = currentIndexInList - k - 1;
+    this->currentIndexInList = set.head;
+    for(int i = 0; i <= nbOfSteps; ++i)
+        next();
+}
