@@ -158,6 +158,12 @@
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/HTMLRepository.h">
 			<Option target="lab8"/>
 		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/MainWindow.cpp">
+			<Option target="lab8"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/MainWindow.h">
+			<Option target="lab8"/>
+		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/Movie.cpp">
 			<Option target="lab8"/>
 		</Unit>

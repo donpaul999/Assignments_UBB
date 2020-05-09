@@ -36,12 +36,6 @@ FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/Movie.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/AdminService.cpp
-AdminService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/AdminService.h
-iostream
--
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/AdminService.h
 Repository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/Repository.h
@@ -66,6 +60,12 @@ ActionUpdate.h
 ActionRemove.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ActionRemove.h
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/CSVRepository.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/FileRepository.h
+fstream
+-
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/Movie.h
@@ -75,6 +75,14 @@ algorithm
 -
 RepositoryException.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/RepositoryException.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/HTMLRepository.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/FileRepository.h
+fstream
+-
+regex
+-
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/Movie.h
 string
@@ -100,7 +108,45 @@ algorithm
 string
 -
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/UI.h
+AdminService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/AdminService.h
+UserService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/UserService.h
+fstream
+-
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/UserService.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/FileRepository.h
+CSVRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/CSVRepository.h
+HTMLRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/HTMLRepository.h
+ValidationException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ValidationException.h
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/ValidationException.h
 string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/main.cpp
+UI.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab_5(6)/lab8/lab8/UI.h
+QtWidgets/QApplication
+-
+QLabel
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
+qlabel.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
 -
 

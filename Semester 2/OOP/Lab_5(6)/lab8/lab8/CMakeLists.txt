@@ -43,6 +43,7 @@ add_executable(lab8
         ActionAdd.h
         Action.cpp
         ActionAdd.cpp
-        Action.h)
+        Action.h
+        )
 target_link_libraries(lab8 Qt5::Widgets)
 

@@ -120,4 +120,6 @@ CMakeFiles/lab8.dir/main.cpp.o: ../UI.h
 CMakeFiles/lab8.dir/main.cpp.o: ../UserService.h
 CMakeFiles/lab8.dir/main.cpp.o: ../ValidationException.h
 CMakeFiles/lab8.dir/main.cpp.o: ../main.cpp
+CMakeFiles/lab8.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
+CMakeFiles/lab8.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 

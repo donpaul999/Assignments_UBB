@@ -1,0 +1,258 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Action.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ActionAdd.h
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Action.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ActionRemove.h
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Action.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ActionUpdate.h
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Action.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/AdminService.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+vector
+-
+fstream
+-
+ValidationException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ValidationException.h
+MovieValidator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/MovieValidator.h
+memory
+-
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Action.h
+ActionAdd.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ActionAdd.h
+ActionUpdate.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ActionUpdate.h
+ActionRemove.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ActionRemove.h
+memory
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/CSVRepository.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+fstream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Movie.h
+vector
+-
+algorithm
+-
+RepositoryException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/RepositoryException.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/GUI.cpp
+GUI.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/GUI.h
+qlayout.h
+-
+QFormLayout
+-
+qgridlayout.h
+-
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Movie.h
+vector
+-
+qmessagebox.h
+-
+exception
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/GUI.h
+AdminService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/AdminService.h
+UserService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/UserService.h
+qwidget.h
+-
+qlistwidget.h
+-
+qlineedit.h
+-
+qpushbutton.h
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/HTMLRepository.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+fstream
+-
+regex
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Movie.h
+string
+-
+vector
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/MovieValidator.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/Movie.h
+ValidationException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ValidationException.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/RepositoryException.h
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/UserService.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/FileRepository.h
+CSVRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/CSVRepository.h
+HTMLRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/HTMLRepository.h
+ValidationException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ValidationException.h
+memory
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab11-GUI/ValidationException.h
+string
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QFormLayout
+qformlayout.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qformlayout.h
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qformlayout.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/QLayout
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qlayout.h
+-
+QtWidgets/qwidget.h
+-
+limits.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlayout.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtCore/qobject.h
+-
+QtWidgets/qlayoutitem.h
+-
+QtWidgets/qsizepolicy.h
+-
+QtCore/qrect.h
+-
+QtCore/qmargins.h
+-
+limits.h
+-
+QtWidgets/qboxlayout.h
+-
+QtWidgets/qgridlayout.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+QtGui/qtextcursor.h
+-
+QtCore/qstring.h
+-
+QtCore/qmargins.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qlistview.h
+-
+QtCore/qvariant.h
+-
+QtCore/qvector.h
+-
+QtCore/qitemselectionmodel.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qdialog.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qabstractbutton.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtGui/qwindowdefs.h
+-
+QtCore/qobject.h
+-
+QtCore/qmargins.h
+-
+QtGui/qpaintdevice.h
+-
+QtGui/qpalette.h
+-
+QtGui/qfont.h
+-
+QtGui/qfontmetrics.h
+-
+QtGui/qfontinfo.h
+-
+QtWidgets/qsizepolicy.h
+-
+QtGui/qregion.h
+-
+QtGui/qbrush.h
+-
+QtGui/qcursor.h
+-
+QtGui/qkeysequence.h
+-
+QtGui/qevent.h
+-
+
