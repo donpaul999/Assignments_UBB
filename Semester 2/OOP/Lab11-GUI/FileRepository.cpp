@@ -102,7 +102,9 @@ int FileRepository::updateMovie(const Movie& movieToUpdateWith)
 //Change the file name of the repository
 void FileRepository::changeFileName(const std::string& nameOfTheFileUsed)
 {
+    //std::vector<Movie> movieList = loadMoviesFromFile();
     movieFileName = nameOfTheFileUsed;
+    //writeMoviesToFile(movieList, movieFileName);
 }
 
 

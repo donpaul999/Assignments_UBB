@@ -22,11 +22,13 @@ void GUI::initGUI() {
     this->yearLineEdit = new QLineEdit();
     this->numberOfLikesLineEdit = new QLineEdit();
     this->trailerLineEdit = new QLineEdit();
+    this->updateFileLineEdit = new QLineEdit();
 
     this->addButton = new QPushButton("Add");
     this->deleteButton = new QPushButton("Delete");
     this->undoButton = new QPushButton("Undo");
     this->redoButton = new QPushButton("Redo");
+    this->updateFileButton = new QPushButton("Update File Location");
 
 
     QVBoxLayout* mainLayout = new QVBoxLayout{this};
@@ -49,6 +51,17 @@ void GUI::initGUI() {
 
     mainLayout->addLayout(buttonsLayout);
 
+    QFormLayout* updateFileDetailsLayout = new QFormLayout();
+    updateFileDetailsLayout->addRow("File Location", this->updateFileLineEdit);
+
+    mainLayout->addLayout(updateFileDetailsLayout);
+
+    QGridLayout* secondButtonsLayout = new QGridLayout();
+    secondButtonsLayout->addWidget(this->updateFileButton, 0, 0);
+
+    mainLayout->addLayout(secondButtonsLayout);
+
+
 }
 
 void GUI::populateList() {
@@ -69,12 +82,14 @@ void GUI::connectSignalsAndSlots() {
         this->yearLineEdit->setText(QString::fromStdString(std::to_string(movieUsed.getYearOfRelease())));
         this->numberOfLikesLineEdit->setText(QString::fromStdString(std::to_string(movieUsed.getNumberOfLikes())));
         this->trailerLineEdit->setText(QString::fromStdString(movieUsed.getTrailer()));
+        this->updateFileLineEdit->setText(QString::fromStdString(this->adminService.getFileName()));
     });
 
     QObject::connect(this->addButton, &QPushButton::clicked, this, &GUI::addMovie);
     QObject::connect(this->deleteButton, &QPushButton::clicked, this, &GUI::deleteMovie);
     QObject::connect(this->undoButton, &QPushButton::clicked, this, &GUI::undo);
     QObject::connect(this->redoButton, &QPushButton::clicked, this, &GUI::redo);
+    QObject::connect(this->updateFileButton, &QPushButton::clicked, this, &GUI::updateFile);
 }
 
 int GUI::getSelectedIndex() const {
@@ -177,4 +192,13 @@ void GUI::redo() {
     int lastElem = this->adminService.adminGetMovieList().size() - 1;
     this->movieListWidget->setCurrentRow(lastElem);
 
+}
+
+void GUI::updateFile() {
+    std::string fileTitle = this->updateFileLineEdit->text().toStdString();
+    this->adminService.changeRepositoryFileName(fileTitle);
+
+    this->populateList();
+    int lastElem = this->adminService.adminGetMovieList().size() - 1;
+    this->movieListWidget->setCurrentRow(lastElem);
 }

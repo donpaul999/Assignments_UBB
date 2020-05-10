@@ -16,8 +16,8 @@ private:
     AdminService& adminService;
     UserService& userService;
     QListWidget* movieListWidget;
-    QLineEdit* titleLineEdit, *genreLineEdit, *yearLineEdit, *numberOfLikesLineEdit, *trailerLineEdit;
-    QPushButton* addButton, * deleteButton, *undoButton, *redoButton;
+    QLineEdit* titleLineEdit, *genreLineEdit, *yearLineEdit, *numberOfLikesLineEdit, *trailerLineEdit,*updateFileLineEdit;
+    QPushButton* addButton, * deleteButton, *undoButton, *redoButton, *updateFileButton;
 public:
 
     GUI(AdminService& adminService, UserService& userService);
@@ -30,6 +30,7 @@ private:
     void deleteMovie();
     void undo();
     void redo();
+    void updateFile();
 };
 
 

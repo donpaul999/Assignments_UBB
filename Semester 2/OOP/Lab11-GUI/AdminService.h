@@ -26,6 +26,7 @@ public:
     int adminUpdateMovie(const std::string& title, const std::string& genre, int yearOfRelease, int numberOfLikes, const std::string& trailer);
     std::vector<Movie> adminGetMovieList();
     int changeRepositoryFileName(const std::string& nameOfTheFileUsed);
+    std::string getFileName(){return this->repository->getMovieFileName();};
     void undo();
     void redo();
     void emptyRedo();
