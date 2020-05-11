@@ -13,6 +13,5 @@ int main() {
 	testAll();
 	testAllExtended();
 	cout << "End" << endl;
-	system("pause");
 
 }

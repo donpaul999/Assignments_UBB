@@ -1,0 +1,82 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/App.cpp
+iostream
+-
+MultiMap.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMap.h
+ExtendedTest.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/ExtendedTest.h
+ShortTest.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/ShortTest.h
+MultiMapIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMapIterator.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/ExtendedTest.cpp
+ShortTest.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/ShortTest.h
+MultiMap.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMap.h
+MultiMapIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMapIterator.h
+assert.h
+-
+iostream
+-
+stdlib.h
+-
+vector
+-
+exception
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/ExtendedTest.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMap.cpp
+MultiMap.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMap.h
+MultiMapIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMapIterator.h
+exception
+-
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMap.h
+vector
+-
+utility
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMapIterator.cpp
+MultiMapIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMapIterator.h
+MultiMap.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMap.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMapIterator.h
+MultiMap.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMap.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/ShortTest.cpp
+ShortTest.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/ShortTest.h
+MultiMap.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMap.h
+MultiMapIterator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/MultiMapIterator.h
+assert.h
+-
+vector
+-
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/SDA/Lab5/ShortTest.h
+

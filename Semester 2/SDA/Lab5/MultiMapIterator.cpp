@@ -3,24 +3,35 @@
 
 
 MultiMapIterator::MultiMapIterator(const MultiMap& c): col(c) {
-	//TODO - Implementation
+	this->first();
 }
 
 TElem MultiMapIterator::getCurrent() const{
-	//TODO - Implementation
-	return NULL_TELEM;
+	if (!this->valid()) throw exception();
+	return this->current->tuple;
 }
 
 bool MultiMapIterator::valid() const {
-	//TODO - Implementation
-	return false;
+	return this->current != NULL;
 }
 
 void MultiMapIterator::next() {
-	//TODO - Implementation
+	if (!this->valid()) throw exception();
+	this->current = this->current->next;
+	while(this->current == NULL && this->arrayIndex + 1 < this->col.capacity)
+	{
+		this->arrayIndex++;
+		this->current = this->col.hashtable[this->arrayIndex]->next;
+	}
 }
 
 void MultiMapIterator::first() {
-	//TODO - Implementation
+	this->arrayIndex = 0;
+	this->current = this->col.hashtable[this->arrayIndex]->next;
+	while (this->current == NULL && this->arrayIndex + 1 < this->col.capacity)
+	{
+		this->arrayIndex++;
+		this->current = this->col.hashtable[this->arrayIndex]->next;
+	}
 }
 

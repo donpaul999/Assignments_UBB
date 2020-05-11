@@ -1,6 +1,8 @@
 #pragma once
 #include<vector>
 #include<utility>
+#define key first
+#define tvalue second
 //DO NOT INCLUDE MultiMapIterator
 
 using namespace std;
@@ -8,25 +10,33 @@ using namespace std;
 //DO NOT CHANGE THIS PART
 typedef int TKey;
 typedef int TValue;
-typedef std::pair<TKey, TValue> TElem;
+typedef pair<TKey, TValue> TElem;
 #define NULL_TVALUE -11111;
 #define NULL_TELEM pair<int,int>(-11111, -11111);
 class MultiMapIterator;
 
+struct node {
+	TElem tuple;
+	struct node* next;
+};
+
 class MultiMap
 {
 	friend class MultiMapIterator;
-    int hashTableCapacity;
-
 
 private:
 	//TODO - Representation
+	int capacity;
+	int nrPairs;
+	node** hashtable;
+	float maxAlpha;
+	//resize the hashtable according to the limitations of alpha
+	void resize();
 
 public:
 	//constructor
 	MultiMap();
 
-    int hash(TElem e);
 	//adds a key value pair to the multimap
 	void add(TKey c, TValue v);
 
@@ -46,9 +56,13 @@ public:
 	//returns an iterator for the multimap
 	MultiMapIterator iterator() const;
 
-	//descturctor
-	~MultiMap();
+    void freeNode(node* x);
 
+    //hashing function
+    int hash(TElem tuple, int m) const;
+
+	//desctructor
+	~MultiMap();
 
 };
 
