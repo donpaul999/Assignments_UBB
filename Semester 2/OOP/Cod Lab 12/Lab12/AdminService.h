@@ -33,4 +33,6 @@ public:
     void undo();
     void redo();
     void emptyRedo();
+
+    void filterMoviesByGenre(const std::string& genreGiven);
 };

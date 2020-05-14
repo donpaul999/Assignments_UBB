@@ -18,11 +18,19 @@ private:
 	UserService& userService;
 	Ui::Lab12Class ui;
 
-	//void connectSignalsAndSlots();
+	void connectSignalsAndSlots();
+    int getSelectedIndex() const;
 
 	void populateList();
-	//void addMovie();
-	//void deleteMovie();
-	//void updateMovie();
-
+	void populateMyList();
+	void addMovie();
+	void deleteMovie();
+	void updateMovie();
+	void undo();
+	void redo();
+    void sortByGenre();
+    void updateFileName();
+    void updateMyListLocation();
+    void openMyList();
+    void addToWatchList();
 };

@@ -32,6 +32,9 @@ int UserService::listMoviesByGenre(const std::string& genreGiven)
     currentMoviePosition = 0;
     return 1;
 }
+void UserService::filterMoviesByGenre(const std::string& genreGiven){
+    repository->filterMoviesByGenre(genreGiven);
+}
 
 //Add a movie to the watch list by the current movie position
 int UserService::addMovieToWatchList()

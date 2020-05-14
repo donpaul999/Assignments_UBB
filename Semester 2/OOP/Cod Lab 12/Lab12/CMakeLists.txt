@@ -39,6 +39,8 @@ add_executable(Lab12
         UserService.cpp
         UserService.h
         ValidationException.cpp
-        ValidationException.h)
+        ValidationException.h
+        ActionFilter.cpp
+        ActionFilter.h)
 
 target_link_libraries(Lab12 Qt5::Widgets)

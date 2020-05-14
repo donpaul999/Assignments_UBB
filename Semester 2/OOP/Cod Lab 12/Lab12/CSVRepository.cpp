@@ -27,12 +27,22 @@ std::vector<Movie> CSVRepository::getAllWatchListMovies()
     std::string textLineFromFile, replacedString;
     std::ifstream fileInput(userFileName); //remove unused lines
     getline(fileInput, textLineFromFile);
-    while(!fileInput.eof()){
-        getline(fileInput, textLineFromFile);
-        tokenizedInput = explode(textLineFromFile, "\"");
-        Movie movieUsed = {tokenizedInput[0], tokenizedInput[2], stoi(tokenizedInput[4]), stoi(tokenizedInput[6]), tokenizedInput[8]};
-        movieList.push_back(movieUsed);
+    try {
+        while (!fileInput.eof() && textLineFromFile != "") {
+            getline(fileInput, textLineFromFile);
+            tokenizedInput = explode(textLineFromFile, "\"");
+            if(tokenizedInput.size() != 0) {
+                Movie movieUsed = {tokenizedInput[0], tokenizedInput[2], stoi(tokenizedInput[4]),
+                                   stoi(tokenizedInput[6]),
+                                   tokenizedInput[8]};
+                movieList.push_back(movieUsed);
+            }
+        }
     }
+    catch(std::exception& e){
+        return std::vector<Movie>();
+    }
+    fileInput.close();
     return movieList;
 
 }

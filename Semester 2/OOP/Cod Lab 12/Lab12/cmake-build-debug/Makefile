@@ -177,6 +177,33 @@ ActionAdd.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/ActionAdd.cpp.s
 .PHONY : ActionAdd.cpp.s
 
+ActionFilter.o: ActionFilter.cpp.o
+
+.PHONY : ActionFilter.o
+
+# target to build an object file
+ActionFilter.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/ActionFilter.cpp.o
+.PHONY : ActionFilter.cpp.o
+
+ActionFilter.i: ActionFilter.cpp.i
+
+.PHONY : ActionFilter.i
+
+# target to preprocess a source file
+ActionFilter.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/ActionFilter.cpp.i
+.PHONY : ActionFilter.cpp.i
+
+ActionFilter.s: ActionFilter.cpp.s
+
+.PHONY : ActionFilter.s
+
+# target to generate assembly for a file
+ActionFilter.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/ActionFilter.cpp.s
+.PHONY : ActionFilter.cpp.s
+
 ActionRemove.o: ActionRemove.cpp.o
 
 .PHONY : ActionRemove.o
@@ -597,6 +624,9 @@ help:
 	@echo "... ActionAdd.o"
 	@echo "... ActionAdd.i"
 	@echo "... ActionAdd.s"
+	@echo "... ActionFilter.o"
+	@echo "... ActionFilter.i"
+	@echo "... ActionFilter.s"
 	@echo "... ActionRemove.o"
 	@echo "... ActionRemove.i"
 	@echo "... ActionRemove.s"

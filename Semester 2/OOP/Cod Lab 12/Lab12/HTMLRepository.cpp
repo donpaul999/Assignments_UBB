@@ -36,7 +36,7 @@ std::vector<Movie> HTMLRepository::getAllWatchListMovies()
     getline(fileInput, textLineFromFile);
     getline(fileInput, textLineFromFile);
     getline(fileInput, textLineFromFile);
-    while(!fileInput.eof()){
+    while(!fileInput.eof() && textLineFromFile != ""){
         getline(fileInput, textLineFromFile);
         std::regex_replace(std::back_inserter(replacedString), textLineFromFile.begin(), textLineFromFile.end(), tags, " ");
         textLineFromFile = replacedString;

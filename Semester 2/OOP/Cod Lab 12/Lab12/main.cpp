@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
     repository->setMemoryOrFile(inMemory);
     AdminService adminservice{ repository.get() };
     UserService userservice{ repository.get() };
-
+    userservice.changeRepositoryFileName("test.html","html");
     Lab12 gui{adminservice, userservice};
     gui.show();
     return a.exec();

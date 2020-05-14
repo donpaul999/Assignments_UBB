@@ -1,4 +1,5 @@
 #include "AdminService.h"
+#include "ActionFilter.h"
 #include <iostream>
 
 //AdminService constructor
@@ -8,6 +9,19 @@ AdminService::AdminService(FileRepository* newRepository){
 	this->inUndoRedo = 0;
 }
 
+void AdminService::filterMoviesByGenre(const std::string& genreGiven){
+    std::vector<Movie> listOfMovies = this->adminGetMovieList();
+    std::vector<Movie> deletedMovies;
+    for(int i = 0; i < listOfMovies.size(); ++i)
+        if(listOfMovies[i].getGenre() != genreGiven)
+            deletedMovies.push_back(listOfMovies[i]);
+    std::unique_ptr<Action> filterAction = std::make_unique<ActionFilter>(repository, deletedMovies);
+    undoSteps.push_back(move(filterAction));
+    if(!inUndoRedo) {
+        emptyRedo();
+    }
+    repository->filterMoviesByGenre(genreGiven);
+}
 
 /*
 	Explode a string after certain separators - stringToExplode - string to be separated

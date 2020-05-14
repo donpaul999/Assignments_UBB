@@ -13,6 +13,7 @@ protected:
     std::string movieFileName;
     std::string userFileName;
     std::string repositoryType;
+    std::string entireUserFileName;
     bool memoryOrFile;
 
 
@@ -44,5 +45,7 @@ public:
     const std::vector<std::string>explode(const std::string& stringToExplode, const std::string& separatorsUsed);
    // void operator=(FileRepository& repository);
    Movie findMovie(const std::string& title);
+
+   void filterMoviesByGenre(const std::string& genreGiven);
 
 };

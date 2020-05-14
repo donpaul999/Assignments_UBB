@@ -43,4 +43,5 @@ public:
     std::string getFileName() const;
 
     void updateRepositoryType(bool csvOrHTML, std::string fileName, std::string movieFileName);
+    void filterMoviesByGenre(const std::string& genreGiven);
 };

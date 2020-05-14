@@ -260,6 +260,7 @@ int FileRepository::getNumberOfMoviesWatchList()
 }
 
 void FileRepository::changeUserFileName(const std::string& nameOfTheFileUsed){
+
     userFileName = nameOfTheFileUsed;
 }
 
@@ -312,5 +313,15 @@ Movie FileRepository::findMovie(const std::string& titleOfTheMovieToAdd)
     if (iteratorWhereMovieFound == movieList.end())
         throw std::runtime_error("Invalid title");
     return *iteratorWhereMovieFound;
+}
+
+void FileRepository::filterMoviesByGenre(const std::string &genreGiven) {
+    if(memoryOrFile == 0){
+        std::vector<Movie> movieList = getMoviesByGenre(genreGiven);
+        writeMoviesToFile(movieList, movieFileName);
+    }
+    else{
+        movieList = getMoviesByGenre(genreGiven);
+    }
 }
 

@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/lab8.dir/DynamicVector.cpp.o"
   "CMakeFiles/lab8.dir/FileRepository.cpp.o"
   "CMakeFiles/lab8.dir/HTMLRepository.cpp.o"
-  "CMakeFiles/lab8.dir/MainWindow.cpp.o"
   "CMakeFiles/lab8.dir/Movie.cpp.o"
   "CMakeFiles/lab8.dir/MovieValidator.cpp.o"
   "CMakeFiles/lab8.dir/Repository.cpp.o"

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Lab12.dir/Action.cpp.o"
   "CMakeFiles/Lab12.dir/ActionAdd.cpp.o"
+  "CMakeFiles/Lab12.dir/ActionFilter.cpp.o"
   "CMakeFiles/Lab12.dir/ActionRemove.cpp.o"
   "CMakeFiles/Lab12.dir/ActionUpdate.cpp.o"
   "CMakeFiles/Lab12.dir/AdminService.cpp.o"

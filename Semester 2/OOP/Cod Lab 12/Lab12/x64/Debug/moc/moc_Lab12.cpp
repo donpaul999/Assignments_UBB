@@ -92,11 +92,8 @@ int Lab12::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     return _id;
 }
 
-//void Lab12::connectSignalsAndSlots() {
-    //QObject::connect(ui.deleteButton, &QPushButton::clicked, &Lab12::deleteMovie);
-  //  QObject::connect(ui.addButton, &QPushButton::clicked, &Lab12::deleteMovie);
-    //QObject::connect(ui.updateButton, &QPushButton::clicked, &Lab12::deleteMovie);
-//}
+
+
 
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

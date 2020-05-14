@@ -366,33 +366,6 @@ HTMLRepository.cpp.s:
 	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/HTMLRepository.cpp.s
 .PHONY : HTMLRepository.cpp.s
 
-MainWindow.o: MainWindow.cpp.o
-
-.PHONY : MainWindow.o
-
-# target to build an object file
-MainWindow.cpp.o:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/MainWindow.cpp.o
-.PHONY : MainWindow.cpp.o
-
-MainWindow.i: MainWindow.cpp.i
-
-.PHONY : MainWindow.i
-
-# target to preprocess a source file
-MainWindow.cpp.i:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/MainWindow.cpp.i
-.PHONY : MainWindow.cpp.i
-
-MainWindow.s: MainWindow.cpp.s
-
-.PHONY : MainWindow.s
-
-# target to generate assembly for a file
-MainWindow.cpp.s:
-	$(MAKE) -f CMakeFiles/lab8.dir/build.make CMakeFiles/lab8.dir/MainWindow.cpp.s
-.PHONY : MainWindow.cpp.s
-
 Movie.o: Movie.cpp.o
 
 .PHONY : Movie.o
@@ -645,9 +618,6 @@ help:
 	@echo "... HTMLRepository.o"
 	@echo "... HTMLRepository.i"
 	@echo "... HTMLRepository.s"
-	@echo "... MainWindow.o"
-	@echo "... MainWindow.i"
-	@echo "... MainWindow.s"
 	@echo "... Movie.o"
 	@echo "... Movie.i"
 	@echo "... Movie.s"
