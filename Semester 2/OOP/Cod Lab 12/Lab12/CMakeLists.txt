@@ -1,17 +1,16 @@
 cmake_minimum_required(VERSION 3.15)
-project(Lab12_GUI2)
+project(Lab12)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTORCC ON)
-
 find_package(Qt5Widgets REQUIRED)
 
 include_directories(.)
+include_directories(x64/Debug/uic)
 
-add_executable(Lab12_GUI2
-        Lab12_GUI2.ui
+add_executable(Lab12
+        x64/Debug/moc/moc_Lab12.cpp
+        x64/Debug/rcc/qrc_Lab12.cpp
+        x64/Debug/uic/ui_Lab12.h
         Action.cpp
         Action.h
         ActionAdd.cpp
@@ -28,6 +27,8 @@ add_executable(Lab12_GUI2
         FileRepository.h
         HTMLRepository.cpp
         HTMLRepository.h
+        Lab12.cpp
+        Lab12.h
         main.cpp
         Movie.cpp
         Movie.h
@@ -38,11 +39,6 @@ add_executable(Lab12_GUI2
         UserService.cpp
         UserService.h
         ValidationException.cpp
-        ValidationException.h
-        ${SOURCES} ${MOC_SRCS} ${RES_SOURCES} ${UI_HEADERS}
-        GUI.cpp
-        GUI.h
-        )
-QT5_WRAP_UI( UI_HEADERS ${UIS} )
+        ValidationException.h)
 
-target_link_libraries(Lab12_GUI2 Qt5::Widgets)
+target_link_libraries(Lab12 Qt5::Widgets)

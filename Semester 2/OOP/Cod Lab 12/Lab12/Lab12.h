@@ -18,5 +18,11 @@ private:
 	UserService& userService;
 	Ui::Lab12Class ui;
 
+	//void connectSignalsAndSlots();
+
 	void populateList();
+	//void addMovie();
+	//void deleteMovie();
+	//void updateMovie();
+
 };
