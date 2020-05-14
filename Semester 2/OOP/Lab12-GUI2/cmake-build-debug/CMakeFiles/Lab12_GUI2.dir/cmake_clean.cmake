@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lab12_GUI2.dir/AdminService.cpp.o"
   "CMakeFiles/Lab12_GUI2.dir/CSVRepository.cpp.o"
   "CMakeFiles/Lab12_GUI2.dir/FileRepository.cpp.o"
+  "CMakeFiles/Lab12_GUI2.dir/GUI.cpp.o"
   "CMakeFiles/Lab12_GUI2.dir/HTMLRepository.cpp.o"
   "CMakeFiles/Lab12_GUI2.dir/Lab12_GUI2_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/Lab12_GUI2.dir/Movie.cpp.o"

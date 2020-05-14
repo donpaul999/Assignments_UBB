@@ -325,6 +325,33 @@ FileRepository.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab12_GUI2.dir/build.make CMakeFiles/Lab12_GUI2.dir/FileRepository.cpp.s
 .PHONY : FileRepository.cpp.s
 
+GUI.o: GUI.cpp.o
+
+.PHONY : GUI.o
+
+# target to build an object file
+GUI.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab12_GUI2.dir/build.make CMakeFiles/Lab12_GUI2.dir/GUI.cpp.o
+.PHONY : GUI.cpp.o
+
+GUI.i: GUI.cpp.i
+
+.PHONY : GUI.i
+
+# target to preprocess a source file
+GUI.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab12_GUI2.dir/build.make CMakeFiles/Lab12_GUI2.dir/GUI.cpp.i
+.PHONY : GUI.cpp.i
+
+GUI.s: GUI.cpp.s
+
+.PHONY : GUI.s
+
+# target to generate assembly for a file
+GUI.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab12_GUI2.dir/build.make CMakeFiles/Lab12_GUI2.dir/GUI.cpp.s
+.PHONY : GUI.cpp.s
+
 HTMLRepository.o: HTMLRepository.cpp.o
 
 .PHONY : HTMLRepository.o
@@ -572,6 +599,9 @@ help:
 	@echo "... FileRepository.o"
 	@echo "... FileRepository.i"
 	@echo "... FileRepository.s"
+	@echo "... GUI.o"
+	@echo "... GUI.i"
+	@echo "... GUI.s"
 	@echo "... HTMLRepository.o"
 	@echo "... HTMLRepository.i"
 	@echo "... HTMLRepository.s"

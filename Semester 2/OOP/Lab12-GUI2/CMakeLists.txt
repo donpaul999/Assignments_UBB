@@ -11,6 +11,7 @@ find_package(Qt5Widgets REQUIRED)
 include_directories(.)
 
 add_executable(Lab12_GUI2
+        Lab12_GUI2.ui
         Action.cpp
         Action.h
         ActionAdd.cpp
@@ -38,6 +39,10 @@ add_executable(Lab12_GUI2
         UserService.h
         ValidationException.cpp
         ValidationException.h
-        Lab12_GUI2.ui)
+        ${SOURCES} ${MOC_SRCS} ${RES_SOURCES} ${UI_HEADERS}
+        GUI.cpp
+        GUI.h
+        )
+QT5_WRAP_UI( UI_HEADERS ${UIS} )
 
 target_link_libraries(Lab12_GUI2 Qt5::Widgets)

@@ -60,8 +60,8 @@ int AdminService::adminDeleteMovie(const std::string& title)
 {
 	Movie movieUsed{ title, "fillGenre", 2020, 0, "No trailer" };
 	Movie movieFound = repository->findMovie(title);
-        std::unique_ptr<Action> deleteAction = std::make_unique<ActionRemove>(repository, movieFound);
-        undoSteps.push_back(move(deleteAction));
+	std::unique_ptr<Action> deleteAction = std::make_unique<ActionRemove>(repository, movieFound);
+	undoSteps.push_back(move(deleteAction));
     if(!inUndoRedo) {
         emptyRedo();
     }

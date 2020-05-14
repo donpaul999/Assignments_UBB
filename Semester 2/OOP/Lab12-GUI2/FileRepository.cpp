@@ -101,14 +101,17 @@ int FileRepository::deleteMovie(const Movie& movieToDelete)
     else
         for(int i = 0; i < this->movieList.size();++i)
             movieList.push_back(this->movieList[i]);
-    auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToDelete);
-    if (iteratorWhereMovieIsFound == movieList.end())
-        throw RepositoryException(std::string("Movie not in the list"));
     if(memoryOrFile == 0) {
-        movieList.erase(iteratorWhereMovieIsFound);
-        writeMoviesToFile(movieList, movieFileName);
-    }
+        auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToDelete);
+        if (iteratorWhereMovieIsFound == movieList.end())
+            throw RepositoryException(std::string("Movie not in the list"));
+            movieList.erase(iteratorWhereMovieIsFound);
+            writeMoviesToFile(movieList, movieFileName);
+        }
     else{
+        auto iteratorWhereMovieIsFound = std::find(this->movieList.begin(), this->movieList.end(),  movieToDelete);
+        if (iteratorWhereMovieIsFound == this->movieList.end())
+            throw RepositoryException(std::string("Movie not in the list"));
         this->movieList.erase(iteratorWhereMovieIsFound);
     }
     return 1;
@@ -119,17 +122,20 @@ int FileRepository::deleteMovie(const Movie& movieToDelete)
 int FileRepository::updateMovie(const Movie& movieToUpdateWith)
 {
     std::vector<Movie> movieList;
-    if(memoryOrFile == 0)
+    if(memoryOrFile == 0){
         movieList = loadMoviesFromFile();
-    else
-        for(int i = 0; i < this->movieList.size();++i)
-            movieList.push_back(this->movieList[i]);
     auto iteratorWhereMovieIsFound = std::find(movieList.begin(), movieList.end(),  movieToUpdateWith);
     if (iteratorWhereMovieIsFound == movieList.end())
         throw RepositoryException(std::string("Movie not in the list"));
-    *iteratorWhereMovieIsFound = movieToUpdateWith;
-    if(memoryOrFile == 0) {
+        *iteratorWhereMovieIsFound = movieToUpdateWith;
         writeMoviesToFile(movieList, movieFileName);
+    }
+    else{
+        auto iteratorWhereMovieIsFound = std::find(this->movieList.begin(), this->movieList.end(),  movieToUpdateWith);
+        if (iteratorWhereMovieIsFound == this->movieList.end())
+            throw RepositoryException(std::string("Movie not in the list"));
+        *iteratorWhereMovieIsFound = movieToUpdateWith;
+
     }
     return 1;
 }
@@ -138,6 +144,8 @@ int FileRepository::updateMovie(const Movie& movieToUpdateWith)
 void FileRepository::changeFileName(const std::string& nameOfTheFileUsed)
 {
     //std::vector<Movie> movieList = loadMoviesFromFile();
+    if(memoryOrFile == 1)
+        throw RepositoryException(std::string("Movies are in memory"));
     movieFileName = nameOfTheFileUsed;
     //writeMoviesToFile(movieList, movieFileName);
 }
@@ -256,10 +264,10 @@ void FileRepository::changeUserFileName(const std::string& nameOfTheFileUsed){
 }
 
 std::string FileRepository::getMovieFileName(){
-    if(movieFileName != "")
-        return movieFileName;
     if(memoryOrFile == 1)
         return " ";
+    if(movieFileName != "")
+        return movieFileName;
     return " ";}
 
 std::string FileRepository::getUserFileName(){
@@ -293,7 +301,12 @@ const std::vector<std::string>FileRepository::explode(const std::string& stringT
 
 Movie FileRepository::findMovie(const std::string& titleOfTheMovieToAdd)
 {
-    std::vector<Movie> movieList = loadMoviesFromFile();
+    std::vector<Movie> movieList;
+    if(memoryOrFile == 0)
+        movieList = loadMoviesFromFile();
+    else
+        for(int i = 0; i < this->movieList.size();++i)
+            movieList.push_back(this->movieList[i]);
     auto iteratorWhereMovieFound = std::find_if(movieList.begin(), movieList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
 
     if (iteratorWhereMovieFound == movieList.end())

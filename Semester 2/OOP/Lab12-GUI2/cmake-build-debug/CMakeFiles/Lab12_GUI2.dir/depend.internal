@@ -51,6 +51,31 @@ CMakeFiles/Lab12_GUI2.dir/FileRepository.cpp.o
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/RepositoryException.h
+CMakeFiles/Lab12_GUI2.dir/GUI.cpp.o
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionAdd.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionRemove.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionUpdate.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/GUI.cpp
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/GUI.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/MovieValidator.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/RepositoryException.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QFormLayout
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qformlayout.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlayout.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 CMakeFiles/Lab12_GUI2.dir/HTMLRepository.cpp.o
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.cpp
@@ -90,6 +115,7 @@ CMakeFiles/Lab12_GUI2.dir/main.cpp.o
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/GUI.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/MovieValidator.h
@@ -99,3 +125,7 @@ CMakeFiles/Lab12_GUI2.dir/main.cpp.o
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/main.cpp
  /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
  /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlineedit.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlistwidget.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
