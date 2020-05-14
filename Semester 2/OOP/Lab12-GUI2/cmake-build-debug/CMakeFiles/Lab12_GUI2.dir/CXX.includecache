@@ -1,0 +1,186 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.cpp
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionAdd.cpp
+ActionAdd.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionAdd.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionAdd.h
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionRemove.cpp
+ActionRemove.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionRemove.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionRemove.h
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionUpdate.cpp
+ActionUpdate.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionUpdate.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionUpdate.h
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.cpp
+AdminService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+vector
+-
+fstream
+-
+ValidationException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.h
+MovieValidator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/MovieValidator.h
+memory
+-
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
+ActionAdd.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionAdd.h
+ActionUpdate.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionUpdate.h
+ActionRemove.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionRemove.h
+memory
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.cpp
+CSVRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+fstream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.cpp
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+iostream
+-
+fstream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+vector
+-
+algorithm
+-
+RepositoryException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/RepositoryException.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.cpp
+HTMLRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+fstream
+-
+regex
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+string
+-
+vector
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/MovieValidator.h
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+ValidationException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/RepositoryException.h
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.cpp
+UserService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.h
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+CSVRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.h
+HTMLRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.h
+ValidationException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.h
+memory
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.h
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/main.cpp
+QtWidgets/QApplication
+-
+QLabel
+-
+memory
+-
+UserService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.h
+AdminService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.h
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
+qlabel.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+
