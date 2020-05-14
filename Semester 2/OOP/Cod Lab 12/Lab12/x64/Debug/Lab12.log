@@ -1,0 +1,23 @@
+﻿  Reading Qt configuration (C:\Qt\5.14.2\msvc2017_64\bin\qmake.exe)
+  uic Lab12.ui
+  rcc Lab12.qrc
+  moc Lab12.h
+   RCC: Warning: No resources in '\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab12Windows\Lab12\Lab12\Lab12.qrc'.
+  Action.cpp
+  ActionAdd.cpp
+  ActionRemove.cpp
+  ActionUpdate.cpp
+  AdminService.cpp
+  CSVRepository.cpp
+  FileRepository.cpp
+  HTMLRepository.cpp
+  Lab12.cpp
+  main.cpp
+  Movie.cpp
+  MovieValidator.cpp
+  RepositoryException.cpp
+  UserService.cpp
+  ValidationException.cpp
+  qrc_Lab12.cpp
+  moc_Lab12.cpp
+  Lab12.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Lab12Windows\Lab12\x64\Debug\Lab12.exe

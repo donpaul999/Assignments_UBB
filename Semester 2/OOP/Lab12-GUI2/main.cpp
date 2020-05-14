@@ -3,20 +3,30 @@
 #include <memory>
 #include "UserService.h"
 #include "AdminService.h"
+#include "GUI.h"
+#include <iostream>
+#include <cstring>
+
 using namespace std;
 int main(int argc, char *argv[])
 {
     ifstream fin("configFile.txt");
-    std::string memoryOrFile;
+    string memoryOrFile;
+    bool inMemory;
     fin >> memoryOrFile;
+    if(memoryOrFile == "memory")
+        inMemory = 1;
     fin.close();
 
     QApplication a(argc, argv);
 
-    unique_ptr<FileRepository> repository = make_unique<FileRepository>("inputFile.txt","txt", memoryOrFile == "memory");
-
+    unique_ptr<FileRepository> repository = make_unique<FileRepository>("inputFile.in");
+    //cout << inMemory;
+    repository->setMemoryOrFile(inMemory);
 	AdminService adminservice{repository.get()} ;
 	UserService userservice{repository.get()};
 
+    GUI gui{adminservice, userservice};
+    gui.show();
     return a.exec();
 }

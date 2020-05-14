@@ -158,6 +158,12 @@
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h">
 			<Option target="Lab12_GUI2"/>
 		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/GUI.cpp">
+			<Option target="Lab12_GUI2"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/GUI.h">
+			<Option target="Lab12_GUI2"/>
+		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.cpp">
 			<Option target="Lab12_GUI2"/>
 		</Unit>
