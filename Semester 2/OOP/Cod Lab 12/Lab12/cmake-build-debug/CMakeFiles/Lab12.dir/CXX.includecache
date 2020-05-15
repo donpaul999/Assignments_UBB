@@ -6,63 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.cpp
 FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-Movie.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionAdd.h
-Action.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-Movie.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionRemove.h
-Action.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-Movie.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionUpdate.h
-Action.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-Movie.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.h
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-vector
+iostream
 -
-fstream
--
-ValidationException.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ValidationException.h
-MovieValidator.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/MovieValidator.h
-memory
--
-Action.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
-ActionAdd.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionAdd.h
-ActionUpdate.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionUpdate.h
-ActionRemove.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionRemove.h
-memory
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/CSVRepository.h
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
 fstream
 -
 
@@ -76,111 +24,13 @@ algorithm
 RepositoryException.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/RepositoryException.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/HTMLRepository.h
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-fstream
--
-regex
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h
-QtWidgets/QMainWindow
--
-ui_Lab12.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ui_Lab12.h
-AdminService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.h
-UserService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.h
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
 string
 -
 vector
 -
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/MovieValidator.h
-Movie.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
-ValidationException.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ValidationException.h
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/RepositoryException.h
 string
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.h
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-CSVRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/CSVRepository.h
-HTMLRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/HTMLRepository.h
-ValidationException.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ValidationException.h
-memory
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ValidationException.h
-string
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/main.cpp
-QtWidgets/QApplication
--
-QLabel
--
-memory
--
-UserService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.h
-AdminService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.h
-Lab12.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h
-iostream
--
-fstream
--
-cstring
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ui_Lab12.h
-QtCore/QVariant
--
-QtWidgets/QApplication
--
-QtWidgets/QFormLayout
--
-QtWidgets/QHBoxLayout
--
-QtWidgets/QLabel
--
-QtWidgets/QLineEdit
--
-QtWidgets/QListWidget
--
-QtWidgets/QMainWindow
--
-QtWidgets/QMenuBar
--
-QtWidgets/QPushButton
--
-QtWidgets/QStatusBar
--
-QtWidgets/QVBoxLayout
--
-QtWidgets/QWidget
--
-
-/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
-qlabel.h
-/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
-
-/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
-QtWidgets/qtwidgetsglobal.h
--
-QtWidgets/qframe.h
 -
 

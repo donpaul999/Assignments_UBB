@@ -20,6 +20,7 @@ void Lab12::populateList()
 }
 
 void Lab12::connectSignalsAndSlots() {
+    std::cout << this->adminService.getFileName() << '\n';
     QObject::connect(this->ui.movieListWidget, &QListWidget::itemSelectionChanged, [this](){
         int selectedIndex = this->getSelectedIndex();
         if(selectedIndex < 0)

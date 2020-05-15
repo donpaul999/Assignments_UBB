@@ -265,11 +265,10 @@ void FileRepository::changeUserFileName(const std::string& nameOfTheFileUsed){
 }
 
 std::string FileRepository::getMovieFileName(){
-    if(memoryOrFile == 1)
-        return " ";
-    if(movieFileName != "")
+    if(movieFileName != "" && memoryOrFile == 0)
         return movieFileName;
-    return " ";}
+    return " ";
+}
 
 std::string FileRepository::getUserFileName(){
     if(userFileName != "")

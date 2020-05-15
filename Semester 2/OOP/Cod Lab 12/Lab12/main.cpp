@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 {   
     ifstream fin("configFile.txt");
     string memoryOrFile;
-    bool inMemory;
+    bool inMemory = 0;
     fin >> memoryOrFile;
     if (memoryOrFile == "memory")
         inMemory = 1;
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 
     QApplication a(argc, argv);
 
-    unique_ptr<FileRepository> repository = make_unique<FileRepository>("inputFile.txt");
+    unique_ptr<FileRepository> repository = make_unique<FileRepository>("inputFile.in");
     //cout << inMemory;
     repository->setMemoryOrFile(inMemory);
     AdminService adminservice{ repository.get() };
