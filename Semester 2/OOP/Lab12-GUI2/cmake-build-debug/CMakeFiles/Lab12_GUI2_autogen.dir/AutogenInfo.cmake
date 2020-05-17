@@ -1,6 +1,6 @@
 # Meta
 set(AM_MULTI_CONFIG "FALSE")
-set(AM_PARALLEL "6")
+set(AM_PARALLEL "2")
 set(AM_VERBOSITY "")
 # Directories
 set(AM_CMAKE_SOURCE_DIR "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2")

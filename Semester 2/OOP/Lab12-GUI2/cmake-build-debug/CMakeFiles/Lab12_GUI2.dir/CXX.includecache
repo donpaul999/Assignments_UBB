@@ -6,11 +6,19 @@
 
 #IncludeRegexTransform: 
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.cpp
+Action.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
 FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionAdd.cpp
+ActionAdd.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionAdd.h
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionAdd.h
 Action.h
@@ -20,6 +28,10 @@ FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionRemove.cpp
+ActionRemove.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionRemove.h
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionRemove.h
 Action.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
@@ -28,6 +40,10 @@ FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionUpdate.cpp
+ActionUpdate.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionUpdate.h
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ActionUpdate.h
 Action.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Action.h
@@ -35,6 +51,12 @@ FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.cpp
+AdminService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.h
+iostream
+-
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.h
 FileRepository.h
@@ -60,9 +82,21 @@ ActionRemove.h
 memory
 -
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.cpp
+CSVRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.h
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/CSVRepository.h
 FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+fstream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.cpp
+FileRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
+iostream
+-
 fstream
 -
 
@@ -110,6 +144,12 @@ qlineedit.h
 qpushbutton.h
 -
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.cpp
+HTMLRepository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.h
+iostream
+-
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/HTMLRepository.h
 FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/FileRepository.h
@@ -118,11 +158,21 @@ fstream
 regex
 -
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.cpp
+Movie.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
+iostream
+-
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/Movie.h
 string
 -
 vector
 -
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/MovieValidator.cpp
+MovieValidator.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/MovieValidator.h
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/MovieValidator.h
 Movie.h
@@ -130,8 +180,18 @@ Movie.h
 ValidationException.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.h
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/RepositoryException.cpp
+RepositoryException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/RepositoryException.h
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/RepositoryException.h
 string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.cpp
+UserService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.h
+iostream
 -
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.h
@@ -146,13 +206,41 @@ ValidationException.h
 memory
 -
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.cpp
+ValidationException.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.h
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/ValidationException.h
 string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/cmake-build-debug/Lab12_GUI2_autogen/mocs_compilation.cpp
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/main.cpp
+QtWidgets/QApplication
+-
+QLabel
+-
+memory
+-
+UserService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/UserService.h
+AdminService.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/AdminService.h
+GUI.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/GUI.h
+iostream
+-
+cstring
 -
 
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QFormLayout
 qformlayout.h
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qformlayout.h
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
+qlabel.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
 
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qformlayout.h
 QtWidgets/qtwidgetsglobal.h
@@ -168,6 +256,12 @@ QtWidgets/qlayout.h
 QtWidgets/qwidget.h
 -
 limits.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
 -
 
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlayout.h
