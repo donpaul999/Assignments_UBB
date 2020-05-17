@@ -62,6 +62,7 @@ public:
     QLabel *titleLabel_4;
     QLineEdit *genreToSortByLineEdit;
     QPushButton *sortByGenreButton;
+    QPushButton *nextButton;
     QFormLayout *formLayout_3;
     QLabel *titleLabel_3;
     QLineEdit *fileLocationLineEdit_2;
@@ -248,7 +249,11 @@ public:
         sortByGenreButton = new QPushButton(widget);
         sortByGenreButton->setObjectName(QString::fromUtf8("sortByGenreButton"));
 
+        nextButton = new QPushButton(widget);
+        sortByGenreButton->setObjectName(QString::fromUtf8("nextButton"));
+
         formLayout_4->setWidget(2, QFormLayout::LabelRole, sortByGenreButton);
+        formLayout_4->setWidget(3, QFormLayout::LabelRole, nextButton);
 
         formLayout_3 = new QFormLayout();
         formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
@@ -265,7 +270,7 @@ public:
         formLayout_3->setWidget(0, QFormLayout::FieldRole, fileLocationLineEdit_2);
 
 
-        formLayout_4->setLayout(3, QFormLayout::LabelRole, formLayout_3);
+        formLayout_4->setLayout(4, QFormLayout::LabelRole, formLayout_3);
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
@@ -280,7 +285,7 @@ public:
         verticalLayout_2->addWidget(openWatchListButton);
 
 
-        formLayout_4->setLayout(4, QFormLayout::LabelRole, verticalLayout_2);
+        formLayout_4->setLayout(5, QFormLayout::LabelRole, verticalLayout_2);
 
         myListWidget = new QListWidget(widget);
         myListWidget->setObjectName(QString::fromUtf8("myListWidget"));
@@ -320,6 +325,7 @@ public:
         updateFileLocationButton->setText(QCoreApplication::translate("Lab12Class", "Update File", nullptr));
         titleLabel_4->setText(QCoreApplication::translate("Lab12Class", "Sort by Genre", nullptr));
         sortByGenreButton->setText(QCoreApplication::translate("Lab12Class", "Sort", nullptr));
+        nextButton->setText(QCoreApplication::translate("Lab12Class", "Next", nullptr));
         titleLabel_3->setText(QCoreApplication::translate("Lab12Class", "MyList Location", nullptr));
         fileLocationLineEdit_2->setText(QString());
         updateMyListLocationButton->setText(QCoreApplication::translate("Lab12Class", "Update File", nullptr));

@@ -33,4 +33,5 @@ private:
     void updateMyListLocation();
     void openMyList();
     void addToWatchList();
+    void nextMovie();
 };

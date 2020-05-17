@@ -46,6 +46,7 @@ void Lab12::connectSignalsAndSlots() {
     QObject::connect(this->ui.sortByGenreButton, &QPushButton::clicked, this, &Lab12::sortByGenre);
     QObject::connect(this->ui.saveToMyListButton, &QPushButton::clicked, this, &Lab12::addToWatchList);
     QObject::connect(this->ui.openWatchListButton, &QPushButton::clicked, this, &Lab12::openMyList);
+    QObject::connect(this->ui.nextButton, &QPushButton::clicked, this, &Lab12::nextMovie);
 }
 
 
@@ -65,6 +66,7 @@ int Lab12::getSelectedIndex() const {
 }
 
 void Lab12::addMovie() {
+
     std::string title = this->ui.titleLineEdit->text().toStdString();
     std::string genre = this->ui.genreLineEdit->text().toStdString();
     std::string stringYearOfRelease = this->ui.yearOfReleaseLineEdit->text().toStdString();
@@ -254,4 +256,15 @@ void Lab12::openMyList(){
         command = "open -a 'Google Chrome.app' " + userService.getFileName();
     std::cout << userService.getFileName() << '\n';
     system(command.c_str());
+}
+
+void Lab12::nextMovie(){
+    int lastElem = this->getSelectedIndex();
+    if (this->adminService.adminGetMovieList().size() == 0){
+        QMessageBox::critical(this, "Error", "No movies in the list");
+        return;
+    }
+    if(lastElem + 1 == this->adminService.adminGetMovieList().size())
+        lastElem = -1;
+    this->ui.movieListWidget->setCurrentRow(lastElem + 1);
 }

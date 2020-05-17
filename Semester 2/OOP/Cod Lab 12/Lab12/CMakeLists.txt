@@ -29,6 +29,7 @@ add_executable(Lab12
         HTMLRepository.h
         Lab12.cpp
         Lab12.h
+        Lab12.ui
         main.cpp
         Movie.cpp
         Movie.h
