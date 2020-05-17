@@ -89,7 +89,7 @@ bool UserService::isRepositoryHTML() const {
     return repositoryType == "html";
 }
 
-std::string UserService::getFileName() const{
+std::string UserService:: getFileName() const{
     return repository->getUserFileName();
 }
 

@@ -315,7 +315,7 @@
           </item>
           <item>
             <widget class="QPushButton" name="openWatchListButton">
-              <property name="text">
+              <property name="text">e
                 <string>Open Watch List</string>
               </property>
             </widget>

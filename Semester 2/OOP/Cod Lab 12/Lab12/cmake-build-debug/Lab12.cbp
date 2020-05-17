@@ -166,6 +166,9 @@
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h">
 			<Option target="Lab12"/>
 		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.ui">
+			<Option target="Lab12"/>
+		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.cpp">
 			<Option target="Lab12"/>
 		</Unit>

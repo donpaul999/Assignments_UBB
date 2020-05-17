@@ -21,7 +21,8 @@ int main(int argc, char* argv[])
 
     QApplication a(argc, argv);
 
-    unique_ptr<FileRepository> repository = make_unique<FileRepository>("inputFile.in");
+    unique_ptr<FileRepository> repository = make_unique<FileRepository>();
+    repository->changeFileName("input.txt");
     //cout << inMemory;
     repository->setMemoryOrFile(inMemory);
     AdminService adminservice{ repository.get() };
