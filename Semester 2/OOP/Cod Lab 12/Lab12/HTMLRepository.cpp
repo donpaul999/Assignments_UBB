@@ -6,6 +6,8 @@
 #include <iostream>
 
 void HTMLRepository::writeUserMoviesToFile( std::vector<Movie> movieList, std::string movieFileName) {
+    if(memoryOrFile == 1)
+        return;
     std::ofstream fileOutput(movieFileName);
     fileOutput << "<!DOCTYPE html>\n<html><head><title>Watchlist</title></head><body>\n";
     fileOutput << "<table border=\"1\">\n";
@@ -25,7 +27,8 @@ void HTMLRepository::writeUserMoviesToFile( std::vector<Movie> movieList, std::s
 //Get all the movies in the watch list
 std::vector<Movie> HTMLRepository::getAllWatchListMovies()
 {
-    std::vector<Movie> movieList;
+
+        std::vector<Movie> movieList;
     std::vector<std::string> tokenizedInput;
     std::regex tags("<.*?>");
     std::string textLineFromFile, replacedString;

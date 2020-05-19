@@ -30,7 +30,8 @@ void FileRepository::changeRepositoryType(std::string repositoryTypeGiven) {
 //Write movies to given file
 void FileRepository::writeUserMoviesToFile(std::vector<Movie> movieList, std::string movieFileName)
 {
-
+    if(memoryOrFile == 1)
+        return;
     //std::cout << repositoryType<<'\n';
     std::ofstream fout(movieFileName);
     //std::cout << movieFileName << '\n';
@@ -222,11 +223,20 @@ int FileRepository::addMovieToWatchlist(const Movie& movieToAdd)
     else
         for(int i = 0; i < this->movieList.size();++i)
             movieList.push_back(this->movieList[i]);
-    auto iteratorWhereMovieIsFound = std::find(userWatchList.begin(), userWatchList.end(), movieToAdd);
-    if (iteratorWhereMovieIsFound != userWatchList.end())
-        throw RepositoryException(std::string("Movie already in the watch list"));
-    userWatchList.push_back(movieToAdd);
-    writeUserMoviesToFile(userWatchList, userFileName);
+    if(memoryOrFile == 0) {
+        std::vector<Movie> watchList = getAllWatchListMovies();
+        auto iteratorWhereMovieIsFound = std::find(watchList.begin(), watchList.end(), movieToAdd);
+        if (iteratorWhereMovieIsFound != watchList.end())
+            throw RepositoryException(std::string("Movie already in the watch list"));
+        watchList.push_back(movieToAdd);
+        writeUserMoviesToFile(watchList, userFileName);
+    }
+    else{
+        auto iteratorWhereMovieIsFound = std::find(userWatchList.begin(), userWatchList.end(), movieToAdd);
+        if (iteratorWhereMovieIsFound != userWatchList.end())
+            throw RepositoryException(std::string("Movie already in the watch list"));
+        userWatchList.push_back(movieToAdd);
+    }
     return 1;
 }
 
@@ -237,19 +247,37 @@ void FileRepository::deleteMovieFromWatchlist(const Movie& movieToDelete)
     if (iteratorWhereMovieIsFound != userWatchList.end())
         throw RepositoryException(std::string("Movie already in the watch list"));
     userWatchList.erase(iteratorWhereMovieIsFound);
-    writeUserMoviesToFile(userWatchList, userFileName);
+    if(memoryOrFile == 0)
+        writeUserMoviesToFile(userWatchList, userFileName);
 }
 
 //Add a certain movie to the watch list by the title
 int FileRepository::addMovieToWatchListByTitle(const std::string& titleOfTheMovieToAdd)
 {
-    std::vector<Movie> movieList = loadMoviesFromFile();
+    std::vector<Movie> movieList;
+    if(memoryOrFile == 0)
+        movieList = loadMoviesFromFile();
+    else
+        for(int i = 0; i < this->movieList.size();++i)
+            movieList.push_back(this->movieList[i]);
     auto iteratorWhereMovieFound = std::find_if(movieList.begin(), movieList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
     if (iteratorWhereMovieFound == movieList.end())
         throw RepositoryException(std::
         string("Movie with this title not exist."));
-    userWatchList.push_back(*iteratorWhereMovieFound);
-    writeUserMoviesToFile(userWatchList, userFileName);
+    if(memoryOrFile == 0) {
+        std::vector<Movie> watchList = getAllWatchListMovies();
+        auto iteratorWhereMovieFoundInMyList = std::find_if(watchList.begin(), watchList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
+        if (iteratorWhereMovieFoundInMyList != watchList.end())
+            throw RepositoryException(std::string("Movie already in the watch list"));
+        watchList.push_back(*iteratorWhereMovieFound);
+        writeUserMoviesToFile(watchList, userFileName);
+    }
+    else{
+        auto iteratorWhereMovieFoundInMyList = std::find_if(userWatchList.begin(), userWatchList.end(), [&titleOfTheMovieToAdd](const Movie& movie) {return movie.getTitle() == titleOfTheMovieToAdd; });
+        if (iteratorWhereMovieFoundInMyList != userWatchList.end())
+            throw RepositoryException(std::string("Movie already in the watch list"));
+        userWatchList.push_back(*iteratorWhereMovieFound);
+    }
     return 1;
 }
 
@@ -271,7 +299,7 @@ std::string FileRepository::getMovieFileName(){
 }
 
 std::string FileRepository::getUserFileName(){
-    if(userFileName != "")
+    if(userFileName != "" && memoryOrFile == 0)
         return userFileName;
     return " ";
 }

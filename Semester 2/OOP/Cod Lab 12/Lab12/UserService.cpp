@@ -102,6 +102,7 @@ void UserService::updateRepositoryType(bool csvOrHTML, std::string fileName,std:
     else
         correctRepository = new HTMLRepository{fileName, movieFileName};
     this->repository = correctRepository;
+    repository->setMemoryOrFile(0);
     for (const Movie& movieUsed: watchListMovies) {
         repository->addMovieToWatchlist(movieUsed);
     }

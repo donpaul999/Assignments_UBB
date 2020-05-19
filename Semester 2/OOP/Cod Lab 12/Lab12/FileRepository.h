@@ -13,7 +13,6 @@ protected:
     std::string movieFileName;
     std::string userFileName;
     std::string repositoryType;
-    std::string entireUserFileName;
     bool memoryOrFile;
 
 

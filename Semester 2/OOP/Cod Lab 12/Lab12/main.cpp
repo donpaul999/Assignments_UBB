@@ -21,13 +21,13 @@ int main(int argc, char* argv[])
 
     QApplication a(argc, argv);
 
-    unique_ptr<FileRepository> repository = make_unique<FileRepository>();
-    repository->changeFileName("input.txt");
+    unique_ptr<FileRepository> repository = make_unique<FileRepository>("input.txt");
     //cout << inMemory;
     repository->setMemoryOrFile(inMemory);
     AdminService adminservice{ repository.get() };
     UserService userservice{ repository.get() };
-    userservice.changeRepositoryFileName("test.html","html");
+    if(inMemory == 0)
+        userservice.changeRepositoryFileName("test.html","html");
     Lab12 gui{adminservice, userservice};
     gui.show();
     return a.exec();

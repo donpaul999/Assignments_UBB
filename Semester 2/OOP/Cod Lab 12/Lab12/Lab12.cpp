@@ -14,6 +14,8 @@ Lab12::Lab12(AdminService& adminServiceGiven, UserService& userServiceGiven, QWi
 void Lab12::populateList()
 {
     this->ui.movieListWidget->clear();
+    if(this->adminService.adminGetMovieList().size() == 0)
+        return;
     vector<Movie> allMovies = this->adminService.adminGetMovieList();
     for (Movie& movieUsed : allMovies)
         this->ui.movieListWidget->addItem(QString::fromStdString(movieUsed.getOutputForm()));
@@ -23,7 +25,7 @@ void Lab12::connectSignalsAndSlots() {
     std::cout << this->adminService.getFileName() << '\n';
     QObject::connect(this->ui.movieListWidget, &QListWidget::itemSelectionChanged, [this](){
         int selectedIndex = this->getSelectedIndex();
-        if(selectedIndex < 0)
+        if(selectedIndex < 0 || this->adminService.adminGetMovieList().size() == 0)
             return;
         Movie movieUsed = this->adminService.adminGetMovieList()[selectedIndex];
         this->ui.titleLineEdit->setText(QString::fromStdString(movieUsed.getTitle()));
@@ -242,6 +244,8 @@ void Lab12::addToWatchList() {
 
 void Lab12::populateMyList(){
     this->ui.myListWidget->clear();
+    if(this->userService.userGetWatchList().size() == 0)
+        return;
     vector<Movie> allMovies = this->userService.userGetWatchList();
     for (Movie& movieUsed : allMovies)
         this->ui.myListWidget->addItem(QString::fromStdString(movieUsed.getOutputForm()));
@@ -254,8 +258,8 @@ void Lab12::openMyList(){
         command = "open -a 'Numbers.app' " + userService.getFileName();
     if(userService.isRepositoryHTML())
         command = "open -a 'Google Chrome.app' " + userService.getFileName();
-    std::cout << userService.getFileName() << '\n';
-    system(command.c_str());
+    if(userService.isRepositoryCSV() || userService.isRepositoryHTML())
+        system(command.c_str());
 }
 
 void Lab12::nextMovie(){
