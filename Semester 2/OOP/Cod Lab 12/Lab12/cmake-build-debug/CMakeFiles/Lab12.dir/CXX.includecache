@@ -6,19 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.cpp
-Action.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
 FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionAdd.cpp
-ActionAdd.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionAdd.h
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionAdd.h
 Action.h
@@ -28,26 +20,6 @@ FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionFilter.cpp
-iostream
--
-ActionFilter.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionFilter.h
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionFilter.h
-Action.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-Movie.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
-vector
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionRemove.cpp
-ActionRemove.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionRemove.h
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionRemove.h
 Action.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
@@ -56,10 +28,6 @@ FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionUpdate.cpp
-ActionUpdate.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionUpdate.h
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionUpdate.h
 Action.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h
@@ -67,14 +35,6 @@ FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
 Movie.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.cpp
-AdminService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.h
-ActionFilter.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionFilter.h
-iostream
--
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.h
 FileRepository.h
@@ -100,21 +60,9 @@ ActionRemove.h
 memory
 -
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/CSVRepository.cpp
-CSVRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/CSVRepository.h
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/CSVRepository.h
 FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-fstream
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.cpp
-FileRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
-iostream
--
 fstream
 -
 
@@ -128,12 +76,6 @@ algorithm
 RepositoryException.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/RepositoryException.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/HTMLRepository.cpp
-HTMLRepository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/HTMLRepository.h
-iostream
--
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/HTMLRepository.h
 FileRepository.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h
@@ -141,14 +83,6 @@ fstream
 -
 regex
 -
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.cpp
-Lab12.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h
-iostream
--
-qmessagebox.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/qmessagebox.h
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h
 QtWidgets/QMainWindow
@@ -174,12 +108,6 @@ ValidationException.h
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/RepositoryException.h
 string
--
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.cpp
-UserService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.h
-iostream
 -
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.h
@@ -246,16 +174,6 @@ QtWidgets/QVBoxLayout
 QtWidgets/QWidget
 -
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/x64/Debug/moc/moc_Lab12.cpp
-memory
--
-../../../Lab12.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
 qlabel.h
 /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
@@ -264,11 +182,5 @@ qlabel.h
 QtWidgets/qtwidgetsglobal.h
 -
 QtWidgets/qframe.h
--
-
-/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
-QtWidgets/qtwidgetsglobal.h
--
-QtWidgets/qdialog.h
 -
 

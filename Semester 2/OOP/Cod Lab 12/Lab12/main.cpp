@@ -23,6 +23,7 @@ int main(int argc, char* argv[])
 
     unique_ptr<FileRepository> repository = make_unique<FileRepository>("input.txt");
     //cout << inMemory;
+    repository->changeFileName("input.txt");
     repository->setMemoryOrFile(inMemory);
     AdminService adminservice{ repository.get() };
     UserService userservice{ repository.get() };
