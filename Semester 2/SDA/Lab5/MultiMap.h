@@ -13,6 +13,10 @@ typedef int TValue;
 typedef pair<TKey, TValue> TElem;
 #define NULL_TVALUE -11111;
 #define NULL_TELEM pair<int,int>(-11111, -11111);
+typedef bool (*Condition)(TKey);
+
+
+
 class MultiMapIterator;
 
 struct node {
@@ -61,7 +65,9 @@ public:
     //hashing function
     int hash(TElem tuple, int m) const;
 
-	//desctructor
+    void filter(Condition cond);
+
+	//destructor
 	~MultiMap();
 
 };

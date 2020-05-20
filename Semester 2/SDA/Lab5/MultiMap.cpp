@@ -5,7 +5,8 @@
 
 using namespace std;
 
-  int MultiMap::hash(TElem tuple, int m) const
+//O(1)
+int MultiMap::hash(TElem tuple, int m) const
 {
 	int rez = tuple.key;
 	while (rez < 0) rez += m;
@@ -20,6 +21,7 @@ void MultiMap::freeNode(node* x)
 	return;
 }
 
+//O(n)
 void MultiMap::resize()
 {
 	node* x;
@@ -63,7 +65,7 @@ MultiMap::MultiMap() {
 	this->maxAlpha = 0.7;
 }
 
-
+//O(n)
 void MultiMap::add(TKey c, TValue v) {
 	node* newNode;
 	newNode = new node;
@@ -81,7 +83,7 @@ void MultiMap::add(TKey c, TValue v) {
 	this->nrPairs++;
 }
 
-
+//O(n)
 bool MultiMap::remove(TKey c, TValue v) {
 	TElem tup;
 	tup.key = c; tup.tvalue = v;
@@ -104,7 +106,7 @@ bool MultiMap::remove(TKey c, TValue v) {
 	return false;
 }
 
-
+//O(n)
 vector<TValue> MultiMap::search(TKey c) const {
 	TElem tup;
 	tup.key = c;
@@ -119,12 +121,12 @@ vector<TValue> MultiMap::search(TKey c) const {
 	return a;
 }
 
-
+//O(1)
 int MultiMap::size() const {
 	return this->nrPairs;
 }
 
-
+//O(1)
 bool MultiMap::isEmpty() const {
 	return this->nrPairs == 0;
 }
@@ -137,3 +139,32 @@ MultiMap::~MultiMap() {
 	for (int i = 0; i < this->capacity; ++i) freeNode(this->hashtable[i]);
 	delete this->hashtable;
 }
+
+void MultiMap::filter(Condition cond) {
+    node* x;
+    for (int i = 0; i < this->size(); ++i)
+    {
+        x = this->hashtable[i];
+        if(cond(x->tuple.key) == 0)
+            while (x->next != NULL)
+                {
+                    x = x->next;
+                    remove(x->tuple.key, x->tuple.tvalue);
+                }
+    }
+}
+/*
+O(n)
+function filter(condition):
+    x: ^node
+    for i = 0, size() execute
+        x  <- hashtable[i]
+        if condition([x].tuple.key) = false then
+            while not [x].next = NIL execute
+                x <- [x].next
+                remove([x].tuple.key, [x].tuple.tvalue)
+            end-while
+        end-fi
+    end-for
+end-function
+ */

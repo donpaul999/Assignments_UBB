@@ -84,6 +84,14 @@ fstream
 regex
 -
 
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.cpp
+Lab12.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h
+iostream
+-
+qmessagebox.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/qmessagebox.h
+
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h
 QtWidgets/QMainWindow
 -
@@ -126,26 +134,6 @@ memory
 string
 -
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/main.cpp
-QtWidgets/QApplication
--
-QLabel
--
-memory
--
-UserService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.h
-AdminService.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.h
-Lab12.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h
-iostream
--
-fstream
--
-cstring
--
-
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ui_Lab12.h
 QtCore/QVariant
 -
@@ -174,13 +162,9 @@ QtWidgets/QVBoxLayout
 QtWidgets/QWidget
 -
 
-/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
-qlabel.h
-/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
-
-/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 QtWidgets/qtwidgetsglobal.h
 -
-QtWidgets/qframe.h
+QtWidgets/qdialog.h
 -
 

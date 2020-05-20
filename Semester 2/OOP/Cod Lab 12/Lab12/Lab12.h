@@ -17,6 +17,7 @@ private:
 	AdminService& adminService;
 	UserService& userService;
 	Ui::Lab12Class ui;
+	bool modeAOrB;
 
 	void connectSignalsAndSlots();
     int getSelectedIndex() const;
@@ -34,4 +35,6 @@ private:
     void openMyList();
     void addToWatchList();
     void nextMovie();
+    void modeA(){this->modeAOrB = 1;};
+    void modeB(){this->modeAOrB = 0;};
 };

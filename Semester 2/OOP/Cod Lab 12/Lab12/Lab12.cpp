@@ -8,7 +8,7 @@ Lab12::Lab12(AdminService& adminServiceGiven, UserService& userServiceGiven, QWi
 	ui.setupUi(this);
     this->populateMyList();
     this->connectSignalsAndSlots();
-
+    this->modeAOrB = 1;
 }
 
 void Lab12::populateList()
@@ -22,7 +22,6 @@ void Lab12::populateList()
 }
 
 void Lab12::connectSignalsAndSlots() {
-    std::cout << this->adminService.getFileName() << '\n';
     QObject::connect(this->ui.movieListWidget, &QListWidget::itemSelectionChanged, [this](){
         int selectedIndex = this->getSelectedIndex();
         if(selectedIndex < 0 || this->adminService.adminGetMovieList().size() == 0)
@@ -49,6 +48,8 @@ void Lab12::connectSignalsAndSlots() {
     QObject::connect(this->ui.saveToMyListButton, &QPushButton::clicked, this, &Lab12::addToWatchList);
     QObject::connect(this->ui.openWatchListButton, &QPushButton::clicked, this, &Lab12::openMyList);
     QObject::connect(this->ui.nextButton, &QPushButton::clicked, this, &Lab12::nextMovie);
+    QObject::connect(this->ui.adminButton, &QPushButton::clicked, this, &Lab12::modeA);
+    QObject::connect(this->ui.userButton, &QPushButton::clicked, this, &Lab12::modeB);
 }
 
 
@@ -68,7 +69,10 @@ int Lab12::getSelectedIndex() const {
 }
 
 void Lab12::addMovie() {
-
+    if(modeAOrB == 0) {
+        QMessageBox::critical(this, "Error", "Mode A required");
+        return;
+    }
     std::string title = this->ui.titleLineEdit->text().toStdString();
     std::string genre = this->ui.genreLineEdit->text().toStdString();
     std::string stringYearOfRelease = this->ui.yearOfReleaseLineEdit->text().toStdString();
@@ -102,6 +106,10 @@ void Lab12::addMovie() {
 }
 
 void Lab12::updateMovie(){
+    if(modeAOrB == 0) {
+        QMessageBox::critical(this, "Error", "Mode A required");
+        return;
+    }
     int selectedIndex = this->getSelectedIndex();
     if(selectedIndex < 0){
         QMessageBox::critical(this, "Error", "No movie selected!");
@@ -137,6 +145,10 @@ void Lab12::updateMovie(){
 
 
 void Lab12::deleteMovie() {
+    if(modeAOrB == 0) {
+        QMessageBox::critical(this, "Error", "Mode A required");
+        return;
+    }
     int selectedIndex = this->getSelectedIndex();
     if(selectedIndex < 0){
         QMessageBox::critical(this, "Error", "No movie selected!");
@@ -200,6 +212,10 @@ void Lab12::updateFileName() {
 }
 
 void Lab12::sortByGenre() {
+    if(modeAOrB == 1) {
+        QMessageBox::critical(this, "Error", "Mode B required");
+        return;
+    }
     std::string genreGiven = this->ui.genreToSortByLineEdit->text().toStdString();
     try {
        this->adminService.filterMoviesByGenre(genreGiven);
@@ -230,6 +246,10 @@ void Lab12::updateMyListLocation(){
 }
 
 void Lab12::addToWatchList() {
+    if(modeAOrB == 1) {
+        QMessageBox::critical(this, "Error", "Mode B required");
+        return;
+    }
     std::string title = this->ui.titleLineEdit->text().toStdString();
     try {
         this->userService.addMovieToWatchListByTitle(title);
@@ -253,6 +273,10 @@ void Lab12::populateMyList(){
 }
 
 void Lab12::openMyList(){
+    if(modeAOrB == 1) {
+        QMessageBox::critical(this, "Error", "Mode B required");
+        return;
+    }
     std::string command;
     if(userService.isRepositoryCSV())
         command = "open -a 'Numbers.app' " + userService.getFileName();
@@ -263,6 +287,10 @@ void Lab12::openMyList(){
 }
 
 void Lab12::nextMovie(){
+    if(modeAOrB == 1) {
+        QMessageBox::critical(this, "Error", "Mode B required");
+        return;
+    }
     int lastElem = this->getSelectedIndex();
     if (this->adminService.adminGetMovieList().size() == 0){
         QMessageBox::critical(this, "Error", "No movies in the list");

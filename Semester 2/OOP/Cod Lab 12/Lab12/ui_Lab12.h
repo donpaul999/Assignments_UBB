@@ -47,6 +47,8 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QPushButton *addButton;
+    QPushButton *adminButton;
+    QPushButton *userButton;
     QPushButton *deleteButton;
     QPushButton *updateButton;
     QHBoxLayout *horizontalLayout_2;
@@ -216,12 +218,24 @@ public:
         formLayout_2->setWidget(0, QFormLayout::FieldRole, fileLocationLineEdit);
 
 
+
         verticalLayout_3->addLayout(formLayout_2);
 
         updateFileLocationButton = new QPushButton(layoutWidget);
+
         updateFileLocationButton->setObjectName(QString::fromUtf8("updateFileLocationButton"));
 
+        adminButton = new QPushButton(layoutWidget);
+        adminButton->setObjectName(QString::fromUtf8("adminButton"));
+        adminButton->setFont(font);
+
+        userButton = new QPushButton(layoutWidget);
+        userButton->setObjectName(QString::fromUtf8("userButton"));
+        userButton->setFont(font);
+
         verticalLayout_3->addWidget(updateFileLocationButton);
+        verticalLayout_3->addWidget(adminButton);
+        verticalLayout_3->addWidget(userButton);
 
         widget = new QWidget(centralwidget);
         widget->setObjectName(QString::fromUtf8("widget"));
@@ -316,6 +330,8 @@ public:
         numberOfLikesLabel->setText(QCoreApplication::translate("Lab12Class", "Number of likes", nullptr));
         trailerLabel->setText(QCoreApplication::translate("Lab12Class", "Trailer", nullptr));
         addButton->setText(QCoreApplication::translate("Lab12Class", "Add", nullptr));
+        adminButton->setText(QCoreApplication::translate("Lab12Class", "Mode A", nullptr));
+        userButton->setText(QCoreApplication::translate("Lab12Class", "Mode B", nullptr));
         deleteButton->setText(QCoreApplication::translate("Lab12Class", "Delete", nullptr));
         updateButton->setText(QCoreApplication::translate("Lab12Class", "Update", nullptr));
         undoButton->setText(QCoreApplication::translate("Lab12Class", "Undo", nullptr));
