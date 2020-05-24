@@ -15,5 +15,8 @@ public:
 	const std::vector<std::string>explode(const std::string& stringToExplode, const std::string& separatorsUsed);
 	void addObject(TElem objectToAdd);
 	void deleteObject(TElem objectToDelete);
+	std::vector <TElem> getAllObjects() {
+		return objectList;
+	};
 };
 
