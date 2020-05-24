@@ -14,4 +14,8 @@ public:
 private:
 	Ui::ExamenClass ui;
 	Service& service;
+	void connectSignalsAndSlots();
+	int getSelectedIndex() const;
+
+	void populateList();
 };
