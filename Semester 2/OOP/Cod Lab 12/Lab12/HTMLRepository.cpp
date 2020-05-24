@@ -28,7 +28,7 @@ void HTMLRepository::writeUserMoviesToFile( std::vector<Movie> movieList, std::s
 std::vector<Movie> HTMLRepository::getAllWatchListMovies()
 {
 
-        std::vector<Movie> movieList;
+    std::vector<Movie> movieList;
     std::vector<std::string> tokenizedInput;
     std::regex tags("<.*?>");
     std::string textLineFromFile, replacedString;

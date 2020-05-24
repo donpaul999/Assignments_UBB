@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab5/UndirectedGraph.cpp
+UndirectedGraph.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab5/UndirectedGraph.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab5/UndirectedGraph.h
+vector
+-
+map
+-
+fstream
+-
+algorithm
+-
+stdexcept
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab5/UndirectedGraphUserInterface.cpp
+UndirectedGraphUserInterface.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab5/UndirectedGraphUserInterface.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab5/UndirectedGraphUserInterface.h
+UndirectedGraph.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/Graphs/Lab5/UndirectedGraph.h
+iostream
+-
+
