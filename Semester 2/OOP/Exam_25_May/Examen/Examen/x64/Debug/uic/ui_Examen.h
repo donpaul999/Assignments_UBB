@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
@@ -23,6 +24,7 @@ class Ui_ExamenClass
 {
 public:
     QWidget *centralWidget;
+    QListWidget *objectListWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -34,6 +36,9 @@ public:
         ExamenClass->resize(600, 400);
         centralWidget = new QWidget(ExamenClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        objectListWidget = new QListWidget(centralWidget);
+        objectListWidget->setObjectName(QString::fromUtf8("objectListWidget"));
+        objectListWidget->setGeometry(QRect(60, 20, 256, 192));
         ExamenClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ExamenClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));

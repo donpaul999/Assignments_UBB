@@ -3,6 +3,9 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_Examen.h"
 #include "Service.h"
+#include "qmessagebox.h"
+using namespace std;
+typedef int TElem;
 
 class Examen : public QMainWindow
 {

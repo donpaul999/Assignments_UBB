@@ -1,8 +1,2 @@
 ﻿  Examen.cpp
-  Repository.cpp
-  Service.cpp
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Exam_25_May\Examen\Examen\Service.cpp(37): warning C4700: uninitialized local variable 'objectToDelete' used
-\\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Exam_25_May\Examen\Examen\Service.cpp(30): warning C4700: uninitialized local variable 'objectToAdd' used
-  main.cpp
-  moc_Examen.cpp
   Examen.vcxproj -> \\Mac\Home\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Exam_25_May\Examen\x64\Debug\Examen.exe
