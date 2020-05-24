@@ -16,6 +16,9 @@ void Examen::connectSignalsAndSlots()
         TElem objectUsed = this->service.getAllObjects()[selectedIndex];
         //Exemplu: this->ui.titleLineEdit->setText(QString::fromStdString(movieUsed.getTitle()));
         });
+    QObject::connect(this->ui.deleteButton, &QPushButton::clicked, this, &Examen::deleteObject);
+    QObject::connect(this->ui.addButton, &QPushButton::clicked, this, &Examen::addObject);
+
 }
 
 int Examen::getSelectedIndex() const
@@ -35,6 +38,30 @@ int Examen::getSelectedIndex() const
     }
 	int selectedIndex = selectedIndexes.at(0).row();
 	return selectedIndex;
+}
+
+void Examen::addObject()
+{
+    //Preluam datele din line edit
+    try {
+        this->service.addObject();
+    }
+    catch (std::exception & e) {
+        QMessageBox::critical(this, "Error", e.what());
+        return;
+    }
+}
+
+void Examen::deleteObject()
+{
+    //Preluam datele din line edit
+    try {
+        this->service.deleteObject();
+    }
+    catch (std::exception & e) {
+        QMessageBox::critical(this, "Error", e.what());
+        return;
+    }
 }
 
 void Examen::populateList()

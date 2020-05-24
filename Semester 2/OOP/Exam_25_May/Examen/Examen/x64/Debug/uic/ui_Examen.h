@@ -11,11 +11,14 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,7 +27,12 @@ class Ui_ExamenClass
 {
 public:
     QWidget *centralWidget;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout;
     QListWidget *objectListWidget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *addButton;
+    QPushButton *deleteButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -36,9 +44,35 @@ public:
         ExamenClass->resize(600, 400);
         centralWidget = new QWidget(ExamenClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        objectListWidget = new QListWidget(centralWidget);
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(20, 10, 271, 301));
+        verticalLayout = new QVBoxLayout(widget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        objectListWidget = new QListWidget(widget);
         objectListWidget->setObjectName(QString::fromUtf8("objectListWidget"));
-        objectListWidget->setGeometry(QRect(60, 20, 256, 192));
+
+        verticalLayout->addWidget(objectListWidget);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        addButton = new QPushButton(widget);
+        addButton->setObjectName(QString::fromUtf8("addButton"));
+
+        horizontalLayout->addWidget(addButton);
+
+        deleteButton = new QPushButton(widget);
+        deleteButton->setObjectName(QString::fromUtf8("deleteButton"));
+
+        horizontalLayout->addWidget(deleteButton);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
         ExamenClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(ExamenClass);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -59,6 +93,8 @@ public:
     void retranslateUi(QMainWindow *ExamenClass)
     {
         ExamenClass->setWindowTitle(QCoreApplication::translate("ExamenClass", "Examen", nullptr));
+        addButton->setText(QCoreApplication::translate("ExamenClass", "Add", nullptr));
+        deleteButton->setText(QCoreApplication::translate("ExamenClass", "Delete", nullptr));
     } // retranslateUi
 
 };

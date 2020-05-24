@@ -19,6 +19,7 @@ private:
 	Service& service;
 	void connectSignalsAndSlots();
 	int getSelectedIndex() const;
-
+	void addObject();
+	void deleteObject();
 	void populateList();
 };
