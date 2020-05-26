@@ -7,10 +7,11 @@
 
 #include "UndirectedGraph.h"
 #include <iostream>
-
+#include "Service.h"
 class UndirectedGraphUserInterface {
 private:
     UndirectedGraph graph;
+    Service s;
     void option1();
     void option2();
     void option3();
