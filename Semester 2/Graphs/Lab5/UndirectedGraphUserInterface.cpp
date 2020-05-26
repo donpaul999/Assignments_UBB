@@ -145,11 +145,10 @@ void UndirectedGraphUserInterface::option10() {
     std::vector<int> path = s.findHamiltonian(graph);
     if(std::find(path.begin(), path.end(), -1) != path.end()) {
         std::cout << "No hamiltonian cycle!" << '\n';
-        return;
     }
-    for(int i = 0; i < path.size() - 1; ++i)
+    for(int i = 0; i < path.size(); ++i)
         std::cout<<path[i]<<" -> ";
-    std::cout<<path[path.size() - 1];
+    std::cout<<path[0];
     std::cout << '\n';
 
 }

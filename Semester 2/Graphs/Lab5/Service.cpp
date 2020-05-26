@@ -11,8 +11,7 @@ std::vector<int> Service::findHamiltonian(UndirectedGraph graph) {
 
 bool isSafe(int v, std::vector<std::vector<bool>> graph, std::vector<int> path, int pos)
 {
-    if(path[pos - 1] == -1)
-        return false;
+
     if (graph[path[pos - 1]][ v ] == 0)
         return false;
     for (int i = 0; i < pos; i++)
@@ -38,7 +37,7 @@ bool hamCycleUtil(UndirectedGraph graph,
 
             if (hamCycleUtil (graph, path, pos + 1) == true)
                 return true;
-          path[pos] = -1;
+            path[pos] = -1;
         }
     }
 
@@ -48,7 +47,7 @@ bool hamCycleUtil(UndirectedGraph graph,
 std::vector<int> Service::hamCycle(UndirectedGraph graph)
 {
     std::vector<int> path(graph.matrix.size(), -1);
-    hamCycleUtil(graph, path, 1);
     path[0] = 0;
+    hamCycleUtil(graph, path, 1);
     return path;
 }
