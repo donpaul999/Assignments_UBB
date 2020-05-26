@@ -80,6 +80,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Car.cpp" />
     <ClCompile Include="Examen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Repository.cpp" />
@@ -95,9 +96,14 @@
     <QtRcc Include="Examen.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Car.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Exam_25_May\Examen\Examen\x64\Debug\uic\ui_Examen.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

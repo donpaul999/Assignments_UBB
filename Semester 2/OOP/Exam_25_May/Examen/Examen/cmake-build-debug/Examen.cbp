@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Examen"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\..\Qt\;CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\;CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\;CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\;CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\;CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Examen">
+				<Option output="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Examen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/."/>
+					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/x64/Debug/uic"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework/Headers"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/./mkspecs/macx-clang"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 Examen"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Examen/fast">
+				<Option output="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Examen" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/."/>
+					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/x64/Debug/uic"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework/Headers"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers"/>
+					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/./mkspecs/macx-clang"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 Examen/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Exam_25_May/Examen/Examen/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Car.cpp">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Car.h">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Examen.cpp">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Examen.h">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Repository.cpp">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Repository.h">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Service.cpp">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Service.h">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/main.cpp">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/x64/Debug/moc/moc_Examen.cpp">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/x64/Debug/rcc/qrc_Examen.cpp">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/x64/Debug/uic/ui_Examen.h">
+			<Option target="Examen"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMacHeifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/../../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

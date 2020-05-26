@@ -4,8 +4,9 @@
 #include "ui_Examen.h"
 #include "Service.h"
 #include "qmessagebox.h"
+#include "Car.h"
 using namespace std;
-typedef int TElem;
+typedef Car TElem;
 
 class Examen : public QMainWindow
 {
@@ -22,4 +23,5 @@ private:
 	void addObject();
 	void deleteObject();
 	void populateList();
+	void sort();
 };

@@ -1,0 +1,82 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../x64/Debug/uic/ui_Examen.h
+QtCore/QVariant
+-
+QtWidgets/QApplication
+-
+QtWidgets/QHBoxLayout
+-
+QtWidgets/QLineEdit
+-
+QtWidgets/QListWidget
+-
+QtWidgets/QMainWindow
+-
+QtWidgets/QMenuBar
+-
+QtWidgets/QPushButton
+-
+QtWidgets/QStatusBar
+-
+QtWidgets/QToolBar
+-
+QtWidgets/QVBoxLayout
+-
+QtWidgets/QWidget
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Car.h
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Examen.h
+QtWidgets/QMainWindow
+-
+ui_Examen.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/ui_Examen.h
+Service.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Service.h
+qmessagebox.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/qmessagebox.h
+Car.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Car.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Repository.h
+vector
+-
+string
+-
+fstream
+-
+iostream
+-
+Car.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Car.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Service.h
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Repository.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/main.cpp
+Examen.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_25_May/Examen/Examen/Examen.h
+QtWidgets/QApplication
+-
+memory
+-
+cassert
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qdialog.h
+-
+

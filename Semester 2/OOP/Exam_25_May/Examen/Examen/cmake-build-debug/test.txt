@@ -1,0 +1,4 @@
+Mercedes-Benz | SUV | 2013 | blue
+Mercedes-Benz | SUV | 2013 | blue
+Clio | Bravo | 2017 | blue
+Fiat | Bravo | 2016 | blue

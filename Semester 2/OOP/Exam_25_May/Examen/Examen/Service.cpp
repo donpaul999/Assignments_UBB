@@ -36,3 +36,15 @@ void Service::deleteObject()
 	//creare obiect;
 	repo->deleteObject(objectToDelete);
 }
+//input - name of manufacturer
+//return - the number of cars with the given manufacturer
+int Service::sortByManufacturer(std::string manufacturer)
+{
+	std::vector<TElem>objectList = repo->getAllObjectsByFacturer(), secondObjectList;
+	for (int i = 0; i < objectList.size(); ++i)
+		if (objectList[i].getManufacturer() == manufacturer)
+			secondObjectList.push_back(objectList[i]);
+	return secondObjectList.size();
+
+}
+

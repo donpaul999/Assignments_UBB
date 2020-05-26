@@ -37,6 +37,9 @@
     <ClCompile Include="Service.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Examen.h">
@@ -63,5 +66,16 @@
     <ClInclude Include="Z:\Users\paulcolta\Desktop\GitHub\Assignments_FP\Semester 2\OOP\Exam_25_May\Examen\Examen\x64\Debug\uic\ui_Examen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
