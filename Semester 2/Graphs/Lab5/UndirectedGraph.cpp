@@ -12,6 +12,12 @@ void UndirectedGraph::loadUnweightedGraphFromFile(const std::string &fileName) {
     int source, target, cost;
 
     fin >> numberOfVertices >> numberOfEdges;
+    for(int i = 0 ;i < numberOfVertices; ++i) {
+        std::vector<bool> v;
+        for(int j = 0 ;j < numberOfVertices; ++j)
+            v.push_back(0);
+        matrix.push_back(v);
+    }
     for (int i = 0; i < numberOfVertices; ++i) {
         setOfVertices.push_back(i);
         adjacencyList[i] = std::vector<int>();
@@ -24,6 +30,7 @@ void UndirectedGraph::loadUnweightedGraphFromFile(const std::string &fileName) {
         if (!isEdge(source, target)) {
             ++realNumber;
             listOfEdges.push_back({source, target});
+            matrix[source][target] = matrix[target][source] = 1;
             adjacencyList[target].push_back(source);
             adjacencyList[source].push_back(target);
         }
@@ -41,6 +48,7 @@ UndirectedGraph::UndirectedGraph(const UndirectedGraph &graph) {
     adjacencyList = graph.adjacencyList;
     setOfVertices = graph.setOfVertices;
     listOfEdges = graph.listOfEdges;
+    matrix = graph.matrix;
 }
 
 UndirectedGraph &UndirectedGraph::operator=(const UndirectedGraph &graph) {

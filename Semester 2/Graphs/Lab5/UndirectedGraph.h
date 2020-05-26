@@ -20,6 +20,7 @@ private:
     bool doesVertexExist(int vertex) const;
 
 public:
+    std::vector<std::vector<bool>>matrix;
     UndirectedGraph();
     void loadUnweightedGraphFromFile(const std::string& fileName);
     UndirectedGraph(const UndirectedGraph& graph);

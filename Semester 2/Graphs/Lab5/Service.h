@@ -8,8 +8,10 @@
 #include "UndirectedGraph.h"
 
 class Service {
+
 public:
     std::vector<int> findHamiltonian(UndirectedGraph graph);
+    std::vector<int> hamCycle(UndirectedGraph graph);
 };
 
 

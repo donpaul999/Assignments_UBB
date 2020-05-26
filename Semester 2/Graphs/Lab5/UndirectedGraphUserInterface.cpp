@@ -7,11 +7,12 @@
 UndirectedGraphUserInterface::UndirectedGraphUserInterface(const std::string& fileName): graph{UndirectedGraph()}
 {
     graph.loadUnweightedGraphFromFile(fileName);
+    s = Service();
 }
 
 void UndirectedGraphUserInterface::runApplication() {
     int choice = 0;
-    while (choice != 13) {
+    while (choice != 11) {
         printUserOptions();
         std::cout << "Your choice?: ";
         std::cin >> choice;
@@ -26,7 +27,7 @@ void UndirectedGraphUserInterface::runApplication() {
                 case 7: option7(); break;
                 case 8: option8(); break;
                 case 9: option9(); break;
-                case 10:option10(); break;
+                case 10: option10(); break;
                 default: break;
             }
         }
@@ -140,5 +141,15 @@ void UndirectedGraphUserInterface::option9() {
 }
 
 void UndirectedGraphUserInterface::option10() {
+
+    std::vector<int> path = s.findHamiltonian(graph);
+    if(std::find(path.begin(), path.end(), -1) != path.end()) {
+        std::cout << "No hamiltonian cycle!" << '\n';
+        return;
+    }
+    for(int i = 0; i < path.size() - 1; ++i)
+        std::cout<<path[i]<<" -> ";
+    std::cout<<path[path.size() - 1];
+    std::cout << '\n';
 
 }
