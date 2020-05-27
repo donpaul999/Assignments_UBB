@@ -73,14 +73,26 @@
     <ClCompile Include="ActionFilter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyListWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyListTableModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Lab12.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="MyListWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Lab12.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="MyListWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
@@ -133,6 +145,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="x64\Debug\uic\ui_Lab12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyListTableModel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

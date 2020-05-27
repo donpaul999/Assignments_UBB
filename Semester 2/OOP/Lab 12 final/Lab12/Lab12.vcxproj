@@ -93,6 +93,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Movie.cpp" />
     <ClCompile Include="MovieValidator.cpp" />
+    <ClCompile Include="MyListTableModel.cpp" />
+    <ClCompile Include="MyListWidget.cpp" />
     <ClCompile Include="RepositoryException.cpp" />
     <ClCompile Include="UserService.cpp" />
     <ClCompile Include="ValidationException.cpp" />
@@ -102,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Lab12.ui" />
+    <QtUic Include="MyListWidget.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Lab12.qrc" />
@@ -118,6 +121,8 @@
     <ClInclude Include="HTMLRepository.h" />
     <ClInclude Include="Movie.h" />
     <ClInclude Include="MovieValidator.h" />
+    <QtMoc Include="MyListWidget.h" />
+    <ClInclude Include="MyListTableModel.h" />
     <ClInclude Include="RepositoryException.h" />
     <ClInclude Include="UserService.h" />
     <ClInclude Include="ValidationException.h" />

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include "MyListWidget.h"
 
 using namespace std;
 int main(int argc, char* argv[])
@@ -29,7 +30,11 @@ int main(int argc, char* argv[])
     UserService userservice{ repository.get() };
     if(inMemory == 0)
         userservice.changeRepositoryFileName("test.html","html");
+    unique_ptr<MyListTableModel> model = make_unique<MyListTableModel>( repository.get() );
+    MyListWidget myListWidget{ model.get() };
+    myListWidget.show();
     Lab12 gui{adminservice, userservice};
     gui.show();
+
     return a.exec();
 }

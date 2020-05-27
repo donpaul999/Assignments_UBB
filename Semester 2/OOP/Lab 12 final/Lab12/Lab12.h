@@ -4,6 +4,7 @@
 #include "ui_Lab12.h"
 #include "AdminService.h"
 #include "UserService.h"
+#include "MyListWidget.h"
 
 using namespace std;
 class Lab12 : public QMainWindow
