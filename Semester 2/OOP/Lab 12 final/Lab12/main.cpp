@@ -24,7 +24,6 @@ int main(int argc, char* argv[])
 
     unique_ptr<FileRepository> repository = make_unique<FileRepository>("inputFile.in");
     //cout << inMemory;
-    repository->changeFileName("inputFile.in");
     repository->setMemoryOrFile(inMemory);
     AdminService adminservice{ repository.get() };
     UserService userservice{ repository.get() };

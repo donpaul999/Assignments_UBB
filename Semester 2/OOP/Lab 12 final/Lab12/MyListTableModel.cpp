@@ -16,7 +16,7 @@ void MyListTableModel::changeRepositoryFileName(std::string fileName, std::strin
 	service.changeRepositoryFileName(fileName, extension);
 	int secondLength = service.userGetWatchList().size();
 	if (firstLength - secondLength > 0)
-		removeRows(firstLength, firstLength - secondLength);
+		removeRows(secondLength, firstLength - secondLength);
 	else
 		insertRows(firstLength, secondLength - firstLength);
 }
