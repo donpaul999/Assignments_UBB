@@ -28,9 +28,11 @@ int main(int argc, char* argv[])
     repository->setMemoryOrFile(inMemory);
     AdminService adminservice{ repository.get() };
     UserService userservice{ repository.get() };
-    if(inMemory == 0)
-        userservice.changeRepositoryFileName("test.html","html");
-    unique_ptr<MyListTableModel> model = make_unique<MyListTableModel>( repository.get() );
+    if (inMemory == 0) {
+        userservice.changeRepositoryFileName("test.html", "html");
+        unique_ptr<MyListTableModel> model = make_unique<MyListTableModel>(userservice.getRepo());
+    }
+    unique_ptr<MyListTableModel> model = make_unique<MyListTableModel>(repository.get());
     MyListWidget myListWidget{ model.get() };
     myListWidget.show();
     Lab12 gui{adminservice, userservice};
