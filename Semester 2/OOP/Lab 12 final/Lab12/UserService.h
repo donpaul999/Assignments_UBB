@@ -20,7 +20,7 @@ public:
 
     std::vector<Movie> userGetMovieList();
 
-    std::vector<Movie> userGetWatchList();
+    std::vector<Movie> userGetWatchList() const;
 
     int listMoviesByGenre(const std::string &genreGiven);
 
@@ -32,7 +32,7 @@ public:
 
     Movie getCurrentMovie();
 
-    int getWatchListLength();
+    int getWatchListLength() const;
 
     int changeRepositoryFileName(const std::string &nameOfTheFileUsed, const std::string &extensionToChange);
 

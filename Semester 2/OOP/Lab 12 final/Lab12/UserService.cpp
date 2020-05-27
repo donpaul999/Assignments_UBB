@@ -17,7 +17,7 @@ std::vector<Movie> UserService::userGetMovieList()
 }
 
 //Get the list of movies in the watch list
-std::vector<Movie> UserService::userGetWatchList()
+std::vector<Movie> UserService::userGetWatchList() const
 {
     return repository->getAllWatchListMovies();
 }
@@ -58,7 +58,7 @@ void UserService::goToNextMovieByGenre()
 }
 
 //Get the length of the watch list
-int UserService::getWatchListLength()
+int UserService::getWatchListLength() const
 {
     return repository->getNumberOfMoviesWatchList();
 }
