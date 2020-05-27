@@ -4,13 +4,13 @@ void MyListTableModel::addInWatchList(const std::string& title)
 {
 	service.addMovieToWatchListByTitle(title);
 	insertRows(service.userGetWatchList().size(), 1);
+
 }
 
 bool MyListTableModel::insertRows(int position, int rows, const QModelIndex& index)
 {
 	beginInsertRows(QModelIndex(), position, position + rows - 1);
-	
-	
+	endInsertRows();
 	return true;
 }
 
