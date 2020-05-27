@@ -231,7 +231,7 @@ public:
 
         layoutWidget4 = new QWidget(centralwidget);
         layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(690, 370, 126, 85));
+        layoutWidget4->setGeometry(QRect(690, 370, 128, 85));
         verticalLayout_3 = new QVBoxLayout(layoutWidget4);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -247,13 +247,13 @@ public:
 
         verticalLayout_2->addWidget(openWatchListButton);
 
-
-        verticalLayout_3->addLayout(verticalLayout_2);
-
         openMyListButton = new QPushButton(layoutWidget4);
         openMyListButton->setObjectName(QString::fromUtf8("openMyListButton"));
 
-        verticalLayout_3->addWidget(openMyListButton);
+        verticalLayout_2->addWidget(openMyListButton);
+
+
+        verticalLayout_3->addLayout(verticalLayout_2);
 
         Lab12Class->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Lab12Class);

@@ -302,7 +302,7 @@
      <rect>
       <x>690</x>
       <y>370</y>
-      <width>126</width>
+      <width>128</width>
       <height>85</height>
      </rect>
     </property>
@@ -323,14 +323,14 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QPushButton" name="openMyListButton">
+         <property name="text">
+          <string>Open My List In Window</string>
+         </property>
+        </widget>
+       </item>
       </layout>
-     </item>
-     <item>
-      <widget class="QPushButton" name="openMyListButton">
-       <property name="text">
-        <string>Open My List In Window</string>
-       </property>
-      </widget>
      </item>
     </layout>
    </widget>

@@ -35,6 +35,7 @@ private:
     void openMyList();
     void addToWatchList();
     void nextMovie();
-    void modeA(){this->modeAOrB = 1;};
+	void openMyListInNewWindow();
+	void modeA(){this->modeAOrB = 1;};
     void modeB(){this->modeAOrB = 0;};
 };

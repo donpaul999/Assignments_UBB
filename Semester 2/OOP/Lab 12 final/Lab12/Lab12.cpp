@@ -56,6 +56,7 @@ void Lab12::connectSignalsAndSlots() {
     QObject::connect(this->ui.nextButton, &QPushButton::clicked, this, &Lab12::nextMovie);
     QObject::connect(this->ui.adminButton, &QPushButton::clicked, this, &Lab12::modeA);
     QObject::connect(this->ui.userButton, &QPushButton::clicked, this, &Lab12::modeB);
+    QObject::connect(this->ui.openWatchListButton, &QPushButton::clicked, this, &Lab12::openMyListInNewWindow);
 }
 
 
@@ -305,4 +306,8 @@ void Lab12::nextMovie(){
     if(lastElem + 1 == this->adminService.adminGetMovieList().size())
         lastElem = -1;
     this->ui.movieListWidget->setCurrentRow(lastElem + 1);
+}
+
+void Lab12::openMyListInNewWindow()
+{
 }

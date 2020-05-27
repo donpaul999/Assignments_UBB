@@ -28,54 +28,55 @@ QT_BEGIN_NAMESPACE
 class Ui_Lab12Class
 {
 public:
-    QWidget *centralwidget;
-    QPushButton *saveToMyListButton;
-    QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout_3;
-    QListWidget *movieListWidget;
-    QFormLayout *formLayout;
-    QLabel *titleLabel;
-    QLineEdit *titleLineEdit;
-    QLabel *genreLabel;
-    QLineEdit *genreLineEdit;
-    QLabel *yearOfReleaseLabel;
-    QLineEdit *yearOfReleaseLineEdit;
-    QLabel *numberOfLikesLabel;
-    QLineEdit *numberOfLikesLineEdit;
-    QLabel *trailerLabel;
-    QLineEdit *trailerLineEdit;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
-    QPushButton *addButton;
-    QPushButton *adminButton;
-    QPushButton *userButton;
-    QPushButton *deleteButton;
-    QPushButton *updateButton;
-    QHBoxLayout *horizontalLayout_2;
-    QPushButton *undoButton;
-    QPushButton *redoButton;
-    QFormLayout *formLayout_2;
-    QLabel *titleLabel_2;
-    QLineEdit *fileLocationLineEdit;
-    QPushButton *updateFileLocationButton;
-    QWidget *widget;
-    QFormLayout *formLayout_4;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *titleLabel_4;
-    QLineEdit *genreToSortByLineEdit;
-    QPushButton *sortByGenreButton;
-    QPushButton *nextButton;
-    QFormLayout *formLayout_3;
-    QLabel *titleLabel_3;
-    QLineEdit *fileLocationLineEdit_2;
-    QVBoxLayout *verticalLayout_2;
-    QPushButton *updateMyListLocationButton;
-    QPushButton *openWatchListButton;
-    QListWidget *myListWidget;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QWidget* centralwidget;
+    QPushButton* saveToMyListButton;
+    QWidget* layoutWidget;
+    QVBoxLayout* verticalLayout_3;
+    QListWidget* movieListWidget;
+    QFormLayout* formLayout;
+    QLabel* titleLabel;
+    QLineEdit* titleLineEdit;
+    QLabel* genreLabel;
+    QLineEdit* genreLineEdit;
+    QLabel* yearOfReleaseLabel;
+    QLineEdit* yearOfReleaseLineEdit;
+    QLabel* numberOfLikesLabel;
+    QLineEdit* numberOfLikesLineEdit;
+    QLabel* trailerLabel;
+    QLineEdit* trailerLineEdit;
+    QVBoxLayout* verticalLayout;
+    QHBoxLayout* horizontalLayout;
+    QPushButton* addButton;
+    QPushButton* adminButton;
+    QPushButton* userButton;
+    QPushButton* deleteButton;
+    QPushButton* updateButton;
+    QHBoxLayout* horizontalLayout_2;
+    QPushButton* undoButton;
+    QPushButton* redoButton;
+    QFormLayout* formLayout_2;
+    QLabel* titleLabel_2;
+    QLineEdit* fileLocationLineEdit;
+    QPushButton* updateFileLocationButton;
+    QWidget* widget;
+    QFormLayout* formLayout_4;
+    QHBoxLayout* horizontalLayout_3;
+    QLabel* titleLabel_4;
+    QLineEdit* genreToSortByLineEdit;
+    QPushButton* sortByGenreButton;
+    QPushButton* nextButton;
+    QFormLayout* formLayout_3;
+    QLabel* titleLabel_3;
+    QLineEdit* fileLocationLineEdit_2;
+    QVBoxLayout* verticalLayout_2;
+    QPushButton* updateMyListLocationButton;
+    QPushButton* openWatchListButton;
+    QListWidget* myListWidget;
+    QPushButton* openMyListButton;
+    QMenuBar* menubar;
+    QStatusBar* statusbar;
 
-    void setupUi(QMainWindow *Lab12Class)
+    void setupUi(QMainWindow* Lab12Class)
     {
         if (Lab12Class->objectName().isEmpty())
             Lab12Class->setObjectName(QString::fromUtf8("Lab12Class"));
@@ -298,6 +299,10 @@ public:
 
         verticalLayout_2->addWidget(openWatchListButton);
 
+        openMyListButton = new QPushButton(widget);
+        openMyListButton->setObjectName(QString::fromUtf8("openMyListButton"));
+
+        verticalLayout_2->addWidget(openMyListButton);
 
         formLayout_4->setLayout(5, QFormLayout::LabelRole, verticalLayout_2);
 
@@ -320,7 +325,7 @@ public:
         QMetaObject::connectSlotsByName(Lab12Class);
     } // setupUi
 
-    void retranslateUi(QMainWindow *Lab12Class)
+    void retranslateUi(QMainWindow* Lab12Class)
     {
         Lab12Class->setWindowTitle(QCoreApplication::translate("Lab12Class", "MainWindow", nullptr));
         saveToMyListButton->setText(QCoreApplication::translate("Lab12Class", ">", nullptr));
@@ -346,12 +351,13 @@ public:
         fileLocationLineEdit_2->setText(QString());
         updateMyListLocationButton->setText(QCoreApplication::translate("Lab12Class", "Update File", nullptr));
         openWatchListButton->setText(QCoreApplication::translate("Lab12Class", "Open Watch List", nullptr));
+        openMyListButton->setText(QCoreApplication::translate("Lab12Class", "Open My List In Window", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Lab12Class: public Ui_Lab12Class {};
+    class Lab12Class : public Ui_Lab12Class {};
 } // namespace Ui
 
 QT_END_NAMESPACE
