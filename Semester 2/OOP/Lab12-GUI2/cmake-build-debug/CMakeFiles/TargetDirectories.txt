@@ -1,4 +1,0 @@
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/cmake-build-debug/CMakeFiles/Lab12_GUI2.dir
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab12-GUI2/cmake-build-debug/CMakeFiles/Lab12_GUI2_autogen.dir

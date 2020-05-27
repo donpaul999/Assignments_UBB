@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html><head><title>Watchlist</title></head><body>
+<table border="1">
+<tr><td>Title</td><td>Genre</td><td>Year of release</td><td>Number of likes</td><td>Link</td></tr>
+<tr><td>te</td><td>123</td><td>2015</td><td>123</td><td><a href="www.com">www.com</a></td>
+<tr><td>test123</td><td>123</td><td>2001</td><td>12313</td><td><a href="www.c">www.c</a></td>
+<tr><td>te11</td><td>1231213</td><td>2015</td><td>123</td><td><a href="www.com">www.com</a></td>
+</table></body></html>
