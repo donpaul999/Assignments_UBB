@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12"
+CMAKE_SOURCE_DIR = "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug"
+CMAKE_BINARY_DIR = "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug/CMakeFiles" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug/CMakeFiles" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -447,6 +447,60 @@ MovieValidator.cpp.s:
 	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/MovieValidator.cpp.s
 .PHONY : MovieValidator.cpp.s
 
+MyListTableModel.o: MyListTableModel.cpp.o
+
+.PHONY : MyListTableModel.o
+
+# target to build an object file
+MyListTableModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/MyListTableModel.cpp.o
+.PHONY : MyListTableModel.cpp.o
+
+MyListTableModel.i: MyListTableModel.cpp.i
+
+.PHONY : MyListTableModel.i
+
+# target to preprocess a source file
+MyListTableModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/MyListTableModel.cpp.i
+.PHONY : MyListTableModel.cpp.i
+
+MyListTableModel.s: MyListTableModel.cpp.s
+
+.PHONY : MyListTableModel.s
+
+# target to generate assembly for a file
+MyListTableModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/MyListTableModel.cpp.s
+.PHONY : MyListTableModel.cpp.s
+
+MyListWidget.o: MyListWidget.cpp.o
+
+.PHONY : MyListWidget.o
+
+# target to build an object file
+MyListWidget.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/MyListWidget.cpp.o
+.PHONY : MyListWidget.cpp.o
+
+MyListWidget.i: MyListWidget.cpp.i
+
+.PHONY : MyListWidget.i
+
+# target to preprocess a source file
+MyListWidget.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/MyListWidget.cpp.i
+.PHONY : MyListWidget.cpp.i
+
+MyListWidget.s: MyListWidget.cpp.s
+
+.PHONY : MyListWidget.s
+
+# target to generate assembly for a file
+MyListWidget.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab12.dir/build.make CMakeFiles/Lab12.dir/MyListWidget.cpp.s
+.PHONY : MyListWidget.cpp.s
+
 RepositoryException.o: RepositoryException.cpp.o
 
 .PHONY : RepositoryException.o
@@ -654,6 +708,12 @@ help:
 	@echo "... MovieValidator.o"
 	@echo "... MovieValidator.i"
 	@echo "... MovieValidator.s"
+	@echo "... MyListTableModel.o"
+	@echo "... MyListTableModel.i"
+	@echo "... MyListTableModel.s"
+	@echo "... MyListWidget.o"
+	@echo "... MyListWidget.i"
+	@echo "... MyListWidget.s"
 	@echo "... RepositoryException.o"
 	@echo "... RepositoryException.i"
 	@echo "... RepositoryException.s"

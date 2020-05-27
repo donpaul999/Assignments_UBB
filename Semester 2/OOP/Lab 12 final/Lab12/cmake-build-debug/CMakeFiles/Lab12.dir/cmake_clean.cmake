@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lab12.dir/Lab12.cpp.o"
   "CMakeFiles/Lab12.dir/Movie.cpp.o"
   "CMakeFiles/Lab12.dir/MovieValidator.cpp.o"
+  "CMakeFiles/Lab12.dir/MyListTableModel.cpp.o"
+  "CMakeFiles/Lab12.dir/MyListWidget.cpp.o"
   "CMakeFiles/Lab12.dir/RepositoryException.cpp.o"
   "CMakeFiles/Lab12.dir/UserService.cpp.o"
   "CMakeFiles/Lab12.dir/ValidationException.cpp.o"

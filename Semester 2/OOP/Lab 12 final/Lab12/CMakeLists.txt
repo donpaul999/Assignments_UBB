@@ -42,6 +42,12 @@ add_executable(Lab12
         ValidationException.cpp
         ValidationException.h
         ActionFilter.cpp
-        ActionFilter.h)
+        ActionFilter.h
+        MyListTableModel.cpp
+        MyListTableModel.h
+        MyListWidget.h
+        MyListWidget.cpp
+        ui_MyListWidget.h
+        ui_Lab12.h)
 
 target_link_libraries(Lab12 Qt5::Widgets)

@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=/Users/paulcolta/Qt/5.14.2/clang_64/lib/cmake -G "CodeBlocks - Unix Makefiles" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12"
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=/Users/paulcolta/Qt/5.14.2/clang_64/lib/cmake -G "CodeBlocks - Unix Makefiles" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12"
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug
+-- Build files have been written to: /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug

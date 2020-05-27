@@ -6,7 +6,3 @@ MyListWidget::MyListWidget(MyListTableModel* model, QWidget* parent)
 	ui.setupUi(this);
 	ui.myListTableView->setModel(this->model);
 }
-
-MyListWidget::~MyListWidget()
-{
-}

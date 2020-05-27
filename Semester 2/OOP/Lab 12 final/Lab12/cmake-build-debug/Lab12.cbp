@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\Qt\;CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\;CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\;CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\;CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\;CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug"/>
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug"/>
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug"/>
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lab12">
-				<Option output="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug/Lab12" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug"/>
+				<Option output="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug/Lab12" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -47,8 +47,8 @@
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_GUI_LIB"/>
 					<Add option="-DQT_CORE_LIB"/>
-					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/."/>
-					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/x64/Debug/uic"/>
+					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/."/>
+					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/x64/Debug/uic"/>
 					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework"/>
 					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers"/>
 					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework"/>
@@ -65,15 +65,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab12"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab12"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lab12/fast">
-				<Option output="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug/Lab12" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/cmake-build-debug"/>
+				<Option output="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug/Lab12" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -81,8 +81,8 @@
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_GUI_LIB"/>
 					<Add option="-DQT_CORE_LIB"/>
-					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/."/>
-					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/x64/Debug/uic"/>
+					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/."/>
+					<Add directory="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/x64/Debug/uic"/>
 					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework"/>
 					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers"/>
 					<Add directory="/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework"/>
@@ -99,209 +99,227 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab12/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Cod\ Lab\ 12/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 Lab12/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester\ 2/OOP/Lab\ 12\ final/Lab12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/Action.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Action.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/Action.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionAdd.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ActionAdd.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionAdd.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ActionAdd.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionFilter.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ActionFilter.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionFilter.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ActionFilter.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionRemove.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ActionRemove.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionRemove.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ActionRemove.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionUpdate.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ActionUpdate.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ActionUpdate.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ActionUpdate.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/AdminService.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/AdminService.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/AdminService.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/CSVRepository.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/CSVRepository.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/CSVRepository.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/CSVRepository.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/FileRepository.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/FileRepository.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/FileRepository.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/HTMLRepository.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/HTMLRepository.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/HTMLRepository.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/HTMLRepository.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/Lab12.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/Lab12.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Lab12.ui">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/Lab12.ui">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/Movie.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/Movie.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/Movie.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/MovieValidator.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/MovieValidator.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/MovieValidator.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/MovieValidator.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/RepositoryException.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/MyListTableModel.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/RepositoryException.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/MyListTableModel.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/MyListWidget.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/UserService.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/MyListWidget.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ValidationException.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/RepositoryException.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/ValidationException.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/RepositoryException.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/main.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/UserService.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/x64/Debug/moc/moc_Lab12.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/UserService.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/x64/Debug/rcc/qrc_Lab12.cpp">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ValidationException.cpp">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/x64/Debug/uic/ui_Lab12.h">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ValidationException.h">
 			<Option target="Lab12"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/CMakeLists.txt">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/main.cpp">
+			<Option target="Lab12"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ui_Lab12.h">
+			<Option target="Lab12"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/ui_MyListWidget.h">
+			<Option target="Lab12"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/x64/Debug/moc/moc_Lab12.cpp">
+			<Option target="Lab12"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/x64/Debug/rcc/qrc_Lab12.cpp">
+			<Option target="Lab12"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/x64/Debug/uic/ui_Lab12.h">
+			<Option target="Lab12"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Widgets/Qt5Widgets_QMacStylePlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QCocoaIntegrationPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMacHeifPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMacHeifPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMacJp2Plugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Cod Lab 12/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Lab 12 final/Lab12/../../../../../../../Qt/5.14.2/clang_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\Qt\5.14.2\clang_64\lib\cmake\Qt5Core\"/>
 		</Unit>
 	</Project>

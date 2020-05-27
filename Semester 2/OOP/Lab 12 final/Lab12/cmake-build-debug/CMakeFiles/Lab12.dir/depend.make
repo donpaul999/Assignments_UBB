@@ -77,11 +77,18 @@ CMakeFiles/Lab12.dir/Lab12.cpp.o: ../Lab12.cpp
 CMakeFiles/Lab12.dir/Lab12.cpp.o: ../Lab12.h
 CMakeFiles/Lab12.dir/Lab12.cpp.o: ../Movie.h
 CMakeFiles/Lab12.dir/Lab12.cpp.o: ../MovieValidator.h
+CMakeFiles/Lab12.dir/Lab12.cpp.o: ../MyListTableModel.h
+CMakeFiles/Lab12.dir/Lab12.cpp.o: ../MyListWidget.h
 CMakeFiles/Lab12.dir/Lab12.cpp.o: ../RepositoryException.h
 CMakeFiles/Lab12.dir/Lab12.cpp.o: ../UserService.h
 CMakeFiles/Lab12.dir/Lab12.cpp.o: ../ValidationException.h
 CMakeFiles/Lab12.dir/Lab12.cpp.o: ../ui_Lab12.h
+CMakeFiles/Lab12.dir/Lab12.cpp.o: ../ui_MyListWidget.h
+CMakeFiles/Lab12.dir/Lab12.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+CMakeFiles/Lab12.dir/Lab12.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QWidget
 CMakeFiles/Lab12.dir/Lab12.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+CMakeFiles/Lab12.dir/Lab12.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qshortcut.h
+CMakeFiles/Lab12.dir/Lab12.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 
 CMakeFiles/Lab12.dir/Movie.cpp.o: ../Movie.cpp
 CMakeFiles/Lab12.dir/Movie.cpp.o: ../Movie.h
@@ -90,6 +97,32 @@ CMakeFiles/Lab12.dir/MovieValidator.cpp.o: ../Movie.h
 CMakeFiles/Lab12.dir/MovieValidator.cpp.o: ../MovieValidator.cpp
 CMakeFiles/Lab12.dir/MovieValidator.cpp.o: ../MovieValidator.h
 CMakeFiles/Lab12.dir/MovieValidator.cpp.o: ../ValidationException.h
+
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../CSVRepository.h
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../FileRepository.h
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../HTMLRepository.h
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../Movie.h
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../MyListTableModel.cpp
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../MyListTableModel.h
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../RepositoryException.h
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../UserService.h
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: ../ValidationException.h
+CMakeFiles/Lab12.dir/MyListTableModel.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../CSVRepository.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../FileRepository.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../HTMLRepository.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../Movie.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../MyListTableModel.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../MyListWidget.cpp
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../MyListWidget.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../RepositoryException.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../UserService.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../ValidationException.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: ../ui_MyListWidget.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QWidget
+CMakeFiles/Lab12.dir/MyListWidget.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 
 CMakeFiles/Lab12.dir/RepositoryException.cpp.o: ../RepositoryException.cpp
 CMakeFiles/Lab12.dir/RepositoryException.cpp.o: ../RepositoryException.h
@@ -117,13 +150,19 @@ CMakeFiles/Lab12.dir/main.cpp.o: ../HTMLRepository.h
 CMakeFiles/Lab12.dir/main.cpp.o: ../Lab12.h
 CMakeFiles/Lab12.dir/main.cpp.o: ../Movie.h
 CMakeFiles/Lab12.dir/main.cpp.o: ../MovieValidator.h
+CMakeFiles/Lab12.dir/main.cpp.o: ../MyListTableModel.h
+CMakeFiles/Lab12.dir/main.cpp.o: ../MyListWidget.h
 CMakeFiles/Lab12.dir/main.cpp.o: ../RepositoryException.h
 CMakeFiles/Lab12.dir/main.cpp.o: ../UserService.h
 CMakeFiles/Lab12.dir/main.cpp.o: ../ValidationException.h
 CMakeFiles/Lab12.dir/main.cpp.o: ../main.cpp
 CMakeFiles/Lab12.dir/main.cpp.o: ../ui_Lab12.h
+CMakeFiles/Lab12.dir/main.cpp.o: ../ui_MyListWidget.h
+CMakeFiles/Lab12.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
 CMakeFiles/Lab12.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QLabel
+CMakeFiles/Lab12.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QWidget
 CMakeFiles/Lab12.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qlabel.h
+CMakeFiles/Lab12.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../Action.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../ActionAdd.h
@@ -136,11 +175,17 @@ CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../HTMLRepository.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../Lab12.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../Movie.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../MovieValidator.h
+CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../MyListTableModel.h
+CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../MyListWidget.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../RepositoryException.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../UserService.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../ValidationException.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../ui_Lab12.h
+CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../ui_MyListWidget.h
 CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: ../x64/Debug/moc/moc_Lab12.cpp
+CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QWidget
+CMakeFiles/Lab12.dir/x64/Debug/moc/moc_Lab12.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 
 CMakeFiles/Lab12.dir/x64/Debug/rcc/qrc_Lab12.cpp.o: ../x64/Debug/rcc/qrc_Lab12.cpp
 
