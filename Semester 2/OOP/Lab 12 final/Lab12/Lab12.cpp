@@ -245,7 +245,7 @@ void Lab12::updateMyListLocation(){
     std::string fileTitle = this->ui.fileLocationLineEdit_2->text().toStdString();
     try {
         std::vector<std::string> tokens = this->adminService.explode(fileTitle, '.');
-        this->userService.changeRepositoryFileName(tokens[0] + "." +tokens[1], tokens[1]);
+        this->myListWidget.changeRepositoryFileName(tokens[0] + "." +tokens[1], tokens[1]);
     }
     catch(std::exception& e){
         QMessageBox::critical(this, "Error", e.what());

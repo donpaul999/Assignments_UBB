@@ -7,10 +7,33 @@ void MyListTableModel::addInWatchList(const std::string& title)
 
 }
 
+
+
+void MyListTableModel::changeRepositoryFileName(std::string fileName, std::string extension)
+{
+
+	int firstLength = service.userGetWatchList().size();
+	service.changeRepositoryFileName(fileName, extension);
+	int secondLength = service.userGetWatchList().size();
+	if (firstLength - secondLength > 0)
+		removeRows(firstLength, firstLength - secondLength);
+	else
+		insertRows(firstLength, secondLength - firstLength);
+}
+
+
 bool MyListTableModel::insertRows(int position, int rows, const QModelIndex& index)
 {
 	beginInsertRows(QModelIndex(), position, position + rows - 1);
 	endInsertRows();
+	return true;
+}
+
+bool MyListTableModel::removeRows(int position, int rows, const QModelIndex& index)
+{
+	
+	beginRemoveRows(QModelIndex(), position, position + rows - 1);
+	endRemoveRows();
 	return true;
 }
 

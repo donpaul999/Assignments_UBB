@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="inputFile.in" />
+    <None Include="test.csv" />
     <None Include="test.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

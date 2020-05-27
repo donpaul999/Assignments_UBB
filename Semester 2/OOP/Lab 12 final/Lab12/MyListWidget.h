@@ -15,7 +15,9 @@ public:
 		model->addInWatchList(title);
 
 	};
-
+	void changeRepositoryFileName(std::string fileName, std::string extension) {
+		this->model->changeRepositoryFileName(fileName, extension);
+	}
 private:
 	Ui::MyListWidget ui;
 	MyListTableModel* model;
