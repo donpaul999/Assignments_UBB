@@ -3,14 +3,11 @@ project(Lab12)
 
 set(CMAKE_CXX_STANDARD 14)
 find_package(Qt5Widgets REQUIRED)
-
-include_directories(.)
-include_directories(x64/Debug/uic)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
 
 add_executable(Lab12
-        x64/Debug/moc/moc_Lab12.cpp
-        x64/Debug/rcc/qrc_Lab12.cpp
-        x64/Debug/uic/ui_Lab12.h
         Action.cpp
         Action.h
         ActionAdd.cpp
@@ -30,6 +27,7 @@ add_executable(Lab12
         Lab12.cpp
         Lab12.h
         Lab12.ui
+        Lab12.qrc
         main.cpp
         Movie.cpp
         Movie.h
@@ -47,7 +45,6 @@ add_executable(Lab12
         MyListTableModel.h
         MyListWidget.h
         MyListWidget.cpp
-        ui_MyListWidget.h
-        ui_Lab12.h)
+        MyListWidget.ui)
 
 target_link_libraries(Lab12 Qt5::Widgets)
