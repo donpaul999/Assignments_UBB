@@ -3,8 +3,8 @@
 #include "qmessagebox.h"
 #include <qshortcut.h>
 
-Lab12::Lab12(AdminService& adminServiceGiven, UserService& userServiceGiven, QWidget *parent)
-	: QMainWindow(parent), adminService{adminServiceGiven}, userService{userServiceGiven}
+Lab12::Lab12(AdminService& adminServiceGiven, UserService& userServiceGiven, MyListWidget& myListWidget, QWidget *parent)
+	: QMainWindow(parent), adminService{adminServiceGiven}, userService{userServiceGiven}, myListWidget{ myListWidget }
 {
 	ui.setupUi(this);
     this->populateMyList();
@@ -15,11 +15,16 @@ Lab12::Lab12(AdminService& adminServiceGiven, UserService& userServiceGiven, QWi
 void Lab12::populateList()
 {
     this->ui.movieListWidget->clear();
-    if(this->adminService.adminGetMovieList().size() == 0)
+    try {
+        if (this->adminService.adminGetMovieList().size() == 0)
+            return;
+        vector<Movie> allMovies = this->adminService.adminGetMovieList();
+        for (Movie& movieUsed : allMovies)
+            this->ui.movieListWidget->addItem(QString::fromStdString(movieUsed.getOutputForm()));
+    }
+    catch (std::exception & e) {
         return;
-    vector<Movie> allMovies = this->adminService.adminGetMovieList();
-    for (Movie& movieUsed : allMovies)
-        this->ui.movieListWidget->addItem(QString::fromStdString(movieUsed.getOutputForm()));
+    }
 }
 
 void Lab12::connectSignalsAndSlots() {
@@ -56,7 +61,7 @@ void Lab12::connectSignalsAndSlots() {
     QObject::connect(this->ui.nextButton, &QPushButton::clicked, this, &Lab12::nextMovie);
     QObject::connect(this->ui.adminButton, &QPushButton::clicked, this, &Lab12::modeA);
     QObject::connect(this->ui.userButton, &QPushButton::clicked, this, &Lab12::modeB);
-    QObject::connect(this->ui.openWatchListButton, &QPushButton::clicked, this, &Lab12::openMyListInNewWindow);
+    QObject::connect(this->ui.openMyListButton, &QPushButton::clicked, this, &Lab12::openMyListInNewWindow);
 }
 
 
@@ -259,7 +264,7 @@ void Lab12::addToWatchList() {
     }
     std::string title = this->ui.titleLineEdit->text().toStdString();
     try {
-        this->userService.addMovieToWatchListByTitle(title);
+        this->myListWidget.addInWatchList(title);
     }
     catch(std::exception& e){
         QMessageBox::critical(this, "Error", e.what());
@@ -310,4 +315,5 @@ void Lab12::nextMovie(){
 
 void Lab12::openMyListInNewWindow()
 {
+    myListWidget.show();
 }

@@ -1,8 +1,17 @@
 #include "MyListTableModel.h"
 
+void MyListTableModel::addInWatchList(std::string title)
+{
+
+	service.addMovieToWatchListByTitle(title);
+	QModelIndex topLeft = index(0, 0);
+	QModelIndex bottomRight = index(service.userGetWatchList().size(), 5);
+	emit dataChanged(topLeft,bottomRight);
+}
+
 int MyListTableModel::rowCount(const QModelIndex& parent) const
 {
-	return service.getWatchListLength();
+	return service.userGetWatchList().size();
 }
 
 int MyListTableModel::columnCount(const QModelIndex& parent) const
@@ -35,6 +44,31 @@ QVariant MyListTableModel::data(const QModelIndex& index, int role) const
 			return QString::fromStdString(movieUsed.getTrailer());
 		default:
 			break;
+		}
+	}
+	return QVariant();
+}
+
+QVariant MyListTableModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+	if (role == Qt::DisplayRole)
+	{
+		if (orientation == Qt::Horizontal)
+		{
+			switch (section) {
+			case 0:
+				return QString("Title");
+			case 1:
+				return QString("Genre");
+			case 2:
+				return QString("Year");
+			case 3:
+				return QString("Nb. of Likes");
+			case 4:
+				return QString("Trailer");
+			default:
+				break;
+			}
 		}
 	}
 	return QVariant();

@@ -22,9 +22,9 @@ int main(int argc, char* argv[])
 
     QApplication a(argc, argv);
 
-    unique_ptr<FileRepository> repository = make_unique<FileRepository>("input.txt");
+    unique_ptr<FileRepository> repository = make_unique<FileRepository>("inputFile.in");
     //cout << inMemory;
-    repository->changeFileName("input.txt");
+    repository->changeFileName("inputFile.in");
     repository->setMemoryOrFile(inMemory);
     AdminService adminservice{ repository.get() };
     UserService userservice{ repository.get() };
@@ -32,8 +32,7 @@ int main(int argc, char* argv[])
         userservice.changeRepositoryFileName("test.html","html");
     unique_ptr<MyListTableModel> model = make_unique<MyListTableModel>( userservice );
     MyListWidget myListWidget{ model.get() };
-    myListWidget.show();
-    Lab12 gui{adminservice, userservice};
+    Lab12 gui{adminservice, userservice, myListWidget};
     gui.show();
 
     return a.exec();

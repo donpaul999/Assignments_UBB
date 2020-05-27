@@ -12,9 +12,10 @@ class Lab12 : public QMainWindow
 	Q_OBJECT
 
 public:
-	Lab12(AdminService& adminService, UserService& userService, QWidget *parent = Q_NULLPTR);
+	Lab12(AdminService& adminService, UserService& userService, MyListWidget& myListWidget, QWidget *parent = Q_NULLPTR);
 
 private:
+	MyListWidget& myListWidget;
 	AdminService& adminService;
 	UserService& userService;
 	Ui::Lab12Class ui;

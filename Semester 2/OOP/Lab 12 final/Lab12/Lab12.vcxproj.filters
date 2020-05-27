@@ -160,5 +160,8 @@
     <None Include="inputFile.in">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="test.html">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

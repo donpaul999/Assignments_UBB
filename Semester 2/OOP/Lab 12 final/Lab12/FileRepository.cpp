@@ -13,14 +13,18 @@ std::vector<Movie> FileRepository::loadMoviesFromFile()
     Movie movieLoadedFromFile;
     if (movieFileName == "")
         throw RepositoryException(std::string("FileName is invalid"));
-    std::ifstream fin(movieFileName);
-    while (fin >> movieLoadedFromFile) {
-        if (std::find(movieList.begin(), movieList.end(), movieLoadedFromFile) == movieList.end())
-            movieList.push_back(movieLoadedFromFile);
+    try {
+        std::ifstream fin(movieFileName);
+        while (fin >> movieLoadedFromFile) {
+            if (std::find(movieList.begin(), movieList.end(), movieLoadedFromFile) == movieList.end())
+                movieList.push_back(movieLoadedFromFile);
         }
-    fin.close();
-    return movieList;
+        fin.close();
+        return movieList;
+    }
+    catch (std::exception & e) {
 
+    }
 }
 
 void FileRepository::changeRepositoryType(std::string repositoryTypeGiven) {
