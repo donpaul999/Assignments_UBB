@@ -11,7 +11,7 @@ class MyListWidget : public QWidget
 public:
 	MyListWidget(MyListTableModel* model, QWidget* parent = Q_NULLPTR);
 	~MyListWidget();
-	void addInWatchList(std::string title) {
+	void addInWatchList(const std::string &title) {
 		model->addInWatchList(title);
 
 	};

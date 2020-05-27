@@ -8,7 +8,8 @@ private:
 	UserService& service;
 public:
 	MyListTableModel(UserService& service) : service{ service } {};
-	void addInWatchList(std::string title);
+	void MyListTableModel::addInWatchList(const std::string& title);
+	bool insertRows(int position, int rows, const QModelIndex& index = QModelIndex()) override;
 	int rowCount(const QModelIndex& parent = QModelIndex()) const;
 	int columnCount(const QModelIndex& parent = QModelIndex()) const;
 	QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;

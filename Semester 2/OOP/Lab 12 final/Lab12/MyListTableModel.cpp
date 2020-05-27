@@ -1,12 +1,17 @@
 #include "MyListTableModel.h"
-
-void MyListTableModel::addInWatchList(std::string title)
+#include <iostream>
+void MyListTableModel::addInWatchList(const std::string& title)
 {
-
 	service.addMovieToWatchListByTitle(title);
-	QModelIndex topLeft = index(0, 0);
-	QModelIndex bottomRight = index(service.userGetWatchList().size(), 5);
-	emit dataChanged(topLeft,bottomRight);
+	insertRows(service.userGetWatchList().size(), 1);
+}
+
+bool MyListTableModel::insertRows(int position, int rows, const QModelIndex& index)
+{
+	beginInsertRows(QModelIndex(), position, position + rows - 1);
+	
+	
+	return true;
 }
 
 int MyListTableModel::rowCount(const QModelIndex& parent) const
