@@ -11,7 +11,7 @@
 
 class HTMLRepository: public FileRepository {
 public:
-    HTMLRepository(std::string fileName="", std::string movieFileName=""){this->userFileName = fileName; this->movieFileName = movieFileName;};
+    HTMLRepository(std::string fileName="", std::string movieFileName=""){this->userFileName = fileName; this->movieFileName = movieFileName; this->memoryOrFile = 0;};
     void writeUserMoviesToFile( std::vector<Movie> movieList, std::string movieFileName) override;
     int addMovieToWatchlist(const Movie& movieToAdd) override;
     void deleteMovieFromWatchlist(const Movie& movieToDelete) override;
