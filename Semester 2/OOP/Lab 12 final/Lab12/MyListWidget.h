@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QWidget>
-#include "ui_MyListWidget.h"
+#include <ui_MyListWidget.h>
 #include "MyListTableModel.h"
 
 class MyListWidget : public QWidget
@@ -10,7 +10,7 @@ class MyListWidget : public QWidget
 
 public:
 	MyListWidget(MyListTableModel* model, QWidget* parent = Q_NULLPTR);
-	~MyListWidget();
+	~MyListWidget() {};
 	void addInWatchList(const std::string &title) {
 		model->addInWatchList(title);
 

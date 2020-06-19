@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_Lab12.h"
+#include <ui_Lab12.h>
 #include "AdminService.h"
 #include "UserService.h"
 #include "MyListWidget.h"

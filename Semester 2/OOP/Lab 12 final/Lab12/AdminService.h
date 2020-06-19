@@ -27,9 +27,6 @@ public:
     std::vector<Movie> adminGetMovieList();
     int changeRepositoryFileName(const std::string& nameOfTheFileUsed);
     std::string getFileName(){return this->repository->getMovieFileName();};
-    void setMemoryOrFile(bool memoryOrFile){
-        this->repository->setMemoryOrFile(memoryOrFile);
-    };
     void undo();
     void redo();
     void emptyRedo();

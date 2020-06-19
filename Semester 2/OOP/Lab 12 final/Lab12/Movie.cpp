@@ -1,5 +1,6 @@
 #include "Movie.h"
 #include <iostream>
+#include <algorithm>
 
 //Movie constructors
 

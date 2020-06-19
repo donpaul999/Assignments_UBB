@@ -201,6 +201,7 @@ std::vector<Movie> FileRepository::getMoviesByGenre(const std::string& genreGive
 //Get all the movies
 std::vector<Movie> FileRepository::getAllMovies()
 {
+    memoryOrFile = 0;
     std::vector<Movie> movieList;
     if(memoryOrFile == 0)
         movieList = loadMoviesFromFile();
