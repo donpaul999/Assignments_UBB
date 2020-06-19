@@ -6,7 +6,7 @@
 #include "qmessagebox.h"
 using namespace std;
 
-class Examen : public QMainWindow
+class Examen : public QMainWindow, public Observer
 {
 	Q_OBJECT
 
@@ -22,4 +22,5 @@ private:
 	void deleteObject();
 	void populateList();
 	void addFunction();
+	void update() override;
 };

@@ -15,7 +15,6 @@ std::vector <TElem> Repository::loadFromFile(std::string fileName)
 		objectList.push_back(object);
         getline(fileInput, textLineFromFile);
     }
-	this->objectList = objectList;
 	*/
 	return objectList;
 }
@@ -55,3 +54,4 @@ void Repository::deleteObject(TElem objectToDelete)
 		objectList.erase(it);
 	//validari pe else
 }
+

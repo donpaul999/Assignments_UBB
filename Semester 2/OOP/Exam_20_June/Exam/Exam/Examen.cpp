@@ -72,3 +72,7 @@ void Examen::populateList()
 void Examen::addFunction()
 {
 }
+
+void Examen::update() {
+    populateList();
+}

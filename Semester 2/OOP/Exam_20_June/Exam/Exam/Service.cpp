@@ -28,6 +28,7 @@ void Service::addObject()
 	TElem objectToAdd;
 	//creare obiect;
 	repo->addObject(objectToAdd);
+	notify();
 }
 
 void Service::deleteObject()
@@ -35,6 +36,8 @@ void Service::deleteObject()
 	TElem objectToDelete;
 	//creare obiect;
 	repo->deleteObject(objectToDelete);
+    notify();
+
 }
 
 
