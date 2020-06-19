@@ -21,12 +21,12 @@ void DAGUI::runApplication() {
                   << "\tLatest end: " << activity.getLatestEndTime() << '\n';
         totalTime = std::max(totalTime, activity.getEarliestEndTime());
     }
+    std::cout << "\nTOTAL TIME: " << totalTime << '\n';
+    std::cout<<"****************************\n";
     std::cout << "Critical activities: ";
     for (const Activity& activity: activityStatus) {
         if (activity.isCritical()) {
             std::cout << activity.getNodeIndex() << " ";
         }
     }
-    std::cout << "\nTOTAL TIME: " << totalTime << '\n';
-    std::cout<<"****************************\n";
 }

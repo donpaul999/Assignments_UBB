@@ -141,7 +141,7 @@ void DIRECT_GRAPH::addVertex(int vertex)
     if (existsVertex(vertex))
         throw runtime_error{ "vertex already in graph" };
     vertices.pb(vertex);
-    edgesIn[vertex] = vector <int>();    
+    edgesIn[vertex] = vector <int>();
     edgesOut[vertex] = vector <int>();
 }
 

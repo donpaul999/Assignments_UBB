@@ -3,7 +3,9 @@
 
 CMakeFiles/SortedMultiMap.dir/App.cpp.o: ../App.cpp
 CMakeFiles/SortedMultiMap.dir/App.cpp.o: ../ExtendedTest.h
+CMakeFiles/SortedMultiMap.dir/App.cpp.o: ../SMMIterator.h
 CMakeFiles/SortedMultiMap.dir/App.cpp.o: ../ShortTest.h
+CMakeFiles/SortedMultiMap.dir/App.cpp.o: ../SortedMultiMap.h
 
 CMakeFiles/SortedMultiMap.dir/ExtendedTest.cpp.o: ../ExtendedTest.cpp
 CMakeFiles/SortedMultiMap.dir/ExtendedTest.cpp.o: ../ExtendedTest.h

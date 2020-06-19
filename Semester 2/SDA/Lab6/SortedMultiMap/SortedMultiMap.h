@@ -58,8 +58,8 @@ public:
     // returns an iterator for the sorted multimap. The iterator will returns the pairs as required by the relation (given to the constructor)	
     SMMIterator iterator() const;
 
-    ValueIterator iteratorv(TKey key) const ;
+    int getValueRange() const;
 
-    // destructor
+        // destructor
     ~SortedMultiMap();
 };

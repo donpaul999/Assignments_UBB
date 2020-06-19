@@ -5,6 +5,52 @@
 #include <exception>
 using namespace std;
 
+//Theta(n)
+SortedMultiMap::SortedMultiMap(Relation r) {
+    relation = r;
+    mapSize = 0;
+    bst.capacity = 10;
+    bst.firstEmpty = 0;
+    bst.root = -1;
+    bst.info = new TElem[bst.capacity];
+    bst.left = new int[bst.capacity];
+    bst.right = new int[bst.capacity];
+    bst.parent = new int[bst.capacity];
+    for (int i = 0; i < bst.capacity; i++)
+    {
+        bst.info[i] = NULL_TELEM;
+        bst.left[i] = i + 1;
+        bst.right[i] = NULL_POS;
+        bst.parent[i] = NULL_POS;
+    }
+    bst.left[bst.capacity - 1] = -1;
+}
+
+int SortedMultiMap::getValueRange() const {
+    if(bst.root == -1)
+        return -1;
+    int max = bst.info[bst.root].second, min = bst.info[bst.root].second;
+    int current = bst.root, parseNode;
+    stack<int> nodes;
+    nodes.push(current);
+    while(!nodes.empty()) {
+        parseNode = nodes.top();
+        nodes.pop();
+        if (bst.info[parseNode].second > max)
+            max = bst.info[parseNode].second;
+        if (bst.info[parseNode].second < min)
+            min = bst.info[parseNode].second;
+        if(bst.right[parseNode] != NULL_POS) {
+            parseNode = bst.right[parseNode];
+            while (parseNode != NULL_POS) {
+                nodes.push(parseNode);
+                parseNode = bst.left[parseNode];
+            }
+        }
+    }
+    return max - min;
+}
+
 
 //Theta(n)
 void SortedMultiMap::resize()
@@ -40,26 +86,7 @@ void SortedMultiMap::resize()
 	bst.parent = newParent;
 }
 
-//Theta(n)
-SortedMultiMap::SortedMultiMap(Relation r) {
-	relation = r;
-	mapSize = 0;
-	bst.capacity = 10;
-	bst.firstEmpty = 0;
-	bst.root = -1;
-	bst.info = new TElem[bst.capacity];
-	bst.left = new int[bst.capacity];
-	bst.right = new int[bst.capacity];
-	bst.parent = new int[bst.capacity];
-	for (int i = 0; i < bst.capacity; i++)
-	{
-		bst.info[i] = NULL_TELEM;
-		bst.left[i] = i + 1;
-		bst.right[i] = NULL_POS;
-		bst.parent[i] = NULL_POS;
-	}
-	bst.left[bst.capacity - 1] = -1;
-}
+
 
 
 //O(n)
@@ -252,6 +279,8 @@ SortedMultiMap::~SortedMultiMap() {
 	delete[] bst.left;
 	delete[] bst.parent;
 }
+
+
 
 
 

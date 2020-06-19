@@ -58,8 +58,8 @@ int AdminService::adminAddMovie(const std::string& title, const std::string& gen
 {
     Movie movieUsed{ title, genre, yearOfRelease, numberOfLikes, trailer };
     MovieValidator::validateMovie(movieUsed);
-        std::unique_ptr<Action> addAction = std::make_unique<ActionAdd>(repository, movieUsed);
-        undoSteps.push_back(move(addAction));
+    std::unique_ptr<Action> addAction = std::make_unique<ActionAdd>(repository, movieUsed);
+    undoSteps.push_back(move(addAction));
     if(!inUndoRedo) {
         emptyRedo();
     }

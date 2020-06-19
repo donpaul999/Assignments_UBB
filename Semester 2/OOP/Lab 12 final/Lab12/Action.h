@@ -15,3 +15,57 @@ public:
 
 
 #endif //LAB8_ACTION_H
+
+
+
+
+
+
+
+
+
+
+
+
+//binary search has the complexity of log2(n)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
