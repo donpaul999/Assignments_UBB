@@ -1,0 +1,6 @@
+Mercedes-Benz | SUV | 2013 | blue
+Fiat | Bravo | 2007 | red
+Fiat | Bravo | 2017 | red
+Clio | Break | 2020 | green
+Fiat | Bravo | 2017 | blue
+Fiat | Bravo | 2016 | blue
