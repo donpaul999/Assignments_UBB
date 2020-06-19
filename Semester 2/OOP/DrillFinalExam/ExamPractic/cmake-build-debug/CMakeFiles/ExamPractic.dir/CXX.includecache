@@ -1,0 +1,86 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Controller.cpp
+Controller.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Controller.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Controller.h
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Repository.h
+Observer.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Observer.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/ExamPractic.cpp
+ExamPractic.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/ExamPractic.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/ExamPractic.h
+Controller.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Controller.h
+qmessagebox.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/qmessagebox.h
+QtWidgets/QMainWindow
+-
+ui_ExamPractic.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/ui_ExamPractic.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Issue.cpp
+Issue.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Issue.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Issue.h
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Observer.h
+vector
+-
+algorithm
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Repository.cpp
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Repository.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Repository.h
+Issue.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Issue.h
+User.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/User.h
+vector
+-
+fstream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/User.cpp
+User.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/User.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/User.h
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/main.cpp
+ExamPractic.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/ExamPractic.h
+Controller.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/DrillFinalExam/ExamPractic/Controller.h
+QtWidgets/QApplication
+-
+memory
+-
+cassert
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qdialog.h
+-
+

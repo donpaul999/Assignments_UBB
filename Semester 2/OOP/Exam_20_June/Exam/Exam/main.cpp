@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
         Examen* t = new Examen();
         service.addObserver(t);
         w.push_back(t);
-
     }
     for (int i = 0; i < w.size(); i++) {
         w[i]->setWindowTitle(QString::fromStdString(users[i]));

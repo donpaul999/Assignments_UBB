@@ -154,7 +154,6 @@ void FileRepository::changeFileName(const std::string& nameOfTheFileUsed)
     movieFileName = nameOfTheFileUsed;
     //writeMoviesToFile(movieList, movieFileName);
 }
-`
 
 //Get the movie at a certain position
 Movie FileRepository::getMovieAtPosition(int positionOfMovie)
