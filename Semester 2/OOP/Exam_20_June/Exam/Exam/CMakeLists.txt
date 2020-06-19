@@ -16,5 +16,7 @@ add_executable(Exam
         Repository.cpp
         Repository.h
         Service.cpp
-        Service.h)
+        Service.h
+        ExceptionClass.h
+        )
 target_link_libraries(Exam Qt5::Widgets)
