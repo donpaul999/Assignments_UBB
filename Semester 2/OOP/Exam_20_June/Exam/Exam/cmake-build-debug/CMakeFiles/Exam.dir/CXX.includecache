@@ -1,0 +1,118 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../x64/Debug/uic/ui_Examen.h
+QtCore/QVariant
+-
+QtWidgets/QApplication
+-
+QtWidgets/QHBoxLayout
+-
+QtWidgets/QLineEdit
+-
+QtWidgets/QListWidget
+-
+QtWidgets/QMainWindow
+-
+QtWidgets/QMenuBar
+-
+QtWidgets/QPushButton
+-
+QtWidgets/QStatusBar
+-
+QtWidgets/QToolBar
+-
+QtWidgets/QVBoxLayout
+-
+QtWidgets/QWidget
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.cpp
+Examen.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.h
+QModelIndexList
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.h
+string
+-
+QtWidgets/QMainWindow
+-
+ui_Examen.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/ui_Examen.h
+Service.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h
+qmessagebox.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/qmessagebox.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.cpp
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
+iostream
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
+vector
+-
+string
+-
+fstream
+-
+iostream
+-
+string
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.cpp
+Service.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/main.cpp
+Examen.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.h
+QtWidgets/QApplication
+-
+memory
+-
+cassert
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/x64/Debug/moc/moc_Examen.cpp
+memory
+-
+../../../Examen.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/QModelIndexList
+qabstractitemmodel.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+QtCore/qvariant.h
+-
+QtCore/qobject.h
+-
+QtCore/qhash.h
+-
+QtCore/qvector.h
+-
+
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qdialog.h
+-
+
