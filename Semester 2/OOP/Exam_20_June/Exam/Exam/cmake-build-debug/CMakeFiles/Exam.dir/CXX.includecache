@@ -6,81 +6,57 @@
 
 #IncludeRegexTransform: 
 
-../x64/Debug/uic/ui_Examen.h
+../x64/Debug/uic/ui_TableWidget.h
 QtCore/QVariant
 -
 QtWidgets/QApplication
 -
-QtWidgets/QHBoxLayout
--
-QtWidgets/QLineEdit
--
-QtWidgets/QListWidget
--
-QtWidgets/QMainWindow
--
-QtWidgets/QMenuBar
--
-QtWidgets/QPushButton
--
-QtWidgets/QStatusBar
--
-QtWidgets/QToolBar
--
-QtWidgets/QVBoxLayout
--
 QtWidgets/QWidget
 -
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.h
-string
--
-QtWidgets/QMainWindow
--
-ui_Examen.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/ui_Examen.h
-Service.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h
-qmessagebox.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/qmessagebox.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.cpp
+TableWidget.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Observer.h
-vector
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.h
+QWidget
 -
-algorithm
--
+ui_TableWidget.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/ui_TableWidget.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
-vector
--
-string
--
-fstream
--
-iostream
--
-string
--
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QWidget
+qwidget.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h
-Repository.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
-Observer.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Observer.h
-
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/main.cpp
-Examen.h
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.h
-QtWidgets/QApplication
--
-memory
--
-cassert
--
-
-/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
+/Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 QtWidgets/qtwidgetsglobal.h
 -
-QtWidgets/qdialog.h
+QtGui/qwindowdefs.h
+-
+QtCore/qobject.h
+-
+QtCore/qmargins.h
+-
+QtGui/qpaintdevice.h
+-
+QtGui/qpalette.h
+-
+QtGui/qfont.h
+-
+QtGui/qfontmetrics.h
+-
+QtGui/qfontinfo.h
+-
+QtWidgets/qsizepolicy.h
+-
+QtGui/qregion.h
+-
+QtGui/qbrush.h
+-
+QtGui/qcursor.h
+-
+QtGui/qkeysequence.h
+-
+QtGui/qevent.h
 -
 

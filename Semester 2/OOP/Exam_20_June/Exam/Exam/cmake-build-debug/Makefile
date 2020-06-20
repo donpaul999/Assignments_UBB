@@ -204,6 +204,60 @@ Service.cpp.s:
 	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/Service.cpp.s
 .PHONY : Service.cpp.s
 
+TableModel.o: TableModel.cpp.o
+
+.PHONY : TableModel.o
+
+# target to build an object file
+TableModel.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/TableModel.cpp.o
+.PHONY : TableModel.cpp.o
+
+TableModel.i: TableModel.cpp.i
+
+.PHONY : TableModel.i
+
+# target to preprocess a source file
+TableModel.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/TableModel.cpp.i
+.PHONY : TableModel.cpp.i
+
+TableModel.s: TableModel.cpp.s
+
+.PHONY : TableModel.s
+
+# target to generate assembly for a file
+TableModel.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/TableModel.cpp.s
+.PHONY : TableModel.cpp.s
+
+TableWidget.o: TableWidget.cpp.o
+
+.PHONY : TableWidget.o
+
+# target to build an object file
+TableWidget.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/TableWidget.cpp.o
+.PHONY : TableWidget.cpp.o
+
+TableWidget.i: TableWidget.cpp.i
+
+.PHONY : TableWidget.i
+
+# target to preprocess a source file
+TableWidget.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/TableWidget.cpp.i
+.PHONY : TableWidget.cpp.i
+
+TableWidget.s: TableWidget.cpp.s
+
+.PHONY : TableWidget.s
+
+# target to generate assembly for a file
+TableWidget.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/TableWidget.cpp.s
+.PHONY : TableWidget.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -276,6 +330,12 @@ help:
 	@echo "... Service.o"
 	@echo "... Service.i"
 	@echo "... Service.s"
+	@echo "... TableModel.o"
+	@echo "... TableModel.i"
+	@echo "... TableModel.s"
+	@echo "... TableWidget.o"
+	@echo "... TableWidget.i"
+	@echo "... TableWidget.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

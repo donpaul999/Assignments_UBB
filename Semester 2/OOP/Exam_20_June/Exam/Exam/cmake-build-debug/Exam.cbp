@@ -115,6 +115,9 @@
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/ExceptionClass.h">
 			<Option target="Exam"/>
 		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Observer.h">
+			<Option target="Exam"/>
+		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.cpp">
 			<Option target="Exam"/>
 		</Unit>
@@ -127,6 +130,18 @@
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h">
 			<Option target="Exam"/>
 		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.cpp">
+			<Option target="Exam"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.h">
+			<Option target="Exam"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.cpp">
+			<Option target="Exam"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.h">
+			<Option target="Exam"/>
+		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/main.cpp">
 			<Option target="Exam"/>
 		</Unit>
@@ -134,6 +149,9 @@
 			<Option target="Exam"/>
 		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/x64/Debug/uic/ui_Examen.h">
+			<Option target="Exam"/>
+		</Unit>
+		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/x64/Debug/uic/ui_TableWidget.h">
 			<Option target="Exam"/>
 		</Unit>
 		<Unit filename="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/CMakeLists.txt">

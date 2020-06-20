@@ -122,13 +122,41 @@ CMakeFiles/Exam.dir/Service.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam.dir/Service.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.cpp" -o CMakeFiles/Exam.dir/Service.cpp.s
 
+CMakeFiles/Exam.dir/TableModel.cpp.o: CMakeFiles/Exam.dir/flags.make
+CMakeFiles/Exam.dir/TableModel.cpp.o: ../TableModel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Exam.dir/TableModel.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Exam.dir/TableModel.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.cpp"
+
+CMakeFiles/Exam.dir/TableModel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Exam.dir/TableModel.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.cpp" > CMakeFiles/Exam.dir/TableModel.cpp.i
+
+CMakeFiles/Exam.dir/TableModel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam.dir/TableModel.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.cpp" -o CMakeFiles/Exam.dir/TableModel.cpp.s
+
+CMakeFiles/Exam.dir/TableWidget.cpp.o: CMakeFiles/Exam.dir/flags.make
+CMakeFiles/Exam.dir/TableWidget.cpp.o: ../TableWidget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Exam.dir/TableWidget.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Exam.dir/TableWidget.cpp.o -c "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.cpp"
+
+CMakeFiles/Exam.dir/TableWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Exam.dir/TableWidget.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.cpp" > CMakeFiles/Exam.dir/TableWidget.cpp.i
+
+CMakeFiles/Exam.dir/TableWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Exam.dir/TableWidget.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.cpp" -o CMakeFiles/Exam.dir/TableWidget.cpp.s
+
 # Object files for target Exam
 Exam_OBJECTS = \
 "CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o" \
 "CMakeFiles/Exam.dir/Examen.cpp.o" \
 "CMakeFiles/Exam.dir/main.cpp.o" \
 "CMakeFiles/Exam.dir/Repository.cpp.o" \
-"CMakeFiles/Exam.dir/Service.cpp.o"
+"CMakeFiles/Exam.dir/Service.cpp.o" \
+"CMakeFiles/Exam.dir/TableModel.cpp.o" \
+"CMakeFiles/Exam.dir/TableWidget.cpp.o"
 
 # External object files for target Exam
 Exam_EXTERNAL_OBJECTS =
@@ -138,12 +166,14 @@ Exam: CMakeFiles/Exam.dir/Examen.cpp.o
 Exam: CMakeFiles/Exam.dir/main.cpp.o
 Exam: CMakeFiles/Exam.dir/Repository.cpp.o
 Exam: CMakeFiles/Exam.dir/Service.cpp.o
+Exam: CMakeFiles/Exam.dir/TableModel.cpp.o
+Exam: CMakeFiles/Exam.dir/TableWidget.cpp.o
 Exam: CMakeFiles/Exam.dir/build.make
 Exam: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/QtWidgets
 Exam: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtGui.framework/QtGui
 Exam: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/QtCore
 Exam: CMakeFiles/Exam.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Exam"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Exam"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Exam.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

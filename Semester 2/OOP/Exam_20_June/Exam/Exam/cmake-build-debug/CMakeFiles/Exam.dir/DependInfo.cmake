@@ -7,6 +7,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.cpp" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles/Exam.dir/Examen.cpp.o"
   "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.cpp" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles/Exam.dir/Repository.cpp.o"
   "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.cpp" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles/Exam.dir/Service.cpp.o"
+  "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.cpp" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles/Exam.dir/TableModel.cpp.o"
+  "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.cpp" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles/Exam.dir/TableWidget.cpp.o"
   "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/main.cpp" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles/Exam.dir/main.cpp.o"
   "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/x64/Debug/moc/moc_Examen.cpp" "/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/cmake-build-debug/CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o"
   )

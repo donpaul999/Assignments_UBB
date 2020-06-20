@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Exam.dir/Examen.cpp.o"
   "CMakeFiles/Exam.dir/Repository.cpp.o"
   "CMakeFiles/Exam.dir/Service.cpp.o"
+  "CMakeFiles/Exam.dir/TableModel.cpp.o"
+  "CMakeFiles/Exam.dir/TableWidget.cpp.o"
   "CMakeFiles/Exam.dir/main.cpp.o"
   "CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o"
   "Exam"

@@ -19,6 +19,19 @@ CMakeFiles/Exam.dir/Service.cpp.o
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.cpp
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h
+CMakeFiles/Exam.dir/TableModel.cpp.o
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Observer.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.cpp
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+CMakeFiles/Exam.dir/TableWidget.cpp.o
+ ../x64/Debug/uic/ui_TableWidget.h
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.cpp
+ /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableWidget.h
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QWidget
+ /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
 CMakeFiles/Exam.dir/main.cpp.o
  ../x64/Debug/uic/ui_Examen.h
  /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.h

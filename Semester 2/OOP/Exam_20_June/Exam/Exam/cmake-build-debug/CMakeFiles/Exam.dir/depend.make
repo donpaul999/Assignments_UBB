@@ -19,6 +19,19 @@ CMakeFiles/Exam.dir/Service.cpp.o: ../Repository.h
 CMakeFiles/Exam.dir/Service.cpp.o: ../Service.cpp
 CMakeFiles/Exam.dir/Service.cpp.o: ../Service.h
 
+CMakeFiles/Exam.dir/TableModel.cpp.o: ../Observer.h
+CMakeFiles/Exam.dir/TableModel.cpp.o: ../Repository.h
+CMakeFiles/Exam.dir/TableModel.cpp.o: ../Service.h
+CMakeFiles/Exam.dir/TableModel.cpp.o: ../TableModel.cpp
+CMakeFiles/Exam.dir/TableModel.cpp.o: ../TableModel.h
+CMakeFiles/Exam.dir/TableModel.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+
+CMakeFiles/Exam.dir/TableWidget.cpp.o: ../x64/Debug/uic/ui_TableWidget.h
+CMakeFiles/Exam.dir/TableWidget.cpp.o: ../TableWidget.cpp
+CMakeFiles/Exam.dir/TableWidget.cpp.o: ../TableWidget.h
+CMakeFiles/Exam.dir/TableWidget.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QWidget
+CMakeFiles/Exam.dir/TableWidget.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qwidget.h
+
 CMakeFiles/Exam.dir/main.cpp.o: ../x64/Debug/uic/ui_Examen.h
 CMakeFiles/Exam.dir/main.cpp.o: ../Examen.h
 CMakeFiles/Exam.dir/main.cpp.o: ../Observer.h
