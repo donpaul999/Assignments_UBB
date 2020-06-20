@@ -86,20 +86,29 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Service.cpp" />
+    <ClCompile Include="TableModel.cpp" />
+    <ClCompile Include="TableWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Examen.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ExceptionClass.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Service.h" />
+    <ClInclude Include="x64\Debug\uic\ui_TableWidget.h" />
+    <QtMoc Include="TableWidget.h" />
+    <ClInclude Include="TableModel.h" />
     <ClInclude Include="x64\Debug\uic\ui_Examen.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Examen.ui" />
+    <QtUic Include="TableWidget.ui" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="input2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

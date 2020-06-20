@@ -4,6 +4,7 @@
 CMakeFiles/Exam.dir/Examen.cpp.o: ../x64/Debug/uic/ui_Examen.h
 CMakeFiles/Exam.dir/Examen.cpp.o: ../Examen.cpp
 CMakeFiles/Exam.dir/Examen.cpp.o: ../Examen.h
+CMakeFiles/Exam.dir/Examen.cpp.o: ../ExceptionClass.h
 CMakeFiles/Exam.dir/Examen.cpp.o: ../Observer.h
 CMakeFiles/Exam.dir/Examen.cpp.o: ../Repository.h
 CMakeFiles/Exam.dir/Examen.cpp.o: ../Service.h
@@ -14,11 +15,13 @@ CMakeFiles/Exam.dir/Examen.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidg
 CMakeFiles/Exam.dir/Repository.cpp.o: ../Repository.cpp
 CMakeFiles/Exam.dir/Repository.cpp.o: ../Repository.h
 
+CMakeFiles/Exam.dir/Service.cpp.o: ../ExceptionClass.h
 CMakeFiles/Exam.dir/Service.cpp.o: ../Observer.h
 CMakeFiles/Exam.dir/Service.cpp.o: ../Repository.h
 CMakeFiles/Exam.dir/Service.cpp.o: ../Service.cpp
 CMakeFiles/Exam.dir/Service.cpp.o: ../Service.h
 
+CMakeFiles/Exam.dir/TableModel.cpp.o: ../ExceptionClass.h
 CMakeFiles/Exam.dir/TableModel.cpp.o: ../Observer.h
 CMakeFiles/Exam.dir/TableModel.cpp.o: ../Repository.h
 CMakeFiles/Exam.dir/TableModel.cpp.o: ../Service.h
@@ -34,6 +37,7 @@ CMakeFiles/Exam.dir/TableWidget.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/Q
 
 CMakeFiles/Exam.dir/main.cpp.o: ../x64/Debug/uic/ui_Examen.h
 CMakeFiles/Exam.dir/main.cpp.o: ../Examen.h
+CMakeFiles/Exam.dir/main.cpp.o: ../ExceptionClass.h
 CMakeFiles/Exam.dir/main.cpp.o: ../Observer.h
 CMakeFiles/Exam.dir/main.cpp.o: ../Repository.h
 CMakeFiles/Exam.dir/main.cpp.o: ../Service.h
@@ -42,6 +46,7 @@ CMakeFiles/Exam.dir/main.cpp.o: /Users/paulcolta/Qt/5.14.2/clang_64/lib/QtWidget
 
 CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o: ../x64/Debug/uic/ui_Examen.h
 CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o: ../Examen.h
+CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o: ../ExceptionClass.h
 CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o: ../Observer.h
 CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o: ../Repository.h
 CMakeFiles/Exam.dir/x64/Debug/moc/moc_Examen.cpp.o: ../Service.h

@@ -1,6 +1,7 @@
 #pragma once
 #include "Repository.h"
 #include "Observer.h"
+#include "ExceptionClass.h"
 class Service: public Subject
 {
 private:

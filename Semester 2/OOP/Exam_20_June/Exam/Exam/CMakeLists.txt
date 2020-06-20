@@ -24,6 +24,5 @@ add_executable(Exam
         TableModel.h
         TableWidget.cpp
         TableWidget.h
-        ExceptionClass.h
         )
 target_link_libraries(Exam Qt5::Widgets)
