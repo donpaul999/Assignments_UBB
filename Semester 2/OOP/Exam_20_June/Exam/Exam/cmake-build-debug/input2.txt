@@ -1,0 +1,4 @@
+Star1,Constellation1,3,6,2000
+Sun,Constellation1,6,230
+UrsaStar,Ursa Major,56,230
+LyraStar,Lyra,2,123,1000

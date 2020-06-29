@@ -82,10 +82,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Astronomer.cpp" />
     <ClCompile Include="Examen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Service.cpp" />
+    <ClCompile Include="Star.cpp" />
     <ClCompile Include="TableModel.cpp" />
     <ClCompile Include="TableWidget.cpp" />
   </ItemGroup>
@@ -93,10 +95,12 @@
     <QtMoc Include="Examen.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Astronomer.h" />
     <ClInclude Include="ExceptionClass.h" />
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Repository.h" />
     <ClInclude Include="Service.h" />
+    <ClInclude Include="Star.h" />
     <ClInclude Include="x64\Debug\uic\ui_TableWidget.h" />
     <QtMoc Include="TableWidget.h" />
     <ClInclude Include="TableModel.h" />
@@ -109,6 +113,7 @@
   <ItemGroup>
     <Text Include="input.txt" />
     <Text Include="input2.txt" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

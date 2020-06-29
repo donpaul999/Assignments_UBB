@@ -123,6 +123,33 @@ Exam/fast:
 	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/build
 .PHONY : Exam/fast
 
+Astronomer.o: Astronomer.cpp.o
+
+.PHONY : Astronomer.o
+
+# target to build an object file
+Astronomer.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/Astronomer.cpp.o
+.PHONY : Astronomer.cpp.o
+
+Astronomer.i: Astronomer.cpp.i
+
+.PHONY : Astronomer.i
+
+# target to preprocess a source file
+Astronomer.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/Astronomer.cpp.i
+.PHONY : Astronomer.cpp.i
+
+Astronomer.s: Astronomer.cpp.s
+
+.PHONY : Astronomer.s
+
+# target to generate assembly for a file
+Astronomer.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/Astronomer.cpp.s
+.PHONY : Astronomer.cpp.s
+
 Examen.o: Examen.cpp.o
 
 .PHONY : Examen.o
@@ -203,6 +230,33 @@ Service.s: Service.cpp.s
 Service.cpp.s:
 	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/Service.cpp.s
 .PHONY : Service.cpp.s
+
+Star.o: Star.cpp.o
+
+.PHONY : Star.o
+
+# target to build an object file
+Star.cpp.o:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/Star.cpp.o
+.PHONY : Star.cpp.o
+
+Star.i: Star.cpp.i
+
+.PHONY : Star.i
+
+# target to preprocess a source file
+Star.cpp.i:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/Star.cpp.i
+.PHONY : Star.cpp.i
+
+Star.s: Star.cpp.s
+
+.PHONY : Star.s
+
+# target to generate assembly for a file
+Star.cpp.s:
+	$(MAKE) -f CMakeFiles/Exam.dir/build.make CMakeFiles/Exam.dir/Star.cpp.s
+.PHONY : Star.cpp.s
 
 TableModel.o: TableModel.cpp.o
 
@@ -321,6 +375,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Exam"
+	@echo "... Astronomer.o"
+	@echo "... Astronomer.i"
+	@echo "... Astronomer.s"
 	@echo "... Examen.o"
 	@echo "... Examen.i"
 	@echo "... Examen.s"
@@ -330,6 +387,9 @@ help:
 	@echo "... Service.o"
 	@echo "... Service.i"
 	@echo "... Service.s"
+	@echo "... Star.o"
+	@echo "... Star.i"
+	@echo "... Star.s"
 	@echo "... TableModel.o"
 	@echo "... TableModel.i"
 	@echo "... TableModel.s"

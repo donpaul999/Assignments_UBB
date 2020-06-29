@@ -4,6 +4,7 @@
 #include "ui_Examen.h"
 #include "Service.h"
 #include "qmessagebox.h"
+#include "TableModel.h"
 using namespace std;
 
 class Examen : public QMainWindow, public Observer
@@ -11,16 +12,20 @@ class Examen : public QMainWindow, public Observer
 	Q_OBJECT
 
 public:
-	Examen(Service& serviceGiven, QWidget *parent = Q_NULLPTR);
+	Examen(Astronomer& a, Service& serviceGiven, TableModel* model, QWidget *parent = Q_NULLPTR);
 
 private:
-	Ui::ExamenClass ui;
+	Ui::Examen ui;
+	vector<Star> starList;
+	TableModel* model;
 	Service& service;
+	bool constellation;
+	Astronomer& astronomer;
 	void connectSignalsAndSlots();
-	int getSelectedIndex() const;
+	//int getSelectedIndex() const;
 	void addObject();
-	void deleteObject();
-	void populateList();
+	void searchStar();
 	void addFunction();
 	void update() override;
+	void starsWithConstellation();
 };

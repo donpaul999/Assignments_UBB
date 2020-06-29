@@ -42,6 +42,12 @@
     <ClCompile Include="TableModel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Astronomer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Star.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Examen.h">
@@ -73,6 +79,12 @@
     <ClInclude Include="ExceptionClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Astronomer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Star.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Examen.ui">
@@ -87,6 +99,9 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="input2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="test.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

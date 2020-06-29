@@ -24,5 +24,9 @@ add_executable(Exam
         TableModel.h
         TableWidget.cpp
         TableWidget.h
+        Astronomer.cpp
+        Astronomer.h
+        Star.h
+        Star.cpp
         )
 target_link_libraries(Exam Qt5::Widgets)
