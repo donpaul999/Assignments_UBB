@@ -4,19 +4,61 @@
 std::vector <TElem> Repository::loadFromFile(std::string fileName)
 {
     std::vector<TElem> objectList;
-	/*
+	
 	std::string textLineFromFile, replacedString;
     std::ifstream fileInput(fileName); //remove unused lines
     std::vector<std::string> tokenizedInput;
     getline(fileInput, textLineFromFile);
     while (!fileInput.eof() && textLineFromFile != "") {
-        tokenizedInput = explode(textLineFromFile, " | ");
-		Car object{ tokenizedInput[0], tokenizedInput[1], stoi(tokenizedInput[2]), tokenizedInput[3]};
+        tokenizedInput = explode(textLineFromFile, ",");
+		Astronomer object{ tokenizedInput[0], tokenizedInput[1]};
 		objectList.push_back(object);
         getline(fileInput, textLineFromFile);
     }
-	*/
+	
 	return objectList;
+	fileInput.close();
+
+}
+
+std::vector<Star> Repository::loadStarsFromFile(std::string fileName)
+{
+	std::vector<Star> objectList;
+
+	std::string textLineFromFile, replacedString;
+	std::ifstream fileInput(fileName); //remove unused lines
+	std::vector<std::string> tokenizedInput;
+	getline(fileInput, textLineFromFile);
+	while (!fileInput.eof() && textLineFromFile != "") {
+		tokenizedInput = explode(textLineFromFile, ",");
+		Star object{ tokenizedInput[0], tokenizedInput[1], stoi(tokenizedInput[2]), stoi(tokenizedInput[3]) };
+		objectList.push_back(object);
+		getline(fileInput, textLineFromFile);
+	}
+
+	return objectList;
+	fileInput.close();
+}
+
+void Repository::writeToFile(std::string fileName)
+{
+	bool sortat = 0; 
+	while (!sortat) {
+		sortat = 1;
+		for (int i = 0; i < starList.size() - 1; ++i)
+			if (starList[i].getConstellation() > starList[i + 1].getConstellation())
+			{
+				Star aux = starList[i];
+				starList[i] = starList[i + 1];
+				starList[i + 1] = aux;
+				sortat = 0;
+			}
+	}
+	std::ofstream fileOutput(fileName); 
+
+	for (int i = 0; i < starList.size(); ++i)
+		fileOutput << starList[i].getName() << "," << starList[i].getConstellation() << "," << starList[i].getRA() << "," << starList[i].getDec() << "," << starList[i].getDiameter() << '\n';
+
 }
 
 const std::vector<std::string>Repository::explode(const std::string& stringToExplode, const std::string& separatorsUsed)
@@ -53,5 +95,24 @@ void Repository::deleteObject(TElem objectToDelete)
 	if (it != objectList.end())
 		objectList.erase(it);
 	//validari pe else
+}
+
+std::vector<Star> Repository::getStarsWithConstellation(std::string constellation)
+{
+	std::vector<Star> stars;
+	for (int i = 0; i < starList.size(); ++i)
+		if (starList[i].getConstellation() == constellation)
+			stars.push_back(starList[i]);
+	return stars;
+}
+
+std::vector<Star> Repository::searchStarByName(std::string input)
+{
+	std::vector <Star> stars;
+	for (int i = 0; i < starList.size(); ++i)
+		if (starList[i].getName().find(input) != std::string::npos) {
+			stars.push_back(starList[i]);
+		}
+	return stars;
 }
 

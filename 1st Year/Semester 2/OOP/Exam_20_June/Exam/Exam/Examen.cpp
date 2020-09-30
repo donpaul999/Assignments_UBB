@@ -1,44 +1,41 @@
 #include "Examen.h"
 #include <QModelIndexList>
 
-Examen::Examen(Service& serviceGiven, QWidget *parent)
-	: QMainWindow(parent), service(serviceGiven)
+Examen::Examen(Astronomer& a, Service& serviceGiven, TableModel* model, QWidget *parent)
+	: QMainWindow(parent), service(serviceGiven), astronomer(a), constellation(false), model(model)
 {
 	ui.setupUi(this);
-    populateList();
     connectSignalsAndSlots();
+    ui.tableView->setModel(this->model);
+    model->setStarList(service.getAllStars());
 }
 
 void Examen::connectSignalsAndSlots()
 {
-    QObject::connect(this->ui.objectListWidget, &QListWidget::itemSelectionChanged, [this](){
-        int selectedIndex = this->getSelectedIndex();
-        if (selectedIndex < 0 || this->service.getAllObjects().size() == 0)
-            return;
-        TElem objectUsed = this->service.getAllObjects()[selectedIndex];
-        this->ui.manLineEdit->setText(QString::fromStdString(objectUsed));
-        });
-    QObject::connect(this->ui.addButton, &QPushButton::clicked, this, &Examen::addFunction);
+
+    QObject::connect(this->ui.addPushButton, &QPushButton::clicked, this, &Examen::addObject);
+    QObject::connect(this->ui.starsCheck, &QCheckBox::stateChanged, this, &Examen::starsWithConstellation);
+    QObject::connect(this->ui.searchLineEdit, &QLineEdit::textChanged, this, &Examen::searchStar);
 
 }
 
-int Examen::getSelectedIndex() const
-{
-    
-    QModelIndexList selectedIndexes = this->ui.objectListWidget->selectionModel()->selectedIndexes();
-    if (selectedIndexes.size() == 0) {
-        this->ui.manLineEdit->clear();
-        return -1;
-    }
-	int selectedIndex = selectedIndexes.at(0).row();
-	return selectedIndex;
-}
 
 void Examen::addObject()
 {
-    //Preluam datele din line edit
+    std::string name = this->ui.nameLineEdit->text().toStdString();
+    std::string constell = this->ui.constellationLineEdit->text().toStdString();
+    std::string RAs = this->ui.raLineEdit->text().toStdString();
+    std::string Dec = this->ui.DecLineEdit->text().toStdString();
+    std::string diam = this->ui.diameterLineEdit->text().toStdString();
+    int RA, Deci, diami;
+    if (RAs != "" && Dec != "" && diam != "") {
+        RA = stoi(RAs);
+        Deci = stoi(Dec);
+        diami = stoi(diam);
+    }
+
     try {
-        this->service.addObject();
+        model->addInList(name, constell, RA, Deci, diami);
     }
     catch (std::exception & e) {
         QMessageBox::critical(this, "Error", e.what());
@@ -46,33 +43,33 @@ void Examen::addObject()
     }
 }
 
-void Examen::deleteObject()
+void Examen::searchStar()
 {
-    //Preluam datele din line edit
-    try {
-        this->service.deleteObject();
-    }
-    catch (std::exception & e) {
-        QMessageBox::critical(this, "Error", e.what());
-        return;
-    }
+    std::string name = this->ui.searchLineEdit->text().toStdString();
+    model->searchByName(name);
 }
 
-void Examen::populateList()
-{
-    this->ui.objectListWidget->clear();
-    if (this->service.getAllObjects().size() == 0)
-        return;
-    vector<TElem> allObjects = this->service.getAllObjects();
-    for (TElem& object : allObjects) {
-        this->ui.objectListWidget->addItem(QString::fromStdString(object));
-    }
-}
+
 
 void Examen::addFunction()
 {
 }
 
 void Examen::update() {
-    populateList();
+    model->setStarList(service.getAllStars());
+    model->layoutChanged();
+    constellation = false;
+}
+
+void Examen::starsWithConstellation()
+{
+    if (constellation == false) {
+        vector<Star> stars = service.getStarsWithConstellation(astronomer.getConstellation());
+        model->setStarList(stars);
+        constellation = true;
+    }
+    else {
+        model->setStarList(service.getAllStars());
+        constellation = false;
+    }
 }

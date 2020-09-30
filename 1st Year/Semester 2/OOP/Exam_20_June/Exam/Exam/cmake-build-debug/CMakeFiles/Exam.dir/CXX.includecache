@@ -11,25 +11,27 @@ QtCore/QVariant
 -
 QtWidgets/QApplication
 -
+QtWidgets/QCheckBox
+-
 QtWidgets/QHBoxLayout
+-
+QtWidgets/QHeaderView
+-
+QtWidgets/QLabel
 -
 QtWidgets/QLineEdit
 -
-QtWidgets/QListWidget
--
-QtWidgets/QMainWindow
--
-QtWidgets/QMenuBar
--
 QtWidgets/QPushButton
 -
-QtWidgets/QStatusBar
--
-QtWidgets/QToolBar
+QtWidgets/QTableView
 -
 QtWidgets/QVBoxLayout
 -
 QtWidgets/QWidget
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Astronomer.h
+string
 -
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Examen.cpp
@@ -49,6 +51,8 @@ Service.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.h
 qmessagebox.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/qmessagebox.h
+TableModel.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.h
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/ExceptionClass.h
 string
@@ -58,6 +62,12 @@ string
 vector
 -
 algorithm
+-
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.cpp
+Repository.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
+iostream
 -
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Repository.h
@@ -71,6 +81,10 @@ iostream
 -
 string
 -
+Astronomer.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Astronomer.h
+Star.h
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Star.h
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Service.cpp
 Service.h
@@ -83,6 +97,10 @@ Observer.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Observer.h
 ExceptionClass.h
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/ExceptionClass.h
+
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/Star.h
+string
+-
 
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/Semester 2/OOP/Exam_20_June/Exam/Exam/TableModel.cpp
 TableModel.h

@@ -23,13 +23,24 @@ const std::vector<std::string>Service::explode(const std::string& stringToExplod
 	return explodedString;
 }
 
-void Service::addObject()
+//Parameters- the data for a star
+//If the name/diameter is invalid, throw an exception error
+//else call Repo function to add a star
+void Service::addStar(std::string name, std::string constellation, int RA, int Dec, int diameter)
 {
-	TElem objectToAdd;
-	//creare obiect;
-	repo->addObject(objectToAdd);
+	if (name == "")
+		throw ExceptionClass("Empty Name");
+	if(diameter <= 0)
+		throw ExceptionClass("Invalid diameter");
+	Star x(name, constellation, RA, Dec, diameter);
+	std::vector<Star> starList = repo->getAllStars();
+	for(int i = 0; i < starList.size(); ++i)
+		if(x.getName() == starList[i].getName())
+			throw ExceptionClass("Name already used");
+	repo->addStar(x);
 	notify();
 }
+
 
 void Service::deleteObject()
 {

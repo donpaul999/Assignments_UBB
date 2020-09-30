@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Exam.dir/Astronomer.cpp.o"
   "CMakeFiles/Exam.dir/Examen.cpp.o"
   "CMakeFiles/Exam.dir/Repository.cpp.o"
   "CMakeFiles/Exam.dir/Service.cpp.o"
+  "CMakeFiles/Exam.dir/Star.cpp.o"
   "CMakeFiles/Exam.dir/TableModel.cpp.o"
   "CMakeFiles/Exam.dir/TableWidget.cpp.o"
   "CMakeFiles/Exam.dir/main.cpp.o"
