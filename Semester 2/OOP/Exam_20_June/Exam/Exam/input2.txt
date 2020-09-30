@@ -1,5 +1,0 @@
-da12,123,1232,23,0
-Star1,Constellation1,3,6,0
-Sun,Constellation1,6,230,0
-Test,Constellation1,12,123,123
-LyraStar,Lyra,2,123,0
