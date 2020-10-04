@@ -12,15 +12,5 @@ E = A.*B
 
 x=0:0.1:3
 y=(x.^5)/10
-z=x.*sin(x)
-t=cos(x)
-figure('name','Graph display');
-subplot(3,1,1)
-plot(x,y)
-legend('x^5/10')
-subplot(3,1,2)
-plot(x,t)
-legend('x*sin(x)');
-subplot(3,1,3)
-plot(x,z)
-legend('cos(x)');
+w=plot(x,y);
+waitfor(w);
