@@ -1,4 +1,4 @@
-create table Categories
+create table ubb_schema.Categories
 (
 	id int identity
 		primary key,
@@ -7,7 +7,7 @@ create table Categories
 )
 go
 
-create table Clients
+create table ubb_schema.Clients
 (
 	id int identity
 		primary key,
@@ -17,7 +17,7 @@ create table Clients
 )
 go
 
-create table Equipment
+create table ubb_schema.Equipment
 (
 	id int identity
 		primary key,
@@ -25,7 +25,7 @@ create table Equipment
 )
 go
 
-create table Programmers
+create table ubb_schema.Programmers
 (
 	id int identity
 		primary key,
@@ -36,32 +36,32 @@ create table Programmers
 )
 go
 
-create table EquipmentProgrammers
+create table ubb_schema.EquipmentProgrammers
 (
 	id int identity
 		primary key,
 	programmer_id int
 		constraint TEquipmentProgrammers_Technologies_id_fk
-			references Programmers,
+			references ubb_schema.Programmers,
 	equipment_id int
 		constraint EquipmentProgrammers_Equipment_id_fk
-			references Equipment
+			references ubb_schema.Equipment
 )
 go
 
-create table Holidays
+create table ubb_schema.Holidays
 (
 	id int identity
 		primary key,
 	programmer_id int
 		constraint Holidays_Programmers_id_fk
-			references Programmers,
+			references ubb_schema.Programmers,
 	start_date date,
 	end_date date
 )
 go
 
-create table Projects
+create table ubb_schema.Projects
 (
 	id int identity
 		primary key,
@@ -69,27 +69,27 @@ create table Projects
 	description varchar(300),
 	client_id int
 		constraint client_id
-			references Clients,
+			references ubb_schema.Clients,
 	category_id int
 		constraint Projects_Categories_id_fk
-			references Categories
+			references ubb_schema.Categories
 )
 go
 
-create table ProjectsProgrammers
+create table ubb_schema.ProjectsProgrammers
 (
 	id int identity
 		primary key,
 	project_id int
 		constraint ProjectsProgrammers_Projects_id_fk
-			references Projects,
+			references ubb_schema.Projects,
 	programmer_id int
 		constraint ProjectsProgrammers_Programmers_id_fk_2
-			references Programmers
+			references ubb_schema.Programmers
 )
 go
 
-create table Technologies
+create table ubb_schema.Technologies
 (
 	id int identity
 		primary key,
@@ -97,16 +97,16 @@ create table Technologies
 )
 go
 
-create table TechnologiesProjects
+create table ubb_schema.TechnologiesProjects
 (
 	id int identity
 		primary key,
 	project_id int
 		constraint TechnologiesProjects_Technologies_id_fk
-			references Projects,
+			references ubb_schema.Projects,
 	technology_id int
 		constraint TechnologiesProjects_Technologies_id_fk_2
-			references Technologies
+			references ubb_schema.Technologies
 )
 go
 
