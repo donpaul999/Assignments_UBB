@@ -11,11 +11,13 @@ public class AppView {
         Controller controller = new Controller(repo);
 
         Fish f1 = new Fish("Green", 5);
+        Fish f2 = new Fish("Blue", 2);
         Turtle t1 = new Turtle("Jack", 10);
         Turtle t2 = new Turtle("Jack2", 0);
 
         try {
             controller.addElement(f1);
+            controller.addElement(f2);
             controller.addElement(t1);
             controller.addElement(t2);
         }
