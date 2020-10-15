@@ -1,0 +1,52 @@
+%13.a
+%is_inside(L:List, E:Element)
+% (i,i) deterministic
+% 0, if l is empty
+% 1, if l1 == l2
+% is_inside(l3...ln, l1) otherwise
+is_inside([H|_], H):- !.
+is_inside([_|T], E):-
+    	is_inside(T, E).
+
+%list_to_set(L:list):
+%	[], if l is empty
+%	list_to_set(l2...ln) if is_inside(l1,l2...ln) == 1
+%	l1 U list_to_set(l2...ln) otherwise
+list_to_set([H], [H]).
+list_to_set([H|T], E):-%skip over the element if it exists in the rest of the list
+    is_inside(T, H),
+    !,
+    list_to_set(T, E).
+list_to_set([H|T], [H|R]):-
+    list_to_set(T, R).
+
+b.
+
+
+gcd(0, A, A):- A > 0, !.
+gcd(A, B, R):- A >= B, R1 is A-B, gcd(R1,B,R).
+gcd(A, B, R):- A < B, R1 is B-A, gcd(R1,A,R).
+
+gcd_in_list([], R):- R is 0, !.
+gcd_in_list(H, H):- !.
+gcd_in_list([H|[S|T]], R):-
+    gcd(H,S,W),
+    H is W,
+    gcd_in_list([S|T], R).
+
+gcd(a,b)
+	a, if b == 0
+	gcd(b, a % b), otherwise
+
+
+gcd_in_list(l1, l2...ln):
+	0, if l is empty
+	l1, if l has only one element
+	gcd_in_list(gcd(l1,l2), l3...ln)
+
+
+
+
+
+
+
