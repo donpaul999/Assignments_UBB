@@ -22,6 +22,11 @@ public class MyStack<T> implements IMyStack<T> {
     }
 
     @Override
+    public boolean isEmpty() {
+        return stk.isEmpty();
+    }
+
+    @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
         for (T el: stk) {

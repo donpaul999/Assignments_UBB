@@ -28,6 +28,10 @@ public class PrgState {
         return symTable;
     }
 
+    public IStmt getOriginalProgram(){
+        return originalProgram;
+    }
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
