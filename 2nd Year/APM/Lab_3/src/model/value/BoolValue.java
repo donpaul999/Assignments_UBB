@@ -10,6 +10,10 @@ public class BoolValue implements Value {
         this.val = v;
     }
 
+    public BoolValue() {
+        val = false;
+    }
+
     public boolean getValue() {
         return val;
     }

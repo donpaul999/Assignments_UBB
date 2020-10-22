@@ -2,11 +2,15 @@ package model.ADT;
 
 import exceptions.MyException;
 
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class MyList<T> implements IMyList<T> {
-    private List<T> list;
+    private LinkedList<T> list;
+
+    public MyList() {
+        list = new LinkedList<>();
+    }
+
     @Override
     public void add(T item) {
         list.add(item);

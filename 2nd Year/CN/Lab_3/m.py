@@ -1,6 +1,11 @@
-
-y=-100
+f = open("d.csv", 'r')
+sum = 0
 while True:
-    if (10) // (4 * y - 10) == (10) / (4 * y - 10):
-        print("CORRECT" + str(y))
-    y += 1
+    s = f.readline().strip()
+    if not s:
+        break
+    s = s.split(",")
+    print(s[5])
+    sum += float(s[5])
+f.close()
+print(s)

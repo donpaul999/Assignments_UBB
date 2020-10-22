@@ -8,4 +8,6 @@ public interface IMyDictionary<K, V> {
     public void remove(K key) throws MyException;
 
     boolean isDefined(K id);
+
+    void add(K name, V intValue) throws MyException;
 }

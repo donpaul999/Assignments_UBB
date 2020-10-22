@@ -7,13 +7,16 @@ import java.util.Stack;
 public class MyStack<T> implements IMyStack<T> {
     private Stack<T> stk;
 
+    public MyStack() {
+        this.stk = new Stack<T>();
+    }
+
     @Override
     public T pop() throws MyException {
         if (stk.size() == 0) {
             throw new MyException("Stack is empty");
         }
-        T top = (T) stk.pop();
-        return top;
+        return stk.pop();
     }
 
     @Override

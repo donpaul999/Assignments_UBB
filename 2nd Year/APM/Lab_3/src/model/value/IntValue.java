@@ -10,6 +10,10 @@ public class IntValue implements Value {
         val = v;
     }
 
+    public IntValue() {
+        val  = 0;
+    }
+
     public int getValue() {
         return val;
     }

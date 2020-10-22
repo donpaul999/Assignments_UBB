@@ -1,8 +1,6 @@
 package model;
 
-import model.ADT.IMyDictionary;
-import model.ADT.IMyList;
-import model.ADT.IMyStack;
+import model.ADT.*;
 import model.statement.IStmt;
 import model.value.Value;
 
@@ -12,12 +10,18 @@ public class PrgState {
     private IMyList<Value> out;
     private IStmt originalProgram; //optional field, but good to have
 
-    PrgState(IMyStack<IStmt> stk, IMyDictionary<String,Value> symtbl, IMyList<Value> ot, IStmt prg) {
+    public PrgState(IMyStack<IStmt> stk, IMyDictionary<String, Value> symtbl, IMyList<Value> ot, IStmt prg) {
         exeStack = stk;
         symTable = symtbl;
         out = ot;
         originalProgram = prg.deepCopy();
         stk.push(prg);
+    }
+
+    public PrgState(IMyStack<IStmt> stack, MyDictionary<String, Value> stringValueMyDictionary, MyList<Value> valueMyList) {
+        exeStack = stack;
+        symTable = stringValueMyDictionary;
+        out = valueMyList;
     }
 
     public IMyStack<IStmt> getStack() {
@@ -40,5 +44,21 @@ public class PrgState {
         str.append("Sym Table: ").append(symTable).append(" \n");
         str.append("Out List: ").append(out).append(" \n");
         return str.toString();
+    }
+
+    public void setExeStack(IMyStack<IStmt> stack) {
+        exeStack = stack;
+    }
+
+    public void setSymTable(IMyDictionary<String, Value> table) {
+        symTable = table;
+    }
+
+    public IMyList<Value> getOutConsole() {
+        return out;
+    }
+
+    public void setOutConsole(IMyList<Value> outConsole) {
+        out = outConsole;
     }
 }

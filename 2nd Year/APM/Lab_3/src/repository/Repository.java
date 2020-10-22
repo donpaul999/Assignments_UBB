@@ -6,10 +6,11 @@ import model.statement.IStmt;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Repository implements IRepo {
-    private List<PrgState> states;
+    private LinkedList<PrgState> states;
     private IStmt originalProgram;
     private String fileName;
 
@@ -18,19 +19,21 @@ public class Repository implements IRepo {
         this.fileName = fileName;
     }
 
+    public Repository() {
+        states = new LinkedList<>();
+    }
+
     @Override
     public List<PrgState> getPrgList() {
         return states;
     }
 
-    @Override
-    public void setPrgList(List<PrgState> list) {
-        states = list;
-    }
 
     @Override
     public PrgState getCrtPrg() {
-        return states.get(states.size() - 1);
+        PrgState state =  states.getFirst();
+        states.removeFirst();
+        return state;
     }
 
     @Override
@@ -46,5 +49,10 @@ public class Repository implements IRepo {
         catch (IOException e) {
             throw new MyException(e.getMessage());
         }
+    }
+
+    @Override
+    public void addState(PrgState state) {
+        states.addLast(state);
     }
 }

@@ -33,14 +33,16 @@ public class AssignStmt implements IStmt {
                 symTable.update(id, value);
             }
             else {
-                throw new MyException("declared type of variable " +
+                throw new MyException("Declared type of variable " +
                         id +
                         " and type of the assigned expression do not match");
             }
         }
         else {
-            throw new MyException("the used variable " + id + " was not declared before");
+            throw new MyException("The used variable " + id + " was not declared before");
         }
+        state.setExeStack(stk);
+        state.setSymTable(symTable);
         return state;
     }
 
