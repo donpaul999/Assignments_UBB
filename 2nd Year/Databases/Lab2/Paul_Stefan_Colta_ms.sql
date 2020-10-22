@@ -128,9 +128,32 @@ SELECT id, name FROM ubb_schema.Technologies
 WHERE id NOT IN (1,3,5)
 
 SELECT id, name FROM ubb_schema.Clients
-EXCEPT
+EXCEPTc
 SELECT id, name FROM ubb_schema.Programmers
 WHERE id NOT IN (2,4,6,8)
+
+
+--JOIN
+
+SELECT P.name, E.name
+FROM ubb_schema.Programmers P
+INNER JOIN ubb_schema.EquipmentProgrammers EP ON P.id = EP.programmer_id
+INNER JOIN ubb_schema.Equipment E ON EP.equipment_id = E.id
+
+SELECT P.name, Pr.name
+FROM ubb_schema.Programmers P
+LEFT OUTER JOIN ubb_schema.ProjectsProgrammers PP ON P.id = PP.programmer_id
+LEFT OUTER JOIN ubb_schema.Projects Pr ON Pr.id = PP.project_id
+WHERE
+
+-- m:n
+
+SELECT T.name, Pr.name
+FROM ubb_schema.Technologies T
+RIGHT OUTER JOIN ubb_schema.TechnologiesProjects TP ON T.id = TP.technology_id
+RIGHT OUTER JOIN ubb_schema.Projects Pr ON Pr.id = TP.project_id
+
+
 
 
 
