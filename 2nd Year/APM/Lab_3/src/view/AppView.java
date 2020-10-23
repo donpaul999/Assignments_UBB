@@ -11,8 +11,9 @@ public class AppView {
 
     public void printMenu() {
         System.out.println("****************\n");
-        System.out.println("Example_1 = (int x;(x=17;print(x)))\n");
-        System.out.println("Example_2 = (int x;(x=3+5*7;print(x)))\n");
+        System.out.println("Example_1 = int x;  x=17;   print(x)\n");
+        System.out.println("Example_2 = int x;  x=3+5*7;    print(x)\n");
+        System.out.println("Example_3 = bool s; int x;  s=false;    if (s == true) then {x=20} else {x=2};  print(x)\n");
         System.out.println("****************\n");
     }
 

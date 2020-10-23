@@ -4,7 +4,7 @@ public class BoolType implements Type {
 
     @Override
     public boolean equals(Object another) {
-        return another instanceof IntType;
+        return another instanceof BoolType;
     }
 
     @Override

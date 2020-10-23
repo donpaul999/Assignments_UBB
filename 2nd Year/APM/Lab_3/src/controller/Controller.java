@@ -10,7 +10,9 @@ import model.expression.ArithExp;
 import model.expression.ValueExp;
 import model.expression.VarExp;
 import model.statement.*;
+import model.type.BoolType;
 import model.type.IntType;
+import model.value.BoolValue;
 import model.value.IntValue;
 import model.value.Value;
 import repository.IRepo;
@@ -69,8 +71,24 @@ public class Controller {
                 )
         );
 
+        IStmt example_3 = new CompStmt(
+                new VarDeclStmt("s" , new BoolType()),
+                new CompStmt(new VarDeclStmt("x", new IntType()),
+                        new CompStmt(
+                                new AssignStmt("s", new ValueExp(new BoolValue(false))),
+                                new CompStmt(
+                                    new IfStmt(
+                                            new VarExp("s"),
+                                            new AssignStmt("x", new ValueExp(new IntValue(20))),
+                                            new AssignStmt("x", new ValueExp(new IntValue(2)))
+                                    ),
+                                    new PrintStmt(new VarExp("x"))
+                                )
+                        )
+                )
+        );
 
-        //stack.push(example_2);
+        //stack.push(example_3);
         PrgState state = new PrgState(stack, new MyDictionary<String, Value>(), new MyList<Value>());
         System.out.println(state);
         repository.addState(state);

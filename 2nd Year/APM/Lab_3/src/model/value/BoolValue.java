@@ -28,4 +28,13 @@ public class BoolValue implements Value {
         return new BoolType();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof BoolValue))
+            return false;
+        BoolValue t = (BoolValue) o;
+        return t.val == val;
+        //return val.equals(t.val);
+    }
 }
