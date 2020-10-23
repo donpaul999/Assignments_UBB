@@ -1,11 +1,14 @@
 package controller;
 
+import model.exceptions.ADTException;
+import model.exceptions.ExprException;
 import model.exceptions.MyException;
 import model.ADT.IMyStack;
 import model.ADT.MyDictionary;
 import model.ADT.MyList;
 import model.ADT.MyStack;
 import model.PrgState;
+import model.exceptions.StmtException;
 import model.expression.ArithExp;
 import model.expression.ValueExp;
 import model.expression.VarExp;
@@ -24,7 +27,7 @@ public class Controller {
         this.repository = repo;
     }
 
-    public PrgState oneStep(PrgState state) throws MyException {
+    public PrgState oneStep(PrgState state) throws MyException, ADTException, StmtException, ExprException {
         IMyStack<IStmt> stack = state.getStack();
         if (stack.isEmpty()) {
             throw new MyException("Stack is empty");
@@ -41,7 +44,7 @@ public class Controller {
             try {
                 oneStep(prg);
                 System.out.println(prg);
-            } catch (MyException exception) {
+            } catch (MyException | ADTException | StmtException | ExprException exception) {
                 throw new MyException(exception.getMessage());
             }
         }
