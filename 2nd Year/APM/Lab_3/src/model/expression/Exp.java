@@ -7,5 +7,4 @@ import model.value.Value;
 public interface Exp {
     public Value eval(IMyDictionary<String,Value> tbl) throws MyException;
 
-    Exp deepCopy();
 }

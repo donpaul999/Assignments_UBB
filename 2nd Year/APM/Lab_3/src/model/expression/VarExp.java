@@ -17,11 +17,6 @@ public class VarExp implements Exp {
     }
 
     @Override
-    public Exp deepCopy() {
-        return new VarExp(new String(id));
-    }
-
-    @Override
     public String toString() {
         return id;
     }

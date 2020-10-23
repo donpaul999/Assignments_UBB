@@ -28,8 +28,4 @@ public class BoolValue implements Value {
         return new BoolType();
     }
 
-    @Override
-    public Value deepCopy() {
-        return new BoolValue(val);
-    }
 }

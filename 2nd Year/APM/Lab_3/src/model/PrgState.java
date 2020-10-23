@@ -14,7 +14,7 @@ public class PrgState {
         exeStack = stk;
         symTable = symtbl;
         out = ot;
-        originalProgram = prg.deepCopy();
+        originalProgram = prg;
         stk.push(prg);
     }
 
@@ -42,7 +42,7 @@ public class PrgState {
         str.append("Program state\n");
         str.append("Exe Stack: ").append(exeStack).append(" \n");
         str.append("Sym Table: ").append(symTable).append(" \n");
-        str.append("Out List: ").append(out).append(" \n");
+        str.append("Output Console: ").append(out).append(" \n");
         return str.toString();
     }
 

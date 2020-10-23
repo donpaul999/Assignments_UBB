@@ -11,10 +11,9 @@ public class AppView {
 
     public void printMenu() {
         System.out.println("****************\n");
-        /*TODO add examples
-        
-         */
-
+        System.out.println("Example_1 = (int x;(x=17;print(x)))\n");
+        System.out.println("Example_2 = (int x;(x=3+5*7;print(x)))\n");
+        System.out.println("****************\n");
     }
 
     public AppView() {

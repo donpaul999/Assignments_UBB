@@ -6,6 +6,7 @@ import model.ADT.MyDictionary;
 import model.ADT.MyList;
 import model.ADT.MyStack;
 import model.PrgState;
+import model.expression.ArithExp;
 import model.expression.ValueExp;
 import model.expression.VarExp;
 import model.statement.*;
@@ -46,29 +47,30 @@ public class Controller {
 
     public void example() {
         IMyStack<IStmt> stack = new MyStack<>();
-        IStmt ex = new CompStmt(
-                new VarDeclStmt(
-                        "v",
-                        new IntType()
-                ),
+        IStmt example_1 = new CompStmt(
+                new VarDeclStmt("x", new IntType()),
                 new CompStmt(
-                        new AssignStmt(
-                                "v",
-                                new ValueExp(
-                                        new IntValue(2)
-                                )
-                        ),
-                        new PrintStmt(
-                                new VarExp(
-                                        "v"
-                                )
-                        )
+                        new AssignStmt("x", new ValueExp(new IntValue(17))),
+                        new PrintStmt(new VarExp("x"))
                 )
         );
 
-        System.out.println(ex);
+        IStmt example_2 = new CompStmt(
+                new VarDeclStmt("x" , new IntType()),
+                new CompStmt(new AssignStmt("x", new ArithExp(
+                                        new ValueExp(new IntValue(3)),
+                                        new ArithExp(
+                                                new ValueExp(new IntValue(5)), new ValueExp(new IntValue(7)), '*'
+                                        ),
+                                        '+'
+                                    )
+                             ),
+                        new PrintStmt(new VarExp("x"))
+                )
+        );
 
-        stack.push(ex);
+
+        //stack.push(example_2);
         PrgState state = new PrgState(stack, new MyDictionary<String, Value>(), new MyList<Value>());
         System.out.println(state);
         repository.addState(state);

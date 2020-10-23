@@ -5,10 +5,10 @@ import exceptions.MyException;
 import java.util.*;
 
 public class MyList<T> implements IMyList<T> {
-    private LinkedList<T> list;
+    private List<T> list;
 
     public MyList() {
-        list = new LinkedList<>();
+        list = new ArrayList<>();
     }
 
     @Override

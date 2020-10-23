@@ -26,9 +26,4 @@ public class IfStmt implements IStmt {
         return state;
     }
 
-    @Override
-    public IStmt deepCopy() {
-        return new IfStmt(expression.deepCopy(), thenStatement.deepCopy(), elseStatement.deepCopy());
-    }
-
 }

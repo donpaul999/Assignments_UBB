@@ -11,10 +11,18 @@ public class ArithExp implements Exp {
     Exp e2;
     int op; //1-plus, 2-minus, 3-star, 4-divide
 
-    public ArithExp(Exp deepCopy, Exp deepCopy1, int op) {
+
+    public ArithExp(Exp deepCopy, Exp deepCopy1, char op) {
         this.e1 = deepCopy;
         this.e2 = deepCopy1;
-        this.op = op;
+        if(op == '+')
+            this.op = 1;
+        if(op == '-')
+            this.op = 2;
+        if(op == '*')
+            this.op = 3;
+        if(op == '/')
+            this.op = 4;
     }
 
     @Override
@@ -57,9 +65,21 @@ public class ArithExp implements Exp {
         return new IntValue(0);
     }
 
-    @Override
-    public Exp deepCopy() {
-        return new ArithExp(e1.deepCopy(), e2.deepCopy(), op);
-    }
 
+
+    @Override
+    public String toString() {
+        switch (op) {
+            case 1:
+                return e1.toString() + "+" + e2.toString();
+            case 2:
+                return e1.toString() + "-" + e2.toString();
+            case 3:
+                return e1.toString() + "*" + e2.toString();
+            case 4:
+                return e1.toString() + '/' + e2.toString();
+            default:
+                return "";
+        }
+    }
 }

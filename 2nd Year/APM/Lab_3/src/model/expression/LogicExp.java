@@ -46,8 +46,4 @@ public class LogicExp implements Exp {
         return new BoolValue(false);
     }
 
-    @Override
-    public Exp deepCopy() {
-        return new LogicExp(e1.deepCopy(), e2.deepCopy(), op);
-    }
 }
