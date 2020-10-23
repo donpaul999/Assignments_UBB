@@ -1,9 +1,9 @@
 package model.ADT;
 
-import exceptions.MyException;
+import model.exceptions.ADTException;
+import model.exceptions.MyException;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class MyDictionary<K, V> implements IMyDictionary<K,V> {
@@ -13,9 +13,9 @@ public class MyDictionary<K, V> implements IMyDictionary<K,V> {
         map = new HashMap<>();
     }
     @Override
-    public void add(K id, V value) throws MyException{
+    public void add(K id, V value) throws ADTException {
         if (map.containsKey(id)) {
-            throw new MyException("Element already exists");
+            throw new ADTException("Element already exists");
         }
         map.put(id, value);
     }
@@ -31,9 +31,9 @@ public class MyDictionary<K, V> implements IMyDictionary<K,V> {
     }
 
     @Override
-    public void remove(K key) throws MyException {
+    public void remove(K key) throws ADTException {
         if (!map.containsKey(key)) {
-            throw new MyException("Key not exists in the map");
+            throw new ADTException("Key not exists in the map");
         }
         map.remove(key);
     }

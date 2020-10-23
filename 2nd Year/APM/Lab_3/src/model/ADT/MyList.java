@@ -1,6 +1,7 @@
 package model.ADT;
 
-import exceptions.MyException;
+import model.exceptions.ADTException;
+import model.exceptions.MyException;
 
 import java.util.*;
 
@@ -17,22 +18,22 @@ public class MyList<T> implements IMyList<T> {
     }
 
     @Override
-    public void remove(T item) throws MyException {
+    public void remove(T item) throws ADTException {
         try {
             list.remove(item);
         }
         catch (NoSuchElementException e) {
-            throw new MyException("No such element " + item);
+            throw new ADTException("No such element " + item);
         }
     }
 
     @Override
-    public T get(int index) throws MyException {
+    public T get(int index) throws ADTException {
         try {
             return list.get(index);
         }
         catch (IndexOutOfBoundsException e) {
-            throw new MyException("Index out of bounds");
+            throw new ADTException("Index out of bounds");
         }
     }
 

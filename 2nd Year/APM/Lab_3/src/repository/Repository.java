@@ -1,6 +1,6 @@
 package repository;
 
-import exceptions.MyException;
+import model.exceptions.MyException;
 import model.PrgState;
 import model.statement.IStmt;
 

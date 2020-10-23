@@ -1,6 +1,6 @@
 package controller;
 
-import exceptions.MyException;
+import model.exceptions.MyException;
 import model.ADT.IMyStack;
 import model.ADT.MyDictionary;
 import model.ADT.MyList;
@@ -75,7 +75,7 @@ public class Controller {
                 new VarDeclStmt("s" , new BoolType()),
                 new CompStmt(new VarDeclStmt("x", new IntType()),
                         new CompStmt(
-                                new AssignStmt("s", new ValueExp(new BoolValue(false))),
+                                new AssignStmt("s", new ValueExp(new BoolValue(true))),
                                 new CompStmt(
                                     new IfStmt(
                                             new VarExp("s"),
@@ -88,7 +88,7 @@ public class Controller {
                 )
         );
 
-        //stack.push(example_3);
+        stack.push(example_3);
         PrgState state = new PrgState(stack, new MyDictionary<String, Value>(), new MyList<Value>());
         System.out.println(state);
         repository.addState(state);

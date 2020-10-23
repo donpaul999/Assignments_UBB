@@ -1,9 +1,10 @@
 package model.statement;
 
-import com.sun.jdi.BooleanValue;
-import exceptions.MyException;
+import model.exceptions.ExprException;
+import model.exceptions.MyException;
 import model.ADT.IMyStack;
 import model.PrgState;
+import model.exceptions.StmtException;
 import model.expression.Exp;
 import model.type.BoolType;
 import model.value.BoolValue;
@@ -27,11 +28,11 @@ public class IfStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
+    public PrgState execute(PrgState state) throws StmtException, ExprException {
         IMyStack<IStmt> stack = state.getStack();
         Value cond = expression.eval(state.getSymTable());
         if (!cond.getType().equals(new BoolType())) {
-            throw new MyException("Condition is not of boolean");
+            throw new StmtException("Condition is not of boolean");
         }
         if (cond.equals(new BoolValue(true))) {
             stack.push(thenStatement);

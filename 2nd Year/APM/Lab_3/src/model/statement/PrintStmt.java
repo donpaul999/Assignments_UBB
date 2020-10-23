@@ -1,8 +1,10 @@
 package model.statement;
-import exceptions.MyException;
+import model.exceptions.ExprException;
+import model.exceptions.MyException;
 import model.ADT.IMyList;
 import model.ADT.IMyStack;
 import model.PrgState;
+import model.exceptions.StmtException;
 import model.expression.Exp;
 import model.value.Value;
 
@@ -19,7 +21,7 @@ public class PrintStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
+    public PrgState execute(PrgState state) throws StmtException, ExprException {
         IMyStack<IStmt> stack = state.getStack();
         IMyList<Value> outConsole = state.getOutConsole();
         outConsole.add(exp.eval(state.getSymTable()));

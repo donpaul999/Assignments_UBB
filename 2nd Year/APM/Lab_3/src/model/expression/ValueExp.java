@@ -1,6 +1,7 @@
 package model.expression;
 
-import exceptions.MyException;
+import model.exceptions.ExprException;
+import model.exceptions.MyException;
 import model.ADT.IMyDictionary;
 import model.value.Value;
 
@@ -12,11 +13,9 @@ public class ValueExp implements Exp {
     }
 
     @Override
-    public Value eval(IMyDictionary<String, Value> tbl) throws MyException {
+    public Value eval(IMyDictionary<String, Value> tbl) throws ExprException {
         return e;
     }
-
-
 
     @Override
     public String toString() {

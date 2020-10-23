@@ -1,6 +1,7 @@
 package model.expression;
 
-import exceptions.MyException;
+import model.exceptions.ExprException;
+import model.exceptions.MyException;
 import model.ADT.IMyDictionary;
 import model.type.IntType;
 import model.value.IntValue;
@@ -26,7 +27,7 @@ public class ArithExp implements Exp {
     }
 
     @Override
-    public Value eval(IMyDictionary<String, Value> tbl) throws MyException {
+    public Value eval(IMyDictionary<String, Value> tbl) throws ExprException {
         Value val1, val2;
         val1 = e1.eval(tbl);
         if (val1.getType().equals(new IntType())) {
@@ -36,33 +37,32 @@ public class ArithExp implements Exp {
                 IntValue i2 = (IntValue)val2;
                 int n1 = i1.getValue();
                 int n2 = i2.getValue();
-                if (op == 1) {
-                    return new IntValue(n1 + n2);
-                }
-                else if (op == 2) {
-                    return new IntValue(n1 - n2);
-                }
-                else if (op == 3) {
-                    return new IntValue(n1 * n2);
-                }
-                else if (op == 4) {
-                    if (n2 == 0) {
-                        throw new MyException("Division by zero");
-                    }
-                    else {
-                        return new IntValue(n1 / n2);
-                    }
+                switch (op) {
+                    case 1:
+                        return new IntValue(n1 + n2);
+                    case 2:
+                        return new IntValue(n1 - n2);
+                    case 3:
+                        return new IntValue(n1 * n2);
+                    case 4:
+                        if (n2 == 0) {
+                            throw new ExprException("Division by zero");
+                        }
+                        else {
+                            return new IntValue(n1 / n2);
+                        }
+                    default:
+                        throw new ExprException("Incorect operation");
                 }
             }
             else {
-                throw new MyException("Second operand is not an integer");
+                throw new ExprException("Second operand is not an integer");
             }
         }
         else {
-            throw new MyException("First operand is not an integer");
+            throw new ExprException("First operand is not an integer");
         }
 
-        return new IntValue(0);
     }
 
 

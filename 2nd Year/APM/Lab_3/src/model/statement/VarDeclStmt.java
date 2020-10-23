@@ -1,9 +1,11 @@
 package model.statement;
 
-import exceptions.MyException;
+import model.exceptions.ADTException;
+import model.exceptions.MyException;
 import model.ADT.IMyDictionary;
 import model.ADT.IMyStack;
 import model.PrgState;
+import model.exceptions.StmtException;
 import model.type.BoolType;
 import model.type.IntType;
 import model.type.Type;
@@ -21,18 +23,18 @@ public class VarDeclStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
+    public PrgState execute(PrgState state) throws StmtException, ADTException {
         IMyStack<IStmt> stack = state.getStack();
         IMyDictionary<String, Value> table = state.getSymTable();
         if (table.isDefined(name)) {
-            throw new MyException("Variable is already declared");
+            throw new StmtException("Variable is already declared");
         } else {
             if (type.equals(new IntType())) {
                 table.add(name, new IntValue());
             }else if (type.equals(new BoolType())) {
                 table.add(name, new BoolValue());
             } else {
-                throw new MyException("Type does not exist");
+                throw new StmtException("Type does not exist");
             }
         }
         state.setSymTable(table);

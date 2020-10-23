@@ -1,6 +1,7 @@
 package model.ADT;
 
-import exceptions.MyException;
+import model.exceptions.ADTException;
+import model.exceptions.MyException;
 
 import java.util.Stack;
 
@@ -12,9 +13,9 @@ public class MyStack<T> implements IMyStack<T> {
     }
 
     @Override
-    public T pop() throws MyException {
+    public T pop() throws ADTException {
         if (stk.size() == 0) {
-            throw new MyException("Stack is empty");
+            throw new ADTException("Stack is empty");
         }
         return stk.pop();
     }

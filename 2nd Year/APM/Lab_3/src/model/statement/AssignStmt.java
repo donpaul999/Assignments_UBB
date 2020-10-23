@@ -1,9 +1,10 @@
 package model.statement;
 
-import exceptions.MyException;
+import model.exceptions.ExprException;
+import model.exceptions.MyException;
 import model.ADT.IMyDictionary;
-import model.ADT.IMyStack;
 import model.PrgState;
+import model.exceptions.StmtException;
 import model.expression.Exp;
 import model.type.Type;
 import model.value.Value;
@@ -23,8 +24,7 @@ public class AssignStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
-        IMyStack<IStmt> stk = state.getStack();
+    public PrgState execute(PrgState state) throws StmtException, ExprException {
         IMyDictionary<String, Value> symTable = state.getSymTable();
         Value value = exp.eval(symTable);
         if (symTable.isDefined(id)) {
@@ -33,15 +33,14 @@ public class AssignStmt implements IStmt {
                 symTable.update(id, value);
             }
             else {
-                throw new MyException("Declared type of variable " +
+                throw new StmtException("Declared type of variable " +
                         id +
                         " and type of the assigned expression do not match");
             }
         }
         else {
-            throw new MyException("The used variable " + id + " was not declared before");
+            throw new StmtException("The used variable " + id + " was not declared before");
         }
-        state.setExeStack(stk);
         state.setSymTable(symTable);
         return state;
     }

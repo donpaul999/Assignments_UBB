@@ -1,5 +1,5 @@
 package model.statement;
-import exceptions.*;
+import model.exceptions.*;
 import model.ADT.IMyStack;
 import model.PrgState;
 
@@ -13,7 +13,7 @@ public class CompStmt implements IStmt {
     }
 
     @Override
-    public PrgState execute(PrgState state) throws MyException {
+    public PrgState execute(PrgState state) throws StmtException {
         IMyStack<IStmt> stack = state.getStack();
         stack.push(snd);
         stack.push(first);

@@ -1,6 +1,7 @@
 package model.expression;
 
-import exceptions.MyException;
+import model.exceptions.ExprException;
+import model.exceptions.MyException;
 import model.ADT.IMyDictionary;
 import model.type.BoolType;
 import model.value.BoolValue;
@@ -18,7 +19,7 @@ public class LogicExp implements Exp {
     }
 
     @Override
-    public Value eval(IMyDictionary<String, Value> tbl) throws MyException {
+    public Value eval(IMyDictionary<String, Value> tbl) throws ExprException {
         Value val1, val2;
         val1 = e1.eval(tbl);
         if (val1.getType().equals(new BoolType())) {
@@ -36,11 +37,11 @@ public class LogicExp implements Exp {
                 }
             }
             else {
-                throw new MyException("Second operand is not a boolean");
+                throw new ExprException("Second operand is not a boolean");
             }
         }
         else {
-            throw new MyException("First operand is not a boolean");
+            throw new ExprException("First operand is not a boolean");
         }
 
         return new BoolValue(false);

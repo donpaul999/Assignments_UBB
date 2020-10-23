@@ -1,11 +1,10 @@
 package view;
 
 import controller.Controller;
-import exceptions.MyException;
+import model.exceptions.MyException;
 import repository.IRepo;
 import repository.Repository;
 
-import java.util.Scanner;
 public class AppView {
     Controller controller;
 
