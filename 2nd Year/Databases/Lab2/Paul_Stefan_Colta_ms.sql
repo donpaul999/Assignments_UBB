@@ -128,7 +128,7 @@ SELECT id, name FROM ubb_schema.Technologies
 WHERE id NOT IN (1,3,5)
 
 SELECT id, name FROM ubb_schema.Clients
-EXCEPTc
+EXCEPT
 SELECT id, name FROM ubb_schema.Programmers
 WHERE id NOT IN (2,4,6,8)
 
@@ -137,21 +137,39 @@ WHERE id NOT IN (2,4,6,8)
 
 SELECT P.name, E.name
 FROM ubb_schema.Programmers P
-INNER JOIN ubb_schema.EquipmentProgrammers EP ON P.id = EP.programmer_id
-INNER JOIN ubb_schema.Equipment E ON EP.equipment_id = E.id
+RIGHT OUTER JOIN ubb_schema.EquipmentProgrammers EP ON P.id = EP.programmer_id
+RIGHT OUTER JOIN ubb_schema.Equipment E ON EP.equipment_id = E.id
+
 
 SELECT P.name, Pr.name
 FROM ubb_schema.Programmers P
 LEFT OUTER JOIN ubb_schema.ProjectsProgrammers PP ON P.id = PP.programmer_id
 LEFT OUTER JOIN ubb_schema.Projects Pr ON Pr.id = PP.project_id
-WHERE
 
 -- m:n
-
 SELECT T.name, Pr.name
 FROM ubb_schema.Technologies T
-RIGHT OUTER JOIN ubb_schema.TechnologiesProjects TP ON T.id = TP.technology_id
-RIGHT OUTER JOIN ubb_schema.Projects Pr ON Pr.id = TP.project_id
+INNER JOIN ubb_schema.TechnologiesProjects TP ON T.id = TP.technology_id
+INNER JOIN ubb_schema.Projects Pr ON Pr.id = TP.project_id
+INNER JOIN ubb_schema.Clients C ON Pr.client_id = C.id
+WHERE C.name='Telekom'
+
+--GROUP BY
+
+SELECT COUNT(equipment_id) FROM ubb_schema.EquipmentProgrammers
+GROUP BY programmer_id HAVING COUNT(*) > 1
+
+select Pr.*, T.max_programmers
+from ubb_schema.Projects Pr inner join (select Pp.project_id, count(*) max_programmers
+						 from ubb_schema.ProjectsProgrammers Pp
+						 group by Pp.project_id
+						 having count(*) = (select max(numberOfProgrammers)
+											from (select count(*) numberOfProgrammers
+												  from ubb_schema.ProjectsProgrammers Pp2
+												  group by Pp2.project_id) t) ) T on Pr.id = T.project_id;
+
+
+
 
 
 
