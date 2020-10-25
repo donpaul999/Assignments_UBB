@@ -154,6 +154,22 @@ INNER JOIN ubb_schema.Projects Pr ON Pr.id = TP.project_id
 INNER JOIN ubb_schema.Clients C ON Pr.client_id = C.id
 WHERE C.name='Telekom'
 
+
+--IN
+
+SELECT name FROM ubb_schema.Programmers WHERE id IN (SELECT programmer_id from ubb_schema.ProjectsProgrammers)
+
+
+SELECT name FROM ubb_schema.Technologies WHERE id IN (SELECT technology_id from ubb_schema.TechnologiesProjects WHERE project_id IN (SELECT id FROM Projects WHERE name LIKE '%Project'))
+
+
+--FROM
+
+SELECT DISTINCT * 
+FROM ubb_schema.Technologies t INNER JOIN (SELECT * from ubb_schema.Technologies) a on a.technology_id = t.id
+
+SELECT * FROM (SELECT name FROM ubb_schema.Clients);
+
 --GROUP BY
 
 SELECT COUNT(equipment_id) FROM ubb_schema.EquipmentProgrammers
