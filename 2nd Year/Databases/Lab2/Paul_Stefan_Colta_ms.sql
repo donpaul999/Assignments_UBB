@@ -154,6 +154,9 @@ INNER JOIN ubb_schema.Projects Pr ON Pr.id = TP.project_id
 INNER JOIN ubb_schema.Clients C ON Pr.client_id = C.id
 WHERE C.name='Telekom'
 
+SELECT * FROM ubb_schema.Programmers P 
+FULL JOIN ubb_schema.ProjectsProgrammers PP on P.id = PP.programmer_id
+FULL JOIN ubb_schema.Projects Pr on Pr.id = PP.project_id 
 
 --IN
 
@@ -185,7 +188,16 @@ from ubb_schema.Projects Pr inner join (select Pp.project_id, count(*) max_progr
 												  group by Pp2.project_id) t) ) T on Pr.id = T.project_id;
 
 
+--ANY
 
+SELECT * FROM ubb_schema.Programmers WHERE id = ANY(SELECT programmer_id FROM ubb_schema.ProgrammersEquipment)
+
+
+SELECT * FROM ubb_schema.Projects WHERE id = ANY(SELECT project_id FROM ubb_schema.ProjectsTechnologies INNER JOIN ubb_schema.Technolgy T on T.id = technology_id WHERE T.name='C++')
+
+--ALL
+
+SELECT * FROM ubb_schema.Programmers P WHERE birthdate > ALL(SELECT birthdate FROM ubb_schema.Programmers WHERE id <> P.id)
 
 
 

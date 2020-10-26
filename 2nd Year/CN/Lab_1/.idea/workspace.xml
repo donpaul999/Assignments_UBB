@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4116c417-492d-44bb-bf04-31cb341d0fc4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab_3/c_u.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab_3/s_u.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Databases/Lab2/Paul_Stefan_Colta_ms.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../Databases/Lab2/Paul_Stefan_Colta_ms.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +66,7 @@
       <workItem from="1601897279761" duration="2897000" />
       <workItem from="1602527134105" duration="208000" />
       <workItem from="1602602898790" duration="54000" />
+      <workItem from="1603714316129" duration="1362000" />
     </task>
     <servers />
   </component>
