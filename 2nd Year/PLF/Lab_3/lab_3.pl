@@ -16,7 +16,7 @@
 
 % subst(l1...ln, e, list) =
 % 	[], n = 0
-% 	subst(inserare(list, l2...ln), e, list), l1 = e
+% 	inserare(list, subst(l2...ln, e, list)), l1 = e
 % 	l1 + subst(l2...ln, e, list), l1 != e
 
 % subst(L:list, E:number, List:list, R:list)
@@ -27,8 +27,8 @@ inserare([H|T], L, [H|R]) :-
 
 subst([], _, _, []).
 subst([H|T], E, List, R) :- H =:=E,
-    inserare(List, T, RI),
-    subst(RI, E, List, R).
+    subst(T, E, List, RI),
+    inserare(List, RI, R).
 subst([H|T], E, List, [H|R]) :- H =\= E,
     subst(T, E, List, R).
 
@@ -38,8 +38,8 @@ subst([H|T], E, List, [H|R]) :- H =\= E,
 % 	l1 + heterList(l2...ln), number(l1) = True
 % 	subst(L1...Lm, L1, list), heterList(l2...ln), is_list(l1) = True, where l1 = L1...Lm
 
-% heterList(L:list, R:list)
-% heterList(i, o)
+% heterList(L:list, E:list, R:list)
+% heterList(i, i, o)
 
 heterList([], _, []).
 heterList([H|T], E, [H|R]) :- number(H),
