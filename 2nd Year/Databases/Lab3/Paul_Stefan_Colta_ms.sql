@@ -85,73 +85,85 @@ go
 alter procedure dbo_version1
 as
     alter table dbo.Programmers
-    alter column birthday int;
+    alter column phone int;
+    print N'Changed phone column to int';
 go
 
 alter procedure dbo_version1undo
 as
     alter table dbo.Programmers
-    alter column birthday date;
+    alter column phone varchar(15);
+    print N'Changed phone column to varchar';
 go
 
 alter procedure dbo_version2
 as
     alter table dbo.Programmers
     add height int;
+    print N'Add height column in Programmers table';
 go
 
 alter procedure dbo_version2undo
 as
     alter table dbo.Programmers
     drop column height;
+    print N'Remove height column from Programmers table';
 go
 
 alter procedure dbo_version3
 as
 	alter table dbo.Projects
 	add constraint DEF_ProjectsDesc default 'Default description' for description;
+    print N'Set default description in Projects table';
 go
 
 alter procedure dbo_version3undo
 as
 	alter table dbo.Projects
-	drop constraint DEF_ProjectsDesc
+	drop constraint DEF_ProjectsDesc;
+    print N'Remove height column from Programmers table';
 go
 
 alter procedure dbo_version4
 as
 	alter table dbo.EquipmentProgrammers
 	drop constraint PK__Equipmen__3213E83F20773670;
+    print N'Remove PrimaryKey from EquipmentProgrammers table';
 go
 
 alter procedure dbo_version4undo
 as
 	alter table dbo.EquipmentProgrammers
 	add constraint PK__Equipmen__3213E83F20773670 primary key (id);
+    print N'Add PrimaryKey from EquipmentProgrammers table';
 go
 
 alter procedure dbo_version5
 as
 	alter table dbo.Technologies
 	add constraint CK_TechnologiesName unique (name);
+    print N'Add Candidate Key from Technologies table';
 go
 
 alter procedure dbo_version5undo
 as
 	alter table dbo.Technologies
 	drop constraint CK_TechnologiesName;
+    print N'Remove Candidate Key from Technologies table';
 go
 
 alter procedure dbo_version6
 as
 	alter table dbo.TechnologiesProjects
 	drop constraint TechnologiesProjects_Technologies_id_fk_2;
+    print N'Remove Foreign Key for technology_id from TechnologiesProjects table';
 go
 
 alter procedure dbo_version6undo
 as
 	alter table dbo.TechnologiesProjects
     add constraint TechnologiesProjects_Technologies_id_fk_2 foreign key (id) references dbo.Technologies(id);
+    print N'Add Foreign Key for technology_id from TechnologiesProjects table';
 go
 
 alter procedure dbo_version7
@@ -160,11 +172,13 @@ as
 						  name varchar(15),
 						  department varchar(15),
 						  birthdate date);
+    print N'Add Staff table';
 go
 
 alter procedure dbo_version7undo
 as
 	drop table dbo.Staff;
+    print N'Remove Staff table';
 go
 
 alter procedure dbo_getCurrentVersion @vr smallint output
@@ -223,9 +237,11 @@ go
 
 alter procedure dbo_changeVersion @tv smallint
 as
-	declare @currentVersion smallint = 1;
-	exec dbo_getCurrentVersion @vr = @currentVersion output
-	declare @source smallint = @currentVersion;
+    if @tv < 0 or @tv > 7
+        RAISERROR('Invalid version', 16, 1);
+	declare @actualVersion smallint = 1;
+	exec dbo_getCurrentVersion @vr = @actualVersion output
+	declare @source smallint = @actualVersion;
 	if @source < @tv
 		while @source < @tv
 		begin
@@ -239,11 +255,12 @@ as
 			set @source = @source - 1
 		end
 	exec dbo_updateCurrentVersion @v = @tv
-	exec dbo_updateLog @old = @currentVersion, @new = @tv
+	exec dbo_updateLog @old = @actualVersion, @new = @tv
 go
 
-exec dbo_changeVersion @tv = 7;
+exec dbo_changeVersion @tv = 0
 
-select * from dbo.Version;
-select * from dbo.VersionLog;
---delete from versionLog;
+/*TODO: add messages
+  validation */
+
+
