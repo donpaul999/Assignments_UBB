@@ -1,0 +1,42 @@
+Program state
+Exe Stack: (int x;(x=17;print(x))) print(x)  
+Sym Table:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x)))  
+Sym Table:  
+Output Console: null  
+File Table:  
+
+Program state
+Exe Stack: (x=17;print(x)) int x  
+Sym Table:  
+Output Console: null  
+File Table:  
+
+Program state
+Exe Stack: (x=17;print(x))  
+Sym Table: x-0  
+Output Console: null  
+File Table:  
+
+Program state
+Exe Stack: print(x) x=17  
+Sym Table: x-0  
+Output Console: null  
+File Table:  
+
+Program state
+Exe Stack: print(x)  
+Sym Table: x-17  
+Output Console: null  
+File Table:  
+
+Program state
+Exe Stack:  
+Sym Table: x-17  
+Output Console: null 17  
+File Table:  
+

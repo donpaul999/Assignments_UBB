@@ -20,6 +20,8 @@ import model.value.IntValue;
 import model.value.Value;
 import repository.IRepo;
 
+import java.io.IOException;
+
 public class Controller {
     private IRepo repository;
 
@@ -36,14 +38,16 @@ public class Controller {
         return currentStmt.execute(state);
     }
 
-    public void allSteps() throws MyException {
+    public void allStep() throws MyException, IOException {
         PrgState prg = repository.getCrtPrg();
-        System.out.println(prg);
+        repository.printPrgState(prg);
+        //System.out.println(prg);
 
         while (!prg.getStack().isEmpty()) {
             try {
                 oneStep(prg);
-                System.out.println(prg);
+                //System.out.println(prg);
+                repository.printPrgState(prg);
             } catch (MyException | ADTException | StmtException | ExprException exception) {
                 throw new MyException(exception.getMessage());
             }

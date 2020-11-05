@@ -1,5 +1,8 @@
 package model.type;
 
+import model.value.IntValue;
+import model.value.Value;
+
 public class IntType implements Type {
 
     @Override
@@ -17,4 +20,8 @@ public class IntType implements Type {
         return new IntType();
     }
 
+    @Override
+    public Value defaultValue() {
+        return new IntValue(0);
+    }
 }

@@ -1,0 +1,72 @@
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) (bool s;(int x;(s=true;(if (s) then {x=20} else {x=2};print(x)))))  
+Sym Table:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) (int x;(s=true;(if (s) then {x=20} else {x=2};print(x)))) bool s  
+Sym Table:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) (int x;(s=true;(if (s) then {x=20} else {x=2};print(x))))  
+Sym Table: s-false  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) (s=true;(if (s) then {x=20} else {x=2};print(x))) int x  
+Sym Table: s-false  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) (s=true;(if (s) then {x=20} else {x=2};print(x)))  
+Sym Table: s-false x-0  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) (if (s) then {x=20} else {x=2};print(x)) s=true  
+Sym Table: s-false x-0  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) (if (s) then {x=20} else {x=2};print(x))  
+Sym Table: s-true x-0  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) print(x) if (s) then {x=20} else {x=2}  
+Sym Table: s-true x-0  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) print(x) x=20  
+Sym Table: s-true x-0  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x))) print(x)  
+Sym Table: s-true x-20  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (int x;(x=3+5*7;print(x)))  
+Sym Table: s-true x-20  
+Output Console: 20  
+File Table:  
+
+Program state
+Exe Stack: (int x;(x=17;print(x))) (x=3+5*7;print(x)) int x  
+Sym Table: s-true x-20  
+Output Console: 20  
+File Table:  
+

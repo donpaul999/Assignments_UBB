@@ -52,7 +52,7 @@ public class IfStmtTest {
     @Test
     public void testExecute() throws Exception {
         IMyStack<IStmt> stack = new MyStack<>();
-        IRepo repository = new Repository();
+        IRepo repository = new Repository("log-test.txt");
         Controller controller = new Controller(repository);
 
         IStmt example_1 = new CompStmt(
@@ -76,7 +76,7 @@ public class IfStmtTest {
         PrgState state = new PrgState(stack, new MyDictionary<String, Value>(), new MyList<Value>());
         System.out.println(state);
         repository.addState(state);
-        controller.allSteps();
+        controller.allStep();
 
         if(state.getOutConsole().get(0).equals(new IntValue(20)))
             assert (true);

@@ -2,18 +2,23 @@ package model;
 
 import model.ADT.*;
 import model.statement.IStmt;
+import model.value.StringValue;
 import model.value.Value;
+
+import java.io.BufferedReader;
 
 public class PrgState {
     private IMyStack<IStmt> exeStack;
     private IMyDictionary<String, Value> symTable;
     private IMyList<Value> out;
+    private IMyDictionary<StringValue, BufferedReader> fileTable;
     private IStmt originalProgram; //optional field, but good to have
 
-    public PrgState(IMyStack<IStmt> stk, IMyDictionary<String, Value> symtbl, IMyList<Value> ot, IStmt prg) {
+    public PrgState(IMyStack<IStmt> stk, IMyDictionary<String, Value> symtbl, IMyList<Value> ot, IMyDictionary<StringValue, BufferedReader> fT, IStmt prg) {
         exeStack = stk;
         symTable = symtbl;
         out = ot;
+        fileTable = fT;
         originalProgram = prg;
         stk.push(prg);
     }
@@ -36,6 +41,10 @@ public class PrgState {
         return originalProgram;
     }
 
+    public IMyDictionary<StringValue, BufferedReader> getFileTable() {
+        return fileTable;
+    }
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
@@ -43,6 +52,7 @@ public class PrgState {
         str.append("Exe Stack: ").append(exeStack).append(" \n");
         str.append("Sym Table: ").append(symTable).append(" \n");
         str.append("Output Console: ").append(out).append(" \n");
+        str.append("File Table: ").append(fileTable).append(" \n");
         return str.toString();
     }
 

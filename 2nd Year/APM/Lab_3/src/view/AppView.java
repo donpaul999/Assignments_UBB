@@ -5,6 +5,8 @@ import model.exceptions.MyException;
 import repository.IRepo;
 import repository.Repository;
 
+import java.io.IOException;
+
 public class AppView {
     Controller controller;
 
@@ -17,13 +19,13 @@ public class AppView {
     }
 
     public AppView() {
-        IRepo repository = new Repository();
+        IRepo repository = new Repository("log.txt");
         this.controller = new Controller(repository);
         printMenu();
         try {
             controller.example();
-            controller.allSteps();
-        } catch (MyException e) {
+            controller.allStep();
+        } catch (MyException | IOException e) {
             System.out.println(e.getMessage());
         }
     }

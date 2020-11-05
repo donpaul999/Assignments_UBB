@@ -4,8 +4,10 @@ import model.exceptions.MyException;
 import model.PrgState;
 import model.statement.IStmt;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,9 +19,15 @@ public class Repository implements IRepo {
     public Repository(PrgState prgState, String fileName) {
         this.originalProgram = prgState.getOriginalProgram();
         this.fileName = fileName;
+        states = new LinkedList<>();
     }
 
     public Repository() {
+        states = new LinkedList<>();
+    }
+
+    public Repository(String givenFile) {
+        this.fileName = givenFile;
         states = new LinkedList<>();
     }
 
@@ -31,7 +39,7 @@ public class Repository implements IRepo {
 
     @Override
     public PrgState getCrtPrg() {
-        PrgState state =  states.get(0);
+        PrgState state = states.get(0);
         states.remove(0);
         return state;
     }
@@ -42,8 +50,10 @@ public class Repository implements IRepo {
     }
 
     @Override
-    public void printPrgState(PrgState prgState) throws MyException {
-        try (FileWriter fileWriter = new FileWriter(fileName, true)) {
+    public void printPrgState(PrgState prgState) throws MyException, IOException {
+        File yourFile = new File(fileName);
+        yourFile.createNewFile();
+        try (FileWriter fileWriter = new FileWriter(yourFile, true)) {
             fileWriter.write(prgState + "\n");
         }
         catch (IOException e) {
