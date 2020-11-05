@@ -82,4 +82,20 @@ public class ArithExp implements Exp {
                 return "";
         }
     }
+
+    @Override
+    public Exp deepCopy() {
+        switch (op) {
+            case 1:
+                return new ArithExp(e1.deepCopy(), e2.deepCopy(), '+');
+            case 2:
+                return new ArithExp(e1.deepCopy(), e2.deepCopy(), '-');
+            case 3:
+                return new ArithExp(e1.deepCopy(), e2.deepCopy(), '*');
+            case 4:
+                return new ArithExp(e1.deepCopy(), e2.deepCopy(), '/');
+            default:
+                return new ArithExp(e1.deepCopy(), e2.deepCopy(), '+');
+        }
+    }
 }

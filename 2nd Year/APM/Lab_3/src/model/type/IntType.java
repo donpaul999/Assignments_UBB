@@ -12,4 +12,9 @@ public class IntType implements Type {
         return "int";
     }
 
+    @Override
+    public Type deepCopy() {
+        return new IntType();
+    }
+
 }

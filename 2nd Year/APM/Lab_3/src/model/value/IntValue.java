@@ -36,4 +36,10 @@ public class IntValue implements Value {
         IntValue t = (IntValue) o;
         return t.val == val;
         //return val.equals(t.val);
-    }}
+    }
+
+    @Override
+    public Value deepCopy() {
+        return new IntValue(val);
+    }
+}

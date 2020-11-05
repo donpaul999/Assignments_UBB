@@ -35,12 +35,17 @@ public class IfStmt implements IStmt {
             throw new StmtException("Condition is not of boolean");
         }
         if (cond.equals(new BoolValue(true))) {
-            stack.push(thenStatement);
+            stack.push(thenStatement.deepCopy());
         } else {
-            stack.push(elseStatement);
+            stack.push(elseStatement.deepCopy());
         }
         state.setExeStack(stack);
         return state;
+    }
+
+    @Override
+    public IStmt deepCopy() {
+        return new IfStmt(expression.deepCopy(), thenStatement.deepCopy(), elseStatement.deepCopy());
     }
 
 }

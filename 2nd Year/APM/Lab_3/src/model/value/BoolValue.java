@@ -37,4 +37,9 @@ public class BoolValue implements Value {
         return t.val == val;
         //return val.equals(t.val);
     }
+
+    @Override
+    public Value deepCopy() {
+        return new BoolValue(val);
+    }
 }
