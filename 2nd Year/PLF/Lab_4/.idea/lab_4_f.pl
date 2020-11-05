@@ -20,7 +20,7 @@ city(d).
 
 is_inside(H, [H|_]):- !.
 is_inside(E, [_|T]):-
-    	is_inside(E, T).
+    is_inside(E, T).
 
 
 colorMap(Ans) :-
@@ -30,9 +30,10 @@ colorMap(Ans) :-
   createConstraint(Edges,Ans),
   colorNodes(Ans).
 
-%createConstraint(List:Edges,List:Ans)
-%createConstraint(i, o)
-
+%createConstraint(E:List)
+% 1, if L is empty
+% 0, if C1 == C2, where Ci is Vi's color, where V is part of an edge
+% createConstraint(E2...En)
 createConstraint([],_).
 createConstraint([(V1,V2)|T],Ans):-
   is_inside(hasColor(V1,C1),Ans),
@@ -40,7 +41,6 @@ createConstraint([(V1,V2)|T],Ans):-
   dif(C1,C2),
   createConstraint(T,Ans).
 
-%
 colorNodes([]).
 colorNodes([hasColor(_,C)|Nodes]) :-
   color(C),
