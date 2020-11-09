@@ -127,14 +127,14 @@ go
 alter procedure dbo_version4
 as
 	alter table dbo.EquipmentProgrammers
-	drop constraint PK__Equipmen__3213E83F20773670;
+	drop constraint PK__Equipmen__3213E83FC7E3F382;
     print N'Remove PrimaryKey from EquipmentProgrammers table';
 go
 
 alter procedure dbo_version4undo
 as
 	alter table dbo.EquipmentProgrammers
-	add constraint PK__Equipmen__3213E83F20773670 primary key (id);
+	add constraint PK__Equipmen__3213E83FC7E3F382 primary key (id);
     print N'Add PrimaryKey from EquipmentProgrammers table';
 go
 
@@ -260,7 +260,9 @@ go
 
 exec dbo_changeVersion @tv = 0
 
-/*TODO: add messages
-  validation */
+create table dbo.Version(version int);
+insert into dbo.Version values (0);
+create table dbo.VersionLog(id int primary key identity(1, 1), oldVersion int, newVersion int, changeTime datetime);
+
 
 

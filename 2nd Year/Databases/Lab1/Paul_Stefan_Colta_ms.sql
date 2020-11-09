@@ -1,13 +1,6 @@
-create database it_company_f
-go
 
-use it_company_f
-go
 
-create schema ubb_schema
-go
-
-create table ubb_schema.Categories
+create table dbo.Categories
 (
 	id int identity
 		primary key,
@@ -16,7 +9,7 @@ create table ubb_schema.Categories
 )
 go
 
-create table ubb_schema.Clients
+create table dbo.Clients
 (
 	id int identity
 		primary key,
@@ -26,7 +19,7 @@ create table ubb_schema.Clients
 )
 go
 
-create table ubb_schema.Equipment
+create table dbo.Equipment
 (
 	id int identity
 		primary key,
@@ -34,7 +27,7 @@ create table ubb_schema.Equipment
 )
 go
 
-create table ubb_schema.Programmers
+create table dbo.Programmers
 (
 	id int identity
 		primary key,
@@ -45,32 +38,32 @@ create table ubb_schema.Programmers
 )
 go
 
-create table ubb_schema.EquipmentProgrammers
+create table dbo.EquipmentProgrammers
 (
 	id int identity
 		primary key,
 	programmer_id int
 		constraint TEquipmentProgrammers_Technologies_id_fk
-			references ubb_schema.Programmers,
+			references dbo.Programmers,
 	equipment_id int
 		constraint EquipmentProgrammers_Equipment_id_fk
-			foreign key references ubb_schema.Equipment
+			foreign key references dbo.Equipment
 )
 go
 
-create table ubb_schema.Holidays
+create table dbo.Holidays
 (
 	id int identity
 		primary key,
 	programmer_id int
 		constraint Holidays_Programmers_id_fk
-			foreign key references ubb_schema.Programmers,
+			foreign key references dbo.Programmers,
 	start_date date,
 	end_date date
 )
 go
 
-create table ubb_schema.Projects
+create table dbo.Projects
 (
 	id int identity
 		primary key,
@@ -78,27 +71,27 @@ create table ubb_schema.Projects
 	description varchar(300) NOT NULL,
 	client_id int
 		constraint client_id
-			foreign key references ubb_schema.Clients,
+			foreign key references dbo.Clients,
 	category_id int
 		constraint Projects_Categories_id_fk
-			foreign key references ubb_schema.Categories
+			foreign key references dbo.Categories
 )
 go
 
-create table ubb_schema.ProjectsProgrammers
+create table dbo.ProjectsProgrammers
 (
 	id int identity
 		primary key,
 	project_id int
 		constraint ProjectsProgrammers_Projects_id_fk
-			foreign key references ubb_schema.Projects,
+			foreign key references dbo.Projects,
 	programmer_id int
 		constraint ProjectsProgrammers_Programmers_id_fk_2
-			foreign key references ubb_schema.Programmers
+			foreign key references dbo.Programmers
 )
 go
 
-create table ubb_schema.Technologies
+create table dbo.Technologies
 (
 	id int identity
 		primary key,
@@ -106,16 +99,15 @@ create table ubb_schema.Technologies
 )
 go
 
-create table ubb_schema.TechnologiesProjects
+create table dbo.TechnologiesProjects
 (
 	id int identity
 		primary key,
 	project_id int
 		constraint TechnologiesProjects_Technologies_id_fk
-			foreign key references ubb_schema.Projects,
+			foreign key references dbo.Projects,
 	technology_id int
 		constraint TechnologiesProjects_Technologies_id_fk_2
-			foreign key references ubb_schema.Technologies
+			foreign key references dbo.Technologies
 )
 go
-
