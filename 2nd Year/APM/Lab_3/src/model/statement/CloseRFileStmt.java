@@ -50,4 +50,9 @@ public class CloseRFileStmt implements IStmt {
     public IStmt deepCopy() {
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "close(" + exp + ")";
+    }
 }

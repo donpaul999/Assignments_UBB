@@ -16,9 +16,17 @@ public class Repository implements IRepo {
     private IStmt originalProgram;
     private String fileName;
 
-    public Repository(PrgState prgState, String fileName) {
+    public Repository(PrgState prgState, String fileName) throws IOException, MyException {
         this.originalProgram = prgState.getOriginalProgram();
         this.fileName = fileName;
+        File yourFile = new File(fileName);
+        yourFile.createNewFile();
+        try (FileWriter fileWriter = new FileWriter(yourFile)) {
+            fileWriter.write("");
+        }
+        catch (IOException e) {
+            throw new MyException(e.getMessage());
+        }
         states = new LinkedList<>();
     }
 

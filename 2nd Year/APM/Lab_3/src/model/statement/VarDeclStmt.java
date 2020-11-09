@@ -8,9 +8,11 @@ import model.PrgState;
 import model.exceptions.StmtException;
 import model.type.BoolType;
 import model.type.IntType;
+import model.type.StringType;
 import model.type.Type;
 import model.value.BoolValue;
 import model.value.IntValue;
+import model.value.StringValue;
 import model.value.Value;
 
 public class VarDeclStmt implements IStmt {
@@ -33,7 +35,9 @@ public class VarDeclStmt implements IStmt {
                 table.add(name, new IntValue());
             }else if (type.equals(new BoolType())) {
                 table.add(name, new BoolValue());
-            } else {
+            }else if (type.equals(new StringType())) {
+                table.add(name, new StringValue());
+            }  else {
                 throw new StmtException("Type does not exist");
             }
         }
