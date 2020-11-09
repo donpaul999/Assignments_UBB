@@ -81,14 +81,16 @@ public class Main {
         IRepo repo3 = new Repository(prg3, "log3.txt");
         Controller ctr3 = new Controller(repo3);
 
-        IStmt example_4 = new CompStmt(new VarDeclStmt("fileName", new StringType()), new CompStmt(new AssignStmt("fileName", new ValueExp(new StringValue("test.txt"))),
-                new CompStmt(new OpenRFileStmt(new VarExp("fileName")),
-                        new CompStmt(new VarDeclStmt("x", new IntType()),
-                                new CompStmt(new ReadFileStmt(new VarExp("fileName"), "x"),
-                                        new CompStmt(new PrintStmt(new VarExp("x")),
+        IStmt example_4 = new CompStmt(
+                new VarDeclStmt("fileName", new StringType()), 
+                new CompStmt(new AssignStmt("fileName", new ValueExp(new StringValue("test.txt"))),
+                                new CompStmt(new OpenRFileStmt(new VarExp("fileName")),
+                                        new CompStmt(new VarDeclStmt("x", new IntType()),
                                                 new CompStmt(new ReadFileStmt(new VarExp("fileName"), "x"),
                                                         new CompStmt(new PrintStmt(new VarExp("x")),
-                                                                new CloseRFileStmt(new VarExp("fileName"))))))))));
+                                                                new CompStmt(new ReadFileStmt(new VarExp("fileName"), "x"),
+                                                                        new CompStmt(new PrintStmt(new VarExp("x")),
+                                                                                new CloseRFileStmt(new VarExp("fileName"))))))))));
 
         PrgState prg4 = new PrgState(stack4, new MyDictionary<String, Value>(),  new MyList<Value>(), new MyDictionary<StringValue, BufferedReader>(), example_4);
         IRepo repo4 = new Repository(prg4, "log4.txt");
