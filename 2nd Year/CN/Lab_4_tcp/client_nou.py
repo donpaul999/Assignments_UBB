@@ -4,19 +4,20 @@ import sys
 import json
 import time
 
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(("127.0.0.1", 7777))
 
-arr = {'1':  sys.argv[1]}
+while True:
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(("127.0.0.1", 7777))
+    arr = {'1': sys.argv[1]}
 
+    arr = json.dumps(arr)
 
-arr = json.dumps(arr)
+    s.send(arr)
 
-s.send(arr)
+    ans = float(s.recv(20))
 
-ans = float(s.recv(20))
+    if ans != 0:
+        ans = time.ctime(ans)
 
-if ans != 0:
-    ans = time.ctime(ans)
-
-print(ans)
+    print(ans)
+    time.sleep(2)
