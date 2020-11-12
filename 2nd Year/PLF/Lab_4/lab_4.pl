@@ -2,7 +2,6 @@
 % predicate to determine all possibilities of colouring n
 % countries with m colours, such that two adjacent countries not
 % having the same colour.
-% countries:
 
 %is_inside(E:Elem, L:List)
 % (i,i) deterministic
@@ -29,6 +28,10 @@ createConstraint([(V1,V2)|T],Ans):-
   dif(C1,C2),
   createConstraint(T,Ans).
 
+%colorCountries(i, i)
+%colorCountries(Colors, L)
+% true, L is empty
+% member(Ci, Colors), where Ci is part of hasColor(Vi,Ci) part of L
 colorCountries(_, []).
 colorCountries(Colors, [hasColor(_,C)|CC]) :-
   member(C, Colors),

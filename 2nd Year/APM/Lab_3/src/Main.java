@@ -82,7 +82,7 @@ public class Main {
         Controller ctr3 = new Controller(repo3);
 
         IStmt example_4 = new CompStmt(
-                new VarDeclStmt("fileName", new StringType()), 
+                new VarDeclStmt("fileName", new StringType()),
                 new CompStmt(new AssignStmt("fileName", new ValueExp(new StringValue("test.txt"))),
                                 new CompStmt(new OpenRFileStmt(new VarExp("fileName")),
                                         new CompStmt(new VarDeclStmt("x", new IntType()),
