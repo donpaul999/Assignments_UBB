@@ -24,10 +24,6 @@ public class RefType implements Type {
         return Objects.equals(inner, refType.inner);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(inner);
-    }
 
     @Override
     public Value defaultValue() {

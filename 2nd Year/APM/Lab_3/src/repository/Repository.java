@@ -63,6 +63,7 @@ public class Repository implements IRepo {
         yourFile.createNewFile();
         try (FileWriter fileWriter = new FileWriter(yourFile, true)) {
             fileWriter.write(prgState + "\n");
+            fileWriter.close();
         }
         catch (IOException e) {
             throw new MyException(e.getMessage());
