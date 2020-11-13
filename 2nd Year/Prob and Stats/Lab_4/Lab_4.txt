@@ -1,0 +1,1 @@
+p = input("Give p: ");n = input("Give n: ");U = rand(n, 1);X = U;for i = 1:length(U);  if U(i) >= p    X(i, 1) = 0;  else    X(i, 1) = 1;  endifendforu_v = unique(X)u_v_fr = histc(X, u_v)u_v_p = u_v_fr / n
