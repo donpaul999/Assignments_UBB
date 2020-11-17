@@ -1,0 +1,84 @@
+Program state
+Exe Stack: (Ref(int) v;(new( v, 20 );(Ref(Ref(int)) a;(new( a, v );(print(rH(v));print(rH(rH(a))+5))))))  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (new( v, 20 );(Ref(Ref(int)) a;(new( a, v );(print(rH(v));print(rH(rH(a))+5))))) Ref(int) v  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (new( v, 20 );(Ref(Ref(int)) a;(new( a, v );(print(rH(v));print(rH(rH(a))+5)))))  
+Sym Table: v-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (Ref(Ref(int)) a;(new( a, v );(print(rH(v));print(rH(rH(a))+5)))) new( v, 20 )  
+Sym Table: v-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (Ref(Ref(int)) a;(new( a, v );(print(rH(v));print(rH(rH(a))+5))))  
+Sym Table: v-(1, int)  
+Heap: 1-20  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (new( a, v );(print(rH(v));print(rH(rH(a))+5))) Ref(Ref(int)) a  
+Sym Table: v-(1, int)  
+Heap: 1-20  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (new( a, v );(print(rH(v));print(rH(rH(a))+5)))  
+Sym Table: a-(0, Ref(int)) v-(1, int)  
+Heap: 1-20  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (print(rH(v));print(rH(rH(a))+5)) new( a, v )  
+Sym Table: a-(0, Ref(int)) v-(1, int)  
+Heap: 1-20  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (print(rH(v));print(rH(rH(a))+5))  
+Sym Table: a-(2, Ref(int)) v-(1, int)  
+Heap: 1-20 2-(1, int)  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: print(rH(rH(a))+5) print(rH(v))  
+Sym Table: a-(2, Ref(int)) v-(1, int)  
+Heap: 1-20 2-(1, int)  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: print(rH(rH(a))+5)  
+Sym Table: a-(2, Ref(int)) v-(1, int)  
+Heap: 1-20 2-(1, int)  
+Output Console: 20  
+File Table:  
+
+Program state
+Exe Stack:  
+Sym Table: a-(2, Ref(int)) v-(1, int)  
+Heap: 1-20 2-(1, int)  
+Output Console: 20 25  
+File Table:  
+

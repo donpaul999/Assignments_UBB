@@ -31,15 +31,18 @@ public class VarDeclStmt implements IStmt {
         if (table.isDefined(name)) {
             throw new StmtException("Variable is already declared");
         } else {
-            if (type.equals(new IntType())) {
-                table.add(name, new IntValue());
-            }else if (type.equals(new BoolType())) {
-                table.add(name, new BoolValue());
-            }else if (type.equals(new StringType())) {
-                table.add(name, new StringValue());
-            }  else {
-                throw new StmtException("Type does not exist");
-            }
+//            if (type.equals(new IntType())) {
+//                table.add(name, new IntValue());
+//            }else if (type.equals(new BoolType())) {
+//                table.add(name, new BoolValue());
+//            }else if (type.equals(new StringType())) {
+//                table.add(name, new StringValue());
+//            }else if (type.equals(new StringType())) {
+//                table.add(name, new StringValue());
+//            }  else {
+//                throw new StmtException("Type does not exist");
+//            }
+            table.add(name, type.defaultValue());
         }
         state.setSymTable(table);
         state.setExeStack(stack);

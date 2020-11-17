@@ -3,11 +3,13 @@ import model.ADT.*;
 import model.PrgState;
 import model.exceptions.MyException;
 import model.expression.ArithExp;
+import model.expression.ReadHeapExp;
 import model.expression.ValueExp;
 import model.expression.VarExp;
 import model.statement.*;
 import model.type.BoolType;
 import model.type.IntType;
+import model.type.RefType;
 import model.type.StringType;
 import model.value.BoolValue;
 import model.value.IntValue;
@@ -27,6 +29,7 @@ public class Main {
         IMyStack<IStmt> stack2 = new MyStack<>();
         IMyStack<IStmt> stack3 = new MyStack<>();
         IMyStack<IStmt> stack4 = new MyStack<>();
+        IMyStack<IStmt> stack5 = new MyStack<>();
 
         IStmt example_1 = new CompStmt(
                 new VarDeclStmt("x", new IntType()),
@@ -92,12 +95,28 @@ public class Main {
         PrgState prg4 = new PrgState(stack4, new MyDictionary<String, Value>(),  new MyList<Value>(), new MyDictionary<StringValue, BufferedReader>(), new MyHeap<>(), example_4);
         IRepo repo4 = new Repository(prg4, "log4.txt");
         Controller ctr4 = new Controller(repo4);
+
+        IStmt example_5 = new CompStmt(new VarDeclStmt("v", new RefType(new IntType())),
+                new CompStmt(new NewHeapStmt("v", new ValueExp(new IntValue(20))),
+                        new CompStmt(new VarDeclStmt("a", new RefType(new RefType(new IntType()))),
+                                new CompStmt(new NewHeapStmt("a", new VarExp("v")),
+                                        new CompStmt(new PrintStmt(new ReadHeapExp(new VarExp("v"))),
+                                                new PrintStmt(new ArithExp(new ReadHeapExp(new ReadHeapExp(new VarExp("a"))),
+                                                        new ValueExp(new IntValue(5)),
+                                                        '+')))))));
+
+
+        PrgState prg5 = new PrgState(stack5, new MyDictionary<String, Value>(),  new MyList<Value>(), new MyDictionary<StringValue, BufferedReader>(), new MyHeap<>(), example_5);
+        IRepo repo5 = new Repository(prg5, "log5.txt");
+        Controller ctr5 = new Controller(repo5);
+
         TextMenu menu = new TextMenu();
 
         repo1.addState(prg1);
         repo2.addState(prg2);
         repo3.addState(prg3);
         repo4.addState(prg4);
+        repo5.addState(prg5);
 
 
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -105,6 +124,7 @@ public class Main {
         menu.addCommand(new RunExample("2",example_2.toString(),ctr2));
         menu.addCommand(new RunExample("3",example_3.toString(),ctr3));
         menu.addCommand(new RunExample("4",example_4.toString(),ctr4));
+        menu.addCommand(new RunExample("5",example_5.toString(),ctr5));
         menu.show();
     }
 }
