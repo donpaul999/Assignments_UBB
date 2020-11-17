@@ -478,9 +478,139 @@ CREATE procedure dbo_insert_elements @nb_of_rows int, @table_name varchar(50) as
     end
 go
 
-CREATE procedure dbo_select_view @view smallint as
-    if @view < 1
-        RAISERROR('Invalid view', 16, 1);
+CREATE procedure dbo_run_tests @nb_of_rows int as
+    if @nb_of_rows < 1
+        RAISERROR('Invalid number of rows', 16, 1);
+
+    declare @equipment_insert_start datetime
+    set @equipment_insert_start = getdate()
+    exec dbo_insert_elements @nb_of_rows, 'Equipment'
+    declare @equipment_insert_end datetime
+    set @equipment_insert_end = getdate()
+
+    declare @holiday_insert_start datetime
+    set @holiday_insert_start = getdate()
+    exec dbo_insert_elements @nb_of_rows, 'Holidays'
+    declare @holiday_insert_end datetime
+    set @holiday_insert_end = getdate()
+
+    declare @equipment_programmers_insert_start datetime
+    set @equipment_programmers_insert_start = getdate()
+    exec dbo_insert_elements @nb_of_rows, 'EquipmentProgrammers'
+    declare @equipment_programmers_insert_end datetime
+    set @equipment_programmers_insert_end = getdate()
+
+    declare @equipment_programmers_delete_start datetime
+    set @equipment_programmers_delete_start = getdate()
+    exec dbo_delete_rows @nb_of_rows, 'EquipmentProgrammers'
+    declare @equipment_programmers_delete_end datetime
+    set @equipment_programmers_delete_end = getdate()
+
+    declare @holiday_delete_start datetime
+    set @holiday_delete_start = getdate()
+    exec dbo_delete_rows @nb_of_rows, 'Holiday'
+    declare @holiday_delete_end datetime
+    set @holiday_delete_end = getdate()
+
+    declare @equipment_delete_start datetime
+    set @equipment_delete_start = getdate()
+    exec dbo_delete_rows @nb_of_rows, 'Equipment'
+    declare @equipment_delete_end datetime
+    set @equipment_delete_end = getdate()
+
+    declare @view_1_start datetime
+	set @view_1_start = getdate()
+	execute dbo_select_view 'View_1'
+	declare @view_1_end datetime
+	set @view_1_end = getdate()
+
+	declare @view_2_start datetime
+	set @view_2_start = getdate()
+	execute dbo_select_view 'View_2'
+	declare @view_2_end datetime
+	set @view_2_end = getdate()
+
+    declare @view_3_start datetime
+	set @view_3_start = getdate()
+	execute dbo_select_view 'View_3'
+	declare @view_3_end datetime
+	set @view_3_end = getdate()
+
+
+    declare @description nvarchar(100)
+    declare @lastTestRunID int;
+
+	set @description = 'Insert ' + convert(varchar(10), @nb_of_rows) + ' rows'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @equipment_insert_start, @equipment_insert_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+	insert into TestRunTables
+	values(@lastTestRunID, 1, @equipment_insert_start, @equipment_insert_end)
+
+    set @description = 'Insert ' + convert(varchar(10), @nb_of_rows) + ' rows'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @holiday_insert_start, @holiday_insert_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+	insert into TestRunTables
+	values(@lastTestRunID, 2, @holiday_insert_start, @holiday_insert_end)
+
+    set @description = 'Insert ' + convert(varchar(10), @nb_of_rows) + ' rows'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @equipment_programmers_insert_start, @equipment_programmers_insert_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+	insert into TestRunTables
+	values(@lastTestRunID, 3, @equipment_programmers_insert_start, @equipment_programmers_insert_end)
+
+    set @description = 'Delete ' + convert(varchar(10), @nb_of_rows) + ' rows'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @equipment_programmers_delete_start, @equipment_programmers_delete_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+
+	insert into TestRunTables
+	values(@lastTestRunID, 3, @equipment_programmers_delete_start, @equipment_programmers_delete_end)
+
+
+    set @description = 'Delete ' + convert(varchar(10), @nb_of_rows) + ' rows'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @holiday_delete_start, @holiday_delete_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+	insert into TestRunTables
+	values(@lastTestRunID, 2, @holiday_delete_start, @holiday_delete_end)
+
+    set @description = 'Delete ' + convert(varchar(10), @nb_of_rows) + ' rows'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @equipment_delete_start, @equipment_delete_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+	insert into TestRunTables
+	values(@lastTestRunID, 1, @equipment_delete_start, @equipment_delete_end)
+
+    set @description = 'Select View_1'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @view_1_start, @view_1_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+	insert into TestRunViews
+	values(@lastTestRunID, 1, @view_1_start, @view_1_end)
+
+    set @description = 'Select View_2'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @view_2_start, @view_2_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+	insert into TestRunViews
+	values(@lastTestRunID, 2, @view_2_start, @view_2_end)
+
+    set @description = 'Select View_3'
+    insert into TestRuns(Description, StartAt, EndAt)
+	values(@description, @view_3_start, @view_3_end);
+	set @lastTestRunID = (select max(TestRunID) from TestRuns);
+	insert into TestRunViews
+	values(@lastTestRunID, 3, @view_3_start, @view_3_end)
+
+    exec dbo_deleteAll @tableName = 'EquipmentProgrammers'
+    exec dbo_deleteAll @tableName = 'Equipment'
+    exec dbo_deleteAll @tableName = 'Holidays'
+go
+
+CREATE procedure dbo_select_view @view varchar(10) as
     if @view = 'View_1'
         select * from View_1
     if @view = 'View_2'
