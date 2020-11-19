@@ -1,0 +1,42 @@
+Program state
+Exe Stack: (int x;(x=3+5*7;print(x)))  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (x=3+5*7;print(x)) int x  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: (x=3+5*7;print(x))  
+Sym Table: x-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: print(x) x=3+5*7  
+Sym Table: x-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack: print(x)  
+Sym Table: x-38  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+Exe Stack:  
+Sym Table: x-38  
+Heap:  
+Output Console: 38  
+File Table:  
+
