@@ -21,17 +21,18 @@
  ;Li + A + insert(Li+1...Ln, A), if i % 2 == 0
  ;Li + insert(Li+1...Ln, A), otherwise
 
- (defun insert (l a)
-    (insert_aux l a 1)
- )
-
- (defun insert_aux (l a p)
+(defun insert_aux (l a p)
     (cond
         ((null l) nil)
         ((equal (mod p 2) 0) (cons (car l) (cons a (insert_aux (cdr l) a (+ p 1)))))
         (T (cons (car l) (insert_aux (cdr l) a (+ p 1))))
     )
  )
+
+ (defun insert (l a)
+    (insert_aux l a 1)
+ )
+
 
 
  (print (insert '(1 2 3 4 5 6 7 8) 100))
@@ -62,27 +63,43 @@
  ;gcd(li, gcd_list(li+1...ln)), if numberp(li) == true
  ;gcd_list(li+1...ln), otherwise
 
- (defun gcd_list(l)
-    (cond
-        ((and (equal (length l) 1) (not (listp (car l)))) (car l))
-        ((and (equal (length l) 1) (listp (car l))) (gcd_list (car l)))
-        ((listp (car l)) (gcd (gcd_list (car l)) (gcd_list(cdr l))))
-        ((numberp (car l)) (gcd (car l) (gcd_list (car l))))
-        (T (gcd_list (cdr l)))
-    )
- )
+  (defun gcd_list(l)
+     (cond
+         ((and (equal (length l) 1) (not (listp (car l)))) (car l))
+         ((and (equal (length l) 1) (listp (car l))) (gcd_list (car l)))
+         ((listp (car l)) (gcd (gcd_list (car l)) (gcd_list (cdr l))))
+         ((numberp (car l)) (gcd (car l) (gcd_list (car l))))
+         (T (gcd_list (cdr l)))
+     )
+  )
 
- (defun gcd(a b)
-    (cond
-        ((and (not (numberp a)) (not (numberp b))) nil)
-        ((not (numberp a)) b)
-        ((not (numberp b)) a)
-        ((equal b 0) a)
-        (T (gcd b (mod a b)))
-    )
- )
-
- (print (gcd_list '(24 ( 16 (12 A B)) 72)))
+  (defun gcd(a b)
+     (cond
+         ((and (not (numberp a)) (not (numberp b))) nil)
+         ((not (numberp a)) b)
+         ((not (numberp b)) a)
+         ((equal b 0) a)
+         (T (gcd b (mod a b)))
+     )
+  )
 
  ;d)
- 
+ ;occurences(l, e)
+ ;0, if l is empty
+ ;1 + occurences(li+1...ln), if atom (li) == true && li == e
+ ;occurences(li+1...ln), if atom (li) == true
+ ;occurences(li) + occurences(li+1...ln), if atom(li) == false
+ ;occurences(li+1...ln), otherwise
+
+ (defun occurences(l e)
+    (cond
+        ((null l) 0)
+        ((and (atom (car l)) (equal (car l) e)) (+ 1 (occurences (cdr l) e)))
+        ((atom (car l)) (occurences (cdr l) e))
+        ((not (atom (car l))) (+ (occurences (car l) e) (occurences (cdr l) e)))
+        (T (occurences (car l) e))
+    )
+ )
+
+ (print (occurences '(1 (6 (5 4 3) (5 3)) 3 3) 3))
+
