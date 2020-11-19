@@ -2,10 +2,7 @@ import controller.Controller;
 import model.ADT.*;
 import model.PrgState;
 import model.exceptions.MyException;
-import model.expression.ArithExp;
-import model.expression.ReadHeapExp;
-import model.expression.ValueExp;
-import model.expression.VarExp;
+import model.expression.*;
 import model.statement.*;
 import model.type.BoolType;
 import model.type.IntType;
@@ -30,6 +27,7 @@ public class Main {
         IMyStack<IStmt> stack3 = new MyStack<>();
         IMyStack<IStmt> stack4 = new MyStack<>();
         IMyStack<IStmt> stack5 = new MyStack<>();
+        IMyStack<IStmt> stack6 = new MyStack<>();
 
         IStmt example_1 = new CompStmt(
                 new VarDeclStmt("x", new IntType()),
@@ -110,6 +108,17 @@ public class Main {
         IRepo repo5 = new Repository(prg5, "log5.txt");
         Controller ctr5 = new Controller(repo5);
 
+        IStmt example_6 = new CompStmt(new VarDeclStmt("x", new IntType()),
+                new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(10))),
+                        new CompStmt(new WhileStmt(new RelationalExp(new VarExp("x"), new ValueExp(new IntValue(0)), 5), new CompStmt(new PrintStmt(new VarExp("x")), new AssignStmt("x", new ArithExp(new VarExp("x"), new ValueExp(new IntValue(1)), '-')))),
+                                new PrintStmt(new VarExp("x")))));
+
+
+
+        PrgState prg6 = new PrgState(stack6, new MyDictionary<String, Value>(),  new MyList<Value>(), new MyDictionary<StringValue, BufferedReader>(), new MyHeap<>(), example_6);
+        IRepo repo6 = new Repository(prg6, "log6.txt");
+        Controller ctr6 = new Controller(repo6);
+
         TextMenu menu = new TextMenu();
 
         repo1.addState(prg1);
@@ -117,6 +126,7 @@ public class Main {
         repo3.addState(prg3);
         repo4.addState(prg4);
         repo5.addState(prg5);
+        repo6.addState(prg6);
 
 
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -125,6 +135,7 @@ public class Main {
         menu.addCommand(new RunExample("3",example_3.toString(),ctr3));
         menu.addCommand(new RunExample("4",example_4.toString(),ctr4));
         menu.addCommand(new RunExample("5",example_5.toString(),ctr5));
+        menu.addCommand(new RunExample("6",example_6.toString(),ctr6));
         menu.show();
     }
 }

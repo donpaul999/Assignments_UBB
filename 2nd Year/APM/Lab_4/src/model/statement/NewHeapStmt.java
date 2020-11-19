@@ -62,7 +62,7 @@ public class NewHeapStmt implements IStmt {
 
     @Override
     public String toString(){
-        return "new( " + var_name + ", " + exp + " )";
+        return "new(" + var_name + ", " + exp + ")";
     }
 
 
