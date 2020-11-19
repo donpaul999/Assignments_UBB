@@ -57,31 +57,29 @@
 
  ;c)
  ;gcd_list(l)
- ;li, if i == n and listp(li) == false
- ;gcd_list(li), if i == n and listp(li) == true
- ;gcd(gcd_list(li), gcd_list(li+1...ln)) , if listp(li) == true
- ;gcd(li, gcd_list(li+1...ln)), if numberp(li) == true
- ;gcd_list(li+1...ln), otherwise
+ ;l, if size of l == 1
+ ;gcd(gcd_list(li), gcd_list(li+1...ln)), if listp(li) == true
+ ;gcd(li, gcd_list(li+1...ln)), otherwise
 
   (defun gcd_list(l)
      (cond
-         ((and (equal (length l) 1) (not (listp (car l)))) (car l))
-         ((and (equal (length l) 1) (listp (car l))) (gcd_list (car l)))
-         ((listp (car l)) (gcd (gcd_list (car l)) (gcd_list (cdr l))))
-         ((numberp (car l)) (gcd (car l) (gcd_list (car l))))
-         (T (gcd_list (cdr l)))
+        ((and (atom (car l)) (null (cdr l))) (car l))
+        ((listp (car l)) (_gcd (gcd_list (car l)) (gcd_list (cdr l))))
+        (T (_gcd (car l) (gcd_list (cdr l))))
      )
   )
 
-  (defun gcd(a b)
+  (defun _gcd(a b)
      (cond
          ((and (not (numberp a)) (not (numberp b))) nil)
          ((not (numberp a)) b)
          ((not (numberp b)) a)
          ((equal b 0) a)
-         (T (gcd b (mod a b)))
+         (T (_gcd b (mod a b)))
      )
   )
+
+   (print (gcd_list '(24 ( 16 (12 A B)) 72)))
 
  ;d)
  ;occurences(l, e)
@@ -101,5 +99,5 @@
     )
  )
 
- (print (occurences '(1 (6 (5 4 3) (5 3)) 3 3) 3))
+ (print (occurences '(1 (6 (3 4 3) (5 3)) 3 3) 3))
 
