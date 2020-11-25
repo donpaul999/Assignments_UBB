@@ -45,7 +45,7 @@ public class Controller {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
-    void oneStepForAllPrg(List<PrgState> prgList) throws InterruptedException {
+    void oneStepForAllPrg(List<PrgState> prgList) throws InterruptedException, MyException {
         prgList.forEach(prg-> {
             try {
                 repository.printPrgState(prg);
@@ -53,22 +53,28 @@ public class Controller {
                 e.printStackTrace();
             }
         });
-        List <Callable<PrgState>> callList = prgList.stream().
-                map((PrgState p)->(Callable<PrgState>)(p::oneStep)).collect(Collectors.toList());
-
-        List <PrgState> newPrgList = executor.invokeAll(callList).stream()
-                .map(future -> {try{return future.get();}
-                        catch (InterruptedException | ExecutionException exception) {
-                            try {
-                                throw new MyException(exception.getMessage());
-                            } catch (MyException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    return null;
-                }).filter(Objects::nonNull)
+        List <Callable<PrgState>> callList = prgList.stream()
+                .map((PrgState p)->(Callable<PrgState>)(p::oneStep))
                 .collect(Collectors.toList());
-        prgList.addAll(newPrgList);
+        try {
+            List<PrgState> newPrgList = executor.invokeAll(callList).stream()
+                    .map(future -> {
+                        try {
+                            return future.get();
+                        } catch (ExecutionException | InterruptedException e) {
+                            //System.out.println(e.getMessage());
+                        }
+                        return null;
+                    })
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
+            prgList.addAll(newPrgList);
+        }
+        catch(InterruptedException e)
+        {
+            throw  new MyException(e.getMessage());
+        }
+
         prgList.forEach(prg -> {
             try {
                 repository.printPrgState(prg);

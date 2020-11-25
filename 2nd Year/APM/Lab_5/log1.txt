@@ -107,7 +107,7 @@ ID: 7
 Exe Stack:  
 Sym Table: x-17  
 Heap:  
-Output Console: 17  
+Output Console: 0  
 File Table:  
 
 Program state
@@ -115,7 +115,7 @@ ID: 7
 Exe Stack:  
 Sym Table: x-17  
 Heap:  
-Output Console: 17  
+Output Console: 0  
 File Table:  
 
 Program state
@@ -123,7 +123,7 @@ ID: 7
 Exe Stack:  
 Sym Table: x-17  
 Heap:  
-Output Console: 17  
+Output Console: 0  
 File Table:  
 
 Program state
@@ -131,7 +131,7 @@ ID: 7
 Exe Stack:  
 Sym Table: x-17  
 Heap:  
-Output Console: 17  
+Output Console: 0  
 File Table:  
 
 Program state
@@ -139,7 +139,7 @@ ID: 7
 Exe Stack:  
 Sym Table: x-17  
 Heap:  
-Output Console: 17  
+Output Console: 0  
 File Table:  
 
 Program state
@@ -147,6 +147,6 @@ ID: 7
 Exe Stack:  
 Sym Table: x-17  
 Heap:  
-Output Console: 17  
+Output Console: 0  
 File Table:  
 
