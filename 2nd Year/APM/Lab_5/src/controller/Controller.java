@@ -46,6 +46,8 @@ public class Controller {
     }
 
     void oneStepForAllPrg(List<PrgState> prgList) throws InterruptedException, MyException {
+        //System.out.println(prgList);
+
         prgList.forEach(prg-> {
             try {
                 repository.printPrgState(prg);
@@ -82,6 +84,8 @@ public class Controller {
                 e.printStackTrace();
             }
         });
+
+
         repository.setPrgList(prgList);
     }
 

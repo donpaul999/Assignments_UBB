@@ -16,10 +16,10 @@
  ; d) Write a function that determines the number of occurrences of a given atom in a nonlinear list.
 
  ;a)
- ;insert(L, A)
- ;null, if l is empty
- ;Li + A + insert(Li+1...Ln, A), if i % 2 == 0
- ;Li + insert(Li+1...Ln, A), otherwise
+ ;insert(L, A, i)
+ ;[], if l is empty
+ ;L1 + A + insert(L2...Ln, A, i + 1), if i % 2 == 0
+ ;L1 + insert(L2...Ln, A, i + 1), otherwise
 
 (defun insert_aux (l a p)
     (cond
@@ -38,10 +38,10 @@
  (print (insert '(1 2 3 4 5 6 7 8) 100))
 
  ;b)
- ;get_atoms(l)
+ ;get_atoms(l1...ln)
  ;[], l is empty
- ;get_atoms(li+1...ln) + get_atoms(li), if listp(li) == true
- ;get_atoms(li+1...ln) + li, otherwise
+ ;get_atoms(l2...ln) + get_atoms(l1), l1 is a list
+ ;get_atoms(l2...ln) + l1, otherwise
 
  (defun get_atoms(l)
     (cond
@@ -56,18 +56,13 @@
   (print (get_atoms '(1 2 3 4 5 (A B C) 6 7 8)))
 
  ;c)
- ;gcd_list(l)
+ ;gcd_list(l1...ln)
  ;l, if size of l == 1
- ;gcd(gcd_list(li), gcd_list(li+1...ln)), if listp(li) == true
- ;gcd(li, gcd_list(li+1...ln)), otherwise
-
-  (defun gcd_list(l)
-     (cond
-        ((and (atom (car l)) (null (cdr l))) (car l))
-        ((listp (car l)) (_gcd (gcd_list (car l)) (gcd_list (cdr l))))
-        (T (_gcd (car l) (gcd_list (cdr l))))
-     )
-  )
+ ;gcd(gcd_list(l1), gcd_list(l2...ln)), l1 is a list
+ ;gcd(l1, gcd_list(l2...ln)), otherwise
+ ;
+ ;_gcd(a b)
+ ;
 
   (defun _gcd(a b)
      (cond
@@ -79,15 +74,24 @@
      )
   )
 
-   (print (gcd_list '(24 ( 16 (12 A B)) 72)))
+  (defun gcd_list(l)
+     (cond
+        ((and (atom (car l)) (null (cdr l))) (car l))
+        ((listp (car l)) (_gcd (gcd_list (car l)) (gcd_list (cdr l))))
+        (T (_gcd (car l) (gcd_list (cdr l))))
+     )
+  )
+
+
+  (print (gcd_list '(24 ( 16 (12 A B)) 72)))
 
  ;d)
  ;occurences(l, e)
  ;0, if l is empty
- ;1 + occurences(li+1...ln), if atom (li) == true && li == e
- ;occurences(li+1...ln), if atom (li) == true
- ;occurences(li) + occurences(li+1...ln), if atom(li) == false
- ;occurences(li+1...ln), otherwise
+ ;1 + occurences(l2...ln), l1 is atom and l1 = e
+ ;occurences(l2...ln), l1 is atom and l1 != e
+ ;occurences(l1) + occurences(l2...ln), l1 is not atom
+
 
  (defun occurences(l e)
     (cond
