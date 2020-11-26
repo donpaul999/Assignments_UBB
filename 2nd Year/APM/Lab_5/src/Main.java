@@ -111,8 +111,8 @@ public class Main {
 
         IStmt example_6 = new CompStmt(new VarDeclStmt("x", new IntType()),
                 new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(10))),
-                        new CompStmt(new WhileStmt(new RelationalExp(new VarExp("x"), new ValueExp(new IntValue(0)), 5), new CompStmt(new PrintStmt(new VarExp("x")), new AssignStmt("x", new ArithExp(new VarExp("x"), new ValueExp(new IntValue(1)), '-')))),
-                                new PrintStmt(new VarExp("x")))));
+                        new WhileStmt(new RelationalExp(new VarExp("x"), new ValueExp(new IntValue(0)), 5), new CompStmt(new PrintStmt(new VarExp("x")), new AssignStmt("x", new ArithExp(new VarExp("x"), new ValueExp(new IntValue(1)), '-')))
+                        )));
 
 
 

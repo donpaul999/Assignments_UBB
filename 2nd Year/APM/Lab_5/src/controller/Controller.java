@@ -113,13 +113,14 @@ public class Controller {
         return currentStmt.execute(state);
     }
 
+
     public void allStep() throws MyException, IOException, InterruptedException {
         executor = Executors.newFixedThreadPool(2);
         //remove the completed programs
         List<PrgState>  prgList=removeCompletedPrograms(repository.getPrgList());
         while(prgList.size() > 0){
-            oneStepForAllPrg(prgList);
             prgList=removeCompletedPrograms(repository.getPrgList());
+            oneStepForAllPrg(prgList);
         }
 
         executor.shutdownNow();
