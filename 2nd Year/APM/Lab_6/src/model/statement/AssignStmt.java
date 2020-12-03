@@ -42,7 +42,7 @@ public class AssignStmt implements IStmt {
             throw new StmtException("The used variable " + id + " was not declared before");
         }
         state.setSymTable(symTable);
-        return state;
+        return null;
     }
     @Override
     public IStmt deepCopy() {

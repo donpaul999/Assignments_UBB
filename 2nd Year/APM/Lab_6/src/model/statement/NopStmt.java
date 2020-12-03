@@ -9,7 +9,7 @@ import model.type.Type;
 public class NopStmt implements IStmt {
     @Override
     public PrgState execute(PrgState state) throws StmtException {
-        return state;
+        return null;
     }
     @Override
     public IStmt deepCopy() {

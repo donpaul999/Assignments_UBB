@@ -40,6 +40,22 @@ public class Controller {
         this.repository = repo;
     }
 
+    List<Integer> getAddrFromSymTable(Collection<Value> symTableValues, Collection<Value> heap) {
+        return Stream.concat(
+                heap.stream()
+                        .filter(v -> v instanceof RefValue)
+                        .map(v -> {
+                            RefValue v1 = (RefValue) v;
+                            return v1.getAddress();
+                        })
+                ,symTableValues.stream()
+                        .filter(v -> v instanceof RefValue)
+                        .map(v -> {
+                            RefValue v1 = (RefValue) v;
+                            return v1.getAddress();
+                        }))
+                .collect(Collectors.toList());
+    }
 
     Map<Integer, Value> unsafeGarbageCollector(List<Integer> addresses, Map<Integer, Value> heap) {
         return heap.entrySet().stream()
@@ -95,7 +111,6 @@ public class Controller {
         {
             throw  new MyException(e.getMessage());
         }
-
         prgList.forEach(prg -> {
             try {
                 repository.printPrgState(prg);
@@ -108,22 +123,6 @@ public class Controller {
         repository.setPrgList(prgList);
     }
 
-    List<Integer> getAddrFromSymTable(Collection<Value> symTableValues, Collection<Value> heap) {
-        return Stream.concat(
-                heap.stream()
-                .filter(v -> v instanceof RefValue)
-                .map(v -> {
-                    RefValue v1 = (RefValue) v;
-                    return v1.getAddress();
-                })
-                ,symTableValues.stream()
-                .filter(v -> v instanceof RefValue)
-                .map(v -> {
-                    RefValue v1 = (RefValue) v;
-                    return v1.getAddress();
-                }))
-                .collect(Collectors.toList());
-    }
 
     List<PrgState> removeCompletedPrograms(List<PrgState> prgList){
         return prgList.stream().filter(PrgState::isNotCompleted).collect(Collectors.toList());
@@ -143,11 +142,11 @@ public class Controller {
     public void allStep() throws MyException, IOException, InterruptedException {
         executor = Executors.newFixedThreadPool(2);
         //remove the completed programs
-        List<PrgState>  prgList=removeCompletedPrograms(repository.getPrgList());
+        List<PrgState> prgList=removeCompletedPrograms(repository.getPrgList());
         while(prgList.size() > 0){
             garbageCollector(prgList);
-            prgList=removeCompletedPrograms(repository.getPrgList());
             oneStepForAllPrg(prgList);
+            prgList=removeCompletedPrograms(repository.getPrgList());
         }
 
         executor.shutdownNow();

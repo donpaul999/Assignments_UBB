@@ -29,7 +29,7 @@ public class PrintStmt implements IStmt{
         outConsole.add(exp.eval(state.getSymTable(), state.getHeap()));
         state.setExeStack(stack);
         state.setOutConsole(outConsole);
-        return state;
+        return null;
     }
 
     @Override

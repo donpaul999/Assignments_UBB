@@ -42,7 +42,7 @@ public class IfStmt implements IStmt {
             stack.push(elseStatement.deepCopy());
         }
         state.setExeStack(stack);
-        return state;
+        return null;
     }
 
     @Override

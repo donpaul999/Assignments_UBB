@@ -129,6 +129,9 @@ public class Controller {
         return prgList.stream().filter(PrgState::isNotCompleted).collect(Collectors.toList());
     }
 
+    public List<PrgState> removeDuplicateStates(List<PrgState> prgList) {
+        return prgList.stream().distinct().collect(Collectors.toList());
+    }
 
     public PrgState oneStep(PrgState state) throws MyException, ADTException, StmtException, ExprException {
         IMyStack<IStmt> stack = state.getStack();
@@ -147,6 +150,7 @@ public class Controller {
         while(prgList.size() > 0){
             garbageCollector(prgList);
             prgList=removeCompletedPrograms(repository.getPrgList());
+            prgList=removeDuplicateStates(prgList);
             oneStepForAllPrg(prgList);
         }
 

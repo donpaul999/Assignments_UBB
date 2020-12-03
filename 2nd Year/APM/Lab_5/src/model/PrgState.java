@@ -10,9 +10,9 @@ import model.value.StringValue;
 import model.value.Value;
 
 import java.io.BufferedReader;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Objects;
 
-public class PrgState {
+public class PrgState{
     private IMyStack<IStmt> exeStack;
     private IMyHeap<Value> heap;
     private IMyDictionary<String, Value> symTable;
@@ -69,6 +69,9 @@ public class PrgState {
     public IStmt getOriginalProgram(){
         return originalProgram;
     }
+    public int getStateID(){
+        return stateID;
+    }
 
     public IMyDictionary<StringValue, BufferedReader> getFileTable() {
         return fileTable;
@@ -105,5 +108,15 @@ public class PrgState {
 
     public void setOutConsole(IMyList<Value> outConsole) {
         out = outConsole;
+    }
+
+
+    public boolean equals(PrgState prg) {
+        return prg.getHeap() == this.getHeap() && prg.getSymTable() == this.getSymTable() && prg.getStack() == this.getStack() && prg.getStateID() == this.getStateID();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getStateID());
     }
 }

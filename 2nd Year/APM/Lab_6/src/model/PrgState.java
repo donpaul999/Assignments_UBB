@@ -10,6 +10,7 @@ import model.value.StringValue;
 import model.value.Value;
 
 import java.io.BufferedReader;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PrgState {
@@ -30,7 +31,16 @@ public class PrgState {
         originalProgram = prg;
         heap = givenHeap;
         stateID = getNewPrgStateID();
-        stk.push(prg);
+        exeStack.push(prg);
+    }
+
+    public PrgState(IMyStack<IStmt> executionStack, IMyDictionary<String, Value> symbolTable, IMyList<Value> outputConsole, IMyDictionary<StringValue, BufferedReader> fileTable, IMyHeap<Value> heapTable) {
+        this.exeStack = executionStack;
+        this.symTable = symbolTable;
+        this.out = outputConsole;
+        this.fileTable = fileTable;
+        this.heap = heapTable;
+        stateID = getNewPrgStateID();
     }
 
     public PrgState(IMyStack<IStmt> stack, MyDictionary<String, Value> stringValueMyDictionary, MyList<Value> valueMyList) {

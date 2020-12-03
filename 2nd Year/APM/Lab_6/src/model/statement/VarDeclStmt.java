@@ -46,7 +46,7 @@ public class VarDeclStmt implements IStmt {
         }
         state.setSymTable(table);
         state.setExeStack(stack);
-        return state;
+        return null;
     }
 
     @Override

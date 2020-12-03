@@ -53,7 +53,7 @@ public class NewHeapStmt implements IStmt {
         state.setSymTable(symTbl);
         state.setHeap(heap);
         state.setExeStack(stack);
-        return state;
+        return null;
     }
 
     @Override

@@ -2,6 +2,7 @@ package model.statement;
 
 import model.ADT.*;
 import model.PrgState;
+import model.exceptions.ADTException;
 import model.exceptions.ExprException;
 import model.exceptions.StmtException;
 import model.type.Type;
@@ -19,19 +20,15 @@ public class ForkStmt implements IStmt{
     }
 
     @Override
-    public PrgState execute(PrgState state) throws StmtException {
-        IMyStack<IStmt> stk = state.getStack();
-        IMyDictionary<String, Value> symTable = state.getSymTable();
-        IMyHeap<Value> heap = state.getHeap();
-        IMyList<Value> outList = state.getOutConsole();
-        IMyDictionary<StringValue, BufferedReader> fileTable = state.getFileTable();
-
-        MyStack<IStmt> newStk = new MyStack<IStmt>();
-        MyDictionary<String, Value> newSymTable = new MyDictionary<String, Value>();
-        for (Map.Entry<String, Value> entry: symTable.getContent().entrySet()) {
-            newSymTable.update(new String(entry.getKey()), entry.getValue().deepCopy());
+    public PrgState execute(PrgState state) throws StmtException, ADTException {
+        IMyDictionary<String, Value> newSymbolTable = new MyDictionary<>();
+        for (Map.Entry<String, Value> entry: state.getSymTable().getContent().entrySet()) {
+            newSymbolTable.add(entry.getKey(), entry.getValue());
         }
-        return new PrgState(newStk, newSymTable, outList, fileTable, heap, statement);
+        IMyStack <IStmt> stack = new MyStack<>();
+        stack.push(statement);
+        PrgState newProgram = new PrgState(stack, newSymbolTable, state.getOutConsole(), state.getFileTable(), state.getHeap());
+        return newProgram;
     }
 
 
