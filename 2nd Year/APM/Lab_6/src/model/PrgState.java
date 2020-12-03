@@ -116,4 +116,16 @@ public class PrgState {
     public void setOutConsole(IMyList<Value> outConsole) {
         out = outConsole;
     }
+
+    public static PrgState emptyPrgState(IStmt program) {
+        return new PrgState(new MyStack<IStmt>(),
+                new MyDictionary<String, Value>(),
+                new MyList<Value>(),
+                new MyDictionary<StringValue, BufferedReader>(),
+                new MyHeap<Value>(),
+                program);
+    }
+    public int getStateID(){
+        return stateID;
+    }
 }

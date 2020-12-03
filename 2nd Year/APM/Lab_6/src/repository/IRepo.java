@@ -15,4 +15,6 @@ public interface IRepo {
     void setPrgList(List<PrgState> list);
 
     void addState(PrgState state);
+
+    PrgState getPrgStateWithId(int currentId);
 }

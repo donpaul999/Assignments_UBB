@@ -6,19 +6,14 @@ import model.exceptions.ExprException;
 import model.exceptions.MyException;
 import model.PrgState;
 import model.exceptions.StmtException;
-import model.expression.ArithExp;
-import model.expression.ValueExp;
-import model.expression.VarExp;
+import model.expression.*;
 import model.statement.*;
-import model.type.BoolType;
-import model.type.IntType;
-import model.type.RefType;
-import model.value.BoolValue;
-import model.value.IntValue;
-import model.value.RefValue;
-import model.value.Value;
+import model.type.*;
+import model.value.*;
 import repository.IRepo;
+import repository.Repository;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
@@ -81,7 +76,7 @@ public class Controller {
 
 
     void oneStepForAllPrg(List<PrgState> prgList) throws InterruptedException, MyException {
-        //System.out.println(prgList);
+        System.out.println(prgList);
 
         prgList.forEach(prg-> {
             try {
@@ -99,7 +94,7 @@ public class Controller {
                         try {
                             return future.get();
                         } catch (ExecutionException | InterruptedException e) {
-                            //System.out.println(e.getMessage());
+                            System.out.println(e.getMessage());
                         }
                         return null;
                     })
@@ -203,5 +198,30 @@ public class Controller {
     }
 
 
+    public void typecheckOriginalProgram() throws StmtException, ExprException {
+        MyDictionary<String, Type> typeEnvironment = new MyDictionary<String, Type>();
+        IStmt originalProgram = repository.getOriginalProgram();
+        originalProgram.typecheck(typeEnvironment);
+    }
+
+    @Override
+    public String toString() {
+        return repository.getOriginalProgram().toString();
+    }
+
+    public IRepo getRepository() {
+        return repository;
+    }
+
+    public void executeOneStep() throws MyException, InterruptedException {
+        List<PrgState> list = removeCompletedPrograms(repository.getPrgList());
+        garbageCollector(list);
+        oneStepForAllPrg(list);
+        list = removeCompletedPrograms(repository.getPrgList());
+        repository.setPrgList(list);
+        if (list.isEmpty()) {
+            executor.shutdownNow();
+        }
+    }
 }
 

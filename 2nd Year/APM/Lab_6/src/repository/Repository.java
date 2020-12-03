@@ -28,6 +28,7 @@ public class Repository implements IRepo {
             throw new MyException(e.getMessage());
         }
         states = new LinkedList<>();
+        states.add(prgState);
     }
 
     public Repository() {
@@ -77,5 +78,13 @@ public class Repository implements IRepo {
     @Override
     public void addState(PrgState state) {
         states.add(state);
+    }
+
+    @Override
+    public PrgState getPrgStateWithId(int id) {
+        for(PrgState p : states)
+            if(p.getStateID() == id)
+                return p;
+        return null;
     }
 }
