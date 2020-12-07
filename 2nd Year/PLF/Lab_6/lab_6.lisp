@@ -1,7 +1,7 @@
 ;5. Return the level (depth) of a node in a tree of type (1). The level of the root element is 0.
 
 ;level(l, e)
-;nil, l is empty
+;0, l is empty
 ;0, l1 is not a number and l1 == e
 ;1 + (l2..ln, e), otherwise
 
