@@ -76,7 +76,7 @@ public class Controller {
 
 
     void oneStepForAllPrg(List<PrgState> prgList) throws InterruptedException, MyException {
-        System.out.println(prgList);
+       // System.out.println(prgList);
 
         prgList.forEach(prg-> {
             try {
@@ -94,7 +94,7 @@ public class Controller {
                         try {
                             return future.get();
                         } catch (ExecutionException | InterruptedException e) {
-                            System.out.println(e.getMessage());
+                            //System.out.println(e.getMessage());
                         }
                         return null;
                     })
