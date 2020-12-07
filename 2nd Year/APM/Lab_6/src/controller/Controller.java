@@ -28,7 +28,7 @@ import java.util.stream.Stream;
 
 public class Controller {
     private IRepo repository;
-    private ExecutorService executor;
+    private final ExecutorService executor = Executors.newFixedThreadPool(2);
 
 
     public Controller(IRepo repo) {
@@ -115,6 +115,7 @@ public class Controller {
         });
 
 
+
         repository.setPrgList(prgList);
     }
 
@@ -135,7 +136,6 @@ public class Controller {
 
 
     public void allStep() throws MyException, IOException, InterruptedException {
-        executor = Executors.newFixedThreadPool(2);
         //remove the completed programs
         List<PrgState> prgList=removeCompletedPrograms(repository.getPrgList());
         while(prgList.size() > 0){

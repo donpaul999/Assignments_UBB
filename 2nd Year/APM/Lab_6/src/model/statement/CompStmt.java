@@ -20,7 +20,7 @@ public class CompStmt implements IStmt {
         stack.push(snd);
         stack.push(first);
         state.setExeStack(stack);
-        return state;
+        return null;
     }
 
     @Override

@@ -62,7 +62,7 @@ public class Main {
         Controller ctr2 = new Controller(repo2);
 
         IStmt example_3 = new CompStmt(
-                new VarDeclStmt("s" , new IntType()),
+                new VarDeclStmt("s" , new BoolType()),
                 new CompStmt(new VarDeclStmt("x", new IntType()),
                         new CompStmt(
                                 new AssignStmt("s", new ValueExp(new BoolValue(true))),

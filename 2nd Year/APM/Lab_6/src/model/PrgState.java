@@ -20,7 +20,7 @@ public class PrgState {
     private IMyList<Value> out;
     private IMyDictionary<StringValue, BufferedReader> fileTable;
     private IStmt originalProgram; //optional field, but good to have
-    private static int stateID;
+    private int stateID;
     private static int freeID = 0;
 
     public PrgState(IMyStack<IStmt> stk, IMyDictionary<String, Value> symtbl, IMyList<Value> ot, IMyDictionary<StringValue, BufferedReader> fT, IMyHeap<Value> givenHeap, IStmt prg) {
