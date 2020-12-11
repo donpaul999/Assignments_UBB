@@ -10,7 +10,7 @@
         <VBox alignment="CENTER" prefHeight="511.0" prefWidth="1000.0">
             <children>
                 <ListView fx:id="programsListView" prefHeight="460.0" prefWidth="686.0" />
-                <Button fx:id="startProgramButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#startProgram" text="Start program" />
+                <Button fx:id="startProgramButton" alignment="CENTER" contentDisplay="CENTER" onAction="#startProgram" text="Start program" />
             </children>
         </VBox>
     </children>

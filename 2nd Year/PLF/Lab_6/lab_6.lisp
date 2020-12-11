@@ -53,3 +53,4 @@
 )
 
 (print (level '(A 2 B 0 C 2 D 0 E 0) 'E))
+(print (level '(A 2 B 2 D 0 E 1 H 0 C 2 F 1 I 0 G 0) 'I))

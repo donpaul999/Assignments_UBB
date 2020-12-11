@@ -1,0 +1,328 @@
+Program state
+ID: 7 
+Exe Stack: (int v;(Ref(int) a;(v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))))  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (Ref(int) a;(v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))) int v  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (Ref(int) a;(v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))) int v  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (Ref(int) a;(v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))))  
+Sym Table: v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (Ref(int) a;(v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))))  
+Sym Table: v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))) Ref(int) a  
+Sym Table: v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))) Ref(int) a  
+Sym Table: v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))  
+Sym Table: a-(0, int) v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (v=10;(new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))  
+Sym Table: a-(0, int) v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))) v=10  
+Sym Table: a-(0, int) v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))) v=10  
+Sym Table: a-(0, int) v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))  
+Sym Table: a-(0, int) v-10  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (new(a, 22);(fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))  
+Sym Table: a-(0, int) v-10  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))) new(a, 22)  
+Sym Table: a-(0, int) v-10  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))) new(a, 22)  
+Sym Table: a-(0, int) v-10  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (fork((wH(a,30);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (print(v);print(rH(a))) fork((wH(a,30);(v=32;(print(v);print(rH(a))))))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (print(v);print(rH(a))) fork((wH(a,30);(v=32;(print(v);print(rH(a))))))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (print(v);print(rH(a)))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(a,30);(v=32;(print(v);print(rH(a)))))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: (print(v);print(rH(a)))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(a,30);(v=32;(print(v);print(rH(a)))))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: print(rH(a)) print(v)  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=32;(print(v);print(rH(a)))) wH(a,30)  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: print(rH(a)) print(v)  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=32;(print(v);print(rH(a)))) wH(a,30)  
+Sym Table: a-(1, int) v-10  
+Heap: 1-22  
+Output Console:  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: print(rH(a))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-30  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=32;(print(v);print(rH(a))))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-30  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack: print(rH(a))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-30  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=32;(print(v);print(rH(a))))  
+Sym Table: a-(1, int) v-10  
+Heap: 1-30  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 7 
+Exe Stack:  
+Sym Table: a-(1, int) v-10  
+Heap: 1-30  
+Output Console: 10 30  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);print(rH(a))) v=32  
+Sym Table: a-(1, int) v-10  
+Heap: 1-30  
+Output Console: 10 30  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);print(rH(a))) v=32  
+Sym Table: a-(1, int) v-10  
+Heap: 1-30  
+Output Console: 10 30  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);print(rH(a)))  
+Sym Table: a-(1, int) v-32  
+Heap: 1-30  
+Output Console: 10 30  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);print(rH(a)))  
+Sym Table: a-(1, int) v-32  
+Heap: 1-30  
+Output Console: 10 30  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(rH(a)) print(v)  
+Sym Table: a-(1, int) v-32  
+Heap: 1-30  
+Output Console: 10 30  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(rH(a)) print(v)  
+Sym Table: a-(1, int) v-32  
+Heap: 1-30  
+Output Console: 10 30  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(rH(a))  
+Sym Table: a-(1, int) v-32  
+Heap: 1-30  
+Output Console: 10 30 32  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(rH(a))  
+Sym Table: a-(1, int) v-32  
+Heap: 1-30  
+Output Console: 10 30 32  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack:  
+Sym Table: a-(1, int) v-32  
+Heap: 1-30  
+Output Console: 10 30 32 30  
+File Table:  
+

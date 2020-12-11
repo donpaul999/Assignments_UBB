@@ -72,7 +72,7 @@
                         </VBox>
                     </children>
                 </HBox>
-                <Button fx:id="oneStepButton" mnemonicParsing="false" onMouseClicked="#executeOneStep" prefHeight="41.0" prefWidth="131.0" text="Execute one step" />
+                <Button fx:id="oneStepButton" onMouseClicked="#executeOneStep" prefHeight="41.0" prefWidth="131.0" text="Execute one step" />
             </children>
         </VBox>
     </children>
