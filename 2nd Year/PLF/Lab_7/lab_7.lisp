@@ -2,9 +2,8 @@
 
 ;substitute_elem(l, a, e)
 ;e, l = a
-;substitute_elem(l1...ln, a, e), l is a list
+;substitute_elem(l1, a, e) U substitute_elem(l2, a, e) U ... U substitute_elem(ln, a, e), l is a list, l is l1..ln
 ;l, otherwise
-;(load "lab_7.lisp")
 
 
 (defun substitute_elem (l a e)
