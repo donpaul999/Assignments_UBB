@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IMyStack<T> {
     public T pop() throws ADTException;
-    public void push(T value);
+    public void push(T value) ;
 
     boolean isEmpty();
 

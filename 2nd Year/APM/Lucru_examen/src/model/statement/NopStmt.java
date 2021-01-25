@@ -20,4 +20,9 @@ public class NopStmt implements IStmt {
     public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException {
         return typeEnvironment;
     }
+
+    @Override
+    public String toString() {
+        return "nop";
+    }
 }

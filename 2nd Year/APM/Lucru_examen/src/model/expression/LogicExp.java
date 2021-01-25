@@ -2,7 +2,6 @@ package model.expression;
 
 import model.ADT.IMyHeap;
 import model.exceptions.ExprException;
-import model.exceptions.MyException;
 import model.ADT.IMyDictionary;
 import model.type.BoolType;
 import model.type.Type;
@@ -20,11 +19,21 @@ public class LogicExp implements Exp {
         op = op1;
     }
 
+    public LogicExp(String not, Exp exp) {
+        e1 = exp;
+        e2 = exp;
+        op = 3;
+    }
+
     @Override
     public Value eval(IMyDictionary<String, Value> tbl, IMyHeap<Value> heap) throws ExprException {
         Value val1, val2;
         val1 = e1.eval(tbl, heap);
         if (val1.getType().equals(new BoolType())) {
+            if (op == 3) {
+                Value falseVal = new BoolValue(false);
+                return new BoolValue(val1.equals(falseVal));
+            }
             val2 = e2.eval(tbl, heap);
             if (val2.getType().equals(new BoolType())) {
                 BoolValue i1 = (BoolValue)val1;
@@ -70,5 +79,16 @@ public class LogicExp implements Exp {
         else {
             throw new ExprException("The first operand is not a boolean in " + this.toString());
         }
+    }
+
+    @Override
+    public String toString() {
+        if(op == 3){
+            return "!(" + e1.toString() +")";
+        }
+        if(op == 1) {
+            return e1.toString() + "&&" + e2.toString();
+        }
+        return e1.toString() + "||" + e2.toString();
     }
 }

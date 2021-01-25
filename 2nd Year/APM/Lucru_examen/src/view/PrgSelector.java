@@ -192,6 +192,26 @@ print(rh(a))
                                 new ArithExp(new VarExp("v"), new ValueExp(new IntValue(1)), '+'),
                                 new ForkStmt(new CompStmt(new PrintStmt(new VarExp("v")), new AssignStmt("v", new ArithExp(new VarExp("v"), new ReadHeapExp(new VarExp("a")), '*'))))),
                                 new PrintStmt(new ReadHeapExp(new VarExp("a"))))));
+        /*
+        int v; int x; int y; v=0;
+(repeat (fork(print(v);v=v-1);v=v+1) until v==3);
+x=1;nop;y=3;nop;
+print(v*10)
+         */
+
+        IStmt example_10 = new CompStmt(new VarDeclStmt("v", new IntType()),
+                new CompStmt(new VarDeclStmt("x", new IntType()),
+                        new CompStmt(new VarDeclStmt("y", new IntType()),
+                                new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(0))),
+                                        new CompStmt(new RepeatUntil(
+                                                new CompStmt(new ForkStmt(
+                                                    new CompStmt(new PrintStmt(new VarExp("v")), new AssignStmt("v", new ArithExp(new VarExp("v"), new ValueExp(new IntValue(1)), '-')))),
+                                                        new AssignStmt("v", new ArithExp(new VarExp("v"), new ValueExp(new IntValue(1)), '+'))), new RelationalExp(new VarExp("v"), new ValueExp(new IntValue(3)), 3)),
+                                                new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(1))),
+                                                        new CompStmt(new NopStmt(),
+                                                                new CompStmt(new AssignStmt("y", new ValueExp(new IntValue(3))),
+                                                                        new CompStmt(new NopStmt(), new PrintStmt(new ArithExp(new VarExp("v"), new ValueExp(new IntValue(10)), '*'))))))))
+                )));
 
         MyList<IStmt> statementList = new MyList<IStmt>();
         statementList.add(example_1);
@@ -203,6 +223,7 @@ print(rh(a))
         statementList.add(example_7);
         statementList.add(example_8);
         statementList.add(example_9);
+        statementList.add(example_10);
         return statementList;
     }
 
@@ -220,6 +241,8 @@ print(rh(a))
             catch (MyException | ADTException e) {
                 e.printStackTrace();
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
