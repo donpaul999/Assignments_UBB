@@ -43,7 +43,7 @@ public class ForkStmt implements IStmt{
     }
 
     @Override
-    public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException {
+    public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException, ADTException {
         statement.typecheck(typeEnvironment.deepCopy());
         return typeEnvironment;
     }

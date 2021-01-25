@@ -1,6 +1,7 @@
 import controller.Controller;
 import model.ADT.*;
 import model.PrgState;
+import model.exceptions.ADTException;
 import model.exceptions.ExprException;
 import model.exceptions.MyException;
 import model.exceptions.StmtException;
@@ -20,7 +21,7 @@ import java.io.IOException;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException, MyException, StmtException, ExprException {
+    public static void main(String[] args) throws IOException, MyException, StmtException, ExprException, ADTException {
 
         IMyStack<IStmt> stack1 = new MyStack<>();
         IMyStack<IStmt> stack2 = new MyStack<>();

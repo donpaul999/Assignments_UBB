@@ -34,7 +34,7 @@ public class CompStmt implements IStmt {
     }
 
     @Override
-    public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException {
+    public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException, ADTException {
         return snd.typecheck(first.typecheck(typeEnvironment));
     }
 }

@@ -198,7 +198,7 @@ public class Controller {
     }
 
 
-    public void typecheckOriginalProgram() throws StmtException, ExprException {
+    public void typecheckOriginalProgram() throws StmtException, ExprException, ADTException {
         MyDictionary<String, Type> typeEnvironment = new MyDictionary<String, Type>();
         IStmt originalProgram = repository.getOriginalProgram();
         originalProgram.typecheck(typeEnvironment);

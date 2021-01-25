@@ -3,6 +3,7 @@ package model.statement;
 import model.ADT.IMyDictionary;
 import model.ADT.IMyStack;
 import model.PrgState;
+import model.exceptions.ADTException;
 import model.exceptions.ExprException;
 import model.exceptions.StmtException;
 import model.expression.Exp;
@@ -48,7 +49,7 @@ public class ForStmt implements IStmt {
     }
 
     @Override
-    public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException {
+    public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException, ADTException {
         Type expType = exp.typecheck(typeEnvironment);
         if (expType.equals(new BoolType())) {
             statement.typecheck(typeEnvironment.deepCopy());

@@ -87,6 +87,8 @@ public class PrgSelector {
             alert.setContentText(e.toString());
 
             alert.showAndWait();
+        } catch (ADTException e) {
+            e.printStackTrace();
         }
     }
 
@@ -178,6 +180,19 @@ public class PrgSelector {
                             new ForkStmt(new CompStmt(new PrintStmt(new VarExp("v")), new AssignStmt("v", new ArithExp(new VarExp("v"), new ValueExp(new IntValue(1)), '+'))))
                         ), new PrintStmt(new ArithExp(new VarExp("v"), new ValueExp(new IntValue(10)), '*')))));
 
+        /*
+        Ref int a; new(a,20);
+(for(v=0;v<3;v=v+1) fork(print(v);v=v*rh(a)));
+print(rh(a))
+         */
+
+        IStmt example_9 = new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
+                new CompStmt(new NewHeapStmt("a", new ValueExp(new IntValue(20))),
+                        new CompStmt(new ForStmt_2("v", new ValueExp(new IntValue(0)), new ValueExp(new IntValue(3)),
+                                new ArithExp(new VarExp("v"), new ValueExp(new IntValue(1)), '+'),
+                                new ForkStmt(new CompStmt(new PrintStmt(new VarExp("v")), new AssignStmt("v", new ArithExp(new VarExp("v"), new ReadHeapExp(new VarExp("a")), '*'))))),
+                                new PrintStmt(new ReadHeapExp(new VarExp("a"))))));
+
         MyList<IStmt> statementList = new MyList<IStmt>();
         statementList.add(example_1);
         statementList.add(example_2);
@@ -187,6 +202,7 @@ public class PrgSelector {
         statementList.add(example_6);
         statementList.add(example_7);
         statementList.add(example_8);
+        statementList.add(example_9);
         return statementList;
     }
 

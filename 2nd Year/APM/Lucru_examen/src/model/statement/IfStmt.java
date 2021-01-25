@@ -1,6 +1,7 @@
 package model.statement;
 
 import model.ADT.IMyDictionary;
+import model.exceptions.ADTException;
 import model.exceptions.ExprException;
 import model.exceptions.MyException;
 import model.ADT.IMyStack;
@@ -51,7 +52,7 @@ public class IfStmt implements IStmt {
     }
 
     @Override
-    public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException {
+    public IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException, ADTException {
         Type expType = expression.typecheck(typeEnvironment);
         if (expType.equals(new BoolType())) {
             thenStatement.typecheck(typeEnvironment.deepCopy());

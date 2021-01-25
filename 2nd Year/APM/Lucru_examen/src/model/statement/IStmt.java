@@ -9,6 +9,6 @@ public interface IStmt {
 
     IStmt deepCopy();
 
-    IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException;
+    IMyDictionary<String, Type> typecheck(IMyDictionary<String, Type> typeEnvironment) throws StmtException, ExprException, ADTException;
 
 }
