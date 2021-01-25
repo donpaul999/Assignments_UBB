@@ -213,6 +213,14 @@ print(v*10)
                                                                         new CompStmt(new NopStmt(), new PrintStmt(new ArithExp(new VarExp("v"), new ValueExp(new IntValue(10)), '*'))))))))
                 )));
 
+        IStmt example_11 = new CompStmt(new VarDeclStmt("b", new BoolType()),
+                            new CompStmt(new VarDeclStmt("c", new IntType()),
+                                new CompStmt(new AssignStmt("b", new ValueExp(new BoolValue(true))),
+                                        new CompStmt(new ConditionalAssignmentStmt("c", new VarExp("b"), new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),
+                                                new CompStmt(new PrintStmt(new VarExp("c")),
+                                                        new CompStmt(new ConditionalAssignmentStmt("c", new ValueExp(new BoolValue(false)), new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),
+                                                                new PrintStmt(new VarExp("c"))))))));
+
         MyList<IStmt> statementList = new MyList<IStmt>();
         statementList.add(example_1);
         statementList.add(example_2);
@@ -224,6 +232,7 @@ print(v*10)
         statementList.add(example_8);
         statementList.add(example_9);
         statementList.add(example_10);
+        statementList.add(example_11);
         return statementList;
     }
 
