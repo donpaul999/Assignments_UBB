@@ -221,6 +221,16 @@ print(v*10)
                                                         new CompStmt(new ConditionalAssignmentStmt("c", new ValueExp(new BoolValue(false)), new ValueExp(new IntValue(100)), new ValueExp(new IntValue(200))),
                                                                 new PrintStmt(new VarExp("c"))))))));
 
+        IStmt example_12 = new CompStmt(new VarDeclStmt("a", new IntType()),
+                                new CompStmt(new VarDeclStmt("b", new IntType()),
+                                        new CompStmt(new VarDeclStmt("c", new IntType()),
+                                                new CompStmt(new AssignStmt("a", new ValueExp(new IntValue(1))),
+                                                        new CompStmt(new AssignStmt("b", new ValueExp(new IntValue(2))),
+                                                                new CompStmt(new AssignStmt("c", new ValueExp(new IntValue(5))),
+                                                                    new CompStmt(new SwitchStmt(new ArithExp(new VarExp("a"), new ValueExp(new IntValue(10)), '*'), new ArithExp(new VarExp("b"), new VarExp("c"), '*'), new ValueExp(new IntValue(10)),
+                                                                            new CompStmt(new PrintStmt(new VarExp("a")), new PrintStmt(new VarExp("b"))),
+                                                                                new CompStmt(new PrintStmt(new ValueExp(new IntValue(100))), new PrintStmt(new ValueExp(new IntValue(200)))), new PrintStmt(new ValueExp(new IntValue(300))))
+                                                                    , new PrintStmt(new ValueExp(new IntValue(300))))))))));
         MyList<IStmt> statementList = new MyList<IStmt>();
         statementList.add(example_1);
         statementList.add(example_2);
@@ -233,6 +243,7 @@ print(v*10)
         statementList.add(example_9);
         statementList.add(example_10);
         statementList.add(example_11);
+        statementList.add(example_12);
         return statementList;
     }
 
