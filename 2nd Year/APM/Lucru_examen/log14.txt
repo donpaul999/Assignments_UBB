@@ -1,0 +1,592 @@
+Program state
+ID: 14 
+Exe Stack: (int v;(v=20;(wait(10);print(v*10))))  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: (v=20;(wait(10);print(v*10))) int v  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: (v=20;(wait(10);print(v*10))) int v  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: (v=20;(wait(10);print(v*10)))  
+Sym Table: v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: (v=20;(wait(10);print(v*10)))  
+Sym Table: v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: (wait(10);print(v*10)) v=20  
+Sym Table: v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: (wait(10);print(v*10)) v=20  
+Sym Table: v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: (wait(10);print(v*10))  
+Sym Table: v-20  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: (wait(10);print(v*10))  
+Sym Table: v-20  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(10)  
+Sym Table: v-20  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(10)  
+Sym Table: v-20  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(10);wait(9))  
+Sym Table: v-20  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(10);wait(9))  
+Sym Table: v-20  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(9) print(10)  
+Sym Table: v-20  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(9) print(10)  
+Sym Table: v-20  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(9)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(9)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(9);wait(8))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(9);wait(8))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(8) print(9)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(8) print(9)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(8)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(8)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(8);wait(7))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(8);wait(7))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(7) print(8)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(7) print(8)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(7)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(7)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(7);wait(6))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(7);wait(6))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(6) print(7)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(6) print(7)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(6)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(6)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(6);wait(5))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(6);wait(5))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(5) print(6)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(5) print(6)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(5)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(5)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(5);wait(4))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(5);wait(4))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(4) print(5)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(4) print(5)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(4)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(4)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(4);wait(3))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(4);wait(3))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(3) print(4)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(3) print(4)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(3)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(3)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(3);wait(2))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(3);wait(2))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(2) print(3)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(2) print(3)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(2)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(2)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(2);wait(1))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(2);wait(1))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(1) print(2)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(1) print(2)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(1)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(1)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(1);wait(0))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) (print(1);wait(0))  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(0) print(1)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(0) print(1)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(0)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2 1  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10) wait(0)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2 1  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2 1  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack: print(v*10)  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2 1  
+File Table:  
+
+Program state
+ID: 14 
+Exe Stack:  
+Sym Table: v-20  
+Heap:  
+Output Console: 10 9 8 7 6 5 4 3 2 1 200  
+File Table:  
+
