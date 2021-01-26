@@ -1,0 +1,160 @@
+Program state
+ID: 15 
+Exe Stack: (int v1;(int v2;(v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}))))  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (int v2;(v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}))) int v1  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (int v2;(v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}))) int v1  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (int v2;(v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)})))  
+Sym Table: v1-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (int v2;(v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)})))  
+Sym Table: v1-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)})) int v2  
+Sym Table: v1-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)})) int v2  
+Sym Table: v1-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}))  
+Sym Table: v1-0 v2-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (v1=5;(v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}))  
+Sym Table: v1-0 v2-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}) v1=5  
+Sym Table: v1-0 v2-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}) v1=5  
+Sym Table: v1-0 v2-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)})  
+Sym Table: v1-5 v2-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: (v2=3;if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)})  
+Sym Table: v1-5 v2-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)} v2=3  
+Sym Table: v1-5 v2-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)} v2=3  
+Sym Table: v1-5 v2-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}  
+Sym Table: v1-5 v2-3  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: if (v1!=0) then {print(MUL(v1,v2))} else {print(v1)}  
+Sym Table: v1-5 v2-3  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: print(MUL(v1,v2))  
+Sym Table: v1-5 v2-3  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack: print(MUL(v1,v2))  
+Sym Table: v1-5 v2-3  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 15 
+Exe Stack:  
+Sym Table: v1-5 v2-3  
+Heap:  
+Output Console: 7  
+File Table:  
+
