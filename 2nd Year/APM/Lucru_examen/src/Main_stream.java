@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 
 /*
 ? - read null, write Object
-extend - read, get
+extend - read, get, also write null
 super - write, add
 ? extend A
 ? super C
