@@ -1,0 +1,666 @@
+ExeStack: 
+(Type bool b;(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))))
+Type bool b
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))))
+Type bool b
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))))
+SymTable: 
+Key: b, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))))
+SymTable: 
+Key: b, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))
+Type int c
+SymTable: 
+Key: b, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))
+Type int c
+SymTable: 
+Key: b, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))
+SymTable: 
+Key: b, Value:false
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))
+SymTable: 
+Key: b, Value:false
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))
+b=true
+SymTable: 
+Key: b, Value:false
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))
+b=true
+SymTable: 
+Key: b, Value:false
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+c = b ? 100 : 200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+c = b ? 100 : 200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+(IF(b) THEN(c=100)ELSE(c=200))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+(IF(b) THEN(c=100)ELSE(c=200))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+c=100
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+c=100
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = false ? 100 : 200;(print(c);no operation statement))
+print(c)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = false ? 100 : 200;(print(c);no operation statement))
+print(c)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = false ? 100 : 200;(print(c);no operation statement))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(c = false ? 100 : 200;(print(c);no operation statement))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+c = false ? 100 : 200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+c = false ? 100 : 200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+(IF(false) THEN(c=100)ELSE(c=200))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+(IF(false) THEN(c=100)ELSE(c=200))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+c=200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+c=200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+print(c)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+print(c)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+200
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+200
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+200
+
+FileTable: 
+
+ExeStack: 
+(Type bool b;(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))))
+Type bool b
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))))
+Type bool b
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))))
+SymTable: 
+Key: b, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))))
+SymTable: 
+Key: b, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))
+Type int c
+SymTable: 
+Key: b, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))
+Type int c
+SymTable: 
+Key: b, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))
+SymTable: 
+Key: b, Value:false
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=true;(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))))
+SymTable: 
+Key: b, Value:false
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))
+b=true
+SymTable: 
+Key: b, Value:false
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))
+b=true
+SymTable: 
+Key: b, Value:false
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = b ? 100 : 200;(print(c);(c = false ? 100 : 200;(print(c);no operation statement))))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+c = b ? 100 : 200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+c = b ? 100 : 200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+(IF(b) THEN(c=100)ELSE(c=200))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+(IF(b) THEN(c=100)ELSE(c=200))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+c=100
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+c=100
+SymTable: 
+Key: b, Value:true
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(c);(c = false ? 100 : 200;(print(c);no operation statement)))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = false ? 100 : 200;(print(c);no operation statement))
+print(c)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = false ? 100 : 200;(print(c);no operation statement))
+print(c)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 
+FileTable: 
+
+ExeStack: 
+(c = false ? 100 : 200;(print(c);no operation statement))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(c = false ? 100 : 200;(print(c);no operation statement))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+c = false ? 100 : 200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+c = false ? 100 : 200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+(IF(false) THEN(c=100)ELSE(c=200))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+(IF(false) THEN(c=100)ELSE(c=200))
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+c=200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+c=200
+SymTable: 
+Key: b, Value:true
+Key: c, Value:100
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+(print(c);no operation statement)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+print(c)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+print(c)
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+200
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+200
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: b, Value:true
+Key: c, Value:200
+Out: 100
+200
+
+FileTable: 
+

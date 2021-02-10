@@ -1,0 +1,3704 @@
+ExeStack: 
+(Type int v;(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+Type int x
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+Type int x
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+Type int y
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+Type int y
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+v=0
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+v=0
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+ repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+ repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+((fork((print(v);v=v - 1));v=v + 1);while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) })
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+((fork((print(v);v=v - 1));v=v + 1);while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) })
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:-1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+x=1
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+x=1
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+y=3
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+y=3
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+30
+
+FileTable: 
+
+ExeStack: 
+(Type int v;(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+Type int x
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+Type int x
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+Type int y
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+Type int y
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+v=0
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+v=0
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+ repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+ repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+((fork((print(v);v=v - 1));v=v + 1);while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) })
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+((fork((print(v);v=v - 1));v=v + 1);while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) })
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:-1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+x=1
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+x=1
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+y=3
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+y=3
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+30
+
+FileTable: 
+
+ExeStack: 
+(Type int v;(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+Type int x
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+Type int x
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+Type int y
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+Type int y
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+v=0
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+v=0
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+ repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+ repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+((fork((print(v);v=v - 1));v=v + 1);while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) })
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+((fork((print(v);v=v - 1));v=v + 1);while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) })
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:-1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+x=1
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+x=1
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+y=3
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+y=3
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+30
+
+FileTable: 
+
+ExeStack: 
+(Type int v;(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int x;(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+Type int x
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+Type int x
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int y;(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+Type int y
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+Type int y
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=0;( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+v=0
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+v=0
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+( repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3;(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10))))))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+ repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+ repeat (fork((print(v);v=v - 1));v=v + 1) until v == 3
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+((fork((print(v);v=v - 1));v=v + 1);while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) })
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+((fork((print(v);v=v - 1));v=v + 1);while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) })
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:-1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+(fork((print(v);v=v - 1));v=v + 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:0
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+fork((print(v);v=v - 1))
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+v=v + 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(print(v);v=v - 1)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+while( !(v == 3)) { (fork((print(v);v=v - 1));v=v + 1) }
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+print(v)
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(x=1;(no operation statement;(y=3;(no operation statement;print(v * 10)))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+v=v - 1
+SymTable: 
+Key: v, Value:2
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+x=1
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:1
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+x=1
+SymTable: 
+Key: v, Value:3
+Key: x, Value:0
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;(y=3;(no operation statement;print(v * 10))))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(y=3;(no operation statement;print(v * 10)))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+y=3
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+y=3
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:0
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+(no operation statement;print(v * 10))
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+no operation statement
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+print(v * 10)
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:3
+Key: x, Value:1
+Key: y, Value:3
+Out: 0
+1
+2
+30
+
+FileTable: 
+

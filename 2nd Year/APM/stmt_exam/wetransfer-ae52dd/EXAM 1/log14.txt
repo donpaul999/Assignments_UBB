@@ -1,0 +1,417 @@
+ExeStack: 
+(Type int a;(a=1;(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=1;(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))))))
+Type int a
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=1;(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))))))
+Type int a
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=1;(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))))))
+SymTable: 
+Key: a, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=1;(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))))))
+SymTable: 
+Key: a, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))))
+a=1
+SymTable: 
+Key: a, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))))
+a=1
+SymTable: 
+Key: a, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))))
+SymTable: 
+Key: a, Value:1
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int b;(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))))
+SymTable: 
+Key: a, Value:1
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))))
+Type int b
+SymTable: 
+Key: a, Value:1
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))))
+Type int b
+SymTable: 
+Key: a, Value:1
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=2;(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))
+b=2
+SymTable: 
+Key: a, Value:1
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))
+b=2
+SymTable: 
+Key: a, Value:1
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int c;(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Out: 
+FileTable: 
+
+ExeStack: 
+(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))
+Type int c
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Out: 
+FileTable: 
+
+ExeStack: 
+(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))
+Type int c
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Out: 
+FileTable: 
+
+ExeStack: 
+(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(c=5;(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement)))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))
+c=5
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))
+c=5
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 
+FileTable: 
+
+ExeStack: 
+(SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300);(print(300);no operation statement))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+SwitchStmt (a * 10)  case b * c : (print(a);(print(b);no operation statement)))  case 10 : (print(100);(print(200);no operation statement))) defaultprint(300)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+(print(a);(print(b);no operation statement))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+(print(a);(print(b);no operation statement))
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+(print(b);no operation statement)
+print(a)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+(print(b);no operation statement)
+print(a)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+(print(b);no operation statement)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+(print(b);no operation statement)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+no operation statement
+print(b)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+no operation statement
+print(b)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+no operation statement
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+no operation statement
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+
+FileTable: 
+
+ExeStack: 
+(print(300);no operation statement)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+print(300)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+print(300)
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+300
+
+FileTable: 
+
+ExeStack: 
+no operation statement
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+300
+
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: a, Value:1
+Key: b, Value:2
+Key: c, Value:5
+Out: 1
+2
+300
+
+FileTable: 
+

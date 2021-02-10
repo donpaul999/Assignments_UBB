@@ -1,0 +1,142 @@
+ExeStack: 
+(Type int a;(Type int b;(a=2 + 3 * 5;(b=a + 1;print(b)))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int b;(a=2 + 3 * 5;(b=a + 1;print(b))))
+Type int a
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int b;(a=2 + 3 * 5;(b=a + 1;print(b))))
+Type int a
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int b;(a=2 + 3 * 5;(b=a + 1;print(b))))
+SymTable: 
+Key: a, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int b;(a=2 + 3 * 5;(b=a + 1;print(b))))
+SymTable: 
+Key: a, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=2 + 3 * 5;(b=a + 1;print(b)))
+Type int b
+SymTable: 
+Key: a, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=2 + 3 * 5;(b=a + 1;print(b)))
+Type int b
+SymTable: 
+Key: a, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=2 + 3 * 5;(b=a + 1;print(b)))
+SymTable: 
+Key: a, Value:0
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=2 + 3 * 5;(b=a + 1;print(b)))
+SymTable: 
+Key: a, Value:0
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=a + 1;print(b))
+a=2 + 3 * 5
+SymTable: 
+Key: a, Value:0
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=a + 1;print(b))
+a=2 + 3 * 5
+SymTable: 
+Key: a, Value:0
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=a + 1;print(b))
+SymTable: 
+Key: a, Value:17
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(b=a + 1;print(b))
+SymTable: 
+Key: a, Value:17
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(b)
+b=a + 1
+SymTable: 
+Key: a, Value:17
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(b)
+b=a + 1
+SymTable: 
+Key: a, Value:17
+Key: b, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(b)
+SymTable: 
+Key: a, Value:17
+Key: b, Value:18
+Out: 
+FileTable: 
+
+ExeStack: 
+print(b)
+SymTable: 
+Key: a, Value:17
+Key: b, Value:18
+Out: 
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: a, Value:17
+Key: b, Value:18
+Out: 18
+
+FileTable: 
+

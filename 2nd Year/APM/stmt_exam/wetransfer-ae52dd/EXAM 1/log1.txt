@@ -1,0 +1,71 @@
+ExeStack: 
+(Type int v;(v=2;print(v)))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=2;print(v))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=2;print(v))
+Type int v
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=2;print(v))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(v=2;print(v))
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+v=2
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+v=2
+SymTable: 
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+SymTable: 
+Key: v, Value:2
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+SymTable: 
+Key: v, Value:2
+Out: 
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: v, Value:2
+Out: 2
+
+FileTable: 
+

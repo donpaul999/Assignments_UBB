@@ -1,0 +1,160 @@
+ExeStack: 
+(Type bool a;(Type int v;(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v)))))
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int v;(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v))))
+Type bool a
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int v;(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v))))
+Type bool a
+SymTable: 
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int v;(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v))))
+SymTable: 
+Key: a, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(Type int v;(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v))))
+SymTable: 
+Key: a, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v)))
+Type int v
+SymTable: 
+Key: a, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v)))
+Type int v
+SymTable: 
+Key: a, Value:false
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v)))
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+(a=false;((IF(a) THEN(v=2)ELSE(v=3));print(v)))
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+((IF(a) THEN(v=2)ELSE(v=3));print(v))
+a=false
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+((IF(a) THEN(v=2)ELSE(v=3));print(v))
+a=false
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+((IF(a) THEN(v=2)ELSE(v=3));print(v))
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+((IF(a) THEN(v=2)ELSE(v=3));print(v))
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+(IF(a) THEN(v=2)ELSE(v=3))
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+(IF(a) THEN(v=2)ELSE(v=3))
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+v=3
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+v=3
+SymTable: 
+Key: a, Value:false
+Key: v, Value:0
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+SymTable: 
+Key: a, Value:false
+Key: v, Value:3
+Out: 
+FileTable: 
+
+ExeStack: 
+print(v)
+SymTable: 
+Key: a, Value:false
+Key: v, Value:3
+Out: 
+FileTable: 
+
+ExeStack: 
+SymTable: 
+Key: a, Value:false
+Key: v, Value:3
+Out: 3
+
+FileTable: 
+

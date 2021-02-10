@@ -1,0 +1,400 @@
+Program state
+ID: 8 
+Exe Stack: (Ref(int) a;(Ref(int) b;(int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))))))  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (Ref(int) b;(int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))))) Ref(int) a  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (Ref(int) b;(int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))))) Ref(int) a  
+Sym Table:  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (Ref(int) b;(int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))))))  
+Sym Table: a-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (Ref(int) b;(int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))))))  
+Sym Table: a-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))))) Ref(int) b  
+Sym Table: a-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))))) Ref(int) b  
+Sym Table: a-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))))  
+Sym Table: a-(0, int) b-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (int v;(new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))))  
+Sym Table: a-(0, int) b-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))) int v  
+Sym Table: a-(0, int) b-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))) int v  
+Sym Table: a-(0, int) b-(0, int)  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))))  
+Sym Table: a-(0, int) b-(0, int) v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (new(a, 0);(new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))))  
+Sym Table: a-(0, int) b-(0, int) v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))) new(a, 0)  
+Sym Table: a-(0, int) b-(0, int) v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))) new(a, 0)  
+Sym Table: a-(0, int) b-(0, int) v-0  
+Heap:  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))  
+Sym Table: a-(1, int) b-(0, int) v-0  
+Heap: 1-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (new(b, 0);(wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))))  
+Sym Table: a-(1, int) b-(0, int) v-0  
+Heap: 1-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))) new(b, 0)  
+Sym Table: a-(1, int) b-(0, int) v-0  
+Heap: 1-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))) new(b, 0)  
+Sym Table: a-(1, int) b-(0, int) v-0  
+Heap: 1-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-0 2-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(a,1);(wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))))  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-0 2-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))) wH(a,1)  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-0 2-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))) wH(a,1)  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-0 2-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (wH(b,2);(v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))))  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))) wH(b,2)  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))) wH(b,2)  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-0  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=(rH(a)<rH(b))?100:200;(print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))))  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))) v=(rH(a)<rH(b))?100:200  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))) v=(rH(a)<rH(b))?100:200  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))) if (rH(a)<rH(b)) then {v=100} else {v=200}  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))) if (rH(a)<rH(b)) then {v=100} else {v=200}  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))) v=100  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);(v=(rH(b)-2>rH(a))?100:200;print(v))) v=100  
+Sym Table: a-(1, int) b-(2, int) v-0  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (print(v);(v=(rH(b)-2>rH(a))?100:200;print(v)))  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=(rH(b)-2>rH(a))?100:200;print(v)) print(v)  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=(rH(b)-2>rH(a))?100:200;print(v)) print(v)  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console:  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=(rH(b)-2>rH(a))?100:200;print(v))  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: (v=(rH(b)-2>rH(a))?100:200;print(v))  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(v) v=(rH(b)-2>rH(a))?100:200  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(v) v=(rH(b)-2>rH(a))?100:200  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(v) if (rH(b)-2>rH(a)) then {v=100} else {v=200}  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(v) if (rH(b)-2>rH(a)) then {v=100} else {v=200}  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(v) v=200  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(v) v=200  
+Sym Table: a-(1, int) b-(2, int) v-100  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(v)  
+Sym Table: a-(1, int) b-(2, int) v-200  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack: print(v)  
+Sym Table: a-(1, int) b-(2, int) v-200  
+Heap: 1-1 2-2  
+Output Console: 100  
+File Table:  
+
+Program state
+ID: 8 
+Exe Stack:  
+Sym Table: a-(1, int) b-(2, int) v-200  
+Heap: 1-1 2-2  
+Output Console: 100 200  
+File Table:  
+

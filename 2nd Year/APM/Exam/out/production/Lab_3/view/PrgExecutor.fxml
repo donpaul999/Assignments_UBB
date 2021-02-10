@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <HBox prefHeight="24.0" prefWidth="642.0">
+                    <children>
+                        <Label fx:id="prgStateCounter" text="Label" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="198.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Program states" />
+                                <ListView fx:id="prgStateListView" onMouseClicked="#switchProgramState" prefHeight="250.0" prefWidth="196.0" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="153.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Heap" />
+                                <TableView fx:id="heapTableView" prefHeight="168.0" prefWidth="249.0" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="heapAddress" prefWidth="123.0" text="Address" />
+                                        <TableColumn fx:id="heapValue" prefWidth="125.0" text="Value" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="Out" />
+                                <ListView fx:id="outListView" prefHeight="182.0" prefWidth="172.0" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="147.0" prefWidth="567.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="ExeStack" />
+                                <ListView fx:id="exeStackListView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="152.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label alignment="CENTER" text="SymTable" />
+                                <TableView fx:id="symTableTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="symTableName" prefWidth="124.0" text="Name" />
+                                        <TableColumn fx:id="symTableValue" prefWidth="124.0" text="Value" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="FileTable" />
+                                <ListView fx:id="fileTableListView" prefHeight="200.0" prefWidth="200.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <Button fx:id="oneStepButton" onMouseClicked="#executeOneStep" prefHeight="41.0" prefWidth="131.0" text="Execute one step" />
+            </children>
+        </VBox>
+    </children>
+</StackPane>
