@@ -188,51 +188,46 @@ class Drone():
               if pressed_keys[K_RIGHT] and detectedMap.surface[self.x][self.y+1]==0:
                   self.y = self.y + 1
 
-    def isInside(self, x, y):
-        return 0 <= x < 20 and 0 <= y < 20
 
     def moveDSF(self, detectedMap, e, screen, visited):
         stack = []
         stack.append([self.x, self.y])
         while len(stack) != 0:
+            '''
             print("Step")
-            time.sleep(0.01)
+            '''
+
+            time.sleep(0.2)
             row, col = stack.pop()
+
+            detectedMap.markDetectedWalls(e, row, col)
+            screen.blit(detectedMap.image(row, col), (400, 0))
+            pygame.display.flip()
 
             visited.append([row,col])
             walls = e.readUDMSensors(row, col)
+            '''
+            print(str(row) + " " + str(col))
+
             print(walls)
             print(stack)
             print(len(visited))
+            '''
             for i in range(0, walls[0]):
-                if not self.isInside(row - i - 1, col):
-                    break
                 if not [row - i - 1, col] in visited and not [row - i - 1, col] in stack and detectedMap.surface[row - i - 1][col] == 0:
                     stack.append([row - i - 1, col])
 
             for i in range(0, walls[1]):
-                if not self.isInside(row, col + i + 1):
-                    break
                 if not [row, col + i + 1] in visited and not [row, col + i + 1] in stack and detectedMap.surface[row][col + i + 1] == 0:
                     stack.append([row, col + i + 1])
 
             for i in range(0, walls[2]):
-                if not self.isInside(row + i + 1, col):
-                    break
                 if not [row + i + 1, col] in visited and not [row + i + 1, col] in stack and detectedMap.surface[row + i + 1][col] == 0:
                     stack.append([row + i + 1, col])
 
             for i in range(0, walls[3]):
-                if not self.isInside(row, col - i - 1):
-                    break
                 if not [row, col - i - 1] in visited and not [row, col - i - 1] in stack and detectedMap.surface[row][col - i - 1] == 0:
                     stack.append([row, col - i - 1])
-            detectedMap.markDetectedWalls(e, row, col)
-            screen.blit(detectedMap.image(row, col), (400, 0))
-            pygame.display.flip()
-        # TO DO!
-         #rewrite this function in such a way that you perform an automatic 
-         # mapping with DFS           
 
 # define a main function
 def main():
