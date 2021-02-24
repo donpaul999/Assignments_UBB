@@ -1,33 +1,57 @@
 package model;
 
+import java.util.Date;
+
 public class Rental extends BaseEntity<Long> {
-    private Client client;
-    private Domain domain;
+    private Long clientId;
+    private Long domainId;
+    private Date startDate;
+    private Integer duration;
 
     public Rental() {
-        client = new Client();
-        domain = new Domain();
+        clientId = 0L;
+        domainId = 0L;
+        startDate = new Date();
+        duration = 0;
     }
 
-    public Rental(Client client, Domain domain) {
-        this.client = client;
-        this.domain = domain;
+    public Rental(Long clientId, Long domainId, Date startDate, Integer duration) {
+        this.clientId = clientId;
+        this.domainId = domainId;
+        this.startDate = startDate;
+        this.duration = duration;
     }
 
-    public Client getClient() {
-        return client;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public Domain getDomain() {
-        return domain;
+    public Long getDomainId() {
+        return domainId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setDomain(Domain domain) {
-        this.domain = domain;
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
+    }
+
+    public void setDomainId(Long domainId) {
+        this.domainId = domainId;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
     }
 
     @Override
@@ -37,23 +61,29 @@ public class Rental extends BaseEntity<Long> {
 
         Rental rental = (Rental) o;
 
-        if (client != rental.client) return false;
-        if (!domain.equals(rental.domain)) return false;
-        return client.equals(rental.client);
+        if (clientId != rental.clientId) return false;
+        if (!domainId.equals(rental.domainId)) return false;
+        if (!startDate.equals(rental.startDate)) return false;
+        if (!duration.equals(rental.duration)) return false;
+        return true;
     }
 
     @Override
     public int hashCode() {
-        int result = client.hashCode();
-        result = 31 * result + domain.hashCode();
+        int result = clientId.hashCode();
+        result = 31 * result + domainId.hashCode();
+        result = 31 * result + startDate.hashCode();
+        result = 31 * result + duration.hashCode();
         return result;
     }
 
     @Override
     public String toString() {
         return "Domain " +
-                "{Client='" + client + '\'' +
-                ", Domain=" + domain +
+                "{Client ID='" + clientId + '\'' +
+                ", Domain ID=" + domainId +
+                ", Start Date=" + startDate +
+                ", Duration=" + duration +
                 "} " + super.toString();
     }
 }

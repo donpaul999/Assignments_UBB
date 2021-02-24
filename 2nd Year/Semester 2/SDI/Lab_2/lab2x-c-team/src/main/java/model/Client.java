@@ -40,9 +40,9 @@ public class Client extends BaseEntity<Long> {
 
         Client client = (Client) o;
 
-        if (name != client.name) return false;
+        if (!name.equals(client.name)) return false;
         if (!isBusiness.equals(client.isBusiness)) return false;
-        return name.equals(client.name);
+        return true;
     }
 
     @Override

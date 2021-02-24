@@ -1,5 +1,7 @@
 package model;
 
+import java.text.DateFormat;
+
 public class Domain extends BaseEntity<Long> {
     private String name;
     private Integer price;
@@ -37,9 +39,9 @@ public class Domain extends BaseEntity<Long> {
 
         Domain domain = (Domain) o;
 
-        if (name != domain.name) return false;
+        if (!name.equals(domain.name)) return false;
         if (!price.equals(domain.price)) return false;
-        return name.equals(domain.name);
+        return true;
     }
 
     @Override

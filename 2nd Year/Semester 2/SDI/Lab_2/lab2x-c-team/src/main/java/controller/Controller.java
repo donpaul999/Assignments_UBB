@@ -4,15 +4,18 @@ import model.Client;
 import model.Domain;
 import model.Rental;
 import model.validators.ValidatorException;
-import repository.InMemoryRepository;
 import repository.Repository;
-
-import java.util.Base64;
 
 public class Controller {
     private Repository<Long, Client> clientRepository;
     private Repository<Long, Domain> domainRepository;
     private Repository<Long, Rental> rentalRepository;
+
+    public Controller(Repository<Long, Client> clientRepository, Repository<Long, Domain> domainRepository, Repository<Long, Rental> rentalRepository) {
+        this.clientRepository = clientRepository;
+        this.domainRepository = domainRepository;
+        this.rentalRepository = rentalRepository;
+    }
 
     /**
      * Add client to the client repository
@@ -40,6 +43,4 @@ public class Controller {
     public void addRental(Rental rental) throws ValidatorException {
         rentalRepository.save(rental);
     }
-
-
 }
