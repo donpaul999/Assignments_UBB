@@ -197,7 +197,7 @@ class Drone():
             print("Step")
             '''
 
-            time.sleep(0.2)
+            time.sleep(0.02)
             row, col = stack.pop()
 
             detectedMap.markDetectedWalls(e, row, col)
