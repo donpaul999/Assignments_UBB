@@ -18,4 +18,9 @@ public abstract class Command {
     public String getDescription() {
         return this.description;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s. %s", this.key, this.description);
+    }
 }

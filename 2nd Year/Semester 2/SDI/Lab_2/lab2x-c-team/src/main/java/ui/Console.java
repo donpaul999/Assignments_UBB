@@ -2,6 +2,7 @@ package ui;
 
 import ui.commands.Command;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -16,10 +17,8 @@ public class Console {
 
     private void printMenu() {
         this.commands.values().stream()
-                .forEach(command -> {
-                    String line=String.format("%4s. %s", command.getKey(), command.getDescription());
-                    System.out.println(line);
-                });
+                .sorted(Comparator.comparing(Command::getKey))
+                .forEach(System.out::println);
     }
 
     public void addCommand(Command command) {

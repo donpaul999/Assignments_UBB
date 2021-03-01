@@ -8,33 +8,34 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class CreateClientCommand extends Command {
+public class UpdateClientCommand extends Command {
+
     private final Controller controller;
 
-    public CreateClientCommand(String key, String description, Controller controller) {
+    public UpdateClientCommand(String key, String description, Controller controller) {
         super(key, description);
         this.controller = controller;
     }
 
     /**
-     * Read and add a client to the controller.
+     * Read and update the client to the controller.
      */
     @Override
     public void execute() {
         Client client = readClient();
         try {
-            controller.addClient(client);
+            controller.updateClient(client);
         } catch (ValidatorException e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * Read & create a client from the user's input.
+     * Read a client from the user's input.
      * @return client
      */
     private Client readClient() {
-        System.out.println("Read client {id, name, is it business? (yes/no)}");
+        System.out.println("Read client {id, name, is it business?}");
 
         BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
         try {

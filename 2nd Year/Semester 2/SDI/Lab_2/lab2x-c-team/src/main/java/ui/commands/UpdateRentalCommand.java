@@ -7,30 +7,34 @@ import model.validators.ValidatorException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class CreateRentalCommand extends Command{
+public class UpdateRentalCommand extends Command {
+
     private final Controller controller;
 
-    public CreateRentalCommand(String key, String description, Controller controller) {
+    public UpdateRentalCommand(String key, String description, Controller controller) {
         super(key, description);
         this.controller = controller;
     }
 
     /**
-     * Read and add a rental to the controller.
+     * Read and update a rental to the controller.
      */
     @Override
     public void execute() {
         Rental rental = readRental();
         try {
-            controller.addRental(rental);
+            controller.updateRental(rental);
         } catch (ValidatorException e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * Read & create a rental from the user's input.
+     * Read a rental from the user's input.
      * @return rental
      */
     private Rental readRental() {

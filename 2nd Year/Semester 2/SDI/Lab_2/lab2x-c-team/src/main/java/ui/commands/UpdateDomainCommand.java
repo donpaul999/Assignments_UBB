@@ -2,51 +2,52 @@ package ui.commands;
 
 import controller.Controller;
 import model.Client;
+import model.Domain;
 import model.validators.ValidatorException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class CreateClientCommand extends Command {
+public class UpdateDomainCommand extends Command{
+
     private final Controller controller;
 
-    public CreateClientCommand(String key, String description, Controller controller) {
+    public UpdateDomainCommand(String key, String description, Controller controller) {
         super(key, description);
         this.controller = controller;
     }
 
     /**
-     * Read and add a client to the controller.
+     * Read and update the domain to the controller.
      */
     @Override
     public void execute() {
-        Client client = readClient();
+        Domain domain = readDomain();
         try {
-            controller.addClient(client);
+            controller.updateDomain(domain);
         } catch (ValidatorException e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * Read & create a client from the user's input.
-     * @return client
+     * Read a domain from the user's input.
+     * @return domain
      */
-    private Client readClient() {
-        System.out.println("Read client {id, name, is it business? (yes/no)}");
+    private Domain readDomain() {
+        System.out.println("Read domain {id, name, price}");
 
         BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
         try {
             Long id = Long.valueOf(bufferRead.readLine());// ...
             String name = bufferRead.readLine();
-            String answerBusiness = bufferRead.readLine();// ...
-            boolean isBusiness = answerBusiness.equalsIgnoreCase("YES");
+            Integer price = Integer.valueOf(bufferRead.readLine());// ...
 
-            Client client = new Client(name, isBusiness);
-            client.setId(id);
+            Domain domain = new Domain(name, price);
+            domain.setId(id);
 
-            return client;
+            return domain;
         } catch (IOException ex) {
             ex.printStackTrace();
         }

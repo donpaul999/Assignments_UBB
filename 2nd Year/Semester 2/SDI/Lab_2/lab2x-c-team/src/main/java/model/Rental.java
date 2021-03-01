@@ -1,21 +1,19 @@
 package model;
 
-import java.util.Date;
-
 public class Rental extends BaseEntity<Long> {
     private Long clientId;
     private Long domainId;
-    private Date startDate;
+    private String startDate;
     private Integer duration;
 
     public Rental() {
         clientId = 0L;
         domainId = 0L;
-        startDate = new Date();
+        startDate = "";
         duration = 0;
     }
 
-    public Rental(Long clientId, Long domainId, Date startDate, Integer duration) {
+    public Rental(Long clientId, Long domainId, String startDate, Integer duration) {
         this.clientId = clientId;
         this.domainId = domainId;
         this.startDate = startDate;
@@ -30,7 +28,7 @@ public class Rental extends BaseEntity<Long> {
         return domainId;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
@@ -46,7 +44,7 @@ public class Rental extends BaseEntity<Long> {
         this.domainId = domainId;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
