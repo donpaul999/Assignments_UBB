@@ -171,6 +171,8 @@ class Drone():
     def __init__(self, x, y, e):
         self.x = x
         self.y = y
+        self.visited = []
+        self.stack = []
 
     def move(self, detectedMap):
         pressed_keys = pygame.key.get_pressed()
@@ -189,45 +191,30 @@ class Drone():
                   self.y = self.y + 1
 
 
-    def moveDSF(self, detectedMap, e, screen, visited):
-        stack = []
-        stack.append([self.x, self.y])
-        while len(stack) != 0:
-            '''
-            print("Step")
-            '''
+    def moveDSF(self, detectedMap, e):
+        #print(self.x, self.y)
+        #print(self.stack)
+        self.visited.append([self.x,self.y])
+        if self.x > 0 and not [self.x - 1, self.y] in self.visited and detectedMap.surface[self.x - 1][self.y] == 0:
+            self.stack.append([self.x, self.y])
+            self.x = self.x - 1
+            self.visited.append([self.x, self.y])
+        elif self.y > 0 and not [self.x, self.y - 1] in self.visited and detectedMap.surface[self.x][self.y - 1] == 0:
+            self.stack.append([self.x, self.y])
+            self.y = self.y - 1
+            self.visited.append([self.x, self.y])
+        elif self.x < 19 and not [self.x + 1, self.y] in self.visited and detectedMap.surface[self.x + 1][self.y] == 0:
+            self.stack.append([self.x, self.y])
+            self.x = self.x + 1
+            self.visited.append([self.x, self.y])
+        elif self.y < 19 and not [self.x, self.y + 1] in self.visited and detectedMap.surface[self.x][self.y + 1] == 0:
+            self.stack.append([self.x, self.y])
+            self.y = self.y + 1
+            self.visited.append([self.x, self.y])
+        elif len(self.stack) != 0:
+            self.x, self.y = self.stack.pop()
 
-            time.sleep(0.2)
-            row, col = stack.pop()
 
-            detectedMap.markDetectedWalls(e, row, col)
-            screen.blit(detectedMap.image(row, col), (400, 0))
-            pygame.display.flip()
-
-            visited.append([row,col])
-            walls = e.readUDMSensors(row, col)
-            '''
-            print(str(row) + " " + str(col))
-
-            print(walls)
-            print(stack)
-            print(len(visited))
-            '''
-            for i in range(0, walls[0]):
-                if not [row - i - 1, col] in visited and not [row - i - 1, col] in stack and detectedMap.surface[row - i - 1][col] == 0:
-                    stack.append([row - i - 1, col])
-
-            for i in range(0, walls[1]):
-                if not [row, col + i + 1] in visited and not [row, col + i + 1] in stack and detectedMap.surface[row][col + i + 1] == 0:
-                    stack.append([row, col + i + 1])
-
-            for i in range(0, walls[2]):
-                if not [row + i + 1, col] in visited and not [row + i + 1, col] in stack and detectedMap.surface[row + i + 1][col] == 0:
-                    stack.append([row + i + 1, col])
-
-            for i in range(0, walls[3]):
-                if not [row, col - i - 1] in visited and not [row, col - i - 1] in stack and detectedMap.surface[row][col - i - 1] == 0:
-                    stack.append([row, col - i - 1])
 
 # define a main function
 def main():
@@ -255,11 +242,10 @@ def main():
     
     #cream drona
     d = Drone(x, y, e)
-    
-    #visited map - for dfs
-    visited = []
 
-    # create a surface on screen that has the size of 800 x 480
+    #visited map - for dfs
+
+    # create a surface on screen that has the size of 800 x 400
     screen = pygame.display.set_mode((800,400))
     screen.fill(WHITE)
     screen.blit(e.image(), (0,0))
@@ -275,10 +261,11 @@ def main():
             if event.type == pygame.QUIT:
                 # change the value to False, to exit the main loop
                 running = False
-            if event.type == KEYDOWN:
+            #if event.type == KEYDOWN:
                 # use this function instead of move
-                d.moveDSF(m, e, screen, visited)
-                #d.move(m)
+        d.moveDSF(m, e)
+        time.sleep(0.2)
+        #d.move(m)
         m.markDetectedWalls(e, d.x, d.y)
         screen.blit(m.image(d.x,d.y),(400,0))
         pygame.display.flip()
