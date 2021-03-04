@@ -1,0 +1,6 @@
+\\Mac\Home\Desktop\GitHub\Assignments_FP\2nd Year\Semester 2\DBSM\Lab_1\Lab_1\Lab_1\bin\Debug\Lab_1.exe.config
+\\Mac\Home\Desktop\GitHub\Assignments_FP\2nd Year\Semester 2\DBSM\Lab_1\Lab_1\Lab_1\bin\Debug\Lab_1.exe
+\\Mac\Home\Desktop\GitHub\Assignments_FP\2nd Year\Semester 2\DBSM\Lab_1\Lab_1\Lab_1\bin\Debug\Lab_1.pdb
+\\Mac\Home\Desktop\GitHub\Assignments_FP\2nd Year\Semester 2\DBSM\Lab_1\Lab_1\Lab_1\obj\Debug\Lab_1.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\GitHub\Assignments_FP\2nd Year\Semester 2\DBSM\Lab_1\Lab_1\Lab_1\obj\Debug\Lab_1.exe
+\\Mac\Home\Desktop\GitHub\Assignments_FP\2nd Year\Semester 2\DBSM\Lab_1\Lab_1\Lab_1\obj\Debug\Lab_1.pdb
