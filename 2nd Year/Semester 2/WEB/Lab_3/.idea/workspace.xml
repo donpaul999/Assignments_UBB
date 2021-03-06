@@ -2,46 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0064d310-4340-4c73-bc49-0a898e7aa626" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab_1/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_1/lab_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Lab_1/style_lab_2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Lab_3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_116775236_mediaitem116775235.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117337748_gettyimages-1231453249.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117345522_gettyimages-1173308067.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117345843_gettyimages-910949978.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117346518_p098dlr1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117347411_gettyimages-1304771260.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117347471_madrid.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117347682_phpfuuyjq.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117347797_gettyimages-1231465514-594x594.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/_117348446_gettyimages-1228782838.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/gel-icon-search-dark.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/idcta-icon-sprite.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/image.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/image0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/image0.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/p0836dcl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/p095vbw1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/p09808w1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/p098209x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/p0982k70.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/p0983byn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/p098d4bb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-06 at 10.48.49.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website Screenshots/Screenshot 2021-03-02 at 08.46.40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/10.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/7.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/8.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_116775236_mediaitem116775235.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117337748_gettyimages-1231453249.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117345522_gettyimages-1173308067.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117345843_gettyimages-910949978.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117346518_p098dlr1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117347411_gettyimages-1304771260.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117347471_madrid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117347682_phpfuuyjq.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117347797_gettyimages-1231465514-594x594.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/_117348446_gettyimages-1228782838.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/gel-icon-search-dark.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/idcta-icon-sprite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/image.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/image0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/image0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/p0836dcl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/p095vbw1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/p09808w1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/p098209x.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/p0982k70.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/p0983byn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/p098d4bb.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +72,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Website Screenshots" />
       <recent name="$PROJECT_DIR$/resources/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Website Screenshots" />
+      <recent name="$PROJECT_DIR$/resources/img" />
+      <recent name="$PROJECT_DIR$/resources/css" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -90,6 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614667356236</updated>
       <workItem from="1614667357256" duration="3444000" />
+      <workItem from="1615020477237" duration="4751000" />
     </task>
     <servers />
   </component>
@@ -101,5 +103,9 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="997" y="529" key="#com.intellij.fileTypes.FileTypeChooser/2560.0.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1614667539266" />
+    <state x="978" y="446" width="604" height="548" key="find.popup" timestamp="1615024456294">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="978" y="446" width="604" height="548" key="find.popup/2560.0.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1615024456294" />
   </component>
 </project>

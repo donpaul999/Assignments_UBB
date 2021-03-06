@@ -40,6 +40,59 @@ nav li:first-child {
     border-left: none;
 }
 
-#content h2 {
+#welcome h2 {
     color: #4a4a4a;
 }
+
+#welcome {
+    display: flex;
+    justify-content: space-between;
+}
+
+#content ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.red-pipe::before {
+    content: "|";
+    color: red;
+    margin-right:5px;
+}
+
+.big-article {
+    height: 351px;
+}
+
+.big-article, .title {
+    font-size: 2rem;
+    color: white;
+}
+.big-article  p, h5 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.text-gray {
+    color:gray;
+}
+
+#article-1 {
+}
+
+.big-article-text {
+    position: absolute;
+    top: 350px;
+    left: 70px;
+}
+
+.big-article-text h3, p, h5 {
+    margin: 0;
+}
+
+.article-title{
+    font-weight: normal;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: black;
+}
+
