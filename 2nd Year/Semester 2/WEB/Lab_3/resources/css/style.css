@@ -99,8 +99,9 @@ nav li:first-child {
     color: white;
     font-size: 24px;
     font-weight: bold;
-    left: 272px;
+    left: auto;
     top: 326px;
+    margin-left: 10px;
 }
 
 .big-article-text h3, p, h5 {
