@@ -1,5 +1,7 @@
 html {
     font-family: Arial,Helvetica,freesans,sans-serif;
+    height:100%;
+
 }
 
 #header {
@@ -41,13 +43,16 @@ nav li:first-child {
 }
 
 #welcome h2 {
+    margin: 0;
     color: #4a4a4a;
 }
 
 #welcome {
+    margin: 10px;
     display: flex;
     justify-content: space-between;
 }
+
 
 #content ul {
     list-style-type: none;
@@ -60,8 +65,16 @@ nav li:first-child {
     margin-right:5px;
 }
 
-.big-article {
-    height: 351px;
+.yellow-pipe::before {
+    content: "|";
+    color: yellow;
+    margin-right:5px;
+}
+
+.blue-pipe::before {
+    content: "|";
+    color: dodgerblue;
+    margin-right:5px;
 }
 
 .big-article, .title {
@@ -81,9 +94,13 @@ nav li:first-child {
 }
 
 .big-article-text {
+    z-index: 100;
     position: absolute;
-    top: 350px;
-    left: 70px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    left: 272px;
+    top: 326px;
 }
 
 .big-article-text h3, p, h5 {
@@ -91,8 +108,102 @@ nav li:first-child {
 }
 
 .article-title{
+    color: white;
     font-weight: normal;
     -webkit-text-stroke-width: 0.2px;
     -webkit-text-stroke-color: black;
 }
 
+.small-article-text {
+    position: absolute;
+    top: 215px;
+    left: 722px;
+}
+
+.small-article {
+    margin-left: 10px;
+}
+
+.container {
+    height: 171px;
+    width: 304px;
+    position: relative;
+}
+.article-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.article-text {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    left: 11px;
+    top: 90px;
+}
+
+#search {
+    border: none;
+    background: white;
+    height: 15px;
+    min-height: 24px;
+    font-weight: bold;
+    width: 162px;
+    float: left;
+    padding: 0 0 0 6px;
+    color: #333;
+}
+
+.article {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.medium-article-text {
+    margin-top: 10px;
+    font-size: 15px;
+}
+.medium-article-image {
+    position: initial;
+    left: 0;
+    top: 0;
+    width: 420px;
+    height: 235px;
+}
+
+.medium-article-title {
+    margin: 3px;
+}
+
+.medium-article-description {
+    margin: 8px 0 8px 0;
+}
+
+
+.medium-container {
+    height: 2px;
+    width: 420px;
+    position: relative;
+}
+
+.category {
+    color: #4a4a4a;
+    margin: 10px 0 20px 10px;
+}
+
+.medium-article {
+    margin-left: 10px;
+}
+
+#content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 68em
+}
+
+.big-container {
+    width: 624px;
+    height: 351px;
+}
