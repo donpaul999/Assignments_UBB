@@ -88,6 +88,8 @@ nav li:first-child {
 
 .text-gray {
     color:gray;
+    font-weight: normal;
+    margin: 0;
 }
 
 #article-1 {
@@ -108,11 +110,12 @@ nav li:first-child {
     margin: 0;
 }
 
-.article-title{
+.article-title {
     color: white;
     font-weight: normal;
     -webkit-text-stroke-width: 0.2px;
     -webkit-text-stroke-color: black;
+    padding-bottom: 15px;
 }
 
 .small-article-text {
@@ -207,4 +210,9 @@ nav li:first-child {
 .big-container {
     width: 624px;
     height: 351px;
+}
+
+.article-list {
+    list-style-type: none;
+    padding: 0;
 }
