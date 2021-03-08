@@ -36,11 +36,17 @@ def main():
     # we position the drone somewhere in the area
     x = randint(0, 19)
     y = randint(0, 19)
-    
+
+    #random_ending
+    destination_x = randint(0, 19)
+    destination_y = randint(0, 19)
+
+
     #create drona
     d = Drone(x, y)
     
-    
+    #Service
+    service = Service()
     
     # create a surface on screen that has the size of 400 x 480
     screen = pygame.display.set_mode((400,400))
@@ -65,10 +71,10 @@ def main():
         
         screen.blit(d.mapWithDrone(m.image()),(0,0))
         pygame.display.flip()
-       
-    path = Service.dummysearch()
-    screen.blit(Service.displayWithPath(m.image(), path),(0,0))
-    
+
+    path = service.searchAStar(m, x, y, destination_x, destination_y)
+    if len(path) != 0:
+        screen.blit(service.displayWithPath(m.image(), path),(0,0))
     pygame.display.flip()
     time.sleep(5)
     pygame.quit()
