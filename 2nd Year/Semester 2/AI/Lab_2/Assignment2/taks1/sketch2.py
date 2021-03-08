@@ -41,6 +41,9 @@ def main():
     destination_x = randint(0, 19)
     destination_y = randint(0, 19)
 
+    while m.surface[destination_x][destination_y] != 0:
+        destination_x = randint(0, 19)
+        destination_y = randint(0, 19)
 
     #create drona
     d = Drone(x, y)
@@ -73,7 +76,7 @@ def main():
         pygame.display.flip()
 
     path = service.searchAStar(m, x, y, destination_x, destination_y)
-    if len(path) != 0:
+    if path:
         screen.blit(service.displayWithPath(m.image(), path),(0,0))
     pygame.display.flip()
     time.sleep(5)
