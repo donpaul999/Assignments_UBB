@@ -1,0 +1,20 @@
+.piece {
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+#game {
+    margin-left: 20%;
+    margin-right: 55%;
+}
+
+#status {
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 30px;
+}
