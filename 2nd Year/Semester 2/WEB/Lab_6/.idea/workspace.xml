@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d847cef-50a7-4848-9904-1afc82f38605" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/script-new.js" afterDir="false" />
+    <list default="true" id="d9e7c5d4-d906-4e60-b362-593692781d7c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab_5/resources/js/script-new.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4_V2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4_V2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4_V2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4_V2/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lab_4_V2/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4_V2/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Lab_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Lab_5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/Lab_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/.idea/Lab_5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
-  <component name="ProjectId" id="1phS8Us74L5usk2srN7cCI2e13p" />
+  <component name="ProjectId" id="1pi5SU7b0bZLA6kC5imi1LYjU8h" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,22 +31,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/css" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2d847cef-50a7-4848-9904-1afc82f38605" name="Default Changelist" comment="" />
-      <created>1615633669332</created>
+      <changelist id="d9e7c5d4-d906-4e60-b362-593692781d7c" name="Default Changelist" comment="" />
+      <created>1615653069731</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615633669332</updated>
-      <workItem from="1615633670573" duration="7553000" />
+      <updated>1615653069731</updated>
+      <workItem from="1615653070776" duration="461000" />
     </task>
     <servers />
   </component>
@@ -53,9 +50,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1099" y="650" key="NewPhpFileDialog" timestamp="1615634100009">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="843" y="506" key="NewPhpFileDialog" timestamp="1615653525705">
+      <screen x="0" y="0" width="2048" height="1152" />
     </state>
-    <state x="1099" y="650" key="NewPhpFileDialog/2560.0.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1615634100009" />
+    <state x="843" y="506" key="NewPhpFileDialog/2048.0.1920.1080/0.0.2048.1152@0.0.2048.1152" timestamp="1615653525705" />
   </component>
 </project>
