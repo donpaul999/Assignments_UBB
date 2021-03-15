@@ -39,7 +39,6 @@ class Service():
         return True
 
     def searchAStar(self, mapM, initialX, initialY, finalX, finalY):
-        print("Final " + str(finalX) + " " + str(finalY))
         dlin = [-1, 0, 1, 0]
         dcol = [0, 1, 0, -1]
 
@@ -51,14 +50,12 @@ class Service():
         end = [finalX, finalY]
         parent[str(start)] = None
         parent[str(end)] = None
-        last = start
 
         totalDistance = np.zeros((mapM.n, mapM.m))
         startDistance = np.zeros((mapM.n, mapM.m))
         goalDistance = np.zeros((mapM.n, mapM.m))
         open.append(start)
         while len(open) > 0:
-
             open = self.customSort(open, totalDistance)
 
             current = open.pop(0)
@@ -78,7 +75,7 @@ class Service():
 
             for i in range(0, 4):
                 new_pos = [current[0] + dlin[i], current[1] + dcol[i]]
-                if new_pos not in closed and new_pos[0] > 0 and new_pos[0] < mapM.n and new_pos[1] > 0 and new_pos[1] < mapM.m:
+                if new_pos not in closed and new_pos[0] >= 0 and new_pos[0] < mapM.n and new_pos[1] >= 0 and new_pos[1] < mapM.m:
                     if mapM.surface[new_pos[0]][new_pos[1]] == 0:
                         parent[str(new_pos)] = current
                         startDistance[new_pos[0]][new_pos[1]] = startDistance[current[0]][current[1]]
@@ -104,7 +101,6 @@ class Service():
         return [row, col]
 
     def searchGreedy(self, mapM, initialX, initialY, finalX, finalY):
-        print("Final " + str(finalX) + " " + str(finalY))
         dlin = [-1, 0, 1, 0]
         dcol = [0, 1, 0, -1]
 
@@ -122,7 +118,7 @@ class Service():
             #print(current)
             for i in range(0, 4):
                 new_pos = [current[0] + dlin[i], current[1] + dcol[i]]
-                if [current, new_pos] not in visited and new_pos[0] > 0 and new_pos[0] < mapM.n and new_pos[1] > 0 and new_pos[1] < mapM.m:
+                if [current, new_pos] not in visited and new_pos[0] >= 0 and new_pos[0] < mapM.n and new_pos[1] >= 0 and new_pos[1] < mapM.m:
                     if mapM.surface[new_pos[0]][new_pos[1]] == 0 and (cost[current[0]][current[1]] + 1 < cost[new_pos[0]][new_pos[1]] or cost[new_pos[0]][new_pos[1]] == 0):
                         cost[new_pos[0]][new_pos[1]] = cost[current[0]][current[1]] + 1
                         parent[str(new_pos)] = current
