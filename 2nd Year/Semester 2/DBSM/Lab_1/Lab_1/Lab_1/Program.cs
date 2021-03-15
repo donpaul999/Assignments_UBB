@@ -27,8 +27,6 @@ namespace Lab_1
 
             string select = cmd.ExecuteScalar().ToString();
             string count = countCmd.ExecuteNonQuery().ToString();
-            
-            
 
             Console.WriteLine(select);
             Console.WriteLine(count);
