@@ -23,16 +23,16 @@ public class RentalTest {
     private static final Client CLIENT = new Client("client1", true);
     private static final Client NEW_CLIENT = new Client ("client2", false);
 
-    private static final Domain DOMAIN = new Domain("client1", 100);
-    private static final Domain NEW_DOMAIN = new Domain ("client2", 200);
+    private static final WebDomain WEB_DOMAIN = new WebDomain("client1", 100);
+    private static final WebDomain NEW_WEB_DOMAIN = new WebDomain("client2", 200);
 
     private static Rental rental;
 
     @BeforeEach
     public void setUp() {
         CLIENT.setId(CLIENT_ID);
-        DOMAIN.setId(DOMAIN_ID);
-        rental = new Rental(CLIENT.getId(), DOMAIN.getId(), DATE, DURATION);
+        WEB_DOMAIN.setId(DOMAIN_ID);
+        rental = new Rental(CLIENT.getId(), WEB_DOMAIN.getId(), DATE, DURATION);
         rental.setId(ID);
     }
 

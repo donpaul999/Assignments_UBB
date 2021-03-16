@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <client>
+        <id>1</id>
+        <name>Test One</name>
+        <isBusiness>no</isBusiness>
+    </client>
+    <client>
+        <id>2</id>
+        <name>Test Two</name>
+        <isBusiness>yes</isBusiness>
+    </client>
+    <client>
+        <id>3</id>
+        <name>Test Three</name>
+        <isBusiness>no</isBusiness>
+    </client>
+</data>

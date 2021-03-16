@@ -1,12 +1,14 @@
 package ui.commands;
 
-public class EmptyCommand extends Command {
+import java.util.Deque;
+
+public class EmptyCommand extends BaseCommand {
     public EmptyCommand(String key) {
         super(key, "");
     }
 
     @Override
-    public void execute() {
+    public void execute(Deque<String> args) {
     }
 
     @Override

@@ -1,43 +1,39 @@
 package ui.commands.delete;
 
 import controller.Controller;
-import ui.commands.Command;
+import exceptions.CommandException;
+import ui.ApplicationContext;
+import ui.annotations.Command;
+import ui.commands.BaseCommand;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.sql.SQLException;
+import java.util.Deque;
+import java.util.Optional;
 
-public class DeleteClientCommand extends Command {
-    private final Controller controller;
+@Command(
+        key = "delete",
+        description = "Delete a client.",
+        usage = "clients delete <id>",
+        group = "clients"
+)
+public class DeleteClientCommand extends BaseCommand {
+    private Controller controller;
 
-    public DeleteClientCommand(String key, String description, Controller controller) {
+    public DeleteClientCommand(String key, String description) {
         super(key, description);
-        this.controller = controller;
     }
 
-    /**
-     * Reads a client id and deletes that client.
-     */
     @Override
-    public void execute() {
-        Long clientId = readClientId();
-        controller.deleteClient(clientId);
+    public void init(ApplicationContext context) {
+        this.controller = context.getService(Controller.class).orElse(null);
     }
 
-    /**
-     * Reads a client id from the user's input.
-     * @return the client id.
-     */
-    private Long readClientId() {
-        System.out.println("Give the client's id to delete:");
+    @Override
+    public void execute(Deque<String> args) throws SQLException {
+        Optional.of(args.size())
+                .filter(s -> s == 1)
+                .orElseThrow(() -> new CommandException(String.format("Invalid number of parameters. Expected %d found %d", 1, args.size())));
 
-        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            return Long.valueOf(bufferRead.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        controller.deleteClient(Long.parseLong(args.pop()));
     }
 }

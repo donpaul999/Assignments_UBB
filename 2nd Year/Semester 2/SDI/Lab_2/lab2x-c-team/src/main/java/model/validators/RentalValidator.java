@@ -17,6 +17,10 @@ public class RentalValidator implements Validator<Rental> {
     @Override
     public void validate(Rental entity) throws ValidatorException {
         Optional.of(entity)
+                .filter(rental -> rental.getId() > 0)
+                .orElseThrow(() -> new ValidatorException(String.format("Rental's id %d is not greater than 0.", entity.getClientId())));
+
+        Optional.of(entity)
                 .filter(rental -> rental.getClientId() > 0)
                 .orElseThrow(() -> new ValidatorException(String.format("Client's id %d is not greater than 0.", entity.getClientId())));
 

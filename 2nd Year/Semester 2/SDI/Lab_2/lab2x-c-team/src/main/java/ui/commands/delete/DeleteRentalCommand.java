@@ -1,43 +1,42 @@
 package ui.commands.delete;
 
 import controller.Controller;
-import ui.commands.Command;
+import exceptions.CommandException;
+import ui.ApplicationContext;
+import ui.annotations.Command;
+import ui.commands.BaseCommand;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
+import java.util.Deque;
+import java.util.Optional;
 
-public class DeleteRentalCommand extends Command {
-    private final Controller controller;
+@Command(
+        key = "delete",
+        description = "Delete a rental.",
+        usage = "rentals delete <id>",
+        group = "rentals"
+)
+public class DeleteRentalCommand extends BaseCommand {
+    private Controller controller;
 
-    public DeleteRentalCommand(String key, String description, Controller controller) {
+    public DeleteRentalCommand(String key, String description) {
         super(key, description);
-        this.controller = controller;
     }
 
-    /**
-     * Reads a rental id and deletes that rental.
-     */
     @Override
-    public void execute() {
-        Long rentalId = readRentalId();
-        controller.deleteRental(rentalId);
+    public void init(ApplicationContext context) {
+        this.controller = context.getService(Controller.class).orElse(null);
     }
 
-    /**
-     * Reads a rental id from the user's input.
-     * @return the rental id.
-     */
-    private Long readRentalId() {
-        System.out.println("Give the rental's id to delete:");
+    @Override
+    public void execute(Deque<String> args) throws SQLException {
+        Optional.of(args.size())
+                .filter(s -> s == 1)
+                .orElseThrow(() -> new CommandException(String.format("Invalid number of parameters. Expected %d found %d", 1, args.size())));
 
-        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
-        try {
-            return Long.valueOf(bufferRead.readLine());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        controller.deleteRental(Long.parseLong(args.pop()));
     }
 }

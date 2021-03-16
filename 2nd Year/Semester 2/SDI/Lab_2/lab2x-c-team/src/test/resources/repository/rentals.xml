@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <rental>
+        <id>1</id>
+        <clientId>1</clientId>
+        <domainId>1</domainId>
+        <startDate>20-12-2020</startDate>
+        <duration>12</duration>
+    </rental>
+    <rental>
+        <id>2</id>
+        <clientId>1</clientId>
+        <domainId>2</domainId>
+        <startDate>10-06-2018</startDate>
+        <duration>24</duration>
+    </rental>
+</data>

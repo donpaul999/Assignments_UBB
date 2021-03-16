@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <domain>
+        <id>1</id>
+        <name>one.com</name>
+        <price>432</price>
+    </domain>
+    <domain>
+        <id>2</id>
+        <name>two.com</name>
+        <price>10</price>
+    </domain>
+    <domain>
+        <id>3</id>
+        <name>three.com</name>
+        <price>20</price>
+    </domain>
+</data>

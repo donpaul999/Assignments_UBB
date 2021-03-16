@@ -1,47 +1,66 @@
 package ui;
 
-import ui.commands.Command;
+import controller.CommandService;
+import ui.commands.BaseCommand;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.stream.Stream;
+import java.sql.SQLException;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Console {
-    private final Map<String, Command> commands;
+    private final CommandService commands;
 
-    public Console() {
-        this.commands = new HashMap<>();
+    public Console(ApplicationContext context) {
+        this.commands = context.getService(CommandService.class).orElseThrow();
     }
 
     private void printMenu() {
-        this.commands.values().stream()
-                .sorted(Comparator.comparing(Command::getKey))
+        this.commands.getMainCommandGroup()
+                .getCommands()
+                .values()
+                .stream()
+                .sorted(Comparator.comparing(BaseCommand::getKey))
                 .forEach(System.out::println);
-    }
-
-    public void addCommand(Command command) {
-        this.commands.put(command.getKey(), command);
     }
 
     public void show() {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            this.printMenu();
+            System.out.println("> ");
+            String input = scanner.nextLine();
+            Deque<String> tokens = this.tokenize(input);
+            String key = tokens.pop();
 
-            System.out.println("Input option: ");
-            String key = scanner.nextLine();
-            Command command = this.commands.get(key);
+            try {
+                Optional.of(key)
+                        .filter(k -> !k.isBlank())
+                        .ifPresentOrElse(
+                                k -> this.commands.getMainCommandGroup()
+                                        .getCommand(key)
+                                        .ifPresentOrElse(
+                                                command -> {
+                                                    try {
+                                                        command.execute(tokens);
+                                                    } catch (SQLException throwables) {
+                                                        throwables.printStackTrace();
+                                                    }
+                                                },
+                                                () -> System.out.println("Invalid command.")
+                                        ),
+                                () -> this.commands.getMainCommandGroup().execute(tokens)
+                        );
 
-            if (command == null) {
-                System.out.println("Invalid option.");
-                continue;
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
-            command.execute();
         }
     }
 
+    private Deque<String> tokenize(String rawInput) {
+        return Arrays.stream(rawInput.split(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"))
+                .map(token -> token.replace("\"", ""))
+                .collect(Collectors.toCollection(ArrayDeque::new));
+    }
 }

@@ -1,49 +1,50 @@
+import controller.CommandService;
 import controller.Controller;
 import model.Client;
-import model.Domain;
 import model.Rental;
+import model.WebDomain;
 import model.validators.ClientValidator;
-import model.validators.DomainValidator;
 import model.validators.RentalValidator;
+import model.validators.WebDomainValidator;
+import repository.FileRepository;
 import repository.InMemoryRepository;
-import repository.Repository;
+import repository.XMLRepository;
+import repository.database.ClientDatabaseRepository;
+import repository.database.DatabaseRepository;
+import repository.database.RentalDatabaseRepository;
+import repository.database.WebDomainDatabaseRepository;
+import ui.ApplicationContext;
 import ui.Console;
-import ui.commands.*;
-import ui.commands.delete.DeleteClientCommand;
-import ui.commands.delete.DeleteDomainCommand;
-import ui.commands.delete.DeleteRentalCommand;
+
+import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) {
-        Repository<Long, Client> clientRepository = new InMemoryRepository<>(new ClientValidator());
-        Repository<Long, Domain> domainRepository = new InMemoryRepository<>(new DomainValidator());
-        Repository<Long, Rental> rentalRepository = new InMemoryRepository<>(new RentalValidator());
+    public static void main(String[] args) throws SQLException {
+        ApplicationContext context = createContext();
 
-        Controller controller = new Controller(clientRepository, domainRepository, rentalRepository);
+        CommandService commandService = context.getService(CommandService.class).get();
+        commandService.init(context);
 
-        Console console = new Console();
-        console.addCommand(new ExitCommand("0", "Exit"));
+        try {
+            commandService.loadCommands();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-        console.addCommand(new EmptyCommand("10"));
-        console.addCommand(new CreateClientCommand("11", "Create Client", controller));
-        console.addCommand(new CreateDomainCommand("12", "Create Domain", controller));
-        console.addCommand(new CreateRentalCommand("13", "Create Rental", controller));
+        Controller controller = context.getService(Controller.class).get();
+        controller.init(context);
 
-        console.addCommand(new EmptyCommand("20"));
-        console.addCommand(new PrintClientsCommand("21", "Print clients", controller));
-        console.addCommand(new PrintDomainsCommand("22", "Print domains", controller));
-        console.addCommand(new PrintRentalsCommand("23", "Print rentals", controller));
-
-        console.addCommand(new EmptyCommand("30"));
-        console.addCommand(new UpdateClientCommand("31", "Update Client", controller));
-        console.addCommand(new UpdateDomainCommand("32", "Update Domain", controller));
-        console.addCommand(new UpdateRentalCommand("33", "Update Rental", controller));
-
-        console.addCommand(new EmptyCommand("40"));
-        console.addCommand(new DeleteClientCommand("41", "Delete Client", controller));
-        console.addCommand(new DeleteDomainCommand("42", "Delete Domain", controller));
-        console.addCommand(new DeleteRentalCommand("43", "Delete Rental", controller));
-
+        Console console = new Console(context);
         console.show();
+    }
+
+    private static ApplicationContext createContext() throws SQLException {
+        ApplicationContext context = new ApplicationContext();
+        context.setShared("repository.client", new InMemoryRepository<>(new ClientValidator()));
+        context.setShared("repository.webdomain", new InMemoryRepository<>(new WebDomainValidator()));
+        context.setShared("repository.rental", new InMemoryRepository<>(new RentalValidator()));
+        context.addService(new Controller());
+        context.addService(new CommandService());
+        return context;
     }
 }
