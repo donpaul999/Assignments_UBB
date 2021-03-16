@@ -5,7 +5,7 @@
     display: inline-block;
 }
 
-#container div, #right div {
+#container div, #right div, #left div {
     border: 2px ridge black;
     border-radius: 15px;
     width: 500px;
