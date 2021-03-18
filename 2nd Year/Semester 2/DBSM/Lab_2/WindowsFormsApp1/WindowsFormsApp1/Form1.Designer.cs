@@ -32,6 +32,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.GridProgrammer = new System.Windows.Forms.DataGridView();
             this.GridHoliday = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridProgrammer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridHoliday)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +52,7 @@
             // button2
             // 
             this.button2.AccessibleDescription = "button_2";
-            this.button2.Location = new System.Drawing.Point(567, 320);
+            this.button2.Location = new System.Drawing.Point(567, 301);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -62,9 +64,9 @@
             // 
             this.GridProgrammer.AccessibleName = "GridProgrammer";
             this.GridProgrammer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridProgrammer.Location = new System.Drawing.Point(25, 23);
+            this.GridProgrammer.Location = new System.Drawing.Point(25, 40);
             this.GridProgrammer.Name = "GridProgrammer";
-            this.GridProgrammer.Size = new System.Drawing.Size(485, 178);
+            this.GridProgrammer.Size = new System.Drawing.Size(485, 161);
             this.GridProgrammer.TabIndex = 2;
             // 
             // GridHoliday
@@ -77,11 +79,31 @@
             this.GridHoliday.TabIndex = 3;
             this.GridHoliday.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Programmers:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Holidays:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(673, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.GridHoliday);
             this.Controls.Add(this.GridProgrammer);
             this.Controls.Add(this.button2);
@@ -92,6 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridProgrammer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridHoliday)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -101,6 +124,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView GridProgrammer;
         private System.Windows.Forms.DataGridView GridHoliday;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

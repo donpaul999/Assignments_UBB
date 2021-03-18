@@ -27,13 +27,38 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            connection = new SqlConnection(@"Data Source = PAULCOLTA060E\SQLEXPRESS; Initial Catalog = it_company; Integrated Security = SSPI");
+            ds = new DataSet();
+            daHoliday = new SqlDataAdapter("select * from Holidays", connection);
+            daProgrammer = new SqlDataAdapter("select * from Programmers", connection);
+            cb = new SqlCommandBuilder(daHoliday);
 
+            daHoliday.Fill(ds, "Holidays");
+            daProgrammer.Fill(ds, "Programmers");
+
+            DataRelation dr = new DataRelation("Holidays_Programmers_id_fk",
+                ds.Tables["Programmers"].Columns["id"], ds.Tables["Holidays"].Columns["programmer_id"]);
+            ds.Relations.Add(dr);
+
+
+            bsHoliday = new BindingSource();
+            bsProgrammer = new BindingSource();
+
+            bsProgrammer.DataSource = ds;
+            bsProgrammer.DataMember = "Programmers";
+
+            bsHoliday.DataSource = bsProgrammer;
+            bsHoliday.DataMember = "Holidays_Programmers_id_fk";
+
+            GridHoliday.DataSource = bsHoliday;
+            GridProgrammer.DataSource = bsProgrammer;
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             daHoliday.Update(ds, "Holidays");
         }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             connection = new SqlConnection(@"Data Source = PAULCOLTA060E\SQLEXPRESS; Initial Catalog = it_company; Integrated Security = SSPI");
