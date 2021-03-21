@@ -47,6 +47,7 @@ class UI:
 
         screen.blit(self._controller.mapWithDrone(self._repository.cmap.image()), (0, 0))
         pygame.display.flip()
+        pygame.display.update()
         time.sleep(10)
         pygame.quit()
 
