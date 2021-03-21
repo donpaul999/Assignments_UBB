@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
-
+import pickle
 from random import *
+
+import pygame
+
 from utils import *
 import numpy as np
 
 # the glass gene can be replaced with int or float, or other types
 # depending on your problem's representation
 
-class gene:
+class Gene:
     def __init__(self):
         # random initialise the gene according to the representation
         pass
@@ -73,4 +76,28 @@ class Map():
             string = string + "\n"
         return string
                 
-    
+    def saveMap(self, numFile="test.map"):
+        with open(numFile, 'wb') as f:
+            pickle.dump(self, f)
+            f.close()
+
+    def loadMap(self, numfile):
+        with open(numfile, "rb") as f:
+            dummy = pickle.load(f)
+            self.n = dummy.n
+            self.m = dummy.m
+            self.surface = dummy.surface
+            f.close()
+
+    def image(self, colour=BLUE, background=WHITE):
+        imagine = pygame.Surface((400, 400))
+        brick = pygame.Surface((20, 20))
+        brick.fill(BLUE)
+        imagine.fill(WHITE)
+        for i in range(self.n):
+            for j in range(self.m):
+                if (self.surface[i][j] == 1):
+                    imagine.blit(brick, (j * 20, i * 20))
+
+        return imagine
+

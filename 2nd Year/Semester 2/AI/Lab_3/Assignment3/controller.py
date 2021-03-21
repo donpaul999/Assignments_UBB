@@ -1,7 +1,7 @@
 from repository import *
 
 
-class controller():
+class Controller():
     def __init__(self, args):
         # args - list of parameters needed in order to create the controller
         pass
@@ -34,4 +34,11 @@ class controller():
         # run the algorithm
         # return the results and the statistics
         pass
-       
+
+    def mapWithDrone(self, mapImage):
+        x = randint(0, 19)
+        y = randint(0, 19)
+        drona = pygame.image.load("drona.png")
+        mapImage.blit(drona, (x,  y))
+
+        return mapImage
