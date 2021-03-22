@@ -20,10 +20,10 @@ class Repository():
         population.evaluate(self.cmap, self.drone)
 
     def computeAverageFitnessAndDeviation(self):
-        return self.__populations[0].computeAverageFitnessAndDeviation(self.cmap, self.drone)
+        return self.__populations[-1].computeAverageFitnessAndDeviation(self.cmap, self.drone)
 
     def currentPopulation(self):
-        return self.__populations[0]
+        return self.__populations[-1]
 
     def createPopulation(self, args):
         # args = [populationSize, individualSize] -- you can add more args    
@@ -41,7 +41,7 @@ class Repository():
         self.drone = [x,y]
 
     def getFirstPath(self):
-        return self.__populations[0].getFirstPath(self.cmap, self.drone)
+        return self.__populations[-1].getFirstPath(self.cmap, self.drone)
 
     # TO DO : add the other components for the repository: 
     #    load and save from file, etc

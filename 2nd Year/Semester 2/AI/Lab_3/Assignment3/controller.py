@@ -4,6 +4,7 @@ import time
 class Controller():
     def __init__(self, repo):
         # args - list of parameters needed in order to create the controller
+        self._numberOfSeeds = None
         self._repository = repo
         self._stepsNb = None
         self._populationSize = None
@@ -12,6 +13,9 @@ class Controller():
         self._crossoverProbability = None
         self._statistics = [] #[[average_fitness_1, random_seed_1],...[average_fitness_numberOfIterations_, random_seed__numberOfIterations]]
         self._iteration = 0
+
+    def setSeedNb(self, nb):
+        self._numberOfSeeds = nb
 
     def setDronePosition(self, x, y):
         self._repository.setDronePositions(x, y)
@@ -33,6 +37,7 @@ class Controller():
 
     def iteration(self, args = 0):
         print("Iteration " + str(self._iteration))
+
         self._iteration += 1
         # args - list of parameters needed to run one iteration
         # a iteration:
@@ -43,7 +48,8 @@ class Controller():
 
         population = self._repository.currentPopulation()
         self._repository.evaluatePopulation(population)
-        parents = population.selection(self._populationSize // 2)
+        select = population.selection(self._populationSize)
+        parents = select[:len(select) // 2]
         pairs = len(parents) // 2
         used_pairs = []
         for i in range(pairs):
@@ -57,11 +63,10 @@ class Controller():
                 self._repository.addIndividual(population, firstCrossed)
                 self._repository.addIndividual(population, secondCrossed)
         if self._populationSize > 1:
-            self._populationSize = int(self._populationSize * 0.8)
+            self._populationSize = int(self._populationSize * 1)
         else:
             self._populationSize = 1
 
-        select = population.selection(self._populationSize)
         population.setIndividuals(select)
 
 
@@ -73,10 +78,18 @@ class Controller():
         #    save the information need it for the satistics
         
         # return the results and the info for statistics
+        f = []
+        stats = []
+        dev = []
         for i in range(0, self._numberOfIterations):
             self.iteration()
-            self._statistics.append(self._repository.computeAverageFitnessAndDeviation())
-        pass
+            stats.append(self._repository.computeAverageFitnessAndDeviation())
+        print(stats)
+        for i in stats:
+            f.append(i[0])
+
+        self._statistics.append([np.average(f), np.std(f)])
+
     
     
     def solver(self, args=0):
@@ -86,14 +99,17 @@ class Controller():
         # run the algorithm
         # return the results and the statistics
         population = self._repository.createPopulation([self._populationSize, self._stepsNb])
-        self._repository.addPopulation(population)
-        self.run()
+        for i in range(self._numberOfSeeds):
+            self._repository.addPopulation(population)
+            seed(i)
+            self.run()
+            print(self._statistics[i])
         print("--- %.2f seconds ---" % (time.time() - start_time))
         return self._repository.getFirstPath(), self._statistics
 
 
     def mapWithDrone(self, mapImage):
         drona = pygame.image.load("drona.png")
-        mapImage.blit(drona, (self._droneX,  self._droneX))
+        mapImage.blit(drona, (0,  0))
 
         return mapImage

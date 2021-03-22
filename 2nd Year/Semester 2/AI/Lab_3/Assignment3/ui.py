@@ -52,6 +52,8 @@ class UI:
                 self._controller.setMutationProbability(float(line))
             elif i == 5:
                 self._controller.setCrossoverProbability(float(line))
+            elif i == 6:
+                self._controller.setSeedNb(int(line))
             else:
                 break
             i += 1

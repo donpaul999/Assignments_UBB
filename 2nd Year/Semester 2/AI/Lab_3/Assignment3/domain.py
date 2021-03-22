@@ -33,20 +33,18 @@ class Individual:
             if [x, y] not in visited:
                 visited.append([x, y])
                 if 0 > x or 0 > y or x >= currentMap.n or y >= currentMap.m:
-                    self.f -= 1000
                     continue
                 if currentMap.surface[x][y] == 1:
-                    self.f -= 1000
                     continue
 
-                self.f += 10
+                self.f += 1
                 for var in v:
                     while ((0 <= x + var[0] < currentMap.n and
                             0 <= y + var[1] < currentMap.m) and
                            currentMap.surface[x + var[0]][y + var[1]] != 1):
                             if [x + var[0], y + var[1]] not in visited:
                                 visited.append([x + var[0], y + var[1]])
-                                self.f += 100
+                                self.f += 1
                             x = x + var[0]
                             y = y + var[1]
 
@@ -89,7 +87,6 @@ class Population():
             x.fitness(map, drone)
 
     def computeAverageFitnessAndDeviation(self, map, drone):
-        sum = 0
         fitness = []
         for x in self.v:
             x.fitness(map, drone)
@@ -127,7 +124,9 @@ class Population():
         return individuals
 
     def getFirstPath(self, map, drone):
-        return self.v[0].computePath(map, drone)
+        individuals_copy = copy.deepcopy(self.v)
+        individuals_copy = self.sortIndividuals(individuals_copy)
+        return individuals_copy[0].computePath(map, drone)
 
 class Map():
     def __init__(self, n = 20, m = 20):
