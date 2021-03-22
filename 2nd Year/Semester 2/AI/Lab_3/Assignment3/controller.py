@@ -48,7 +48,7 @@ class Controller():
 
         population = self._repository.currentPopulation()
         self._repository.evaluatePopulation(population)
-        select = population.selection(self._populationSize)
+        select = population.selection(self._populationSize - 2)
         parents = select[:len(select) // 2]
         pairs = len(parents) // 2
         used_pairs = []
@@ -62,10 +62,6 @@ class Controller():
                 secondCrossed.mutate(self._mutationProbability)
                 self._repository.addIndividual(population, firstCrossed)
                 self._repository.addIndividual(population, secondCrossed)
-        if self._populationSize > 1:
-            self._populationSize = int(self._populationSize * 1)
-        else:
-            self._populationSize = 1
 
         population.setIndividuals(select)
 
@@ -98,10 +94,10 @@ class Controller():
         # create the population,
         # run the algorithm
         # return the results and the statistics
-        population = self._repository.createPopulation([self._populationSize, self._stepsNb])
         for i in range(self._numberOfSeeds):
+            seed(30 - i)
+            population = self._repository.createPopulation([self._populationSize, self._stepsNb])
             self._repository.addPopulation(population)
-            seed(i)
             self.run()
             print(self._statistics[i])
         print("--- %.2f seconds ---" % (time.time() - start_time))
