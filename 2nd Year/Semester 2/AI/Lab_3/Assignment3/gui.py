@@ -4,6 +4,7 @@ from pygame.locals import *
 import pygame, time
 from utils import *
 from domain import *
+import threading
 
 def initPyGame(dimension):
     # init the pygame
@@ -58,7 +59,7 @@ def movingDrone(currentMap, path, speed = 1,  markSeen = True):
         
         screen.blit(drona, (path[i][1] * 20, path[i][0] * 20))
         pygame.display.flip()
-        time.sleep(0.5 * speed)            
+        time.sleep(0.5 * speed)
     closePyGame()
         
 def image(currentMap, colour = BLUE, background = WHITE):
@@ -73,5 +74,8 @@ def image(currentMap, colour = BLUE, background = WHITE):
             if (currentMap.surface[i][j] == 1):
                 imagine.blit(brick, ( j * 20, i * 20))
                 
-    return imagine        
-    
+    return imagine
+
+#
+#x = threading.Thread(target=movingDrone, args=(m, path,1,True))
+#x.start()

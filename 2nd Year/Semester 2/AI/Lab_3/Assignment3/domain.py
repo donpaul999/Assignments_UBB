@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import copy
 import pickle
 from random import *
 
@@ -7,61 +8,133 @@ import pygame
 from utils import *
 import numpy as np
 
-# the glass gene can be replaced with int or float, or other types
+# the class gene can be replaced with int or float, or other types
 # depending on your problem's representation
 
 class Gene:
     def __init__(self):
-        # random initialise the gene according to the representation
-        pass
+        self._coord = random.randint(1,4) # N - 1, E - 2, S - 3, V - 4
 
 class Individual:
     def __init__(self, size = 0):
         self.__size = size
-        self.__x = [gene() for i in range(self.__size)]
-        self.__f = None
+        self.__x = [randint(1,4) for i in range(self.__size)]
+        self.f = None
         
-    def fitness(self):
-        # compute the fitness for the indivisual
-        # and save it in self.__f
-        pass
-    
+    def fitness(self, currentMap, drone):
+        self.f = 0
+        path = self.computePath(currentMap, drone)
+        #print(path)
+        visited = []
+        v = [[-1, 0], [0, 1], [1, 0], [0, -1]]
+        for i in range(len(path)):
+            x = path[i][0]
+            y = path[i][1]
+            if [x, y] not in visited:
+                visited.append([x, y])
+                if 0 > x or 0 > y or x >= currentMap.n or y >= currentMap.m:
+                    self.f -= 1000
+                    continue
+                if currentMap.surface[x][y] == 1:
+                    self.f -= 1000
+                    continue
+
+                self.f += 10
+                for var in v:
+                    while ((0 <= x + var[0] < currentMap.n and
+                            0 <= y + var[1] < currentMap.m) and
+                           currentMap.surface[x + var[0]][y + var[1]] != 1):
+                            if [x + var[0], y + var[1]] not in visited:
+                                visited.append([x + var[0], y + var[1]])
+                                self.f += 100
+                            x = x + var[0]
+                            y = y + var[1]
+
+
+    def computePath(self, currentMap, drone):
+        path = [[drone[0], drone[1]]]
+        for i in self.__x:
+            if i == 1:
+                path.append([path[-1][0] - 1, path[-1][1]])
+            elif i == 2:
+                path.append([path[-1][0], path[-1][1] + 1])
+            elif i == 3:
+                path.append([path[-1][0] + 1, path[-1][1]])
+            elif i == 4:
+                path.append([path[-1][0], path[-1][1] - 1])
+        return path
+
     def mutate(self, mutateProbability = 0.04):
         if random() < mutateProbability:
-            pass
-            # perform a mutation with respect to the representation
+            self.__x[randint(0, self.__size - 1)] = randint(1,4)
         
     
     def crossover(self, otherParent, crossoverProbability = 0.8):
         offspring1, offspring2 = Individual(self.__size), Individual(self.__size) 
         if random() < crossoverProbability:
-            pass
-            # perform the crossover between the self and the otherParent 
+            position = randint(0, self.__size - 1)
+            offspring1.__x = otherParent.__x[:position] + self.__x[position:]
+            offspring2.__x = self.__x[:position] + otherParent.__x[position:]
         
         return offspring1, offspring2
     
 class Population():
     def __init__(self, populationSize = 0, individualSize = 0):
         self.__populationSize = populationSize
-        self.__v = [domain.Individual(individualSize) for x in range(populationSize)]
-        
-    def evaluate(self):
+        self.v = [Individual(individualSize) for x in range(self.__populationSize)]
+
+    def evaluate(self, map, drone):
         # evaluates the population
-        for x in self.__v:
-            x.fitness()
-            
-            
+        for x in self.v:
+            x.fitness(map, drone)
+
+    def computeAverageFitnessAndDeviation(self, map, drone):
+        sum = 0
+        fitness = []
+        for x in self.v:
+            x.fitness(map, drone)
+            fitness.append(x.f)
+        return [np.average(fitness), np.std(fitness)]
+
+    def setIndividuals(self, individuals):
+        self.v = individuals
+
+    def addIndividual(self, individual, map, drone):
+        individual.fitness(map, drone)
+        self.v.append(individual)
+
     def selection(self, k = 0):
         # perform a selection of k individuals from the population
         # and returns that selection
-        pass
-    
+        selected = []
+        individuals_copy = copy.deepcopy(self.v)
+        individuals_copy = self.sortIndividuals(individuals_copy)
+
+        for i in range(0, k):
+            selected.append(individuals_copy[i])
+        return selected
+
+    def sortIndividuals(self, individuals):
+        sorted = False
+        while not sorted:
+            sorted = True
+            for i in range(0, len(individuals) - 1):
+                if individuals[i].f < individuals[i + 1].f:
+                    aux = individuals[i]
+                    individuals[i] = individuals[i + 1]
+                    individuals[i + 1] = aux
+                    sorted = False
+        return individuals
+
+    def getFirstPath(self, map, drone):
+        return self.v[0].computePath(map, drone)
+
 class Map():
     def __init__(self, n = 20, m = 20):
         self.n = n
         self.m = m
         self.surface = np.zeros((self.n, self.m))
-    
+
     def randomMap(self, fill = 0.2):
         for i in range(self.n):
             for j in range(self.m):

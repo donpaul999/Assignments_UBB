@@ -1,6 +1,7 @@
 import controller, repository, ui
-
+import time
 def main():
+
     repo = repository.Repository()
     contr = controller.Controller(repo)
     view = ui.UI(contr, repo)
@@ -12,4 +13,5 @@ def main():
 if __name__=="__main__":
     # call the main function
     main()
+
 
