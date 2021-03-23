@@ -8,6 +8,7 @@
     if (isset ($_GET['page'])) {  
         $page_selected = $_GET['page'];  
     }  
+    //var_dump($result);
     $results_per_page = 4;  
     $page_first_result = ($page_selected - 1) * $results_per_page;
 
@@ -16,8 +17,8 @@
     $number_of_page = ceil ($number_of_result / $results_per_page);  
     
     $query = "SELECT * FROM destinations LIMIT " . $page_first_result . ',' . $results_per_page;  
-    $new_result = mysqli_query($conn, $query);  
-    var_dump($new_result);
+    $new_result = mysqli_query($conectare, $query);  
+    //var_dump($new_result);
 ?>
 
 
@@ -33,7 +34,7 @@
       <ul class="list-group" style="margin-top:100px;">
           <?php
           while ($row = mysqli_fetch_object($new_result)) {
-            echo '<li class="list-group-item">'.$row->name. '<a href="/delete-destination-backend.php?id='.$row->id.'" class="float-end btn btn-danger">X</a> </li>';
+            echo '<li class="list-group-item">'.$row->name. '<a href="backend/delete-destination-backend.php?id='.$row->id.'" class="float-end btn btn-danger">X</a> </li>';
           }
           ?>
       </ul>

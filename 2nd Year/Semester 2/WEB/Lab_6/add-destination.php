@@ -12,7 +12,7 @@ require 'conectare.php';
 <body>
     <div class="container">
     <div class="row">
-    <form method="POST" action="add-destination-backend.php">
+    <form method="POST" action="backend/add-destination-backend.php">
       <div class="form-group">
         <label for="location">Location</label>
         <input type="text" class="form-control" id="location" name="location" placeholder="Enter Location" required>

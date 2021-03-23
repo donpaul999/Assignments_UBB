@@ -1,6 +1,6 @@
 <?php
 
-require 'conectare.php';
+require '../conectare.php';
 
 session_start();
 try{
@@ -14,6 +14,6 @@ try{
 catch (Exception $e) {
      $_SESSION['message'] = $e->getMessage();
 }
-    return header("location:/");
+    return header("location:../");
 
 ?>
