@@ -66,7 +66,6 @@ class Controller():
                 self._repository.addIndividual(population, secondCrossed)
         select = population.selection(population.size() - nb_of_pairs)
         population.setIndividuals(select)
-        print(population.size())
 
 
 
