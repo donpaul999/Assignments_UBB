@@ -48,23 +48,26 @@ class Controller():
 
         population = self._repository.currentPopulation()
         self._repository.evaluatePopulation(population)
-        select = population.selection(self._populationSize - 2)
+        select = population.selection(population.size() - 2)
         parents = select[:len(select) // 2]
         pairs = len(parents) // 2
         used_pairs = []
+        nb_of_pairs = 0
         for i in range(pairs):
             first = parents[randint(0, len(parents) - 1)]
             second = parents[randint(0, len(parents) - 1)]
             if [first, second] not in used_pairs:
+                nb_of_pairs += 2
                 used_pairs.append([first, second])
                 firstCrossed, secondCrossed = first.crossover(second, self._crossoverProbability)
                 first.mutate(self._mutationProbability)
                 secondCrossed.mutate(self._mutationProbability)
                 self._repository.addIndividual(population, firstCrossed)
                 self._repository.addIndividual(population, secondCrossed)
-
-        select = population.selection(self._populationSize - 2)
+        select = population.selection(population.size() - nb_of_pairs)
         population.setIndividuals(select)
+        print(population.size())
+
 
 
         

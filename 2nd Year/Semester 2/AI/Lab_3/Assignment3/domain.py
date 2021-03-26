@@ -33,10 +33,10 @@ class Individual:
             if [x, y] not in visited:
                 visited.append([x, y])
                 if 0 > x or 0 > y or x >= currentMap.n or y >= currentMap.m:
-                    i -= 1
+                    i -= 100
                     continue
                 if currentMap.surface[x][y] == 1:
-                    i -= 1
+                    i -= 100
                     continue
 
                 self.f += 1
@@ -94,6 +94,9 @@ class Population():
             x.fitness(map, drone)
             fitness.append(x.f)
         return [np.average(fitness), np.std(fitness)]
+
+    def size(self):
+        return len(self.v)
 
     def setIndividuals(self, individuals):
         self.v = individuals
