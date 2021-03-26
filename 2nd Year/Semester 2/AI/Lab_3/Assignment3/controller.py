@@ -63,6 +63,7 @@ class Controller():
                 self._repository.addIndividual(population, firstCrossed)
                 self._repository.addIndividual(population, secondCrossed)
 
+        select = population.selection(self._populationSize - 2)
         population.setIndividuals(select)
 
 
