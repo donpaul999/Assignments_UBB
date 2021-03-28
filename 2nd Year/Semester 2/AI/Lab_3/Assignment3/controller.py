@@ -83,7 +83,7 @@ class Controller():
         for i in range(0, self._numberOfIterations):
             self.iteration()
             stats.append(self._repository.computeAverageFitnessAndDeviation())
-        print(stats)
+        #print(stats)
         for i in stats:
             f.append(i[0])
 
@@ -102,7 +102,7 @@ class Controller():
             population = self._repository.createPopulation([self._populationSize, self._stepsNb])
             self._repository.addPopulation(population)
             self.run()
-            print(self._statistics[i])
+            #print(self._statistics[i])
         print("--- %.2f seconds ---" % (time.time() - start_time))
         return self._repository.getFirstPath(), self._statistics
 

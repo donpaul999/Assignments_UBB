@@ -27,33 +27,27 @@ class Individual:
         #print(path)
         visited = []
         v = [[-1, 0], [0, 1], [1, 0], [0, -1]]
-        try:
-            for i in range(len(path)):
-                x = path[i][0]
-                y = path[i][1]
-                if [x, y] not in visited:
-                    visited.append([x, y])
-                    if 0 > x or 0 > y or x >= currentMap.n or y >= currentMap.m:
-                        path.pop(i)
-                        i -= 1
-                        continue
-                    if currentMap.surface[x][y] == 1:
-                        path.pop(i)
-                        i -= 1
-                        continue
+        for i in range(len(path)):
+            x = path[i][0]
+            y = path[i][1]
+            if [x, y] not in visited:
+                visited.append([x, y])
+                if 0 > x or 0 > y or x >= currentMap.n or y >= currentMap.m:
+                    break
+                if currentMap.surface[x][y] == 1:
+                    break
 
-                    self.f += 1
-                    for var in v:
-                        while ((0 <= x + var[0] < currentMap.n and
-                                0 <= y + var[1] < currentMap.m) and
-                               currentMap.surface[x + var[0]][y + var[1]] != 1):
-                                if [x + var[0], y + var[1]] not in visited:
-                                    visited.append([x + var[0], y + var[1]])
-                                    self.f += 1
-                                x = x + var[0]
-                                y = y + var[1]
-        except Exception as e:
-            pass
+                self.f += 1
+                for var in v:
+                    while ((0 <= x + var[0] < currentMap.n and
+                            0 <= y + var[1] < currentMap.m) and
+                           currentMap.surface[x + var[0]][y + var[1]] != 1):
+                            if [x + var[0], y + var[1]] not in visited:
+                                visited.append([x + var[0], y + var[1]])
+                                self.f += 1
+                            x = x + var[0]
+                            y = y + var[1]
+
 
 
 
