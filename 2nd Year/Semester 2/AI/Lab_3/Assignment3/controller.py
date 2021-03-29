@@ -13,6 +13,7 @@ class Controller():
         self._crossoverProbability = None
         self._statistics = [] #[[average_fitness_1, random_seed_1],...[average_fitness_numberOfIterations_, random_seed__numberOfIterations]]
         self._iteration = 0
+        self._last_stats = []
 
     def setSeedNb(self, nb):
         self._numberOfSeeds = nb
@@ -36,7 +37,7 @@ class Controller():
         self._crossoverProbability = probability
 
     def iteration(self, args = 0):
-        print("Iteration " + str(self._iteration))
+        #print("Iteration " + str(self._iteration))
 
         self._iteration += 1
         # args - list of parameters needed to run one iteration
@@ -79,15 +80,19 @@ class Controller():
         # return the results and the info for statistics
         f = []
         stats = []
-        dev = []
+        self._last_stats = []
         for i in range(0, self._numberOfIterations):
             self.iteration()
-            stats.append(self._repository.computeAverageFitnessAndDeviation())
+            if args == self._numberOfSeeds - 1:
+                self._last_stats.append(self._repository.computeAverageFitnessAndDeviation())
         #print(stats)
+        '''
         for i in stats:
             f.append(i[0])
+        '''
 
-        self._statistics.append([np.average(f), np.std(f)])
+        self._statistics.append(self._repository.computeBestFitnessLastestPopulation())
+        #self._statistics.append([np.average(f), np.std(f)])
 
     
     
@@ -101,10 +106,11 @@ class Controller():
             seed(30 - i)
             population = self._repository.createPopulation([self._populationSize, self._stepsNb])
             self._repository.addPopulation(population)
-            self.run()
+            self.run(i)
             #print(self._statistics[i])
+
         print("--- %.2f seconds ---" % (time.time() - start_time))
-        return self._repository.getFirstPath(), self._statistics
+        return self._repository.getFirstPath(), self._statistics, self._last_stats
 
 
     def mapWithDrone(self, mapImage):

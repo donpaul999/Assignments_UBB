@@ -62,7 +62,15 @@ class Individual:
                 path.append([path[-1][0] + 1, path[-1][1]])
             elif i == 4:
                 path.append([path[-1][0], path[-1][1] - 1])
-        return path
+
+        valid_path = []
+        for p in path:
+            if 0 > p[0] or 0 > p[1] or p[0] >= currentMap.n or p[1] >= currentMap.m:
+                break
+            if currentMap.surface[p[0]][p[1]] == 1:
+                break
+            valid_path.append(p)
+        return valid_path
 
     def mutate(self, mutateProbability = 0.04):
         if random() < mutateProbability:
@@ -129,9 +137,16 @@ class Population():
         return individuals
 
     def getFirstPath(self, map, drone):
+        self.evaluate(map, drone)
         individuals_copy = copy.deepcopy(self.v)
         individuals_copy = self.sortIndividuals(individuals_copy)
         return individuals_copy[0].computePath(map, drone)
+
+    def getBestFitness(self, map, drone):
+        self.evaluate(map, drone)
+        individuals_copy = copy.deepcopy(self.v)
+        individuals_copy = self.sortIndividuals(individuals_copy)
+        return individuals_copy[0].f
 
 class Map():
     def __init__(self, n = 20, m = 20):

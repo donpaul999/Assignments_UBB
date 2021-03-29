@@ -18,6 +18,7 @@ class UI:
         self._path = []
         self._stats = []
         self.__iterations = []
+        self._last_stats = []
 
     def print_first_menu(self):
         print("1. create random map")
@@ -29,8 +30,9 @@ class UI:
     def print_second_menu(self):
         print("1. parameters setup")
         print("2. run the solver")
-        print("3. visualise the statistics")
+        print("3. visualise the statistics for the last run")
         print("4. view the drone moving on a path")
+        print("5. visualise the statistics for the seeds")
 
     def parameters_setup(self):
         print("Filename: ")
@@ -61,21 +63,25 @@ class UI:
 
 
     def run_solver(self):
-        self._path, self._stats = self._controller.solver()
-        print(self._stats)
+        self._path, self._stats, self._last_stats = self._controller.solver()
+        #print(self._stats)
         self.view_drone_moving()
 
     def view_statistics(self):
         x = []
         average = []
         deviations = []
-        for i in range(len(self._stats)):
+        for i in range(len(self._last_stats)):
             x.append(i)
-            average.append(self._stats[i][0])
-            deviations.append(self._stats[i][1])
+            average.append(self._last_stats[i][0])
+            deviations.append(self._last_stats[i][1])
         plt.plot(x, average)
         plt.plot(x, deviations)
         plt.show()
+
+    def view_final_statistics(self):
+        print("Fitness: " + str(np.average(self._stats)))
+        print("Deviation: " + str(np.std(self._stats)))
 
     def random_map(self):
         self._repository.cmap.randomMap()
@@ -85,6 +91,7 @@ class UI:
         print("Map title:")
         numfile = input()
         self._repository.cmap.loadMap(numfile)
+        self._repository.randomDrone()
 
     def save_map(self):
         print("Map title:")
@@ -139,6 +146,8 @@ class UI:
                 self.view_statistics()
             elif option == 4:
                 self.view_drone_moving()
+            elif option == 5:
+                self.view_final_statistics()
             else:
                 print("Invalid option")
 
@@ -174,7 +183,7 @@ class UI:
 
     def movingDrone(self, currentMap, path, speed=1, markSeen=True):
         # animation of a drone on a path
-
+        time.sleep(2)
         screen = initPyGame((currentMap.n * 20, currentMap.m * 20))
 
         drona = pygame.image.load("drona.png")

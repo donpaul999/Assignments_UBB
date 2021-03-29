@@ -43,6 +43,9 @@ class Repository():
     def getFirstPath(self):
         return self.__populations[-1].getFirstPath(self.cmap, self.drone)
 
+    def computeBestFitnessLastestPopulation(self):
+        return self.__populations[-1].getBestFitness(self.cmap, self.drone)
+
     # TO DO : add the other components for the repository: 
     #    load and save from file, etc
             
