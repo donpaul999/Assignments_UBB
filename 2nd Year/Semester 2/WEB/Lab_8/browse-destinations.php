@@ -21,18 +21,19 @@
             <div class="input-group mt-10 col-12" style='margin-top: 50px;'>
               <div class="form-outline mt-10">
                 <input type="search" id="form-type" class="form-control" ng-model="textInput" ng-change="onInput()" placeholder="Type location"/>
-                <input type="search" id="page-input" style='margin-top: 50px;' class="form-control" placeholder="Type page"/>
+                <input type="search" id="page-input" ng-model="pageInput" ng-change="onInput()" style='margin-top: 50px;' class="form-control" placeholder="Type page"/>
               </div>
             </div>
-            <ul ng-bind="results" class="list-group">
-                <li class="list-group-item" ng-repeat="(key, data) in locations">
-                    {{ data }}
+            <ul class="list-group mt-10">
+                <li class="list-group-item" ng-repeat="x in results.locations track by $index">
+                    {{ x.name }}
                 </li>
             </ul>
 
-            <ul ng-bind="pages" class="pagination mt-10">
-                <li class="page-item" ng-init="pages={}" ng-repeat="x in pages">
-                     {{ x }}
+            <ul class="pagination mt-10">
+                <li class="page-item" ng-repeat="x in results.pages track by $index">
+                     {{ x.nr }}
+                    <span ng-if="x.selected == 1">*</span>
                 </li>
             </ul>
 
@@ -40,7 +41,7 @@
                 {{error}}
             </p>
             <p class="mt-10">
-                {{locations[6]}}
+                {{results.locations[0].name}}
             </p>
         </div>
 

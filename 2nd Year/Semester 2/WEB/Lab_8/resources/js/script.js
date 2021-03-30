@@ -2,18 +2,26 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', ['$scope','$http', function ($scope, $http){
     var inputMin = 2;
     $scope.onInput = function() {
-        $scope.pages = '';
         $scope.error = '';
-        $scope.locations = '';
+        var pageNr = 0;
+        try{
+            if($scope.pageInput.length > 0) {
+                pageNr = $scope.pageInput;
+            }
+        }
+        catch(error) {
+            
+        }
         if($scope.textInput.length >= inputMin) {
             $http({
                 method : "GET",
                 url : "backend/get-destinations-by-name.php",
                 params: {
-                    term : $scope.textInput
+                    term : $scope.textInput,
+                    page: pageNr
                 }
             }).then(function mySuccess(response) {
-                $scope.locations = response.data;
+                $scope.results = response.data;
                 console.log(response.data);
                 $scope.error = "All good";
             }, function myError(response) {
