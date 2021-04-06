@@ -1,16 +1,8 @@
-[23-Mar-2021 10:52:42 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
-[23-Mar-2021 10:52:42 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
-[23-Mar-2021 10:52:43 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
-[23-Mar-2021 10:52:43 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
-[23-Mar-2021 10:52:44 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
-[23-Mar-2021 10:52:44 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
-[23-Mar-2021 10:52:45 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
-[23-Mar-2021 10:52:45 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
-[23-Mar-2021 10:52:47 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
-[23-Mar-2021 10:52:47 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
-[23-Mar-2021 10:52:48 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
-[23-Mar-2021 10:52:48 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
-[23-Mar-2021 10:52:49 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
-[23-Mar-2021 10:52:49 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
-[23-Mar-2021 10:52:49 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
-[23-Mar-2021 10:52:49 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
+[06-Apr-2021 08:04:05 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
+[06-Apr-2021 08:04:05 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
+[06-Apr-2021 08:18:29 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
+[06-Apr-2021 08:18:29 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
+[06-Apr-2021 08:18:30 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
+[06-Apr-2021 08:18:30 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33
+[06-Apr-2021 08:18:32 Europe/Bucharest] PHP Warning:  A non-numeric value encountered in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 11
+[06-Apr-2021 08:18:32 Europe/Bucharest] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, bool given in /home/contario/tema.contar.io/backend/get-destinations-by-name.php on line 33

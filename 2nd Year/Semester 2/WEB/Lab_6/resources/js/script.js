@@ -28,20 +28,3 @@ $(document).ready(function(){
 
 });
 
-
-$('.page-link').on("click", function(){
-            var inputVal = $('#form-type').val();
-            var pageVal = $(this).id;
-            var resultDropdown = $("#result");
-            console.log(inputVal);
-            console.log(pageVal);
-            console.log(resultDropdown);
-            if(inputVal.length > 1){
-                $.get("../../backend/get-destinations-by-name.php", {page: pageVal, term: inputVal}).done(function(data){
-                    // Display the returned data in browser
-                    resultDropdown.html(data);
-                });
-            } else{
-                resultDropdown.empty();
-            }
-        });

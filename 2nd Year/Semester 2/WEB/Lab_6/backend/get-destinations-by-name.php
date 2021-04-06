@@ -39,10 +39,11 @@ if(isset($_REQUEST["term"])){
             echo '</ul>';
             echo '<ul class="pagination mt-10">';
             for($page = 1; $page<= $number_of_page; $page++) {  
+               //add onclick function
                if($page == $page_selected)
-                echo '<li class="page-item active"><p class="page-link" id="'.$page.'">'.$page.'</p></li>';
+                echo '<li class="page-item active"><p class="page-link" onclick=pageClicked(this) id="'.$page.'">'.$page.'</p></li>';
                else
-                echo '<li class="page-item"><p class="page-link" id="'.$page.'">'.$page.'</p></li>';
+                echo '<li class="page-item"><p class="page-link" onclick=pageClicked(this) id="'.$page.'">'.$page.'</p></li>';
             }
             echo '</ul>';
         } else{

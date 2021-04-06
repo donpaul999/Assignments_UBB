@@ -12,8 +12,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="resources/js/script.js"></script>
     <script>
-
-
+    function pageClicked(elem) {
+            var inputVal = $('#form-type').val();
+            var pageVal = elem.id;
+            var resultDropdown = $("#result");
+            if(inputVal.length > 1){
+                $.get("/backend/get-destinations-by-name.php", {page: pageVal, term: inputVal}).done(function(data){
+                    // Display the returned data in browser
+                    resultDropdown.html(data);
+                });
+            } else{
+                resultDropdown.empty();
+            }
+        }
     </script>
 </head>
 <body>
