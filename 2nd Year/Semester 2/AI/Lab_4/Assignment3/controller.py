@@ -87,17 +87,19 @@ class Controller():
         self.updatePheromoneMatrix(colony)
         best_ant = self.getBestAnt()
 
-        colony.reinitializeAnts(colony, self._stepsNb)
+        colony.reinitializeAnts(self._stepsNb)
 
         return best_ant
 
     def getBestAnt(self):
-        ant_and_fitness = []
-
+        min_fitness = -1
+        min_ant = None
         for ant in self._repository.currentColony().ants:
-            ant_and_fitness.append([ant, ant.fitness()])
+            if ant.fitness() < min_fitness or min_fitness == -1:
+                min_fitness = ant.fitness()
+                min_ant = ant
 
-        return min(ant_and_fitness)[0]
+        return min_ant
 
     def updatePheromoneMatrix(self, colony):
         for i in range(len(self._list_of_sensors)):
@@ -316,7 +318,7 @@ class Controller():
             for i in range(0, 4):
                 new_pos = [current[0] + dlin[i], current[1] + dcol[i]]
                 if new_pos not in closed and new_pos[0] >= 0 and new_pos[0] < mapM.n and new_pos[1] >= 0 and new_pos[1] < mapM.m:
-                    if mapM.surface[new_pos[0]][new_pos[1]] == 0:
+                    if mapM.surface[new_pos[0]][new_pos[1]] == 0 or mapM.surface[new_pos[0]][new_pos[1]] == 2:
                         parent[str(new_pos)] = current
                         startDistance[new_pos[0]][new_pos[1]] = startDistance[current[0]][current[1]]
                         goalDistance[new_pos[0]][new_pos[1]] = 1
@@ -324,7 +326,7 @@ class Controller():
 
                         if self.add_open(open, new_pos, totalDistance):
                             open.append(new_pos)
-        return [start]
+        return None
 
     def add_open(self, open, new_node, totalDistance):
         for node in open:

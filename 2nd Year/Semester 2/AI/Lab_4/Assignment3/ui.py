@@ -57,7 +57,7 @@ class UI:
                 self._controller.setCrossoverProbability(float(line))
             elif i == 6:
                 self._controller.setSeedNb(int(line))
-            elif i == 6:
+            elif i == 7:
                 self._controller.setColonySize(int(line))
             else:
                 break

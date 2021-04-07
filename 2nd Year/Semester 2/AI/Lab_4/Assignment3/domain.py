@@ -40,8 +40,8 @@ class Colony:
         self.nb_of_ants = nb_of_ants
         self.ants = [Ant(energy) for _ in range(nb_of_ants)]
 
-    def reinitializeAnts(self):
-        self.ants = [Ant(self.energy) for _ in range(self.nb_of_ants)]
+    def reinitializeAnts(self, energy):
+        self.ants = [Ant(energy) for _ in range(self.nb_of_ants)]
 
 
 
