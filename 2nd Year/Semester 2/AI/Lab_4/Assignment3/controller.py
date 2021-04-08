@@ -44,7 +44,7 @@ class Controller():
                 if len(best_ant.path) >= len(ant.path):
                     best_ant = ant
 
-        return best_ant
+        return best_ant, self._list_of_sensors
 
     def acoIteration(self):
         colony = self._repository.currentColony()

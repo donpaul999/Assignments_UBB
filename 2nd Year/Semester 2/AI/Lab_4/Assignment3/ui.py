@@ -183,8 +183,8 @@ class UI:
                     running = False
         pygame.quit()
 
-    def view_drone_moving(self):
-        movingDrone(self._repository.cmap, self._path, 0.2)
+    def view_drone_moving(self,sensors=None):
+        movingDrone(self._repository.cmap, self._path, 0.2, sensors)
 
     def movingDrone(self, currentMap, path, speed=1, markSeen=True):
         # animation of a drone on a path
@@ -213,6 +213,7 @@ class UI:
             screen.blit(drona, (path[i][0] * 20, path[i][1] * 20))
             pygame.display.flip()
             time.sleep(0.5 * speed)
+
         self.closePyGame()
 
 
@@ -231,10 +232,11 @@ class UI:
         return imagine
 
     def run_aco(self):
-        best_ant = self._controller.run_aco()
+        best_ant, list_of_sensors = self._controller.run_aco()
         self._path = best_ant.path
+        print(list_of_sensors[0].getEnergyNeeded())
         print(self._path)
-        self.view_drone_moving()
+        self.view_drone_moving(list_of_sensors)
 # create a menu
 #   1. map options:
 #         a. create random map

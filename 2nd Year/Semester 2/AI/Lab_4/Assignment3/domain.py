@@ -50,9 +50,15 @@ class Sensor:
         self.x = x
         self.y = y
         self.discovered_squares = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
+        self.optimal_energy = 0
 
     def getEnergyNeeded(self):
-        return max(self.discovered_squares, key=self.discovered_squares.get)
+        max_val = -1
+        for k,v in self.discovered_squares.items():
+            if v > max_val:
+                self.optimal_energy = k
+                max_val = v
+        return self.optimal_energy
 
     def discover_squares(self, currentMap):
         v = [[-1, 0], [0, 1], [1, 0], [0, -1]]
