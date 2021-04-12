@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9e7c5d4-d906-4e60-b362-593692781d7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab_5/resources/js/script-new.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4_V2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4_V2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4_V2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4_V2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_4_V2/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_4_V2/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/Lab_5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/.idea/Lab_5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DBSM/Lab_2/WindowsFormsApp1/.vs/WindowsFormsApp1/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../DBSM/Lab_2/WindowsFormsApp1/.vs/WindowsFormsApp1/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DBSM/Lab_2/WindowsFormsApp1/.vs/WindowsFormsApp1/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../../DBSM/Lab_2/WindowsFormsApp1/.vs/WindowsFormsApp1/v16/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DBSM/Lab_2/WindowsFormsApp1/.vs/WindowsFormsApp1/v16/Server/sqlite3/storage.ide-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +13,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution />
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
@@ -30,11 +28,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="d9e7c5d4-d906-4e60-b362-593692781d7c" name="Default Changelist" comment="" />
@@ -43,16 +46,21 @@
       <option name="presentableId" value="Default" />
       <updated>1615653069731</updated>
       <workItem from="1615653070776" duration="461000" />
+      <workItem from="1617476500458" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="843" y="506" key="NewPhpFileDialog" timestamp="1615653525705">
       <screen x="0" y="0" width="2048" height="1152" />
     </state>
     <state x="843" y="506" key="NewPhpFileDialog/2048.0.1920.1080/0.0.2048.1152@0.0.2048.1152" timestamp="1615653525705" />
+    <state x="305" y="185" key="run.anything.popup" timestamp="1617476523837">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="305" y="185" key="run.anything.popup/0.0.1280.800@0.0.1280.800" timestamp="1617476523837" />
   </component>
 </project>
