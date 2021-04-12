@@ -2,6 +2,8 @@
 
 
 # imports
+import sys
+
 from gui import *
 from controller import *
 from repository import *
@@ -120,6 +122,8 @@ class UI:
             pygame.display.update()
         time.sleep(2)
         pygame.quit()
+        #todo
+        #sys.exit()
 
     def menu(self):
         option = -1
@@ -213,7 +217,7 @@ class UI:
             screen.blit(drona, (path[i][0] * 20, path[i][1] * 20))
             pygame.display.flip()
             time.sleep(0.5 * speed)
-
+            time.sleep(10)
         self.closePyGame()
 
 
@@ -234,8 +238,8 @@ class UI:
     def run_aco(self):
         best_ant, list_of_sensors = self._controller.run_aco()
         self._path = best_ant.path
-        print(list_of_sensors[0].getEnergyNeeded())
-        print(self._path)
+        #print(list_of_sensors[0].getEnergyNeeded())
+        #print(self._path)
         self.view_drone_moving(list_of_sensors)
 # create a menu
 #   1. map options:

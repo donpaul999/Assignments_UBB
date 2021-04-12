@@ -77,7 +77,7 @@ def movingDrone(currentMap, path, speed = 1,  sensors=None, markSeen = True):
                                 y = path[j][1]
                                 while ((0 <= x + var[0] < currentMap.n and
                                         0 <= y + var[1] < currentMap.m) and
-                                       currentMap.surface[x + var[0]][y + var[1]] != 1 and aux < energy):
+                                       currentMap.surface[x + var[0]][y + var[1]] != 1 and currentMap.surface[x + var[0]][y + var[1]] != 2 and aux < energy):
                                     x = x + var[0]
                                     y = y + var[1]
                                     screen.blit(discovered, (y * 20, x * 20))
