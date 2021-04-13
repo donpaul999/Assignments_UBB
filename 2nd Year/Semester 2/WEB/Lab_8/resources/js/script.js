@@ -33,8 +33,15 @@ app.controller('myCtrl', ['$scope','$http', function ($scope, $http){
 
 
 
-
 /*
+app.controller('MainCtrl', function($scope) {
+  $scope.name = 'World';
+  
+  $scope.surePopup = function() {
+    alert('test');
+  }
+});
+
 $(document).ready(function(){
         $('#form-type').on("keyup", function(){
             var inputVal = $(this).val();
