@@ -71,8 +71,6 @@ namespace WindowsFormsApp1
         private void button2_Click_1(object sender, EventArgs e)
         {
             daSecondTable.Update(ds, secondTable);
-            ds.Tables[secondTable].Clear();
-            daSecondTable.Fill(ds, secondTable);
         }
 
         private void GridProgrammer_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -82,31 +80,9 @@ namespace WindowsFormsApp1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            connection = new SqlConnection(@"Data Source = PAULCOLTA060E\SQLEXPRESS; Initial Catalog = it_company; Integrated Security = SSPI");
-            ds = new DataSet();
-            daSecondTable = new SqlDataAdapter(secondTableSelect, connection);
-            daFirstTable = new SqlDataAdapter(firstTableSelect, connection);
-            cb = new SqlCommandBuilder(daSecondTable);
-
+            daSecondTable.Update(ds, secondTable);
+            ds.Tables[secondTable].Clear();
             daSecondTable.Fill(ds, secondTable);
-            daFirstTable.Fill(ds, firstTable);
-
-            DataRelation dr = new DataRelation(foreignKey,
-                ds.Tables[firstTable].Columns[firstTablePK], ds.Tables[secondTable].Columns[secondTableFK]);
-            ds.Relations.Add(dr);
-
-
-            bsSecondTable = new BindingSource();
-            bsFirstTable = new BindingSource();
-
-            bsFirstTable.DataSource = ds;
-            bsFirstTable.DataMember = firstTable;
-
-            bsSecondTable.DataSource = bsFirstTable;
-            bsSecondTable.DataMember = foreignKey;
-
-            GridHoliday.DataSource = bsSecondTable;
-            GridProgrammer.DataSource = bsFirstTable;
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
