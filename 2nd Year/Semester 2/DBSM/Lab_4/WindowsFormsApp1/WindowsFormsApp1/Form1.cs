@@ -71,6 +71,8 @@ namespace WindowsFormsApp1
         private void button2_Click_1(object sender, EventArgs e)
         {
             daSecondTable.Update(ds, secondTable);
+            ds.Tables[secondTable].Clear();
+            daSecondTable.Fill(ds, secondTable);
         }
 
         private void GridProgrammer_CellContentClick(object sender, DataGridViewCellEventArgs e)
