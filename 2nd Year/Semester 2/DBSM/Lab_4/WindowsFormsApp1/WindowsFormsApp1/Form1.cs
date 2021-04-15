@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        String firstTable, secondTable, foreignKey, firstTablePK, secondTableFK;
+        String firstTable, secondTable, foreignKey, firstTablePK, secondTableFK, firstTableSelect, secondTableSelect;
         SqlConnection connection;
         SqlDataAdapter daSecondTable, daFirstTable;
         DataSet ds;
@@ -35,14 +35,16 @@ namespace WindowsFormsApp1
             foreignKey = ConfigurationManager.AppSettings.Get("ForeignKey");
             firstTablePK = ConfigurationManager.AppSettings.Get("FirstTablePK");
             secondTableFK = ConfigurationManager.AppSettings.Get("SecondTableFK");
+            firstTableSelect = ConfigurationManager.AppSettings.Get("SelectFirstTable");
+            secondTableSelect = ConfigurationManager.AppSettings.Get("SelectSecondTable");
 
             label1.Text = firstTable;
             label2.Text = secondTable;
 
             connection = new SqlConnection(@"Data Source = PAULCOLTA060E\SQLEXPRESS; Initial Catalog = it_company; Integrated Security = SSPI");
             ds = new DataSet();
-            daSecondTable = new SqlDataAdapter("select * from " + secondTable, connection);
-            daFirstTable = new SqlDataAdapter("select * from " + firstTable, connection);
+            daSecondTable = new SqlDataAdapter(secondTableSelect, connection);
+            daFirstTable = new SqlDataAdapter(firstTableSelect, connection);
             cb = new SqlCommandBuilder(daSecondTable);
 
             daSecondTable.Fill(ds, secondTable);
@@ -80,8 +82,8 @@ namespace WindowsFormsApp1
         {
             connection = new SqlConnection(@"Data Source = PAULCOLTA060E\SQLEXPRESS; Initial Catalog = it_company; Integrated Security = SSPI");
             ds = new DataSet();
-            daSecondTable = new SqlDataAdapter("select * from " + secondTable, connection);
-            daFirstTable = new SqlDataAdapter("select * from " + firstTable, connection);
+            daSecondTable = new SqlDataAdapter(secondTableSelect, connection);
+            daFirstTable = new SqlDataAdapter(firstTableSelect, connection);
             cb = new SqlCommandBuilder(daSecondTable);
 
             daSecondTable.Fill(ds, secondTable);
