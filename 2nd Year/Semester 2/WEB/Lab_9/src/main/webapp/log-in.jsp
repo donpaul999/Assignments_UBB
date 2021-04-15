@@ -1,16 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: paulcolta
-  Date: 15/04/2021
-  Time: 19:18
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Log in</title>
-</head>
-<body>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-</body>
-</html>
+<t:genericpage>
+    <jsp:body>
+        <div class="container text-center">
+            <h1>Transportation routes</h1>
+            <h2>${status}</h2>
+        </div>
+    </jsp:body>
+</t:genericpage>

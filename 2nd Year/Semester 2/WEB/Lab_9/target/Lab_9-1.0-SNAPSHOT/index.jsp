@@ -3,6 +3,11 @@
 
 <t:genericpage>
     <jsp:body>
-        <p>Hello!</p>
+        <div class="container text-center">
+            <h1>Transportation routes</h1>
+            <div class="row">
+                <a href="login" type="button" class="btn btn-danger mb-2">Log In</a>
+            </div>
+        </div>
     </jsp:body>
 </t:genericpage>
