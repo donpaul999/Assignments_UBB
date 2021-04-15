@@ -80,7 +80,6 @@ namespace WindowsFormsApp1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            daSecondTable.Update(ds, secondTable);
             ds.Tables[secondTable].Clear();
             daSecondTable.Fill(ds, secondTable);
         }
