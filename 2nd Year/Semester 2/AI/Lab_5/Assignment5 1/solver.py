@@ -6,8 +6,6 @@ In this file your task is to write the solver function!
 
 
 def solver(t,w):
-    t = 7
-    w = -0.5
     """
     Parameters
     ----------
@@ -76,9 +74,8 @@ def solver(t,w):
         sum += forces[key]
         product += forces[key] * products[key]
     try:
-        f = sum / product
+        f = product / sum
     except:
         f = 0
-    print("XX:" + str(t) + ' ' + str(w) + ' ' + str(f))
     return f
 
