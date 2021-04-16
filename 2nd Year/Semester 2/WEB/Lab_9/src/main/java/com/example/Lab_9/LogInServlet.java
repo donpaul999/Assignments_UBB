@@ -19,6 +19,8 @@ public class LogInServlet extends HttpServlet {
     private String user;
     private String port;
     private String password;
+    private Connection conn;
+    private String status;
 
     public void init() {
         String fName = "/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_9/credentials.txt";
@@ -55,26 +57,29 @@ public class LogInServlet extends HttpServlet {
             }
 
         }
+        status = "NOT OK";
+        String url = "jdbc:postgresql://ec2-52-50-171-4.eu-west-1.compute.amazonaws.com:5432/dfo8rh2he4q2fl";
+        Properties props = new Properties();
+        props.setProperty("user",user);
+        props.setProperty("password",password);
+        props.setProperty("ssl", "true");
+        props.setProperty("sslfactory", "org.postgresql.ssl.NonValidatingFactory");
+        try {
+            Class.forName("org.postgresql.Driver");
+            conn = DriverManager.getConnection(url, props);
+            status = "OK";
+        } catch (SQLException | ClassNotFoundException throwables) {
+            status = throwables.toString();
+        }
 
     }
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-        String status = "NOT OK";
-        String url = "jdbc:postgresql://ec2-52-50-171-4.eu-west-1.compute.amazonaws.com:5432/dfo8rh2he4q2fl";
-        Properties props = new Properties();
-        props.setProperty("user",user);
-        props.setProperty("password",password);
-        props.setProperty("ssl","true");
-        try {
-            Connection conn = DriverManager.getConnection(url, props);
-            status = "OK";
-        } catch (SQLException throwables) {
-            status = throwables.toString();
-        }
 
         request.setAttribute("status", status);
+        request.setAttribute("pageTitle", "Log In");
         request.getRequestDispatcher("log-in.jsp").forward(request, response);
     }
 

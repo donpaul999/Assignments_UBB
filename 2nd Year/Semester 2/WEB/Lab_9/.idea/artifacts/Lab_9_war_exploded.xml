@@ -16,6 +16,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.2.5" />
           <element id="library" level="project" name="Maven: postgresql:postgresql:9.1-901-1.jdbc4" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
