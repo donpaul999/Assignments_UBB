@@ -1,17 +1,19 @@
 package com.example.Lab_9;
 
-import javax.servlet.ServletContext;
+import com.google.gson.Gson;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
-public class LogInServlet extends HttpServlet {
+public class GetDirectCitiesServlet extends HttpServlet {
     private String host;
     private String database;
     private String user;
@@ -75,50 +77,37 @@ public class LogInServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        HttpSession session = request.getSession();
-
-        if(session.getAttribute("username") != null) {
-            response.sendRedirect("dashboard");
-            return;
-        }
-
-        response.setContentType("text/html");
-
-        request.setAttribute("status", status);
-        request.setAttribute("pageTitle", "Log In");
-        request.getRequestDispatcher("log-in.jsp").forward(request, response);
-    }
-
-    @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        response.setContentType("text/html");
-
-        request.setAttribute("status", status);
-        String password = request.getParameter("password");
-        String username = request.getParameter("username");
+        String id = request.getParameter("id");
         try{
-            PreparedStatement pst = conn.prepareStatement("SELECT * FROM users WHERE username = '" + username + "' and password = '" + password + "'");
-            ResultSet rs = pst.executeQuery();
-                int i = 0;
+            List<City> cities = new ArrayList<>();
+            if(!id.equals("-1")) {
+                PreparedStatement pst = conn.prepareStatement("SELECT * FROM cities where id in (SELECT city_2 from city_connections where city_1 = " + id + ")");
+                ResultSet rs = pst.executeQuery();
                 while (rs.next()) {
-                    i++;
+                    City city = new City();
+                    city.setId(rs.getString("id"));
+                    city.setName(rs.getString("name"));
+                    cities.add(city);
                 }
-
-                if (i > 0) {
-                    HttpSession session = request.getSession();
-                    session.setAttribute("username", username);
-                    session.setAttribute("loggedIn", 1);
-                    request.setAttribute("pageTitle", "Dashboard");
-                    response.sendRedirect("dashboard");
-                    return;
+            }
+            else {
+                PreparedStatement pst = conn.prepareStatement("SELECT * FROM cities");
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {
+                    City city = new City();
+                    city.setId(rs.getString("id"));
+                    city.setName(rs.getString("name"));
+                    cities.add(city);
                 }
+            }
+            String json = new Gson().toJson(cities);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json);
 
+            return;
         } catch (SQLException ex) {
             status = ex.toString();
         }
-
-        request.setAttribute("pageTitle", "Log In");
-        request.setAttribute("error_log_in", "Username or Password are incorrect!");
-        request.getRequestDispatcher("log-in.jsp").forward(request, response);
     }
 }

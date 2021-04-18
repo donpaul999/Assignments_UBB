@@ -23,4 +23,11 @@
     <servlet-mapping><servlet-name>dashboard</servlet-name>
         <url-pattern>/dashboard</url-pattern>
     </servlet-mapping>
+
+    <servlet><servlet-name>getcities</servlet-name>
+        <servlet-class>com.example.Lab_9.GetDirectCitiesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping><servlet-name>getcities</servlet-name>
+        <url-pattern>/get-cities</url-pattern>
+    </servlet-mapping>
 </web-app>

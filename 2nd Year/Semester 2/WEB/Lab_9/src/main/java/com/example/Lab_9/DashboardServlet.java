@@ -75,7 +75,14 @@ public class DashboardServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.setAttribute("pageTitle", "Dashboard");
+        request.setAttribute("pageTitle", "Dashboard - Transportation routes");
+        HttpSession session = request.getSession();
+
+        if(session.getAttribute("username") == null) {
+            response.sendRedirect("login");
+            return;
+        }
+
         try{
             PreparedStatement pst = conn.prepareStatement("SELECT * FROM cities");
             ResultSet rs = pst.executeQuery();
