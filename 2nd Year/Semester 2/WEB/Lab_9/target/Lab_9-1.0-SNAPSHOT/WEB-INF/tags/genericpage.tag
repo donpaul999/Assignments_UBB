@@ -10,7 +10,14 @@
 <body>
 <div id="body">
     <h1 class="text-center">${pageTitle}</h1>
-    <jsp:doBody/>
+    <div class="container">
+        <div class="row">
+        <jsp:doBody/>
+        </div>
+    </div>
 </div>
+<footer class="text-center">
+    <c:if test="${(not empty status)}"><h6>Connection status: ${status}</h6></c:if>
+</footer>
 </body>
 </html>
