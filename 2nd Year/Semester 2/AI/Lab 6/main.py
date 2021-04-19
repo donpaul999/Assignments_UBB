@@ -2,6 +2,7 @@ import csv
 import math
 import operator
 from random import sample
+import matplotlib.pyplot as plt
 
 EP = 0.001
 
@@ -164,6 +165,27 @@ def main():
     printPoints(points)
     printClusters(clusters)
     printStats(clusters, points)
+    plot(clusters)
 
+
+def plot(clusters):
+    for cluster in clusters:
+        x = [point.val1 for point in cluster.points]
+        y = [point.val2 for point in cluster.points]
+
+        symbol = ''
+        if cluster.label == 'A':
+            symbol = 'ro'
+        if cluster.label == 'B':
+            symbol = 'bo'
+        if cluster.label == 'C':
+            symbol = 'go'
+        if cluster.label == 'D':
+            symbol = 'yo'
+
+        plt.plot(x, y, symbol, label=cluster.label)
+
+    plt.legend()
+    plt.show()
 
 main()
