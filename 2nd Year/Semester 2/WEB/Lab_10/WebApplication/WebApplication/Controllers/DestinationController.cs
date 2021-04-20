@@ -53,7 +53,7 @@ namespace WebApplication.Controllers
                 }
             }
             
-            return View();
+            return Redirect("/Dashboard");
         }
 
         
@@ -116,8 +116,7 @@ namespace WebApplication.Controllers
                 }
             }
             
-            
-            return Redirect("/Destination/Delete");
+            return Redirect("/Dashboard");
         }
         
         [HttpGet]
@@ -160,17 +159,144 @@ namespace WebApplication.Controllers
 
             return View();
         }
-        
+
         [HttpGet]
-        
-        
-        
-        [HttpGet]
-        public IActionResult Browse()
+        public IActionResult UpdateSpecific(int id)
+        { 
+            if (HttpContext.Session.GetString("loggedin") != "yes")
+                return Redirect("/Account/Login");
+
+            var sql = "SELECT * FROM destinations WHERE id = " + id;
+            using (DbConnection conn = new NpgsqlConnection(con))
+            {
+                conn.Open();
+                using (DbCommand command = conn.CreateCommand())
+                {
+                    command.CommandText = sql;
+                    DbDataReader dr = command.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        Destination d = new Destination
+                        {
+                            id = int.Parse(dr.GetValue(0).ToString()), name = dr.GetValue(1).ToString(),
+                            country = dr.GetValue(2).ToString(), description = dr.GetValue(3).ToString(),
+                            targets = dr.GetValue(4).ToString(), costs = float.Parse(dr.GetValue(5).ToString())
+                        };
+                        return View(d);
+                    }
+                }
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult UpdateSpecific(Destination destination)
         {
             if (HttpContext.Session.GetString("loggedin") != "yes")
                 return Redirect("/Account/Login");
+            
+            destination.name = sanitizer.Sanitize(destination.name);
+            destination.country = sanitizer.Sanitize(destination.country);
+            destination.description = sanitizer.Sanitize(destination.description);
+            destination.costs = float.Parse(sanitizer.Sanitize(destination.costs.ToString("N4")));
+            destination.targets = sanitizer.Sanitize(destination.targets);
+            
+            var sql ="Update destinations SET name='" + destination.name + "', country='" + destination.country + "', targets='" + destination.targets + "', description='" + destination.description +"', cost=" + destination.costs + " WHERE id=" + destination.id;
+            
+            using (DbConnection conn = new NpgsqlConnection(con))
+            {
+                conn.Open();
+                using (DbCommand command = conn.CreateCommand())
+                {
+                    command.CommandText = sql;
+                    DbDataReader dr = command.ExecuteReader();
+                }
+            }
+            
+            return Redirect("/Dashboard");
+        }
+        
+        
+        [HttpGet]
+        public IActionResult Browse(int id)
+        {
+            if (HttpContext.Session.GetString("loggedin") != "yes")
+                return Redirect("/Account/Login");
+
+            var sql = "SELECT COUNT(*) FROM destinations";
+            using (DbConnection conn = new NpgsqlConnection(con))
+            {
+                conn.Open();
+                using (DbCommand command = conn.CreateCommand())
+                {
+                    command.CommandText = sql;
+                    int number_of_result =  Convert.ToInt32(command.ExecuteScalar());
+                    
+                    var results_per_page = 4;
+                    var page_selected = 1;
+                    if (id != 0)
+                        page_selected = id;
+                    var page_first_result = (page_selected - 1) * results_per_page;
+                    int number_of_page = number_of_result / results_per_page;
+                    if (number_of_result % results_per_page != 0)
+                        number_of_page += 1;
+                    var query = "SELECT * FROM destinations LIMIT " + results_per_page + " OFFSET " + page_first_result;
+                    List<Destination> results = new List<Destination>();
+                    
+                    command.CommandText = query;
+                    DbDataReader dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        results.Add(new Destination{id = int.Parse(dr.GetValue(0).ToString()), name = dr.GetValue(1).ToString(), country = dr.GetValue(2).ToString(), description = dr.GetValue(3).ToString(), targets = dr.GetValue(4).ToString(), costs = float.Parse(dr.GetValue(5).ToString())});
+                    }
+
+                    var pair = new Tuple<List<Destination>, Tuple<int, int>>(results, new Tuple<int, int>(number_of_page, page_selected));
+                    return View(pair);
+                }
+            }
             return View();
+        }
+        
+        [HttpGet]
+        public String BrowseSpecific(String name, int id)
+        {
+            Console.Write(id);
+            var sql = "SELECT COUNT(*) FROM destinations";
+            if (name.Length > 0)
+            {
+                sql = "SELECT COUNT(*) FROM destinations WHERE name LIKE '" + name + "%'";
+            }
+            using (DbConnection conn = new NpgsqlConnection(con))
+            {
+                conn.Open();
+                using (DbCommand command = conn.CreateCommand())
+                {
+                    command.CommandText = sql;
+                    int number_of_result =  Convert.ToInt32(command.ExecuteScalar());
+                    
+                    var results_per_page = 4;
+                    var page_selected = 1;
+                    if (id != 0)
+                        page_selected = id;
+                    var page_first_result = (page_selected - 1) * results_per_page;
+                    int number_of_page = number_of_result / results_per_page;
+                    if (number_of_result % results_per_page != 0)
+                        number_of_page += 1;
+                    var query = "SELECT * FROM destinations WHERE name LIKE '" + name + "%' LIMIT " + results_per_page + " OFFSET " + page_first_result;
+                    List<Destination> results = new List<Destination>();
+                    
+                    command.CommandText = query;
+                    DbDataReader dr = command.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        results.Add(new Destination{id = int.Parse(dr.GetValue(0).ToString()), name = dr.GetValue(1).ToString(), country = dr.GetValue(2).ToString(), description = dr.GetValue(3).ToString(), targets = dr.GetValue(4).ToString(), costs = float.Parse(dr.GetValue(5).ToString())});
+                    }
+
+                    var pair = new Tuple<List<Destination>, Tuple<int, int>>(results, new Tuple<int, int>(number_of_page, page_selected));
+                    return Newtonsoft.Json.JsonConvert.SerializeObject(pair);
+                }
+            }
         }
     }
 }

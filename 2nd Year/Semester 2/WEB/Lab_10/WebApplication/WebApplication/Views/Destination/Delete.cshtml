@@ -6,13 +6,55 @@
 
 @model Tuple<List<Destination>, Tuple<int, int>>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    given_id = 0;
+    selected = -1;
+    $(".remove-button").on('click', function (event) {
+        selected =  $(this).data('id');
+        $('#myModal').modal('show');
+    });
+
+    $(".close-delete").on('click', function (event){
+        $('#myModal').modal('hide');
+    });
+    
+    $(".accept-delete").on('click', function (event){
+        $.get('@Url.Action("DeleteSpecific", "Destination")', {id: selected}).done(function (data){
+            });
+        $(location).attr('href', '/Dashboard')
+    });
+});
+
+</script>
 <h1>Delete</h1>
+<div id="myModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Are you sure?</h5>
+                <button type="button" class="close close-delete" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to remove this Destination?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn accept-delete btn-primary">Yes</button>
+                <button type="button" class="btn btn-secondary close-delete" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container mt-10">
     <div class="row col-12">
         <ul class="list-group col-12" style="margin-top:100px;">
             @foreach (var dest in Model.Item1)
             {
-                <li class="list-group-item">@dest.name<a asp-area="" asp-route-id="@dest.id" asp-controller="Destination" asp-action="DeleteSpecific" class="float-right btn btn-danger">X</a> </li>
+                <li class="list-group-item">@dest.name<a data-id="@dest.id" class="float-right remove-button btn btn-danger">X</a> </li>
             }
         </ul>
         <ul class="pagination mt-10 col-12">
@@ -29,4 +71,5 @@
             }
         </ul>
     </div>
+    <a href="/Dashboard" type="button" class="btn btn-danger">Back</a>
 </div>

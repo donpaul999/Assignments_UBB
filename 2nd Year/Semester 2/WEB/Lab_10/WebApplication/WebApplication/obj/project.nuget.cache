@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GIRCJEz0rUKgBdwtFf+ImojtLoI5Ck6syyfWHrM+PQYF26VAlDUjTFbv0jMmq/bI8M4eMh7LqxfBP1s1e48AtA==",
+  "dgSpecHash": "miI6z8wCOXRhemSqnrQGiA4/tkyxTV/iA9tzO6qtDsDoOIoXkAQ2wkAR52Vvsy7IfBBqe3QJvvtMqIMbzELnmw==",
   "success": true,
   "projectFilePath": "/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/WebApplication.csproj",
   "expectedPackageFiles": [
@@ -55,7 +55,7 @@
     "/Users/paulcolta/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "/Users/paulcolta/.nuget/packages/microsoft.win32.registry/4.7.0/microsoft.win32.registry.4.7.0.nupkg.sha512",
     "/Users/paulcolta/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
-    "/Users/paulcolta/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
+    "/Users/paulcolta/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/paulcolta/.nuget/packages/npgsql/6.0.0-preview3/npgsql.6.0.0-preview3.nupkg.sha512",
     "/Users/paulcolta/.nuget/packages/npgsql.entityframeworkcore.postgresql/6.0.0-preview3/npgsql.entityframeworkcore.postgresql.6.0.0-preview3.nupkg.sha512",
     "/Users/paulcolta/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

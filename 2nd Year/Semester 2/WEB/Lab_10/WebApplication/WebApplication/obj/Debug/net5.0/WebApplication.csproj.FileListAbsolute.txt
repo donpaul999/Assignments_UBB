@@ -146,3 +146,5 @@
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Destination/Delete.cshtml.g.cs
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Dashboard/Index.cshtml.g.cs
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Destination/Update.cshtml.g.cs
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Destination/UpdateSpecific.cshtml.g.cs
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Destination/Browse.cshtml.g.cs

@@ -1,0 +1,98 @@
+
+@{
+    ViewData["Title"] = "Browse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+        $('#form-type').on("keyup", function(){
+            var inputVal = $(this).val();
+            var resultDropdown = $("#result");
+            if(inputVal.length > 1){
+                $.get('@Url.Action("BrowseSpecific", "Destination")', {name: inputVal,  id: 1}).done(function(data){
+                    resultDropdown.empty();
+                    $("#pages").empty();
+                    data = jQuery.parseJSON(data);
+                    for (var i = 0; i < data["Item1"].length; ++i) {
+                        resultDropdown.append("<li class='list-group-item'>" + data["Item1"][i].name + "</li>");
+                    }
+                    for (var i = 1; i <= data["Item2"]["Item1"]; ++i) {
+                       if(i == data["Item2"]["Item2"])
+                           $("#pages").append("<li class='page-item active' style='margin-top: 100px;'><a id='page-nr'  data-id= "+ i +"  class='page-link'>" + i + "</a></li>");
+                       else
+                           $("#pages").append("<li class='page-item' style='margin-top: 100px;'><a id='page-nr'  data-id= "+ i +" class='page-link'>" + i + "</a></li>");
+                     }
+                });
+            } else{
+                $("#pages").empty();
+                resultDropdown.empty();
+            }
+        });
+        
+        $('#page-input').on('keyup', function(){
+             var inputVal = $('#form-type').val();
+             var pageVal = $(this).val();
+             var resultDropdown = $("#result");
+             if(inputVal.length > 1){
+                 $.get('@Url.Action("BrowseSpecific", "Destination")', {name: inputVal, id: pageVal}).done(function(data){
+                     resultDropdown.empty();
+                     $("#pages").empty();
+                     data = jQuery.parseJSON(data);
+                     console.log(data);
+                     for (var i = 0; i < data["Item1"].length; ++i) {
+                         resultDropdown.append("<li class='list-group-item'>" + data["Item1"][i].name + "</li>");
+                     }
+                     
+                     for (var i = 1; i <= data["Item2"]["Item1"]; ++i) {
+                        if(i == data["Item2"]["Item2"])
+                            $("#pages").append("<li class='page-item active' style='margin-top: 100px;'><a id='page-nr'  data-id= "+ i +" class='page-link'>" + i + "</a></li>");
+                        else
+                            $("#pages").append("<li class='page-item' style='margin-top: 100px;'><a id='page-nr'  data-id= "+ i +" class='page-link'>" + i + "</a></li>");
+                      }
+                 });
+             } else{
+                 $("#pages").empty();
+                 resultDropdown.empty();
+             }
+         });
+
+});
+</script>
+
+@model Tuple<List<Destination>, Tuple<int, int>>
+
+<h1>Browse</h1>
+<div class="container mt-10">
+    <div class="row col-12">
+       <div class="input-group mt-10 col-12" style='margin-top: 50px;'>
+          <div class="form-outline mt-10">
+            <input type="search" id="form-type" class="form-control" placeholder="Type location"/>
+            <input type="search" id="page-input" style='margin-top: 50px;' class="form-control" placeholder="Type page"/>
+          </div>
+        </div>
+        <ul id="result" class="list-group col-12" style="margin-top:100px;">
+            @foreach (var dest in Model.Item1)
+            {
+                <li class="list-group-item">@dest.name</li>
+            }
+        </ul>
+        <ul id="pages" class="pagination mt-10 col-12">
+            @for (int j = 1; j <= Model.Item2.Item1; ++j)
+            {
+                @if (Model.Item2.Item2 == j)
+                {
+                    <li class="page-item active" style="margin-top: 100px;"><a class="page-link">@j</a></li>
+                }
+                else
+                {
+                    <li class="page-item" style="margin-top: 100px;"><a class="page-link">@j</a></li>
+                }
+            }
+        </ul>
+        <a href="/Dashboard" type="button" class="btn btn-danger">Back</a>
+    </div>
+</div>
+
+

@@ -13,7 +13,7 @@
         <ul class="list-group col-12" style="margin-top:100px;">
             @foreach (var dest in Model.Item1)
             {
-                <li class="list-group-item">@dest.name<a asp-area="" asp-route-id="@dest.id" asp-controller="Destination" asp-action="UpdateSpecific" class="float-right btn btn-danger">X</a> </li>
+                <li class="list-group-item">@dest.name<a asp-area="" asp-route-id="@dest.id" asp-controller="Destination" asp-action="UpdateSpecific" class="float-right btn btn-warning">Edit</a> </li>
             }
         </ul>
         <ul class="pagination mt-10 col-12">
@@ -30,6 +30,7 @@
             }
         </ul>
     </div>
+    <a href="/Dashboard" type="button" class="btn btn-danger">Back</a>
 </div>
 
 
