@@ -1,0 +1,24 @@
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Login</h1>
+
+<div class="container">
+    <div class="row">
+        <form method="POST" action="Verify">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" value="admin" name="Username" placeholder="Enter Username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" id="password" value="admin" name="Password" placeholder="Enter Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-5">Submit</button>
+            <a href="javascript:history.back()" type="button" class="btn btn-danger mt-5">Back</a>
+        </form>
+    </div>
+</div>
