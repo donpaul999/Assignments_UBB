@@ -5,6 +5,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="HtmlSanitizer" Version="5.0.376" />
+      <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
       <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.0-preview3" />
       <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />

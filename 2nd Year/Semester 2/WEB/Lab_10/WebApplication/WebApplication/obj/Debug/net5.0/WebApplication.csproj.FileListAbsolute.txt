@@ -120,7 +120,6 @@
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/WebApplication.pdb
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/WebApplication.genruntimeconfig.cache
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Shared/Login.cshtml.g.cs
-/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Account/Dashboard.cshtml.g.cs
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Account/Error.cshtml.g.cs
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -140,3 +139,10 @@
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/bin/Debug/net5.0/System.ComponentModel.Annotations.dll
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
 /Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/bin/Debug/net5.0/System.Runtime.CompilerServices.Unsafe.dll
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Destination/Add.cshtml.g.cs
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/bin/Debug/net5.0/AngleSharp.dll
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/bin/Debug/net5.0/AngleSharp.Css.dll
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/bin/Debug/net5.0/HtmlSanitizer.dll
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Destination/Delete.cshtml.g.cs
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Dashboard/Index.cshtml.g.cs
+/Users/paulcolta/Desktop/GitHub/Assignments_FP/2nd Year/Semester 2/WEB/Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/Razor/Views/Destination/Update.cshtml.g.cs

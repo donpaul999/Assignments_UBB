@@ -1,0 +1,22 @@
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container text-center">
+    <div class="row">   
+        <a asp-area="" asp-controller="Destination" asp-action="Add" type="button" class="btn btn-primary mb-2 col-12">Add Destination</a>
+        <a asp-area="" asp-controller="Destination" asp-action="Delete" type="button" class="btn btn-secondary mb-2 col-12">Delete Destinations</a>
+        <a asp-area="" asp-controller="Destination" asp-action="Update" type="button" class="btn btn-success mb-2 col-12">Modify Destinations</a>
+        <a asp-area="" asp-controller="Destination" asp-action="Browse" type="button" class="btn btn-warning mb-2 col-12">Browse Destinations</a>
+    </div>
+    
+    <div class="row">
+        <a asp-area="" asp-controller="Account" asp-action="Logout" type="button" class="btn btn-danger mb-2 col-12 mt-10">Logout</a>
+    </div>
+</div>
+
+
+
+
+

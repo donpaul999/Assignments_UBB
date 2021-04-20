@@ -1,0 +1,32 @@
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Tuple<List<Destination>, Tuple<int, int>>
+
+<h1>Delete</h1>
+<div class="container mt-10">
+    <div class="row col-12">
+        <ul class="list-group col-12" style="margin-top:100px;">
+            @foreach (var dest in Model.Item1)
+            {
+                <li class="list-group-item">@dest.name<a asp-area="" asp-route-id="@dest.id" asp-controller="Destination" asp-action="DeleteSpecific" class="float-right btn btn-danger">X</a> </li>
+            }
+        </ul>
+        <ul class="pagination mt-10 col-12">
+            @for (int j = 1; j <= Model.Item2.Item1; ++j)
+            {
+                @if (Model.Item2.Item2 == j)
+                {
+                    <li class="page-item active" style="margin-top: 100px;"><a asp-area="" asp-route-id="@j" asp-controller="Destination" asp-action="Delete" class="page-link">@j</a> </li>
+                }
+                else
+                {
+                    <li class="page-item" style="margin-top: 100px;"><a asp-area="" asp-route-id="@j" asp-controller="Destination" asp-action="Delete" class="page-link">@j</a> </li>
+                }
+            }
+        </ul>
+    </div>
+</div>
