@@ -261,7 +261,6 @@ namespace WebApplication.Controllers
         [HttpGet]
         public String BrowseSpecific(String name, int id)
         {
-            Console.Write(id);
             var sql = "SELECT COUNT(*) FROM destinations";
             if (name.Length > 0)
             {
