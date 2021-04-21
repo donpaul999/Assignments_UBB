@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id "application"
+}
+
+ext {
+    javaMainClass = "Main"
+
+    slf4jVersion = '1.7.25'
+    log4jVersion = '2.10.0'
+}
+
+dependencies {
+    implementation project(':common')
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2
+    implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.8.0'
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jacksonDatabindVersion"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jacksonDatabindVersion"
+}
+
+application {
+    setMainClassName(javaMainClass)
+}
+
+run {
+    standardInput = System.in
+}

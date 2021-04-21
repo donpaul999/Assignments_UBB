@@ -1,0 +1,60 @@
+plugins {
+    id "application"
+}
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        springVersion = '5.3.5'
+        springDataVersion = '2.1.6.RELEASE'
+        hibernateVersion = '5.4.2.Final'
+        slf4jVersion = '1.7.25'
+        log4jVersion = '2.10.0'
+        javaxServeletApiVersion = '4.0.1'
+        lombokVersion = '1.18.16'
+        jacksonDatabindVersion = '2.9.4'
+    }
+
+    dependencies {
+        // https://mvnrepository.com/artifact/org.postgresql/postgresql
+        implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'
+        implementation group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+        implementation 'org.projectlombok:lombok:1.18.18'
+
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+        implementation 'dom4j:dom4j:1.6.1'
+        testImplementation 'junit:junit:4.12'
+
+        implementation group: 'org.springframework', name: 'spring-context-support', version: "$springVersion"
+        implementation group: 'org.springframework', name: 'spring-orm', version: "$springVersion"
+        implementation group: 'org.springframework.data', name: 'spring-data-jpa', version: "$springDataVersion"
+        implementation group: 'org.hibernate', name: 'hibernate-core', version:"$hibernateVersion"
+
+        //logging
+        implementation group: 'org.slf4j', name: 'slf4j-api', version: "$slf4jVersion"
+        testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: "$slf4jVersion"
+
+        implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: "$log4jVersion"
+        implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: "$log4jVersion"
+        implementation group: 'org.apache.logging.log4j', name: 'log4j-1.2-api', version: "$log4jVersion"
+
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
+        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
+    }
+
+
+    test {
+        useJUnitPlatform()
+    }
+
+    run {
+        standardInput = System.in
+    }
+}

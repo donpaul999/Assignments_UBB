@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<data>
+    <client>
+        <id>2</id>
+        <name>two.com</name>
+        <price>10</price>
+    </client>
+    <client>
+        <id>1</id>
+        <name>one.com</name>
+        <price>432</price>
+    </client>
+    <client>
+        <id>4</id>
+        <name>abc.xyz</name>
+        <price>20</price>
+    </client>
+    <client>
+        <id>3</id>
+        <name>three.com</name>
+        <price>20</price>
+    </client>
+</data>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="filename">./log/WebDomainRental.log</Property>
+        <Property name="filenamePattern">log/WebDomainRental-%i.log</Property>
+        <Property name="pattern">%d{ISO8601} %-5p [%t]: %-36.36c{1} - %m %n
+        </Property>
+    </Properties>
+
+    <Appenders>
+        <!-- ======= -->
+        <!-- CONSOLE -->
+        <!-- ======= -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+        <!-- ========= -->
+        <!-- ROOT File -->
+        <!-- ========= -->
+        <RollingFile name="File" fileName="${filename}"
+                     filePattern="${filenamePattern}">
+            <PatternLayout pattern="${pattern}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- ROOT -->
+        <Root level="WARN">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
