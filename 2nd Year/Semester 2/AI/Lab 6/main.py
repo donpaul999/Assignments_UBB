@@ -84,14 +84,15 @@ class Cluster:
         for p in points:
             if p not in self.points:
                 if p.cluster.label != self.label:
-                    TN  += 1
-                else:
-                    FN += 1
+                    if p.label != self.label:
+                        TN += 1
+                    else:
+                        FN += 1
 
         acc = (TP + TN) / (TP + TN + FP + FN)
         prec = TP / (TP + FP)
         rec = TP / (TP + FN)
-        score = 2 / ((1 / rec) / (1 / prec))
+        score = 2 / ((1 / rec) + (1 / prec))
 
         return acc,prec,rec,score
 
