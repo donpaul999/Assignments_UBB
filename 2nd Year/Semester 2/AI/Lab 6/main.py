@@ -115,15 +115,15 @@ def printPoints(points):
     f = open("output_points.csv", 'w')
     f.write('cluster_label,label,val1,val2\n')
     for p in points:
-        f.write(p.cluster.label + ',' + p.label + ',' + str(p.val1) + ',' + str(p.val2))
+        f.write(p.cluster.label + ',' + p.label + ',' + str(p.val1) + ',' + str(p.val2) + '\n')
     f.close()
 
 
 def printClusters(clusters):
     f = open("output_clusters.csv", 'w')
-    f.write('label,mean_val1,mean_val2\n')
+    f.write('label,mean_val1,mean_val2,\n')
     for c in clusters:
-        f.write(c.label + ',' + str(c.mean_val1) + ',' + str(c.mean_val2))
+        f.write(c.label + ',' + str(c.mean_val1) + ',' + str(c.mean_val2) + '\n')
     f.close()
 
 def printStats(clusters, points):
@@ -166,27 +166,5 @@ def main():
     printPoints(points)
     printClusters(clusters)
     printStats(clusters, points)
-    plot(clusters)
-
-
-def plot(clusters):
-    for cluster in clusters:
-        x = [point.val1 for point in cluster.points]
-        y = [point.val2 for point in cluster.points]
-
-        symbol = ''
-        if cluster.label == 'A':
-            symbol = 'ro'
-        if cluster.label == 'B':
-            symbol = 'bo'
-        if cluster.label == 'C':
-            symbol = 'go'
-        if cluster.label == 'D':
-            symbol = 'yo'
-
-        plt.plot(x, y, symbol, label=cluster.label)
-
-    plt.legend()
-    plt.show()
 
 main()
