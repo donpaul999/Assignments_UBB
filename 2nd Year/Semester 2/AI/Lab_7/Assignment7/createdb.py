@@ -5,18 +5,13 @@ import torch
 
 
 def generatePoints():
-    points = []
-    for i in range(1000):
-        points.append([random.uniform(-10, 10), random.uniform(-10, 10)])
-    print(points)
-    f = []
-    for i in range (1000):
-        f.append(torch.sin(torch.tensor(points[i][0] + (points[i][1] / np.pi))))
-    print(f)
+    max = 10
+    min = -10
+    size = 1000
 
-    d = []
-    for i in range(1000):
-        d.append([points[i], f[i]])
-    print(d)
-    torch.save(d, "mydataset.dat")
+    x = (max - min) * torch.rand((2, size)) + min
+
+    f = torch.sin(x[0] + (x[1] / np.pi))
+
+    torch.save(f, "mydataset.dat")
 generatePoints()
