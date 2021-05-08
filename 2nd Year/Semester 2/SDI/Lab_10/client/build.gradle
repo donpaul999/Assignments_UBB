@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id "application"
+    id "io.github.manosbatsis.gradle.plugin.reflections" version "1.1"
+}
+
+reflections {
+    dependsOn classes
+}
+jar {
+    dependsOn reflections
+}
+
+ext {
+    javaMainClass = "Main"
+}
+
+
+dependencies {
+    implementation project(':common')
+    implementation 'org.reflections:reflections:0.9.10'
+    implementation group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jacksonDatabindVersion"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jacksonDatabindVersion"
+}
+
+application {
+    setMainClassName(javaMainClass)
+}
+
+run {
+    standardInput = System.in
+}

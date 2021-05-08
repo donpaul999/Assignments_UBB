@@ -1,0 +1,37 @@
+<div class="container mt-10">
+  <div class="row">
+    <div *ngIf = "errorMessage" class="alert alert-danger">
+      {{errorMessage}}
+    </div>
+    <div class="">
+      <input #filter type="text" placeholder="Filter by name" style="margin-top: 50px;">
+      <button (click)="filterDomainsByName(filter.value)" class="btn btn-primary">Filter</button>
+    </div>
+    <table class="table">
+      <thead>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Actions</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let domain of domains">
+        <th scope="row" #id>{{domain.id}}</th>
+        <td><input #name name="name" type="text" value="{{domain.name}}"></td>
+        <td><input #price name="price" type="text" value="{{domain.price}}"></td>
+        <td><a href="/webdomains-delete/{{domain.id}}" style="margin-right: 50px"  class="btn btn-danger mr-2">Delete</a>
+          <button (click)="updateDomain(id.innerText, name.value, price.value)"  class="btn btn-warning">Update</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row" #id>#</th>
+        <td><input #name name="name" type="text" value="" placeholder="Enter name"></td>
+        <td><input #price name="price" type="text" placeholder="Enter price"></td>
+        <td>
+          <button (click)="addDomain(name.value, price.value)"  class="btn btn-primary">Add</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

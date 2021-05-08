@@ -1,0 +1,12 @@
+plugins {
+    id "application"
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+}

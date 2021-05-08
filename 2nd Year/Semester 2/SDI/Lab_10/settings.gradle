@@ -1,0 +1,5 @@
+rootProject.name = 'lab5x-c-team'
+include 'client'
+include 'common'
+include 'server-core'
+include 'server-web'

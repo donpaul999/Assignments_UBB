@@ -1,0 +1,351 @@
+2021-04-06T11:19:48,100 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method entered 
+2021-04-06T11:19:48,445 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method finished: result=[Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1}] 
+2021-04-06T11:20:10,095 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - addClient - method entered: client=Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2} 
+2021-04-06T11:20:10,585 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - addClient - method finished 
+2021-04-06T11:20:10,587 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - addClient - method entered: client=Client {name='Test Three', isBusiness=No} BaseEntity{id=3} 
+2021-04-06T11:20:11,036 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - addClient - method finished 
+2021-04-06T11:20:15,076 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - getClients - method entered 
+2021-04-06T11:20:15,244 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - getClients - method finished: result=[Client {name='Test Three', isBusiness=No} BaseEntity{id=3}, Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2}, Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1}] 
+2021-04-06T11:20:23,084 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:20:23,539 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:20:23,541 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:20:24,016 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:20:24,077 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:20:24,527 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:20:27,077 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - getWebDomains --- method entered 
+2021-04-06T11:20:27,250 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - getWebDomains: result=[Domain {name='abcd.zyx', price=50} BaseEntity{id=6}, Domain {name='abc.xyz', price=20} BaseEntity{id=4}, Domain {name='aaa.com', price=100} BaseEntity{id=5}] 
+2021-04-06T11:21:01,085 TRACE [RMI TCP Connection(6)-192.168.0.199]: IRentalService                       - addRental --- method entered 
+2021-04-06T11:21:01,085 TRACE [RMI TCP Connection(6)-192.168.0.199]: ClientService                        - getClient - method entered: id=1 
+2021-04-06T11:21:01,256 TRACE [RMI TCP Connection(6)-192.168.0.199]: ClientService                        - getClient - method finished: result=Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1} 
+2021-04-06T11:21:01,257 TRACE [RMI TCP Connection(6)-192.168.0.199]: IWebDomainService                    - getWebDomain --- method entered 
+2021-04-06T11:21:01,425 WARN  [RMI TCP Connection(6)-192.168.0.199]: RemoteInvocationTraceInterceptor     - Processing of RmiServiceExporter remote call resulted in fatal exception: services.IRentalService.addRental 
+exceptions.ControllerException: Domain id not found: 1
+	at services.WebDomainService.lambda$getDomain$0(WebDomainService.java:54) ~[main/:?]
+	at java.util.Optional.orElseThrow(Optional.java:408) ~[?:?]
+	at services.WebDomainService.getDomain(WebDomainService.java:54) ~[main/:?]
+	at services.RentalService.addRental(RentalService.java:126) ~[main/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.remoting.support.RemoteInvocationTraceInterceptor.invoke(RemoteInvocationTraceInterceptor.java:78) [spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) [spring-aop-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at com.sun.proxy.$Proxy60.addRental(Unknown Source) [?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.remoting.support.RemoteInvocation.invoke(RemoteInvocation.java:215) [spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.remoting.support.DefaultRemoteInvocationExecutor.invoke(DefaultRemoteInvocationExecutor.java:39) [spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invoke(RemoteInvocationBasedExporter.java:78) [spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.remoting.rmi.RmiBasedExporter.invoke(RmiBasedExporter.java:73) [spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at org.springframework.remoting.rmi.RmiInvocationWrapper.invoke(RmiInvocationWrapper.java:77) [spring-context-5.1.6.RELEASE.jar:5.1.6.RELEASE]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359) [?:?]
+	at sun.rmi.transport.Transport$1.run(Transport.java:200) [?:?]
+	at sun.rmi.transport.Transport$1.run(Transport.java:197) [?:?]
+	at java.security.AccessController.doPrivileged(Native Method) [?:?]
+	at sun.rmi.transport.Transport.serviceCall(Transport.java:196) [?:?]
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562) [?:?]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796) [?:?]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677) [?:?]
+	at java.security.AccessController.doPrivileged(Native Method) [?:?]
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+2021-04-06T11:21:52,085 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - getWebDomains --- method entered 
+2021-04-06T11:21:52,253 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - getWebDomains: result=[Domain {name='abcd.zyx', price=50} BaseEntity{id=6}, Domain {name='abc.xyz', price=20} BaseEntity{id=4}, Domain {name='aaa.com', price=100} BaseEntity{id=5}] 
+2021-04-06T11:22:03,087 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteWebDomain --- method entered 
+2021-04-06T11:22:03,087 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId --- method entered 
+2021-04-06T11:22:03,274 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId: result=[] 
+2021-04-06T11:22:03,767 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteDomain: result=Success 
+2021-04-06T11:22:08,086 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteWebDomain --- method entered 
+2021-04-06T11:22:08,086 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId --- method entered 
+2021-04-06T11:22:08,293 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId: result=[] 
+2021-04-06T11:22:08,721 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteDomain: result=Success 
+2021-04-06T11:22:14,087 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteWebDomain --- method entered 
+2021-04-06T11:22:14,087 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId --- method entered 
+2021-04-06T11:22:14,265 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId: result=[] 
+2021-04-06T11:22:14,732 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteDomain: result=Success 
+2021-04-06T11:22:17,087 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - getWebDomains --- method entered 
+2021-04-06T11:22:17,267 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - getWebDomains: result=[] 
+2021-04-06T11:22:23,088 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:22:23,671 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:22:23,673 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:22:24,192 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:22:24,194 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:22:24,717 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:22:29,088 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - getWebDomains --- method entered 
+2021-04-06T11:22:29,282 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - getWebDomains: result=[Domain {name='abcd.zyx', price=50} BaseEntity{id=9}, Domain {name='abc.xyz', price=20} BaseEntity{id=7}, Domain {name='aaa.com', price=100} BaseEntity{id=8}] 
+2021-04-06T11:22:37,089 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteWebDomain --- method entered 
+2021-04-06T11:22:37,089 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId --- method entered 
+2021-04-06T11:22:37,279 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId: result=[] 
+2021-04-06T11:22:37,733 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteDomain: result=Success 
+2021-04-06T11:22:43,090 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteWebDomain --- method entered 
+2021-04-06T11:22:43,090 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId --- method entered 
+2021-04-06T11:22:43,337 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId: result=[] 
+2021-04-06T11:22:43,857 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteDomain: result=Success 
+2021-04-06T11:22:49,090 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteWebDomain --- method entered 
+2021-04-06T11:22:49,090 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId --- method entered 
+2021-04-06T11:22:49,290 TRACE [RMI TCP Connection(7)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId: result=[] 
+2021-04-06T11:22:49,813 TRACE [RMI TCP Connection(7)-192.168.0.199]: IWebDomainService                    - deleteDomain: result=Success 
+2021-04-06T11:23:30,833 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - getWebDomains --- method entered 
+2021-04-06T11:23:31,195 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - getWebDomains: result=[] 
+2021-04-06T11:23:34,820 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:23:35,245 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:23:35,247 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:23:35,630 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:23:49,813 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - getWebDomains --- method entered 
+2021-04-06T11:23:49,994 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - getWebDomains: result=[Domain {name='abc.xyz', price=20} BaseEntity{id=1}, Domain {name='aaa.com', price=100} BaseEntity{id=2}] 
+2021-04-06T11:24:01,815 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - addWebDomain --- method entered 
+2021-04-06T11:24:02,197 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - addDomain: result=Success 
+2021-04-06T11:24:04,814 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - getWebDomains --- method entered 
+2021-04-06T11:24:04,977 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - getWebDomains: result=[Domain {name='abcd.zyx', price=50} BaseEntity{id=3}, Domain {name='abc.xyz', price=20} BaseEntity{id=1}, Domain {name='aaa.com', price=100} BaseEntity{id=2}] 
+2021-04-06T11:24:12,815 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method entered 
+2021-04-06T11:24:12,983 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method finished: result=[Client {name='Test Three', isBusiness=No} BaseEntity{id=3}, Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2}, Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1}] 
+2021-04-06T11:24:22,820 TRACE [RMI TCP Connection(4)-192.168.0.199]: IRentalService                       - addRental --- method entered 
+2021-04-06T11:24:22,820 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClient - method entered: id=1 
+2021-04-06T11:24:22,988 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClient - method finished: result=Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1} 
+2021-04-06T11:24:22,988 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - getWebDomain --- method entered 
+2021-04-06T11:24:23,152 TRACE [RMI TCP Connection(4)-192.168.0.199]: IWebDomainService                    - getWebDomain: result=Domain {name='abc.xyz', price=20} BaseEntity{id=1} 
+2021-04-06T11:24:23,152 TRACE [RMI TCP Connection(4)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId --- method entered 
+2021-04-06T11:24:23,318 TRACE [RMI TCP Connection(4)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId: result=[] 
+2021-04-06T11:24:23,703 TRACE [RMI TCP Connection(4)-192.168.0.199]: IRentalService                       - addRental: result=Succes 
+2021-04-06T11:24:42,819 TRACE [RMI TCP Connection(5)-192.168.0.199]: IRentalService                       - addRental --- method entered 
+2021-04-06T11:24:42,819 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - getClient - method entered: id=2 
+2021-04-06T11:24:42,983 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - getClient - method finished: result=Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2} 
+2021-04-06T11:24:42,983 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - getWebDomain --- method entered 
+2021-04-06T11:24:43,146 TRACE [RMI TCP Connection(5)-192.168.0.199]: IWebDomainService                    - getWebDomain: result=Domain {name='abcd.zyx', price=50} BaseEntity{id=3} 
+2021-04-06T11:24:43,146 TRACE [RMI TCP Connection(5)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId --- method entered 
+2021-04-06T11:24:43,309 TRACE [RMI TCP Connection(5)-192.168.0.199]: IRentalService                       - filterRentalsByDomainId: result=[] 
+2021-04-06T11:24:43,689 TRACE [RMI TCP Connection(5)-192.168.0.199]: IRentalService                       - addRental: result=Succes 
+2021-04-06T11:25:52,824 TRACE [RMI TCP Connection(6)-192.168.0.199]: IRentalService                       - getRentals --- method entered 
+2021-04-06T11:25:53,013 TRACE [RMI TCP Connection(6)-192.168.0.199]: IRentalService                       - getRentals: result=[Rental {Client ID='1', Domain ID=1, Start Date=20-12-2020, Duration=12} BaseEntity{id=1}, Rental {Client ID='2', Domain ID=3, Start Date=17-06-2020, Duration=24} BaseEntity{id=4}] 
+2021-04-06T11:25:53,017 TRACE [RMI TCP Connection(6)-192.168.0.199]: ClientService                        - getClient - method entered: id=1 
+2021-04-06T11:25:53,186 TRACE [RMI TCP Connection(6)-192.168.0.199]: ClientService                        - getClient - method finished: result=Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1} 
+2021-04-06T11:25:53,188 TRACE [RMI TCP Connection(6)-192.168.0.199]: IWebDomainService                    - getWebDomain --- method entered 
+2021-04-06T11:25:53,351 TRACE [RMI TCP Connection(6)-192.168.0.199]: IWebDomainService                    - getWebDomain: result=Domain {name='abc.xyz', price=20} BaseEntity{id=1} 
+2021-04-06T11:25:53,354 TRACE [RMI TCP Connection(6)-192.168.0.199]: ClientService                        - getClient - method entered: id=2 
+2021-04-06T11:25:53,522 TRACE [RMI TCP Connection(6)-192.168.0.199]: ClientService                        - getClient - method finished: result=Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2} 
+2021-04-06T11:25:53,524 TRACE [RMI TCP Connection(6)-192.168.0.199]: IWebDomainService                    - getWebDomain --- method entered 
+2021-04-06T11:25:53,686 TRACE [RMI TCP Connection(6)-192.168.0.199]: IWebDomainService                    - getWebDomain: result=Domain {name='abcd.zyx', price=50} BaseEntity{id=3} 
+2021-04-06T11:38:59,761 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method entered 
+2021-04-06T11:39:00,086 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method finished: result=[Client {name='Test Three', isBusiness=No} BaseEntity{id=3}, Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2}, Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1}] 
+2021-04-06T11:57:15,882 TRACE [RMI TCP Connection(4)-26.172.197.62]: ClientService                        - getClients - method entered 
+2021-04-06T11:57:16,197 TRACE [RMI TCP Connection(4)-26.172.197.62]: ClientService                        - getClients - method finished: result=[Client {name='Test Three', isBusiness=No} BaseEntity{id=3}, Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2}, Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1}] 
+2021-04-06T11:57:21,872 TRACE [RMI TCP Connection(4)-26.172.197.62]: IWebDomainService                    - getWebDomains --- method entered 
+2021-04-06T11:57:22,042 TRACE [RMI TCP Connection(4)-26.172.197.62]: IWebDomainService                    - getWebDomains: result=[Domain {name='abcd.zyx', price=50} BaseEntity{id=3}, Domain {name='abc.xyz', price=20} BaseEntity{id=1}, Domain {name='aaa.com', price=100} BaseEntity{id=2}] 
+2021-04-06T11:57:24,873 TRACE [RMI TCP Connection(4)-26.172.197.62]: IRentalService                       - getRentals --- method entered 
+2021-04-06T11:57:25,042 TRACE [RMI TCP Connection(4)-26.172.197.62]: IRentalService                       - getRentals: result=[Rental {Client ID='1', Domain ID=1, Start Date=20-12-2020, Duration=12} BaseEntity{id=1}, Rental {Client ID='2', Domain ID=3, Start Date=17-06-2020, Duration=24} BaseEntity{id=4}] 
+2021-04-06T11:57:25,046 TRACE [RMI TCP Connection(4)-26.172.197.62]: ClientService                        - getClient - method entered: id=1 
+2021-04-06T11:57:25,220 TRACE [RMI TCP Connection(4)-26.172.197.62]: ClientService                        - getClient - method finished: result=Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1} 
+2021-04-06T11:57:25,222 TRACE [RMI TCP Connection(4)-26.172.197.62]: IWebDomainService                    - getWebDomain --- method entered 
+2021-04-06T11:57:25,387 TRACE [RMI TCP Connection(4)-26.172.197.62]: IWebDomainService                    - getWebDomain: result=Domain {name='abc.xyz', price=20} BaseEntity{id=1} 
+2021-04-06T11:57:25,390 TRACE [RMI TCP Connection(4)-26.172.197.62]: ClientService                        - getClient - method entered: id=2 
+2021-04-06T11:57:25,555 TRACE [RMI TCP Connection(4)-26.172.197.62]: ClientService                        - getClient - method finished: result=Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2} 
+2021-04-06T11:57:25,557 TRACE [RMI TCP Connection(4)-26.172.197.62]: IWebDomainService                    - getWebDomain --- method entered 
+2021-04-06T11:57:25,720 TRACE [RMI TCP Connection(4)-26.172.197.62]: IWebDomainService                    - getWebDomain: result=Domain {name='abcd.zyx', price=50} BaseEntity{id=3} 
+2021-04-08T08:51:08,875 ERROR [main]: ErrorTracker                         - line 1:8: unexpected token: * 
+2021-04-08T08:51:08,878 ERROR [main]: ErrorTracker                         - line 1:8: unexpected token: * 
+antlr.NoViableAltException: unexpected token: *
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1263) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1040) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:748) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:319) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:290) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:118) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:78) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:158) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:611) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:720) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:104) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) [spring-orm-5.3.5.jar:5.3.5]
+	at com.sun.proxy.$Proxy52.createQuery(Unknown Source) [?:?]
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:87) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:63) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:76) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:56) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:142) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:209) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:79) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lookupQuery(RepositoryFactorySupport.java:566) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(RepositoryFactorySupport.java:559) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) [?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) [?:?]
+	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1054) [?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) [?:?]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.mapMethodsToQuery(RepositoryFactorySupport.java:561) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$new$0(RepositoryFactorySupport.java:551) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at java.util.Optional.map(Optional.java:265) [?:?]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:551) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:324) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:297) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:211) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.util.Lazy.get(Lazy.java:94) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:300) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:121) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) [spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.context.annotation.AnnotationConfigApplicationContext.<init>(AnnotationConfigApplicationContext.java:93) [spring-context-5.3.5.jar:5.3.5]
+	at Main.main(Main.java:8) [main/:?]
+2021-04-08T08:51:08,894 WARN  [main]: AnnotationConfigApplicationContext   - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'serverConfig': Unsatisfied dependency expressed through field 'clientService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'clientService': Unsatisfied dependency expressed through field 'clients'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clientDatabaseRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.Set repository.database.ClientDatabaseRepository.filterClientByName(java.lang.String)! 
+2021-04-08T08:52:04,710 ERROR [main]: ErrorTracker                         - line 1:8: unexpected token: * 
+2021-04-08T08:52:04,712 ERROR [main]: ErrorTracker                         - line 1:8: unexpected token: * 
+antlr.NoViableAltException: unexpected token: *
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectClause(HqlBaseParser.java:1263) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectFrom(HqlBaseParser.java:1040) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.queryRule(HqlBaseParser.java:748) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.selectStatement(HqlBaseParser.java:319) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.antlr.HqlBaseParser.statement(HqlBaseParser.java:198) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:290) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:189) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:144) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:118) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:78) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:158) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:611) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:720) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:104) [hibernate-core-5.4.2.Final.jar:5.4.2.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) [spring-orm-5.3.5.jar:5.3.5]
+	at com.sun.proxy.$Proxy52.createQuery(Unknown Source) [?:?]
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:87) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:63) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:76) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:56) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:142) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:209) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:79) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lookupQuery(RepositoryFactorySupport.java:566) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(RepositoryFactorySupport.java:559) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) [?:?]
+	at java.util.Iterator.forEachRemaining(Iterator.java:133) [?:?]
+	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1054) [?:?]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) [?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) [?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) [?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) [?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) [?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) [?:?]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.mapMethodsToQuery(RepositoryFactorySupport.java:561) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$new$0(RepositoryFactorySupport.java:551) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at java.util.Optional.map(Optional.java:265) [?:?]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:551) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:324) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:297) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:211) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.util.Lazy.get(Lazy.java:94) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:300) [spring-data-commons-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:121) [spring-data-jpa-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1845) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) [spring-beans-5.3.5.jar:5.3.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) [spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.5.jar:5.3.5]
+	at org.springframework.context.annotation.AnnotationConfigApplicationContext.<init>(AnnotationConfigApplicationContext.java:93) [spring-context-5.3.5.jar:5.3.5]
+	at Main.main(Main.java:8) [main/:?]
+2021-04-08T08:52:04,729 WARN  [main]: AnnotationConfigApplicationContext   - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'serverConfig': Unsatisfied dependency expressed through field 'clientService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'clientService': Unsatisfied dependency expressed through field 'clients'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'clientDatabaseRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.Set repository.database.ClientDatabaseRepository.filterClientByName(java.lang.String)! 
+2021-04-08T08:54:29,628 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method entered 
+2021-04-08T08:54:29,948 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method finished: result=[Client {name='Test Three', isBusiness=No} BaseEntity{id=3}, Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2}, Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1}] 
+2021-04-08T08:54:59,619 TRACE [RMI TCP Connection(5)-192.168.0.199]: ClientService                        - filterClientByName - method entered: name=Test 
+2021-04-08T08:59:39,617 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method entered 
+2021-04-08T08:59:39,937 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method finished: result=[Client {name='Test Three', isBusiness=No} BaseEntity{id=3}, Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2}, Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1}] 
+2021-04-08T08:59:47,616 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - filterClientByName - method entered: name=Test 
+2021-04-08T09:25:47,940 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method entered 
+2021-04-08T09:25:48,244 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - getClients - method finished: result=[Client {name='Test Three', isBusiness=No} BaseEntity{id=3}, Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2}, Client {name='Ciupe Somn', isBusiness=Yes} BaseEntity{id=1}] 
+2021-04-08T09:25:55,933 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - filterClientByName - method entered: name=Test 
+2021-04-08T09:25:56,085 TRACE [RMI TCP Connection(4)-192.168.0.199]: ClientService                        - filterClientByName - method finished: result=[Client {name='Test Two', isBusiness=Yes} BaseEntity{id=2}, Client {name='Test Three', isBusiness=No} BaseEntity{id=3}] 

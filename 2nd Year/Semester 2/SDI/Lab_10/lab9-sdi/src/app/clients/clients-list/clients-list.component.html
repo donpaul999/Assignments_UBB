@@ -1,0 +1,39 @@
+
+
+<div class="container mt-10">
+  <div class="row">
+    <div *ngIf = "errorMessage" class="alert alert-danger">
+      {{errorMessage}}
+    </div>
+    <div class="">
+      <input #filter type="text" placeholder="Filter by name" style="margin-top: 50px;">
+      <button (click)="filterClientsByName(filter.value)" class="btn btn-primary">Filter</button>
+    </div>
+    <table class="table" style="margin-top: 50px;">
+      <thead>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Is Business</th>
+      <th scope="col">Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients">
+          <th scope="row" #id>{{client.id}}</th>
+          <td><input #name name="name" type="text" value="{{client.name}}"></td>
+          <td><input #business name="business" type="checkbox" [checked]="client.isBusiness"></td>
+          <td><a href="/clients-delete/{{client.id}}" style="margin-right: 50px"  class="btn btn-danger mr-2">Delete</a>
+            <button (click)="updateClient(id.innerText, name.value, business.checked)"  class="btn btn-warning">Update</button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" #id>#</th>
+          <td><input #name name="name" type="text" value="" placeholder="Client name"></td>
+          <td><input #business name="business" type="checkbox" [checked]="false"></td>
+          <td>
+            <button (click)="addClient(name.value, business.checked)"  class="btn btn-primary">Add</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+</div>
