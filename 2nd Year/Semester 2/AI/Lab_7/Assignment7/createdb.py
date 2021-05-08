@@ -9,9 +9,21 @@ def generatePoints():
     min = -10
     size = 1000
 
-    x = (max - min) * torch.rand((2, size)) + min
+    x = (max - min) * torch.rand((size, 2)) + min
 
-    f = torch.sin(x[0] + (x[1] / np.pi))
+    t = []
+    w = []
 
-    torch.save(f, "mydataset.dat")
+    for i in x:
+        t.append(i[0])
+        w.append(i[1])
+
+    t = torch.tensor(t)
+    w = torch.tensor(w)
+
+    f = torch.sin(t + (w / np.pi))
+    p = torch.column_stack((x, f))
+
+    print(p)
+    torch.save(p, "mydataset.dat")
 generatePoints()
