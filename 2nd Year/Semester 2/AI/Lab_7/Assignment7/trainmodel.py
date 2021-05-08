@@ -23,7 +23,7 @@ ann = myModel.Net(n_feature=2, n_hidden=10, n_output=1).to(device)
 
 print(ann)
 # we use an optimizer that implements stochastic gradient descent
-optimizer_batch = torch.optim.Adam(ann.parameters(), lr=0.02)
+optimizer_batch = torch.optim.SGD(ann.parameters(), lr=0.02)
 
 
 # we memorize the losses forsome graphics
