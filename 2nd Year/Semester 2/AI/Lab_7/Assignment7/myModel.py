@@ -16,6 +16,6 @@ class Net(torch.nn.Module):
     def forward(self, x):
         # a function that implements the forward propagation of the signal
         # observe the refu function applied on the output of the hidden layer
-        #x = F.relu(self.hidden(x))
+        x = F.relu(self.hidden(x))
         x = self.output(x)
         return x

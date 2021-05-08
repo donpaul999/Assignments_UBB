@@ -21,11 +21,11 @@ for d in data:
 lossFunction = torch.nn.MSELoss()
 
 # we create the ANN
-ann = myModel.Net(n_feature=1, n_hidden=10, n_output=1).to(device)
+ann = myModel.Net(n_feature=2, n_hidden=10, n_output=1).to(device)
 
 print(ann)
 # we use an optimizer that implements stochastic gradient descent
-optimizer_batch = torch.optim.SGD(ann.parameters(), lr=0.2)
+optimizer_batch = torch.optim.SGD(ann.parameters(), lr=0.02)
 
 
 # we memorize the losses forsome graphics
@@ -33,11 +33,11 @@ loss_list = []
 avg_loss_list = []
 
 # we set up the environment for training in batches
-batch_size = 256
+batch_size = 64
 n_batches = int(len(x) / batch_size)
 print(n_batches)
 
-for epoch in range(2000):
+for epoch in range(4000):
 
     for batch in range(n_batches):
         # we prepare the current batch  -- please observe the slicing for tensors
@@ -79,7 +79,9 @@ for name, param in ann.named_parameters():
     if param.requires_grad:
         print (name, param.data)
 
+'''
 plt.plot(loss_list)
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.show()
+'''
