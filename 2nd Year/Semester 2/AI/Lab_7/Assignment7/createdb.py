@@ -23,7 +23,8 @@ def generatePoints():
 
     f = torch.sin(t + (w / np.pi))
     p = torch.column_stack((x, f))
-
+    print(x)
+    print(f)
     print(p)
     torch.save(p, "mydataset.dat")
 generatePoints()
