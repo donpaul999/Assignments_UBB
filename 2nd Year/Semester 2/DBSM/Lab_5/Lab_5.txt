@@ -1,0 +1,202 @@
+--1
+
+
+create or alter procedure insertIntoProgrammers(@name varchar(200), @email varchar(200), @phone varchar(200), @birthday date)
+as
+    INSERT INTO ubb_schema.Programmers(name, email, phone, birthday) values (@name, @email, @phone, @birthday)
+    PRINT N'insertIntoProgrammers';
+go
+
+create or alter procedure insertIntoEquipments(@name varchar(200))
+as
+    INSERT INTO ubb_schema.Equipment(name) values (@name);
+    PRINT N'insertIntoEquipments';
+go
+
+create or alter procedure insertEquipmentProgrammers(@phone varchar(200), @name varchar(200))
+as
+    declare @pId int;
+    SELECT @pid = id from ubb_schema.Programmers where phone = @phone;
+    declare @eId int;
+    SELECT @eid = id from ubb_schema.Equipment where name = @name
+    INSERT INTO ubb_schema.EquipmentProgrammers(programmer_id, equipment_id) values (@pId, @eId)
+    PRINT N'insertEquipmentProgrammers';
+go
+
+create or alter procedure procedureEquipmentProgrammers
+as
+    BEGIN TRAN
+	BEGIN TRY
+	    exec insertIntoProgrammers 'Test Insert', 'stest@g.c', '+423', '2001-05-20';
+        exec insertIntoEquipments 'Phone S 1';
+        exec insertEquipmentProgrammers '+423', 'Phone S 1';
+		COMMIT TRAN
+	END TRY
+	BEGIN CATCH
+        PRINT 'The operation is Rolled Back';
+		ROLLBACK TRAN
+		RETURN
+	END CATCH
+go
+
+create or alter procedure emptyEquipmentProgrammers
+as
+    DELETE from ubb_schema.EquipmentProgrammers WHERE 1 = 1;
+    DELETE from ubb_schema.Programmers WHERE 1 = 1;
+    DELETE from ubb_schema.Equipment WHERE 1 = 1;
+go
+
+exec procedureEquipmentProgrammers
+exec emptyEquipmentProgrammers
+
+--2
+
+
+
+create or alter procedure insertIntoProgrammers_2(@name varchar(200), @email varchar(200), @phone varchar(200), @birthday date)
+as
+    BEGIN TRAN
+	BEGIN TRY
+        INSERT INTO ubb_schema.Programmers(name, email, phone, birthday) values (@name, @email, @phone, @birthday)
+        PRINT 'Succes! insertIntoProgrammers';
+        COMMIT TRAN
+    END TRY
+    BEGIN CATCH
+        PRINT 'insertIntoProgrammers: The operation is Rolled Back';
+		ROLLBACK TRAN
+		RETURN
+    END CATCH
+go
+
+create or alter procedure insertIntoEquipments_2(@name varchar(200))
+as
+    BEGIN TRAN
+	BEGIN TRY
+        INSERT INTO ubb_schema.Equipment(name) values (@name);
+        PRINT 'Succes! insertIntoEquipments';
+        COMMIT TRAN
+	END TRY
+    BEGIN CATCH
+        PRINT 'insertIntoEquipments: The operation is Rolled Back';
+		ROLLBACK TRAN
+		RETURN
+    END CATCH
+go
+
+create or alter procedure insertEquipmentProgrammers_2(@phone varchar(200), @name varchar(200))
+as
+    BEGIN TRAN
+	BEGIN TRY
+        declare @pId int;
+        SELECT @pid = id from ubb_schema.Programmers where phone = @phone;
+        declare @eId int;
+        SELECT @eid = id from ubb_schema.Equipment where name = @name
+        INSERT INTO ubb_schema.EquipmentProgrammers(programmer_id, equipment_id) values (@pId, @eId)
+        PRINT 'Succes! insertEquipmentProgrammers';
+        COMMIT TRAN
+    END TRY
+    BEGIN CATCH
+        PRINT 'insertEquipmentProgrammers: The operation is Rolled Back';
+		ROLLBACK TRAN
+		RETURN
+    END CATCH
+go
+
+create or alter procedure procedureEquipmentProgrammers_2
+as
+    exec insertIntoProgrammers_2 'Test Insert', 'stest@g.c', '+423', '2001-05-20';
+    exec insertIntoEquipments_2 'Phone S 1';
+    exec insertEquipmentProgrammers_2 '+423', 'Phone S 1';
+go
+
+exec procedureEquipmentProgrammers_2
+exec emptyEquipmentProgrammers
+print @@trancount
+rollback
+
+---3/1
+--DL
+BEGIN TRAN
+UPDATE ubb_schema.Categories SET name='CModified' WHERE id=1
+UPDATE ubb_schema.Technologies SET name='TModified' WHERE id=1
+COMMIT TRAN
+
+--DR
+BEGIN TRANSACTION
+UPDATE ubb_schema.Categories SET name='CDR' WHERE id=1
+WAITFOR DELAY '00:00:05'
+ROLLBACK TRANSACTION
+
+
+--RR
+BEGIN TRAN
+WAITFOR DELAY '00:00:05'
+UPDATE ubb_schema.Categories SET name='CRR' WHERE id=1
+COMMIT TRAN
+
+--PR
+BEGIN TRAN
+WAITFOR DELAY '00:00:05'
+INSERT INTO ubb_schema.Categories(name) VALUES ('New category')
+COMMIT TRAN
+
+--3/2
+--DL
+SET DEADLOCK_PRIORITY HIGH
+
+BEGIN TRAN
+UPDATE ubb_schema.Technologies SET name='TFinalModified' WHERE id=1
+UPDATE ubb_schema.Categories SET name='CFinalModified' WHERE id=1
+
+COMMIT TRAN
+
+print @@trancount
+rollback
+
+--DR
+
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+BEGIN TRAN
+SELECT * FROM ubb_schema.Categories
+WAITFOR DELAY '00:00:10'
+SELECT * FROM ubb_schema.Categories
+COMMIT TRAN
+
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+BEGIN TRAN
+SELECT * FROM ubb_schema.Categories
+WAITFOR DELAY '00:00:10'
+SELECT * FROM ubb_schema.Categories
+COMMIT TRAN
+
+--RR
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+BEGIN TRAN
+SELECT * FROM ubb_schema.Categories
+WAITFOR DELAY '00:00:10'
+SELECT * FROM ubb_schema.Categories
+COMMIT TRAN
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+BEGIN TRAN
+SELECT * FROM ubb_schema.Categories
+WAITFOR DELAY '00:00:10'
+SELECT * FROM ubb_schema.Categories
+COMMIT TRAN
+
+--PR
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ
+BEGIN TRAN
+SELECT * FROM ubb_schema.Categories
+WAITFOR DELAY '00:00:10'
+SELECT * FROM ubb_schema.Categories
+COMMIT TRAN
+
+
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
+BEGIN TRAN
+SELECT * FROM ubb_schema.Categories
+WAITFOR DELAY '00:00:10'
+SELECT * FROM ubb_schema.Categories
+COMMIT TRAN
