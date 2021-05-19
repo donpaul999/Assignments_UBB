@@ -19,7 +19,7 @@ for d in data:
 lossFunction = torch.nn.MSELoss()
 
 # we create the ANN
-ann = myModel.Net(n_feature=2, n_hidden=10, n_output=1).to(device)
+ann = myModel.Net(n_feature=2, n_hidden=100, n_output=1).to(device)
 
 print(ann)
 # we use an optimizer that implements stochastic gradient descent
