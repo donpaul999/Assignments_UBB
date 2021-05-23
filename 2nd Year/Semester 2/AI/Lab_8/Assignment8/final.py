@@ -193,7 +193,7 @@ def test():
         test_acc += torch.sum(torch.eq(prediction, labels.data))
 
     # Compute the average acc and loss over all 10000 test images
-    test_acc = test_acc / 10000
+    test_acc = test_acc / 150
 
     return test_acc
 
@@ -231,8 +231,8 @@ def train(num_epochs):
         adjust_learning_rate(epoch)
 
         # Compute the average acc and loss over all 50000 training images
-        train_acc = train_acc / 50000
-        train_loss = train_loss / 50000
+        train_acc = train_acc / 150
+        train_loss = train_loss / 150
 
         # Evaluate on the test set
         test_acc = test()
