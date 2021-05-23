@@ -13,7 +13,7 @@ class ImageClassifierDataset(Dataset):
         self.labels = []
         self.classes = list(set(image_classes))
         self.class_to_label = { c: i for i, c in enumerate(self.classes) }
-        self.image_size = 224
+        self.image_size = 32
         self.transforms = transforms.Compose([
             transforms.Resize(self.image_size),
             transforms.CenterCrop(self.image_size),
@@ -26,8 +26,7 @@ class ImageClassifierDataset(Dataset):
             label = self.class_to_label[image_class]
             self.labels.append(label)
 
-        def __getitem__(self, index):
-            return self.images[index], self.labels[index]
-        def __len__(self):
-            return len(self.images)
-
+    def __getitem__(self, index):
+        return self.images[index], self.labels[index]
+    def __len__(self):
+        return len(self.images)

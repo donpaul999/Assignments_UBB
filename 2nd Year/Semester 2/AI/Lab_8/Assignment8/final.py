@@ -83,11 +83,10 @@ folders = ["train/male", "train/female", "train/cats"]
 for folder in folders:
     for file in listdir(folder):
         if file != ".DS_Store":
-            img_data = Image.open(folder + "/" + file)
+            img_data = Image.open(folder + "/" + file).convert('RGB')
             img_data.thumbnail((200, 200))
             img_list.append(img_data)
             img_classes.append("face")
-
 
 train_set = ImageClassifierDataset(img_list, img_classes)
 
@@ -105,7 +104,7 @@ batch_size = 32
 #train_set = CIFAR10(root="./train", train=True, transform=train_transformations, download=True)
 
 # Create a loder for the training set
-train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=4)
+train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=0)
 
 # Define transformations for the test set
 test_transformations = transforms.Compose([
@@ -121,7 +120,7 @@ folders = ["test/male", "test/female", "test/cats"]
 for folder in folders:
     for file in listdir(folder):
         if file != ".DS_Store":
-            img_data = Image.open(folder + "/" + file)
+            img_data = Image.open(folder + "/" + file).convert('RGB')
             img_data.thumbnail((200, 200))
             img_list.append(img_data)
             img_classes.append("face")
@@ -134,13 +133,13 @@ test_set = ImageClassifierDataset(img_list, img_classes)
 #test_set = CIFAR10(root="./test", train=False, transform=test_transformations, download=True)
 
 # Create a loder for the test set, note that both shuffle is set to false for the test loader
-test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=4)
+test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=0)
 
 # Check if gpu support is available
 cuda_avail = torch.cuda.is_available()
 
 # Create model, optimizer and loss function
-model = SimpleNet(num_classes=10)
+model = SimpleNet(num_classes=2)
 
 if cuda_avail:
     model.cuda()
@@ -172,7 +171,8 @@ def adjust_learning_rate(epoch):
 
 
 def save_models(epoch):
-    torch.save(model.state_dict(), "cifar10model_{}.model".format(epoch))
+    #torch.save(model.state_dict(), "cifar10model_{}.model".format(epoch))
+    torch.save(model.state_dict(), "pictures_model_{}.model".format(epoch))
     print("Checkpoint saved")
 
 
@@ -210,7 +210,6 @@ def train(num_epochs):
             if cuda_avail:
                 images = Variable(images.cuda())
                 labels = Variable(labels.cuda())
-
             # Clear all accumulated gradients
             optimizer.zero_grad()
             # Predict classes using images from the test set
@@ -249,7 +248,7 @@ def train(num_epochs):
 
 
 if __name__ == "__main__":
-    train(10)
+    train(200)
 
 
 
