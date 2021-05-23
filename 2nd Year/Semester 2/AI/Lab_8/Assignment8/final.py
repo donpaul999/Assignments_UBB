@@ -1,7 +1,10 @@
 
 # Import needed packages
+from os import listdir
+
 import torch
 import torch.nn as nn
+from PIL import Image
 from torchvision.datasets import CIFAR10
 from torchvision.transforms import transforms
 from torch.utils.data import DataLoader
@@ -9,6 +12,8 @@ from torch.optim import Adam
 from torch.autograd import Variable
 import numpy as np
 import ssl
+
+from dataset import ImageClassifierDataset
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -72,6 +77,28 @@ class SimpleNet(nn.Module):
         output = self.fc(output)
         return output
 
+images = []
+img_classes = []
+
+for file in listdir("train/male"):
+    img_data = Image.open("train/male/" + file)
+    img_data.thumbnail((200, 200))
+    images.append(img_data)
+    img_classes.append("face")
+
+for file in listdir("train/female"):
+    img_data = Image.open("train/female/" + file)
+    img_data.thumbnail((200, 200))
+    images.append(img_data)
+    img_classes.append("face")
+
+for file in listdir("train/cats"):
+    img_data = Image.open("train/cats/" + file)
+    img_data.thumbnail((200, 200))
+    images.append(img_data)
+    img_classes.append("no_face")
+
+train_set = ImageClassifierDataset(images, img_classes)
 
 # Define transformations for the training set, flip the images randomly, crop out and apply mean and std normalization
 train_transformations = transforms.Compose([
@@ -84,7 +111,7 @@ train_transformations = transforms.Compose([
 batch_size = 32
 
 # Load the training set
-train_set = CIFAR10(root="./train", train=True, transform=train_transformations, download=True)
+#train_set = CIFAR10(root="./train", train=True, transform=train_transformations, download=True)
 
 # Create a loder for the training set
 train_loader = DataLoader(train_set, batch_size=batch_size, shuffle=True, num_workers=4)
@@ -96,8 +123,32 @@ test_transformations = transforms.Compose([
 
 ])
 
+images = []
+img_classes = []
+
+for file in listdir("test/male"):
+    img_data = Image.open("test/male/" + file)
+    img_data.thumbnail((200, 200))
+    images.append(img_data)
+    img_classes.append("face")
+
+for file in listdir("test/female"):
+    img_data = Image.open("test/female/" + file)
+    img_data.thumbnail((200, 200))
+    images.append(img_data)
+    img_classes.append("face")
+
+for file in listdir("test/cats"):
+    img_data = Image.open("test/cats/" + file)
+    img_data.thumbnail((200, 200))
+    images.append(img_data)
+    img_classes.append("no_face")
+
+test_set = ImageClassifierDataset(images, img_classes)
+
+
 # Load the test set, note that train is set to False
-test_set = CIFAR10(root="./test", train=False, transform=test_transformations, download=True)
+#test_set = CIFAR10(root="./test", train=False, transform=test_transformations, download=True)
 
 # Create a loder for the test set, note that both shuffle is set to false for the test loader
 test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=4)
@@ -113,6 +164,7 @@ if cuda_avail:
 
 optimizer = Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
 loss_fn = nn.CrossEntropyLoss()
+
 
 
 # Create a learning rate adjustment function that divides the learning rate by 10 every 30 epochs
@@ -214,7 +266,7 @@ def train(num_epochs):
 
 
 if __name__ == "__main__":
-    train(200)
+    train(10)
 
 
 
