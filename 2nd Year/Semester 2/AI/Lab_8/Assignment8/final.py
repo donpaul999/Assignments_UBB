@@ -77,28 +77,19 @@ class SimpleNet(nn.Module):
         output = self.fc(output)
         return output
 
-images = []
+img_list = []
 img_classes = []
+folders = ["train/male", "train/female", "train/cats"]
+for folder in folders:
+    for file in listdir(folder):
+        if file != ".DS_Store":
+            img_data = Image.open(folder + "/" + file)
+            img_data.thumbnail((200, 200))
+            img_list.append(img_data)
+            img_classes.append("face")
 
-for file in listdir("train/male"):
-    img_data = Image.open("train/male/" + file)
-    img_data.thumbnail((200, 200))
-    images.append(img_data)
-    img_classes.append("face")
 
-for file in listdir("train/female"):
-    img_data = Image.open("train/female/" + file)
-    img_data.thumbnail((200, 200))
-    images.append(img_data)
-    img_classes.append("face")
-
-for file in listdir("train/cats"):
-    img_data = Image.open("train/cats/" + file)
-    img_data.thumbnail((200, 200))
-    images.append(img_data)
-    img_classes.append("no_face")
-
-train_set = ImageClassifierDataset(images, img_classes)
+train_set = ImageClassifierDataset(img_list, img_classes)
 
 # Define transformations for the training set, flip the images randomly, crop out and apply mean and std normalization
 train_transformations = transforms.Compose([
@@ -123,28 +114,20 @@ test_transformations = transforms.Compose([
 
 ])
 
-images = []
+img_list = []
 img_classes = []
 
-for file in listdir("test/male"):
-    img_data = Image.open("test/male/" + file)
-    img_data.thumbnail((200, 200))
-    images.append(img_data)
-    img_classes.append("face")
+folders = ["test/male", "test/female", "test/cats"]
+for folder in folders:
+    for file in listdir(folder):
+        if file != ".DS_Store":
+            img_data = Image.open(folder + "/" + file)
+            img_data.thumbnail((200, 200))
+            img_list.append(img_data)
+            img_classes.append("face")
 
-for file in listdir("test/female"):
-    img_data = Image.open("test/female/" + file)
-    img_data.thumbnail((200, 200))
-    images.append(img_data)
-    img_classes.append("face")
 
-for file in listdir("test/cats"):
-    img_data = Image.open("test/cats/" + file)
-    img_data.thumbnail((200, 200))
-    images.append(img_data)
-    img_classes.append("no_face")
-
-test_set = ImageClassifierDataset(images, img_classes)
+test_set = ImageClassifierDataset(img_list, img_classes)
 
 
 # Load the test set, note that train is set to False
