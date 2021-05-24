@@ -98,7 +98,7 @@ train_transformations = transforms.Compose([
     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 ])
 
-batch_size = 32
+batch_size = 64
 
 # Load the training set
 #train_set = CIFAR10(root="./train", train=True, transform=train_transformations, download=True)
@@ -123,7 +123,10 @@ for folder in folders:
             img_data = Image.open(folder + "/" + file).convert('RGB')
             img_data.thumbnail((200, 200))
             img_list.append(img_data)
-            img_classes.append("face")
+            if folder != 'test/cats':
+                img_classes.append("face")
+            else:
+                img_classes.append("no_face")
 
 
 test_set = ImageClassifierDataset(img_list, img_classes)
