@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8bdb64d0-3b89-4fcd-8ae3-d6a4390ea84c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/add-asset.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/check-assets.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conectare.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/includes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/WebApplication.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/WebApplication.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/WebApplication.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/WebApplication.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/rider.project.restore.info" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1u74oRDeOwJtabeuOLarsVWSuNi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bdb64d0-3b89-4fcd-8ae3-d6a4390ea84c" name="Default Changelist" comment="" />
+      <created>1624003473785</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624003473785</updated>
+      <workItem from="1624003475988" duration="576000" />
+      <workItem from="1624367910564" duration="3486000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="843" y="506" key="NewPhpFileDialog" timestamp="1624370929610">
+      <screen x="0" y="0" width="2048" height="1152" />
+    </state>
+    <state x="843" y="506" key="NewPhpFileDialog/2048.0.1920.1080/0.0.2048.1152@0.0.2048.1152" timestamp="1624370929610" />
+  </component>
+</project>
