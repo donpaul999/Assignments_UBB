@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8bdb64d0-3b89-4fcd-8ae3-d6a4390ea84c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/add-asset.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/check-assets.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conectare.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/layouts/includes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/WebApplication.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/Debug/net5.0/WebApplication.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/WebApplication.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/WebApplication.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_10/WebApplication/WebApplication/obj/rider.project.restore.info" afterDir="false" />
-    </list>
+    <list default="true" id="8bdb64d0-3b89-4fcd-8ae3-d6a4390ea84c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +34,7 @@
       <option name="presentableId" value="Default" />
       <updated>1624003473785</updated>
       <workItem from="1624003475988" duration="576000" />
-      <workItem from="1624367910564" duration="3486000" />
+      <workItem from="1624367910564" duration="3698000" />
     </task>
     <servers />
   </component>

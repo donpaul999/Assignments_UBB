@@ -1,0 +1,20 @@
+create table if not exists users
+(
+	id int auto_increment
+		primary key,
+	username varchar(200) null,
+	password varchar(200) null
+);
+
+create table if not exists Assets
+(
+	id int auto_increment
+		primary key,
+	userid int null,
+	name varchar(200) null,
+	description varchar(200) null,
+	value int null,
+	constraint Assets_users_id_fk
+		foreign key (userid) references users (id)
+);
+
