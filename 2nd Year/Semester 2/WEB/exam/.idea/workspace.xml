@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="097f88f2-5d45-4c2f-8f28-f911bda01c29" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/add-players.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/add-players.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/check-my-teams.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/check-teams.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conectare.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/includes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../template_exam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../template_exam/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1uQdSyUjKaoOqFi03uar0CoQpgt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="097f88f2-5d45-4c2f-8f28-f911bda01c29" name="Default Changelist" comment="" />
+      <created>1624601761125</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624601761125</updated>
+      <workItem from="1624601765413" duration="5233000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1078" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1624610675679">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1078" y="641" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.0.1920.1080/0.0.2560.1440@0.0.2560.1440" timestamp="1624610675679" />
+  </component>
+</project>
