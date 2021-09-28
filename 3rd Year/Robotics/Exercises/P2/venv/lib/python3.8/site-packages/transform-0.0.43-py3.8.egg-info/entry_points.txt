@@ -1,0 +1,3 @@
+[console_scripts]
+mql = transform.cli.mql_cli:cli
+

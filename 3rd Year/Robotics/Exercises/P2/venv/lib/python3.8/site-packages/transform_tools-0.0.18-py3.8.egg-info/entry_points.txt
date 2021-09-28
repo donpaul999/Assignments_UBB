@@ -1,0 +1,3 @@
+[console_scripts]
+transform_validate = transform_tools.validate:upload_configs
+

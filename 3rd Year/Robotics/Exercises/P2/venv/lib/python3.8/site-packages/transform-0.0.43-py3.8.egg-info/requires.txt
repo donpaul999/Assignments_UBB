@@ -1,0 +1,15 @@
+gql
+gitpython
+requests>=2.23.0
+pytest
+click
+pyyaml
+update_checker
+tabulate
+pandas<2.0,>=1.2.0
+dataclasses
+halo
+validators
+transform_tools>=0.0.18
+arrow
+log_symbols>=0.0.14
