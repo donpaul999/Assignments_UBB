@@ -1,0 +1,30 @@
+Alphabet:
+    a. Upper (A-Z) and lower case letters (a-z)
+    b. Underline character '_'
+    c. Decimal digits (0-9)
+
+Lexic:
+    a. Special symbols:
+        -operators:
+            + - * / <- % and or smaller_than bigger_than equals not_equals greater_or_equal smaller_or_equal
+
+        -separators:
+            ( ) [ ] { } : ; space
+
+        -reserved words:
+            let $ integer float string array_integers if while for read print [START] [END]
+
+    b. Identifiers:
+        -it is a sequence and chars and digits, the first letter being a letter:
+            letter = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
+            digit = "1" | "2" | ... | "9"
+            identifier = letter | letter {letter} {digit}
+
+    c. Constants:
+        -integer:
+            integer = digit {digit}
+        -char:
+            char = 'letter' | 'digit'
+        -string:
+            char = letter | digit
+            string = char {string}
