@@ -1,0 +1,20 @@
+[START]
+let n1 $ integer;
+let n2 $ integer;
+let n3 $ integer;
+let max $ integer;
+
+read n1, n2, n3;
+
+if (max smaller_than n1) {
+    max <- n1;
+}
+if (max smaller_than n2) {
+    max <- n2;
+}
+if (max smaller_than n3) {
+    max <- n3;
+}
+
+print max;
+[END]

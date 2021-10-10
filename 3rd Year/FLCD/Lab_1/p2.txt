@@ -1,0 +1,16 @@
+[START]
+let n1 $ integer;
+let n2 $ integer;
+let r $ integer;
+
+read n1, n2;
+
+while (n2 not_equal 0) {
+    r <- n2 % n1;
+    n1 <- n2;
+    n2 <- r;
+}
+
+print n1;
+print max;
+[END]

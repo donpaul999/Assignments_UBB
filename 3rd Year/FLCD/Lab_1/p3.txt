@@ -1,0 +1,16 @@
+[START]
+let n $ integer;
+let x $ integer;
+let sum $ integer;
+
+read n;
+
+sum <- 0;
+
+while (n greater_or_equal 0) {
+    read x;
+    sum <- sum + x;
+}
+
+print sum;
+[END]
