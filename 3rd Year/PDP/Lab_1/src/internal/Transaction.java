@@ -29,12 +29,4 @@ public class Transaction implements Runnable{
     public int getProfit() {
         return profit;
     }
-
-    public int getInventoryPriceSum() {
-        int totalPrice = 0;
-        for (Product product : inventory.keySet()){
-            totalPrice += inventory.getOrDefault(product, 0) * product.getPrice();
-        }
-        return totalPrice;
-    }
 }

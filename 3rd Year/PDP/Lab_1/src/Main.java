@@ -68,12 +68,20 @@ public class Main {
             profitSum += transaction.getProfit();
         }
 
-        if (profitSum + transactions.get(0).getInventoryPriceSum() == expectedSum) {
+        if (profitSum + getInventoryPriceSum() == expectedSum) {
             System.out.println("Verification successful!");
         }
         else {
             System.out.println("Stock verification failed!");
         }
+    }
+
+    public static int getInventoryPriceSum() {
+        int totalPrice = 0;
+        for (Product product : inventory.keySet()){
+            totalPrice += inventory.getOrDefault(product, 0) * product.getPrice();
+        }
+        return totalPrice;
     }
 
     private static void generateProducts() {
