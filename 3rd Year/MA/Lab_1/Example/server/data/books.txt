@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "Book 1123",
+    "author": "A1",
+    "publishDate": "2021-10-25T00:00:00+03:00",
+    "isBooked": "false"
+  },
+  {
+    "id": "2",
+    "name": "da",
+    "author": "A2",
+    "publishDate": "2021-12-22",
+    "isBooked": "false"
+  },
+  {
+    "name": "nou",
+    "author": "nou",
+    "publishDate": "2021-10-13",
+    "isBooked": "true",
+    "id": "3"
+  },
+  {
+    "name": "213",
+    "author": "123123123ddd3123",
+    "publishDate": "2021-10-11",
+    "isBooked": "false",
+    "id": "4"
+  },
+  {
+    "name": "123",
+    "author": "",
+    "publishDate": "2021-10-12",
+    "isBooked": "true",
+    "id": "5"
+  },
+  {
+    "name": "123",
+    "author": "123",
+    "publishDate": "2021-10-11",
+    "isBooked": "false",
+    "id": "6"
+  }
+]
