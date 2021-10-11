@@ -1,5 +1,8 @@
 import json
 
+import asyncio
+import websockets
+
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
@@ -94,7 +97,10 @@ def delete_book(id):
         file.write(json.dumps(book, indent=2))
     return jsonify()
 
+async with websockets.serve(echo, "localhost", 8765):
+    await asyncio.Future()  # run forever
 
+asyncio.run(main())
 if __name__ == '__main__':
     app.run()
     resonse_object = app.jsonify()
