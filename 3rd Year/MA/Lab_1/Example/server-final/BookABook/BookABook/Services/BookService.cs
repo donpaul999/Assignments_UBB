@@ -31,7 +31,9 @@ namespace BookABook.Services
 
         public List<Book> GetAll()
         {
-            return context.Books.ToList();
+            List<Book> books = context.Books.ToList();
+            books.Sort((x, y) => x.Id.CompareTo(y.Id));
+            return books;
         }
         
         public Book GetBook(int id)
@@ -60,6 +62,13 @@ namespace BookABook.Services
             context.SaveChanges();
 
             return book;
+        }
+
+        public List<Book> GetSomeBooks(int start, int count)
+        { 
+            List<Book> books = context.Books.ToList();
+            books.Sort((x, y) => x.Id.CompareTo(y.Id));
+            return books.Skip(start).Take(count).ToList();
         }
     }
 }

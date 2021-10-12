@@ -155,9 +155,6 @@ export const BookProvider: React.FC<ItemProviderProps> = ({ children }) => {
       }
       // @ts-ignore
       const { event, book } = message;
-      log(message);
-      log(event);
-      log(book);
       log(`ws message, item ${event}`);
       if (event === 'create' || event === 'update') {
         dispatch({ type: SAVE_ITEM_SUCCEEDED, payload: { book } });

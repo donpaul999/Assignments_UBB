@@ -63,6 +63,13 @@ namespace BookABook.Controllers
         {
             return Ok(bookService.GetAll());
         }
+        
+        [HttpGet("count/{start}/{count}")]
+        public IActionResult GetSomeBooks(int start, int count)
+        {
+            return Ok(bookService.GetSomeBooks(start, count));
+        }
+
 
         [HttpGet("{id}")]
         public IActionResult GetBook(int id)

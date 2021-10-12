@@ -50,12 +50,12 @@ const BookEdit: React.FC<BookEditProps> = ({ history, match }) => {
   }, [match.params.id, books]);
   const handleSave = () => {
     const editedItem = book ? { ...book, name, author, publishDate, isBooked } : { name, author, publishDate, isBooked};
-    saveBook && saveBook(editedItem).then(() => { history.goBack(); });
+    saveBook && saveBook(editedItem).then(() => { history.push("/books"); });
   };
   const handleRemove = () => {
     const removeItem = book ? { ...book, name, author, publishDate, isBooked } : { name, author, publishDate, isBooked};
     log(removeItem);
-    removeBook && removeBook(removeItem).then(() => { history.goBack(); });
+    removeBook && removeBook(removeItem).then(() => { history.push("/books") });
   };
   log('render');
   return (

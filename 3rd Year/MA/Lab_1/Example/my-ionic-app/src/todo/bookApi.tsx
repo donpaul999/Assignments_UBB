@@ -35,6 +35,10 @@ export const getBooks: () => Promise<BookProps[]> = () => {
   return withLogs(axios.get(bookUrl, config), 'getBooks');
 }
 
+export const getBooksCount: (start:number, count: number) => Promise<BookProps[]> = (start, count) => {
+  return withLogs(axios.get(`${bookUrl}/count/${start}/${count}`, config), 'getBooks');
+}
+
 export const createBook: (item: BookProps) => Promise<BookProps[]> = item => {
   return withLogs(axios.post(bookUrl, item, config), 'createBook');
 }
