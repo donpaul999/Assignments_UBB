@@ -8,13 +8,13 @@ import java.util.concurrent.ConcurrentHashMap;
 /*
  1000 products
 
- 5 threads ~ 0.016 - 0.032 s
- 500 threads ~ 0.128 - 0.3 s
- 1000 threads ~ 0.288 - 0.4 s
+ 5 threads ~ 0.004 - 0.032 s
+ 500 threads ~ 0.108 - 0.3 s
+ 1000 threads ~ 0.152 - 0.4 s
  */
 
 public class Main {
-    private static final int NUMBER_OF_THREADS = 5;
+    private static final int NUMBER_OF_THREADS = 1000;
     private static final int NUMBER_OF_PRODUCTS = 1000;
 
     private static int expectedSum = 0;

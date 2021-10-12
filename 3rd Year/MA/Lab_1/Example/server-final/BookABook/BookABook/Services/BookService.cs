@@ -33,13 +33,30 @@ namespace BookABook.Services
         {
             return context.Books.ToList();
         }
-
+        
+        public Book GetBook(int id)
+        {
+            return context.Books.SingleOrDefault(book => book.Id == id);
+        }
+        
         public Book Update(Book book)
         {
             if (!context.Books.Any(book => book.Id == book.Id))
                 return null;
 
             context.Books.Update(book);
+            context.SaveChanges();
+
+            return book;
+        }
+        
+        public Book Remove(int Id)
+        {
+            Book book = context.Books.Find(Id);
+            if (book is null)
+                return null;
+
+            context.Books.Remove(book);
             context.SaveChanges();
 
             return book;

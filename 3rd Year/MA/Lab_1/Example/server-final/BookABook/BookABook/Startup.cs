@@ -43,7 +43,7 @@ namespace BookABook
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookABook", Version = "v1" });
             });
 
-            services.AddSingleton<IBroadcastHandler<Book>, BroadcastHandler<Book>>();
+            services.AddSingleton<IBroadcastHandler<Notification>, BroadcastHandler<Notification>>();
             services.AddScoped<IBookService, BookService>();
         }
 
@@ -64,6 +64,7 @@ namespace BookABook
             app.UseWebSockets();
 
             app.UseCors();
+
             app.UseAuthentication();
             app.UseAuthorization();
 

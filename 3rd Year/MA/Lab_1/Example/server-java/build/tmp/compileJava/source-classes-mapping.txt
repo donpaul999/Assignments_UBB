@@ -1,0 +1,8 @@
+en/ma/bookabook/dto/BookCreationDto.java
+ en.ma.bookabook.dto.BookCreationDto
+ en.ma.bookabook.dto.BookCreationDto$BookCreationDtoBuilder
+en/ma/bookabook/config/SwaggerConfig.java
+ en.ma.bookabook.config.SwaggerConfig
+en/ma/bookabook/dto/BookDto.java
+ en.ma.bookabook.dto.BookDto
+ en.ma.bookabook.dto.BookDto$BookDtoBuilder

@@ -24,20 +24,48 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './theme/style.css';
 import { BookProvider } from './todo/BookProvider';
+import {createTheme, ThemeProvider} from "@mui/material";
+import Login from "./pages/account/login/login";
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#111",
+      },
+      secondary: {
+        main: '#82b1ff',
+      },
+    },
+    typography: {
+      fontFamily: "Poppins, sans-serif"
+    }
+  });
+
+  return (
   <IonApp>
+    <ThemeProvider theme={theme}>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/register">
+          <Login />
+        </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
+  </ThemeProvider>
     <BookProvider>
       <IonReactRouter>
         <IonRouterOutlet>
           <Route path="/books" component={BookList} exact={true} />
           <Route path="/book" component={BookEdit} exact={true} />
           <Route path="/book/:id" component={BookEdit} exact={true} />
-          <Route exact path="/" render={() => <Redirect to="/books" />} />
         </IonRouterOutlet>
       </IonReactRouter>
     </BookProvider>
   </IonApp>
-);
+)};
 
 export default App;

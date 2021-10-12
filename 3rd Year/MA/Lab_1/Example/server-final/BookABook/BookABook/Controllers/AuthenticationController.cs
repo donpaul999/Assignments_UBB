@@ -33,13 +33,13 @@ namespace BookABook.Controllers
         [Route("register")]
         public async Task<IActionResult> Register(User userData)
         {
-            var doesUserExist = await userManager.FindByNameAsync(userData.Username);
+            var doesUserExist = await userManager.FindByEmailAsync(userData.Email);
             if (doesUserExist != null)
                 return Conflict("User already exists!");
 
             var user = new ApplicationUser
             {
-                UserName = userData.Username,
+                Email = userData.Email,
                 SecurityStamp = Guid.NewGuid().ToString()
             };
 
@@ -58,7 +58,7 @@ namespace BookABook.Controllers
         [Route("login")]
         public async Task<IActionResult> Login(User userData)
         {
-            var user = await userManager.FindByNameAsync(userData.Username);
+            var user = await userManager.FindByEmailAsync(userData.Email);
             if (user == null)
                 return Unauthorized();
 

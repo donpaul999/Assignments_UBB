@@ -7,6 +7,6 @@ namespace BookABook.BookUpdates
     {
         Task AddConnection(WebSocket webSocket);
 
-        Task Broadcast(T obj);
+        void Broadcast(T obj);
     }
 }

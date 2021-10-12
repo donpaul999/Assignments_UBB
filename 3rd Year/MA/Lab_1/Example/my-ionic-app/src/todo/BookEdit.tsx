@@ -9,13 +9,14 @@ import {
   IonLoading,
   IonPage, IonSelectOption, IonSelect,
   IonTitle,
-  IonToolbar
+  IonToolbar,
+  useIonAlert
 } from '@ionic/react';
 import { getLogger } from '../core';
 import { ItemContext } from './BookProvider';
 import { RouteComponentProps } from 'react-router';
 import { BookProps } from './BookProps';
-import {checkbox} from "ionicons/icons";
+import {removeBook} from "./bookApi";
 
 const log = getLogger('ItemEdit');
 
@@ -30,10 +31,15 @@ const BookEdit: React.FC<BookEditProps> = ({ history, match }) => {
   const [publishDate, setPublishDate] = useState('');
   const [isBooked, setIsBooked] = useState('');
   const [book, setItem] = useState<BookProps>();
+  const [present] = useIonAlert();
   useEffect(() => {
     log('useEffect');
     const routeId = match.params.id || '';
-    const book = books?.find(it => it.id === routeId);
+    log(books);
+    log(routeId);
+    // @ts-ignore
+    const book = books?.find(it => it.id.toString() === routeId);
+    log(book);
     setItem(book);
     if (book) {
       setName(book.name);
@@ -45,6 +51,11 @@ const BookEdit: React.FC<BookEditProps> = ({ history, match }) => {
   const handleSave = () => {
     const editedItem = book ? { ...book, name, author, publishDate, isBooked } : { name, author, publishDate, isBooked};
     saveBook && saveBook(editedItem).then(() => { history.goBack(); });
+  };
+  const handleRemove = () => {
+    const removeItem = book ? { ...book, name, author, publishDate, isBooked } : { name, author, publishDate, isBooked};
+    log(removeItem);
+    removeBook && removeBook(removeItem).then(() => { history.goBack(); });
   };
   log('render');
   return (
@@ -80,6 +91,19 @@ const BookEdit: React.FC<BookEditProps> = ({ history, match }) => {
         {savingError && (
           <div>{savingError.message || 'Failed to save book'}</div>
         )}
+        <IonButton color="danger"
+                   onClick={() =>
+                       present({
+                         cssClass: 'my-css',
+                         header: 'Alert',
+                         message: 'Are you sure you want to delete this book?',
+                         buttons: [
+                           'Cancel',
+                           { text: 'Yes', handler: () => {handleRemove()} },
+                         ],
+                       })
+                   }>Delete</IonButton>
+
       </IonContent>
     </IonPage>
   );

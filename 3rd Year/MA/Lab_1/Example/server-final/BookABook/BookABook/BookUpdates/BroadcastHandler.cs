@@ -20,10 +20,10 @@ namespace BookABook.BookUpdates
             return handler.WaitUntilClosed();
         }
 
-        public Task Broadcast(T obj)
-        {
-            return Task.WhenAll(socketConnections.Select(socket =>
-                HandleBroadcastForSocket(obj, socket)));
+        public void Broadcast(T obj)
+        { 
+            socketConnections.ToList().ForEach(socket =>
+                HandleBroadcastForSocket(obj, socket));
         }
 
         private async Task HandleBroadcastForSocket(T obj, SocketConnectionHandler socket)

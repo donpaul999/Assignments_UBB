@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/books
+    username: root
+    password: rootroot
+    driverClassName: com.mysql.cj.jdbc.Driver
+server:
+  servlet:
+    context-path: /vethouse/api/v1

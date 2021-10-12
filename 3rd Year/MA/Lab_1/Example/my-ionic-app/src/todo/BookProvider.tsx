@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { getLogger } from '../core';
 import { BookProps } from './BookProps';
-import { createBook, getBooks, newWebSocket, updateBook } from './bookApi';
+import { createBook, getBooks, newWebSocket, updateBook, removeBook } from './bookApi';
 
 const log = getLogger('BookProvider');
 
@@ -33,6 +33,9 @@ const FETCH_ITEMS_FAILED = 'FETCH_ITEMS_FAILED';
 const SAVE_ITEM_STARTED = 'SAVE_ITEM_STARTED';
 const SAVE_ITEM_SUCCEEDED = 'SAVE_ITEM_SUCCEEDED';
 const SAVE_ITEM_FAILED = 'SAVE_ITEM_FAILED';
+const DELETE_ITEM_STARTED = 'DELETE_ITEM_STARTED';
+const DELETE_ITEM_SUCCEEDED = 'DELETE_ITEM_SUCCEEDED';
+const DELETE_ITEM_FAILED = 'DELETE_ITEM_FAILED';
 
 const reducer: (state: BookState, action: ActionProps) => BookState =
   (state, { type, payload }) => {
@@ -47,8 +50,8 @@ const reducer: (state: BookState, action: ActionProps) => BookState =
         return { ...state, savingError: null, saving: true };
       case SAVE_ITEM_SUCCEEDED:
         const books = [...(state.books || [])];
-        log(books);
-        const item = payload.item;
+        const item = payload.book;
+        log(item);
         const index = books.findIndex(it => it.id === item.id);
         if (index === -1) {
           books.splice(0, 0, item);
@@ -57,6 +60,16 @@ const reducer: (state: BookState, action: ActionProps) => BookState =
         }
         return { ...state, books, saving: false };
       case SAVE_ITEM_FAILED:
+        return { ...state, savingError: payload.error, saving: false };
+      case DELETE_ITEM_STARTED:
+        return { ...state, savingError: null, saving: true };
+      case DELETE_ITEM_SUCCEEDED:
+        const allBooks = [...(state.books || [])];
+        const itemRemoved = payload.book;
+        log(itemRemoved);
+        const newBooks = allBooks.filter((item) => item.id !== itemRemoved.id);
+        return { ...state, books: newBooks, saving: false };
+      case DELETE_ITEM_FAILED:
         return { ...state, savingError: payload.error, saving: false };
       default:
         return state;
@@ -107,13 +120,26 @@ export const BookProvider: React.FC<ItemProviderProps> = ({ children }) => {
     }
   }
 
+  async function deleteBookCallback(item: BookProps) {
+    try {
+      log('deleteBook started');
+      dispatch({ type: DELETE_ITEM_STARTED });
+      await removeBook(item);
+      log('deleteBook succeeded');
+      dispatch({ type: DELETE_ITEM_SUCCEEDED, payload: { book: item } });
+    } catch (error) {
+      log('deleteBook failed');
+      dispatch({ type: SAVE_ITEM_FAILED, payload: { error } });
+    }
+  }
+
   async function saveBookCallback(item: BookProps) {
     try {
       log('saveBook started');
       dispatch({ type: SAVE_ITEM_STARTED });
       const savedItem = await (item.id ? updateBook(item) : createBook(item));
       log('saveBook succeeded');
-      dispatch({ type: SAVE_ITEM_SUCCEEDED, payload: { item: savedItem } });
+      dispatch({ type: SAVE_ITEM_SUCCEEDED, payload: { book: savedItem } });
     } catch (error) {
       log('saveBook failed');
       dispatch({ type: SAVE_ITEM_FAILED, payload: { error } });
@@ -127,10 +153,16 @@ export const BookProvider: React.FC<ItemProviderProps> = ({ children }) => {
       if (canceled) {
         return;
       }
-      const { event, payload: { book }} = message;
+      // @ts-ignore
+      const { event, book } = message;
+      log(message);
+      log(event);
+      log(book);
       log(`ws message, item ${event}`);
-      if (event === 'created' || event === 'updated') {
+      if (event === 'create' || event === 'update') {
         dispatch({ type: SAVE_ITEM_SUCCEEDED, payload: { book } });
+      } else if (event === 'remove') {
+        dispatch({ type: DELETE_ITEM_SUCCEEDED, payload: { book } });
       }
     });
     return () => {

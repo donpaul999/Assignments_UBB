@@ -1,0 +1,45 @@
+.centeredContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: white;
+}
+
+  .applicationTitle {
+    font-weight: bold;
+    flex: 0;
+    flex-direction: row;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .logInText {
+    flex: 0;
+  }
+
+  .row {
+    display: flex;
+    margin: 4em 0 3em;
+  }
+
+  .largeText {
+    font-size: 1.75rem;
+    color: #111;
+  }
+
+  .inputEmail {
+    margin-top: 3rem;
+  }
+
+  .inputPassword {
+    margin-top: 1rem;
+  }
+
+  .alertContainer {
+    margin-top: 1rem;
+  }
+
+  .registerButton {
+    margin-right: 1rem;
+  }
