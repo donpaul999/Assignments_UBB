@@ -1,65 +1,80 @@
 import { IonContent, IonPage, IonTitle } from "@ionic/react";
-import { Alert, AlertTitle, Button, TextField } from "@mui/material";
+import { Alert, AlertTitle, Button, IconButton, TextField } from "@mui/material";
 import classNames from "classnames";
 import { observer } from "mobx-react";
+import ArrowBack from "@mui/icons-material/ArrowBackSharp";
 import styles from "./register.module.scss";
-import React, {useContext} from "react";
-import login from "../login/login";
-import {AuthorizedContext, authorizedStore} from "../../../infrastructure/authorized/authorized-store";
-import {LoginContext} from "../login/login-store";
+import { useContext, useEffect } from "react";
+import { RegisterContext } from "./register-store";
+import { useHistory } from "react-router";
+import React from "react";
 
 const Register = () => {
-    const authorizedStore = useContext(AuthorizedContext);
+    const { goBack } = useHistory();
+
     const {
         user,
+        errorMessage,
         setEmail,
         setPassword,
-        isLoading,
-        errorMessage,
-        login
-    } = useContext(LoginContext);
+        setConfirmPassword,
+        register,
+        reset
+    } = useContext(RegisterContext);
+
+    useEffect(() => {
+        return reset;
+    }, []);
+
+    const arePasswordsDifferent = user.password !== user.confirmPassword;
 
     return (
         <IonPage>
             <IonContent fullscreen>
-                <div className={styles.centeredContainer}>
-                    <IonTitle className={classNames(styles.logInText, styles.largeText)}>
-                        Log in
-                    </IonTitle>
-                    <TextField
-                        label="Email"
-                        type="email"
-                        className={styles.inputEmail}
-                        value={user.email}
-                        onChange={e => setEmail(e.target.value)} />
-                    <TextField
-                        label="Password"
-                        type="password"
-                        className={styles.inputPassword}
-                        value={user.password}
-                        onChange={e => setPassword(e.target.value)} />
-                    <TextField
-                        label="Confirm password"
-                        type="password"
-                        className={styles.inputPassword}
-                        value={user.password}
-                        onChange={e => setPassword(e.target.value)} />
-                    {errorMessage && (
-                        <Alert
-                            severity="error"
-                            className={styles.alertContainer}>
-                            <AlertTitle><strong>Error</strong></AlertTitle>
-                            {errorMessage}
-                        </Alert>
-                    )}
-                    <div className={classNames(styles.row)}>
-                        <Button className={styles.registerButton}>Register</Button>
+                <div className={styles.mainContainer}>
+                    <IconButton className={styles.backButton} onClick={goBack}>
+                        <ArrowBack color="primary" />
+                    </IconButton>
+                    <div className={styles.centeredContainer}>
+                        <IonTitle className={classNames(styles.logInText, styles.largeText)}>
+                            Register
+                        </IonTitle>
+                        <TextField
+                            label="Email"
+                            type="email"
+                            className={styles.inputEmail}
+                            value={user.email}
+                            onChange={e => setEmail(e.target.value)} />
+                        <TextField
+                            label="Password"
+                            type="password"
+                            helperText="Should contain a small letter, capital letter, digit and special symbol"
+                            className={styles.inputPassword}
+                            value={user.password}
+                            onChange={e => setPassword(e.target.value)} />
+                        <TextField
+                            label="Confirm password"
+                            type="password"
+                            className={styles.inputPassword}
+                            value={user.confirmPassword}
+                            helperText={arePasswordsDifferent && "The passwords are different!"}
+                            error={arePasswordsDifferent}
+                            onChange={e => setConfirmPassword(e.target.value)} />
+                        {errorMessage && (
+                            <Alert
+                                severity="error"
+                                className={styles.alertContainer}>
+                                <AlertTitle><strong>Error</strong></AlertTitle>
+                                {errorMessage}
+                            </Alert>
+                        )}
                         <Button
                             variant="contained"
                             color="secondary"
-                            disabled={!user.email || !user.password}
-                            onClick={() => login(authorizedStore)}>
-                            Log in
+                            className={styles.registerButton}
+                            disabled={!user.email || !user.password || !user.confirmPassword}
+                            onClick={register}>
+                            Create account
                         </Button>
                     </div>
                 </div>

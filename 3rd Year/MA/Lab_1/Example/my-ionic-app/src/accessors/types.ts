@@ -16,3 +16,8 @@ export const EMPTY_LOGIN_USER: LoginUser = {
     email: "",
     password: ""
 }
+
+export const EMPTY_REGISTER_USER: RegisterUser = {
+    ...EMPTY_LOGIN_USER,
+    confirmPassword: ""
+}

@@ -10,4 +10,8 @@ export const login = async (user: LoginUser) => {
     setToken(token);
 }
 
-export const register = (user: RegisterUser) => post(`${BASE_ACCOUNT_URL}/register`, user);
+export const register = async (user: RegisterUser) => {
+    const response = await post(`${BASE_ACCOUNT_URL}/register`, user);
+
+    if (response) throw response;
+}

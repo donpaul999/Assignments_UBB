@@ -5,47 +5,38 @@
   height: 100%;
   background-color: white;
 
-  .carGif {
-    height: 2em;
-    width: 2em;
+  .backButton {
+    margin: 1rem;
+    padding: 1rem;
   }
 
-  .applicationTitle {
-    font-weight: bold;
-    flex: 0;
-    flex-direction: row;
-    font-size: inherit;
-    color: inherit;
-  }
-
-  .logInText {
-    flex: 0;
-  }
-
-  .row {
+  .centeredContainer {
     display: flex;
-    justify-content: baseline;
-    margin: 4em 0 3em;
-  }
+    flex-direction: column;
+    align-items: center;
 
-  .largeText {
-    font-size: 1.75rem;
-    color: #111;
-  }
+    .logInText {
+      flex: 0;
+      font-size: 1.75rem;
+      color: #111;
+    }
 
-  .inputEmail {
-    margin-top: 3rem;
-  }
+    .inputEmail {
+      margin-top: 3rem;
+      min-width: 256px;
+    }
 
-  .inputPassword {
-    margin-top: 1rem;
-  }
+    .inputPassword {
+      margin-top: 1rem;
+      width: 256px;
+    }
 
-  .alertContainer {
-    margin-top: 1rem;
-  }
+    .alertContainer {
+      margin: 1rem 2rem 0;
+    }
 
-  .registerButton {
-    margin-right: 1rem;
+    .registerButton {
+      margin-top: 4rem;
+    }
   }
 }

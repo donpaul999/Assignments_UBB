@@ -34,6 +34,11 @@ export class LoginStore {
             });
         }
     }
+    public reset = () => {
+        this.user = EMPTY_LOGIN_USER;
+        this.isLoading = false;
+        this.errorMessage = "";
+    }
 }
 
 export const loginStore = new LoginStore();

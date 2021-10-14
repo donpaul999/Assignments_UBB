@@ -2,14 +2,16 @@ import { IonContent, IonImg, IonPage, IonTitle } from "@ionic/react";
 import styles from "./login.module.scss";
 import classNames from "classnames";
 import { Alert, AlertTitle, Button, TextField } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LoginContext } from "./login-store";
 import { LoadingOverlay } from "../../../components";
 import { observer } from "mobx-react";
 import { AuthorizedContext } from "../../../infrastructure";
 import React from "react";
+import {useHistory} from "react-router";
 
 const Login = () => {
+    const { push } = useHistory();
     const authorizedStore = useContext(AuthorizedContext);
     const {
         user,
@@ -17,8 +19,13 @@ const Login = () => {
         setPassword,
         isLoading,
         errorMessage,
-        login
+        login,
+        reset
     } = useContext(LoginContext);
+
+    useEffect(() => {
+        return reset;
+    }, []);
 
     return (
         <IonPage>
@@ -51,7 +58,11 @@ const Login = () => {
                         </Alert>
                     )}
                     <div className={classNames(styles.row)}>
-                        <Button className={styles.registerButton}>Register</Button>
+                        <Button
+                            className={styles.registerButton}
+                            onClick={() => push("/register")}>
+                            Register
+                        </Button>
                         <Button
                             variant="contained"
                             color="secondary"
