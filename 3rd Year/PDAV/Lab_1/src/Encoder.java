@@ -74,8 +74,7 @@ public class Encoder {
         for (int i = 0; i < 8; i += 2) {
             newC = 0;
             for (int j = 0; j < 8; j += 2) {
-                double result = average(i, j, matrix);
-                newMatrix[newL][newC] = result;
+                newMatrix[newL][newC] = average(i, j, matrix);;
                 newC ++;
             }
             newL ++;

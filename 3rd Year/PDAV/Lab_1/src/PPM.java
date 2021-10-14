@@ -1,10 +1,9 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class PPM {
-    private String imgPath;
+    private final String imgPath;
     private String format;
     private int height;
     private int width;

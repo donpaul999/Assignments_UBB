@@ -86,20 +86,16 @@ public class Decoder {
                     b = 255;
                 }
 
-                fileWriter.write(Integer.toString(r));
-                fileWriter.write("\n");
+                fileWriter.write(Integer.toString(r) + '\n');
+                fileWriter.write(Integer.toString(g) + '\n');
+                fileWriter.write(Integer.toString(b) + '\n');
 
-                fileWriter.write(Integer.toString(g));
-                fileWriter.write("\n");
-
-                fileWriter.write(Integer.toString(b));
-                fileWriter.write("\n");
             }
         }
         fileWriter.close();
     }
 
-    private double[][] decodeMatrix(Block block, double[][] matrix) {
+    private void decodeMatrix(Block block, double[][] matrix) {
         int line = block.getLine(), col;
         String type = block.getType();
         double[][] blockMatrix = block.getMatrix();
@@ -112,7 +108,5 @@ public class Decoder {
             }
             line ++;
         }
-
-        return matrix;
     }
 }
