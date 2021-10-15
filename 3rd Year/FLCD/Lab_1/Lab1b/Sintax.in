@@ -3,16 +3,15 @@ program = "[START]" "[END]"
 
 declaration_statement = "let" identifier "$" type ";"
 
-type = "integer" | "float" | "string" | "array_integers"
+type = "number" | "string" | "array_numbers"
 
-array_integers = "[" integer {"," integer} "]"
+array_numbers = "[" number {"," number} "]"
 digit = "0" | "1" | ... | "9"
-integer = digit | digit {digit}
+number = digit | digit {digit}
 
 expression = expression ("+" | "-") term | term
 term = term ("*" | "/" | "%") factor | factor
 factor = "(" expression ")" | const | identifier
-
 
 assign_statement = identifier "<-" expression ";"
 

@@ -12,7 +12,7 @@ Lexic:
             ( ) [ ] { } : ; space
 
         -reserved words:
-            let $ integer float string array_integers if while for read print [START] [END]
+            let $ number string array_numbers if while for read print [START] [END]
 
     b. Identifiers:
         -it is a sequence and chars and digits, the first letter being a letter:
@@ -21,8 +21,8 @@ Lexic:
             identifier = letter | letter {letter} {digit}
 
     c. Constants:
-        -integer:
-            integer = digit {digit}
+        -number:
+            number = digit {digit}
         -char:
             char = 'letter' | 'digit'
         -string:

@@ -1,7 +1,7 @@
 [START]
-let n $ integer;
-let x $ integer;
-let sum $ integer;
+let n $ number;
+let x $ number;
+let sum $ number;
 
 read n
 

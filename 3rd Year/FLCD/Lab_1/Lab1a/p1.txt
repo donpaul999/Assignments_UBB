@@ -1,8 +1,8 @@
 [START]
-let n1 $ integer;
-let n2 $ integer;
-let n3 $ integer;
-let max $ integer;
+let n1 $ number;
+let n2 $ number;
+let n3 $ number;
+let max $ number;
 
 read n1, n2, n3;
 
