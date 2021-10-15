@@ -1,13 +1,15 @@
+import adt.Pair;
+
 import java.util.ArrayList;
 
 public class SymbolTable {
     private ArrayList<ArrayList<String>> symbols;
-    private int length;
+    private int size;
 
-    public SymbolTable(int length) {
-        this.length = length;
+    public SymbolTable(int size) {
+        this.size = size;
         this.symbols = new ArrayList<>();
-        for (int i = 0; i < length; ++i) {
+        for (int i = 0; i < size; ++i) {
             this.symbols.add(new ArrayList<>());
         }
     }
@@ -15,7 +17,7 @@ public class SymbolTable {
     public boolean addSymbol(String symbol) {
         int hashValue = hash(symbol);
 
-        if(symbols.get(hashValue).contains(symbol)) {
+        if (symbols.get(hashValue).contains(symbol)) {
             return false;
         }
 
@@ -24,7 +26,7 @@ public class SymbolTable {
     }
 
     private int hash(String symbol) {
-        return symbol.codePoints().sum() % length;
+        return symbol.codePoints().sum() % size;
     }
 
     public boolean containsSymbol(String symbol) {
@@ -34,11 +36,18 @@ public class SymbolTable {
     public boolean removeSymbol(String symbol) {
         int hashValue = hash(symbol);
 
-        if(!symbols.get(hashValue).contains(symbol)) {
+        if (!symbols.get(hashValue).contains(symbol)) {
             return false;
         }
 
         symbols.get(hashValue).remove(symbol);
         return true;
+    }
+
+    public Pair getPosition(String symbol) {
+        if (!containsSymbol(symbol))
+            return null;
+
+        return new Pair(hash(symbol), symbols.get(hash(symbol)).indexOf(symbol));
     }
 }
