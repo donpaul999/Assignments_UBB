@@ -25,7 +25,7 @@
     "@types/react-dom": "^16.9.10",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
-    "axios": "^0.20.0",
+    "axios": "^0.21.2",
     "classnames": "^2.3.1",
     "ionicons": "^5.4.0",
     "mobx": "^6.3.3",
