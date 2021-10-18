@@ -6,13 +6,11 @@ import { useContext, useEffect } from "react";
 import { LoginContext } from "./login-store";
 import { LoadingOverlay } from "../../../components";
 import { observer } from "mobx-react";
-import { AuthorizedContext } from "../../../infrastructure";
 import React from "react";
 import {useHistory} from "react-router";
 
-const Login = () => {
+const Index = () => {
     const { push } = useHistory();
-    const authorizedStore = useContext(AuthorizedContext);
     const {
         user,
         setEmail,
@@ -26,6 +24,12 @@ const Login = () => {
     useEffect(() => {
         return reset;
     }, []);
+
+    const handleLogin = async () => {
+        if (await login()) {
+            push("/books");
+        }
+    }
 
     return (
         <IonPage>
@@ -67,7 +71,7 @@ const Login = () => {
                             variant="contained"
                             color="secondary"
                             disabled={!user.email || !user.password}
-                            onClick={() => login(authorizedStore)}>
+                            onClick={handleLogin}>
                             Log in
                         </Button>
                     </div>
@@ -78,4 +82,4 @@ const Login = () => {
     );
 }
 
-export default observer(Login);
+export default observer(Index);

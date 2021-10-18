@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b75510ca-d627-42fd-98cb-a98a8dee8895" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Example/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Example/data/books.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Example/data/librarians.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Example/data/users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Example/server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b75510ca-d627-42fd-98cb-a98a8dee8895" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +33,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633950422062</updated>
       <workItem from="1633950423079" duration="310000" />
+      <workItem from="1634465991716" duration="137000" />
     </task>
     <servers />
   </component>

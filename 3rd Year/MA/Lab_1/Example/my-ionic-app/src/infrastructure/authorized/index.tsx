@@ -1,11 +1,24 @@
 import { observer } from "mobx-react";
-import { PropsWithChildren, useContext } from "react"
+import { useContext, useEffect } from "react"
 import { AuthorizedContext } from "./authorized-store"
 
-const Authorized = ({ children }: PropsWithChildren<any>) => {
-    const { isAuthorized } = useContext(AuthorizedContext);
-
-    return isAuthorized ? children : null;
+interface Props {
+    authorized?: any;
+    notAuthorized?: any;
 }
 
-export default observer(Authorized);
+const AuthorizedView = ({ authorized, notAuthorized }: Props) => {
+    const { isAuthorized, initialize } = useContext(AuthorizedContext);
+
+    useEffect(() => {
+        initialize();
+    }, [initialize]);
+
+    if (isAuthorized === null) {
+        return null;
+    }
+
+    return isAuthorized ? authorized : notAuthorized;
+}
+
+export default observer(AuthorizedView);

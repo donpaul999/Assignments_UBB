@@ -4,13 +4,14 @@ import classNames from "classnames";
 import { observer } from "mobx-react";
 import ArrowBack from "@mui/icons-material/ArrowBackSharp";
 import styles from "./register.module.scss";
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { RegisterContext } from "./register-store";
 import { useHistory } from "react-router";
-import React from "react";
 
 const Register = () => {
     const { goBack } = useHistory();
+
+    const { push } = useHistory();
 
     const {
         user,
@@ -68,14 +69,21 @@ const Register = () => {
                                 {errorMessage}
                             </Alert>
                         )}
-                        <Button
-                            variant="contained"
-                            color="secondary"
-                            className={styles.registerButton}
-                            disabled={!user.email || !user.password || !user.confirmPassword}
-                            onClick={register}>
-                            Create account
-                        </Button>
+                        <div className={classNames(styles.row)}>
+                            <Button
+                                className={styles.registerButton}
+                                onClick={() => push("/login")}>
+                                Log In
+                            </Button>
+                            <Button
+                                variant="contained"
+                                color="secondary"
+                                className={styles.registerButton}
+                                disabled={!user.email || !user.password || !user.confirmPassword}
+                                onClick={register}>
+                                Create account
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </IonContent>

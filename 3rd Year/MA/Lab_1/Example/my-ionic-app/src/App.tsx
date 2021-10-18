@@ -2,7 +2,6 @@ import React from 'react';
 import { Redirect, Route, Switch } from "react-router-dom";
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { BookEdit, BookList } from './todo';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -21,22 +20,47 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import './theme/variables.css';
-import './theme/style.css';
-import { BookProvider } from './todo/BookProvider';
-import {createTheme, ThemeProvider} from "@mui/material";
-import Login from "./pages/account/login/login";
-import Register from "./pages/account/register/register";
+import "./theme/variables.css";
+import Login from "./pages/account/login";
+import Register from "./pages/account/register";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { AuthorizedView} from "./infrastructure";
+import IndexPage from "./pages/books/index";
+import {BookProvider} from "./todo/BookProvider";
+import {BookEdit, BookList} from "./todo";
 
-const App: React.FC = () => {
+const authorizedRoutes = <>
+  <BookProvider>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route path="*">
+          <Redirect to="/books" />
+        </Route>
+        <Route path="/books" component={BookList} exact={true} />
+        <Route path="/book" component={BookEdit} exact={true} />
+        <Route path="/book/:id" component={BookEdit} exact={true} />
+      </IonRouterOutlet>
+    </IonReactRouter>
+  </BookProvider>
+</>;
+
+const notAuthorizedRoutes = <>
+  <Route exact path="/login">
+    <Login />
+  </Route>
+  <Route exact path="/register">
+    <Register />
+  </Route>
+  <Route path="*">
+    <Redirect to="/login" />
+  </Route>
+</>;
+
+const App = () => {
   const theme = createTheme({
     palette: {
-      primary: {
-        main: "#111",
-      },
-      secondary: {
-        main: '#82b1ff',
-      },
+      primary: { main: "#111" },
+      secondary: { main: "#82b1ff" },
     },
     typography: {
       fontFamily: "Poppins, sans-serif"
@@ -44,34 +68,20 @@ const App: React.FC = () => {
   });
 
   return (
-  <IonApp>
-    <ThemeProvider theme={theme}>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Switch>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route path="*">
-            <Redirect to="/login" />
-          </Route>
-        </Switch>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </ThemeProvider>
-    <BookProvider>
-      <IonReactRouter>
-        <IonRouterOutlet>
-          <Route path="/books" component={BookList} exact={true} />
-          <Route path="/book" component={BookEdit} exact={true} />
-          <Route path="/book/:id" component={BookEdit} exact={true} />
-        </IonRouterOutlet>
-      </IonReactRouter>
-    </BookProvider>
-  </IonApp>
-)};
+      <IonApp>
+        <ThemeProvider theme={theme}>
+          <IonReactRouter>
+            <IonRouterOutlet>
+              <Switch>
+                <AuthorizedView
+                    authorized={authorizedRoutes}
+                    notAuthorized={notAuthorizedRoutes} />
+              </Switch>
+            </IonRouterOutlet>
+          </IonReactRouter>
+        </ThemeProvider>
+      </IonApp>
+  );
+}
 
 export default App;

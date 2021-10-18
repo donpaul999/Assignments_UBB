@@ -21,3 +21,19 @@ export const EMPTY_REGISTER_USER: RegisterUser = {
     ...EMPTY_LOGIN_USER,
     confirmPassword: ""
 }
+
+export interface Book {
+    id: number;
+    name: string;
+    author: string;
+    publishDate: string;
+    isBooked: boolean;
+}
+
+export const EMPTY_CAR: Book = {
+    id: 0,
+    name: "",
+    author: "",
+    publishDate: "0000-00-00",
+    isBooked: false
+}

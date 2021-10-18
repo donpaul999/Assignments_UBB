@@ -39,6 +39,7 @@ namespace BookABook.Controllers
 
             var user = new ApplicationUser
             {
+                UserName = userData.Email,
                 Email = userData.Email,
                 SecurityStamp = Guid.NewGuid().ToString()
             };

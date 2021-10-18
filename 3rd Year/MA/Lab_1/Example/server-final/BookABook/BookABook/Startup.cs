@@ -14,6 +14,8 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System.Threading.Tasks;
+
 namespace BookABook
 {
     public class Startup
@@ -24,6 +26,20 @@ namespace BookABook
         }
 
         public IConfiguration Configuration { get; }
+        
+        private JwtBearerEvents webSocketBearerHandler = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                if (context.Request.Headers.ContainsKey("sec-websocket-protocol") && context.HttpContext.WebSockets.IsWebSocketRequest)
+                {
+                    var token = context.Request.Headers["sec-websocket-protocol"].ToString();
+                    context.Token = token.Substring(token.IndexOf(',') + 1).Trim();
+                    context.Request.Headers["sec-websocket-protocol"] = "access_token";
+                }
+                return Task.CompletedTask;
+            }
+        };
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -105,6 +121,7 @@ namespace BookABook
                     IssuerSigningKey = new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
                 };
+                options.Events = webSocketBearerHandler;
             });
         }
     }

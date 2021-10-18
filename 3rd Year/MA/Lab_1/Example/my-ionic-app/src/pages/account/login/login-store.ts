@@ -3,7 +3,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 import { EMPTY_LOGIN_USER, LoginUser } from "../../../accessors/types";
 import { login } from "../../../accessors/account-accessor";
 import { isString } from "../../../shared/type-helpers";
-import { AuthorizedStore } from "../../../infrastructure/authorized/authorized-store";
+import { authorizedStore } from "../../../infrastructure";
 
 export class LoginStore {
     public user: LoginUser = EMPTY_LOGIN_USER;
@@ -18,14 +18,18 @@ export class LoginStore {
 
     public setPassword = (password: string) => this.user.password = password;
 
-    public login = async (authorizedStore: AuthorizedStore) => {
+    public login = async () => {
         this.isLoading = true;
         let error = "";
 
         try {
             await login(this.user);
-        } catch (exception) {
-            error = "Email or password is incorrect, try again!";
+        } catch (exception: any) {
+            if (isString(exception)) {
+                error = exception;
+            } else {
+                error = "Email or password is incorrect, try again!";
+            }
         } finally {
             runInAction(() => {
                 authorizedStore.checkAuthorization();
@@ -33,7 +37,10 @@ export class LoginStore {
                 this.isLoading = false;
             });
         }
+
+        return !error;
     }
+
     public reset = () => {
         this.user = EMPTY_LOGIN_USER;
         this.isLoading = false;

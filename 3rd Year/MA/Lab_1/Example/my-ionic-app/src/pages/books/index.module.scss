@@ -1,0 +1,23 @@
+.applicationTitle {
+  font-weight: bold;
+  flex-direction: row;
+  font-size: 1.75rem;
+  color: #111;
+  text-align: center;
+  padding: 0.5em;
+}
+
+button.addButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #fafafa;
+
+  &:hover {
+    background-color: #82b1ff;
+
+    & > svg {
+      color: #fafafacc;
+    }
+  }
+}
