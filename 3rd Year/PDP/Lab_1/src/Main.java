@@ -8,9 +8,20 @@ import java.util.*;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/*
+Number of products: 1000
+Threads:
+ 5 -> 0.08 seconds
+ 500 -> 0.069 seconds
+ 1000 -> 0.0.093 seconds
+
+ Mutex protects for each run the modification of the quantity of each product in order to avoid the deadlock.
+ A verification occures every 10 ms.
+ */
+
 public class Main {
     private static final int NUMBER_OF_THREADS = 1000;
-    private static final int NUMBER_OF_PRODUCTS = 10000;
+    private static final int NUMBER_OF_PRODUCTS = 1000;
 
     private static ArrayList<Product> products = new ArrayList<>();
     private static ReadWriteLock verifyLock;
