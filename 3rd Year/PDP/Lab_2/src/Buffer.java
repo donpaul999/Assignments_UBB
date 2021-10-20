@@ -36,7 +36,7 @@ public class Buffer {
 
             Integer value = queue.poll();
             if (value != null) {
-                System.out.println(Thread.currentThread() + " consumed " + value + " into the queue");
+                System.out.println(Thread.currentThread() + " used " + value + " from the queue");
                 condition.signal();
             }
             return value;

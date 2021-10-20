@@ -4,6 +4,7 @@ using BookABook.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using BookABook.Extensions;
 
 namespace BookABook.Controllers
 {
@@ -11,7 +12,7 @@ namespace BookABook.Controllers
     [Route("api/[controller]")]
     public class BookController : ControllerBase
     {
-        private const int BAD_REQUEST_STATUS_CODE = 400;
+        private static int BAD_REQUEST_STATUS_CODE = 400;
 
         private readonly IBookService bookService;
         private readonly IBroadcastHandler<Notification> broadcastHandler;
@@ -25,8 +26,7 @@ namespace BookABook.Controllers
         [HttpPost]
         public IActionResult CreateBook(Book book)
         {
-            var newBook = bookService.Create(book);
-
+            var newBook = bookService.Create(book.AttachUserId(this));
             if (newBook == null) return BadRequest();
 
             broadcastHandler.Broadcast(new Notification{ Event="create", Book=newBook } );
@@ -37,15 +37,15 @@ namespace BookABook.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateBook(Book book)
         {
-            var updatedBook = bookService.Update(book);
-
+            var updatedBook = bookService.Update(book.AttachUserId(this));
+            
             if (updatedBook == null) return NotFound();
             
             broadcastHandler.Broadcast(new Notification{ Event="update", Book=updatedBook } );
             
             return Ok(updatedBook);
         }
-    
+        
         [HttpDelete("{id}")]
         public IActionResult RemoveBook(int Id)
         {
@@ -56,6 +56,18 @@ namespace BookABook.Controllers
             broadcastHandler.Broadcast(new Notification{ Event="remove", Book=removedBook } );
             
             return Ok(removedBook);
+        }
+        
+        [HttpGet("available")]
+        public IActionResult GetAvailableBooks()
+        {
+            return Ok(bookService.GetAvailable());
+        }
+
+        [HttpGet("related")]
+        public IActionResult GetRelatedBooks()
+        {
+            return Ok(bookService.GetRelated());
         }
         
         [HttpGet]

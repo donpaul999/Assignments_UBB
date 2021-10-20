@@ -1,0 +1,27 @@
+.notFound {
+  margin: 3em;
+  text-align: center;
+  font-style: italic;
+}
+
+.itemContainer {
+  position: relative;
+  cursor: pointer;
+
+  .itemDetails {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0.1rem;
+      color: black;
+    }
+  }
+}

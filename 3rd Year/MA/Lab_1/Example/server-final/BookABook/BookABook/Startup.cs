@@ -46,6 +46,8 @@ namespace BookABook
         {
             ConfigureDatabase(services);
             ConfigureAuthentication(services);
+            
+            services.AddHttpContextAccessor();
             services.AddSignalR();
 
             services.AddCors(config =>

@@ -1,50 +1,51 @@
-import { IonContent, IonPage, IonTitle } from "@ionic/react";
-import { Fab, Tab, Tabs } from "@mui/material";
+import { IonContent, IonImg, IonPage, IonTitle } from "@ionic/react";
+import { Fab, IconButton, Tab, Tabs } from "@mui/material";
 import { Box } from "@mui/system";
-import { useState } from "react";
+import React, { useContext } from "react";
 import SwipeableViews from "react-swipeable-views";
 import AddIcon from '@mui/icons-material/AddSharp';
 import styles from "./index.module.scss";
 import { ToastService, WithDataProvider, withDataProvider } from "../../infrastructure";
+import NewBookList from "./books-list";
+import { MainPageContext } from "./books-store";
+import NewBookEdit from "./book-edit";
+import { observer } from "mobx-react";
+import SignOutIcon from '@mui/icons-material/NoAccountsSharp';
+import InfoIcon from '@mui/icons-material/InfoSharp';
 
-const IndexPage = ({}: WithDataProvider) => {
-    const [selectedTab, setSelectedTab] = useState(0);
+const IndexPage = ({ availableBooks }: WithDataProvider) => {
+    console.log(availableBooks);
+    const {
+        selectedTab,
+        bookToEdit,
+        setSelectedTab,
+        showAddDialog,
+        showEditDialog,
+        closeDialog,
+        signOut
+    } = useContext(MainPageContext);
 
     return (
         <IonPage>
-            <IonContent fullscreen className={styles.pageContainer}>
-                <Box sx={{ borderBottom: 1, borderColor: "divider"}}>
-                    <IonTitle className={styles.applicationTitle}>Book A Book</IonTitle>
-                    <Tabs
-                        variant="fullWidth"
-                        value={selectedTab}
-                        onChange={(_, tab) => setSelectedTab(tab)}>
-                        <Tab label="Available books" value={0} />
-                        <Tab label="Book books" value={1} />
-                    </Tabs>
-                </Box>
-                <SwipeableViews
-                    axis="x"
-                    index={selectedTab}
-                    onChangeIndex={setSelectedTab}>
-                    <div
-                        className={styles.tabPanel}
-                        role="tabpanel"
-                        hidden={selectedTab !== 0}>
-                    </div>
-                    <div
-                        className={styles.tabPanel}
-                        role="tabpanel"
-                        hidden={selectedTab !== 1}>
-                    </div>
-                </SwipeableViews>
-                <Fab className={styles.addButton}>
-                    <AddIcon color="primary" />
-                </Fab>
-                <ToastService />
+            <IonContent fullscreen>
+                <div className={styles.pageContainer}>
+                    <NewBookList
+                        books={availableBooks}
+                        onClick={showEditDialog}
+                    />
+                    <Fab
+                        className={styles.addButton}
+                        onClick={() => showAddDialog()}>
+                        <AddIcon color="primary" />
+                    </Fab>
+                    <ToastService />
+                    <NewBookEdit
+                        initialBook={bookToEdit}
+                        onClose={closeDialog} />
+                </div>
             </IonContent>
         </IonPage>
     );
 }
 
-export default withDataProvider(IndexPage);
+export default withDataProvider(observer(IndexPage));

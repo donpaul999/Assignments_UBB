@@ -8,6 +8,7 @@ export interface RegisterUser extends LoginUser {
 }
 
 export interface LoginResponse {
+    id: string;
     token: string;
     expiration: string;
 }
@@ -23,17 +24,19 @@ export const EMPTY_REGISTER_USER: RegisterUser = {
 }
 
 export interface Book {
+    userId?: string;
     id: number;
     name: string;
     author: string;
     publishDate: string;
-    isBooked: boolean;
+    isBooked: string;
 }
 
-export const EMPTY_CAR: Book = {
+export const EMPTY_BOOK: Book = {
+    userId: "0",
     id: 0,
     name: "",
     author: "",
     publishDate: "0000-00-00",
-    isBooked: false
+    isBooked: "false"
 }

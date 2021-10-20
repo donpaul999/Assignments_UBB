@@ -1,9 +1,10 @@
 import { makeAutoObservable, runInAction } from "mobx";
 import { createContext } from "react";
-import { BuildWebSocket, toastServiceStore } from "..";
-import { addBook, updateBook, deleteBook, getAvailableBooks } from "../../accessors/book-accessors";
+import { authorizedStore, BuildWebSocket, toastServiceStore } from "..";
 import { Book } from "../../accessors/types";
-import { addToList, removeFromList, updateInList } from "../../shared/template-list-helpers";
+import { addBook, deleteBook, getAvailableBooks, getAllBooks, getRelatedBooks, updateBook }
+from "../../accessors/book-accessors";
+import {addToList, updateInList, removeFromList} from "../../shared/template-list-helpers";
 
 export class DataProviderStore {
     public availableBooks: Book[] = []
@@ -58,26 +59,42 @@ export class DataProviderStore {
         });
     }
 
-    private getRelatedBooks = () => {
-
+    private getRelatedBooks = async () => {
+        const relatedBooks = await getRelatedBooks();
+        runInAction(() => {
+            this.relatedBooks = relatedBooks;
+        });
     }
 
     private handleCreateChange = (book: Book) => {
-        this.availableBooks = addToList(this.availableBooks, book);
-
+        if (book.userId === authorizedStore.userId) {
+            this.relatedBooks = addToList(this.relatedBooks, book);
+        } else {
+            this.relatedBooks = addToList(this.relatedBooks, book);
+        }
         toastServiceStore.showInfo(<>
             New book (<strong> {book.name} </strong>) added
         </>);
     }
 
     private handleUpdateChange = (book: Book) => {
-        const [updatedList, bookToUpdate] =
-            updateInList(this.availableBooks, book, ({ id }) => book.id === id);
+        const isRelated = book.userId === authorizedStore.userId;
+        console.log(isRelated, book.userId, authorizedStore.userId);
+        const [updatedList, bookToUpdate] = updateInList(
+            isRelated ? this.relatedBooks : this.availableBooks,
+            book, ({ id }) => book.id === id);
+
         if (!bookToUpdate) {
             return;
         }
 
         this.availableBooks = updatedList;
+
+        if (isRelated) {
+            this.relatedBooks = updatedList;
+        } else {
+            this.relatedBooks = updatedList;
+        }
 
         let newName = <></>;
         if (bookToUpdate.name !== book.name) {
@@ -90,7 +107,11 @@ export class DataProviderStore {
     }
 
     private handleDeleteChange = (book: Book) => {
-        this.availableBooks = removeFromList(this.availableBooks, ({ id }) => book.id === id);;
+        if (book.userId === authorizedStore.userId) {
+            this.relatedBooks = removeFromList(this.relatedBooks, ({ id }) => book.id === id);
+        } else {
+            this.availableBooks = removeFromList(this.relatedBooks, ({ id }) => book.id === id);
+        }
 
         toastServiceStore.showInfo(<>
             The book <strong>{book.name}</strong> was removed from the list

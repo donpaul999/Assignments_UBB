@@ -12,5 +12,6 @@ namespace BookABook
         public string Author { get; set; }
         public string PublishDate { get; set; }
         public string IsBooked { get; set; }
+        public Guid UserId { get; set; }
     }
 }

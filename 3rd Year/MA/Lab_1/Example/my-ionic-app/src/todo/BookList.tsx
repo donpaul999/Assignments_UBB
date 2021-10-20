@@ -20,7 +20,7 @@ const log = getLogger('ItemList');
 
 const BookList: React.FC<RouteComponentProps> = ({ history }) => {
     const { books, fetching, fetchingError } = useContext(ItemContext);
-    console.log(books);
+    log(books);
     log('render');
     return (
         <IonPage>

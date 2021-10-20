@@ -2,16 +2,20 @@ using BookABook.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BookABook.Extensions;
+using Microsoft.AspNetCore.Http;
 
 namespace BookABook.Services
 {
     public class BookService : IBookService
     {
         private BookContext context;
-
-        public BookService(BookContext context)
+        private readonly IHttpContextAccessor httpContextAccessor;
+        
+        public BookService(BookContext context, IHttpContextAccessor httpContextAccessor)
         {
             this.context = context;
+            this.httpContextAccessor = httpContextAccessor;
         }
 
         public Book Create(Book book)
@@ -69,6 +73,20 @@ namespace BookABook.Services
             List<Book> books = context.Books.ToList();
             books.Sort((x, y) => x.Id.CompareTo(y.Id));
             return books.Skip(start).Take(count).ToList();
+        }
+        
+        public List<Book> GetAvailable()
+        {
+            var userId = httpContextAccessor.GetUserId();
+
+            return context.Books.Where(book => book.UserId != userId && book.IsBooked == "false").ToList();
+        }
+
+        public List<Book> GetRelated()
+        {
+            var userId = httpContextAccessor.GetUserId();
+
+            return context.Books.Where(book => book.UserId == userId).ToList();
         }
     }
 }

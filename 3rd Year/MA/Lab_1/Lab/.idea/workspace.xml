@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b75510ca-d627-42fd-98cb-a98a8dee8895" name="Default Changelist" comment="" />
+    <list default="true" id="b75510ca-d627-42fd-98cb-a98a8dee8895" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Example/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Extensions/BookExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Extensions/ServiceExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/accessors/account-accessor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/accessors/account-accessor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/accessors/book-accessors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/accessors/book-accessors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/accessors/helper-functions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/accessors/helper-functions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/accessors/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/accessors/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/authorized/authorized-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/authorized/authorized-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/authorized/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/authorized/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/data-provider/data-provider-store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/data-provider/data-provider-store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/infrastructure/local-storage.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/pages/books/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/pages/books/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/my-ionic-app/src/todo/BookList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/my-ionic-app/src/todo/BookList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Controllers/AuthenticationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Migrations/BookContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Migrations/BookContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Models/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Models/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Services/BookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Services/IBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Services/IBookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/BookABook.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/BookABook.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/BookABook.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/BookABook.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/BookABook.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/BookABook.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/BookABook.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/BookABook.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/ref/BookABook.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/bin/Debug/net5.0/ref/BookABook.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/BookABook.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/ref/BookABook.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Example/server-final/BookABook/BookABook/obj/Debug/net5.0/ref/BookABook.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +68,7 @@
       <updated>1633950422062</updated>
       <workItem from="1633950423079" duration="310000" />
       <workItem from="1634465991716" duration="137000" />
+      <workItem from="1634656077915" duration="4000" />
     </task>
     <servers />
   </component>

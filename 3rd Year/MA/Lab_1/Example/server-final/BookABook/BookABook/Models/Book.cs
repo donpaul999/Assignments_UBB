@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace BookABook.Models
@@ -18,5 +19,7 @@ namespace BookABook.Models
 
         [Required]
         public string isBooked { get; set; }
+        
+        public Guid UserId { get; set; }
     }
 }

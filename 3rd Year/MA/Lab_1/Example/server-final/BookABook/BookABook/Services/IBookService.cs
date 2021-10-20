@@ -16,5 +16,9 @@ namespace BookABook.Services
         Book Remove(int Id);
         
         List<Book> GetSomeBooks(int start, int count);
+        
+        List<Book> GetAvailable();
+
+        List<Book> GetRelated();
     }
 }

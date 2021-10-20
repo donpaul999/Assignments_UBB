@@ -14,11 +14,11 @@ const AuthorizedView = ({ authorized, notAuthorized }: Props) => {
         initialize();
     }, [initialize]);
 
-    if (isAuthorized === null) {
+    if (isAuthorized() === undefined) {
         return null;
     }
 
-    return isAuthorized ? authorized : notAuthorized;
+    return isAuthorized() ? authorized : notAuthorized;
 }
 
 export default observer(AuthorizedView);
