@@ -1,0 +1,16 @@
+START
+let n $ number;
+let x $ number;
+let sum $ number;
+
+read n;
+
+sum = 0;
+
+while (n greater_or_equal 0) {
+    read x;
+    sum = sum + x;
+}
+
+print sum;
+END

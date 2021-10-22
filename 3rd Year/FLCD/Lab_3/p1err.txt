@@ -1,0 +1,16 @@
+START
+let n $ number;
+let x $ number;
+let sum $ number;
+
+read n;
+
+sum = 12"3;
+
+while (n != 0) {
+    read x;
+    sum = sum + x;
+}
+
+print sum;
+END

@@ -1,0 +1,22 @@
+START
+let n1 $ number;
+let n2 $ number;
+let n3 $ number;
+let max $ number;
+
+read n1, n2, n3;
+
+n1 = 123;
+
+if (max smaller_than n1) {
+    max = n1;
+}
+if (max smaller_than n2) {
+    max = n2;
+}
+if (max smaller_than n3) {
+    max = n3;
+}
+
+print max;
+END
