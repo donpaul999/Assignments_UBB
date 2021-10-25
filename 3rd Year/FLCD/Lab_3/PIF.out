@@ -1,16 +1,38 @@
-let 1
-number 1
-let 2
-number 2
-let 3
-number 3
-let 4
-number 4
-read 6
-if 10
-smaller_than 10
-if 13
-smaller_than 13
-if 16
-smaller_than 16
-print 20
+let -1
+id 7 0
+number -1
+let -1
+id 0 0
+number -1
+let -1
+id 1 0
+number -1
+let -1
+id 6 0
+number -1
+read -1
+id 7 0
+id 0 0
+id 1 0
+id 7 0
+constant 6 1
+if -1
+id 6 0
+smaller_than -1
+id 7 0
+id 6 0
+id 7 0
+if -1
+id 6 0
+smaller_than -1
+id 0 0
+id 6 0
+id 0 0
+if -1
+id 6 0
+smaller_than -1
+id 1 0
+id 6 0
+id 1 0
+print -1
+id 6 0

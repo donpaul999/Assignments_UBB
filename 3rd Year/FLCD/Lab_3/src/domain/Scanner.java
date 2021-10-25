@@ -46,14 +46,14 @@ public class Scanner {
                         continue;
                     }
                     if (isOperator(receivedTokens.get(i)) || isSeparator(receivedTokens.get(i)) || isReservedWord(receivedTokens.get(i))) {
-                        pif.add(new Pair(receivedTokens.get(i), lineNumber));
-                    } else if (tokens.contains(receivedTokens.get(i))){
-                        pif.add(new Pair(receivedTokens.get(i), lineNumber));
+                        pif.add(new Pair(receivedTokens.get(i), -1));
                     } else if(isIdentifier(receivedTokens.get(i))) {
                         symbolTable.addSymbol(receivedTokens.get(i));
+                        pif.add(new Pair("id", symbolTable.getPosition(receivedTokens.get(i))));
                     } else if(isConstant(receivedTokens.get(i))) {
                         System.out.println(receivedTokens.get(i));
-                        symbolTable.addSymbol("constant");
+                        symbolTable.addSymbol(receivedTokens.get(i));
+                        pif.add(new Pair("constant", symbolTable.getPosition(receivedTokens.get(i))));
                     } else {
                         System.err.println("Lexical error! Undefined token " + receivedTokens.get(i) + " on line " + lineNumber);
                         correct = false;

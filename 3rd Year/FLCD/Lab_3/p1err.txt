@@ -5,7 +5,7 @@ let sum $ number;
 
 read n;
 
-sum = 12"3;
+sum = 12o3;
 
 while (n != 0) {
     read x;
