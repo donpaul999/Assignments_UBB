@@ -1,7 +1,6 @@
 import adt.Matrix;
 import approach.NormalRunner;
 import approach.PoolRunner;
-import internal.Internal;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -10,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
-    private static final int LINES_1 = 10;
-    private static final int COLUMNS_1 = 10;
-    private static final int LINES_2 = 10;
-    private static final int COLUMNS_2 = 10;
+    private static final int LINES_1 = 3;
+    private static final int COLUMNS_1 = 3;
+    private static final int LINES_2 = 3;
+    private static final int COLUMNS_2 = 3;
 
     private static final int NUMBER_OF_THREADS = 1;
 
@@ -21,9 +20,9 @@ public class Main {
     private static final String TASK_TYPE = "ROW";
 
     public static void main(String[] args) throws InterruptedException {
-        runTests();
-        //float time = runMain(LINES_1, LINES_2, COLUMNS_1, COLUMNS_2, NUMBER_OF_THREADS, APPROACH, TASK_TYPE, false);
-        //System.out.println("\n Finished in" + time + " seconds");
+        //runTests();
+        float time = runMain(LINES_1, LINES_2, COLUMNS_1, COLUMNS_2, NUMBER_OF_THREADS, APPROACH, TASK_TYPE, false);
+        System.out.println("\n Finished in" + time + " seconds");
     }
 
     private static float runMain(int LINES_1, int LINES_2, int COLUMNS_1, int COLUMNS_2, int NUMBER_OF_THREADS,

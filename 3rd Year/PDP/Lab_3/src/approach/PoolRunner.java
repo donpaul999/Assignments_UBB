@@ -16,7 +16,7 @@ public class PoolRunner {
             service.submit(Internal.initThread(i, matrix_1, matrix_2, result, nbOfThreads, taskType));
 
         service.shutdown();
-        if (!service.awaitTermination(300, TimeUnit.SECONDS)) {
+        if (!service.awaitTermination(2000, TimeUnit.SECONDS)) {
             service.shutdownNow();
         }
 
