@@ -8,6 +8,6 @@ public class Main {
         SymbolTable symbolTable = new SymbolTable(8);
         Scanner scanner = new Scanner(symbolTable, "Token.in");
 
-        scanner.scan("p1.txt");
+        scanner.scan("p1err.txt");
     }
 }

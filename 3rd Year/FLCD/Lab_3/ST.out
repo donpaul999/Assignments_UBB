@@ -1,1 +1,1 @@
-SymbolTable{items=[[n2, "aaaa"], [n3], [], [], [], [], [max], [n1]], size=8}
+SymbolTable{items=[[n2, x, 0], [], [r], [], [], [], [abc, max], [n1]], size=8}

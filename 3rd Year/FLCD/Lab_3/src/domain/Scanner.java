@@ -7,11 +7,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Scanner {
     SymbolTable symbolTable;
     ArrayList<String> tokens;
     ArrayList<Pair<String, Integer>> pif;
+
+    private final String ONLY_DIGITS_REGEX = "^([0-9]+)(?=[\\n:;, ()}{\\]\\[\"]|$)";
+    private final String STRING_CONSTANT_REGEX = "^\"[0-9a-zA-Z]+\"";
+    private final String IDENTIFIER_REGEX = "^[A-Za-z][A-Za-z0-9]*";
+    private final String OPERATOR_REGEX = "^=|\\+|-|\\*|/|%|\\$|=";
+    private final String SEPARATOR_REGEX = "^[\\n:;,()}{\\]\\[\"]";
+    private final String RESERVED_WORDS_REGEX = "^\\b(START|END|and|array_numbers|bigger_than|equals|for|greater_or_equal|if|let|not_equals|number|or|print|read|smaller_or_equal|smaller_than|space|string|while)\\b";
 
     public Scanner(SymbolTable symbolTable, String tokenFile) {
         this.symbolTable = symbolTable;
@@ -39,23 +48,67 @@ public class Scanner {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             int lineNumber = 0;
+            boolean found;
             while ((line = br.readLine()) != null && correct) {
-                ArrayList<String> receivedTokens = tokenGenerator(line.strip());
-                for (int i = 0; i < receivedTokens.size(); ++i){
-                    if (receivedTokens.get(i).equals(" ") || receivedTokens.get(i).isEmpty()) {
-                        continue;
+                while (!line.isEmpty()) {
+                    found = false;
+                    line = line.strip();
+                    Pattern pattern = Pattern.compile(RESERVED_WORDS_REGEX);
+                    Matcher matcher = pattern.matcher(line);
+                    if (matcher.find() && matcher.start() == 0) {
+                        pif.add(new Pair(matcher.group(), -1));
+                        line = line.substring(matcher.end());
+                        found = true;
                     }
-                    if (isOperator(receivedTokens.get(i)) || isSeparator(receivedTokens.get(i)) || isReservedWord(receivedTokens.get(i))) {
-                        pif.add(new Pair(receivedTokens.get(i), -1));
-                    } else if(isIdentifier(receivedTokens.get(i))) {
-                        symbolTable.addSymbol(receivedTokens.get(i));
-                        pif.add(new Pair("id", symbolTable.getPosition(receivedTokens.get(i))));
-                    } else if(isConstant(receivedTokens.get(i))) {
-                        symbolTable.addSymbol(receivedTokens.get(i));
-                        pif.add(new Pair("constant", symbolTable.getPosition(receivedTokens.get(i))));
-                    } else {
-                        System.err.println("Lexical error! Undefined token " + receivedTokens.get(i) + " on line " + lineNumber);
+
+                    pattern = Pattern.compile(SEPARATOR_REGEX);
+                    matcher = pattern.matcher(line);
+                    if (matcher.find() && matcher.start() == 0) {
+                        pif.add(new Pair(matcher.group(), -1));
+                        line = line.substring(matcher.end());
+                        found = true;
+                    }
+
+                    pattern = Pattern.compile(OPERATOR_REGEX);
+                    matcher = pattern.matcher(line);
+                    if (matcher.find() && matcher.start() == 0) {
+                        pif.add(new Pair(matcher.group(), -1));
+                        line = line.substring(matcher.end());
+                        found = true;
+                    }
+
+                    pattern = Pattern.compile(IDENTIFIER_REGEX);
+                    matcher = pattern.matcher(line);
+                    if (matcher.find() && matcher.start() == 0) {
+                        symbolTable.addSymbol(matcher.group());
+                        pif.add(new Pair("id", symbolTable.getPosition(matcher.group())));
+                        line = line.substring(matcher.end());
+                        found = true;
+                    }
+
+                    pattern = Pattern.compile(ONLY_DIGITS_REGEX);
+                    matcher = pattern.matcher(line);
+                    if (matcher.find() && matcher.start() == 0) {
+                        symbolTable.addSymbol(matcher.group());
+                        pif.add(new Pair("constant", symbolTable.getPosition(matcher.group())));
+                        line = line.substring(matcher.end());
+                        found = true;
+                    }
+
+                    pattern = Pattern.compile(STRING_CONSTANT_REGEX);
+                    matcher = pattern.matcher(line);
+                    if (matcher.find() && matcher.start() == 0) {
+                        symbolTable.addSymbol(matcher.group());
+                        System.out.println("const" + matcher.group());
+                        pif.add(new Pair("constant", symbolTable.getPosition(matcher.group())));
+                        line = line.substring(matcher.end());
+                        found = true;
+                    }
+
+                    if (!found) {
+                        System.err.println("Lexical error! Undefined token on line " + lineNumber);
                         correct = false;
+                        break;
                     }
                 }
                 lineNumber += 1;
@@ -102,7 +155,7 @@ public class Scanner {
     }
 
     private boolean isOperator(String token) {
-        String[] operators = {"+", "-", "*", "/", "%", "||", "&&", "=", "$"};
+        String[] operators = {"+", "-", "*", "/", "%", "=", "$"};
         return Arrays.asList(operators).contains(token);
     }
 

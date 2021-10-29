@@ -4,7 +4,7 @@ let x $ number;
 let sum $ number;
 let array $ array_numbers;
 
-array = [1, 2, 3];
+array = [1, 2, e2];
 
 read n;
 

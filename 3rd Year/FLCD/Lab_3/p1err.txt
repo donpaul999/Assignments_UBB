@@ -5,7 +5,7 @@ let sum $ number;
 
 read n;
 
-sum = "aaa";
+sum = 13a23;
 
 while (n != 0) {
     read x;
