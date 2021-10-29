@@ -12,17 +12,17 @@ Lexic:
             ( ) [ ] { } : ; space
 
         -reserved words:
-            let $ number string array_numbers if while for read print [START] [END]
+            let $ number string array_numbers if while for read print START END
 
     b. Identifiers:
         -it is a sequence and chars and digits, the first letter being a letter:
             letter = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z"
-            digit = "1" | "2" | ... | "9"
+            digit = "0" | "1" | "2" | ... | "9"
             identifier = letter | letter {letter} {digit}
 
     c. Constants:
         -number:
-            number = digit {digit}
+            number = ["+" | "-"] digit {digit}
         -char:
             char = 'letter' | 'digit'
         -string:

@@ -51,7 +51,6 @@ public class Scanner {
                         symbolTable.addSymbol(receivedTokens.get(i));
                         pif.add(new Pair("id", symbolTable.getPosition(receivedTokens.get(i))));
                     } else if(isConstant(receivedTokens.get(i))) {
-                        System.out.println(receivedTokens.get(i));
                         symbolTable.addSymbol(receivedTokens.get(i));
                         pif.add(new Pair("constant", symbolTable.getPosition(receivedTokens.get(i))));
                     } else {
@@ -73,13 +72,13 @@ public class Scanner {
     }
 
     private boolean isConstant(String s) {
-        String onlyDigits = "[0-9]+";
-        String isString = "([\"'])(?:(?=(\\\\?))\\2.)*?\\1";
+        String onlyDigits = "^[+-]?[0-9]+";
+        String isString = "\"[0-9a-zA-Z]*\"";
         return s.matches(onlyDigits) || s.matches(isString);
     }
 
     private boolean isIdentifier(String s) {
-        String pattern = "^[_a-z]\\w*$";
+        String pattern = "^[A-Za-z]*[A-Za-z0-9]";
         return s.matches(pattern);
     }
 
@@ -103,7 +102,7 @@ public class Scanner {
     }
 
     private boolean isOperator(String token) {
-        String[] operators = {"+", "-", "*", "/", "=", "$"};
+        String[] operators = {"+", "-", "*", "/", "%", "||", "&&", "=", "$"};
         return Arrays.asList(operators).contains(token);
     }
 
@@ -120,29 +119,39 @@ public class Scanner {
 
     private ArrayList<String> tokenGenerator(String line) {
         ArrayList<String> tokens = new ArrayList<>();
-        int i = 0, j = 0;
-        while (j < line.length()) {
-            if (line.charAt(j) == '"') {
-                tokens.add(line.substring(i, j).strip());
-                i = j;
-                j += 1;
-                if (line.substring(i + 1).indexOf('"') == -1) {
-                    j = line.length() - 1;
-                } else {
-                    while (line.charAt(j) != '"' && j < line.length()) {
-                        j += 1;
-                    }
-                    j += 1;
-                }
-            }
-            if (isOperator(String.valueOf(line.charAt(j))) || isSeparator(String.valueOf(line.charAt(j)))) {
-                tokens.add(line.substring(i, j).strip());
-                tokens.add(line.substring(j, j).strip());
-                i = j + 1;
-            }
-            j += 1;
-        }
+        String[] arrTokens = line.split(" ");
+        for (int i = 0; i < arrTokens.length; ++i) {
+            String word = arrTokens[i];
+            ArrayList<String> lastTokens = new ArrayList<>();
+            int startPos = 0, endPos;
+            if (word.isEmpty() || word.equals(" "))
+                continue;
 
+            while (startPos < word.length()) {
+                if (isSeparator(String.valueOf(word.charAt(startPos)))) {
+                    tokens.add(String.valueOf(word.charAt(startPos)));
+                } else {
+                    break;
+                }
+                startPos += 1;
+            }
+
+            endPos = word.length() - 1;
+            while (endPos > 0 && word.length() > 1) {
+                if (isSeparator(String.valueOf(word.charAt(endPos)))) {
+                    lastTokens.add(String.valueOf(word.charAt(endPos)));
+                } else {
+                    break;
+                }
+                endPos -= 1;
+            }
+
+            tokens.add(word.substring(startPos, endPos + 1));
+            for (int j = lastTokens.size() - 1; j >= 0; j --) {
+                tokens.add(lastTokens.get(j));
+            }
+        }
+        System.out.println(tokens);
         return tokens;
     }
 }

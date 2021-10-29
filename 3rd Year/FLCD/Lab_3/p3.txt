@@ -2,12 +2,15 @@ START
 let n $ number;
 let x $ number;
 let sum $ number;
+let array $ array_numbers;
+
+array = [1, 2, 3];
 
 read n;
 
 sum = 0;
 
-while (n greater_or_equal 0) {
+while (n greater_or_equal 0 and n greater_or_equal 10) {
     read x;
     sum = sum + x;
 }

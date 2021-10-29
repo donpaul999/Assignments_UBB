@@ -5,11 +5,14 @@ declaration_statement = "let" identifier "$" type ";"
 
 type = "number" | "string" | "array_numbers"
 
-array_numbers = "[" number {"," number} "]"
+array_numbers = "[" number {", " number} "]"
 digit = "0" | "1" | ... | "9"
 number = digit | digit {digit}
 
-expression = expression ("+" | "-") term | term
+char = 'letter' | 'digit'
+string = char | char {char}
+
+expression = expression (" + " | " - ") term | term
 term = term ("*" | "/" | "%") factor | factor
 factor = "(" expression ")" | const | identifier
 
@@ -23,7 +26,7 @@ statement = simple_statement | struct_statement ";"
 
 simple_statement = assign_statement | input_output_statement
 
-condition = expression relation expression ("||" | "&&" condition)
+condition = expression relation expression ("or" | "and" condition)
 
 relation = "smaller_than" | "bigger_than" | "equals" | "not_equals" | "greater_or_equal" | "smaller_or_equal"
 

@@ -1,11 +1,11 @@
 START
-let n $ number;
+let nA $ number;
 let x $ number;
 let sum $ number;
 
 read n;
 
-sum = 12o3;
+sum = "aaa";
 
 while (n != 0) {
     read x;
