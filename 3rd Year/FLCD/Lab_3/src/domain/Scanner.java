@@ -15,7 +15,7 @@ public class Scanner {
     ArrayList<String> tokens;
     ArrayList<Pair<String, Integer>> pif;
 
-    private final String ONLY_DIGITS_REGEX = "^([0-9]+)(?=[\\n:;, ()}{\\]\\[\"]|$)";
+    private final String ONLY_DIGITS_REGEX = "^([0-9]+)(?=[\\n:;+\\-*/%, ()}{\\]\\[\"]|$)";
     private final String STRING_CONSTANT_REGEX = "^\"[0-9a-zA-Z]+\"";
     private final String IDENTIFIER_REGEX = "^[A-Za-z][A-Za-z0-9]*";
     private final String OPERATOR_REGEX = "^=|\\+|-|\\*|/|%|\\$|=";

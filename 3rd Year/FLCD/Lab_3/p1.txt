@@ -6,7 +6,7 @@ let max $ number;
 
 read n1, n2, n3;
 
-n1 = -1-2;
+n1 = 1/2;
 
 if (max smaller_than n1) {
     max = n1;
