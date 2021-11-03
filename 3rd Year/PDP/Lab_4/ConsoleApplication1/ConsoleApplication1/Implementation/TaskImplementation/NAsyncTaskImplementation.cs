@@ -35,7 +35,7 @@ namespace ConsoleApplication1.Implementation
                 .Wait(); // request data from server
             Receive(requestSocket).Wait(); // receive server response
 
-            Console.WriteLine("Connection {0} > Content length is:{1}", requestSocket.id, Parser.GetContentLen(requestSocket.responseContent.ToString()));
+            Console.WriteLine("Connection {0}: Content length is:{1}", requestSocket.id, Parser.GetContentLen(requestSocket.responseContent.ToString()));
 
             // release the socket
             client.Shutdown(SocketShutdown.Both);

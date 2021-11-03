@@ -43,7 +43,7 @@ namespace ConsoleApplication1.Implementation
 
             clientSocket.EndConnect(ar); // complete connection
 
-            Console.WriteLine("Connection {0} > Socket connected to {1} ({2})", clientId, hostname, clientSocket.RemoteEndPoint);
+            Console.WriteLine("Connection {0}: Socket connected to {1} ({2})", clientId, hostname, clientSocket.RemoteEndPoint);
 
             resultSocket.connectDone.Set(); // signal connection is up
         }
@@ -55,7 +55,7 @@ namespace ConsoleApplication1.Implementation
             var clientId = resultSocket.id;
 
             var bytesSent = clientSocket.EndSend(ar); // complete sending the data to the server  
-            Console.WriteLine("Connection {0} > Sent {1} bytes to server.", clientId, bytesSent);
+            Console.WriteLine("Connection {0}: Sent {1} bytes to server.", clientId, bytesSent);
 
             resultSocket.sendDone.Set(); // signal that all bytes have been sent
         }

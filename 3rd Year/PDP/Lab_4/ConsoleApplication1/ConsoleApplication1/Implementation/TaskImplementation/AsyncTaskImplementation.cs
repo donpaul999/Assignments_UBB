@@ -19,7 +19,6 @@ namespace ConsoleApplication1.Implementation
             var ipAddress = ipHostInfo.AddressList[0];
             var remoteEndpoint = new IPEndPoint(ipAddress, Parser.PORT);
 
-            // create the TCP/IP socket
             var client = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp); // create client socket
 
             var requestSocket = new CustomSocket
@@ -38,7 +37,7 @@ namespace ConsoleApplication1.Implementation
 
             await Receive(requestSocket); // receive server response
 
-            Console.WriteLine("Connection {0} > Content length is:{1}", requestSocket.id, Parser.GetContentLen(requestSocket.responseContent.ToString()));
+            Console.WriteLine("Connection {0}: Content length is:{1}", requestSocket.id, Parser.GetContentLen(requestSocket.responseContent.ToString()));
 
             // release the socket
             client.Shutdown(SocketShutdown.Both);

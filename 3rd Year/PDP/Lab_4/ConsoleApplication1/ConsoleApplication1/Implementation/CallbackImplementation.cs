@@ -25,7 +25,6 @@ namespace ConsoleApplication1.Implementation
             var ipHostInfo = Dns.GetHostEntry(host.Split('/')[0]); // get host dns entry
             var ipAddress = ipHostInfo.AddressList[0]; // separate ip of host
             var remoteEndpoint = new IPEndPoint(ipAddress, Parser.PORT); // create endpoint
-
             var client = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp); // create client socket
 
             var requestSocket = new CustomSocket
@@ -48,7 +47,7 @@ namespace ConsoleApplication1.Implementation
             var hostname = resultSocket.hostname;
 
             clientSocket.EndConnect(ar); // end connection
-            Console.WriteLine("Connection {0} > Socket connected to {1} ({2})", clientId, hostname, clientSocket.RemoteEndPoint);
+            Console.WriteLine("Connection {0}: Socket connected to {1} ({2})", clientId, hostname, clientSocket.RemoteEndPoint);
 
             var byteData = Encoding.ASCII.GetBytes(Parser.GetRequestString(resultSocket.hostname, resultSocket.endpoint));
 
@@ -63,9 +62,8 @@ namespace ConsoleApplication1.Implementation
 
             // send data to server
             var bytesSent = clientSocket.EndSend(ar);
-            Console.WriteLine("Connection {0} > Sent {1} bytes to server.", clientId, bytesSent);
+            Console.WriteLine("Connection {0}: Sent {1} bytes to server.", clientId, bytesSent);
 
-            // server response (data)
             resultSocket.sock.BeginReceive(resultSocket.buffer, 0, CustomSocket.BUFF_SIZE, 0, Receiving, resultSocket);
         }
         
@@ -88,7 +86,7 @@ namespace ConsoleApplication1.Implementation
                 }
                 else
                 {                    
-                    Console.WriteLine("Content length is:{0}", Parser.GetContentLen(resultSocket.responseContent.ToString()));
+                    Console.WriteLine("Content length:{0}", Parser.GetContentLen(resultSocket.responseContent.ToString()));
 
                     clientSocket.Shutdown(SocketShutdown.Both); // free socket
                     clientSocket.Close();                   
