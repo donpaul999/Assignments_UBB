@@ -19,7 +19,7 @@ public class Scanner {
     private FiniteAutomata finiteAutomataIdentifiers;
 
     private final String ONLY_DIGITS_REGEX = "^([0-9]+)(?=[\\n:;+\\-*/%, ()}{\\]\\[\"]|$)";
-    private final String STRING_CONSTANT_REGEX = "^\"[0-9a-zA-Z]+\"";
+    private final String STRING_CONSTANT_REGEX = "^\'[0-9a-zA-Z]+\'";
     private final String IDENTIFIER_REGEX = "^[A-Za-z][A-Za-z0-9]*";
     private final String OPERATOR_REGEX = "^=|\\+|-|\\*|/|%|\\$|=";
     private final String SEPARATOR_REGEX = "^[\\n:;,()}{\\]\\[\"]";
@@ -91,11 +91,12 @@ public class Scanner {
                         line = line.substring(matcher.end());
                         found = true;
                     }
-
                     pattern = Pattern.compile(ONLY_DIGITS_REGEX);
                     matcher = pattern.matcher(line);
-                    if (matcher.find() && matcher.start() == 0 && finiteAutomataConstants.isAcceptedByFA("'" + matcher.group() + "'")) {
-                        symbolTable.addSymbol("'" + matcher.group() + "'");
+                    if (matcher.find() && matcher.start() == 0 && finiteAutomataConstants.isAcceptedByFA(matcher.group())) {
+                        System.out.println(matcher.group());
+                        symbolTable.addSymbol(matcher.group());
+                        System.out.println("const" + matcher.group());
                         pif.add(new Pair("constant", symbolTable.getPosition(matcher.group())));
                         line = line.substring(matcher.end());
                         found = true;
@@ -104,9 +105,7 @@ public class Scanner {
                     pattern = Pattern.compile(STRING_CONSTANT_REGEX);
                     matcher = pattern.matcher(line);
                     if (matcher.find() && matcher.start() == 0 && finiteAutomataConstants.isAcceptedByFA(matcher.group())) {
-                        System.out.println(matcher.group());
                         symbolTable.addSymbol(matcher.group());
-                        System.out.println("const" + matcher.group());
                         pif.add(new Pair("constant", symbolTable.getPosition(matcher.group())));
                         line = line.substring(matcher.end());
                         found = true;

@@ -4,7 +4,7 @@ let n2 $ number;
 let r $ number;
 let x $ string;
 
-x = "abc";
+x = 'aab';
 
 read n1, n2;
 

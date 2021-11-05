@@ -64,7 +64,7 @@ public class FiniteAutomata {
                 throw new Exception("source state not in Q!");
             }
             if (!E.contains(p.second)) {
-                throw new Exception("transition not in E!");
+                throw new Exception("symbol not in E!");
             }
 
             List <String> destinations = T.get(p);

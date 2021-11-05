@@ -11,9 +11,9 @@ public class Main {
         SymbolTable symbolTable = new SymbolTable(8);
         Scanner scanner = new Scanner(symbolTable, "Token.in");
 
-        //scanner.scan("p2.txt");
+        scanner.scan("p2.txt");
         //genFAIdentifiers();
-        genFAConstants();
+        //genFAConstants();
     }
 
     private static void genFAConstants() throws IOException {
@@ -21,7 +21,8 @@ public class Main {
         FileWriter outputfile = new FileWriter(fileIdentifier);
 
         StringBuilder sb = new StringBuilder();
-        outputfile.write("Q = i si sm sf\n");
+        StringBuilder sb2 = new StringBuilder();
+        outputfile.write("Q = p i sm sf\n");
 
         sb.append("E = ");
         for (char i = 'a'; i <= 'z'; i += 1) {
@@ -31,20 +32,32 @@ public class Main {
             sb.append(i).append(" ");
         }
         for (char i = '0'; i <= '9'; i += 1) {
-            sb.append(i).append(" ");
+            sb2.append(i).append(" ");
         }
 
-        outputfile.write(String.valueOf(sb) + ",");
-        outputfile.write("\nq0 = i si\n");
+        outputfile.write(String.valueOf(sb) + String.valueOf(sb2));
+        outputfile.write("'");
+        outputfile.write("\nq0 = p\n");
         outputfile.write("F = i sf\n");
         outputfile.write("T =\n");
 
         List<String> alphabet = Arrays.asList(sb.toString().substring(4).split(" "));
-        for (String a: alphabet) {
-            outputfile.write("(si," + a + ") -> sm\n");
+        List<String> digits = Arrays.asList(sb2.toString().split(" "));
+
+        for (String d: digits) {
+            outputfile.write("(i," + d + ") -> i\n");
+            outputfile.write("(p," + d + ") -> i\n");
         }
-        outputfile.write("(si,') -> sm\n");
+
         for (String a: alphabet) {
+            outputfile.write("(p," + a + ") -> sm\n");
+        }
+
+        outputfile.write("(p,') -> sm\n");
+        for (String a: alphabet) {
+            outputfile.write("(sm," + a + ") -> sm\n");
+        }
+        for (String a: digits) {
             outputfile.write("(sm," + a + ") -> sm\n");
         }
         outputfile.write("(sm,') -> sf\n");

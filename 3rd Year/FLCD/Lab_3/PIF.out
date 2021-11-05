@@ -21,9 +21,7 @@ string -1
 ; -1
 id 0 1
 = -1
-" -1
-id 6 0
-" -1
+constant 2 1
 ; -1
 read -1
 id 7 0
@@ -56,6 +54,6 @@ print -1
 id 7 0
 ; -1
 print -1
-id 6 1
+id 6 0
 ; -1
 END -1
