@@ -15,6 +15,9 @@ public class Scanner {
     ArrayList<String> tokens;
     ArrayList<Pair<String, Integer>> pif;
 
+    private FiniteAutomata finiteAutomataConstants;
+    private FiniteAutomata finiteAutomataIdentifiers;
+
     private final String ONLY_DIGITS_REGEX = "^([0-9]+)(?=[\\n:;+\\-*/%, ()}{\\]\\[\"]|$)";
     private final String STRING_CONSTANT_REGEX = "^\"[0-9a-zA-Z]+\"";
     private final String IDENTIFIER_REGEX = "^[A-Za-z][A-Za-z0-9]*";
@@ -22,10 +25,13 @@ public class Scanner {
     private final String SEPARATOR_REGEX = "^[\\n:;,()}{\\]\\[\"]";
     private final String RESERVED_WORDS_REGEX = "^\\b(START|END|and|array_numbers|bigger_than|equals|for|greater_or_equal|if|let|not_equals|number|or|print|read|smaller_or_equal|smaller_than|space|string|while)\\b";
 
-    public Scanner(SymbolTable symbolTable, String tokenFile) {
+
+    public Scanner(SymbolTable symbolTable, String tokenFile) throws Exception {
         this.symbolTable = symbolTable;
         pif = new ArrayList<>();
         readTokens(tokenFile);
+        finiteAutomataConstants = new FiniteAutomata("finite-automata-constants.in");
+        finiteAutomataIdentifiers = new FiniteAutomata("finite-automata-identifiers.in");
     }
 
     private void readTokens(String tokenFile) {
@@ -79,7 +85,7 @@ public class Scanner {
 
                     pattern = Pattern.compile(IDENTIFIER_REGEX);
                     matcher = pattern.matcher(line);
-                    if (matcher.find() && matcher.start() == 0) {
+                    if (matcher.find() && matcher.start() == 0 && finiteAutomataIdentifiers.isAcceptedByFA(matcher.group())) {
                         symbolTable.addSymbol(matcher.group());
                         pif.add(new Pair("id", symbolTable.getPosition(matcher.group())));
                         line = line.substring(matcher.end());
@@ -88,8 +94,8 @@ public class Scanner {
 
                     pattern = Pattern.compile(ONLY_DIGITS_REGEX);
                     matcher = pattern.matcher(line);
-                    if (matcher.find() && matcher.start() == 0) {
-                        symbolTable.addSymbol(matcher.group());
+                    if (matcher.find() && matcher.start() == 0 && finiteAutomataConstants.isAcceptedByFA("'" + matcher.group() + "'")) {
+                        symbolTable.addSymbol("'" + matcher.group() + "'");
                         pif.add(new Pair("constant", symbolTable.getPosition(matcher.group())));
                         line = line.substring(matcher.end());
                         found = true;
@@ -97,7 +103,8 @@ public class Scanner {
 
                     pattern = Pattern.compile(STRING_CONSTANT_REGEX);
                     matcher = pattern.matcher(line);
-                    if (matcher.find() && matcher.start() == 0) {
+                    if (matcher.find() && matcher.start() == 0 && finiteAutomataConstants.isAcceptedByFA(matcher.group())) {
+                        System.out.println(matcher.group());
                         symbolTable.addSymbol(matcher.group());
                         System.out.println("const" + matcher.group());
                         pif.add(new Pair("constant", symbolTable.getPosition(matcher.group())));
