@@ -5,7 +5,7 @@ let r $ number;
 let x $ string;
 
 x = 'aab';
-
+n1 = 1002;
 read n1, n2;
 
 while (n2 not_equals 0) {

@@ -126,8 +126,6 @@ public class FiniteAutomata {
                 return false;
             }
         }
-        if(!F.contains(currentState))
-            return false;
-        return true;
+        return F.contains(currentState);
     }
 }

@@ -23,6 +23,12 @@ id 0 1
 = -1
 constant 2 1
 ; -1
+id 7 0
+= -1
+constant 2 2
+- -1
+constant 3 0
+; -1
 read -1
 id 7 0
 , -1
