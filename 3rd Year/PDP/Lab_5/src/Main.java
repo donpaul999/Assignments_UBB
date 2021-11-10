@@ -8,14 +8,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
 
-/*
-
- */
-
 public class Main {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        runTests();
-        /*
+        // runTests();
+
         Polynomial a = new Polynomial(5);
         Polynomial b = new Polynomial(5);
 
@@ -30,7 +26,7 @@ public class Main {
         long endTime = System.currentTimeMillis();
         System.out.println("Result: " + result);
         System.out.println("Execution time: " + (endTime - startTime) + " ms");
-         */
+
     }
 
     private static void runTests() {
