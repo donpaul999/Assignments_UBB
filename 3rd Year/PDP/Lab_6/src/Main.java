@@ -14,13 +14,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        runTests();
-//        DirectedGraph graph = new DirectedGraph(10);
-//        long startTime = System.currentTimeMillis();
-//        findCycle(graph, 10);
-//        long endTime = System.currentTimeMillis();
-//        System.out.println(graph);
-//        System.out.println("Execution time: " + (endTime - startTime) + " ms");
+//        runTests();
+        DirectedGraph graph = new DirectedGraph(10);
+        long startTime = System.currentTimeMillis();
+        findCycle(graph, 10);
+        long endTime = System.currentTimeMillis();
+        System.out.println(graph);
+        System.out.println("Execution time: " + (endTime - startTime) + " ms");
     }
 
     private static void runTests() {

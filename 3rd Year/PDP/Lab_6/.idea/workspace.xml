@@ -43,17 +43,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -69,6 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1636530160521</updated>
       <workItem from="1636530162128" duration="3283000" />
+      <workItem from="1637053107417" duration="78000" />
     </task>
     <servers />
   </component>

@@ -94,9 +94,7 @@ public class Scanner {
                     pattern = Pattern.compile(ONLY_DIGITS_REGEX);
                     matcher = pattern.matcher(line);
                     if (matcher.find() && matcher.start() == 0 && finiteAutomataConstants.isAcceptedByFA(matcher.group())) {
-                        System.out.println(matcher.group());
                         symbolTable.addSymbol(matcher.group());
-                        System.out.println("const" + matcher.group());
                         pif.add(new Pair("constant", symbolTable.getPosition(matcher.group())));
                         line = line.substring(matcher.end());
                         found = true;

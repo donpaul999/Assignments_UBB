@@ -11,8 +11,8 @@ public class Main {
         SymbolTable symbolTable = new SymbolTable(8);
         Scanner scanner = new Scanner(symbolTable, "Token.in");
 
-        scanner.scan("p2.txt");
-        //genFAIdentifiers();
+        //scanner.scan("p1.txt");
+        genFAIdentifiers();
         //genFAConstants();
     }
 
@@ -70,7 +70,9 @@ public class Main {
         FileWriter outputfile = new FileWriter(fileIdentifier);
 
         StringBuilder sb = new StringBuilder();
-        outputfile.write("Q = i f\n");
+        outputfile.write("Q = p f\n");
+
+        StringBuilder sb2 = new StringBuilder();
 
         sb.append("E = ");
         for (char i = 'a'; i <= 'z'; i += 1) {
@@ -80,18 +82,26 @@ public class Main {
             sb.append(i).append(" ");
         }
         for (char i = '0'; i <= '9'; i += 1) {
-            sb.append(i).append(" ");
+            sb2.append(i).append(" ");
         }
 
         outputfile.write(String.valueOf(sb));
-        outputfile.write("\nq0 = i\n");
+        outputfile.write(String.valueOf(sb2));
+        outputfile.write("\nq0 = p\n");
         outputfile.write("F = f\n");
         outputfile.write("T =\n");
 
         List<String> alphabet = Arrays.asList(sb.toString().substring(4).split(" "));
+        List<String> digits = Arrays.asList(sb2.toString().split(" "));
         for (String a: alphabet) {
+            outputfile.write("(p," + a + ") -> f\n");
             outputfile.write("(f," + a + ") -> f\n");
         }
+
+        for (String a: digits) {
+            outputfile.write("(f," + a + ") -> f\n");
+        }
+
         outputfile.flush();
         outputfile.close();
     }
