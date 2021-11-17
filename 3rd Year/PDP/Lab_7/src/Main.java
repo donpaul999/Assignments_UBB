@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Main {
     private static final String APPROACH = "Karatsuba";
-    private static final int ORDER = 5;
+    private static final int ORDER = 2500;
 
     private static void multiplicationMaster(Polynomial a, Polynomial b, int nrProcs, String type) {
         long startTime = System.currentTimeMillis();
