@@ -39,7 +39,7 @@ public class Task implements Runnable{
                     this.lock.lock();
                     result.clear();
                     result.addAll(this.path);
-                    //System.out.println(result);
+                    System.out.println(result);
                     this.lock.unlock();
                 }
                 return;
