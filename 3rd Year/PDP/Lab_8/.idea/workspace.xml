@@ -36,10 +36,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.11709601" />
     <property name="project.structure.side.proportion" value="0.176259" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.notifications" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -48,7 +54,7 @@
       </envs>
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Lab_8" />
-      <option name="VM_PARAMETERS" value="-jar $MPJ_HOME$/lib/starter.jar -np 8" />
+      <option name="VM_PARAMETERS" value="-jar $MPJ_HOME$/lib/starter.jar -np 3" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637739163123</updated>
-      <workItem from="1637739164764" duration="799000" />
+      <workItem from="1637739164764" duration="4807000" />
     </task>
     <servers />
   </component>

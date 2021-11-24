@@ -1,8 +1,4 @@
-import domain.CloseMessage;
-import domain.Message;
-import domain.SubscribeMessage;
-import domain.UpdateMessage;
-
+import domain.*;
 import mpi.MPI;
 
 public class Main {
@@ -18,9 +14,9 @@ public class Main {
             dsm.subscribeTo("a");
             dsm.subscribeTo("b");
             dsm.subscribeTo("c");
-            dsm.checkAndReplace("a",0,3);
-            dsm.checkAndReplace("c",2,4);
-            dsm.checkAndReplace("b",100, 5);
+            dsm.checkAndReplace("a",0,111);
+            dsm.checkAndReplace("b",1,333);
+            dsm.checkAndReplace("c",2, 101);
             dsm.close();
 
             thread.join();
@@ -31,18 +27,15 @@ public class Main {
             thread.start();
 
             dsm.subscribeTo("a");
-            dsm.subscribeTo("c");
-
-
             thread.join();
         } else if (me == 2) {
             Thread thread = new Thread(new Listener(dsm));
 
             thread.start();
 
-            dsm.subscribeTo("b");
-            dsm.checkAndReplace("b", 1, 100);
-
+            dsm.subscribeTo("c");
+            dsm.checkAndReplace("a", 2, 100);
+            dsm.close();
             thread.join();
         }
         MPI.Finalize();
@@ -68,20 +61,21 @@ public class Main {
                 if (message instanceof CloseMessage){
                     System.out.println("Rank " + MPI.COMM_WORLD.Rank() + " stopped listening...");
                     return;
-                }
-                else if (message instanceof SubscribeMessage) {
+                } else if (message instanceof SubscribeMessage) {
                     SubscribeMessage subscribeMessage = (SubscribeMessage) message;
                     System.out.println("Subscribe message received");
                     System.out.println("Rank " + MPI.COMM_WORLD.Rank() + " received: rank " + subscribeMessage.rank + " subscribes to " + subscribeMessage.var);
                     dsm.syncSubscription(subscribeMessage.var, subscribeMessage.rank);
-                }
-                else if (message instanceof UpdateMessage) {
+                } else if (message instanceof UpdateMessage) {
                     UpdateMessage updateMessage = (UpdateMessage) message;
                     System.out.println("Update message received");
                     System.out.println("Rank " + MPI.COMM_WORLD.Rank() + " received:" + updateMessage.var + "->" + updateMessage.val);
                     dsm.setVariable(updateMessage.var, updateMessage.val);
+                } else if (message instanceof ErrorMessage) {
+                ErrorMessage errorMessage = (ErrorMessage) message;
+                System.out.println("ErrorMessage message received");
+                System.out.println("Rank " + MPI.COMM_WORLD.Rank() + " received: Process " + errorMessage.rank + " tried to update unavailable variable " + errorMessage.var);
                 }
-
                 writeAll(dsm);
             }
         }
@@ -90,7 +84,7 @@ public class Main {
     public static void writeAll(DSM dsm) {
         StringBuilder sb = new StringBuilder();
         sb.append("Write all\n");
-        sb.append("Rank ").append(MPI.COMM_WORLD.Rank()).append("->a = ").append(dsm.a).append(" b = ").append(dsm.b).append(" c = ").append(dsm.c).append("\n");
+        sb.append("Rank ").append(MPI.COMM_WORLD.Rank()).append("-> a = ").append(dsm.a).append(", b = ").append(dsm.b).append(", c = ").append(dsm.c).append("\n");
         sb.append("Subscribers: \n");
         for (String var : dsm.subscribers.keySet()) {
             sb.append(var).append("->").append(dsm.subscribers.get(var).toString()).append("\n");
