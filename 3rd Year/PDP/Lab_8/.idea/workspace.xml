@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3227ef6-89fd-45a2-8e31-921bb3fb68b4" name="Default Changelist" comment="" />
+    <list default="true" id="b3227ef6-89fd-45a2-8e31-921bb3fb68b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../FLCD/Lab_5/Lab_5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../FLCD/Lab_5/g1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../FLCD/Lab_5/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../FLCD/Lab_5/src/domain/Grammar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FLCD/Lab_4/hi.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -59,17 +67,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -85,10 +82,22 @@
       <option name="presentableId" value="Default" />
       <updated>1637739163123</updated>
       <workItem from="1637739164764" duration="4807000" />
+      <workItem from="1637745053673" duration="595000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
