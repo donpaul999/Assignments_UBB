@@ -100,8 +100,8 @@ public class Product {
         int order = results.get(0).getOrder();
         Polynomial result = buildEmptyPolynomial(order + 1);
         for (int i = 0; i < result.getCoefficients().size(); i++) {
-            for (Object o : results) {
-                result.getCoefficients().set(i, result.getCoefficients().get(i) + ((Polynomial) o).getCoefficients().get(i));
+            for (Polynomial o : results) {
+                result.getCoefficients().set(i, result.getCoefficients().get(i) + o.getCoefficients().get(i));
             }
         }
         return result;

@@ -7,10 +7,35 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    private static final String APPROACH = "Karatsuba";
-    private static final int ORDER = 2500;
+    private static final String APPROACH = "Simple";
+    private static final int ORDER = 10;
 
-    private static void multiplicationMaster(Polynomial a, Polynomial b, int nrProcs, String type) {
+    public static void main(String[] args) {
+        MPI.Init(args);
+        int me = MPI.COMM_WORLD.Rank();
+        int nrProcs = MPI.COMM_WORLD.Size();
+        if (me == 0) {
+            // master process
+            System.out.println("Master process generating polynomials:");
+            Polynomial a = new Polynomial(ORDER);
+            Polynomial b = new Polynomial(ORDER);
+
+            System.out.println(a);
+            System.out.println(b);
+
+            multiplicationMaster(a, b, nrProcs);
+        } else {
+            if (APPROACH.equals("Karatsuba")){
+                multiplyKaratsubaWorker(me);
+            }
+            else{
+                multiplySimpleWorker(me);
+            }
+        }
+        MPI.Finalize();
+    }
+
+    private static void multiplicationMaster(Polynomial a, Polynomial b, int nrProcs) {
         long startTime = System.currentTimeMillis();
         int start = 0, finish = 0;
         int len = a.getSize() / (nrProcs - 1);
@@ -108,30 +133,4 @@ public class Main {
 
         MPI.COMM_WORLD.Send(new Object[]{result.getCoefficients().toString().substring(1, result.getCoefficients().toString().length() - 1)}, 0, 1, MPI.OBJECT, 0, 0);
     }
-
-    public static void main(String[] args) {
-        MPI.Init(args);
-        int me = MPI.COMM_WORLD.Rank();
-        int nrProcs = MPI.COMM_WORLD.Size();
-        if (me == 0) {
-            // master process
-            System.out.println("Master process generating polynomials:");
-            Polynomial a = new Polynomial(ORDER);
-            Polynomial b = new Polynomial(ORDER);
-
-            System.out.println(a);
-            System.out.println(b);
-
-            multiplicationMaster(a, b, nrProcs, APPROACH);
-        } else {
-            if (APPROACH.equals("Karatsuba")){
-                multiplyKaratsubaWorker(me);
-            }
-            else{
-                multiplySimpleWorker(me);
-            }
-        }
-        MPI.Finalize();
-    }
-
 }
