@@ -6,56 +6,42 @@ import java.io.IOException;
 import java.util.*;
 
 public class Grammar {
-    private List<String> N; //non-terminals (starting states?)
-    private List<String> T; // terminals (check if it is alphabet?)
-    private String S; //starting symbol
-    private Map<ArrayList<String>, ArrayList<List<String>>> P; // productions
+    private List<String> nonTerminals; //non-terminals
+    private List<String> terminals; // terminals
+    private String startingSymbol; //starting symbol
+    private Map<ArrayList<String>, ArrayList<List<String>>> productionRules; // production rules
 
     public Grammar() {
-        this.P = new HashMap<>();
+        this.productionRules = new HashMap<>();
     }
 
     public void readGrammar(String fileName) throws Exception {
-        List <String> stringList;
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
-            N = getStatesFromLine(br);
-            T = getStatesFromLine(br);
-            S = getStatesFromLine(br).get(0);
-//            System.out.println(N);
-//            System.out.println(E);
-//            System.out.println(S);
+            nonTerminals = getStatesFromLine(br);
+            terminals = getStatesFromLine(br);
+            startingSymbol = getStatesFromLine(br).get(0);
             br.readLine();
             while ((line = br.readLine()) != null) {
-                List<String> lineList = Arrays.asList(line.split(" "));
-                int i = 0;
+                //lineList o sa aiba tot timpul 2 elemente
+                //pe pozitia 0 key, pe pozitia 1 restul. o lista
+                List<String> lineList = Arrays.asList(line.split("->"));
                 ArrayList<String> key = new ArrayList<>();
-                while(!lineList.get(i).contains("->")) {
-                    String[] token = lineList.get(i).split("\\|");
-                    for(String j : token) {
-                        if(!key.contains(j) && !j.equals("|")) {
-                            key.add(j);
-                        }
-                    }
-                    i++;
-                }
-                i++;
+                key.add(lineList.get(0).strip());
                 ArrayList<List<String>> value = new ArrayList<>();
-                while(i < lineList.size()) {
-                    String[] token = lineList.get(i).split("\\|").clone();
-                    for(String str : token) {
-                        List<String> prod = Arrays.asList(str.split(" "));
-                        value.add(prod);
-                    }
-                    i++;
+                String[] token = lineList.get(1).split("\\|");
+                for(var str:token){
+                    List<String> prod = Arrays.asList(str.strip());
+                    value.add(prod);
                 }
-                P.put(key, value);
+                productionRules.put(key, value);
             }
-//            System.out.println(P);
-//
         } catch (Exception e) {
             e.printStackTrace();
         }
+        productionRules.entrySet().forEach(entry -> {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        });
     }
 
     private List<String> getStatesFromLine(BufferedReader br) throws IOException {
@@ -65,25 +51,28 @@ public class Grammar {
     }
 
     public void checkCFG() throws Exception {
-        if (!N.contains(S)) {
-            throw new Exception("S is not in N");
+        if (!nonTerminals.contains(startingSymbol)) {
+            throw new Exception("the starting symbol is not in the set of non terminals");
         }
-        for(Map.Entry element : P.entrySet()) {
+
+        for(Map.Entry element : productionRules.entrySet()) {
             List<String> key = (List<String>) element.getKey();
             if(key.size() > 1) {
                 throw new Exception("One key has more than one element");
             }
             for(String str : key) {
-                if(!N.contains(str)) {
-                    throw new Exception(str + " is not in N");
+                if(!nonTerminals.contains(str)) {
+                    throw new Exception(str + " is not in the set of non terminals");
                 }
             }
             List<List<String>> value = (List<List<String>>) element.getValue();
             for(List l : value) {
                 for(Object o: l) {
                     String str = (String) o;
-                    if(!N.contains(str) && !T.contains(str) && !str.equals("E")) { // Check for Epsilon, alphabet
-                        throw new Exception(str + " is not found in N or T");
+                    for(var oneStr: str.split(" ")) {
+                        if (!nonTerminals.contains(oneStr) && !terminals.contains(oneStr) && !str.equals("E")) { // Check for Epsilon, alphabet
+                            throw new Exception(oneStr + " is not found in the set of non terminals or terminals");
+                        }
                     }
                 }
             }
