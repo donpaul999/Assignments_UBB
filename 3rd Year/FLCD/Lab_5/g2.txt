@@ -1,4 +1,4 @@
-nonTerminals = program statement_list statement simple_statement compound_statement assign_statement input_output_statement assign_statement expression declaration_statement type struct_statement if_statement while_statement for_statement condition relation
+nonTerminals = program statement_list statement simple_statement compound_statement assign_statement input_output_statement expression declaration_statement type struct_statement if_statement while_statement for_statement condition relation
 terminals = [START] [END] ; identifier <- ; + - term read write ( ) { } let $ number string array_numbers for if while else smaller_than greater_or_equal not_equal equals bigger_than not_equals smaller_or_equal
 startingSymbol = program
 P =

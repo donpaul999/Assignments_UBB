@@ -9,7 +9,7 @@ public class Grammar {
     private List<String> nonTerminals; //non-terminals
     private List<String> terminals; // terminals
     private String startingSymbol; //starting symbol
-    private Map<ArrayList<String>, ArrayList<List<String>>> productionRules; // production rules
+    private Map<List<String>, ArrayList<List<String>>> productionRules; // production rules
 
     public Grammar() {
         this.productionRules = new HashMap<>();
@@ -23,11 +23,8 @@ public class Grammar {
             startingSymbol = getStatesFromLine(br).get(0);
             br.readLine();
             while ((line = br.readLine()) != null) {
-                //lineList o sa aiba tot timpul 2 elemente
-                //pe pozitia 0 key, pe pozitia 1 restul. o lista
                 List<String> lineList = Arrays.asList(line.split("->"));
-                ArrayList<String> key = new ArrayList<>();
-                key.add(lineList.get(0).strip());
+                List<String> key = Arrays.asList(lineList.get(0).strip().split(" \\| "));
                 ArrayList<List<String>> value = new ArrayList<>();
                 String[] token = lineList.get(1).split("\\|");
                 for(var str:token){
@@ -39,6 +36,10 @@ public class Grammar {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("Non terminals: " + nonTerminals);
+        System.out.println("Terminals: " + terminals);
+        System.out.println("Starting symbol: " + startingSymbol);
+        System.out.println("Productions:");
         productionRules.entrySet().forEach(entry -> {
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         });
@@ -63,6 +64,9 @@ public class Grammar {
             for(String str : key) {
                 if(!nonTerminals.contains(str)) {
                     throw new Exception(str + " is not in the set of non terminals");
+                }
+                if(Collections.frequency(nonTerminals, str) != 1) {
+                    throw new Exception(str + " appears multiple times in the non terminals.");
                 }
             }
             List<List<String>> value = (List<List<String>>) element.getValue();

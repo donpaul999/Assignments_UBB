@@ -1,0 +1,38 @@
+Syntactic rules:
+program = "[START]" statement_list "[END]"
+
+declaration_statement = "let" identifier "$" type ";"
+
+type = "number" | "string" | "array_numbers"
+
+array_numbers = "[" number {"," number} "]"
+digit = "0" | "1" | ... | "9"
+number = digit | digit {digit}
+
+expression = expression ("+" | "-") term | term
+term = term ("*" | "/" | "%") factor | factor
+factor = "(" expression ")" | const | identifier
+
+assign_statement = identifier "<-" expression ";"
+
+input_output_statement = "read" | "write" identifier ";"
+
+compound_statement = {declaration_statement ";"} statement | {declaration_statement ";"} statement ";" compound_statement ";"
+
+statement = simple_statement | struct_statement ";"
+
+statement_list = statement | statement statement_list
+
+simple_statement = assign_statement | input_output_statement
+
+condition = expression relation expression ("||" | "&&" condition)
+
+relation = "smaller_than" | "bigger_than" | "equals" | "not_equals" | "greater_or_equal" | "smaller_or_equal"
+
+if_statement = "if" "(" condition ")" "{" compound_statement "}" "else" "{" compound_statement "};"
+
+while_statement  = "while" "(" condition ")" "{" compound_statement "};"
+
+for_statement = "for" "(" assign_statement ";" condition ";" compound_statement ")" "{" compound_statement "};"
+
+struct_statement = if_statement | while_statement | for_statement
