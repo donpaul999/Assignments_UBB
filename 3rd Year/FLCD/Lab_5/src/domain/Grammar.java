@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.*;
 
 public class Grammar {
-    private List<String> nonTerminals; //non-terminals
-    private List<String> terminals; // terminals
-    private String startingSymbol; //starting symbol
-    private Map<List<String>, ArrayList<List<String>>> productionRules; // production rules
+    public List<String> nonTerminals; //non-terminals
+    public List<String> terminals; // terminals
+    public String startingSymbol; //starting symbol
+    public Map<List<String>, List<String>> productionRules; // production rules
 
     public Grammar() {
         this.productionRules = new HashMap<>();
@@ -25,11 +25,11 @@ public class Grammar {
             while ((line = br.readLine()) != null) {
                 List<String> lineList = Arrays.asList(line.split("->"));
                 List<String> key = Arrays.asList(lineList.get(0).strip().split(" \\| "));
-                ArrayList<List<String>> value = new ArrayList<>();
+                List<String> value = new ArrayList<>();
                 String[] token = lineList.get(1).split("\\|");
                 for(var str:token){
-                    List<String> prod = Arrays.asList(str.strip());
-                    value.add(prod);
+//                    List<String> prod = str.strip();
+                    value.add(str.strip());
                 }
                 productionRules.put(key, value);
             }
@@ -56,31 +56,40 @@ public class Grammar {
             throw new Exception("the starting symbol is not in the set of non terminals");
         }
 
-        for(Map.Entry element : productionRules.entrySet()) {
+        for (Map.Entry element : productionRules.entrySet()) {
             List<String> key = (List<String>) element.getKey();
-            if(key.size() > 1) {
+            if (key.size() > 1) {
                 throw new Exception("One key has more than one element");
             }
-            for(String str : key) {
-                if(!nonTerminals.contains(str)) {
+            for (String str : key) {
+                if (!nonTerminals.contains(str)) {
                     throw new Exception(str + " is not in the set of non terminals");
                 }
-                if(Collections.frequency(nonTerminals, str) != 1) {
+                if (Collections.frequency(nonTerminals, str) != 1) {
                     throw new Exception(str + " appears multiple times in the non terminals.");
                 }
             }
-            List<List<String>> value = (List<List<String>>) element.getValue();
-            for(List l : value) {
-                for(Object o: l) {
-                    String str = (String) o;
-                    for(var oneStr: str.split(" ")) {
-                        if (!nonTerminals.contains(oneStr) && !terminals.contains(oneStr) && !str.equals("E")) { // Check for Epsilon, alphabet
-                            throw new Exception(oneStr + " is not found in the set of non terminals or terminals");
-                        }
+            List<String> value = (List<String>) element.getValue();
+            for (Object o : value) {
+                String str = (String) o;
+                for (var oneStr : str.split(" ")) {
+                    if (!nonTerminals.contains(oneStr) && !terminals.contains(oneStr) && !str.equals("E")) { // Check for Epsilon, alphabet
+                        throw new Exception(oneStr + " is not found in the set of non terminals or terminals");
                     }
                 }
             }
         }
     }
 
+    public Map<List<String>, List<String>> filterP(String nonT) {
+        Map<List<String>, List<String>> result = new HashMap<>();
+        for (Map.Entry element : productionRules.entrySet()) {
+            List<String> key = (List<String>) element.getKey();
+            if (key.contains(nonT)) {
+                List<String> value = (List<String>) element.getValue();
+                result.put(key, value);
+            }
+        }
+        return result;
+    }
 }
