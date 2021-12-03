@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         Grammar g = new Grammar();
-        g.readGrammar("g1.txt");
+        g.readGrammar("g0.txt");
         g.checkCFG();
         Parser parser = new Parser(g);
 
@@ -27,10 +27,13 @@ public class Main {
                     System.out.println("Input symbol:");
                     scan.nextLine();
                     input = scan.nextLine();
-                    System.out.println(parser.goTo(parser.closureLR("A -> .B"), input));
+                    System.out.println(parser.goTo(parser.closureLR("S' -> .S"), input));
                     break;
                 case 3:
                     System.out.println(parser.colCanLR());
+                    break;
+                case 4:
+                    System.out.println(parser.createLRTable(parser.colCanLR()));
                     break;
                 case 0:
                     exit = true;
@@ -46,6 +49,7 @@ public class Main {
         System.out.println("1. Closure");
         System.out.println("2. Go To");
         System.out.println("3. Canonical Collection");
+        System.out.println("4. Display LR table");
         System.out.println("0. Exit");
         System.out.println("Select option:");
     }

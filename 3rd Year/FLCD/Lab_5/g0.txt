@@ -1,0 +1,7 @@
+nonTerminals = S A B
+terminals = a b c d
+startingSymbol = S
+P =
+S -> a A B | B
+A -> b A | c
+B -> d

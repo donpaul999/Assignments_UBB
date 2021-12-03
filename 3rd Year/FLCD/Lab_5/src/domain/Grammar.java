@@ -43,6 +43,7 @@ public class Grammar {
         productionRules.entrySet().forEach(entry -> {
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         });
+        checkCFG();
     }
 
     private List<String> getStatesFromLine(BufferedReader br) throws IOException {
