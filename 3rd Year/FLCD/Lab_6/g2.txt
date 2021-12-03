@@ -1,0 +1,19 @@
+nonTerminals = program statement_list statement simple_statement compound_statement assign_statement input_output_statement expression declaration_statement type struct_statement if_statement while_statement for_statement condition relation
+terminals = [START] [END] ; identifier <- ; + - term read write ( ) { } let $ number string array_numbers for if while else smaller_than greater_or_equal not_equal equals bigger_than not_equals smaller_or_equal
+startingSymbol = program
+P =
+program -> [START] statement_list [END]
+statement_list -> statement | statement statement_list
+statement -> simple_statement | struct_statement ;
+simple_statement -> assign_statement | input_output_statement
+assign_statement -> identifier <- expression ;
+input_output_statement ->  read identifier ; | write identifier ;
+compound_statement -> { declaration_statement ; } statement | { declaration_statement ; } statement ; compound_statement ;
+declaration_statement -> let identifier $ type ;
+type -> number | string | array_numbers
+struct_statement -> if_statement | while_statement | for_statement
+if_statement -> if ( condition ) { compound_statement } else { compound_statement } ;
+while_statement  -> while ( condition ) { compound_statement } ;
+for_statement -> for ( assign_statement ; condition ; compound_statement ) { compound_statement } ;
+condition -> expression relation expression
+relation -> smaller_than | bigger_than | equals | not_equals | greater_or_equal | smaller_or_equal
