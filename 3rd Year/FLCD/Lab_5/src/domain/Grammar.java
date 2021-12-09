@@ -6,16 +6,17 @@ import java.io.IOException;
 import java.util.*;
 
 public class Grammar {
-    public List<String> nonTerminals; //non-terminals
-    public List<String> terminals; // terminals
+    public List<String> nonTerminals; //non-terminals (starting states?)
+    public List<String> terminals; // terminals (check if it is alphabet?)
     public String startingSymbol; //starting symbol
-    public Map<List<String>, List<String>> productionRules; // production rules
+    public Map<ArrayList<String>, ArrayList<List<String>>> productionRules; // production rules
 
     public Grammar() {
         this.productionRules = new HashMap<>();
     }
 
     public void readGrammar(String fileName) throws Exception {
+        List <String> stringList;
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             nonTerminals = getStatesFromLine(br);
@@ -23,27 +24,25 @@ public class Grammar {
             startingSymbol = getStatesFromLine(br).get(0);
             br.readLine();
             while ((line = br.readLine()) != null) {
+                //lineList o sa aiba tot timpul 2 elemente
+                //pe pozitia 0 key, pe pozitia 1 restul. o lista
                 List<String> lineList = Arrays.asList(line.split("->"));
-                List<String> key = Arrays.asList(lineList.get(0).strip().split(" \\| "));
-                List<String> value = new ArrayList<>();
+                ArrayList<String> key = new ArrayList<>();
+                key.add(lineList.get(0).strip());
+                ArrayList<List<String>> value = new ArrayList<>();
                 String[] token = lineList.get(1).split("\\|");
                 for(var str:token){
-//                    List<String> prod = str.strip();
-                    value.add(str.strip());
+                    List<String> prod = Arrays.asList(str.strip().split(" "));
+                    value.add(prod);
                 }
                 productionRules.put(key, value);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("Non terminals: " + nonTerminals);
-        System.out.println("Terminals: " + terminals);
-        System.out.println("Starting symbol: " + startingSymbol);
-        System.out.println("Productions:");
-        productionRules.entrySet().forEach(entry -> {
-            System.out.println(entry.getKey() + " -> " + entry.getValue());
-        });
-        checkCFG();
+//        productionRules.entrySet().forEach(entry -> {
+//            System.out.println(entry.getKey() + " -> " + entry.getValue());
+//        });
     }
 
     private List<String> getStatesFromLine(BufferedReader br) throws IOException {
@@ -57,40 +56,41 @@ public class Grammar {
             throw new Exception("the starting symbol is not in the set of non terminals");
         }
 
-        for (Map.Entry element : productionRules.entrySet()) {
+        for(Map.Entry element : productionRules.entrySet()) {
             List<String> key = (List<String>) element.getKey();
-            if (key.size() > 1) {
+            if(key.size() > 1) {
                 throw new Exception("One key has more than one element");
             }
-            for (String str : key) {
-                if (!nonTerminals.contains(str)) {
+            for(String str : key) {
+                if(!nonTerminals.contains(str)) {
                     throw new Exception(str + " is not in the set of non terminals");
                 }
-                if (Collections.frequency(nonTerminals, str) != 1) {
-                    throw new Exception(str + " appears multiple times in the non terminals.");
-                }
             }
-            List<String> value = (List<String>) element.getValue();
-            for (Object o : value) {
-                String str = (String) o;
-                for (var oneStr : str.split(" ")) {
-                    if (!nonTerminals.contains(oneStr) && !terminals.contains(oneStr) && !str.equals("E")) { // Check for Epsilon, alphabet
-                        throw new Exception(oneStr + " is not found in the set of non terminals or terminals");
+            List<List<String>> value = (List<List<String>>) element.getValue();
+            for(List l : value) {
+                for(Object o: l) {
+                    String str = (String) o;
+                    for(var oneStr: str.split(" ")) {
+                        if (!nonTerminals.contains(oneStr) && !terminals.contains(oneStr) && !str.equals("E")) { // Check for Epsilon, alphabet
+                            throw new Exception(oneStr + " is not found in the set of non terminals or terminals");
+                        }
                     }
                 }
             }
         }
     }
 
-    public Map<List<String>, List<String>> filterP(String nonT) {
-        Map<List<String>, List<String>> result = new HashMap<>();
+    public Map<List<String>, List<List<String>>> filterP(String nonT) {
+        Map<List<String>, List<List<String>>> result = new HashMap<>();
         for (Map.Entry element : productionRules.entrySet()) {
             List<String> key = (List<String>) element.getKey();
             if (key.contains(nonT)) {
-                List<String> value = (List<String>) element.getValue();
+                var value = (List<List<String>>) element.getValue();
                 result.put(key, value);
             }
         }
         return result;
     }
+
+
 }

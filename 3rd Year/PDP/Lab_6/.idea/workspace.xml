@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc698d56-4cf4-4257-b14f-236ee720a23a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_6/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_6/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_6/domain/DirectedGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_6/domain/DirectedGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_6/domain/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_6/domain/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/DirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/DirectedGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/DSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/DSM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/Main$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/Main$Listener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/CloseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/CloseMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/ErrorMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/ErrorMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/SubscribeMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/SubscribeMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/UpdateMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/out/production/Lab_8/domain/UpdateMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/src/DSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/src/DSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_8/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_8/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +35,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="20ib41lzAgoYuADcO2MA1sj1CJW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -63,6 +82,7 @@
       <workItem from="1636530162128" duration="3283000" />
       <workItem from="1637053107417" duration="78000" />
       <workItem from="1637132381352" duration="1580000" />
+      <workItem from="1638813675996" duration="39000" />
     </task>
     <servers />
   </component>

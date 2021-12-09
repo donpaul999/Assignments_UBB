@@ -72,9 +72,9 @@ public class Main {
                     System.out.println("Rank " + MPI.COMM_WORLD.Rank() + " received:" + updateMessage.var + "->" + updateMessage.val);
                     dsm.setVariable(updateMessage.var, updateMessage.val);
                 } else if (message instanceof ErrorMessage) {
-                ErrorMessage errorMessage = (ErrorMessage) message;
-                System.out.println("ErrorMessage message received");
-                System.out.println("Rank " + MPI.COMM_WORLD.Rank() + " received: Process " + errorMessage.rank + " tried to update unavailable variable " + errorMessage.var);
+                    ErrorMessage errorMessage = (ErrorMessage) message;
+                    System.out.println("ErrorMessage message received");
+                    System.out.println("Rank " + MPI.COMM_WORLD.Rank() + " received: Process " + errorMessage.rank + " tried to update unavailable variable " + errorMessage.var);
                 }
                 writeAll(dsm);
             }

@@ -56,7 +56,7 @@ public final class DirectedGraph {
     }
 
     public int size() {
-        return this.edges.size();
+        return this.nodes.size();
     }
 
     @Override

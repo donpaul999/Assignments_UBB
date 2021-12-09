@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3227ef6-89fd-45a2-8e31-921bb3fb68b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../FLCD/Lab_5/Lab_5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../FLCD/Lab_5/g1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../FLCD/Lab_5/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../FLCD/Lab_5/src/domain/Grammar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FLCD/Lab_4/hi.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_6/out/production/Lab_6/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/out/production/Lab_6/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_6/out/production/Lab_6/domain/DirectedGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/out/production/Lab_6/domain/DirectedGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_6/out/production/Lab_6/domain/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/out/production/Lab_6/domain/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_6/src/domain/DirectedGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_6/src/domain/DirectedGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_8/DSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_8/DSM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_8/Main$Listener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_8/Main$Listener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_8/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_8/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_8/domain/CloseMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_8/domain/CloseMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_8/domain/ErrorMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_8/domain/ErrorMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_8/domain/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_8/domain/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_8/domain/SubscribeMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_8/domain/SubscribeMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab_8/domain/UpdateMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab_8/domain/UpdateMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +43,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="21M7a4XgFr2DFze0ueRC8wRVC0X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -83,6 +98,9 @@
       <updated>1637739163123</updated>
       <workItem from="1637739164764" duration="4807000" />
       <workItem from="1637745053673" duration="595000" />
+      <workItem from="1638883690413" duration="1121000" />
+      <workItem from="1638947283336" duration="2321000" />
+      <workItem from="1639055417666" duration="43000" />
     </task>
     <servers />
   </component>

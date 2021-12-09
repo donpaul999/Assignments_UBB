@@ -42,8 +42,6 @@ public class DSM {
     }
 
     public void checkAndReplace(String var, int old, int newValue) {
-        System.out.println((this.subscribers.get(var)));
-        System.out.println(var + " " + old + " " + newValue);
         if(!this.subscribers.get(var).contains(MPI.COMM_WORLD.Rank()))
             this.sendToSubscribers(var, new ErrorMessage(var, MPI.COMM_WORLD.Rank()));
         if (var.equals("a") && this.a == old){

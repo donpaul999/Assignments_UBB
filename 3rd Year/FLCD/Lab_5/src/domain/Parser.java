@@ -1,9 +1,11 @@
 package domain;
+
 import adt.Pair;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 public class Parser {
     private final Grammar grammar;
 
@@ -11,47 +13,70 @@ public class Parser {
         this.grammar = grammar;
     }
 
-    public Map<List<String>, List<String>> closureLR(String input) {
-        //exemplu S -> .A B
-        Map<List<String>, List<String>> P = new HashMap<>();
+    //afisare value dupa fiecare add
+    public Map<List<String>, List<List<String>>> closureLR(String input) {
+        Map<List<String>, List<List<String>>> P = new HashMap<>();
         List<String> lineListT = Arrays.asList(input.split("->"));
         List<String> lineList =
                 lineListT.stream().map(String::trim).collect(Collectors.toList());
-
         //lineList : [S, .A B]
         List<String> key = Arrays.asList(lineList.get(0).strip().split(" \\| "));
-        List<String> value = new ArrayList<>();
-        String[] token = lineList.get(1).split("\\|");
-        //split la lista dupa |
-        for (var str : token) {
-            value.add(str.strip());
+        List<List<String>> value = new ArrayList<>();
+        List<String> token = List.of(lineList.get(1).split("\\|"));
+        for(var str:token){
+            List<String> prod = Arrays.asList(str.strip().split(" "));
+            value.add(prod);
         }
+        //split la lista dupa |
         P.put(key, value);
-        int size = 0, index;
+        int size = 0;
+        int index = -1;
         String nonT;
-        //pana aici o sa fie {[S]:[.A B]}
-        while (size < P.size()) {
-            size = P.size();
-            Map<List<String>, List<String>> filteredP = new HashMap<>(P);
+//        pana aici o sa fie {[S]:[[.A, B]}
+        //pana aici e ok
+
+
+
+        while (size <getSizeOfMap(P)) {
+            size = getSizeOfMap(P);
+            Map<List<String>, List<List<String>>> filteredP = clone(P);
             for (Map.Entry element : filteredP.entrySet()) {
-                value = (List<String>) element.getValue();
-                // value o sa fie o lista de strings [.A B]
-                for (String s : value) {
-                    index = s.indexOf('.');
-                    //gasim indexul punctului
-                    if (index != -1 && index < s.length() - 1) {
-                        //System.out.println(s);// daca exista punct, si nu e pe ultima pozitie
-                        nonT = s.substring(index + 1).split(" ")[0]; // eliminam punctul
-                        //System.out.println(nonT);
-                        // o sa fie primul element acuma nonT
-                        Map<List<String>, List<String>> filteredB = grammar.filterP(nonT);
-                        //System.out.println(filteredB);
+                value = (List<List<String>>) element.getValue();
+                // value o sa fie o lista de liste de strings [[b .A A]]
+                for (List<String> s : value) {
+                    index = -1;
+                    for(String character: s){
+                        if(character.charAt(0) == '.'){
+                            index = s.indexOf(character);
+                            break;
+                        }
+                    }
+                    //we have the index of the dotted element
+                    if (index != -1) {
+                        s.set(index, s.get(index).substring(1));
+                        nonT = s.get(index);
+                        // nonT - dotted element
+                        Map<List<String>, List<List<String>>> filteredB = clone(grammar.filterP(nonT));
                         for (Map.Entry elementB : filteredB.entrySet()) {
                             List<String> keyB = (List<String>) elementB.getKey();
-                            List<String> valueB = (List<String>) elementB.getValue();
-                            if (!P.containsKey(keyB)) {
-                                P.put(keyB, valueB.stream().map(x -> "." + x).collect(Collectors.toList()));
+                            List<List<String>> valueB = (List<List<String>>) elementB.getValue();
+                            for(var q: valueB)
+                                q.set(0, "."+q.get(0));
+                            List<List<String>> oldValue = (List<List<String>>) element.getValue();
+                            var X = clone(P);
+                            //check if exist already
+                            for (Map.Entry oldelement : X.entrySet()) {
+                                List<String> oldkey = (List<String>) oldelement.getKey();
+                                List<String> keyy = (List<String>) element.getKey();
+                                if(keyB.get(0).equals(oldkey.get(0))){
+                                    for(var qqq: (List<List<String>>)oldelement.getValue()){
+                                        if(!valueB.contains(qqq)){
+                                            valueB.add(qqq);
+                                        }
+                                    }
+                                }
                             }
+                            P.put(keyB, valueB);
                         }
                     }
                 }
@@ -60,89 +85,120 @@ public class Parser {
         return P;
     }
 
-    public Map<List<String>, List<String>> goTo(Map<List<String>, List<String>> productions, String symbol) {
-        Map<List<String>, List<String>> nestedMap = new HashMap<>();
-        for (Map.Entry element : productions.entrySet()) {
-            List<String> value = new ArrayList<String>((List<String>) element.getValue());
-            List<String> key = (List<String>) element.getKey();
-            int index = -1;
-            int i = 0;
-            for(var x: value){
-                index = x.indexOf("."+symbol);
-                if(index != -1) {
-                    break;
+    public int getSizeOfMap(Map<List<String>, List<List<String>>> m){
+        int c = 0;
+        for (Map.Entry element : m.entrySet()) {
+            List<List<String>> liststring = (List<List<String>>) element.getValue();
+            for(var q: liststring)
+                c += q.size();
+        }
+        return c;
+    }
+
+    public static Map<List<String>, List<List<String>>> clone(Map<List<String>, List<List<String>>> original)
+    {
+        Map<List<String>, List<List<String>>> copy = new HashMap<>();
+        for (Map.Entry elementB : original.entrySet()) {
+            List<String> key = new ArrayList<>();
+            List<String> keyOriginal = (List<String>) elementB.getKey();
+            key.add(keyOriginal.get(0));
+            List<List<String>> values = new ArrayList<>();
+            for(var vls: (List<List<String>>)elementB.getValue()){
+                List<String> value = new ArrayList<>();
+                for(var vl: vls){
+                    value.add(vl);
                 }
-                i++;
+                values.add(value);
             }
-            //                      a .adas B
-            //                      012345678
-            //            2-punct
-            //            7-spatiu
-            if (index != -1) {
-                var new_symbol = "";
-                int space = value.get(i).indexOf(" ", index);
-                if(index == 0)
-                    if(space != -1)
-                        new_symbol = value.get(i).substring(1, space)
-                                + " ."
-                                + value.get(i).substring(space+1);
-                    else
-                        new_symbol = value.get(i).substring(1) + ".";
-                else {
-                    if(space != -1)
-                        new_symbol = value.get(i).substring(0, index)
-                                + value.get(i).substring(index + 1, space + 1) + "."
-                                + value.get(i).substring(space + 1);
-                    else
-                        new_symbol = value.get(i).substring(0, index)
-                                + value.get(i).substring(index + 1) + ".";
+            copy.put(key, values);
+        }
+        return copy;
+    }
+
+    public Map<List<String>, List<List<String>>> goTo(Map<List<String>, List<List<String>>> productions, String symbol) {
+        Map<List<String>, List<List<String>>> nestedMap = new HashMap<>();
+        Map<List<String>, List<List<String>>> productionscopy = clone(productions);
+        for (Map.Entry element : productionscopy.entrySet()) {
+            List<List<String>> values = (List<List<String>>) element.getValue();
+            List<String> key = (List<String>) element.getKey();
+            List<List<String>> newValues = new ArrayList<>();
+            boolean symbolFound = false;
+            for(var value: values){
+                for(int i = 0; i < value.size(); i++) {
+                    if (value.get(i).equals("."+symbol)) {
+                        value.set(i, value.get(i).substring(1));
+                        symbolFound = true;
+                        if (i == value.size() - 1) {
+                            value.set(i, value.get(i) + ".");
+                        } else {
+                            value.set(i + 1, "." + value.get(i + 1));
+                        }
+                        newValues.add(value);
+                        break;
+                    }
                 }
-                List<String> y = new LinkedList<>();
-                y.add(new_symbol);
-                value.set(i, new_symbol);
-                Map<List<String>, List<String>> closure = closureLR(String.join(" | ", key) + " -> " + String.join(" | ", value));
+            }
+            if(symbolFound) {
+                String closureString = key.get(0) + " ->";
+                boolean or = false;
+                for (var value : newValues) {
+                    if (or)
+                        closureString += " |";
+                    or = false;
+                    for (var val : value) {
+                        closureString += " " + val;
+                        or = true;
+                    }
+                }
+                Map<List<String>, List<List<String>>> closure = clone(closureLR(closureString));
                 nestedMap.putAll(closure);
             }
         }
         return nestedMap;
     }
 
-    public List<Map<List<String>, List<String>>> colCanLR() {
-        List<Map<List<String>, List<String>>> result = new ArrayList<>();
-
-        result.add(closureLR("S' -> .S"));
+    public List<Map<List<String>, List<List<String>>>> colCanLR() {
+        List<Map<List<String>, List<List<String>>>> result = new ArrayList<>();
+        result.add(clone(closureLR("S' -> .S")));
+        System.out.println("S  ---> " + closureLR("S' -> .S"));
         boolean ok = true;
         while(ok) {
             ok = false;
-            List<Map<List<String>, List<String>>> filteredResult = new ArrayList<>(result);
-            for (Map<List<String>, List<String>> state : filteredResult) {
+            List<Map<List<String>, List<List<String>>>> filteredResult = new ArrayList<>(result);
+            for (Map<List<String>, List<List<String>>> state : filteredResult) {
                 List<String> concatenated = Stream.concat(grammar.nonTerminals.stream(), grammar.terminals.stream()).collect(Collectors.toList());
                 for (String element: concatenated) {
-                    Map<List<String>, List<String>> goToElem = goTo(state, element);
+                    Map<List<String>, List<List<String>>> goToElem = clone(goTo(state, element));
                     if(!goToElem.isEmpty() && !included(result, goToElem)){
+                        System.out.println(state + "  goto("+element+")    ------>   " + goToElem);
                         result.add(goToElem);
                         ok = true;
                     }
                 }
             }
         }
-
         return result;
     }
-
-    private boolean included(List<Map<List<String>, List<String>>> result, Map<List<String>, List<String>> goToElem) {
+    private boolean included(List<Map<List<String>, List<List<String>>>> result, Map<List<String>, List<List<String>>> goToElem) {
         return result.stream().anyMatch((listOfStates) -> listOfStates.entrySet().containsAll(goToElem.entrySet()));
     }
 
-    public HashMap<Integer, Pair<String, HashMap<String, Integer>>> createLRTable(List<Map<List<String>, List<String>>> states) {
+    public HashMap<Integer, Pair<String, HashMap<String, Integer>>> createLRTable(List<Map<List<String>, List<List<String>>>> states) {
         HashMap<Integer, Pair<String, HashMap<String, Integer>>> lrTable = new HashMap<>();
 
-        for (Map<List<String>, List<String>> state : states) {
+        System.out.println("*********");
+        System.out.println("Grammar: ");
+        for (Map.Entry grammarElement : grammar.productionRules.entrySet()) {
+            System.out.println(grammarElement);
+        }
+        System.out.println("*********");
+
+        for (Map<List<String>, List<List<String>>> state : states) {
             int position = states.indexOf(state);
-            if(state.get(List.of("S'")) != null && state.get(List.of("S'")).contains("S.")){
+            if(state.get(List.of("S'")) != null && state.get(List.of("S'")).contains(List.of("S."))){
                 lrTable.put(position, new Pair("acc",new HashMap<String,Integer>()));
             }
-            else if(hasReduce(state) != -1){
+            else if(!hasReduce(state).equals(new Pair<>(-1, -1))){
                 lrTable.put(position,new Pair("reduce "+hasReduce(state),new HashMap<String,Integer>()));
             }
             else {
@@ -150,7 +206,7 @@ public class Parser {
                 for (String element : Stream.concat(grammar.nonTerminals.stream(), grammar.terminals.stream())
                         .collect(Collectors.toList())) {
 
-                    Map<List<String>, List<String>> goToRes = goTo(state, element);
+                    Map<List<String>, List<List<String>>> goToRes = goTo(state, element);
 
                     if (!goToRes.isEmpty()) {
                         lrTable.get(position).second.put(element,states.indexOf(goToRes));
@@ -161,29 +217,30 @@ public class Parser {
         return lrTable;
     }
 
-    private Integer hasReduce(Map<List<String>, List<String>> state) {
-        for(Map.Entry element : state.entrySet()){
-            List<String> value = new ArrayList<String>((List<String>) element.getValue());
+    private Pair<Integer, Integer> hasReduce(Map<List<String>, List<List<String>>> state) {
+        Map<List<String>, List<List<String>>> states = clone(state);
+        for(Map.Entry element : states.entrySet()){
+            List<List<String>> value = (List<List<String>>) element.getValue();
             List<String> key = (List<String>) element.getKey();
-            if(value.get(value.size() - 1).charAt(value.get(value.size() - 1).length() - 1) == '.'){
-                String val = value.get(value.size() - 1);
-                value.remove(value.size() - 1);
-                value.add(val.substring(0, val.length() - 1));
+            List<String> lastValue = value.get(value.size() - 1);
+            if (lastValue.get(lastValue.size() - 1).charAt(lastValue.get(lastValue.size() - 1).length() - 1) == '.') {
+                String val = lastValue.get(lastValue.size() - 1);
+                lastValue.remove(lastValue.size() - 1);
+                lastValue.add(val.substring(0, val.length() - 1));
                 int index = 0;
-                for(Map.Entry grammarElement : grammar.productionRules.entrySet()) {
+                for (Map.Entry grammarElement : grammar.productionRules.entrySet()) {
                     List<String> gKey = (List<String>) grammarElement.getKey();
-                    List<String> gValue = (List<String>) grammarElement.getValue();
-                    if (gKey.equals(key) && gValue.equals(value)) {
-                        break;
+                    List<List<String>> gValue = (List<List<String>>) grammarElement.getValue();
+                    for (List<String> gVal : gValue) {
+                        if (gKey.equals(key) && gVal.equals(lastValue)) {
+                            return new Pair<>(index, gValue.indexOf(gVal));
+                        }
                     }
-                    index ++;
+                    index++;
                 }
-                if (index < grammar.productionRules.size())
-                    return index;
-                return -1;
             }
         }
-        return -1;
+        return new Pair<>(-1, -1);
     }
 
 }
