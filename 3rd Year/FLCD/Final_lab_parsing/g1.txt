@@ -1,0 +1,8 @@
+N = S A B C
+E = ( ) + * int E
+S = S
+P =
+S -> A B
+A -> ( S ) | int C
+B -> + S | E
+C -> * A | E

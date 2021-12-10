@@ -1,0 +1,72 @@
+START -1
+let -1
+id 7 0
+$ -1
+number -1
+; -1
+let -1
+id 0 0
+$ -1
+number -1
+; -1
+let -1
+id 1 0
+$ -1
+number -1
+; -1
+let -1
+id 6 0
+$ -1
+number -1
+; -1
+read -1
+id 7 0
+, -1
+id 0 0
+, -1
+id 1 0
+; -1
+id 7 0
+= -1
+constant 6 1
+; -1
+if -1
+( -1
+id 6 0
+smaller_than -1
+id 7 0
+) -1
+{ -1
+id 6 0
+= -1
+id 7 0
+; -1
+} -1
+if -1
+( -1
+id 6 0
+smaller_than -1
+id 0 0
+) -1
+{ -1
+id 6 0
+= -1
+id 0 0
+; -1
+} -1
+if -1
+( -1
+id 6 0
+smaller_than -1
+id 1 0
+) -1
+{ -1
+id 6 0
+= -1
+id 1 0
+; -1
+} -1
+print -1
+id 6 0
+; -1
+END -1
