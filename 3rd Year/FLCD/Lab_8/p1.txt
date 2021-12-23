@@ -1,4 +1,4 @@
-START
+START {
 let n1 $ number;
 let n2 $ number;
 let n3 $ number;
@@ -6,7 +6,7 @@ let max $ number;
 
 read n1, n2, n3;
 
-n1 = 12a3;
+n1 = 2321;
 
 if (max smaller_than n1) {
     max = n1;
@@ -19,4 +19,5 @@ if (max smaller_than n3) {
 }
 
 print max;
+}
 END

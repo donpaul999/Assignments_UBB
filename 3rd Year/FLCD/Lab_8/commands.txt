@@ -1,0 +1,10 @@
+1
+ lex lang_l.lxi
+ gcc lex.yy.c -ll
+ ./a.out<p1.txt
+
+2
+ lex lang.lxi
+ yacc -d lang.y
+ gcc lex.yy.c y.tab.c -o result -ll
+ ./result<p1.txt

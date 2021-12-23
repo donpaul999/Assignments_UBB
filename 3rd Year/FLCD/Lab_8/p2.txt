@@ -1,4 +1,4 @@
-START
+START {
 let n1 $ number;
 let n2 $ number;
 let r $ number;
@@ -8,7 +8,7 @@ x = 'aab';
 n1 = 1002;
 read n1, n2;
 
-while (n2 not_equals 0) {
+while (n2 not_equals 1) {
     r = n2 % n1;
     n1 = n2;
     n2 = r;
@@ -16,4 +16,5 @@ while (n2 not_equals 0) {
 
 print n1;
 print max;
+}
 END
