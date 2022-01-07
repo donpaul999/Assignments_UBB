@@ -53,37 +53,19 @@
 %start program
 
 %%
-program : START statement_list END
+program : START compound_statement END
 	;
 declaration :  LET ID DOLLAR type
 	    ;
-type :  NUMBER | STRING | ARRAY_NUMBERS
+type :  NUMBER | STRING | typeTemp
 	   ;
-array_numbers_assign : OPEN_RIGHT_BRACKET numbers_list CLOSED_RIGHT_BRACKET
-    ;
-numbers_list :  /*Empty*/ | CONST | CONST COMMA numbers_list
-    ;
-expression : expression symbol_1 term | term
-   ;
-term : term symbol_2 factor | factor
-     ;
-factor: OPEN_ROUND_BRACKET expression CLOSED_ROUND_BRACKET | CONST | ID | array_numbers_assign
-     ;
-symbol_1 : PLUS | MINUS
-    ;
-symbol_2: MUL | DIV | MOD
-    ;
-assign_statement :  ID ATRIB expression
-	   ;
-input_output_statement :  READ identifiers_list | PRINT ID | PRINT CONST
-      ;
-identifiers_list : ID | ID COMMA identifiersTemp
-      ;
-identifiersTemp : /*Empty*/ | identifiers_list
-      ;
+typeTemp : /*Empty*/ | ARRAY_NUMBERS OPEN_RIGHT_BRACKET CONST CLOSED_RIGHT_BRACKET
+	 ;
 compound_statement : OPEN_CURLY_BRACKET statement_list CLOSED_CURLY_BRACKET
 	 ;
-statement_list :  stmt | stmt statement_list
+statement_list :  stmt stmtTemp
+	 ;
+stmtTemp : /*Empty*/ | statement_list
 	 ;
 stmt :  simple_statement SEMI_COLON | struct_statement
      ;
@@ -95,16 +77,39 @@ if_statement :  IF OPEN_ROUND_BRACKET boolean_condition CLOSED_ROUND_BRACKET com
        ;
 tempIf : /*Empty*/ | ELSE compound_statement
        ;
-while_statement :  WHILE OPEN_ROUND_BRACKET boolean_condition CLOSED_ROUND_BRACKET compound_statement
-        ;
 for_statement :  FOR forheader compound_statement
        ;
-forheader :  OPEN_ROUND_BRACKET assign_statement SEMI_COLON boolean_condition SEMI_COLON assign_statement CLOSED_ROUND_BRACKET
+forheader :  OPEN_ROUND_BRACKET NUMBER assign_statement SEMI_COLON OPEN_ROUND_BRACKET boolean_condition CLOSED_ROUND_BRACKET SEMI_COLON assign_statement CLOSED_ROUND_BRACKET
 	  ;
-condition : expression relation expression
-        ;
-relation :  GREATER_OR_EQUAL | BIGGER_THAN | SMALLER_THAN | SMALLER_OR_EQUAL | EQUALS | NOT_EQUALS
-    ;
+while_statement :  WHILE OPEN_ROUND_BRACKET boolean_condition CLOSED_ROUND_BRACKET compound_statement
+	  ;
+assign_statement :  ID ATRIB expression
+	   ;
+expression : arithmetic2 arithmetic1
+	   ;
+arithmetic1 : PLUS arithmetic2 arithmetic1 | MINUS arithmetic2 arithmetic1 | /*Empty*/
+	    ;
+arithmetic2 : multiply2 multiply1
+	    ;
+multiply1 : MUL multiply2 multiply1 | DIV multiply2 multiply1 | MOD multiply2 multiply1 | /*Empty*/
+	  ;
+multiply2 : OPEN_ROUND_BRACKET expression CLOSED_ROUND_BRACKET | CONST | ID | IndexedIdentifier
+	  ;
+IndexedIdentifier :  ID OPEN_RIGHT_BRACKET CONST CLOSED_RIGHT_BRACKET
+		  ;
+input_output_statement :  READ identifiers_list | PRINT ID | PRINT CONST
+      ;
+identifiers_list : ID | ID COMMA identifiersTemp
+      ;
+identifiersTemp : /*Empty*/ | identifiers_list
+      ;
+condition : expression GREATER_OR_EQUAL expression |
+	 expression BIGGER_THAN expression |
+	 expression SMALLER_THAN expression |
+	 expression SMALLER_OR_EQUAL expression |
+	 expression EQUALS expression |
+	 expression NOT_EQUALS expression
+	  ;
 boolean_condition : condition boolean_cond_temp
 		  ;
 boolean_cond_temp : /*Empty*/ | AND boolean_condition | OR boolean_condition

@@ -1,14 +1,16 @@
-START {
+START
 let n1 $ number;
 let n2 $ number;
 let n3 $ number;
 let max $ number;
+let array $ array_numbers;
 
 read n1, n2, n3;
 
-n1 = 2321;
+n1 = 231 / 5;
+array = [1, 2, 3];
 
-if (max smaller_than n1) {
+if ((5 * 1 + 2) smaller_than n1) {
     max = n1;
 }
 if (max smaller_than n2) {
@@ -17,7 +19,12 @@ if (max smaller_than n2) {
 if (max smaller_than n3) {
     max = n3;
 }
-
-print max;
+while (n1 smaller_than 2) {
+ n1 = n1 - 1;
 }
+for (i = 1; i smaller_than n2; i = i + 1) {
+ print i;
+}
+print max;
+
 END
