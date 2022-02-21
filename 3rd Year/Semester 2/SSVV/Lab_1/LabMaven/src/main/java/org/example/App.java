@@ -1,4 +1,4 @@
-package ubb.hw;
+package org.example;
 
 /**
  * Hello world!

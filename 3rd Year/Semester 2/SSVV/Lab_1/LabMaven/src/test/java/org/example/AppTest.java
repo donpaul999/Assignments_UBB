@@ -1,4 +1,4 @@
-package ubb.hw;
+package org.example;
 
 import static org.junit.Assert.assertTrue;
 
