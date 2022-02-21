@@ -1,0 +1,6 @@
+Print students list
+Print assignments list
+Add new student
+Add new assignment
+Add grade for student on assignment
+Delete an assignment
