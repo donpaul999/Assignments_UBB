@@ -36,6 +36,10 @@
 ## x=@(a,b)(a+b)*cos(t) - b*cos((a/b + 1)*t);
 ##  y=@(a,b)(a+b)*sin(t) - b*sin((a/b + 1)*t);
 ##  plot(x(1,2), y(1,2))
+##
+##f=@(x)(-1<=x & x<=0).*(x.^2+sqrt(1-x))+(0<x & x <= 1).*(x.^2-sqrt(1-x))
+##fplot(f,[-1,1])
 
-f=@(x)(-1<=x & x<=0).*(x.^2+sqrt(1-x))+(0<x & x <= 1).*(x.^2-sqrt(1-x))
-fplot(f,[-1,1])
+function  g = myFirstFunction  (n)
+  
+  
