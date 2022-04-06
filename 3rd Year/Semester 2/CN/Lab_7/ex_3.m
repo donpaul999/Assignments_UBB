@@ -16,8 +16,8 @@ while ~isempty([x, y])
   y1 = [y1, y]
 endwhile
 
-nodes_time = linspace(0, 1, n - 1);
-t = linspace(0, 1, 1000);
-p = polyfit(x1, y1, length(x1));
-x2 = polyval(p, x1);
-plot(x2, y1)
+t = linspace(0, 1, 1000)
+
+p = polyfit(x1, y1, 3);
+
+plot(t, polyval(p, t))
