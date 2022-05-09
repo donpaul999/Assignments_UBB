@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Demo Project using Serenity and JUnit</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="7b98ab63a1f66587e18b1d9e9de56423ebc1935e2b0df5669f2965b1b61d2c47.html">Search By Keyword Story</a></span>
+                > <span class="truncate-60"><a
+                    href="36973d1da3a8597621d970ce318a546e2750279315140b819aff74b1464b934e.html">Searching by keyword banana should display the corresponding article </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 09-05-2022 08:44</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Search By Keyword Story </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="failing-color">Searching by keyword banana should display the corresponding article
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Assertion error: Expected: a collection containing a string containing 'An edible fruit produced by the pear tree, similar to an apple but elongated towards the stem.' but: was 'Top Favorite', was 'Deodorant spray Dove Go Fresh Pear & Aloe Vera, 250 ml', was '5(2)', was '', was 'Mini narghilea electronica de unica folosinta AK Senator - Mango Apple Pear 700 pufuri', was '', was 'Lichid King&rsquo;s Dew FRUIT - Apple Pear ,100ml ,0mg/ml', was '', was 'Deodorant roll-on Dove Pear Aloe Vera, 50 ml', was 'Top Favorite', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Pear Aurore Boreale 16 mm Leverback', was 'Promovat', was 'Deodorant roll-on Dove Matcha&Sakura Blossom, 40 ml', was '5(1)', was '', was 'Mini narghilea electronica de unica folosinta fara nicotina Minesota Mango Apple Pear, 0 mg, 700 pufuri', was '', was 'Odorizant auto Power Air tip cutie, eliminare treptata parfum, aroma extra scent apple & pear', was '4(13)', was 'Promovat', was 'Deodorant roll-on Dove AluFree Original, 40 ml', was '5(2)', was '', was 'Apa de Colonie Jo Malone English Pear & Freesia, Unisex 30 ml', was '1(1)', was '', was 'Set 6 x Deodorant Antiperspirant, Roll-On 48h, Dove Go Fresh, Pear & Aloe Vera Scent, 50 ml', was 'Promovat', was 'Deodorant spray Dove AluFree Cucumber&Green Tea, 150 ml', was '3.67(3)', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Pear Bermuda Blue 16 mm Leverback', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Pear CAL 16 mm Leverback', was 'Promovat', was 'Deodorant spray Dove AluFree Original, 150 ml', was '5(1)', was '', was 'Boutique 23 - Set Cercei si Colier Pear II din argint 925, culoare argintiu, inclus cutie bijuterii', was '', was 'Parfum pentru par Jo Malone Pear & Freesia Hair Mist, Femei, 30 ml', was 'Promovat', was 'Deodorant antiperspirant roll-on Dove Invisible Dry, 50 ml', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Pear Aquamarine AB 16 mm Leverback', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Xirius Fancy Pear 6-10mm Font Back Crystal Clear', was 'PromovatSuper Pret', was 'Deodorant spray Dove AluFree Peach Lemon, 150 ml', was '5(5)', was '', was 'Fotoliu puf Topcho Big Pear, Poliestiren, 120x100 cm, Cyan', was '5(2)', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Pear Silver Night 16 mm Leverback', was 'Promovat', was 'Deodorant spray Dove Invisible Dry, 150 ml', was '5(3)', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Pear Peridot AB 16 mm Leverback', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Fancy Pear 14mm Crystal Clear, Hook', was 'PromovatTop Favorite', was 'Apa De Parfum Liu Jo Lovely Me Femei 30 ml, Italy', was '5(1)', was '', was 'Apa de Toaleta Elizabeth Arden, Green Tea Pear Blossom, Femei, 100 ml', was '', was 'Extract de Parfum Lorinna English Pear, Niche Series, 50 ml, de dama', was '', was 'Boutique 23 - Cercei Pear Mood, model stare de spirit care isi schimba culoarea, argint 925 rodiat, argintiu, inclus cutie bijuterii', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Pear Burgundy - Blue Zircon 16 mm Leverback', was '', was 'Antiperspirant spray Dove Pear Aloe Vera, 200 ml', was 'Super Pret', was 'Fotoliu gonflabil Intex, 114 x 114 x 71cm, gri', was '4.28(111)', was '', was 'Pachet Lichid Tigara Electronica King's Dew FRUT - Apple Pear ,3.33mg/ml ,120ml cu Nicotina', was '5(1)', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Fancy Pear 10mm Font Back Emerald', was '', was 'Fotoliu puf Topcho Big Pear, Poliestiren, 120x100 cm, Gri inchis', was '5(2)', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Queen Pear Emerald Surub', was '', was 'Fotoliu tip Puf Topcho, Small Pear, 90x75x75cm, Gri', was '2(1)', was '', was 'Apa de parfum arabesc , VICTORIAN ROSE , Femei , 100 ml', was '5(1)', was 'Super Pret', was 'Deodorant antiperspirant spray Dove Para si Aloe Vera, 150 ml', was '5(2)', was '', was 'Pachet Lichid Tigara Electronica King's Dew FRUT - Apple Pear ,1.8mg/ml ,110ml cu Nicotina', was 'Super Pret', was 'Apa de parfum arabesc , FLORANCE , Barbati , 100 ml', was '', was 'e-Crystal - Bratara Argint 925 placat cu rodiu cu cristale Swarovski&reg; Fancy Pear Silver Night Reglabila', was '', was 'Fotoliu tip Puf Topcho, Small Pear, 90x75x75cm, Roz pal', was '2(1)', was 'Super Pret', was 'e-Crystal - Bratara Argint 925 placat cu rodiu cu cristale Swarovski&reg; Fancy Pear Crystal Clear Reglabila', was '', was 'Boutique 23 - Set Argint 925 Colier si Cercei din argint Pear II, culoare argintiu, inclus cutie bijuterii', was '', was 'Fotoliu puff/para Buona Notte Pear, 80x80x85 cm, Culoare chocolatte', was 'Super Pret', was 'Apa de Parfum Wadi al Khaleej, Florance, Femei, 100 ml', was '5(1)', was '', was 'Fotoliu tip Puf Topcho, Little Pear, Damasc, 75x90cm, Rosu', was '', was 'Fotoliu tip Puf Topcho, Little Pear, Piele ecologica, 75x90cm, Albastru', was '', was 'Fotoliu tip Puf Topcho, Little Pear, 75x90cm, Bej deschis', was '', was 'Apa de Parfum Wadi al Khaleej, Downtown Dubai, Unisex, 100 ml', was '3(1)', was '', was 'Fotoliu tip Puf Topcho, Little Pear, 75x90cm, Negru', was '', was 'Fotoliu puf Topcho Big Pear, Poliestiren, 120x100 cm, Alb murdar', was '5(2)', was '', was 'Fotoliu puf Topcho Big Pear, Poliestiren, 120x100 cm, Bej', was '5(2)', was '', was 'Fotoliu tip Puf Topcho, Little Pear, Piele ecologica, Albastru', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Fancy Pear Chain 10mm Silver Night', was '', was 'Fotoliu tip Puf Topcho, Little Pear, Piele ecologica, 75x90cm, Galben mustar', was '', was 'OEM - Cercei argint pear 16Blue, Multicolor', was '', was 'Fotoliu tip Puf Topcho, Little Pear, Damasc, 75x90cm, Albastru', was '', was 'Fotoliu tip Puf Topcho, Little Pear, 4kg, Damasc, Galben', was '', was 'Bijouxmania - Cercei Argint Pear Emerald', was '', was 'Fotoliu tip Puf Topcho, Little Pear, Damasc, 90x75cm, Verde', was '', was 'Fotoliu tip Puf Topcho, Little Pear, Damasc, 75x90cm, Gri inchis', was '', was 'e-Crystal - Cercei Argint 925 placat cu rodiu cu cristale Swarovski&reg; Xirius Fancy Pear 6-10mm Font Back Silver Night', was '', was 'Fotoliu puf Topcho, Model Pear, Husa detasabila, Damasc, Curatare usoara, Umplutura perle polistiren, Albastru', was '3(2)', was 'Deschide Romania', was 'Flori de gheata - Cercei Argint 925 Leverback Pear 16 mm Crystal Shimmer', was 'Deschide Romania', was 'Flori de gheata - Cercei Argint 925 Leverback Pear 16 Light Siam'</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.AssertionError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>org.example.steps.serenity.EndUserSteps.should_see_definition(EndUserSteps.java:27)<br />org.example.features.search.SearchByKeywordStory.searching_by_keyword_banana_should_display_the_corresponding_article(SearchByKeywordStory.java:37)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource3096310056958004728.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="b1a88a029e8abf6deded25545627490ab9d8d3d15bb78eb7170c08ee60fbef3b.png" title=" Is the home page" width="1600"/>
+                <img src="687804e4790dbfa00269f645364146d47053658708ff0df804afb53ac8135bdb.png" title=" Looks for: pear" width="1600"/>
+                <img src="687804e4790dbfa00269f645364146d47053658708ff0df804afb53ac8135bdb.png" title=" Enters: pear" width="1600"/>
+                <img src="687804e4790dbfa00269f645364146d47053658708ff0df804afb53ac8135bdb.png" title=" Starts search" width="1600"/>
+                <img src="b41c0cb75ebe915782d96a25343567696933b19d5563d2a2b39dc542074d93ec.png" title=" Starts search (completed)" width="1600"/>
+                <img src="b41c0cb75ebe915782d96a25343567696933b19d5563d2a2b39dc542074d93ec.png" title=" Looks for: pear (completed)" width="1600"/>
+                <img src="b41c0cb75ebe915782d96a25343567696933b19d5563d2a2b39dc542074d93ec.png" title=" Should see definition: An edible fruit produced by the pear tree, similar to an apple but elongated towards the stem.: <span class='failing-color'>FAILURE</span>" width="1600"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.3.2</span>
+</div>
+</body>
+</html>

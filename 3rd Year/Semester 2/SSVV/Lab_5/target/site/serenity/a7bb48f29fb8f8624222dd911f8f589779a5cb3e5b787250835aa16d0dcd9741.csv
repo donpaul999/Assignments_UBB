@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Search on website","Search wiki by keyword test DDT","FAILURE","2022-05-09T08:26:21.621867+03:00[Europe/Bucharest]","0.0","26.23"
+"Search on website","Search ubb by keyword test DDT","FAILURE","2022-05-09T08:44:09.221062+03:00[Europe/Bucharest]","0.0","53.43"
